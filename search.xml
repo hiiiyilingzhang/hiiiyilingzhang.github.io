@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【Bioinfo Blog 000】 Troubleshooting</title>
+    <url>/2021/02/04/Bioinfo%20Blog%20000-Troubleshooting/</url>
+    <content><![CDATA[<h2 id="【R】"><a href="#【R】" class="headerlink" title="【R】"></a>【R】</h2><ol>
+<li><p>20200312<br>outlierKD(final_ns$CS.lymph.nodes..2004..,lymph)</p>
+<blockquote>
+<p>报错：$ operator is invalid for atomic vectors<br>解决：赋值给对象后在放入函数<br>lymph &lt;- final_ns$CS.lymph.nodes..2004..<br>outlierKD(final_ns,lymph)</p>
+</blockquote>
+</li>
+<li><p>20200504<br>最无语最神经病的报错！！<br>kk &lt;- paste(“Surv(final_dat$Survival.months, final_dat$status)”,insertVar,sep=”~”);<br>fit_insertVar &lt;- survfit(as.formula(kk),data = final_dat)</p>
+<blockquote>
+<p>报错：找不到对象kk<br>解决：两个&lt;&lt;表示将kk设在全局<br>kk &lt;&lt;- paste(“Surv(final_dat$Survival.months, final_dat$status)”,insertVar,sep=”~”);</p>
+</blockquote>
+</li>
+<li><p>201128<br>BiocManager::install(“hgu133a2.db”)</p>
+<blockquote>
+<p>Warning：installation of package ‘hgu133a2.db’ had non-zero exit status<br>解决：一般是依赖包的问题，先加载完所有的dependency就可以library了</p>
+</blockquote>
+</li>
+<li><p>201224<br>BiocManager::install(“DOSE”)</p>
+<blockquote>
+<p>Warning message:<br>In file.copy(savedcopy, lib, recursive = TRUE) :<br>拷贝C:\Users\Surface\Documents\R\win-library\4.0\00LOCK\vctrs\libs\x64\vctrs.dll到C:\Users\Surface\Documents\R\win-library\4.0\vctrs\libs\x64\vctrs.dll时出了问题：Permission denied<br>解决：依赖的包现在正在环境下使用，需要把它先<code>detach()</code>，再安装</p>
+</blockquote>
+</li>
+<li><p>210103<br>有的时候RStudio会突然卡住，只有右上角的最小化、关闭、窗口大小可以点，这个时候点一下那个窗口大小，再全屏一下就可以了，超级神奇</p>
+</li>
+<li><p>210201<br>BiocManager::install()</p>
+<blockquote>
+<p>Installation path not writeable, unable to update packages: boot, class,<br>codetools, foreign, KernSmooth, Matrix, nlme, nnet, spatial<br>解决：installed.packages()[, c(“Package”, “LibPath”)] 来查看所有的R包位置。<br>Sys.chmod(“file”,’777’) 设置装在哪里，其中file是你R包安装的位置</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="【Python】"><a href="#【Python】" class="headerlink" title="【Python】"></a>【Python】</h2><ol>
+<li>201128<blockquote>
+<p>报错：python SyntaxError: EOL while scanning string literal<br>错误原因：字符串以 \ 结尾 或者字符串缺少引号。</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="【Perl】"><a href="#【Perl】" class="headerlink" title="【Perl】"></a>【Perl】</h2><p>—To Be Continue—</p>
+]]></content>
+      <categories>
+        <category>bioinfo</category>
+      </categories>
+      <tags>
+        <tag>debug</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2021/02/02/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
