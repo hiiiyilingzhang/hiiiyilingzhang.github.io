@@ -61,4 +61,105 @@
         <tag>debug</tag>
       </tags>
   </entry>
+  <entry>
+    <title>AI Learning</title>
+    <url>/2021/02/17/AI-Learning/</url>
+    <content><![CDATA[<h1 id="界面-版本-快捷键"><a href="#界面-版本-快捷键" class="headerlink" title="界面/版本/快捷键"></a>界面/版本/快捷键</h1><h2 id="版本挑选"><a href="#版本挑选" class="headerlink" title="版本挑选"></a>版本挑选</h2><h2 id="CS6-CC2018-CC2020"><a href="#CS6-CC2018-CC2020" class="headerlink" title="CS6/CC2018/CC2020"></a>CS6/CC2018/CC2020</h2><h2 id="AI输出格式"><a href="#AI输出格式" class="headerlink" title="AI输出格式"></a>AI输出格式</h2><p>.ai 工程文件<br>.eps 矢量图<br>.tif 位图<br>.pdf 最稳定</p>
+<hr>
+<h2 id="设置-快捷键"><a href="#设置-快捷键" class="headerlink" title="设置+快捷键"></a>设置+快捷键</h2><ol>
+<li>出血边：相当于margin，预留给打印等的装订，一般0.3px</li>
+<li><code>ALT+滚动滑轮/ctrl+加减键</code>：放大缩小 (CTRL+0：恢复到默认大小)</li>
+<li><code>空格键+鼠标左键</code>：抓手工具</li>
+<li><code>CTRL+R</code>:标尺</li>
+<li><code>CTRL+;</code>:参考线</li>
+<li><code>CTRL+&quot;</code>:网格</li>
+<li><code>CTRL+Y</code>：轮廓模式，可以看到轮廓边缘</li>
+<li><code>CTRL+ALT+Y</code>：像素模式  </li>
+</ol>
+<hr>
+<h1 id="选择工具组-描边-缩放工具"><a href="#选择工具组-描边-缩放工具" class="headerlink" title="选择工具组/描边/缩放工具"></a>选择工具组/描边/缩放工具</h1><h2 id="选择工具组"><a href="#选择工具组" class="headerlink" title="选择工具组"></a>选择工具组</h2><p><code>选择工具(V)</code>:选择、移动、缩放、旋转（按shift表示等比缩放）<br><code>直接选择(A)</code>:选择、移动、变形<br>显示/隐藏定界框：<code>ctrl+shift+B</code><br>显示/隐藏边缘：<code>ctrl+H</code><br>套索工具：自由选择需要的锚点</p>
+]]></content>
+      <categories>
+        <category>toolsLearning</category>
+      </categories>
+      <tags>
+        <tag>Adobe Illustrator</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>TOEFL-writing-01</title>
+    <url>/2021/02/18/TOEFL-writing-01/</url>
+    <content><![CDATA[<h1 id="全文结构"><a href="#全文结构" class="headerlink" title="全文结构"></a>全文结构</h1><p> 开头段&lt;60&gt;<br>     总论点1&lt;160&gt;（分论点1+分论点2）<br>     总论点2&lt;160&gt;（分论点1+分论点2）<br> 结尾段&lt;60&gt;</p>
+<blockquote>
+<p>例1：Some students enjoy taking distance learning courses on the computer or television. Other students would rather take all of their courses with a teacher in classroom. Which is these options do you think is better?</p>
+</blockquote>
+<p>破题：</p>
+<ol>
+<li>why：理由说（在线教育为什么好）</li>
+<li>切逻辑终点(good)：方面说（好在什么方面）</li>
+<li>切逻辑起点(distance learning)：方面说（有哪些种在线教育）</li>
+</ol>
+<p>观点：在线教育好</p>
+<ul>
+<li>对学生学习好<ul>
+<li>能获得很多的知识</li>
+<li>能激发学生学习兴趣</li>
+</ul>
+</li>
+<li>对学生个人发展好<ul>
+<li>培养人际交往能力</li>
+<li>培养坚持不懈</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="开头段"><a href="#开头段" class="headerlink" title="开头段"></a>开头段</h1><h2 id="现象引入"><a href="#现象引入" class="headerlink" title="现象引入"></a>现象引入</h2><p>N，同位语，has been valued and even triggers a heated discussion over…题目改写：</p>
+<ul>
+<li><p>N：</p>
+<ul>
+<li>话题词汇（在线教育）</li>
+<li>从题目中选择的中性词汇（教育、上课方式等）</li>
+</ul>
+</li>
+<li><p>同位语</p>
+<ul>
+<li>N为中性词：the fundation of a quality life</li>
+<li>N为褒义词：the objective everyone strives for</li>
+</ul>
+</li>
+<li><p>over(whether/what引导的)名词性从句</p>
+</li>
+</ul>
+<blockquote>
+<p>Education, the foundation of a quality life, has been valued and even triggers a heated discussion over whether students should take courses online or in classrooms. (现象引入)</p>
+</blockquote>
+<h2 id="对方观点"><a href="#对方观点" class="headerlink" title="对方观点"></a>对方观点</h2><p>主语， in some people’s view,…<br>仅需阐明现象，不用加理由</p>
+<blockquote>
+<p>Learning in traditional classrooms, in some people’s views, continues to be an effective way.</p>
+</blockquote>
+<h2 id="自己观点"><a href="#自己观点" class="headerlink" title="自己观点"></a>自己观点</h2><p>Contrary to these people’s opinions is my perspective that …, due to … (e.g. due to the contributions to果/ due to因/ including小)</p>
+<blockquote>
+<p>Contrary to these people’s opinions is my perspective that online learning, which requires students to attend classes on computers or televisions, is superior, due to the contributions to their academic performance and personal development. (自己观点)</p>
+</blockquote>
+<hr>
+<h1 id="中间段"><a href="#中间段" class="headerlink" title="中间段"></a>中间段</h1><h2 id="总论点"><a href="#总论点" class="headerlink" title="总论点"></a>总论点</h2><p>看图说话：在线教育对学生学习好<br>加对比和分论点</p>
+<blockquote>
+<p><strong>What must be prioritized is that</strong> taking distance-learning courses, instead of having courses in traditional classrooms, is beneficial to students’ academic learning, by offering them more knowledge and triggering their enthusiasm in learning. (总论点)</p>
+</blockquote>
+<h2 id="分论点1"><a href="#分论点1" class="headerlink" title="分论点1"></a>分论点1</h2><blockquote>
+<p>**To begin with,**it is online education that provides students with the access to a large quantity of expertises. </p>
+</blockquote>
+<h3 id="解释1"><a href="#解释1" class="headerlink" title="解释1"></a>解释1</h3><p>diatance learning ——&gt; knowledge<br>理由说：有search engine<br>方面说：学生能获得什么知识</p>
+<p>针对正面的论证写反面</p>
+<blockquote>
+<p><strong>To begin with,</strong> it is online education that provides students with the access to a large quantity of expertise. (分论点1) <strong>In detail,</strong> on the Internet, students can acquire a wide range of knowledge in history, art and science, enlarging their knowledge base; <strong>in contrast,</strong> such a large amount of knowledge cannot be obtained when they are instructed by only one teacher in concrete classrooms. (解释1+反面对比)</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>TOEFL</category>
+      </categories>
+      <tags>
+        <tag>TOEFL</tag>
+      </tags>
+  </entry>
 </search>
