@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/02/02/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>【Bioinfo Blog 000】Troubleshooting</title>
     <url>/2021/02/04/Bioinfo%20Blog%20000-Troubleshooting/</url>
     <content><![CDATA[<h2 id="【R】"><a href="#【R】" class="headerlink" title="【R】"></a>【R】</h2><ol>
@@ -55,7 +41,7 @@
 <h2 id="【Perl】"><a href="#【Perl】" class="headerlink" title="【Perl】"></a>【Perl】</h2><p>—To Be Continue—</p>
 ]]></content>
       <categories>
-        <category>bioinfo</category>
+        <category>Bioinfo</category>
       </categories>
       <tags>
         <tag>debug</tag>
@@ -308,7 +294,7 @@
 </ol>
 <h2 id="魔鬼题"><a href="#魔鬼题" class="headerlink" title="魔鬼题"></a>魔鬼题</h2><p>题目包含从句，破题时所有思路都落在逻辑终点上</p>
 <blockquote>
-<p>例1：Do you agree or disagree with the following statement? To <strong>truly enjoy a vacation (holiday)</strong>, people should leave their<br>mobile phones at home.</p>
+<p>例1：Do you agree or disagree with the following statement? To <strong>truly enjoy a vacation (holiday)</strong>, people should leave their mobile phones at home.</p>
 </blockquote>
 <blockquote>
 <p>例2：<strong>In order to attract good students</strong>, many universities spend a lot of money in society activities.</p>
@@ -351,6 +337,136 @@
       </categories>
       <tags>
         <tag>TOEFL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>TOEFL-writing-02</title>
+    <url>/2021/02/20/TOEFL-writing-02/</url>
+    <content><![CDATA[<h1 id="笔记概述"><a href="#笔记概述" class="headerlink" title="笔记概述"></a>笔记概述</h1><ol>
+<li>专有名词<br> 固定说法，很难找到同义词的名词</li>
+</ol>
+<hr>
+<h1 id="综合概述"><a href="#综合概述" class="headerlink" title="综合概述"></a>综合概述</h1><hr>
+<h1 id="阅读笔记"><a href="#阅读笔记" class="headerlink" title="阅读笔记"></a>阅读笔记</h1><hr>
+<h1 id="听力笔记"><a href="#听力笔记" class="headerlink" title="听力笔记"></a>听力笔记</h1>]]></content>
+      <categories>
+        <category>TOEFL</category>
+      </categories>
+      <tags>
+        <tag>TOEFL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>TOEFL-Wordlist</title>
+    <url>/2021/02/20/TOEFL-Wordlist/</url>
+    <content><![CDATA[<p>210220</p>
+<ol>
+<li><p><strong>sentence</strong> n./vt. 判决，宣判<br>serve a sentence 服刑</p>
+<ul>
+<li>Tom will be sentenced to death/life imprisonment/three years in prison.</li>
+</ul>
+</li>
+<li><p><strong>impact</strong> vi./vt.  影响(on, upon); 对。。。有影响；（天文）撞击</p>
+</li>
+<li><p><strong>complex</strong> == system n. 复合体；综合设施<br>a sports complex/building complex建筑群/to suffer from a guilt complex 内疚感</p>
+<ul>
+<li>This is just one of a whole complex of issue.</li>
+</ul>
+</li>
+<li><p><strong>amount</strong> v. 总计，合计；等于，相当于；发展成，变成</p>
+<ul>
+<li>The bill amounts to $10.</li>
+<li>They gave me some help in the beginning but it did not amount to much(== they did not give me much help)</li>
+</ul>
+</li>
+<li><p><strong>outgassing</strong>  n.除气；脱气  adj. 除气的；释气的</p>
+<ul>
+<li>The origin of our present atmosphere is therefore a combination of terrestrial outgassing and interplanetary assault (further changed by later biological events). (20190810真题)</li>
+<li>Little by little, the planet generated a new, secondary atmosphere by volcanic outgassing of volatile（挥发性的，不稳定的） materials from its interior. (2015年真题Earth’s Atmosphere)</li>
+</ul>
+</li>
+<li><p>易混词</p>
+<ul>
+<li><p><strong>vary</strong></p>
+<ul>
+<li>variety: a variety ofbeedback mechanisms vs. a myriad of 大量的，无数的</li>
+<li>various/varied</li>
+<li>variable n.变量/invariable n.常量</li>
+<li>invariable：不变地，一定地(== always/constantly/customarily/regularly)</li>
+</ul>
+</li>
+<li><p><strong>effect</strong></p>
+<ul>
+<li>effect:  n.结果 v.造成  the oppposite effect</li>
+<li>effective:  adj,有效性  vs. efficient有效率的/ineffective无效的</li>
+<li>effectiveness:  n. 效力</li>
+<li>affect:  vt.影响  affect my decision</li>
+<li>affection:  n. 喜爱(for sb./sth.)</li>
+</ul>
+</li>
+<li><p><strong>object</strong></p>
+<ul>
+<li>object:  n. 目标；物体；客体；宾语  v. 反对  Many local people object to the building of the new airport</li>
+<li>objective:  n. 目的，目标  adj.客观的  an objective analysis</li>
+<li>objection:  n. 异议  I have no objection to him coming to stay.</li>
+<li>subject:  n. 主题；起因；科目；国民；主旋律  adj.易遭受…的  v.(使)臣服 </li>
+<li>subjective:  adj. 主观的；个人的</li>
+</ul>
+</li>
+<li><p><strong>economy</strong></p>
+<ul>
+<li>economy:  n.经济  The economy is in recession</li>
+<li>economic:  adj.经济上的；合算的</li>
+<li>economical:  adj.节俭的  an economical car to run/ He was economical in all areas of his life</li>
+<li>economically:  adv.节俭的</li>
+<li>econimics:  n.经济学</li>
+</ul>
+</li>
+<li><p>technique</p>
+<ul>
+<li>technique:  n.技巧，技法  (==method/approach/means/craft)</li>
+<li>technical:  adj.技术上的  offer technical support</li>
+<li>technology(-ies):  n.技术；工艺  high technology/information technology</li>
+<li>technological:  adj.技术的；工艺的  technological innovation  (== industrial/mechanical) </li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+]]></content>
+      <categories>
+        <category>TOEFL</category>
+      </categories>
+      <tags>
+        <tag>TOEFL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>TOEFL-writing-03</title>
+    <url>/2021/02/20/TOEFL-writing-03/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Stat-01-MDS</title>
+    <url>/2021/02/22/Stat-01-MDS/</url>
+    <content><![CDATA[<p><strong>MDS(Multi-dimetional Scaling, 多维标度法)</strong></p>
+<ul>
+<li><p>核心目的:<br>对于距离矩阵D,在低维空间中寻找一个矩阵Z，使得Z构成的欧式距离矩阵B尽可能和原来矩阵D保持一致。此种多维标度法也被称为主坐标分析。（把所有的距离矩阵，找一个低维的欧氏距离去接近）</p>
+</li>
+<li><p>具体推导详见goodnote笔记</p>
+</li>
+<li><p>R语言通过MDS对GTEx数据进行降维</p>
+</li>
+<li><p>当dist矩阵本身为欧氏距离时，MDS == PCA<br>MDS更强调对不同种类的dist转换<br>PCA强调用线性组合表示variable</p>
+</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment">#########################</span></span><br><span class="line"><span class="comment"># Data 2021-02-22</span></span><br><span class="line"><span class="comment"># Author zhangyl</span></span><br><span class="line"><span class="comment"># MDS and t-SNE</span></span><br><span class="line"><span class="comment">#########################</span></span><br><span class="line"></span><br><span class="line">rm(<span class="built_in">list</span> = ls())</span><br><span class="line"></span><br><span class="line"><span class="comment"># -----------------------------------&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span></span><br><span class="line"><span class="comment"># MDS</span></span><br><span class="line"><span class="comment"># -----------------------------------&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span></span><br><span class="line">load(<span class="string">&quot;./data/GTEx.RData&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># tissue的注释文件</span></span><br><span class="line">accession.df = read.csv(file=<span class="string">&quot;./data/GTEx_accession_table.csv&quot;</span>)</span><br><span class="line">annotation.df = read.csv(file=<span class="string">&quot;./data/GTEx_v7_Annotations_SampleAttributesDS.txt&quot;</span>,header = <span class="built_in">T</span>,sep = <span class="string">&quot;\t&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># make matrix </span></span><br><span class="line">GTEx.TPM.gene.mat.only_TPM = log2(GTEx.TPM.gene.mat[,<span class="built_in">c</span>(-<span class="number">1</span>,-<span class="number">2</span>)]+<span class="number">1</span>)</span><br><span class="line">rownames(GTEx.TPM.gene.mat.only_TPM) = <span class="built_in">as.character</span>(GTEx.TPM.gene.mat$Name)</span><br><span class="line"></span><br><span class="line"><span class="comment"># get tissue info </span></span><br><span class="line">tissue_info = <span class="built_in">as.character</span>(annotation.df$SMTS[match(accession_id_vec,annotation.df$SAMPID)])</span><br><span class="line"></span><br><span class="line"><span class="comment"># run MDS</span></span><br><span class="line">dist.mat = dist(t(GTEx.TPM.gene.mat.only_TPM), method = <span class="string">&quot;minkowski&quot;</span>, p=<span class="number">5</span>)</span><br><span class="line">dist.mat = <span class="built_in">sqrt</span>(<span class="number">2</span>*(<span class="number">1</span> - <span class="built_in">abs</span>(cor(GTEx.TPM.gene.mat.only_TPM,method = <span class="string">&quot;kendall&quot;</span>))))</span><br><span class="line"></span><br><span class="line">MDS_res = cmdscale(dist.mat,eig=<span class="literal">TRUE</span>, k=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">MDS_xy.df = data.frame(MDS_1 = MDS_res$points[,<span class="number">1</span>],</span><br><span class="line">                       MDS_2 = MDS_res$points[,<span class="number">2</span>],</span><br><span class="line">                       tissue = factor(tissue_info))</span><br><span class="line"></span><br><span class="line"><span class="comment"># plot with ggplot2</span></span><br><span class="line">library(ggplot2)</span><br><span class="line"></span><br><span class="line">ggplot(data = MDS_xy.df, aes(MDS_1,MDS_2,color=tissue)) + </span><br><span class="line">  geom_point()  + </span><br><span class="line">  geom_text(aes(label=tissue)) + </span><br><span class="line">  theme_bw()</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Bioinfo</category>
+      </categories>
+      <tags>
+        <tag>Stat</tag>
       </tags>
   </entry>
 </search>
