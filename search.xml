@@ -469,4 +469,73 @@
         <tag>Stat</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Stat-02-tSNE</title>
+    <url>/2021/02/23/Stat-02-tSNE/</url>
+    <content><![CDATA[<h1 id="线性降维与非线性降维"><a href="#线性降维与非线性降维" class="headerlink" title="线性降维与非线性降维"></a><strong>线性降维与非线性降维</strong></h1><ul>
+<li>线性降维(Linear dimensionality reduction)<ul>
+<li>主成分分析(PCA)</li>
+<li>多维坐标变换(MDS)</li>
+<li>聚类分析(Clustering)</li>
+</ul>
+</li>
+<li>非线性降维(Nonlinear dimensionality reduction)<ul>
+<li>lsomap (等度量映射)</li>
+<li>LLE (局部线性嵌入)</li>
+<li>t-SNE (t分布-随机近邻嵌入)</li>
+</ul>
+</li>
+</ul>
+<p>非线性降维属于流形学习的一部分（流形是局部具有欧几里得空间性质的空间，流形学习是指把高位空间整到低维去，使得欧氏距离重新生效，MDS是保留原有距离特征）</p>
+<hr>
+<h1 id="t-SNE的直观理解"><a href="#t-SNE的直观理解" class="headerlink" title="t-SNE的直观理解"></a>t-SNE的直观理解</h1><p><a href="https://www.seas.harvard.edu/courses/cs281/papers/tsne.pdf">Visualizing data using t-SNE, Laurens van der Maaten and Geoffrey Hintton, Journel of machine learning research, 2008.</a></p>
+<ol>
+<li>随机选择起始点;</li>
+<li>计算高维空间这些样本点的概率分布F1;</li>
+<li>计算低维空间这些样本点的概率分布F2;</li>
+<li>迭代:如果能够使F1与F2概率分布尽可能的接近则降维成功</li>
+</ol>
+<hr>
+<h1 id="信息熵与KL散度"><a href="#信息熵与KL散度" class="headerlink" title="信息熵与KL散度"></a>信息熵与KL散度</h1><h2 id="信息熵"><a href="#信息熵" class="headerlink" title="信息熵"></a>信息熵</h2><p>衡量不确定性的大小，信息熵越大，携带的不确定性越多</p>
+<h2 id="KL散度-Kullback-Leibler-Divergence"><a href="#KL散度-Kullback-Leibler-Divergence" class="headerlink" title="KL散度(Kullback-Leibler Divergence)"></a>KL散度(Kullback-Leibler Divergence)</h2><p>也叫相对熵，利用KL散度来衡量两个分布是否相似</p>
+<p>e.g. 正常样本与癌症样本 D(KL)计算dist——&gt; MDS可视化 D(KL)&gt;0.5发生变化</p>
+<hr>
+<h1 id="SNE的数学过程"><a href="#SNE的数学过程" class="headerlink" title="SNE的数学过程"></a>SNE的数学过程</h1><ol>
+<li>先通过欧氏距离表示点的概率分布，分低维和高维情况；</li>
+<li>目标是希望高维和低维之间的分布尽可能相同；</li>
+<li>初始化时需要设置参数<strong>困惑度</strong>(perplrxity),SNE会通过二分搜索的方法计算最佳的初始化方差，一般困惑度选择5~50；</li>
+<li>对目标函数进行迭代优化，可以增加扰动，防止局部最优；</li>
+</ol>
+<hr>
+<h1 id="t-SNE相对于SNE的提升"><a href="#t-SNE相对于SNE的提升" class="headerlink" title="t-SNE相对于SNE的提升"></a>t-SNE相对于SNE的提升</h1><ol>
+<li>t-SNE解决了概率不对成的问题，高位情况下Pij为对称；</li>
+<li>t-SNE使用t分布作为降维后的概率分布（SNE用的是正态分布）</li>
+</ol>
+<hr>
+<h1 id="t-SNE的优缺点"><a href="#t-SNE的优缺点" class="headerlink" title="t-SNE的优缺点"></a>t-SNE的优缺点</h1><ul>
+<li>优点:<ul>
+<li>非常优秀的降维可视化方法，对各种数据集的表现都非常好!</li>
+</ul>
+</li>
+<li>缺点:<ul>
+<li>基本只用于可视化;</li>
+<li>t-SNE倾向保留局部特征，有的时候会“只见树木不见森林”（可以先做pca）;</li>
+<li>t-SNE结果中的距离没有太大意义，因为都是计算的概率;</li>
+<li>t-SNE训练速度比较慢</li>
+</ul>
+</li>
+<li>特点:<ul>
+<li>受初值影响（调试时需要set.seed）</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="R语言计算t-SNE"><a href="#R语言计算t-SNE" class="headerlink" title="R语言计算t-SNE"></a>R语言计算t-SNE</h1><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment">#########################</span></span><br><span class="line"><span class="comment"># Data 2021-02-27</span></span><br><span class="line"><span class="comment"># Author zhangyl</span></span><br><span class="line"><span class="comment"># t-SNE</span></span><br><span class="line"><span class="comment">#########################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># load package </span></span><br><span class="line">library(Rtsne)</span><br><span class="line"></span><br><span class="line">SD.vector &lt;- apply(GTEx.TPM.gene.mat[,<span class="built_in">c</span>(-<span class="number">1</span>,-<span class="number">2</span>)],<span class="number">1</span>,FUN=<span class="keyword">function</span>(x)&#123;sd(x)&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># select top3000</span></span><br><span class="line">GTEx.TPM.gene.mat.log2 &lt;- log2(GTEx.TPM.gene.mat[,<span class="built_in">c</span>(-<span class="number">1</span>,-<span class="number">2</span>)]+<span class="number">1</span>)</span><br><span class="line">GTEx.TPM.gene.mat.log2.top3000 &lt;- GTEx.TPM.gene.mat.log2[order(SD.vector,decreasing = <span class="built_in">F</span>),]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Rtsne()</span></span><br><span class="line"><span class="comment"># matrix 行是基因，列是variables</span></span><br><span class="line"><span class="comment"># perplexity 5~50</span></span><br><span class="line"></span><br><span class="line">set.seed(<span class="number">20210227</span>)</span><br><span class="line">tSNE_res &lt;- Rtsne(t(GTEx.TPM.gene.mat.log2.top3000),dims = <span class="number">3</span>,perplexity = <span class="number">10</span>,pca = <span class="built_in">T</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># plot region </span></span><br><span class="line">tSNE_res.df &lt;- as.data.frame(tSNE_res$Y)</span><br><span class="line">colnames(tSNE_res.df) &lt;- <span class="built_in">c</span>(<span class="string">&quot;tSNE1&quot;</span>,<span class="string">&quot;tSNE2&quot;</span>,<span class="string">&quot;tSNE3&quot;</span>)</span><br><span class="line">tSNE_res.df$tissue &lt;- tissue_info</span><br><span class="line"></span><br><span class="line">ggplot(data = tSNE_res.df, aes(tSNE1,tSNE2,color=tissue)) + </span><br><span class="line">  geom_point()  + </span><br><span class="line">  geom_text(aes(label=tissue)) + </span><br><span class="line">  theme_bw()</span><br><span class="line"></span><br><span class="line">ggplot(data = tSNE_res.df, aes(tSNE1,tSNE3,color=tissue)) + </span><br><span class="line">  geom_point()  + </span><br><span class="line">  geom_text(aes(label=tissue)) + </span><br><span class="line">  theme_bw()</span><br><span class="line"></span><br><span class="line">ggplot(data = tSNE_res.df, aes(tSNE2,tSNE3,color=tissue)) + </span><br><span class="line">  geom_point()  + </span><br><span class="line">  geom_text(aes(label=tissue)) + </span><br><span class="line">  theme_bw()</span><br><span class="line"></span><br><span class="line"><span class="comment"># use plotly (3D)</span></span><br><span class="line">library(plotly)</span><br><span class="line"></span><br><span class="line">p &lt;- plot_ly(tSNE_res.df, x = ~tSNE1, y = ~tSNE2, z = ~tSNE3, color = ~tissue) %&gt;%</span><br><span class="line">  add_markers() %&gt;%</span><br><span class="line">  layout(scene = <span class="built_in">list</span>(xaxis = <span class="built_in">list</span>(title = <span class="string">&#x27;tSNE1&#x27;</span>),</span><br><span class="line">                      yaxis = <span class="built_in">list</span>(title = <span class="string">&#x27;tSNE2&#x27;</span>),</span><br><span class="line">                      zaxis = <span class="built_in">list</span>(title = <span class="string">&#x27;tSNE3&#x27;</span>)))</span><br><span class="line">p</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Bioinfo</category>
+      </categories>
+      <tags>
+        <tag>Stat</tag>
+      </tags>
+  </entry>
 </search>
