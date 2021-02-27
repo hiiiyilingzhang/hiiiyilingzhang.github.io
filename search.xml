@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>AI Learning</title>
+    <url>/2021/02/17/AI-Learning/</url>
+    <content><![CDATA[<h1 id="界面-版本-快捷键"><a href="#界面-版本-快捷键" class="headerlink" title="界面/版本/快捷键"></a>界面/版本/快捷键</h1><h2 id="版本挑选"><a href="#版本挑选" class="headerlink" title="版本挑选"></a>版本挑选</h2><h2 id="CS6-CC2018-CC2020"><a href="#CS6-CC2018-CC2020" class="headerlink" title="CS6/CC2018/CC2020"></a>CS6/CC2018/CC2020</h2><h2 id="AI输出格式"><a href="#AI输出格式" class="headerlink" title="AI输出格式"></a>AI输出格式</h2><p>.ai 工程文件<br>.eps 矢量图<br>.tif 位图<br>.pdf 最稳定</p>
+<hr>
+<h2 id="设置-快捷键"><a href="#设置-快捷键" class="headerlink" title="设置+快捷键"></a>设置+快捷键</h2><ol>
+<li>出血边：相当于margin，预留给打印等的装订，一般0.3px</li>
+<li><code>ALT+滚动滑轮/ctrl+加减键</code>：放大缩小 (CTRL+0：恢复到默认大小)</li>
+<li><code>空格键+鼠标左键</code>：抓手工具</li>
+<li><code>CTRL+R</code>:标尺</li>
+<li><code>CTRL+;</code>:参考线</li>
+<li><code>CTRL+&quot;</code>:网格</li>
+<li><code>CTRL+Y</code>：轮廓模式，可以看到轮廓边缘</li>
+<li><code>CTRL+ALT+Y</code>：像素模式  </li>
+</ol>
+<hr>
+<h1 id="选择工具组-描边-缩放工具"><a href="#选择工具组-描边-缩放工具" class="headerlink" title="选择工具组/描边/缩放工具"></a>选择工具组/描边/缩放工具</h1><h2 id="选择工具组"><a href="#选择工具组" class="headerlink" title="选择工具组"></a>选择工具组</h2><p><code>选择工具(V)</code>:选择、移动、缩放、旋转（按shift表示等比缩放）<br><code>直接选择(A)</code>:选择、移动、变形<br>显示/隐藏定界框：<code>ctrl+shift+B</code><br>显示/隐藏边缘：<code>ctrl+H</code><br>套索工具：自由选择需要的锚点</p>
+]]></content>
+      <categories>
+        <category>toolsLearning</category>
+      </categories>
+      <tags>
+        <tag>Adobe Illustrator</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【Bioinfo Blog 000】Troubleshooting</title>
     <url>/2021/02/04/Bioinfo%20Blog%20000-Troubleshooting/</url>
     <content><![CDATA[<h2 id="【R】"><a href="#【R】" class="headerlink" title="【R】"></a>【R】</h2><ol>
@@ -48,143 +73,94 @@
       </tags>
   </entry>
   <entry>
-    <title>AI Learning</title>
-    <url>/2021/02/17/AI-Learning/</url>
-    <content><![CDATA[<h1 id="界面-版本-快捷键"><a href="#界面-版本-快捷键" class="headerlink" title="界面/版本/快捷键"></a>界面/版本/快捷键</h1><h2 id="版本挑选"><a href="#版本挑选" class="headerlink" title="版本挑选"></a>版本挑选</h2><h2 id="CS6-CC2018-CC2020"><a href="#CS6-CC2018-CC2020" class="headerlink" title="CS6/CC2018/CC2020"></a>CS6/CC2018/CC2020</h2><h2 id="AI输出格式"><a href="#AI输出格式" class="headerlink" title="AI输出格式"></a>AI输出格式</h2><p>.ai 工程文件<br>.eps 矢量图<br>.tif 位图<br>.pdf 最稳定</p>
-<hr>
-<h2 id="设置-快捷键"><a href="#设置-快捷键" class="headerlink" title="设置+快捷键"></a>设置+快捷键</h2><ol>
-<li>出血边：相当于margin，预留给打印等的装订，一般0.3px</li>
-<li><code>ALT+滚动滑轮/ctrl+加减键</code>：放大缩小 (CTRL+0：恢复到默认大小)</li>
-<li><code>空格键+鼠标左键</code>：抓手工具</li>
-<li><code>CTRL+R</code>:标尺</li>
-<li><code>CTRL+;</code>:参考线</li>
-<li><code>CTRL+&quot;</code>:网格</li>
-<li><code>CTRL+Y</code>：轮廓模式，可以看到轮廓边缘</li>
-<li><code>CTRL+ALT+Y</code>：像素模式  </li>
-</ol>
-<hr>
-<h1 id="选择工具组-描边-缩放工具"><a href="#选择工具组-描边-缩放工具" class="headerlink" title="选择工具组/描边/缩放工具"></a>选择工具组/描边/缩放工具</h1><h2 id="选择工具组"><a href="#选择工具组" class="headerlink" title="选择工具组"></a>选择工具组</h2><p><code>选择工具(V)</code>:选择、移动、缩放、旋转（按shift表示等比缩放）<br><code>直接选择(A)</code>:选择、移动、变形<br>显示/隐藏定界框：<code>ctrl+shift+B</code><br>显示/隐藏边缘：<code>ctrl+H</code><br>套索工具：自由选择需要的锚点</p>
-]]></content>
+    <title>Stat-01-MDS</title>
+    <url>/2021/02/22/Stat-01-MDS/</url>
+    <content><![CDATA[<p><strong>MDS(Multi-dimetional Scaling, 多维标度法)</strong></p>
+<ul>
+<li><p>核心目的:<br>对于距离矩阵D,在低维空间中寻找一个矩阵Z，使得Z构成的欧式距离矩阵B尽可能和原来矩阵D保持一致。此种多维标度法也被称为主坐标分析。（把所有的距离矩阵，找一个低维的欧氏距离去接近）</p>
+</li>
+<li><p>具体推导详见goodnote笔记</p>
+</li>
+<li><p>R语言通过MDS对GTEx数据进行降维</p>
+</li>
+<li><p>当dist矩阵本身为欧氏距离时，MDS == PCA<br>MDS更强调对不同种类的dist转换<br>PCA强调用线性组合表示variable</p>
+</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment">#########################</span></span><br><span class="line"><span class="comment"># Data 2021-02-22</span></span><br><span class="line"><span class="comment"># Author zhangyl</span></span><br><span class="line"><span class="comment"># MDS and t-SNE</span></span><br><span class="line"><span class="comment">#########################</span></span><br><span class="line"></span><br><span class="line">rm(<span class="built_in">list</span> = ls())</span><br><span class="line"></span><br><span class="line"><span class="comment"># -----------------------------------&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span></span><br><span class="line"><span class="comment"># MDS</span></span><br><span class="line"><span class="comment"># -----------------------------------&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span></span><br><span class="line">load(<span class="string">&quot;./data/GTEx.RData&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># tissue的注释文件</span></span><br><span class="line">accession.df = read.csv(file=<span class="string">&quot;./data/GTEx_accession_table.csv&quot;</span>)</span><br><span class="line">annotation.df = read.csv(file=<span class="string">&quot;./data/GTEx_v7_Annotations_SampleAttributesDS.txt&quot;</span>,header = <span class="built_in">T</span>,sep = <span class="string">&quot;\t&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># make matrix </span></span><br><span class="line">GTEx.TPM.gene.mat.only_TPM = log2(GTEx.TPM.gene.mat[,<span class="built_in">c</span>(-<span class="number">1</span>,-<span class="number">2</span>)]+<span class="number">1</span>)</span><br><span class="line">rownames(GTEx.TPM.gene.mat.only_TPM) = <span class="built_in">as.character</span>(GTEx.TPM.gene.mat$Name)</span><br><span class="line"></span><br><span class="line"><span class="comment"># get tissue info </span></span><br><span class="line">tissue_info = <span class="built_in">as.character</span>(annotation.df$SMTS[match(accession_id_vec,annotation.df$SAMPID)])</span><br><span class="line"></span><br><span class="line"><span class="comment"># run MDS</span></span><br><span class="line">dist.mat = dist(t(GTEx.TPM.gene.mat.only_TPM), method = <span class="string">&quot;minkowski&quot;</span>, p=<span class="number">5</span>)</span><br><span class="line">dist.mat = <span class="built_in">sqrt</span>(<span class="number">2</span>*(<span class="number">1</span> - <span class="built_in">abs</span>(cor(GTEx.TPM.gene.mat.only_TPM,method = <span class="string">&quot;kendall&quot;</span>))))</span><br><span class="line"></span><br><span class="line">MDS_res = cmdscale(dist.mat,eig=<span class="literal">TRUE</span>, k=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">MDS_xy.df = data.frame(MDS_1 = MDS_res$points[,<span class="number">1</span>],</span><br><span class="line">                       MDS_2 = MDS_res$points[,<span class="number">2</span>],</span><br><span class="line">                       tissue = factor(tissue_info))</span><br><span class="line"></span><br><span class="line"><span class="comment"># plot with ggplot2</span></span><br><span class="line">library(ggplot2)</span><br><span class="line"></span><br><span class="line">ggplot(data = MDS_xy.df, aes(MDS_1,MDS_2,color=tissue)) + </span><br><span class="line">  geom_point()  + </span><br><span class="line">  geom_text(aes(label=tissue)) + </span><br><span class="line">  theme_bw()</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>toolsLearning</category>
+        <category>Bioinfo</category>
       </categories>
       <tags>
-        <tag>Adobe Illustrator</tag>
+        <tag>Stat</tag>
       </tags>
   </entry>
   <entry>
-    <title>TOEFL-writing-01</title>
-    <url>/2021/02/18/TOEFL-writing-01/</url>
-    <content><![CDATA[<h1 id="全文结构"><a href="#全文结构" class="headerlink" title="全文结构"></a>全文结构</h1><p> 开头段&lt;60&gt;<br>     总论点1&lt;160&gt;（分论点1+分论点2）<br>     总论点2&lt;160&gt;（分论点1+分论点2）<br> 结尾段&lt;60&gt;</p>
-<blockquote>
-<p>例1：Some students enjoy taking distance learning courses on the computer or television. Other students would rather take all of their courses with a teacher in classroom. Which is these options do you think is better?</p>
-</blockquote>
-<p>破题：</p>
+    <title>Stat-02-tSNE</title>
+    <url>/2021/02/23/Stat-02-tSNE/</url>
+    <content><![CDATA[<h1 id="线性降维与非线性降维"><a href="#线性降维与非线性降维" class="headerlink" title="线性降维与非线性降维"></a><strong>线性降维与非线性降维</strong></h1><ul>
+<li>线性降维(Linear dimensionality reduction)<ul>
+<li>主成分分析(PCA)</li>
+<li>多维坐标变换(MDS)</li>
+<li>聚类分析(Clustering)</li>
+</ul>
+</li>
+<li>非线性降维(Nonlinear dimensionality reduction)<ul>
+<li>lsomap (等度量映射)</li>
+<li>LLE (局部线性嵌入)</li>
+<li>t-SNE (t分布-随机近邻嵌入)</li>
+</ul>
+</li>
+</ul>
+<p>非线性降维属于流形学习的一部分（流形是局部具有欧几里得空间性质的空间，流形学习是指把高位空间整到低维去，使得欧氏距离重新生效，MDS是保留原有距离特征）</p>
+<hr>
+<h1 id="t-SNE的直观理解"><a href="#t-SNE的直观理解" class="headerlink" title="t-SNE的直观理解"></a>t-SNE的直观理解</h1><p><a href="https://www.seas.harvard.edu/courses/cs281/papers/tsne.pdf">Visualizing data using t-SNE, Laurens van der Maaten and Geoffrey Hintton, Journel of machine learning research, 2008.</a></p>
 <ol>
-<li>why：理由说（在线教育为什么好）</li>
-<li>切逻辑终点(good)：方面说（好在什么方面）</li>
-<li>切逻辑起点(distance learning)：方面说（有哪些种在线教育）</li>
+<li>随机选择起始点;</li>
+<li>计算高维空间这些样本点的概率分布F1;</li>
+<li>计算低维空间这些样本点的概率分布F2;</li>
+<li>迭代:如果能够使F1与F2概率分布尽可能的接近则降维成功</li>
 </ol>
-<p>观点：在线教育好</p>
-<ul>
-<li>对学生学习好<ul>
-<li>能获得很多的知识</li>
-<li>能激发学生学习兴趣</li>
+<hr>
+<h1 id="信息熵与KL散度"><a href="#信息熵与KL散度" class="headerlink" title="信息熵与KL散度"></a>信息熵与KL散度</h1><h2 id="信息熵"><a href="#信息熵" class="headerlink" title="信息熵"></a>信息熵</h2><p>衡量不确定性的大小，信息熵越大，携带的不确定性越多</p>
+<h2 id="KL散度-Kullback-Leibler-Divergence"><a href="#KL散度-Kullback-Leibler-Divergence" class="headerlink" title="KL散度(Kullback-Leibler Divergence)"></a>KL散度(Kullback-Leibler Divergence)</h2><p>也叫相对熵，利用KL散度来衡量两个分布是否相似</p>
+<p>e.g. 正常样本与癌症样本 D(KL)计算dist——&gt; MDS可视化 D(KL)&gt;0.5发生变化</p>
+<hr>
+<h1 id="SNE的数学过程"><a href="#SNE的数学过程" class="headerlink" title="SNE的数学过程"></a>SNE的数学过程</h1><ol>
+<li>先通过欧氏距离表示点的概率分布，分低维和高维情况；</li>
+<li>目标是希望高维和低维之间的分布尽可能相同；</li>
+<li>初始化时需要设置参数<strong>困惑度</strong>(perplrxity),SNE会通过二分搜索的方法计算最佳的初始化方差，一般困惑度选择5~50；</li>
+<li>对目标函数进行迭代优化，可以增加扰动，防止局部最优；</li>
+</ol>
+<hr>
+<h1 id="t-SNE相对于SNE的提升"><a href="#t-SNE相对于SNE的提升" class="headerlink" title="t-SNE相对于SNE的提升"></a>t-SNE相对于SNE的提升</h1><ol>
+<li>t-SNE解决了概率不对成的问题，高位情况下Pij为对称；</li>
+<li>t-SNE使用t分布作为降维后的概率分布（SNE用的是正态分布）</li>
+</ol>
+<hr>
+<h1 id="t-SNE的优缺点"><a href="#t-SNE的优缺点" class="headerlink" title="t-SNE的优缺点"></a>t-SNE的优缺点</h1><ul>
+<li>优点:<ul>
+<li>非常优秀的降维可视化方法，对各种数据集的表现都非常好!</li>
 </ul>
 </li>
-<li>对学生个人发展好<ul>
-<li>培养人际交往能力</li>
-<li>培养坚持不懈</li>
+<li>缺点:<ul>
+<li>基本只用于可视化;</li>
+<li>t-SNE倾向保留局部特征，有的时候会“只见树木不见森林”（可以先做pca）;</li>
+<li>t-SNE结果中的距离没有太大意义，因为都是计算的概率;</li>
+<li>t-SNE训练速度比较慢</li>
+</ul>
+</li>
+<li>特点:<ul>
+<li>受初值影响（调试时需要set.seed）</li>
 </ul>
 </li>
 </ul>
 <hr>
-<h1 id="开头段"><a href="#开头段" class="headerlink" title="开头段"></a>开头段</h1><h2 id="现象引入"><a href="#现象引入" class="headerlink" title="现象引入"></a>现象引入</h2><p>N，同位语，has been valued and even triggers a heated discussion over…题目改写：</p>
-<ul>
-<li><p>N：</p>
-<ul>
-<li>话题词汇（在线教育）</li>
-<li>从题目中选择的中性词汇（教育、上课方式等）</li>
-</ul>
-</li>
-<li><p>同位语</p>
-<ul>
-<li>N为中性词：the fundation of a quality life</li>
-<li>N为褒义词：the objective everyone strives for</li>
-</ul>
-</li>
-<li><p>over(whether/what引导的)名词性从句</p>
-</li>
-</ul>
-<blockquote>
-<p>Education, the foundation of a quality life, <strong>has been valued and even triggers a heated discussion over</strong> whether students should take courses online or in classrooms. (现象引入)</p>
-</blockquote>
-<h2 id="对方观点"><a href="#对方观点" class="headerlink" title="对方观点"></a>对方观点</h2><p>主语， in some people’s view,…<br>仅需阐明现象，不用加理由</p>
-<blockquote>
-<p>Learning in traditional classrooms, <strong>in some people’s views</strong>, continues to be an effective way.</p>
-</blockquote>
-<h2 id="自己观点"><a href="#自己观点" class="headerlink" title="自己观点"></a>自己观点</h2><p>Contrary to these people’s opinions is my perspective that …, due to … (e.g. due to the contributions to果/ due to因/ including小)</p>
-<blockquote>
-<p><strong>Contrary to these people’s opinions is my perspective that</strong> online learning, which requires students to attend classes on computers or televisions, is superior, <strong>due to the contributions to</strong> their academic performance <strong>and</strong> personal development. (自己观点)</p>
-</blockquote>
-<hr>
-<h1 id="中间段"><a href="#中间段" class="headerlink" title="中间段"></a>中间段</h1><h2 id="总论点1"><a href="#总论点1" class="headerlink" title="总论点1"></a>总论点1</h2><p>看图说话：在线教育对学生学习好<br>加对比和分论点</p>
-<blockquote>
-<p><strong>What must be prioritized is that</strong> taking distance-learning courses, instead of having courses in traditional classrooms, is beneficial to students’ academic learning, by offering them more knowledge and triggering their enthusiasm in learning. (总论点)</p>
-</blockquote>
-<h3 id="分论点1"><a href="#分论点1" class="headerlink" title="分论点1"></a>分论点1</h3><p>短句</p>
-<blockquote>
-<p>**To begin with,**it is online education that provides students with the access to a large quantity of expertises. </p>
-</blockquote>
-<h3 id="解释1"><a href="#解释1" class="headerlink" title="解释1"></a>解释1</h3><p>长句<br>diatance learning ——&gt; knowledge<br>理由说：有search engine<br>方面说：学生能获得什么知识</p>
-<p>针对正面的论证写反面</p>
-<blockquote>
-<p><strong>To begin with,</strong> it is online education that provides students with the access to a large quantity of expertise. (分论点1) <strong>In detail,</strong> on the Internet, students can acquire a wide range of knowledge in history, art and science, enlarging their knowledge base; <strong>in contrast,</strong> such a large amount of knowledge cannot be obtained when they are instructed by only one teacher in concrete classrooms. (解释1+反面对比)</p>
-</blockquote>
-<h3 id="分论点2"><a href="#分论点2" class="headerlink" title="分论点2"></a>分论点2</h3><p>短句</p>
-<blockquote>
-<p><strong>Moreover,</strong> never can we ignore the significance of distance ducation to students’ interest in learning. (分论点2 ) </p>
-</blockquote>
-<h3 id="解释2"><a href="#解释2" class="headerlink" title="解释2"></a>解释2</h3><p>长句<br>diatance learning ——&gt; interests<br>对于学习哪些方面有兴趣</p>
-<blockquote>
-<p><strong>To explain it further,</strong> by receiving education on the Internet, students will find it more interesting to deal with mathematical problems, do research, and write proposals; <strong>on the other hand,</strong> will they be passionate about these tasks when teachers always lecture in brick-and-mortar classrooms? ( 解释2 )</p>
-</blockquote>
-<h2 id="总论点2"><a href="#总论点2" class="headerlink" title="总论点2"></a>总论点2</h2><p>personal deve.</p>
-<blockquote>
-<p><strong>What should be equally worth discussing is that</strong> receiving distance education, rather than having traditional face-to-face courses, can promote students’ personal development, by honing their interpersonal skills and cultivating their persistence. ( 总论点)</p>
-</blockquote>
-<h3 id="分论点1-1"><a href="#分论点1-1" class="headerlink" title="分论点1"></a>分论点1</h3><blockquote>
-<p><strong>To begin with,</strong> it is well-acknowledged taht educated on the Internet, students can practice their communication skills.</p>
-</blockquote>
-<h3 id="解释1-1"><a href="#解释1-1" class="headerlink" title="解释1"></a>解释1</h3><p>distance ——&gt; interpersonal<br>为什么能够培养社交能力</p>
-<blockquote>
-<p><strong>Specifically,</strong> only in online learning environments will students come across peop;e from diverse backgrounds, such as classmates, instructors and school administrators, with whom they can practice their tactics of socializing; <strong>on the contrary</strong>, under no circumstances will they interact with such a variety of people if they are educated in traditional classroom settings.</p>
-</blockquote>
-<h3 id="分论点2-1"><a href="#分论点2-1" class="headerlink" title="分论点2"></a>分论点2</h3><p>distance learning ——&gt; persistence<br>理由说：为什么会变的persistence</p>
-<blockquote>
-<p><strong>Additionally</strong>, when having a distance education program,students will become more determined. ( 分论点2 ) </p>
-</blockquote>
-<h3 id="解释2-1"><a href="#解释2-1" class="headerlink" title="解释2"></a>解释2</h3><p><strong>To be more specific</strong>, the more distance-learning courses they take on the Internet, the more distractions they will be exposed to, stimulating them to resist temptations and foster their persistence; however, it is impossible for them to encounter these lures in traditional classrooms.</p>
-<h1 id="结尾段"><a href="#结尾段" class="headerlink" title="结尾段"></a>结尾段</h1><blockquote>
-<p>Academic performance, <strong>the foundation of students’ future development</strong>, will be boosted when they receive online education. (总结总论点1) Personal development, <strong>essential contributors to students’ future success</strong>, will be<br>facilitated, if they are educated on the Internet. (总结总论<br>点2) <strong>To conclude, only by</strong> having distance education,<br><strong>instead of</strong> being taught in classrooms, <strong>can</strong> students reap numerous benefits. (总结全文)</p>
-</blockquote>
-<h1 id="模板总结"><a href="#模板总结" class="headerlink" title="模板总结"></a>模板总结</h1><h2 id="开头段-1"><a href="#开头段-1" class="headerlink" title="开头段"></a>开头段</h2><ol>
-<li>…, 同位语, has been valued and even triggers a heated discussion over …</li>
-<li>…, in some/many people’s view,…</li>
-<li>Contrary to these people’s opinions is my perspective that …, due to the contributions to … and …<h2 id="中间段-1"><a href="#中间段-1" class="headerlink" title="中间段"></a>中间段</h2></li>
-<li>What must be prioritized is that … /What is equally worth discussion is that…</li>
-<li>Initially/ Firstly /To begin with,</li>
-<li>To be more specific, /Specifically, / In detail, /To explain it further… + however, /in contrast, /on the contrary,/on the other hand,<h2 id="结尾段-1"><a href="#结尾段-1" class="headerlink" title="结尾段"></a>结尾段</h2></li>
-<li>第一个理由，同位语，will…</li>
-<li>第二个理由，同位语，will…</li>
-<li>In conclusion, only + 状语 + 半倒装</li>
-</ol>
-]]></content>
+<h1 id="R语言计算t-SNE"><a href="#R语言计算t-SNE" class="headerlink" title="R语言计算t-SNE"></a>R语言计算t-SNE</h1><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment">#########################</span></span><br><span class="line"><span class="comment"># Data 2021-02-27</span></span><br><span class="line"><span class="comment"># Author zhangyl</span></span><br><span class="line"><span class="comment"># t-SNE</span></span><br><span class="line"><span class="comment">#########################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># load package </span></span><br><span class="line">library(Rtsne)</span><br><span class="line"></span><br><span class="line">SD.vector &lt;- apply(GTEx.TPM.gene.mat[,<span class="built_in">c</span>(-<span class="number">1</span>,-<span class="number">2</span>)],<span class="number">1</span>,FUN=<span class="keyword">function</span>(x)&#123;sd(x)&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># select top3000</span></span><br><span class="line">GTEx.TPM.gene.mat.log2 &lt;- log2(GTEx.TPM.gene.mat[,<span class="built_in">c</span>(-<span class="number">1</span>,-<span class="number">2</span>)]+<span class="number">1</span>)</span><br><span class="line">GTEx.TPM.gene.mat.log2.top3000 &lt;- GTEx.TPM.gene.mat.log2[order(SD.vector,decreasing = <span class="built_in">F</span>),]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Rtsne()</span></span><br><span class="line"><span class="comment"># matrix 行是基因，列是variables</span></span><br><span class="line"><span class="comment"># perplexity 5~50</span></span><br><span class="line"></span><br><span class="line">set.seed(<span class="number">20210227</span>)</span><br><span class="line">tSNE_res &lt;- Rtsne(t(GTEx.TPM.gene.mat.log2.top3000),dims = <span class="number">3</span>,perplexity = <span class="number">10</span>,pca = <span class="built_in">T</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># plot region </span></span><br><span class="line">tSNE_res.df &lt;- as.data.frame(tSNE_res$Y)</span><br><span class="line">colnames(tSNE_res.df) &lt;- <span class="built_in">c</span>(<span class="string">&quot;tSNE1&quot;</span>,<span class="string">&quot;tSNE2&quot;</span>,<span class="string">&quot;tSNE3&quot;</span>)</span><br><span class="line">tSNE_res.df$tissue &lt;- tissue_info</span><br><span class="line"></span><br><span class="line">ggplot(data = tSNE_res.df, aes(tSNE1,tSNE2,color=tissue)) + </span><br><span class="line">  geom_point()  + </span><br><span class="line">  geom_text(aes(label=tissue)) + </span><br><span class="line">  theme_bw()</span><br><span class="line"></span><br><span class="line">ggplot(data = tSNE_res.df, aes(tSNE1,tSNE3,color=tissue)) + </span><br><span class="line">  geom_point()  + </span><br><span class="line">  geom_text(aes(label=tissue)) + </span><br><span class="line">  theme_bw()</span><br><span class="line"></span><br><span class="line">ggplot(data = tSNE_res.df, aes(tSNE2,tSNE3,color=tissue)) + </span><br><span class="line">  geom_point()  + </span><br><span class="line">  geom_text(aes(label=tissue)) + </span><br><span class="line">  theme_bw()</span><br><span class="line"></span><br><span class="line"><span class="comment"># use plotly (3D)</span></span><br><span class="line">library(plotly)</span><br><span class="line"></span><br><span class="line">p &lt;- plot_ly(tSNE_res.df, x = ~tSNE1, y = ~tSNE2, z = ~tSNE3, color = ~tissue) %&gt;%</span><br><span class="line">  add_markers() %&gt;%</span><br><span class="line">  layout(scene = <span class="built_in">list</span>(xaxis = <span class="built_in">list</span>(title = <span class="string">&#x27;tSNE1&#x27;</span>),</span><br><span class="line">                      yaxis = <span class="built_in">list</span>(title = <span class="string">&#x27;tSNE2&#x27;</span>),</span><br><span class="line">                      zaxis = <span class="built_in">list</span>(title = <span class="string">&#x27;tSNE3&#x27;</span>)))</span><br><span class="line">p</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>TOEFL</category>
+        <category>Bioinfo</category>
       </categories>
       <tags>
-        <tag>TOEFL</tag>
+        <tag>Stat</tag>
       </tags>
   </entry>
   <entry>
@@ -340,23 +316,6 @@
       </tags>
   </entry>
   <entry>
-    <title>TOEFL-writing-02</title>
-    <url>/2021/02/20/TOEFL-writing-02/</url>
-    <content><![CDATA[<h1 id="笔记概述"><a href="#笔记概述" class="headerlink" title="笔记概述"></a>笔记概述</h1><ol>
-<li>专有名词<br> 固定说法，很难找到同义词的名词</li>
-</ol>
-<hr>
-<h1 id="综合概述"><a href="#综合概述" class="headerlink" title="综合概述"></a>综合概述</h1><hr>
-<h1 id="阅读笔记"><a href="#阅读笔记" class="headerlink" title="阅读笔记"></a>阅读笔记</h1><hr>
-<h1 id="听力笔记"><a href="#听力笔记" class="headerlink" title="听力笔记"></a>听力笔记</h1>]]></content>
-      <categories>
-        <category>TOEFL</category>
-      </categories>
-      <tags>
-        <tag>TOEFL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>TOEFL-Wordlist</title>
     <url>/2021/02/20/TOEFL-Wordlist/</url>
     <content><![CDATA[<p>210220</p>
@@ -443,99 +402,140 @@
       </tags>
   </entry>
   <entry>
+    <title>TOEFL-writing-01</title>
+    <url>/2021/02/18/TOEFL-writing-01/</url>
+    <content><![CDATA[<h1 id="全文结构"><a href="#全文结构" class="headerlink" title="全文结构"></a>全文结构</h1><p> 开头段&lt;60&gt;<br>     总论点1&lt;160&gt;（分论点1+分论点2）<br>     总论点2&lt;160&gt;（分论点1+分论点2）<br> 结尾段&lt;60&gt;</p>
+<blockquote>
+<p>例1：Some students enjoy taking distance learning courses on the computer or television. Other students would rather take all of their courses with a teacher in classroom. Which is these options do you think is better?</p>
+</blockquote>
+<p>破题：</p>
+<ol>
+<li>why：理由说（在线教育为什么好）</li>
+<li>切逻辑终点(good)：方面说（好在什么方面）</li>
+<li>切逻辑起点(distance learning)：方面说（有哪些种在线教育）</li>
+</ol>
+<p>观点：在线教育好</p>
+<ul>
+<li>对学生学习好<ul>
+<li>能获得很多的知识</li>
+<li>能激发学生学习兴趣</li>
+</ul>
+</li>
+<li>对学生个人发展好<ul>
+<li>培养人际交往能力</li>
+<li>培养坚持不懈</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="开头段"><a href="#开头段" class="headerlink" title="开头段"></a>开头段</h1><h2 id="现象引入"><a href="#现象引入" class="headerlink" title="现象引入"></a>现象引入</h2><p>N，同位语，has been valued and even triggers a heated discussion over…题目改写：</p>
+<ul>
+<li><p>N：</p>
+<ul>
+<li>话题词汇（在线教育）</li>
+<li>从题目中选择的中性词汇（教育、上课方式等）</li>
+</ul>
+</li>
+<li><p>同位语</p>
+<ul>
+<li>N为中性词：the fundation of a quality life</li>
+<li>N为褒义词：the objective everyone strives for</li>
+</ul>
+</li>
+<li><p>over(whether/what引导的)名词性从句</p>
+</li>
+</ul>
+<blockquote>
+<p>Education, the foundation of a quality life, <strong>has been valued and even triggers a heated discussion over</strong> whether students should take courses online or in classrooms. (现象引入)</p>
+</blockquote>
+<h2 id="对方观点"><a href="#对方观点" class="headerlink" title="对方观点"></a>对方观点</h2><p>主语， in some people’s view,…<br>仅需阐明现象，不用加理由</p>
+<blockquote>
+<p>Learning in traditional classrooms, <strong>in some people’s views</strong>, continues to be an effective way.</p>
+</blockquote>
+<h2 id="自己观点"><a href="#自己观点" class="headerlink" title="自己观点"></a>自己观点</h2><p>Contrary to these people’s opinions is my perspective that …, due to … (e.g. due to the contributions to果/ due to因/ including小)</p>
+<blockquote>
+<p><strong>Contrary to these people’s opinions is my perspective that</strong> online learning, which requires students to attend classes on computers or televisions, is superior, <strong>due to the contributions to</strong> their academic performance <strong>and</strong> personal development. (自己观点)</p>
+</blockquote>
+<hr>
+<h1 id="中间段"><a href="#中间段" class="headerlink" title="中间段"></a>中间段</h1><h2 id="总论点1"><a href="#总论点1" class="headerlink" title="总论点1"></a>总论点1</h2><p>看图说话：在线教育对学生学习好<br>加对比和分论点</p>
+<blockquote>
+<p><strong>What must be prioritized is that</strong> taking distance-learning courses, instead of having courses in traditional classrooms, is beneficial to students’ academic learning, by offering them more knowledge and triggering their enthusiasm in learning. (总论点)</p>
+</blockquote>
+<h3 id="分论点1"><a href="#分论点1" class="headerlink" title="分论点1"></a>分论点1</h3><p>短句</p>
+<blockquote>
+<p>**To begin with,**it is online education that provides students with the access to a large quantity of expertises. </p>
+</blockquote>
+<h3 id="解释1"><a href="#解释1" class="headerlink" title="解释1"></a>解释1</h3><p>长句<br>diatance learning ——&gt; knowledge<br>理由说：有search engine<br>方面说：学生能获得什么知识</p>
+<p>针对正面的论证写反面</p>
+<blockquote>
+<p><strong>To begin with,</strong> it is online education that provides students with the access to a large quantity of expertise. (分论点1) <strong>In detail,</strong> on the Internet, students can acquire a wide range of knowledge in history, art and science, enlarging their knowledge base; <strong>in contrast,</strong> such a large amount of knowledge cannot be obtained when they are instructed by only one teacher in concrete classrooms. (解释1+反面对比)</p>
+</blockquote>
+<h3 id="分论点2"><a href="#分论点2" class="headerlink" title="分论点2"></a>分论点2</h3><p>短句</p>
+<blockquote>
+<p><strong>Moreover,</strong> never can we ignore the significance of distance ducation to students’ interest in learning. (分论点2 ) </p>
+</blockquote>
+<h3 id="解释2"><a href="#解释2" class="headerlink" title="解释2"></a>解释2</h3><p>长句<br>diatance learning ——&gt; interests<br>对于学习哪些方面有兴趣</p>
+<blockquote>
+<p><strong>To explain it further,</strong> by receiving education on the Internet, students will find it more interesting to deal with mathematical problems, do research, and write proposals; <strong>on the other hand,</strong> will they be passionate about these tasks when teachers always lecture in brick-and-mortar classrooms? ( 解释2 )</p>
+</blockquote>
+<h2 id="总论点2"><a href="#总论点2" class="headerlink" title="总论点2"></a>总论点2</h2><p>personal deve.</p>
+<blockquote>
+<p><strong>What should be equally worth discussing is that</strong> receiving distance education, rather than having traditional face-to-face courses, can promote students’ personal development, by honing their interpersonal skills and cultivating their persistence. ( 总论点)</p>
+</blockquote>
+<h3 id="分论点1-1"><a href="#分论点1-1" class="headerlink" title="分论点1"></a>分论点1</h3><blockquote>
+<p><strong>To begin with,</strong> it is well-acknowledged taht educated on the Internet, students can practice their communication skills.</p>
+</blockquote>
+<h3 id="解释1-1"><a href="#解释1-1" class="headerlink" title="解释1"></a>解释1</h3><p>distance ——&gt; interpersonal<br>为什么能够培养社交能力</p>
+<blockquote>
+<p><strong>Specifically,</strong> only in online learning environments will students come across peop;e from diverse backgrounds, such as classmates, instructors and school administrators, with whom they can practice their tactics of socializing; <strong>on the contrary</strong>, under no circumstances will they interact with such a variety of people if they are educated in traditional classroom settings.</p>
+</blockquote>
+<h3 id="分论点2-1"><a href="#分论点2-1" class="headerlink" title="分论点2"></a>分论点2</h3><p>distance learning ——&gt; persistence<br>理由说：为什么会变的persistence</p>
+<blockquote>
+<p><strong>Additionally</strong>, when having a distance education program,students will become more determined. ( 分论点2 ) </p>
+</blockquote>
+<h3 id="解释2-1"><a href="#解释2-1" class="headerlink" title="解释2"></a>解释2</h3><p><strong>To be more specific</strong>, the more distance-learning courses they take on the Internet, the more distractions they will be exposed to, stimulating them to resist temptations and foster their persistence; however, it is impossible for them to encounter these lures in traditional classrooms.</p>
+<h1 id="结尾段"><a href="#结尾段" class="headerlink" title="结尾段"></a>结尾段</h1><blockquote>
+<p>Academic performance, <strong>the foundation of students’ future development</strong>, will be boosted when they receive online education. (总结总论点1) Personal development, <strong>essential contributors to students’ future success</strong>, will be<br>facilitated, if they are educated on the Internet. (总结总论<br>点2) <strong>To conclude, only by</strong> having distance education,<br><strong>instead of</strong> being taught in classrooms, <strong>can</strong> students reap numerous benefits. (总结全文)</p>
+</blockquote>
+<h1 id="模板总结"><a href="#模板总结" class="headerlink" title="模板总结"></a>模板总结</h1><h2 id="开头段-1"><a href="#开头段-1" class="headerlink" title="开头段"></a>开头段</h2><ol>
+<li>…, 同位语, has been valued and even triggers a heated discussion over …</li>
+<li>…, in some/many people’s view,…</li>
+<li>Contrary to these people’s opinions is my perspective that …, due to the contributions to … and …<h2 id="中间段-1"><a href="#中间段-1" class="headerlink" title="中间段"></a>中间段</h2></li>
+<li>What must be prioritized is that … /What is equally worth discussion is that…</li>
+<li>Initially/ Firstly /To begin with,</li>
+<li>To be more specific, /Specifically, / In detail, /To explain it further… + however, /in contrast, /on the contrary,/on the other hand,<h2 id="结尾段-1"><a href="#结尾段-1" class="headerlink" title="结尾段"></a>结尾段</h2></li>
+<li>第一个理由，同位语，will…</li>
+<li>第二个理由，同位语，will…</li>
+<li>In conclusion, only + 状语 + 半倒装</li>
+</ol>
+]]></content>
+      <categories>
+        <category>TOEFL</category>
+      </categories>
+      <tags>
+        <tag>TOEFL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>TOEFL-writing-02</title>
+    <url>/2021/02/20/TOEFL-writing-02/</url>
+    <content><![CDATA[<h1 id="笔记概述"><a href="#笔记概述" class="headerlink" title="笔记概述"></a>笔记概述</h1><ol>
+<li>专有名词<br> 固定说法，很难找到同义词的名词</li>
+</ol>
+<hr>
+<h1 id="综合概述"><a href="#综合概述" class="headerlink" title="综合概述"></a>综合概述</h1><hr>
+<h1 id="阅读笔记"><a href="#阅读笔记" class="headerlink" title="阅读笔记"></a>阅读笔记</h1><hr>
+<h1 id="听力笔记"><a href="#听力笔记" class="headerlink" title="听力笔记"></a>听力笔记</h1>]]></content>
+      <categories>
+        <category>TOEFL</category>
+      </categories>
+      <tags>
+        <tag>TOEFL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>TOEFL-writing-03</title>
     <url>/2021/02/20/TOEFL-writing-03/</url>
     <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>Stat-01-MDS</title>
-    <url>/2021/02/22/Stat-01-MDS/</url>
-    <content><![CDATA[<p><strong>MDS(Multi-dimetional Scaling, 多维标度法)</strong></p>
-<ul>
-<li><p>核心目的:<br>对于距离矩阵D,在低维空间中寻找一个矩阵Z，使得Z构成的欧式距离矩阵B尽可能和原来矩阵D保持一致。此种多维标度法也被称为主坐标分析。（把所有的距离矩阵，找一个低维的欧氏距离去接近）</p>
-</li>
-<li><p>具体推导详见goodnote笔记</p>
-</li>
-<li><p>R语言通过MDS对GTEx数据进行降维</p>
-</li>
-<li><p>当dist矩阵本身为欧氏距离时，MDS == PCA<br>MDS更强调对不同种类的dist转换<br>PCA强调用线性组合表示variable</p>
-</li>
-</ul>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment">#########################</span></span><br><span class="line"><span class="comment"># Data 2021-02-22</span></span><br><span class="line"><span class="comment"># Author zhangyl</span></span><br><span class="line"><span class="comment"># MDS and t-SNE</span></span><br><span class="line"><span class="comment">#########################</span></span><br><span class="line"></span><br><span class="line">rm(<span class="built_in">list</span> = ls())</span><br><span class="line"></span><br><span class="line"><span class="comment"># -----------------------------------&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span></span><br><span class="line"><span class="comment"># MDS</span></span><br><span class="line"><span class="comment"># -----------------------------------&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span></span><br><span class="line">load(<span class="string">&quot;./data/GTEx.RData&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># tissue的注释文件</span></span><br><span class="line">accession.df = read.csv(file=<span class="string">&quot;./data/GTEx_accession_table.csv&quot;</span>)</span><br><span class="line">annotation.df = read.csv(file=<span class="string">&quot;./data/GTEx_v7_Annotations_SampleAttributesDS.txt&quot;</span>,header = <span class="built_in">T</span>,sep = <span class="string">&quot;\t&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># make matrix </span></span><br><span class="line">GTEx.TPM.gene.mat.only_TPM = log2(GTEx.TPM.gene.mat[,<span class="built_in">c</span>(-<span class="number">1</span>,-<span class="number">2</span>)]+<span class="number">1</span>)</span><br><span class="line">rownames(GTEx.TPM.gene.mat.only_TPM) = <span class="built_in">as.character</span>(GTEx.TPM.gene.mat$Name)</span><br><span class="line"></span><br><span class="line"><span class="comment"># get tissue info </span></span><br><span class="line">tissue_info = <span class="built_in">as.character</span>(annotation.df$SMTS[match(accession_id_vec,annotation.df$SAMPID)])</span><br><span class="line"></span><br><span class="line"><span class="comment"># run MDS</span></span><br><span class="line">dist.mat = dist(t(GTEx.TPM.gene.mat.only_TPM), method = <span class="string">&quot;minkowski&quot;</span>, p=<span class="number">5</span>)</span><br><span class="line">dist.mat = <span class="built_in">sqrt</span>(<span class="number">2</span>*(<span class="number">1</span> - <span class="built_in">abs</span>(cor(GTEx.TPM.gene.mat.only_TPM,method = <span class="string">&quot;kendall&quot;</span>))))</span><br><span class="line"></span><br><span class="line">MDS_res = cmdscale(dist.mat,eig=<span class="literal">TRUE</span>, k=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">MDS_xy.df = data.frame(MDS_1 = MDS_res$points[,<span class="number">1</span>],</span><br><span class="line">                       MDS_2 = MDS_res$points[,<span class="number">2</span>],</span><br><span class="line">                       tissue = factor(tissue_info))</span><br><span class="line"></span><br><span class="line"><span class="comment"># plot with ggplot2</span></span><br><span class="line">library(ggplot2)</span><br><span class="line"></span><br><span class="line">ggplot(data = MDS_xy.df, aes(MDS_1,MDS_2,color=tissue)) + </span><br><span class="line">  geom_point()  + </span><br><span class="line">  geom_text(aes(label=tissue)) + </span><br><span class="line">  theme_bw()</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Bioinfo</category>
-      </categories>
-      <tags>
-        <tag>Stat</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Stat-02-tSNE</title>
-    <url>/2021/02/23/Stat-02-tSNE/</url>
-    <content><![CDATA[<h1 id="线性降维与非线性降维"><a href="#线性降维与非线性降维" class="headerlink" title="线性降维与非线性降维"></a><strong>线性降维与非线性降维</strong></h1><ul>
-<li>线性降维(Linear dimensionality reduction)<ul>
-<li>主成分分析(PCA)</li>
-<li>多维坐标变换(MDS)</li>
-<li>聚类分析(Clustering)</li>
-</ul>
-</li>
-<li>非线性降维(Nonlinear dimensionality reduction)<ul>
-<li>lsomap (等度量映射)</li>
-<li>LLE (局部线性嵌入)</li>
-<li>t-SNE (t分布-随机近邻嵌入)</li>
-</ul>
-</li>
-</ul>
-<p>非线性降维属于流形学习的一部分（流形是局部具有欧几里得空间性质的空间，流形学习是指把高位空间整到低维去，使得欧氏距离重新生效，MDS是保留原有距离特征）</p>
-<hr>
-<h1 id="t-SNE的直观理解"><a href="#t-SNE的直观理解" class="headerlink" title="t-SNE的直观理解"></a>t-SNE的直观理解</h1><p><a href="https://www.seas.harvard.edu/courses/cs281/papers/tsne.pdf">Visualizing data using t-SNE, Laurens van der Maaten and Geoffrey Hintton, Journel of machine learning research, 2008.</a></p>
-<ol>
-<li>随机选择起始点;</li>
-<li>计算高维空间这些样本点的概率分布F1;</li>
-<li>计算低维空间这些样本点的概率分布F2;</li>
-<li>迭代:如果能够使F1与F2概率分布尽可能的接近则降维成功</li>
-</ol>
-<hr>
-<h1 id="信息熵与KL散度"><a href="#信息熵与KL散度" class="headerlink" title="信息熵与KL散度"></a>信息熵与KL散度</h1><h2 id="信息熵"><a href="#信息熵" class="headerlink" title="信息熵"></a>信息熵</h2><p>衡量不确定性的大小，信息熵越大，携带的不确定性越多</p>
-<h2 id="KL散度-Kullback-Leibler-Divergence"><a href="#KL散度-Kullback-Leibler-Divergence" class="headerlink" title="KL散度(Kullback-Leibler Divergence)"></a>KL散度(Kullback-Leibler Divergence)</h2><p>也叫相对熵，利用KL散度来衡量两个分布是否相似</p>
-<p>e.g. 正常样本与癌症样本 D(KL)计算dist——&gt; MDS可视化 D(KL)&gt;0.5发生变化</p>
-<hr>
-<h1 id="SNE的数学过程"><a href="#SNE的数学过程" class="headerlink" title="SNE的数学过程"></a>SNE的数学过程</h1><ol>
-<li>先通过欧氏距离表示点的概率分布，分低维和高维情况；</li>
-<li>目标是希望高维和低维之间的分布尽可能相同；</li>
-<li>初始化时需要设置参数<strong>困惑度</strong>(perplrxity),SNE会通过二分搜索的方法计算最佳的初始化方差，一般困惑度选择5~50；</li>
-<li>对目标函数进行迭代优化，可以增加扰动，防止局部最优；</li>
-</ol>
-<hr>
-<h1 id="t-SNE相对于SNE的提升"><a href="#t-SNE相对于SNE的提升" class="headerlink" title="t-SNE相对于SNE的提升"></a>t-SNE相对于SNE的提升</h1><ol>
-<li>t-SNE解决了概率不对成的问题，高位情况下Pij为对称；</li>
-<li>t-SNE使用t分布作为降维后的概率分布（SNE用的是正态分布）</li>
-</ol>
-<hr>
-<h1 id="t-SNE的优缺点"><a href="#t-SNE的优缺点" class="headerlink" title="t-SNE的优缺点"></a>t-SNE的优缺点</h1><ul>
-<li>优点:<ul>
-<li>非常优秀的降维可视化方法，对各种数据集的表现都非常好!</li>
-</ul>
-</li>
-<li>缺点:<ul>
-<li>基本只用于可视化;</li>
-<li>t-SNE倾向保留局部特征，有的时候会“只见树木不见森林”（可以先做pca）;</li>
-<li>t-SNE结果中的距离没有太大意义，因为都是计算的概率;</li>
-<li>t-SNE训练速度比较慢</li>
-</ul>
-</li>
-<li>特点:<ul>
-<li>受初值影响（调试时需要set.seed）</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="R语言计算t-SNE"><a href="#R语言计算t-SNE" class="headerlink" title="R语言计算t-SNE"></a>R语言计算t-SNE</h1><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment">#########################</span></span><br><span class="line"><span class="comment"># Data 2021-02-27</span></span><br><span class="line"><span class="comment"># Author zhangyl</span></span><br><span class="line"><span class="comment"># t-SNE</span></span><br><span class="line"><span class="comment">#########################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># load package </span></span><br><span class="line">library(Rtsne)</span><br><span class="line"></span><br><span class="line">SD.vector &lt;- apply(GTEx.TPM.gene.mat[,<span class="built_in">c</span>(-<span class="number">1</span>,-<span class="number">2</span>)],<span class="number">1</span>,FUN=<span class="keyword">function</span>(x)&#123;sd(x)&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># select top3000</span></span><br><span class="line">GTEx.TPM.gene.mat.log2 &lt;- log2(GTEx.TPM.gene.mat[,<span class="built_in">c</span>(-<span class="number">1</span>,-<span class="number">2</span>)]+<span class="number">1</span>)</span><br><span class="line">GTEx.TPM.gene.mat.log2.top3000 &lt;- GTEx.TPM.gene.mat.log2[order(SD.vector,decreasing = <span class="built_in">F</span>),]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Rtsne()</span></span><br><span class="line"><span class="comment"># matrix 行是基因，列是variables</span></span><br><span class="line"><span class="comment"># perplexity 5~50</span></span><br><span class="line"></span><br><span class="line">set.seed(<span class="number">20210227</span>)</span><br><span class="line">tSNE_res &lt;- Rtsne(t(GTEx.TPM.gene.mat.log2.top3000),dims = <span class="number">3</span>,perplexity = <span class="number">10</span>,pca = <span class="built_in">T</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># plot region </span></span><br><span class="line">tSNE_res.df &lt;- as.data.frame(tSNE_res$Y)</span><br><span class="line">colnames(tSNE_res.df) &lt;- <span class="built_in">c</span>(<span class="string">&quot;tSNE1&quot;</span>,<span class="string">&quot;tSNE2&quot;</span>,<span class="string">&quot;tSNE3&quot;</span>)</span><br><span class="line">tSNE_res.df$tissue &lt;- tissue_info</span><br><span class="line"></span><br><span class="line">ggplot(data = tSNE_res.df, aes(tSNE1,tSNE2,color=tissue)) + </span><br><span class="line">  geom_point()  + </span><br><span class="line">  geom_text(aes(label=tissue)) + </span><br><span class="line">  theme_bw()</span><br><span class="line"></span><br><span class="line">ggplot(data = tSNE_res.df, aes(tSNE1,tSNE3,color=tissue)) + </span><br><span class="line">  geom_point()  + </span><br><span class="line">  geom_text(aes(label=tissue)) + </span><br><span class="line">  theme_bw()</span><br><span class="line"></span><br><span class="line">ggplot(data = tSNE_res.df, aes(tSNE2,tSNE3,color=tissue)) + </span><br><span class="line">  geom_point()  + </span><br><span class="line">  geom_text(aes(label=tissue)) + </span><br><span class="line">  theme_bw()</span><br><span class="line"></span><br><span class="line"><span class="comment"># use plotly (3D)</span></span><br><span class="line">library(plotly)</span><br><span class="line"></span><br><span class="line">p &lt;- plot_ly(tSNE_res.df, x = ~tSNE1, y = ~tSNE2, z = ~tSNE3, color = ~tissue) %&gt;%</span><br><span class="line">  add_markers() %&gt;%</span><br><span class="line">  layout(scene = <span class="built_in">list</span>(xaxis = <span class="built_in">list</span>(title = <span class="string">&#x27;tSNE1&#x27;</span>),</span><br><span class="line">                      yaxis = <span class="built_in">list</span>(title = <span class="string">&#x27;tSNE2&#x27;</span>),</span><br><span class="line">                      zaxis = <span class="built_in">list</span>(title = <span class="string">&#x27;tSNE3&#x27;</span>)))</span><br><span class="line">p</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Bioinfo</category>
-      </categories>
-      <tags>
-        <tag>Stat</tag>
-      </tags>
   </entry>
 </search>
