@@ -73,6 +73,99 @@
       </tags>
   </entry>
   <entry>
+    <title>Functional Genomics-01-BioinfoAna of Transcriptional Regulation</title>
+    <url>/2021/03/02/Functional-Genomics-01-BioinfoAna-of-Transcriptional-Regulation/</url>
+    <content><![CDATA[<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><ol>
+<li><strong>表达(gene expression)</strong>:基因在生物体内的转录、剪接、翻译以及转变成具有生物活性的蛋白质分子之前的所有加工过程。<br>从一套基本不变的基因组中产生出多元化的细胞类型，是由调控基因活性的各种信号途径所控制。</li>
+<li><strong>转录因子(transcr iption factor, TF)</strong>: 也称反式作用因子，有序地结合在目标基因启动子(promoter)序列中的特殊位点，启动<br>基因的转录和控制基因的转录效率。<br> 根据转录因子的作用特点可分为二类:</li>
+</ol>
+<ul>
+<li>普遍转录因子，它们与RNA聚合酶II共同组成转录起始复合体时，转录才能在正确的位置开始。包括TFIID，TFIIA，TFIIF，TFIIE，TFIIH等;</li>
+<li>组织细胞特异性转录因子，这些TF是在特异的组织细胞或是受到一些类固醇激素/生长因子的刺激后，开始表达某些特异蛋白质分子时，才需要的一类转录因子。</li>
+</ul>
+<ol start="3">
+<li><strong>转录因子的结合位点(transcription factor binding site, TFBS)</strong>: 转录因子调节基因表达时，与基因模板链结合的区域，又被称为顺式作用元件。长度从几个到几十个碱基不等。</li>
+<li>**模体(motif)**：转录因子的结合位点的特定模式。不是一段序列</li>
+</ol>
+<hr>
+<h1 id="基因转录调节的基本模式"><a href="#基因转录调节的基本模式" class="headerlink" title="基因转录调节的基本模式"></a>基因转录调节的基本模式</h1><p><img src="/img/article/functionalgenomics/basic.png" alt="basic mode"></p>
+<ol>
+<li>启动子：启动子一般位于真核基因转录起始点上游 200bp以内。包括至少一个转录起始点以及一个以上的机能组件。启动子是基因的一个组成部分，控制基因表达（转录）的起始时间和表达的程度。</li>
+<li>TATA盒：共有序列是TATAAAA，通常位于转录起始点上游-25~-30bp，决定转录的方向和精确的转录起始点。TATA盒是基本转录因子TFIID结合位点。</li>
+<li>上游启动子元件：除TATA盒外，GC盒（GGGCGG）和 CAAT盒（GCCAAT）也是很多基因常见的，它们通常位于转录起始点上游-30~-110bp区域</li>
+<li>RNA聚合酶：以一条DNA链或RNA为模板催化由核苷5′-三磷酸合成RNA的酶。是催化以DNA为模板(template)、三磷酸核糖核苷为底物、通过磷酸二酯键而聚合的合成RNA的酶。</li>
+<li>顺式作用元件(cis-acting element): 存在于基因旁侧序列中能影响基因表达的序列。顺式作用元件包括启动子、增强子、调控序列和可诱导元件等，作用是参与基因表达的调控。顺式作用元件本身不编码任何蛋白质，仅仅提供一个作用位点，要与反式作用因子相互作用而起作用。</li>
+</ol>
+<hr>
+<h1 id="基因转录调节机制的研究方法"><a href="#基因转录调节机制的研究方法" class="headerlink" title="基因转录调节机制的研究方法"></a>基因转录调节机制的研究方法</h1><h2 id="实验方法"><a href="#实验方法" class="headerlink" title="实验方法"></a>实验方法</h2><h3 id="荧光素酶报告基因-luciferase-report-gene-："><a href="#荧光素酶报告基因-luciferase-report-gene-：" class="headerlink" title="荧光素酶报告基因(luciferase report gene)："></a>荧光素酶报告基因(luciferase report gene)：</h3><p>检测转录因子与目的基因启动子区DNA相互作用，荧光素酶的表达量与转录因子的作用强度成正比。 </p>
+<h3 id="凝胶迁移-EMSA-electrophoreticmobility-shift-assays"><a href="#凝胶迁移-EMSA-electrophoreticmobility-shift-assays" class="headerlink" title="凝胶迁移(EMSA, electrophoreticmobility shift assays):"></a>凝胶迁移(EMSA, electrophoreticmobility shift assays):</h3><p>是一种用于蛋白与核酸相互作用的技术，可用于定性和定量分析。最初是用于转录因子与启动子相互作用的验证性实验，也可应用与蛋白DNA、蛋白-RNA互作研究。EMSA主要基于蛋白-探针复合物在在凝胶电泳过程中迁移较慢的原理。</p>
+<h3 id="DNase足迹法-DNase-footprinting-："><a href="#DNase足迹法-DNase-footprinting-：" class="headerlink" title="DNase足迹法(DNase footprinting)："></a>DNase足迹法(DNase footprinting)：</h3><p>鉴别RNA聚合酶等蛋白质在DNA上结合位点的方法。不仅能找到与特异性DNA结合的目标蛋白，而且能告知目标蛋白结合在哪些碱基部位。（原理：蛋白质结合在DNA片段上，能保护结合部位不被DNase破坏，DNA分子经酶切作用后遗留下该片段(亦称“足迹”)，进而可以确定它的序列）</p>
+<h3 id="染色质免疫沉淀-ChIP-chromatin-immunoprecipitation"><a href="#染色质免疫沉淀-ChIP-chromatin-immunoprecipitation" class="headerlink" title="染色质免疫沉淀(ChIP, chromatin immunoprecipitation)"></a>染色质免疫沉淀(ChIP, chromatin immunoprecipitation)</h3><ul>
+<li>创立者: 20世纪80年代末Alexander Varshavsky等人(Cell. 1988,53(6): 937-947 )</li>
+<li>原理:<br>活细胞采用甲醛交联后裂解，染色体分离成为一定大小的片段，然后用特异性抗体免疫沉淀目标蛋白与DNA交联的复合物，对特定靶蛋白与DNA片段进行富集。采用低pH值反交联，DNA与蛋白质之间的Schiff键（-C=N-）水解，释放DNA片段。通过对目标片段的纯化与检测，获得DNA与蛋白质相互作用的序列信息。</li>
+<li>应用: 主要用来分析目标基因有没有活性、或者分析一种已知蛋白（转录因子）的靶基因有哪些。</li>
+<li>特点：<ol>
+<li>针对某一特定候选转录因子，是否特异性结合于所调节的靶基因某一预定区域内，如启动子区，进行检测。</li>
+<li>对同一DNA底物, 可以运用多种不同的抗体, 分别进行免疫共沉淀,以确定多种结合蛋白在同一染色质片段上的结合</li>
+</ol>
+</li>
+</ul>
+<h3 id="高通量实验测定-ChIP-chip-ChIP-seq"><a href="#高通量实验测定-ChIP-chip-ChIP-seq" class="headerlink" title="高通量实验测定(ChIP-chip, ChIP-seq)"></a>高通量实验测定(ChIP-chip, ChIP-seq)</h3><ol>
+<li><strong>ChIP-chip</strong>:</li>
+</ol>
+<ul>
+<li>创立者:2000年，Richard A. Young等人(Science.2000, 290(5500): 2306-2309)</li>
+<li>原理:<br>该方法首先使用固定剂将DNA染色质断裂为0.2-1kp的碱基段;然后用针对特异性蛋白质的抗体进行ChIP，将富集的蛋白质一DNA复合物进行扩增，再将扩增的DNA片断与覆盖欲检测基因组的芯片进行杂交，使用芯片扫描仪对芯片的信息进行处理。</li>
+<li>特点:<br> ChIP和芯片技术的联合运用<br> 全基因组范围内的定位分析<br> 靶基因群的高通量分析</li>
+<li>不足：分辨率较低，大于200bp；只能检测已知序列</li>
+</ul>
+<ol start="2">
+<li><strong>ChIP-seq</strong>:</li>
+</ol>
+<ul>
+<li>创立者： 2007年，Steven J.M. Jones等人 (Science. 2000, 290(5500): 2306-2309 )</li>
+<li>定义：<br>ChIP-seq是将深度测序技术与ChIP实验相结合，分析全基因组范围内DNA结合蛋白结合位点、组蛋白修饰、核小体定位或DNA甲基化的高通量方法，可以应用到任何基因组序列已知的物种，并能确切得到每一个片段的序列信息</li>
+<li>原理：<ul>
+<li>首先通过染色质免疫共沉淀技术（ChIP）特异性地富集目的蛋白结合的DNA片段，并对其进行纯化与文库构建；</li>
+<li>然后对富集得到的DNA片段进行高通量测序。</li>
+<li>研究人员通过将获得的数百万条序列标签精确定位到基因组上，从而获得全基因组范围内与组蛋白、转录因子等互作的DNA区段信息。</li>
+</ul>
+</li>
+<li>特点：<ul>
+<li>染色质免疫沉淀后的DNA，直接进行高通量测序 </li>
+<li>是一个“开放系统”。它可以检测更小的结合区段、未知的结合位点、结合位点内的突变情况和蛋白亲合力较低的区段</li>
+<li>成本低，周期短，省去了标记和杂交等步骤，并且无需多次重复实验，效率高</li>
+<li>分辨率可提高到30～50bp</li>
+</ul>
+</li>
+</ul>
+<h2 id="转录因子结合位点的信息学预测方法"><a href="#转录因子结合位点的信息学预测方法" class="headerlink" title="转录因子结合位点的信息学预测方法"></a>转录因子结合位点的信息学预测方法</h2><p>问题：转录因子结合位点一般在6-12bp间，ChIPchip分辨率200-800bp, ChIP-seq在100bp或更高， 因此要对现有的高通量数据进行处理。<br>1.转录因子结合位点定位：根据若干个motif，在所研究的某个基因启动子区域内，搜索相应转录因子可能的结合位点。<br>2.转录因子结合位点的识别：通过收集多个基因启动子序列，在其中寻找具有统计显著性的短片段，作为同一转录因子可能的结合位点。</p>
+<h3 id="转录因子结合位点的表示方式"><a href="#转录因子结合位点的表示方式" class="headerlink" title="转录因子结合位点的表示方式"></a>转录因子结合位点的表示方式</h3><h4 id="（一）共性序列-consensus-sequence"><a href="#（一）共性序列-consensus-sequence" class="headerlink" title="（一）共性序列(consensus sequence)"></a>（一）共性序列(consensus sequence)</h4><ul>
+<li>将能与同一个转录因子结合的所有DNA片段按照对应位置进行排列，在每个位置上选择最可能出现的碱基,就组成了该转录因子结合位点的共性序列。</li>
+<li>共性序列中用A、C、G、T之外的字母来表示结合位点中各个位置上可能出现的碱基组合，这些字母称为IUPAC简并码。</li>
+<li>共性序列的表示方法简明易懂，却不能够反映每个位置上不同碱基出现的概率。</li>
+</ul>
+<p><img src="/img/article/functionalgenomics/IUPAC.png" alt="IUPAC"></p>
+<h4 id="（二）位置频率矩阵-position-frequency-matrix"><a href="#（二）位置频率矩阵-position-frequency-matrix" class="headerlink" title="（二）位置频率矩阵(position frequency matrix)"></a>（二）位置频率矩阵(position frequency matrix)</h4><p>位置频率矩阵可以反映出每个位置上不同碱基出现的概率。</p>
+<ul>
+<li>该模型的一个前提假设是各个位置上碱基出现的概率相互独立。</li>
+<li>矩阵每一列表示模体相应位置上四种碱基出现的概率。</li>
+</ul>
+<p><img src="/img/article/functionalgenomics/PFM.png" alt="PFM"></p>
+<h3 id="三-序列标识图-sequence-logo"><a href="#三-序列标识图-sequence-logo" class="headerlink" title="(三)序列标识图(sequence logo)"></a>(三)序列标识图(sequence logo)</h3><ul>
+<li>序列标识图依次绘出模体中各个位置上出现的碱基，每个位置上所有碱基的高度和反映了该位置上碱基的一致性，每个碱基字母的大小与碱基在该位置上出现<br>的频率成正比。</li>
+<li>这种表示方法直观地给出模体各个位置上碱基出现的倾向性和整个模体的序列的一致性。</li>
+</ul>
+<p><img src="/img/article/functionalgenomics/methods.png" alt="methods"></p>
+]]></content>
+      <categories>
+        <category>Functional Genomics</category>
+      </categories>
+      <tags>
+        <tag>Functional Genomics</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Stat-01-MDS</title>
     <url>/2021/02/22/Stat-01-MDS/</url>
     <content><![CDATA[<p><strong>MDS(Multi-dimetional Scaling, 多维标度法)</strong></p>
@@ -86,7 +179,7 @@
 <li><p>当dist矩阵本身为欧氏距离时，MDS == PCA<br>MDS更强调对不同种类的dist转换<br>PCA强调用线性组合表示variable</p>
 </li>
 </ul>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment">#########################</span></span><br><span class="line"><span class="comment"># Data 2021-02-22</span></span><br><span class="line"><span class="comment"># Author zhangyl</span></span><br><span class="line"><span class="comment"># MDS and t-SNE</span></span><br><span class="line"><span class="comment">#########################</span></span><br><span class="line"></span><br><span class="line">rm(<span class="built_in">list</span> = ls())</span><br><span class="line"></span><br><span class="line"><span class="comment"># -----------------------------------&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span></span><br><span class="line"><span class="comment"># MDS</span></span><br><span class="line"><span class="comment"># -----------------------------------&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span></span><br><span class="line">load(<span class="string">&quot;./data/GTEx.RData&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># tissue的注释文件</span></span><br><span class="line">accession.df = read.csv(file=<span class="string">&quot;./data/GTEx_accession_table.csv&quot;</span>)</span><br><span class="line">annotation.df = read.csv(file=<span class="string">&quot;./data/GTEx_v7_Annotations_SampleAttributesDS.txt&quot;</span>,header = <span class="built_in">T</span>,sep = <span class="string">&quot;\t&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># make matrix </span></span><br><span class="line">GTEx.TPM.gene.mat.only_TPM = log2(GTEx.TPM.gene.mat[,<span class="built_in">c</span>(-<span class="number">1</span>,-<span class="number">2</span>)]+<span class="number">1</span>)</span><br><span class="line">rownames(GTEx.TPM.gene.mat.only_TPM) = <span class="built_in">as.character</span>(GTEx.TPM.gene.mat$Name)</span><br><span class="line"></span><br><span class="line"><span class="comment"># get tissue info </span></span><br><span class="line">tissue_info = <span class="built_in">as.character</span>(annotation.df$SMTS[match(accession_id_vec,annotation.df$SAMPID)])</span><br><span class="line"></span><br><span class="line"><span class="comment"># run MDS</span></span><br><span class="line">dist.mat = dist(t(GTEx.TPM.gene.mat.only_TPM), method = <span class="string">&quot;minkowski&quot;</span>, p=<span class="number">5</span>)</span><br><span class="line">dist.mat = <span class="built_in">sqrt</span>(<span class="number">2</span>*(<span class="number">1</span> - <span class="built_in">abs</span>(cor(GTEx.TPM.gene.mat.only_TPM,method = <span class="string">&quot;kendall&quot;</span>))))</span><br><span class="line"></span><br><span class="line">MDS_res = cmdscale(dist.mat,eig=<span class="literal">TRUE</span>, k=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">MDS_xy.df = data.frame(MDS_1 = MDS_res$points[,<span class="number">1</span>],</span><br><span class="line">                       MDS_2 = MDS_res$points[,<span class="number">2</span>],</span><br><span class="line">                       tissue = factor(tissue_info))</span><br><span class="line"></span><br><span class="line"><span class="comment"># plot with ggplot2</span></span><br><span class="line">library(ggplot2)</span><br><span class="line"></span><br><span class="line">ggplot(data = MDS_xy.df, aes(MDS_1,MDS_2,color=tissue)) + </span><br><span class="line">  geom_point()  + </span><br><span class="line">  geom_text(aes(label=tissue)) + </span><br><span class="line">  theme_bw()</span><br></pre></td></tr></table></figure>]]></content>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment">#########################</span></span><br><span class="line"><span class="comment"># Data 2021-02-22</span></span><br><span class="line"><span class="comment"># Author zhangyl</span></span><br><span class="line"><span class="comment"># MDS</span></span><br><span class="line"><span class="comment">#########################</span></span><br><span class="line"></span><br><span class="line">rm(<span class="built_in">list</span> = ls())</span><br><span class="line"></span><br><span class="line"><span class="comment"># -----------------------------------&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span></span><br><span class="line"><span class="comment"># MDS</span></span><br><span class="line"><span class="comment"># -----------------------------------&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span></span><br><span class="line">load(<span class="string">&quot;./data/GTEx.RData&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># tissue的注释文件</span></span><br><span class="line">accession.df = read.csv(file=<span class="string">&quot;./data/GTEx_accession_table.csv&quot;</span>)</span><br><span class="line">annotation.df = read.csv(file=<span class="string">&quot;./data/GTEx_v7_Annotations_SampleAttributesDS.txt&quot;</span>,header = <span class="built_in">T</span>,sep = <span class="string">&quot;\t&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># make matrix </span></span><br><span class="line">GTEx.TPM.gene.mat.only_TPM = log2(GTEx.TPM.gene.mat[,<span class="built_in">c</span>(-<span class="number">1</span>,-<span class="number">2</span>)]+<span class="number">1</span>)</span><br><span class="line">rownames(GTEx.TPM.gene.mat.only_TPM) = <span class="built_in">as.character</span>(GTEx.TPM.gene.mat$Name)</span><br><span class="line"></span><br><span class="line"><span class="comment"># get tissue info </span></span><br><span class="line">tissue_info = <span class="built_in">as.character</span>(annotation.df$SMTS[match(accession_id_vec,annotation.df$SAMPID)])</span><br><span class="line"></span><br><span class="line"><span class="comment"># run MDS</span></span><br><span class="line">dist.mat = dist(t(GTEx.TPM.gene.mat.only_TPM), method = <span class="string">&quot;minkowski&quot;</span>, p=<span class="number">5</span>)</span><br><span class="line">dist.mat = <span class="built_in">sqrt</span>(<span class="number">2</span>*(<span class="number">1</span> - <span class="built_in">abs</span>(cor(GTEx.TPM.gene.mat.only_TPM,method = <span class="string">&quot;kendall&quot;</span>))))</span><br><span class="line"></span><br><span class="line">MDS_res = cmdscale(dist.mat,eig=<span class="literal">TRUE</span>, k=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">MDS_xy.df = data.frame(MDS_1 = MDS_res$points[,<span class="number">1</span>],</span><br><span class="line">                       MDS_2 = MDS_res$points[,<span class="number">2</span>],</span><br><span class="line">                       tissue = factor(tissue_info))</span><br><span class="line"></span><br><span class="line"><span class="comment"># plot with ggplot2</span></span><br><span class="line">library(ggplot2)</span><br><span class="line"></span><br><span class="line">ggplot(data = MDS_xy.df, aes(MDS_1,MDS_2,color=tissue)) + </span><br><span class="line">  geom_point()  + </span><br><span class="line">  geom_text(aes(label=tissue)) + </span><br><span class="line">  theme_bw()</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Bioinfo</category>
       </categories>
@@ -161,6 +254,92 @@
       </categories>
       <tags>
         <tag>Stat</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>TOEFL-Wordlist</title>
+    <url>/2021/02/20/TOEFL-Wordlist/</url>
+    <content><![CDATA[<p>210220</p>
+<ol>
+<li><p><strong>sentence</strong> n./vt. 判决，宣判<br>serve a sentence 服刑</p>
+<ul>
+<li>Tom will be sentenced to death/life imprisonment/three years in prison.</li>
+</ul>
+</li>
+<li><p><strong>impact</strong> vi./vt.  影响(on, upon); 对。。。有影响；（天文）撞击</p>
+</li>
+<li><p><strong>complex</strong> == system n. 复合体；综合设施<br>a sports complex/building complex建筑群/to suffer from a guilt complex 内疚感</p>
+<ul>
+<li>This is just one of a whole complex of issue.</li>
+</ul>
+</li>
+<li><p><strong>amount</strong> v. 总计，合计；等于，相当于；发展成，变成</p>
+<ul>
+<li>The bill amounts to $10.</li>
+<li>They gave me some help in the beginning but it did not amount to much(== they did not give me much help)</li>
+</ul>
+</li>
+<li><p><strong>outgassing</strong>  n.除气；脱气  adj. 除气的；释气的</p>
+<ul>
+<li>The origin of our present atmosphere is therefore a combination of terrestrial outgassing and interplanetary assault (further changed by later biological events). (20190810真题)</li>
+<li>Little by little, the planet generated a new, secondary atmosphere by volcanic outgassing of volatile（挥发性的，不稳定的） materials from its interior. (2015年真题Earth’s Atmosphere)</li>
+</ul>
+</li>
+<li><p>易混词</p>
+<ul>
+<li><p><strong>vary</strong></p>
+<ul>
+<li>variety: a variety ofbeedback mechanisms vs. a myriad of 大量的，无数的</li>
+<li>various/varied</li>
+<li>variable n.变量/invariable n.常量</li>
+<li>invariable：不变地，一定地(== always/constantly/customarily/regularly)</li>
+</ul>
+</li>
+<li><p><strong>effect</strong></p>
+<ul>
+<li>effect:  n.结果 v.造成  the oppposite effect</li>
+<li>effective:  adj,有效性  vs. efficient有效率的/ineffective无效的</li>
+<li>effectiveness:  n. 效力</li>
+<li>affect:  vt.影响  affect my decision</li>
+<li>affection:  n. 喜爱(for sb./sth.)</li>
+</ul>
+</li>
+<li><p><strong>object</strong></p>
+<ul>
+<li>object:  n. 目标；物体；客体；宾语  v. 反对  Many local people object to the building of the new airport</li>
+<li>objective:  n. 目的，目标  adj.客观的  an objective analysis</li>
+<li>objection:  n. 异议  I have no objection to him coming to stay.</li>
+<li>subject:  n. 主题；起因；科目；国民；主旋律  adj.易遭受…的  v.(使)臣服 </li>
+<li>subjective:  adj. 主观的；个人的</li>
+</ul>
+</li>
+<li><p><strong>economy</strong></p>
+<ul>
+<li>economy:  n.经济  The economy is in recession</li>
+<li>economic:  adj.经济上的；合算的</li>
+<li>economical:  adj.节俭的  an economical car to run/ He was economical in all areas of his life</li>
+<li>economically:  adv.节俭的</li>
+<li>econimics:  n.经济学</li>
+</ul>
+</li>
+<li><p>technique</p>
+<ul>
+<li>technique:  n.技巧，技法  (==method/approach/means/craft)</li>
+<li>technical:  adj.技术上的  offer technical support</li>
+<li>technology(-ies):  n.技术；工艺  high technology/information technology</li>
+<li>technological:  adj.技术的；工艺的  technological innovation  (== industrial/mechanical) </li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+]]></content>
+      <categories>
+        <category>TOEFL</category>
+      </categories>
+      <tags>
+        <tag>TOEFL</tag>
       </tags>
   </entry>
   <entry>
@@ -316,92 +495,6 @@
       </tags>
   </entry>
   <entry>
-    <title>TOEFL-Wordlist</title>
-    <url>/2021/02/20/TOEFL-Wordlist/</url>
-    <content><![CDATA[<p>210220</p>
-<ol>
-<li><p><strong>sentence</strong> n./vt. 判决，宣判<br>serve a sentence 服刑</p>
-<ul>
-<li>Tom will be sentenced to death/life imprisonment/three years in prison.</li>
-</ul>
-</li>
-<li><p><strong>impact</strong> vi./vt.  影响(on, upon); 对。。。有影响；（天文）撞击</p>
-</li>
-<li><p><strong>complex</strong> == system n. 复合体；综合设施<br>a sports complex/building complex建筑群/to suffer from a guilt complex 内疚感</p>
-<ul>
-<li>This is just one of a whole complex of issue.</li>
-</ul>
-</li>
-<li><p><strong>amount</strong> v. 总计，合计；等于，相当于；发展成，变成</p>
-<ul>
-<li>The bill amounts to $10.</li>
-<li>They gave me some help in the beginning but it did not amount to much(== they did not give me much help)</li>
-</ul>
-</li>
-<li><p><strong>outgassing</strong>  n.除气；脱气  adj. 除气的；释气的</p>
-<ul>
-<li>The origin of our present atmosphere is therefore a combination of terrestrial outgassing and interplanetary assault (further changed by later biological events). (20190810真题)</li>
-<li>Little by little, the planet generated a new, secondary atmosphere by volcanic outgassing of volatile（挥发性的，不稳定的） materials from its interior. (2015年真题Earth’s Atmosphere)</li>
-</ul>
-</li>
-<li><p>易混词</p>
-<ul>
-<li><p><strong>vary</strong></p>
-<ul>
-<li>variety: a variety ofbeedback mechanisms vs. a myriad of 大量的，无数的</li>
-<li>various/varied</li>
-<li>variable n.变量/invariable n.常量</li>
-<li>invariable：不变地，一定地(== always/constantly/customarily/regularly)</li>
-</ul>
-</li>
-<li><p><strong>effect</strong></p>
-<ul>
-<li>effect:  n.结果 v.造成  the oppposite effect</li>
-<li>effective:  adj,有效性  vs. efficient有效率的/ineffective无效的</li>
-<li>effectiveness:  n. 效力</li>
-<li>affect:  vt.影响  affect my decision</li>
-<li>affection:  n. 喜爱(for sb./sth.)</li>
-</ul>
-</li>
-<li><p><strong>object</strong></p>
-<ul>
-<li>object:  n. 目标；物体；客体；宾语  v. 反对  Many local people object to the building of the new airport</li>
-<li>objective:  n. 目的，目标  adj.客观的  an objective analysis</li>
-<li>objection:  n. 异议  I have no objection to him coming to stay.</li>
-<li>subject:  n. 主题；起因；科目；国民；主旋律  adj.易遭受…的  v.(使)臣服 </li>
-<li>subjective:  adj. 主观的；个人的</li>
-</ul>
-</li>
-<li><p><strong>economy</strong></p>
-<ul>
-<li>economy:  n.经济  The economy is in recession</li>
-<li>economic:  adj.经济上的；合算的</li>
-<li>economical:  adj.节俭的  an economical car to run/ He was economical in all areas of his life</li>
-<li>economically:  adv.节俭的</li>
-<li>econimics:  n.经济学</li>
-</ul>
-</li>
-<li><p>technique</p>
-<ul>
-<li>technique:  n.技巧，技法  (==method/approach/means/craft)</li>
-<li>technical:  adj.技术上的  offer technical support</li>
-<li>technology(-ies):  n.技术；工艺  high technology/information technology</li>
-<li>technological:  adj.技术的；工艺的  technological innovation  (== industrial/mechanical) </li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<hr>
-]]></content>
-      <categories>
-        <category>TOEFL</category>
-      </categories>
-      <tags>
-        <tag>TOEFL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>TOEFL-writing-01</title>
     <url>/2021/02/18/TOEFL-writing-01/</url>
     <content><![CDATA[<h1 id="全文结构"><a href="#全文结构" class="headerlink" title="全文结构"></a>全文结构</h1><p> 开头段&lt;60&gt;<br>     总论点1&lt;160&gt;（分论点1+分论点2）<br>     总论点2&lt;160&gt;（分论点1+分论点2）<br> 结尾段&lt;60&gt;</p>
@@ -537,5 +630,19 @@
     <title>TOEFL-writing-03</title>
     <url>/2021/02/20/TOEFL-writing-03/</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/03/02/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
 </search>
