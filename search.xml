@@ -26,53 +26,6 @@
       </tags>
   </entry>
   <entry>
-    <title>【Bioinfo Blog 000】Troubleshooting</title>
-    <url>/2021/02/04/Bioinfo%20Blog%20000-Troubleshooting/</url>
-    <content><![CDATA[<h2 id="【R】"><a href="#【R】" class="headerlink" title="【R】"></a>【R】</h2><ol>
-<li><p>20200312<br>outlierKD(final_ns$CS.lymph.nodes..2004..,lymph)</p>
-<blockquote>
-<p>报错：$ operator is invalid for atomic vectors<br>解决：赋值给对象后在放入函数<br>lymph &lt;- final_ns$CS.lymph.nodes..2004..<br>outlierKD(final_ns,lymph)</p>
-</blockquote>
-</li>
-<li><p>20200504<br>最无语最神经病的报错！！<br>kk &lt;- paste(“Surv(final_dat$Survival.months, final_dat$status)”,insertVar,sep=”~”);<br>fit_insertVar &lt;- survfit(as.formula(kk),data = final_dat)</p>
-<blockquote>
-<p>报错：找不到对象kk<br>解决：两个&lt;&lt;表示将kk设在全局<br>kk &lt;&lt;- paste(“Surv(final_dat$Survival.months, final_dat$status)”,insertVar,sep=”~”);</p>
-</blockquote>
-</li>
-<li><p>201128<br>BiocManager::install(“hgu133a2.db”)</p>
-<blockquote>
-<p>Warning：installation of package ‘hgu133a2.db’ had non-zero exit status<br>解决：一般是依赖包的问题，先加载完所有的dependency就可以library了</p>
-</blockquote>
-</li>
-<li><p>201224<br>BiocManager::install(“DOSE”)</p>
-<blockquote>
-<p>Warning message:<br>In file.copy(savedcopy, lib, recursive = TRUE) :<br>拷贝C:\Users\Surface\Documents\R\win-library\4.0\00LOCK\vctrs\libs\x64\vctrs.dll到C:\Users\Surface\Documents\R\win-library\4.0\vctrs\libs\x64\vctrs.dll时出了问题：Permission denied<br>解决：依赖的包现在正在环境下使用，需要把它先<code>detach()</code>，再安装</p>
-</blockquote>
-</li>
-<li><p>210103<br>有的时候RStudio会突然卡住，只有右上角的最小化、关闭、窗口大小可以点，这个时候点一下那个窗口大小，再全屏一下就可以了，超级神奇</p>
-</li>
-<li><p>210201<br>BiocManager::install()</p>
-<blockquote>
-<p>Installation path not writeable, unable to update packages: boot, class,<br>codetools, foreign, KernSmooth, Matrix, nlme, nnet, spatial<br>解决：installed.packages()[, c(“Package”, “LibPath”)] 来查看所有的R包位置。<br>Sys.chmod(“file”,’777’) 设置装在哪里，其中file是你R包安装的位置</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="【Python】"><a href="#【Python】" class="headerlink" title="【Python】"></a>【Python】</h2><ol>
-<li>201128<blockquote>
-<p>报错：python SyntaxError: EOL while scanning string literal<br>错误原因：字符串以 \ 结尾 或者字符串缺少引号。</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="【Perl】"><a href="#【Perl】" class="headerlink" title="【Perl】"></a>【Perl】</h2><p>—To Be Continue—</p>
-]]></content>
-      <categories>
-        <category>Bioinfo</category>
-      </categories>
-      <tags>
-        <tag>debug</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Functional Genomics-01-BioinfoAna of Transcriptional Regulation</title>
     <url>/2021/03/02/Functional-Genomics-01-BioinfoAna-of-Transcriptional-Regulation/</url>
     <content><![CDATA[<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><ol>
@@ -632,17 +585,102 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/03/02/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <title>RNA-seq: Spike-in/Housekeeping gene normalization</title>
+    <url>/2021/03/04/RNA-seq-Spike-in-Housekeeping-gene-normalization/</url>
+    <content><![CDATA[<p><strong>RNA-seq基本假设：</strong>  </p>
+<ul>
+<li> 绝大多数基因不发生表达量的变化  </li>
+<li> 特别高表达的基因不发生表达量的变化</li>
+</ul>
+<p><strong>若不满足以上基本假设（癌旁组织等）：</strong>  </p>
+<ol>
+<li>使用ERCC RNA spike-ins，绝对定量，假设样本间ERCC的量相同  </li>
+<li>假设housekeeping基因表达量变化量不大  </li>
+</ol>
+<hr>
+<p><strong>ERCC(External RNA Controls Consortium, 外源RNA-SEQ标准库)</strong><br>建库时掺入外源rna，因为知道它的绝对量，可以计算<br>很贵<br>两种比例：Mix1，Mix2<br>分析思路：  </p>
+<ul>
+<li>与普通的RNA-Seq数据分析流程基本一致  </li>
+<li>在构建Reference的时候需要把ERCC spike-in的序列一起添加到参考基因组，一起构建比对软件如HISAT2, STAR等的index文件;  </li>
+<li>下游使用软件分析，认为sample之间spike-in的量是恒定相等的  </li>
+<li>官网上下载后整理成fasta，贴到染色体后面，在构建index时把ERCC构建进去  </li>
+</ul>
+<hr>
+<p><strong>Housekeeping gene</strong><br>RUVSeq package (Bioconductor)<br>在不同组织、器官、不同刺激下都表达，3000-4000个<br>2013-Trend in Genetics-Human housekeeping genes revisited 可以下载list of housekeeping gene  </p>
+<ul>
+<li>假设：sample之间housekeeping之间的表达量基本不发生变化——&gt;校正（不需要再用Quantile,RLE,TMM等做校正） </li>
+<li>本质: 是对RNA-Seq数据进行矫正(Normalization),矫正过后的count数据，可以正常进行差异表达分析，如使用edgeR或者DESeq2等  </li>
+<li>输入：原始表达矩阵+认为不变的gene id list   </li>
+<li>输出：经过校正的表达矩阵（count/FPKM/TPM/CPM…)      </li>
+</ul>
+<hr>
+<h1 id="spike-in-or-housekeeping-gene-normalization"><a href="#spike-in-or-housekeeping-gene-normalization" class="headerlink" title="spike-in or housekeeping gene normalization"></a>spike-in or housekeeping gene normalization</h1><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">rm(<span class="built_in">list</span>=ls())</span><br><span class="line"></span><br><span class="line"><span class="comment"># BiocManager::install(&quot;RUVSeq&quot;)</span></span><br><span class="line">library(Biobase)</span><br><span class="line">library(BiocGenerics)</span><br><span class="line">library(parallel)</span><br><span class="line">library(EDASeq)</span><br><span class="line">library(ShortRead)</span><br><span class="line">library(BiocParallel)</span><br><span class="line">library(Biostrings)</span><br><span class="line">library(S4Vectors)</span><br><span class="line">library(stats4)</span><br><span class="line">library(IRanges)</span><br><span class="line">library(XVector)</span><br><span class="line">library(Rsamtools)</span><br><span class="line">library(GenomeInfoDb)</span><br><span class="line">library(GenomicAlignments)</span><br><span class="line">library(SummarizedExperiment)</span><br><span class="line">library(MatrixGenerics)</span><br><span class="line">library(matrixStats)</span><br><span class="line">library(edgeR)</span><br><span class="line">library(limma)</span><br><span class="line">library(RUVSeq)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">setwd(<span class="string">&quot;C:/Users/Surface/Desktop/Meng&#x27;s Lesson/RNA-seq/20200926-第5次直播-相关代码_数据_结果/20200926-第5次直播-相关代码_数据_结果/&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># load raw count table </span></span><br><span class="line">count_df &lt;- read.table(file = <span class="string">&quot;./293T-RNASeq-Ctrl_vs_KD.STAR.hg38.featureCounts.FixColName.tsv&quot;</span>,header = <span class="built_in">T</span>,sep = <span class="string">&quot;\t&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># load housekeeping gene list</span></span><br><span class="line">hsk_gene_df &lt;- read.table(file = <span class="string">&quot;./human_housekeeping_gene_list.txt&quot;</span>,header = <span class="built_in">T</span>,sep = <span class="string">&quot;\t&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># check in list gene number</span></span><br><span class="line"><span class="comment"># 95 genes not in the new version of housekeeping gene</span></span><br><span class="line">table(hsk_gene_df$gene_id %in% rownames(count_df))</span><br><span class="line"></span><br><span class="line"><span class="comment"># select Housekeeping gene list</span></span><br><span class="line">hsk_gene_id.count &lt;- count_df[rownames(count_df) %in% hsk_gene_df$gene_id,]</span><br><span class="line">hsk_gene_id.list &lt;- rownames(count_df)[rownames(count_df) %in% hsk_gene_df$gene_id]</span><br><span class="line"></span><br><span class="line"><span class="comment"># select upper 100~200</span></span><br><span class="line">mean.value &lt;- apply(hsk_gene_id.count, <span class="number">1</span>, mean)</span><br><span class="line"></span><br><span class="line">hsk_gene_id.list.select &lt;- hsk_gene_id.list[order(mean.value,decreasing = <span class="built_in">T</span>)][<span class="number">800</span>:<span class="number">1000</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># make sample info table</span></span><br><span class="line">sample_df &lt;- data.frame(</span><br><span class="line">  condition = as.factor(<span class="built_in">c</span>(<span class="built_in">rep</span>(<span class="string">&quot;ctrl&quot;</span>,<span class="number">2</span>), <span class="built_in">rep</span>(<span class="string">&quot;KD&quot;</span>,<span class="number">2</span>))),</span><br><span class="line">  row.names = colnames(count_df)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># make obj</span></span><br><span class="line">set.obj &lt;- newSeqExpressionSet(counts = as.matrix(count_df), phenoData = sample_df)</span><br><span class="line">set.obj</span><br><span class="line"></span><br><span class="line">plotPCA(set.obj)</span><br><span class="line">plotRLE(set.obj,ylim=<span class="built_in">c</span>(-<span class="number">1</span>,<span class="number">1</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># normalize by housekeeping gene</span></span><br><span class="line">set.norm.obj &lt;- RUVg(set.obj, hsk_gene_id.list.select, k=<span class="number">2</span>)</span><br><span class="line">plotPCA(set.norm.obj)</span><br><span class="line">plotRLE(set.norm.obj,ylim=<span class="built_in">c</span>(-<span class="number">1</span>,<span class="number">1</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># check normal count</span></span><br><span class="line">count_df.norm_hsk &lt;- normCounts(set.norm.obj)</span><br><span class="line">head(count_df.norm_hsk)</span><br><span class="line"></span><br><span class="line"><span class="comment"># check normalize colSums count</span></span><br><span class="line">colSums(count_df)</span><br><span class="line">colSums(count_df.norm_hsk)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h1 id="find-DEGs-with-edgeR"><a href="#find-DEGs-with-edgeR" class="headerlink" title="find DEGs with edgeR"></a>find DEGs with edgeR</h1><p>差异表达分析步骤：  </p>
+<ol>
+<li>normalization  </li>
+<li>estimate dispersion  </li>
+<li>fit and find DEGs  </li>
+</ol>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># condition table</span></span><br><span class="line">group_info = <span class="built_in">c</span>(<span class="built_in">rep</span>(<span class="string">&quot;ctrl&quot;</span>,<span class="number">2</span>), <span class="built_in">rep</span>(<span class="string">&quot;KD&quot;</span>,<span class="number">2</span>))</span><br><span class="line">design.mat &lt;- model.matrix(~group_info)</span><br><span class="line"></span><br><span class="line"><span class="comment"># build obj</span></span><br><span class="line">dge.list.obj &lt;- DGEList(counts = normCounts(set.norm.obj), group = group_info)</span><br><span class="line">dge.list.obj</span><br><span class="line"></span><br><span class="line">dge.list.obj &lt;- calcNormFactors(dge.list.obj,method = <span class="string">&quot;upperquartile&quot;</span>)</span><br><span class="line">dge.list.obj$samples</span><br><span class="line"></span><br><span class="line"><span class="comment"># Norm -&gt; estimate dispersion -&gt; find DEGs</span></span><br><span class="line">dge.list.obj &lt;- estimateDisp(dge.list.obj,design.mat)</span><br><span class="line">dge.list.obj$common.dispersion</span><br><span class="line">head(dge.list.obj$tagwise.dispersion)</span><br><span class="line"></span><br><span class="line"><span class="comment"># find DEGs</span></span><br><span class="line">fit &lt;- glmFit(dge.list.obj, design.mat)</span><br><span class="line">lrt &lt;- glmLRT(fit, coef=<span class="number">2</span>)</span><br><span class="line">DEGs.res.lrt &lt;- as.data.frame(topTags(lrt,n=nrow(count_df.norm_hsk),sort.by = <span class="string">&quot;logFC&quot;</span>))</span><br><span class="line">head(DEGs.res.lrt)</span><br></pre></td></tr></table></figure>
+<p>可以发现，FDR基本上都等于1<br>原因：用的管家基因太多了<br>解决：找变化最小的100，200个来做  </p>
 ]]></content>
+      <categories>
+        <category>RNA-seq</category>
+      </categories>
+      <tags>
+        <tag>RNA-seq</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Troubleshooting</title>
+    <url>/2021/02/04/Troubleshooting/</url>
+    <content><![CDATA[<h2 id="【R】"><a href="#【R】" class="headerlink" title="【R】"></a>【R】</h2><ol>
+<li><p>20200312<br>outlierKD(final_ns$CS.lymph.nodes..2004..,lymph)</p>
+<blockquote>
+<p>报错：$ operator is invalid for atomic vectors<br>解决：赋值给对象后在放入函数<br>lymph &lt;- final_ns$CS.lymph.nodes..2004..<br>outlierKD(final_ns,lymph)</p>
+</blockquote>
+</li>
+<li><p>20200504<br>最无语最神经病的报错！！<br>kk &lt;- paste(“Surv(final_dat$Survival.months, final_dat$status)”,insertVar,sep=”~”);<br>fit_insertVar &lt;- survfit(as.formula(kk),data = final_dat)</p>
+<blockquote>
+<p>报错：找不到对象kk<br>解决：两个&lt;&lt;表示将kk设在全局<br>kk &lt;&lt;- paste(“Surv(final_dat$Survival.months, final_dat$status)”,insertVar,sep=”~”);</p>
+</blockquote>
+</li>
+<li><p>201128<br>BiocManager::install(“hgu133a2.db”)</p>
+<blockquote>
+<p>Warning：installation of package ‘hgu133a2.db’ had non-zero exit status<br>解决：一般是依赖包的问题，先加载完所有的dependency就可以library了</p>
+</blockquote>
+</li>
+<li><p>201224<br>BiocManager::install(“DOSE”)</p>
+<blockquote>
+<p>Warning message:<br>In file.copy(savedcopy, lib, recursive = TRUE) :<br>拷贝C:\Users\Surface\Documents\R\win-library\4.0\00LOCK\vctrs\libs\x64\vctrs.dll到C:\Users\Surface\Documents\R\win-library\4.0\vctrs\libs\x64\vctrs.dll时出了问题：Permission denied<br>解决：依赖的包现在正在环境下使用，需要把它先<code>detach()</code>，再安装</p>
+</blockquote>
+</li>
+<li><p>210103<br>有的时候RStudio会突然卡住，只有右上角的最小化、关闭、窗口大小可以点，这个时候点一下那个窗口大小，再全屏一下就可以了，超级神奇</p>
+</li>
+<li><p>210201<br>BiocManager::install()</p>
+<blockquote>
+<p>Installation path not writeable, unable to update packages: boot, class,<br>codetools, foreign, KernSmooth, Matrix, nlme, nnet, spatial<br>解决：installed.packages()[, c(“Package”, “LibPath”)] 来查看所有的R包位置。<br>Sys.chmod(“file”,’777’) 设置装在哪里，其中file是你R包安装的位置</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="【Python】"><a href="#【Python】" class="headerlink" title="【Python】"></a>【Python】</h2><ol>
+<li>201128<blockquote>
+<p>报错：python SyntaxError: EOL while scanning string literal<br>错误原因：字符串以 \ 结尾 或者字符串缺少引号。</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="【Perl】"><a href="#【Perl】" class="headerlink" title="【Perl】"></a>【Perl】</h2><p>—To Be Continue—</p>
+]]></content>
+      <categories>
+        <category>Records</category>
+      </categories>
+      <tags>
+        <tag>Debug</tag>
+      </tags>
   </entry>
 </search>
