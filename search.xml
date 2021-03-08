@@ -30,13 +30,11 @@
     <url>/2021/03/02/Functional-Genomics-01-BioinfoAna-of-Transcriptional-Regulation/</url>
     <content><![CDATA[<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><ol>
 <li><strong>表达(gene expression)</strong>:基因在生物体内的转录、剪接、翻译以及转变成具有生物活性的蛋白质分子之前的所有加工过程。<br>从一套基本不变的基因组中产生出多元化的细胞类型，是由调控基因活性的各种信号途径所控制。</li>
-<li><strong>转录因子(transcr iption factor, TF)</strong>: 也称反式作用因子，有序地结合在目标基因启动子(promoter)序列中的特殊位点，启动<br>基因的转录和控制基因的转录效率。<br> 根据转录因子的作用特点可分为二类:</li>
-</ol>
-<ul>
+<li><strong>转录因子(transcr iption factor, TF)</strong>: 也称反式作用因子，有序地结合在目标基因启动子(promoter)序列中的特殊位点，启动基因的转录和控制基因的转录效率。<br> 根据转录因子的作用特点可分为二类:<ul>
 <li>普遍转录因子，它们与RNA聚合酶II共同组成转录起始复合体时，转录才能在正确的位置开始。包括TFIID，TFIIA，TFIIF，TFIIE，TFIIH等;</li>
 <li>组织细胞特异性转录因子，这些TF是在特异的组织细胞或是受到一些类固醇激素/生长因子的刺激后，开始表达某些特异蛋白质分子时，才需要的一类转录因子。</li>
 </ul>
-<ol start="3">
+</li>
 <li><strong>转录因子的结合位点(transcription factor binding site, TFBS)</strong>: 转录因子调节基因表达时，与基因模板链结合的区域，又被称为顺式作用元件。长度从几个到几十个碱基不等。</li>
 <li>**模体(motif)**：转录因子的结合位点的特定模式。不是一段序列</li>
 </ol>
@@ -275,7 +273,7 @@
 <li>econimics:  n.经济学</li>
 </ul>
 </li>
-<li><p>technique</p>
+<li><p><strong>technique</strong></p>
 <ul>
 <li>technique:  n.技巧，技法  (==method/approach/means/craft)</li>
 <li>technical:  adj.技术上的  offer technical support</li>
@@ -287,6 +285,7 @@
 </li>
 </ol>
 <hr>
+<p>210221</p>
 ]]></content>
       <categories>
         <category>TOEFL</category>
@@ -566,12 +565,20 @@
     <title>TOEFL-writing-02</title>
     <url>/2021/02/20/TOEFL-writing-02/</url>
     <content><![CDATA[<h1 id="笔记概述"><a href="#笔记概述" class="headerlink" title="笔记概述"></a>笔记概述</h1><ol>
-<li>专有名词<br> 固定说法，很难找到同义词的名词</li>
+<li>专有名词<br> 固定说法，很难找到同义词的名词（eg. 电脑、台灯…）</li>
+<li>意思（逻辑）<br>转折逻辑: however, but, although<br>并列逻辑: and, also, moreover, in addition<br>总分逻辑: such as, for example, one of which<br>因果逻辑: because, so, thus, therefore<br>顺序逻辑: first, and then, when, after</li>
 </ol>
 <hr>
-<h1 id="综合概述"><a href="#综合概述" class="headerlink" title="综合概述"></a>综合概述</h1><hr>
-<h1 id="阅读笔记"><a href="#阅读笔记" class="headerlink" title="阅读笔记"></a>阅读笔记</h1><hr>
-<h1 id="听力笔记"><a href="#听力笔记" class="headerlink" title="听力笔记"></a>听力笔记</h1>]]></content>
+<h1 id="阅读笔记"><a href="#阅读笔记" class="headerlink" title="阅读笔记"></a>阅读笔记</h1><p>topic sentence关键词：支持topic sentence的专有名词</p>
+<h2 id="开头段："><a href="#开头段：" class="headerlink" title="开头段："></a>开头段：</h2><p>主题词，（3个）xxx（reason,goal…）</p>
+<h2 id="中间段："><a href="#中间段：" class="headerlink" title="中间段："></a>中间段：</h2><p>如果有小标题，小标题就是TS<br>细节只记录支持TS的名词</p>
+<hr>
+<h1 id="听力笔记"><a href="#听力笔记" class="headerlink" title="听力笔记"></a>听力笔记</h1><p><strong>脑记意思</strong><br>（主）对比专名<br>（次）逻辑符号<br>竖着写，每行一个词</p>
+<h2 id="开头段"><a href="#开头段" class="headerlink" title="开头段"></a>开头段</h2><p>记录男女<br>关注主旨句</p>
+<h2 id="中间段"><a href="#中间段" class="headerlink" title="中间段"></a>中间段</h2><p>听，脑记意思，听听力是如何<strong>反驳阅读内容</strong><br>笔,仅记录<strong>反驳阅读的专有名词</strong>，即对比专名，和<strong>明显简单的逻辑</strong>，一定要筛选信息<br>适当<strong>缩写</strong>，不要试图把单词都能拼写完整</p>
+<hr>
+<h1 id="补笔记"><a href="#补笔记" class="headerlink" title="补笔记"></a>补笔记</h1><p>按照第三段、第一段、第二段的顺序串意思、单词记全</p>
+]]></content>
       <categories>
         <category>TOEFL</category>
       </categories>
@@ -681,6 +688,32 @@
       </categories>
       <tags>
         <tag>Debug</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>RNA-seq: GSEA &amp; ssGSEA</title>
+    <url>/2021/03/08/RNA-seq-GSEA-ssGSEA/</url>
+    <content><![CDATA[<h1 id="GSEA（Gene-Set-Enrichment-Analysis）"><a href="#GSEA（Gene-Set-Enrichment-Analysis）" class="headerlink" title="GSEA（Gene Set Enrichment Analysis）"></a><strong>GSEA（Gene Set Enrichment Analysis）</strong></h1><p>该方法发表于2005年的<a href="https://www.pnas.org/content/pnas/102/43/15545.full.pdf">Gene set enrichment analysis: a knowledge-based approach forinterpreting genome-wide expression profiles</a>，是一种基于基因集的富集分析方法。</p>
+<p>在对基因表达数据分析时，首先确定分析的目的，即选择MSigDB中的一个或多个功能基因集进行分析，然后基于基因表达数据与表型的关联度（也可以理解为表达量的变化）的大小进行排序。然后判断每个基因集内的基因是否富集于表型相关度排序后基因列表的上部或下部，从而判断此基因集内基因的协同变化对表型变化的影响。</p>
+<p><img src="/img/article/RNA-seq/GSEA.png" alt="GSEA"></p>
+<p>GSEA的输入是一个基因表达量矩阵，其中的样本分成了A和B两组，找到两组之间差异表达的基因，然后根据foldchange进行排序，用来表示基因在两组间表达量的变化趋势。排序之后的基因列表其顶部可以看做是上调的差异基因，其底部是下调的差异基因。GSEA分析的是一个基因集下的所有基因是否在这个排序列表的顶部或者底部富集，如果在顶部富集，我们可以说，从总体上看，该基因集是上调趋势，反之，如果在底部富集，则是下调趋势。</p>
+<h1 id="ssGSEA-single-sample-Gene-Set-Enrichment-Analysis）"><a href="#ssGSEA-single-sample-Gene-Set-Enrichment-Analysis）" class="headerlink" title="ssGSEA(single sample Gene Set Enrichment Analysis）"></a><strong>ssGSEA(single sample Gene Set Enrichment Analysis）</strong></h1><ul>
+<li><p>定义：</p>
+</li>
+<li><p>原理：</p>
+</li>
+<li><p>实现：</p>
+</li>
+<li><p>输入文件：</p>
+</li>
+<li></li>
+</ul>
+]]></content>
+      <categories>
+        <category>RNA-seq</category>
+      </categories>
+      <tags>
+        <tag>RNA-seq</tag>
       </tags>
   </entry>
 </search>
