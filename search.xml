@@ -132,7 +132,7 @@
 </ul>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment">#########################</span></span><br><span class="line"><span class="comment"># Data 2021-02-22</span></span><br><span class="line"><span class="comment"># Author zhangyl</span></span><br><span class="line"><span class="comment"># MDS</span></span><br><span class="line"><span class="comment">#########################</span></span><br><span class="line"></span><br><span class="line">rm(<span class="built_in">list</span> = ls())</span><br><span class="line"></span><br><span class="line"><span class="comment"># -----------------------------------&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span></span><br><span class="line"><span class="comment"># MDS</span></span><br><span class="line"><span class="comment"># -----------------------------------&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span></span><br><span class="line">load(<span class="string">&quot;./data/GTEx.RData&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># tissue的注释文件</span></span><br><span class="line">accession.df = read.csv(file=<span class="string">&quot;./data/GTEx_accession_table.csv&quot;</span>)</span><br><span class="line">annotation.df = read.csv(file=<span class="string">&quot;./data/GTEx_v7_Annotations_SampleAttributesDS.txt&quot;</span>,header = <span class="built_in">T</span>,sep = <span class="string">&quot;\t&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># make matrix </span></span><br><span class="line">GTEx.TPM.gene.mat.only_TPM = log2(GTEx.TPM.gene.mat[,<span class="built_in">c</span>(-<span class="number">1</span>,-<span class="number">2</span>)]+<span class="number">1</span>)</span><br><span class="line">rownames(GTEx.TPM.gene.mat.only_TPM) = <span class="built_in">as.character</span>(GTEx.TPM.gene.mat$Name)</span><br><span class="line"></span><br><span class="line"><span class="comment"># get tissue info </span></span><br><span class="line">tissue_info = <span class="built_in">as.character</span>(annotation.df$SMTS[match(accession_id_vec,annotation.df$SAMPID)])</span><br><span class="line"></span><br><span class="line"><span class="comment"># run MDS</span></span><br><span class="line">dist.mat = dist(t(GTEx.TPM.gene.mat.only_TPM), method = <span class="string">&quot;minkowski&quot;</span>, p=<span class="number">5</span>)</span><br><span class="line">dist.mat = <span class="built_in">sqrt</span>(<span class="number">2</span>*(<span class="number">1</span> - <span class="built_in">abs</span>(cor(GTEx.TPM.gene.mat.only_TPM,method = <span class="string">&quot;kendall&quot;</span>))))</span><br><span class="line"></span><br><span class="line">MDS_res = cmdscale(dist.mat,eig=<span class="literal">TRUE</span>, k=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">MDS_xy.df = data.frame(MDS_1 = MDS_res$points[,<span class="number">1</span>],</span><br><span class="line">                       MDS_2 = MDS_res$points[,<span class="number">2</span>],</span><br><span class="line">                       tissue = factor(tissue_info))</span><br><span class="line"></span><br><span class="line"><span class="comment"># plot with ggplot2</span></span><br><span class="line">library(ggplot2)</span><br><span class="line"></span><br><span class="line">ggplot(data = MDS_xy.df, aes(MDS_1,MDS_2,color=tissue)) + </span><br><span class="line">  geom_point()  + </span><br><span class="line">  geom_text(aes(label=tissue)) + </span><br><span class="line">  theme_bw()</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>Bioinfo</category>
+        <category>STAT</category>
       </categories>
       <tags>
         <tag>Stat</tag>
@@ -201,7 +201,7 @@
 <hr>
 <h1 id="R语言计算t-SNE"><a href="#R语言计算t-SNE" class="headerlink" title="R语言计算t-SNE"></a>R语言计算t-SNE</h1><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment">#########################</span></span><br><span class="line"><span class="comment"># Data 2021-02-27</span></span><br><span class="line"><span class="comment"># Author zhangyl</span></span><br><span class="line"><span class="comment"># t-SNE</span></span><br><span class="line"><span class="comment">#########################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># load package </span></span><br><span class="line">library(Rtsne)</span><br><span class="line"></span><br><span class="line">SD.vector &lt;- apply(GTEx.TPM.gene.mat[,<span class="built_in">c</span>(-<span class="number">1</span>,-<span class="number">2</span>)],<span class="number">1</span>,FUN=<span class="keyword">function</span>(x)&#123;sd(x)&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># select top3000</span></span><br><span class="line">GTEx.TPM.gene.mat.log2 &lt;- log2(GTEx.TPM.gene.mat[,<span class="built_in">c</span>(-<span class="number">1</span>,-<span class="number">2</span>)]+<span class="number">1</span>)</span><br><span class="line">GTEx.TPM.gene.mat.log2.top3000 &lt;- GTEx.TPM.gene.mat.log2[order(SD.vector,decreasing = <span class="built_in">F</span>),]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Rtsne()</span></span><br><span class="line"><span class="comment"># matrix 行是基因，列是variables</span></span><br><span class="line"><span class="comment"># perplexity 5~50</span></span><br><span class="line"></span><br><span class="line">set.seed(<span class="number">20210227</span>)</span><br><span class="line">tSNE_res &lt;- Rtsne(t(GTEx.TPM.gene.mat.log2.top3000),dims = <span class="number">3</span>,perplexity = <span class="number">10</span>,pca = <span class="built_in">T</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># plot region </span></span><br><span class="line">tSNE_res.df &lt;- as.data.frame(tSNE_res$Y)</span><br><span class="line">colnames(tSNE_res.df) &lt;- <span class="built_in">c</span>(<span class="string">&quot;tSNE1&quot;</span>,<span class="string">&quot;tSNE2&quot;</span>,<span class="string">&quot;tSNE3&quot;</span>)</span><br><span class="line">tSNE_res.df$tissue &lt;- tissue_info</span><br><span class="line"></span><br><span class="line">ggplot(data = tSNE_res.df, aes(tSNE1,tSNE2,color=tissue)) + </span><br><span class="line">  geom_point()  + </span><br><span class="line">  geom_text(aes(label=tissue)) + </span><br><span class="line">  theme_bw()</span><br><span class="line"></span><br><span class="line">ggplot(data = tSNE_res.df, aes(tSNE1,tSNE3,color=tissue)) + </span><br><span class="line">  geom_point()  + </span><br><span class="line">  geom_text(aes(label=tissue)) + </span><br><span class="line">  theme_bw()</span><br><span class="line"></span><br><span class="line">ggplot(data = tSNE_res.df, aes(tSNE2,tSNE3,color=tissue)) + </span><br><span class="line">  geom_point()  + </span><br><span class="line">  geom_text(aes(label=tissue)) + </span><br><span class="line">  theme_bw()</span><br><span class="line"></span><br><span class="line"><span class="comment"># use plotly (3D)</span></span><br><span class="line">library(plotly)</span><br><span class="line"></span><br><span class="line">p &lt;- plot_ly(tSNE_res.df, x = ~tSNE1, y = ~tSNE2, z = ~tSNE3, color = ~tissue) %&gt;%</span><br><span class="line">  add_markers() %&gt;%</span><br><span class="line">  layout(scene = <span class="built_in">list</span>(xaxis = <span class="built_in">list</span>(title = <span class="string">&#x27;tSNE1&#x27;</span>),</span><br><span class="line">                      yaxis = <span class="built_in">list</span>(title = <span class="string">&#x27;tSNE2&#x27;</span>),</span><br><span class="line">                      zaxis = <span class="built_in">list</span>(title = <span class="string">&#x27;tSNE3&#x27;</span>)))</span><br><span class="line">p</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>Bioinfo</category>
+        <category>STAT</category>
       </categories>
       <tags>
         <tag>Stat</tag>
@@ -720,7 +720,7 @@
 <p>可以发现，FDR基本上都等于1<br>原因：用的管家基因太多了<br>解决：找变化最小的100，200个来做  </p>
 ]]></content>
       <categories>
-        <category>NGS</category>
+        <category>RNA-seq</category>
       </categories>
       <tags>
         <tag>RNA-seq</tag>
@@ -988,5 +988,155 @@
       <tags>
         <tag>Tips</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>WES Project</title>
+    <url>/2021/03/30/WES-Project/</url>
+    <content><![CDATA[<style>
+  p{
+    font-size:18px;
+    line-height:1.7em;
+  }
+</style>
+
+<h1 id="一、环境配置"><a href="#一、环境配置" class="headerlink" title="一、环境配置"></a>一、环境配置</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/public/workspace/lincs/wes_cancer/data</span><br></pre></td></tr></table></figure>
+<h1 id="二、数据下载"><a href="#二、数据下载" class="headerlink" title="二、数据下载"></a>二、数据下载</h1><h2 id="2-1-NCBI-prefetch"><a href="#2-1-NCBI-prefetch" class="headerlink" title="2.1 NCBI+prefetch"></a>2.1 NCBI+prefetch</h2><p>在NCBI页面查找数据后点击Run Selector，选择需要的数据，下载Metadata和Accession List两个文件</p>
+ <center><img src="/imp/Figures/SRA-run.png" alt="SRA-run" style="zoom:45%;" /></center>
+
+<p>依次读取SRR_Acc_List.txt的每一行，利用prefetch下载。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cat 0.sra/sra.infor/SRR_Acc_List.txt | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  prefetch <span class="variable">$&#123;id&#125;</span> -O  ./0.sra</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-2-ENA-Aspera"><a href="#2-2-ENA-Aspera" class="headerlink" title="2.2 ENA+Aspera"></a>2.2 ENA+Aspera</h2><p><a href="https://www.ebi.ac.uk/ena">ENA数据库: European Nucleotide</a><br>隶属于EBI，功能上应该是与SRA类似的，但是其搜索界面更加亲民，并且对于下载fastq文件以及检查下载数据完整性更加友好。  </p>
+<p><strong>1.</strong> 首先，在数据库页面右上角搜索栏输入目标SRA检索号，确认后稍等片刻可得结果页面；   </p>
+<p><img src="/img/Figures/ena.png" alt="ena"></p>
+<p><strong>2.</strong> 其次，点击选取 Read File 即可查看该实验下所有的测序序列数据的信息，选择需要查看的信息，这里的五列分别为：run_accession，library_name，fastq_ftp，sra_md5，sra_aspera；  </p>
+<img src="/img/Figures/ena_page2.png" style="zoom:80%;" />
+
+<p><strong>3.</strong> 点击TSV，下载对应文件；  </p>
+<p><img src="/img/Figures/download.png" alt="download"><br><strong>4.</strong> 利用shell处理，保留所需信息。观察文件发现，case1包含case1…和case1…ampliseq… ，只保留case1…；  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 提取包含case1且不包含ampliseq的行</span></span><br><span class="line">grep case1 filereport_read_run_PRJNA310728_tsv.txt | grep -v ampliseq &gt; matched_file.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提取SRR号，样本名，sra.ftp地址</span></span><br><span class="line">awk <span class="string">&#x27;&#123;print $2,$1,$6&#125;&#x27;</span> matched_file.txt | sed <span class="string">&#x27;s/_WES//&#x27;</span> &gt; config.sra</span><br></pre></td></tr></table></figure>
+<p><img src="/img/Figures/awk-result.png" alt="awk-result"><br><strong>5.</strong> 利用Aspera批量下载,6.8G的文件下载了1个小时，速度大约为16M/s;</p>
+<blockquote>
+<p>Aspera:<br>-v verbose mode 唠叨模式，能让你实时知道程序在干啥<br>-T 取消加密，否则有时候数据下载不了<br>-i 提供私钥文件的地址，我也不知道干嘛的，反正不能少，地址一般是~/.aspera/connect/etc/asperaweb_id_dsa.openssh<br>-l 设置最大传输速度，一般200m到500m，如果不设置，反而速度会比较低，可能有个较低的默认值<br>-k 断点续传，一般设置为值1<br>-Q 不懂，一般加上它<br>-P 提供SSH port，一般是33001</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cat 0.sra/sra.infor/config.sra | <span class="keyword">while</span> <span class="built_in">read</span> id; \</span><br><span class="line"><span class="keyword">do</span> <span class="built_in">echo</span> <span class="variable">$id</span></span><br><span class="line">arr=(<span class="variable">$id</span>)</span><br><span class="line">link=<span class="variable">$&#123;arr[2]&#125;</span></span><br><span class="line">srr=<span class="variable">$&#123;arr[1]&#125;</span></span><br><span class="line">ascp -i ~/.aspera/connect/etc/asperaweb_id_dsa.openssh \</span><br><span class="line">    -l 300M -k 1 -Q -T -P 33001 \</span><br><span class="line">    era-fasp@<span class="variable">$&#123;link&#125;</span> \</span><br><span class="line">    ./0.sra/ &gt; <span class="built_in">log</span>/ascp.log/<span class="variable">$&#123;srr&#125;</span>.<span class="built_in">log</span> 2&gt;&amp;1 &amp; </span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<center><img src="/img/Figures/ascp_loop.png" alt="acsp_loop" style="zoom:80%;" /></center>
+
+
+<center><img src="/img/Figures/ascp_speed.png" alt="ascp-speed" style="zoom:80%;" /></center>
+
+<p><strong>6.</strong> 最后利用MD5码确认数据的完整性。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 提取样本列和MD5列</span></span><br><span class="line">awk <span class="string">&#x27;&#123;print $2,$4&#125;&#x27;</span> matched_file.txt | sed <span class="string">&#x27;s/_WES//&#x27;</span> &gt; sra.md5</span><br><span class="line"></span><br><span class="line"><span class="comment"># 利用md5sum命令生成下载数据的md5码</span></span><br><span class="line"><span class="comment"># md5sum</span></span><br><span class="line"><span class="comment"># -b：二进制模式读取文件；</span></span><br><span class="line"><span class="comment"># -t或--text：把输入的文件作为文本文件看待；</span></span><br><span class="line"><span class="comment"># -c：从指定文件中读取MD5校验和，并进行校验；</span></span><br><span class="line"><span class="comment"># --status：验证成功时不输出任何信息；</span></span><br><span class="line"><span class="comment"># -w：当校验不正确时给出警告信息。</span></span><br><span class="line"></span><br><span class="line">md5sum ./0.sra/*.sra &gt; ./0.sra/sra.infor/aft.md5</span><br><span class="line"></span><br><span class="line"><span class="comment"># 对比ENA提供的md5码和下载后的数据生成的md5码</span></span><br><span class="line">diff ./0.sra/sra.infor/aft.md5 ./0.sra/sra.infor/sra.md5</span><br><span class="line"></span><br><span class="line"><span class="comment"># ENA提供的md5文件和当前sra在同一目录时</span></span><br><span class="line"><span class="comment"># md5sum -c ENA提供的md5文件</span></span><br><span class="line"><span class="comment"># 返回0/1</span></span><br></pre></td></tr></table></figure>
+<center><img src="/img/Figures/MD5Check.png" alt="MD5" style="zoom:80%;" /></center>
+
+<p>MD5码确认一致，下载的数据是完整无误的。</p>
+<h2 id="2-3-ENA-Arial2-奶牛快传"><a href="#2-3-ENA-Arial2-奶牛快传" class="headerlink" title="2.3 ENA+Arial2+奶牛快传"></a>2.3 ENA+Arial2+奶牛快传</h2><p><strong>Aria2</strong><br><strong>优点</strong>:速度快、体积小、资源占用少；支持 HTTP/FTP/BT/Magnet磁力链接等类型的文件下载，据说速度超级快;<br><br><strong>缺点</strong>: 配置麻烦，上手较难。</p>
+<p>教程：<br><a href="https://github.com/aria2/aria2/releases/tag/release-1.35.0">github-aria2</a><br><a href="https://cloud.tencent.com/developer/article/1142142">编译安装</a><br><a href="https://blog.readgroup.cn/m/?post=92">一键安装脚本（需要root权限）</a></p>
+<center><img src="/img/Figures/Aria2-wrong.png" alt="Aria-wrong" style="zoom:80%;" /></center>
+
+<p>另外尝试下载win版Arial2，再利用奶牛快传传至服务器<br>教程：</p>
+<p>抛弃迅雷，Aria2 新手入门](<a href="https://zhuanlan.zhihu.com/p/37021947">https://zhuanlan.zhihu.com/p/37021947</a>)<br>用ftp地址，3G的数据下的超快。大概10分钟？感觉这边的速度是骗人的</p>
+<center><img src="Figures/Aria2-speed.png" alt="Aria-speed" style="zoom:60%;" /></center>
+
+<p><a href="https://cowtransfer.com/"><strong>奶牛快传</strong></a></p>
+<ul>
+<li>单次传输上限20GB  </li>
+<li>3TB云盘空间  </li>
+<li>上传下载不限速  </li>
+<li>在网页上上传本地文件后，会提供下载链接和密码</li>
+</ul>
+<center><img src="/img/Figures/upload.png" alt="cow" style="zoom:45%;" /></center>
+
+<p>需要下载linux版<br><a href="https://github.com/Mikubill/cowtransfer-uploader">github-cowtransfer uploader</a><br><a href="https://www.jianshu.com/p/5c29e8fcb0f0">Linux奶牛快传使用手册</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 从云端下载数据</span></span><br><span class="line"><span class="comment"># 输入提供的链接和密码</span></span><br><span class="line">cowtransfer-uploader --password=test1234 https://yilingzhang.cowtransfer.com/s/90c7eb9b3d1a44</span><br></pre></td></tr></table></figure>
+<p>传到服务器8M/s的速度太感人了！！还可以加线程！</p>
+<center><img src="/img/Figures/toserver.png" alt="cow-to-server" style="zoom:100%;" /></center>
+
+<h1 id="三、质控与去接头"><a href="#三、质控与去接头" class="headerlink" title="三、质控与去接头"></a>三、质控与去接头</h1><h2 id="3-1-文件格式转换"><a href="#3-1-文件格式转换" class="headerlink" title="3.1 文件格式转换"></a>3.1 文件格式转换</h2><h3 id="3-1-1-fastq-dump"><a href="#3-1-1-fastq-dump" class="headerlink" title="3.1.1 fastq-dump"></a>3.1.1 fastq-dump</h3><p>官方文档：<br><a href="https://ncbi.github.io/sra-tools/fastq-dump.html">github: fastq-dump</a></p>
+<p>教程：<br><a href="https://www.jianshu.com/p/a8d70b66794c">Fastq-dump: 一个神奇的软件</a></p>
+<blockquote>
+<p>常用参数:<br>split-spot: 将双端测序分为两份,但是都放在同一个文件中<br>split-files: 将双端测序分为两份,放在不同的文件,但是对于一方有而一方没有的reads直接丢弃<br>split-3 : 将双端测序分为两份,放在不同的文件,但是对于一方有而一方没有的reads会单独放在一个文件夹里<br>–gzip 输出文件以gz压缩<br>-A 输出文件名<br>-O 输出目录</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line"><span class="comment"># fastq-dump--sratoolkit-2.9.2</span></span><br><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line">cat 0.sra/sra.infor/sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span> </span><br><span class="line">time fastq-dump -A <span class="variable">$&#123;id&#125;</span> -O 1.rawfastq/ \</span><br><span class="line">--gzip --split-3 0.sra/<span class="variable">$&#123;id&#125;</span>.sra &gt; <span class="built_in">log</span>/sra2fq.log/<span class="variable">$&#123;id&#125;</span>.<span class="built_in">log</span> 2&gt;&amp;1 &amp;</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-1-2-faterq-dump"><a href="#3-1-2-faterq-dump" class="headerlink" title="3.1.2 faterq-dump"></a>3.1.2 faterq-dump</h3><p>fastq-dump只能单个线程，速度特别的慢。2018年的6月份，sra-tools更新了一个新的sra解压工具，fasterq-dump,能利用临时文件和多线程加速从SRA文件提取FASTQ。</p>
+<p><strong>注意：</strong><code>fasterq-dump</code>不提供–gzip的参数用于压缩文件，提取出来的fastq文件只是文本文件，记得压缩，减小存储压力。（原文：There is no –gzip|–bizp2 option, you have to compress your files explicitly after they have been written.）</p>
+<p>官方文档：<br><a href="https://github.com/ncbi/sra-tools/wiki/HowTo:-fasterq-dump">github: fasterq-dump</a></p>
+<p>教程：<br><a href="https://www.plob.org/article/14565.html">fasterq-dump使用介绍</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line"><span class="comment"># fasterq-dump-sratoolkit-2.9.2</span></span><br><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line">cat 0.sra/sra.infor/sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  time fasterq-dump -3 -e 5 ./0.sra/<span class="variable">$&#123;id&#125;</span>.sra -O ./1.rawfastq --outfile <span class="variable">$&#123;id&#125;</span>.fastq  &gt; ./<span class="built_in">log</span>/sra2fq.log/<span class="variable">$&#123;id&#125;</span>.<span class="built_in">log</span> 2&gt;&amp;1</span><br><span class="line">  time pigz -p 3 -f ./1.rawfastq/<span class="variable">$&#123;id&#125;</span>_1.fastq &gt; ./1.rawfastq/<span class="variable">$&#123;id&#125;</span>_1.fastq.gz</span><br><span class="line">  time pigz -p 3 -f ./1.rawfastq/<span class="variable">$&#123;id&#125;</span>_2.fastq &gt; ./1.rawfastq/<span class="variable">$&#123;id&#125;</span>_2.fastq.gz</span><br><span class="line"><span class="keyword">done</span> </span><br></pre></td></tr></table></figure>
+<hr>
+<blockquote>
+<p><strong>Troubleshooting</strong><br>err: cmn_iter.c cmn_iter_open_db().VDBManagerOpenDBRead( ‘case1_germline.sra’ ) -&gt; RC(rcVFS,rcMgr,rcOpening,rcDirectory,rcNotFound)<br>2021-03-18T09:53:03 fasterq-dump.2.9.2 err: sorter.c run_producer_pool(): row_count == 0!<br>2021-03-18T09:53:03 fasterq-dump.2.9.2 err: sorter.c execute_lookup_production() -&gt; RC(rcVDB,rcNoTarg,rcConstructing,rcParam,rcInvalid)2021-03-18T09:53:03 fasterq-dump.2.9.2 err: fasterq-dump.c produce_lookup_files() -&gt;<br> RC(rcVDB,rcNoTarg,rcConstructing,rcParam,rcInvalid)#<br><strong>Replied by contributor:</strong> Perhaps it should strip the .sra from the leaf name before creating .fastq output<br></p>
+</blockquote>
+<hr>
+<h2 id="3-2-质控"><a href="#3-2-质控" class="headerlink" title="3.2 质控"></a>3.2 质控</h2><p>通过config文件进行批量操作</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line"><span class="comment"># FastQC-v0.11.8 </span></span><br><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line">cat 0.sra/sra.infor/sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  fastqc --outdir ./2.qc/raw.qc/ --threads 5 ./1.rawfastq/<span class="variable">$&#123;id&#125;</span>*.fastq.gz &gt;&gt; ./<span class="built_in">log</span>/qc.log/rawqc/<span class="variable">$&#123;id&#125;</span>_fastqc.log 2&gt;&amp;1 &amp; </span><br><span class="line"><span class="keyword">done</span> </span><br></pre></td></tr></table></figure>
+<center><img src="/img/Figures/fastqc.png" alt="fastqc" style="zoom:90%;" /></center>
+
+<p>利用multiqc软件对所有样本的结果进行整合，方便查看。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line"><span class="comment"># MultiQC-v1.9</span></span><br><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line">multiqc  ./2.qc/raw.qc/*zip  -o ./2.qc/raw.qc/multiqc</span><br></pre></td></tr></table></figure>
+<p>输出文件: ./Supplementary/raw_multiqc_report.html</p>
+<center><img src="/img/Figures/raw_status_check.png" alt="raw-status" style="zoom:90%;" /></center>
+
+<p>发现测序质量非常好，怀疑已经经过一定的处理</p>
+<h2 id="3-3-fastp"><a href="#3-3-fastp" class="headerlink" title="3.3 fastp"></a>3.3 fastp</h2><center><img src="/img/Figures/adaptor.png" alt="adapter" style="zoom:90%;" /></center>
+
+<p>fastqc和MultiQC给出的报告均显示未发现接头，这里用fastp的默认参数处理。教程中用的trim_galore之前在做ATAC-seq是使用过，跑的非常非常慢。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line"><span class="comment"># fastp-v0.20.0</span></span><br><span class="line"><span class="comment"># -------------------------------&gt; </span></span><br><span class="line">cat 0.sra/sra.infor/sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  fastp -i ./1.rawfastq/<span class="variable">$&#123;id&#125;</span>_1.fastq.gz -o ./3.cleanfastq/<span class="variable">$&#123;id&#125;</span>_1.fastq.gz \</span><br><span class="line">        -I ./1.rawfastq/<span class="variable">$&#123;id&#125;</span>_2.fastq.gz -O ./3.cleanfastq/<span class="variable">$&#123;id&#125;</span>_2.fastq.gz \</span><br><span class="line">        --thread=6 \</span><br><span class="line">        &gt; <span class="built_in">log</span>/fastp.log/<span class="variable">$&#123;id&#125;</span>.fastp.log 2&gt;&amp;1 &amp;</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<p>以case1_germline样本为例：</p>
+<center><img src="/img/Figures/g1_fastp.png" alt="adapter" style="zoom:80%;" /></center>
+
+<p>发现还是有一定效果的。</p>
+<h1 id="四、比对"><a href="#四、比对" class="headerlink" title="四、比对"></a>四、比对</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line"><span class="comment"># bwa-v0.7.17</span></span><br><span class="line"><span class="comment"># -------------------------------&gt; </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 索引文件：</span></span><br><span class="line">INDEX=/public/workspace/lincs/wes_cancer/data/gatk_hg38</span><br><span class="line"></span><br><span class="line">cat 0.sra/sra.infor/sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;start bwa for <span class="variable">$&#123;id&#125;</span>&quot;</span> `date`</span><br><span class="line">  fq1=./3.cleanfastq/<span class="variable">$&#123;id&#125;</span>_1.fq.gz</span><br><span class="line">  fq2=./3.cleanfastq/<span class="variable">$&#123;id&#125;</span>_2.fq.gz</span><br><span class="line">  bwa mem -M -t 6 -R <span class="string">&quot;@RG\tID:<span class="variable">$&#123;id&#125;</span>\tSM:<span class="variable">$&#123;id&#125;</span>\tLB:WXS\tPL:Illumina&quot;</span> <span class="variable">$&#123;INDEX&#125;</span> <span class="variable">$&#123;fq1&#125;</span> <span class="variable">$&#123;fq2&#125;</span> | samtools sort -@ 6 -m 1G  -o ./4.alignment/<span class="variable">$&#123;id&#125;</span>.bam -</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;end bwa for <span class="variable">$&#123;id&#125;</span>&quot;</span> `date`</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<center><img src="/img/Figures/bamfile.png" alt="bamfile" style="zoom:90%;" /></center>
+
+<p>bwa比对后先产生sam文件，但是因为sam文件太大，占用空间，要转换成二进制的bam文件。因此，脚本中把比对的结果通过管道符1传给 samtools进行排序后直接生存bam文件(中划线“-”作为缓存占位符)，排序的依据是bam文件中reads比对到参考基因组的染色体和坐标。</p>
+<p>bam文件格式：</p>
+<center><img src="/img/Figures/bam_info.png" alt="bamfile" style="zoom:50%;" /></center>
+
+<h1 id="五、比对结果的质控"><a href="#五、比对结果的质控" class="headerlink" title="五、比对结果的质控"></a>五、比对结果的质控</h1><h2 id="5-1-samtools-stats-plot-bamstats"><a href="#5-1-samtools-stats-plot-bamstats" class="headerlink" title="5.1 samtools stats + plot-bamstats"></a>5.1 samtools stats + plot-bamstats</h2><p>利用samtools stats对bam文件进行统计</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line"><span class="comment"># samtools-v1.9</span></span><br><span class="line"><span class="comment"># -------------------------------&gt; </span></span><br><span class="line">cat 0.sra/sra.infor/sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  bam=./4.alignment/<span class="variable">$&#123;id&#125;</span>.bam</span><br><span class="line">  samtools stats -@ 6 --reference ~/public/workspace/lincs/wes_cancer/data/Homo_sapiens_assembly38.fasta <span class="variable">$&#123;bam&#125;</span> &gt; ./4.alignment/stats/<span class="variable">$&#123;id&#125;</span>.<span class="built_in">stat</span></span><br><span class="line"></span><br><span class="line">  plot-bamstats -p ./4.alignment/stats/<span class="variable">$&#123;id&#125;</span> ./4.alignment/stats/<span class="variable">$&#123;id&#125;</span>.<span class="built_in">stat</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<p>可以查看bamfile比对的信息（以case1_germine为例）：</p>
+<center><img src="/img/Figures/g1-stat.png" alt="bam-info" style="zoom:60%;" /></center>
+
+<hr>
+<p><strong>Troubleshooting</strong><br>在plot-bamstats时遇到了如下报错（用的samtools-v1.9，samtools-v1.7显示command not found）。因为plot-bamstats 需要调用<code>gnuplot</code>去画图，这里缺少了libjpeg.so.8这个库（是一款开源的jpeg解压库）。</p>
+<center><img src="/img/Figures/plot-error.png" alt="plot-error" style="zoom:90%;" /></center>
+
+<p>用conda安装libjpeg.so.8库：</p>
+<center><img src="/img/Figures/conda-libjpeg.png" alt="libjpeg" style="zoom:90%;" /></center>
+
+<p>然后报错了,用mamba install也一样是报错：<br><br><img src="/img/Figures/conda-install-error.png" alt="install-error" style="zoom:100%;" /></p>
+<p>最后只能去官网下载tar.gz自己编译安装：<br>官网：<a href="http://www.ijg.org/">http://www.ijg.org/</a></p>
+<p>我下载的是：<a href="http://www.ijg.org/files/jpegsrc.v8d.tar.gz">http://www.ijg.org/files/jpegsrc.v8d.tar.gz</a><br>但是一直显示编译错误，没有权限，可能要sudo? 留着明天去找邵娇娇了</p>
+<center><img src="/img/Figures/make-error.png" alt="make-error" style="zoom:100%;" /></center>
+
+<p>编译警告：warning: Clock skew detected. Your build may be incomplete. 按着教程写了这个：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">find . -<span class="built_in">type</span> f | xargs -n 5 touch</span><br></pre></td></tr></table></figure>
+<p>但是还是报一样的错</p>
+<p>又试了一下mamba install！！成功了！！</p>
+<center><img src="/img/Figures/mamba-success.png" alt="mamba" style="zoom:100%;" /></center>
+
+<p>但是！！libjpeg-turbo是libjpeg是的升级版，plot-bamstats不支持用libjpeg-turbo。</p>
+<p>再创建新环境，重新装了gnuplot之后新报错又来了！conda gnuplot自动装上了jpeg的解压库。所以上面libjpeg.so.8库缺失这个问题算是解决了！</p>
+<p>先调用gnuplot试一下（需要写全路径，相对路径会报错）：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gnuplot ~/MyCourse/CancerGenomics/WES.proj/4.alignment/stats/plot/case1_germline-quals.gp</span><br></pre></td></tr></table></figure>
+<p>可以成功画图了！</p>
+<center><img src="/img/Figure/case1_germline-quals.png" style="zoom:75%;" /></center>
+
+<p>然后用plot-bamstats，虽然这里有报错，但图片都出来了</p>
+<center><img src="/img/Figures/samtool1.9error.png" alt="error" style="zoom:80%;" /></center>
+
+
+<p>参考：<br><a href="https://www.jieandze1314.com/post/cnposts/166/">166-为什么使用samtools检查bam质量时报错？</a><br><a href="https://blog.csdn.net/wp133716/article/details/107197125">libjpeg.so.8: cannot open shared object file: No such file or directory.</a><br><a href="https://www.linuxquestions.org/questions/linux-newbie-8/error-clock-skew-detected-make-may-be-incomplete-what%27s-wrong-125912/?__cf_chl_jschl_tk__=cfbca89553aa9c176c35b0156876e5b800ec1c51-1617019792-0-AZ3wgOYkBndrrNqbZ2jUZh3XuYSB1HGsI9OaMmmL0cPqIrKE2XFuDAYw-UufXgiH8ArtnWymYKCGqM8C4mbGIaE7zSFwS2d4QSLFAadibrZLkjNxWVHMFsWah0IBlhOQg-LruE45VXiyVrY1g-DQbSib83JEEaV86GXVe4l4QHFwabMGxZgoiUJzGvvDOOFJN7qH1BvkDC0p-aPA5VjiuEunTLdiUR92A_x9ZRXQFB85eer1Zgp5d82FRB-5LjpJ3jBPXA_lSZGQED2DAv078tYyFshTQQAhfe7dM0ZYJY1hFBdEURdlGF9QUEhx54i30OQe_2xnKVQrOpyTSAeWLrDZK04zCpBOQuC4RAMbefGRmQ_-3bpTZ6zpLE023V0AmkAUjQbcM6O-HDdeypZv6DPjrc7-ji7ljm4eX1llhiLBa1O8DEN6f8fM4E4BtGRXIDaJA-RP9Y-LOs5ROXVTtqs0-CGVmsA5CJw06kvS_y2xjZ_BRepHX9DgU-l4Kz5iqQ">Error -&gt;Clock Skew Detected..Make may be incomplete….What’s wrong?</a><br><a href="https://blog.csdn.net/cxq2046/article/details/50253949">安装libjpeg库后提示libjpeg.so.8不存在（linux环境）</a><br><a href="https://blog.csdn.net/jiejinquanil/article/details/106414938">编译警告：warning: Clock skew detected. Your build may be incomplete.</a></p>
+<hr>
+<p>以case1_germline和case1_biorep_B为例：</p>
+<center><img src="/img/Figures/plot-succ.png" alt="show the plot" style="zoom:80%;" /></center>
+
+<h2 id="5-2-qualimap"><a href="#5-2-qualimap" class="headerlink" title="5.2 qualimap"></a>5.2 qualimap</h2><p><code>qualimap</code>可用来查看覆盖深度等信息，需要py=3.9，跑的时候占用很多内存，大概跑了30分钟</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cat 0.sra/sra.infor/sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  qualimap bamqc --java-mem-size=10G -gff /public/workspace/lincs/wes_cancer/data/hg38.exon.bed -nr 100000 -nw 500 -nt 8 -bam ./4.alignment/<span class="variable">$&#123;id&#125;</span>.bam -outdir ./4.alignment/qualimap/<span class="variable">$&#123;id&#125;</span> &amp;</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>WES</category>
+      </categories>
   </entry>
 </search>

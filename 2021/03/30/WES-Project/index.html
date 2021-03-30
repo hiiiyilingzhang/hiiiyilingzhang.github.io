@@ -1,0 +1,283 @@
+<!DOCTYPE html><html lang="en | zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>WES Project | Jocelyn's Blog</title><meta name="author" content="yilingzhang"><meta name="copyright" content="yilingzhang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="p{     font-size:18px;     line-height:1.7em;   }   一、环境配置1&#x2F;public&#x2F;workspace&#x2F;lincs&#x2F;wes_cancer&#x2F;data 二、数据下载2.1 NCBI+prefetch在NCBI页面查找数据后点击Run Selector，选择需要的数据，下载Metadata和Accession List两个文件    依次读取SRR">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WES Project">
+<meta property="og:url" content="http://yilingzhang.gitee.io/2021/03/30/WES-Project/index.html">
+<meta property="og:site_name" content="Jocelyn&#39;s Blog">
+<meta property="og:description" content="p{     font-size:18px;     line-height:1.7em;   }   一、环境配置1&#x2F;public&#x2F;workspace&#x2F;lincs&#x2F;wes_cancer&#x2F;data 二、数据下载2.1 NCBI+prefetch在NCBI页面查找数据后点击Run Selector，选择需要的数据，下载Metadata和Accession List两个文件    依次读取SRR">
+<meta property="og:locale">
+<meta property="og:image" content="http://yilingzhang.gitee.io/img/cover/WES.jpg">
+<meta property="article:published_time" content="2021-03-30T08:38:50.000Z">
+<meta property="article:modified_time" content="2021-03-30T09:16:04.380Z">
+<meta property="article:author" content="yilingzhang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yilingzhang.gitee.io/img/cover/WES.jpg"><link rel="shortcut icon" href="/img/love_32px.png"><link rel="canonical" href="http://yilingzhang.gitee.io/2021/03/30/WES-Project/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-03-30 17:16:04'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 5.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/selfie.JPG" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">16</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">8</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">9</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" target="_blank" rel="noopener" href="https://music.apple.com/cn/playlist/fav/pl.u-yZyVEjrFYkEpKjk"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" target="_blank" rel="noopener" href="https://ohmyphotography.lofter.com/"><i class="fa-fw fas fa-video"></i><span> Gallery</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/cover/WES.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Jocelyn's Blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" target="_blank" rel="noopener" href="https://music.apple.com/cn/playlist/fav/pl.u-yZyVEjrFYkEpKjk"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" target="_blank" rel="noopener" href="https://ohmyphotography.lofter.com/"><i class="fa-fw fas fa-video"></i><span> Gallery</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">WES Project</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-03-30T08:38:50.000Z" title="Created 2021-03-30 16:38:50">2021-03-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-03-30T09:16:04.380Z" title="Updated 2021-03-30 17:16:04">2021-03-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/WES/">WES</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word count:</span><span class="word-count">2.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading time:</span><span>11min</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><style>
+  p{
+    font-size:18px;
+    line-height:1.7em;
+  }
+</style>
+
+<h1 id="一、环境配置"><a href="#一、环境配置" class="headerlink" title="一、环境配置"></a>一、环境配置</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/public/workspace/lincs/wes_cancer/data</span><br></pre></td></tr></table></figure>
+<h1 id="二、数据下载"><a href="#二、数据下载" class="headerlink" title="二、数据下载"></a>二、数据下载</h1><h2 id="2-1-NCBI-prefetch"><a href="#2-1-NCBI-prefetch" class="headerlink" title="2.1 NCBI+prefetch"></a>2.1 NCBI+prefetch</h2><p>在NCBI页面查找数据后点击Run Selector，选择需要的数据，下载Metadata和Accession List两个文件</p>
+ <center><img src="/imp/Figures/SRA-run.png" alt="SRA-run" style="zoom:45%;" /></center>
+
+<p>依次读取SRR_Acc_List.txt的每一行，利用prefetch下载。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cat 0.sra/sra.infor/SRR_Acc_List.txt | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  prefetch <span class="variable">$&#123;id&#125;</span> -O  ./0.sra</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-2-ENA-Aspera"><a href="#2-2-ENA-Aspera" class="headerlink" title="2.2 ENA+Aspera"></a>2.2 ENA+Aspera</h2><p><a target="_blank" rel="noopener" href="https://www.ebi.ac.uk/ena">ENA数据库: European Nucleotide</a><br>隶属于EBI，功能上应该是与SRA类似的，但是其搜索界面更加亲民，并且对于下载fastq文件以及检查下载数据完整性更加友好。  </p>
+<p><strong>1.</strong> 首先，在数据库页面右上角搜索栏输入目标SRA检索号，确认后稍等片刻可得结果页面；   </p>
+<p><img src="/img/Figures/ena.png" alt="ena"></p>
+<p><strong>2.</strong> 其次，点击选取 Read File 即可查看该实验下所有的测序序列数据的信息，选择需要查看的信息，这里的五列分别为：run_accession，library_name，fastq_ftp，sra_md5，sra_aspera；  </p>
+<img src="/img/Figures/ena_page2.png" style="zoom:80%;" />
+
+<p><strong>3.</strong> 点击TSV，下载对应文件；  </p>
+<p><img src="/img/Figures/download.png" alt="download"><br><strong>4.</strong> 利用shell处理，保留所需信息。观察文件发现，case1包含case1…和case1…ampliseq… ，只保留case1…；  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 提取包含case1且不包含ampliseq的行</span></span><br><span class="line">grep case1 filereport_read_run_PRJNA310728_tsv.txt | grep -v ampliseq &gt; matched_file.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提取SRR号，样本名，sra.ftp地址</span></span><br><span class="line">awk <span class="string">&#x27;&#123;print $2,$1,$6&#125;&#x27;</span> matched_file.txt | sed <span class="string">&#x27;s/_WES//&#x27;</span> &gt; config.sra</span><br></pre></td></tr></table></figure>
+<p><img src="/img/Figures/awk-result.png" alt="awk-result"><br><strong>5.</strong> 利用Aspera批量下载,6.8G的文件下载了1个小时，速度大约为16M/s;</p>
+<blockquote>
+<p>Aspera:<br>-v verbose mode 唠叨模式，能让你实时知道程序在干啥<br>-T 取消加密，否则有时候数据下载不了<br>-i 提供私钥文件的地址，我也不知道干嘛的，反正不能少，地址一般是~/.aspera/connect/etc/asperaweb_id_dsa.openssh<br>-l 设置最大传输速度，一般200m到500m，如果不设置，反而速度会比较低，可能有个较低的默认值<br>-k 断点续传，一般设置为值1<br>-Q 不懂，一般加上它<br>-P 提供SSH port，一般是33001</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cat 0.sra/sra.infor/config.sra | <span class="keyword">while</span> <span class="built_in">read</span> id; \</span><br><span class="line"><span class="keyword">do</span> <span class="built_in">echo</span> <span class="variable">$id</span></span><br><span class="line">arr=(<span class="variable">$id</span>)</span><br><span class="line">link=<span class="variable">$&#123;arr[2]&#125;</span></span><br><span class="line">srr=<span class="variable">$&#123;arr[1]&#125;</span></span><br><span class="line">ascp -i ~/.aspera/connect/etc/asperaweb_id_dsa.openssh \</span><br><span class="line">    -l 300M -k 1 -Q -T -P 33001 \</span><br><span class="line">    era-fasp@<span class="variable">$&#123;link&#125;</span> \</span><br><span class="line">    ./0.sra/ &gt; <span class="built_in">log</span>/ascp.log/<span class="variable">$&#123;srr&#125;</span>.<span class="built_in">log</span> 2&gt;&amp;1 &amp; </span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<center><img src="/img/Figures/ascp_loop.png" alt="acsp_loop" style="zoom:80%;" /></center>
+
+
+<center><img src="/img/Figures/ascp_speed.png" alt="ascp-speed" style="zoom:80%;" /></center>
+
+<p><strong>6.</strong> 最后利用MD5码确认数据的完整性。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 提取样本列和MD5列</span></span><br><span class="line">awk <span class="string">&#x27;&#123;print $2,$4&#125;&#x27;</span> matched_file.txt | sed <span class="string">&#x27;s/_WES//&#x27;</span> &gt; sra.md5</span><br><span class="line"></span><br><span class="line"><span class="comment"># 利用md5sum命令生成下载数据的md5码</span></span><br><span class="line"><span class="comment"># md5sum</span></span><br><span class="line"><span class="comment"># -b：二进制模式读取文件；</span></span><br><span class="line"><span class="comment"># -t或--text：把输入的文件作为文本文件看待；</span></span><br><span class="line"><span class="comment"># -c：从指定文件中读取MD5校验和，并进行校验；</span></span><br><span class="line"><span class="comment"># --status：验证成功时不输出任何信息；</span></span><br><span class="line"><span class="comment"># -w：当校验不正确时给出警告信息。</span></span><br><span class="line"></span><br><span class="line">md5sum ./0.sra/*.sra &gt; ./0.sra/sra.infor/aft.md5</span><br><span class="line"></span><br><span class="line"><span class="comment"># 对比ENA提供的md5码和下载后的数据生成的md5码</span></span><br><span class="line">diff ./0.sra/sra.infor/aft.md5 ./0.sra/sra.infor/sra.md5</span><br><span class="line"></span><br><span class="line"><span class="comment"># ENA提供的md5文件和当前sra在同一目录时</span></span><br><span class="line"><span class="comment"># md5sum -c ENA提供的md5文件</span></span><br><span class="line"><span class="comment"># 返回0/1</span></span><br></pre></td></tr></table></figure>
+<center><img src="/img/Figures/MD5Check.png" alt="MD5" style="zoom:80%;" /></center>
+
+<p>MD5码确认一致，下载的数据是完整无误的。</p>
+<h2 id="2-3-ENA-Arial2-奶牛快传"><a href="#2-3-ENA-Arial2-奶牛快传" class="headerlink" title="2.3 ENA+Arial2+奶牛快传"></a>2.3 ENA+Arial2+奶牛快传</h2><p><strong>Aria2</strong><br><strong>优点</strong>:速度快、体积小、资源占用少；支持 HTTP/FTP/BT/Magnet磁力链接等类型的文件下载，据说速度超级快;<br><br><strong>缺点</strong>: 配置麻烦，上手较难。</p>
+<p>教程：<br><a target="_blank" rel="noopener" href="https://github.com/aria2/aria2/releases/tag/release-1.35.0">github-aria2</a><br><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1142142">编译安装</a><br><a target="_blank" rel="noopener" href="https://blog.readgroup.cn/m/?post=92">一键安装脚本（需要root权限）</a></p>
+<center><img src="/img/Figures/Aria2-wrong.png" alt="Aria-wrong" style="zoom:80%;" /></center>
+
+<p>另外尝试下载win版Arial2，再利用奶牛快传传至服务器<br>教程：</p>
+<p>抛弃迅雷，Aria2 新手入门](<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/37021947">https://zhuanlan.zhihu.com/p/37021947</a>)<br>用ftp地址，3G的数据下的超快。大概10分钟？感觉这边的速度是骗人的</p>
+<center><img src="Figures/Aria2-speed.png" alt="Aria-speed" style="zoom:60%;" /></center>
+
+<p><a target="_blank" rel="noopener" href="https://cowtransfer.com/"><strong>奶牛快传</strong></a></p>
+<ul>
+<li>单次传输上限20GB  </li>
+<li>3TB云盘空间  </li>
+<li>上传下载不限速  </li>
+<li>在网页上上传本地文件后，会提供下载链接和密码</li>
+</ul>
+<center><img src="/img/Figures/upload.png" alt="cow" style="zoom:45%;" /></center>
+
+<p>需要下载linux版<br><a target="_blank" rel="noopener" href="https://github.com/Mikubill/cowtransfer-uploader">github-cowtransfer uploader</a><br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/5c29e8fcb0f0">Linux奶牛快传使用手册</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从云端下载数据</span></span><br><span class="line"><span class="comment"># 输入提供的链接和密码</span></span><br><span class="line">cowtransfer-uploader --password=test1234 https://yilingzhang.cowtransfer.com/s/90c7eb9b3d1a44</span><br></pre></td></tr></table></figure>
+<p>传到服务器8M/s的速度太感人了！！还可以加线程！</p>
+<center><img src="/img/Figures/toserver.png" alt="cow-to-server" style="zoom:100%;" /></center>
+
+<h1 id="三、质控与去接头"><a href="#三、质控与去接头" class="headerlink" title="三、质控与去接头"></a>三、质控与去接头</h1><h2 id="3-1-文件格式转换"><a href="#3-1-文件格式转换" class="headerlink" title="3.1 文件格式转换"></a>3.1 文件格式转换</h2><h3 id="3-1-1-fastq-dump"><a href="#3-1-1-fastq-dump" class="headerlink" title="3.1.1 fastq-dump"></a>3.1.1 fastq-dump</h3><p>官方文档：<br><a target="_blank" rel="noopener" href="https://ncbi.github.io/sra-tools/fastq-dump.html">github: fastq-dump</a></p>
+<p>教程：<br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/a8d70b66794c">Fastq-dump: 一个神奇的软件</a></p>
+<blockquote>
+<p>常用参数:<br>split-spot: 将双端测序分为两份,但是都放在同一个文件中<br>split-files: 将双端测序分为两份,放在不同的文件,但是对于一方有而一方没有的reads直接丢弃<br>split-3 : 将双端测序分为两份,放在不同的文件,但是对于一方有而一方没有的reads会单独放在一个文件夹里<br>–gzip 输出文件以gz压缩<br>-A 输出文件名<br>-O 输出目录</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line"><span class="comment"># fastq-dump--sratoolkit-2.9.2</span></span><br><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line">cat 0.sra/sra.infor/sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span> </span><br><span class="line">time fastq-dump -A <span class="variable">$&#123;id&#125;</span> -O 1.rawfastq/ \</span><br><span class="line">--gzip --split-3 0.sra/<span class="variable">$&#123;id&#125;</span>.sra &gt; <span class="built_in">log</span>/sra2fq.log/<span class="variable">$&#123;id&#125;</span>.<span class="built_in">log</span> 2&gt;&amp;1 &amp;</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-1-2-faterq-dump"><a href="#3-1-2-faterq-dump" class="headerlink" title="3.1.2 faterq-dump"></a>3.1.2 faterq-dump</h3><p>fastq-dump只能单个线程，速度特别的慢。2018年的6月份，sra-tools更新了一个新的sra解压工具，fasterq-dump,能利用临时文件和多线程加速从SRA文件提取FASTQ。</p>
+<p><strong>注意：</strong><code>fasterq-dump</code>不提供–gzip的参数用于压缩文件，提取出来的fastq文件只是文本文件，记得压缩，减小存储压力。（原文：There is no –gzip|–bizp2 option, you have to compress your files explicitly after they have been written.）</p>
+<p>官方文档：<br><a target="_blank" rel="noopener" href="https://github.com/ncbi/sra-tools/wiki/HowTo:-fasterq-dump">github: fasterq-dump</a></p>
+<p>教程：<br><a target="_blank" rel="noopener" href="https://www.plob.org/article/14565.html">fasterq-dump使用介绍</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line"><span class="comment"># fasterq-dump-sratoolkit-2.9.2</span></span><br><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line">cat 0.sra/sra.infor/sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  time fasterq-dump -3 -e 5 ./0.sra/<span class="variable">$&#123;id&#125;</span>.sra -O ./1.rawfastq --outfile <span class="variable">$&#123;id&#125;</span>.fastq  &gt; ./<span class="built_in">log</span>/sra2fq.log/<span class="variable">$&#123;id&#125;</span>.<span class="built_in">log</span> 2&gt;&amp;1</span><br><span class="line">  time pigz -p 3 -f ./1.rawfastq/<span class="variable">$&#123;id&#125;</span>_1.fastq &gt; ./1.rawfastq/<span class="variable">$&#123;id&#125;</span>_1.fastq.gz</span><br><span class="line">  time pigz -p 3 -f ./1.rawfastq/<span class="variable">$&#123;id&#125;</span>_2.fastq &gt; ./1.rawfastq/<span class="variable">$&#123;id&#125;</span>_2.fastq.gz</span><br><span class="line"><span class="keyword">done</span> </span><br></pre></td></tr></table></figure>
+<hr>
+<blockquote>
+<p><strong>Troubleshooting</strong><br>err: cmn_iter.c cmn_iter_open_db().VDBManagerOpenDBRead( ‘case1_germline.sra’ ) -&gt; RC(rcVFS,rcMgr,rcOpening,rcDirectory,rcNotFound)<br>2021-03-18T09:53:03 fasterq-dump.2.9.2 err: sorter.c run_producer_pool(): row_count == 0!<br>2021-03-18T09:53:03 fasterq-dump.2.9.2 err: sorter.c execute_lookup_production() -&gt; RC(rcVDB,rcNoTarg,rcConstructing,rcParam,rcInvalid)2021-03-18T09:53:03 fasterq-dump.2.9.2 err: fasterq-dump.c produce_lookup_files() -&gt;<br> RC(rcVDB,rcNoTarg,rcConstructing,rcParam,rcInvalid)#<br><strong>Replied by contributor:</strong> Perhaps it should strip the .sra from the leaf name before creating .fastq output<br></p>
+</blockquote>
+<hr>
+<h2 id="3-2-质控"><a href="#3-2-质控" class="headerlink" title="3.2 质控"></a>3.2 质控</h2><p>通过config文件进行批量操作</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line"><span class="comment"># FastQC-v0.11.8 </span></span><br><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line">cat 0.sra/sra.infor/sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  fastqc --outdir ./2.qc/raw.qc/ --threads 5 ./1.rawfastq/<span class="variable">$&#123;id&#125;</span>*.fastq.gz &gt;&gt; ./<span class="built_in">log</span>/qc.log/rawqc/<span class="variable">$&#123;id&#125;</span>_fastqc.log 2&gt;&amp;1 &amp; </span><br><span class="line"><span class="keyword">done</span> </span><br></pre></td></tr></table></figure>
+<center><img src="/img/Figures/fastqc.png" alt="fastqc" style="zoom:90%;" /></center>
+
+<p>利用multiqc软件对所有样本的结果进行整合，方便查看。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line"><span class="comment"># MultiQC-v1.9</span></span><br><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line">multiqc  ./2.qc/raw.qc/*zip  -o ./2.qc/raw.qc/multiqc</span><br></pre></td></tr></table></figure>
+<p>输出文件: ./Supplementary/raw_multiqc_report.html</p>
+<center><img src="/img/Figures/raw_status_check.png" alt="raw-status" style="zoom:90%;" /></center>
+
+<p>发现测序质量非常好，怀疑已经经过一定的处理</p>
+<h2 id="3-3-fastp"><a href="#3-3-fastp" class="headerlink" title="3.3 fastp"></a>3.3 fastp</h2><center><img src="/img/Figures/adaptor.png" alt="adapter" style="zoom:90%;" /></center>
+
+<p>fastqc和MultiQC给出的报告均显示未发现接头，这里用fastp的默认参数处理。教程中用的trim_galore之前在做ATAC-seq是使用过，跑的非常非常慢。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line"><span class="comment"># fastp-v0.20.0</span></span><br><span class="line"><span class="comment"># -------------------------------&gt; </span></span><br><span class="line">cat 0.sra/sra.infor/sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  fastp -i ./1.rawfastq/<span class="variable">$&#123;id&#125;</span>_1.fastq.gz -o ./3.cleanfastq/<span class="variable">$&#123;id&#125;</span>_1.fastq.gz \</span><br><span class="line">        -I ./1.rawfastq/<span class="variable">$&#123;id&#125;</span>_2.fastq.gz -O ./3.cleanfastq/<span class="variable">$&#123;id&#125;</span>_2.fastq.gz \</span><br><span class="line">        --thread=6 \</span><br><span class="line">        &gt; <span class="built_in">log</span>/fastp.log/<span class="variable">$&#123;id&#125;</span>.fastp.log 2&gt;&amp;1 &amp;</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<p>以case1_germline样本为例：</p>
+<center><img src="/img/Figures/g1_fastp.png" alt="adapter" style="zoom:80%;" /></center>
+
+<p>发现还是有一定效果的。</p>
+<h1 id="四、比对"><a href="#四、比对" class="headerlink" title="四、比对"></a>四、比对</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line"><span class="comment"># bwa-v0.7.17</span></span><br><span class="line"><span class="comment"># -------------------------------&gt; </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 索引文件：</span></span><br><span class="line">INDEX=/public/workspace/lincs/wes_cancer/data/gatk_hg38</span><br><span class="line"></span><br><span class="line">cat 0.sra/sra.infor/sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;start bwa for <span class="variable">$&#123;id&#125;</span>&quot;</span> `date`</span><br><span class="line">  fq1=./3.cleanfastq/<span class="variable">$&#123;id&#125;</span>_1.fq.gz</span><br><span class="line">  fq2=./3.cleanfastq/<span class="variable">$&#123;id&#125;</span>_2.fq.gz</span><br><span class="line">  bwa mem -M -t 6 -R <span class="string">&quot;@RG\tID:<span class="variable">$&#123;id&#125;</span>\tSM:<span class="variable">$&#123;id&#125;</span>\tLB:WXS\tPL:Illumina&quot;</span> <span class="variable">$&#123;INDEX&#125;</span> <span class="variable">$&#123;fq1&#125;</span> <span class="variable">$&#123;fq2&#125;</span> | samtools sort -@ 6 -m 1G  -o ./4.alignment/<span class="variable">$&#123;id&#125;</span>.bam -</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;end bwa for <span class="variable">$&#123;id&#125;</span>&quot;</span> `date`</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<center><img src="/img/Figures/bamfile.png" alt="bamfile" style="zoom:90%;" /></center>
+
+<p>bwa比对后先产生sam文件，但是因为sam文件太大，占用空间，要转换成二进制的bam文件。因此，脚本中把比对的结果通过管道符1传给 samtools进行排序后直接生存bam文件(中划线“-”作为缓存占位符)，排序的依据是bam文件中reads比对到参考基因组的染色体和坐标。</p>
+<p>bam文件格式：</p>
+<center><img src="/img/Figures/bam_info.png" alt="bamfile" style="zoom:50%;" /></center>
+
+<h1 id="五、比对结果的质控"><a href="#五、比对结果的质控" class="headerlink" title="五、比对结果的质控"></a>五、比对结果的质控</h1><h2 id="5-1-samtools-stats-plot-bamstats"><a href="#5-1-samtools-stats-plot-bamstats" class="headerlink" title="5.1 samtools stats + plot-bamstats"></a>5.1 samtools stats + plot-bamstats</h2><p>利用samtools stats对bam文件进行统计</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line"><span class="comment"># samtools-v1.9</span></span><br><span class="line"><span class="comment"># -------------------------------&gt; </span></span><br><span class="line">cat 0.sra/sra.infor/sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  bam=./4.alignment/<span class="variable">$&#123;id&#125;</span>.bam</span><br><span class="line">  samtools stats -@ 6 --reference ~/public/workspace/lincs/wes_cancer/data/Homo_sapiens_assembly38.fasta <span class="variable">$&#123;bam&#125;</span> &gt; ./4.alignment/stats/<span class="variable">$&#123;id&#125;</span>.<span class="built_in">stat</span></span><br><span class="line"></span><br><span class="line">  plot-bamstats -p ./4.alignment/stats/<span class="variable">$&#123;id&#125;</span> ./4.alignment/stats/<span class="variable">$&#123;id&#125;</span>.<span class="built_in">stat</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<p>可以查看bamfile比对的信息（以case1_germine为例）：</p>
+<center><img src="/img/Figures/g1-stat.png" alt="bam-info" style="zoom:60%;" /></center>
+
+<hr>
+<p><strong>Troubleshooting</strong><br>在plot-bamstats时遇到了如下报错（用的samtools-v1.9，samtools-v1.7显示command not found）。因为plot-bamstats 需要调用<code>gnuplot</code>去画图，这里缺少了libjpeg.so.8这个库（是一款开源的jpeg解压库）。</p>
+<center><img src="/img/Figures/plot-error.png" alt="plot-error" style="zoom:90%;" /></center>
+
+<p>用conda安装libjpeg.so.8库：</p>
+<center><img src="/img/Figures/conda-libjpeg.png" alt="libjpeg" style="zoom:90%;" /></center>
+
+<p>然后报错了,用mamba install也一样是报错：<br><br><img src="/img/Figures/conda-install-error.png" alt="install-error" style="zoom:100%;" /></p>
+<p>最后只能去官网下载tar.gz自己编译安装：<br>官网：<a target="_blank" rel="noopener" href="http://www.ijg.org/">http://www.ijg.org/</a></p>
+<p>我下载的是：<a target="_blank" rel="noopener" href="http://www.ijg.org/files/jpegsrc.v8d.tar.gz">http://www.ijg.org/files/jpegsrc.v8d.tar.gz</a><br>但是一直显示编译错误，没有权限，可能要sudo? 留着明天去找邵娇娇了</p>
+<center><img src="/img/Figures/make-error.png" alt="make-error" style="zoom:100%;" /></center>
+
+<p>编译警告：warning: Clock skew detected. Your build may be incomplete. 按着教程写了这个：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -<span class="built_in">type</span> f | xargs -n 5 touch</span><br></pre></td></tr></table></figure>
+<p>但是还是报一样的错</p>
+<p>又试了一下mamba install！！成功了！！</p>
+<center><img src="/img/Figures/mamba-success.png" alt="mamba" style="zoom:100%;" /></center>
+
+<p>但是！！libjpeg-turbo是libjpeg是的升级版，plot-bamstats不支持用libjpeg-turbo。</p>
+<p>再创建新环境，重新装了gnuplot之后新报错又来了！conda gnuplot自动装上了jpeg的解压库。所以上面libjpeg.so.8库缺失这个问题算是解决了！</p>
+<p>先调用gnuplot试一下（需要写全路径，相对路径会报错）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gnuplot ~/MyCourse/CancerGenomics/WES.proj/4.alignment/stats/plot/case1_germline-quals.gp</span><br></pre></td></tr></table></figure>
+<p>可以成功画图了！</p>
+<center><img src="/img/Figure/case1_germline-quals.png" style="zoom:75%;" /></center>
+
+<p>然后用plot-bamstats，虽然这里有报错，但图片都出来了</p>
+<center><img src="/img/Figures/samtool1.9error.png" alt="error" style="zoom:80%;" /></center>
+
+
+<p>参考：<br><a target="_blank" rel="noopener" href="https://www.jieandze1314.com/post/cnposts/166/">166-为什么使用samtools检查bam质量时报错？</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/wp133716/article/details/107197125">libjpeg.so.8: cannot open shared object file: No such file or directory.</a><br><a target="_blank" rel="noopener" href="https://www.linuxquestions.org/questions/linux-newbie-8/error-clock-skew-detected-make-may-be-incomplete-what%27s-wrong-125912/?__cf_chl_jschl_tk__=cfbca89553aa9c176c35b0156876e5b800ec1c51-1617019792-0-AZ3wgOYkBndrrNqbZ2jUZh3XuYSB1HGsI9OaMmmL0cPqIrKE2XFuDAYw-UufXgiH8ArtnWymYKCGqM8C4mbGIaE7zSFwS2d4QSLFAadibrZLkjNxWVHMFsWah0IBlhOQg-LruE45VXiyVrY1g-DQbSib83JEEaV86GXVe4l4QHFwabMGxZgoiUJzGvvDOOFJN7qH1BvkDC0p-aPA5VjiuEunTLdiUR92A_x9ZRXQFB85eer1Zgp5d82FRB-5LjpJ3jBPXA_lSZGQED2DAv078tYyFshTQQAhfe7dM0ZYJY1hFBdEURdlGF9QUEhx54i30OQe_2xnKVQrOpyTSAeWLrDZK04zCpBOQuC4RAMbefGRmQ_-3bpTZ6zpLE023V0AmkAUjQbcM6O-HDdeypZv6DPjrc7-ji7ljm4eX1llhiLBa1O8DEN6f8fM4E4BtGRXIDaJA-RP9Y-LOs5ROXVTtqs0-CGVmsA5CJw06kvS_y2xjZ_BRepHX9DgU-l4Kz5iqQ">Error -&gt;Clock Skew Detected..Make may be incomplete….What’s wrong?</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/cxq2046/article/details/50253949">安装libjpeg库后提示libjpeg.so.8不存在（linux环境）</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/jiejinquanil/article/details/106414938">编译警告：warning: Clock skew detected. Your build may be incomplete.</a></p>
+<hr>
+<p>以case1_germline和case1_biorep_B为例：</p>
+<center><img src="/img/Figures/plot-succ.png" alt="show the plot" style="zoom:80%;" /></center>
+
+<h2 id="5-2-qualimap"><a href="#5-2-qualimap" class="headerlink" title="5.2 qualimap"></a>5.2 qualimap</h2><p><code>qualimap</code>可用来查看覆盖深度等信息，需要py=3.9，跑的时候占用很多内存，大概跑了30分钟</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cat 0.sra/sra.infor/sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  qualimap bamqc --java-mem-size=10G -gff /public/workspace/lincs/wes_cancer/data/hg38.exon.bed -nr 100000 -nw 500 -nt 8 -bam ./4.alignment/<span class="variable">$&#123;id&#125;</span>.bam -outdir ./4.alignment/qualimap/<span class="variable">$&#123;id&#125;</span> &amp;</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">yilingzhang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://yilingzhang.gitee.io/2021/03/30/WES-Project/">http://yilingzhang.gitee.io/2021/03/30/WES-Project/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/cover/WES.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/03/25/CUT-Tag-Analysis/"><img class="next-cover" src="/img/cover/CUT&amp;Tag.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">CUT&amp;Tag Analysis</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/selfie.JPG" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">yilingzhang</div><div class="author-info__description">Every Day is My Day</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">16</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">8</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">9</div></a></div></div><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:jocelynzhang1119@icloud.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://blog.csdn.net/weixin_43893431" target="_blank" title="CSDN"><i class="fas fa-paper-plane"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">一、环境配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%95%B0%E6%8D%AE%E4%B8%8B%E8%BD%BD"><span class="toc-number">2.</span> <span class="toc-text">二、数据下载</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-NCBI-prefetch"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 NCBI+prefetch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-ENA-Aspera"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 ENA+Aspera</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-ENA-Arial2-%E5%A5%B6%E7%89%9B%E5%BF%AB%E4%BC%A0"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 ENA+Arial2+奶牛快传</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%B4%A8%E6%8E%A7%E4%B8%8E%E5%8E%BB%E6%8E%A5%E5%A4%B4"><span class="toc-number">3.</span> <span class="toc-text">三、质控与去接头</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 文件格式转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-1-fastq-dump"><span class="toc-number">3.1.1.</span> <span class="toc-text">3.1.1 fastq-dump</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-2-faterq-dump"><span class="toc-number">3.1.2.</span> <span class="toc-text">3.1.2 faterq-dump</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%E8%B4%A8%E6%8E%A7"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 质控</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-fastp"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 fastp</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%AF%94%E5%AF%B9"><span class="toc-number">4.</span> <span class="toc-text">四、比对</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%AF%94%E5%AF%B9%E7%BB%93%E6%9E%9C%E7%9A%84%E8%B4%A8%E6%8E%A7"><span class="toc-number">5.</span> <span class="toc-text">五、比对结果的质控</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-samtools-stats-plot-bamstats"><span class="toc-number">5.1.</span> <span class="toc-text">5.1 samtools stats + plot-bamstats</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-qualimap"><span class="toc-number">5.2.</span> <span class="toc-text">5.2 qualimap</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/03/30/WES-Project/" title="WES Project"><img src="/img/cover/WES.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="WES Project"/></a><div class="content"><a class="title" href="/2021/03/30/WES-Project/" title="WES Project">WES Project</a><time datetime="2021-03-30T08:38:50.000Z" title="Created 2021-03-30 16:38:50">2021-03-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/03/25/CUT-Tag-Analysis/" title="CUT&amp;Tag Analysis"><img src="/img/cover/CUT&amp;Tag.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CUT&amp;Tag Analysis"/></a><div class="content"><a class="title" href="/2021/03/25/CUT-Tag-Analysis/" title="CUT&amp;Tag Analysis">CUT&amp;Tag Analysis</a><time datetime="2021-03-25T09:37:16.000Z" title="Created 2021-03-25 17:37:16">2021-03-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/03/17/Paper-writing-Tips/" title="Paper-writing Tips"><img src="/img/cover/paper.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Paper-writing Tips"/></a><div class="content"><a class="title" href="/2021/03/17/Paper-writing-Tips/" title="Paper-writing Tips">Paper-writing Tips</a><time datetime="2021-03-17T13:51:22.000Z" title="Created 2021-03-17 21:51:22">2021-03-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/03/09/TOEFL-writing-04/" title="TOEFL-writing-04"><img src="/img/cover/TOEFL-writing-04.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TOEFL-writing-04"/></a><div class="content"><a class="title" href="/2021/03/09/TOEFL-writing-04/" title="TOEFL-writing-04">TOEFL-writing-04</a><time datetime="2021-03-09T10:15:27.000Z" title="Created 2021-03-09 18:15:27">2021-03-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/03/08/RNA-seq-GSEA-ssGSEA/" title="RNA-seq: GSEA &amp; ssGSEA"><img src="/img/cover/RNA-seq.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="RNA-seq: GSEA &amp; ssGSEA"/></a><div class="content"><a class="title" href="/2021/03/08/RNA-seq-GSEA-ssGSEA/" title="RNA-seq: GSEA &amp; ssGSEA">RNA-seq: GSEA &amp; ssGSEA</a><time datetime="2021-03-08T04:50:50.000Z" title="Created 2021-03-08 12:50:50">2021-03-08</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 By yilingzhang</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
