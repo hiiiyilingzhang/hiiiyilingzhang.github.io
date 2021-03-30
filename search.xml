@@ -999,14 +999,14 @@
   }
 </style>
 
-<h1 id="一、环境配置"><a href="#一、环境配置" class="headerlink" title="一、环境配置"></a>一、环境配置</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/public/workspace/lincs/wes_cancer/data</span><br></pre></td></tr></table></figure>
-<h1 id="二、数据下载"><a href="#二、数据下载" class="headerlink" title="二、数据下载"></a>二、数据下载</h1><h2 id="2-1-NCBI-prefetch"><a href="#2-1-NCBI-prefetch" class="headerlink" title="2.1 NCBI+prefetch"></a>2.1 NCBI+prefetch</h2><p>在NCBI页面查找数据后点击Run Selector，选择需要的数据，下载Metadata和Accession List两个文件</p>
+<h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/public/workspace/lincs/wes_cancer/data</span><br></pre></td></tr></table></figure>
+<h1 id="数据下载"><a href="#数据下载" class="headerlink" title="数据下载"></a>数据下载</h1><h2 id="NCBI-prefetch"><a href="#NCBI-prefetch" class="headerlink" title="NCBI+prefetch"></a>NCBI+prefetch</h2><p>在NCBI页面查找数据后点击Run Selector，选择需要的数据，下载Metadata和Accession List两个文件</p>
  <center><img src="/img/Figures/SRA-run.png" alt="SRA-run" style="zoom:45%;" /></center>
 
 <p>依次读取SRR_Acc_List.txt的每一行，利用prefetch下载。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cat 0.sra/sra.infor/SRR_Acc_List.txt | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  prefetch <span class="variable">$&#123;id&#125;</span> -O  ./0.sra</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="2-2-ENA-Aspera"><a href="#2-2-ENA-Aspera" class="headerlink" title="2.2 ENA+Aspera"></a>2.2 ENA+Aspera</h2><p><a href="https://www.ebi.ac.uk/ena">ENA数据库: European Nucleotide</a><br>隶属于EBI，功能上应该是与SRA类似的，但是其搜索界面更加亲民，并且对于下载fastq文件以及检查下载数据完整性更加友好。  </p>
+<h2 id="ENA-Aspera"><a href="#ENA-Aspera" class="headerlink" title="ENA+Aspera"></a>ENA+Aspera</h2><p><a href="https://www.ebi.ac.uk/ena">ENA数据库: European Nucleotide</a><br>隶属于EBI，功能上应该是与SRA类似的，但是其搜索界面更加亲民，并且对于下载fastq文件以及检查下载数据完整性更加友好。  </p>
 <p><strong>1.</strong> 首先，在数据库页面右上角搜索栏输入目标SRA检索号，确认后稍等片刻可得结果页面；   </p>
 <p><img src="/img/Figures/ena.png" alt="ena"></p>
 <p><strong>2.</strong> 其次，点击选取 Read File 即可查看该实验下所有的测序序列数据的信息，选择需要查看的信息，这里的五列分别为：run_accession，library_name，fastq_ftp，sra_md5，sra_aspera；  </p>
@@ -1030,7 +1030,7 @@
 <center><img src="/img/Figures/md5Check.png" alt="MD5" style="zoom:80%;" /></center>
 
 <p>MD5码确认一致，下载的数据是完整无误的。</p>
-<h2 id="2-3-ENA-Arial2-奶牛快传"><a href="#2-3-ENA-Arial2-奶牛快传" class="headerlink" title="2.3 ENA+Arial2+奶牛快传"></a>2.3 ENA+Arial2+奶牛快传</h2><p><strong>Aria2</strong><br><strong>优点</strong>:速度快、体积小、资源占用少；支持 HTTP/FTP/BT/Magnet磁力链接等类型的文件下载，据说速度超级快;<br><br><strong>缺点</strong>: 配置麻烦，上手较难。</p>
+<h2 id="ENA-Arial2-奶牛快传"><a href="#ENA-Arial2-奶牛快传" class="headerlink" title="ENA+Arial2+奶牛快传"></a>ENA+Arial2+奶牛快传</h2><p><strong>Aria2</strong><br><strong>优点</strong>:速度快、体积小、资源占用少；支持 HTTP/FTP/BT/Magnet磁力链接等类型的文件下载，据说速度超级快;<br><br><strong>缺点</strong>: 配置麻烦，上手较难。</p>
 <p>教程：<br><a href="https://github.com/aria2/aria2/releases/tag/release-1.35.0">github-aria2</a><br><a href="https://cloud.tencent.com/developer/article/1142142">编译安装</a><br><a href="https://blog.readgroup.cn/m/?post=92">一键安装脚本（需要root权限）</a></p>
 <center><img src="/img/Figures/Aria2-wrong.png" alt="Aria-wrong" style="zoom:80%;" /></center>
 
@@ -1052,12 +1052,12 @@
 <p>传到服务器8M/s的速度太感人了！！还可以加线程！</p>
 <center><img src="/img/Figures/toserver.png" alt="cow-to-server" style="zoom:100%;" /></center>
 
-<h1 id="三、质控与去接头"><a href="#三、质控与去接头" class="headerlink" title="三、质控与去接头"></a>三、质控与去接头</h1><h2 id="3-1-文件格式转换"><a href="#3-1-文件格式转换" class="headerlink" title="3.1 文件格式转换"></a>3.1 文件格式转换</h2><h3 id="3-1-1-fastq-dump"><a href="#3-1-1-fastq-dump" class="headerlink" title="3.1.1 fastq-dump"></a>3.1.1 fastq-dump</h3><p>官方文档：<br><a href="https://ncbi.github.io/sra-tools/fastq-dump.html">github: fastq-dump</a><br>教程：<br><a href="https://www.jianshu.com/p/a8d70b66794c">Fastq-dump: 一个神奇的软件</a></p>
+<h1 id="质控与去接头"><a href="#质控与去接头" class="headerlink" title="质控与去接头"></a>质控与去接头</h1><h2 id="文件格式转换"><a href="#文件格式转换" class="headerlink" title="文件格式转换"></a>文件格式转换</h2><h3 id="fastq-dump"><a href="#fastq-dump" class="headerlink" title="fastq-dump"></a>fastq-dump</h3><p>官方文档：<br><a href="https://ncbi.github.io/sra-tools/fastq-dump.html">github: fastq-dump</a><br>教程：<br><a href="https://www.jianshu.com/p/a8d70b66794c">Fastq-dump: 一个神奇的软件</a></p>
 <blockquote>
 <p>常用参数:<br>split-spot: 将双端测序分为两份,但是都放在同一个文件中<br>split-files: 将双端测序分为两份,放在不同的文件,但是对于一方有而一方没有的reads直接丢弃<br>split-3 : 将双端测序分为两份,放在不同的文件,但是对于一方有而一方没有的reads会单独放在一个文件夹里<br>–gzip 输出文件以gz压缩<br>-A 输出文件名<br>-O 输出目录</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line"><span class="comment"># fastq-dump--sratoolkit-2.9.2</span></span><br><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line">cat 0.sra/sra.infor/sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span> </span><br><span class="line">time fastq-dump -A <span class="variable">$&#123;id&#125;</span> -O 1.rawfastq/ \</span><br><span class="line">--gzip --split-3 0.sra/<span class="variable">$&#123;id&#125;</span>.sra &gt; <span class="built_in">log</span>/sra2fq.log/<span class="variable">$&#123;id&#125;</span>.<span class="built_in">log</span> 2&gt;&amp;1 &amp;</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
-<h3 id="3-1-2-faterq-dump"><a href="#3-1-2-faterq-dump" class="headerlink" title="3.1.2 faterq-dump"></a>3.1.2 faterq-dump</h3><p>fastq-dump只能单个线程，速度特别的慢。2018年的6月份，sra-tools更新了一个新的sra解压工具，fasterq-dump,能利用临时文件和多线程加速从SRA文件提取FASTQ。</p>
+<h3 id="faterq-dump"><a href="#faterq-dump" class="headerlink" title="faterq-dump"></a>faterq-dump</h3><p>fastq-dump只能单个线程，速度特别的慢。2018年的6月份，sra-tools更新了一个新的sra解压工具，fasterq-dump,能利用临时文件和多线程加速从SRA文件提取FASTQ。</p>
 <p><strong>注意：</strong><code>fasterq-dump</code>不提供–gzip的参数用于压缩文件，提取出来的fastq文件只是文本文件，记得压缩，减小存储压力。（原文：There is no –gzip|–bizp2 option, you have to compress your files explicitly after they have been written.）</p>
 <p>官方文档：<br><a href="https://github.com/ncbi/sra-tools/wiki/HowTo:-fasterq-dump">github: fasterq-dump</a></p>
 <p>教程：<br><a href="https://www.plob.org/article/14565.html">fasterq-dump使用介绍</a></p>
@@ -1067,7 +1067,7 @@
 <p><strong>Troubleshooting</strong><br>err: cmn_iter.c cmn_iter_open_db().VDBManagerOpenDBRead( ‘case1_germline.sra’ ) -&gt; RC(rcVFS,rcMgr,rcOpening,rcDirectory,rcNotFound)<br>2021-03-18T09:53:03 fasterq-dump.2.9.2 err: sorter.c run_producer_pool(): row_count == 0!<br>2021-03-18T09:53:03 fasterq-dump.2.9.2 err: sorter.c execute_lookup_production() -&gt; RC(rcVDB,rcNoTarg,rcConstructing,rcParam,rcInvalid)2021-03-18T09:53:03 fasterq-dump.2.9.2 err: fasterq-dump.c produce_lookup_files() -&gt;<br> RC(rcVDB,rcNoTarg,rcConstructing,rcParam,rcInvalid)#<br><strong>Replied by contributor:</strong> Perhaps it should strip the .sra from the leaf name before creating .fastq output<br></p>
 </blockquote>
 <hr>
-<h2 id="3-2-质控"><a href="#3-2-质控" class="headerlink" title="3.2 质控"></a>3.2 质控</h2><p>通过config文件进行批量操作</p>
+<h2 id="质控"><a href="#质控" class="headerlink" title="质控"></a>质控</h2><p>通过config文件进行批量操作</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line"><span class="comment"># FastQC-v0.11.8 </span></span><br><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line">cat 0.sra/sra.infor/sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  fastqc --outdir ./2.qc/raw.qc/ --threads 5 ./1.rawfastq/<span class="variable">$&#123;id&#125;</span>*.fastq.gz &gt;&gt; ./<span class="built_in">log</span>/qc.log/rawqc/<span class="variable">$&#123;id&#125;</span>_fastqc.log 2&gt;&amp;1 &amp; </span><br><span class="line"><span class="keyword">done</span> </span><br></pre></td></tr></table></figure>
 <center><img src="/img/Figures/fastqc.png" alt="fastqc" style="zoom:90%;" /></center>
 
@@ -1077,7 +1077,7 @@
 <center><img src="/img/Figures/raw_status_check.png" alt="raw-status" style="zoom:90%;" /></center>
 
 <p>发现测序质量非常好，怀疑已经经过一定的处理</p>
-<h2 id="3-3-fastp"><a href="#3-3-fastp" class="headerlink" title="3.3 fastp"></a>3.3 fastp</h2><center><img src="/img/Figures/adaptor.png" alt="adapter" style="zoom:90%;" /></center>
+<h2 id="fastp"><a href="#fastp" class="headerlink" title="fastp"></a>fastp</h2><center><img src="/img/Figures/adaptor.png" alt="adapter" style="zoom:90%;" /></center>
 
 <p>fastqc和MultiQC给出的报告均显示未发现接头，这里用fastp的默认参数处理。教程中用的trim_galore之前在做ATAC-seq是使用过，跑的非常非常慢。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line"><span class="comment"># fastp-v0.20.0</span></span><br><span class="line"><span class="comment"># -------------------------------&gt; </span></span><br><span class="line">cat 0.sra/sra.infor/sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  fastp -i ./1.rawfastq/<span class="variable">$&#123;id&#125;</span>_1.fastq.gz -o ./3.cleanfastq/<span class="variable">$&#123;id&#125;</span>_1.fastq.gz \</span><br><span class="line">        -I ./1.rawfastq/<span class="variable">$&#123;id&#125;</span>_2.fastq.gz -O ./3.cleanfastq/<span class="variable">$&#123;id&#125;</span>_2.fastq.gz \</span><br><span class="line">        --thread=6 \</span><br><span class="line">        &gt; <span class="built_in">log</span>/fastp.log/<span class="variable">$&#123;id&#125;</span>.fastp.log 2&gt;&amp;1 &amp;</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
@@ -1085,14 +1085,14 @@
 <center><img src="/img/Figures/g1_fastp.png" alt="adapter" style="zoom:80%;" /></center>
 
 <p>发现还是有一定效果的。</p>
-<h1 id="四、比对"><a href="#四、比对" class="headerlink" title="四、比对"></a>四、比对</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line"><span class="comment"># bwa-v0.7.17</span></span><br><span class="line"><span class="comment"># -------------------------------&gt; </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 索引文件：</span></span><br><span class="line">INDEX=/public/workspace/lincs/wes_cancer/data/gatk_hg38</span><br><span class="line"></span><br><span class="line">cat 0.sra/sra.infor/sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;start bwa for <span class="variable">$&#123;id&#125;</span>&quot;</span> `date`</span><br><span class="line">  fq1=./3.cleanfastq/<span class="variable">$&#123;id&#125;</span>_1.fq.gz</span><br><span class="line">  fq2=./3.cleanfastq/<span class="variable">$&#123;id&#125;</span>_2.fq.gz</span><br><span class="line">  bwa mem -M -t 6 -R <span class="string">&quot;@RG\tID:<span class="variable">$&#123;id&#125;</span>\tSM:<span class="variable">$&#123;id&#125;</span>\tLB:WXS\tPL:Illumina&quot;</span> <span class="variable">$&#123;INDEX&#125;</span> <span class="variable">$&#123;fq1&#125;</span> <span class="variable">$&#123;fq2&#125;</span> | samtools sort -@ 6 -m 1G  -o ./4.alignment/<span class="variable">$&#123;id&#125;</span>.bam -</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;end bwa for <span class="variable">$&#123;id&#125;</span>&quot;</span> `date`</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<h1 id="比对"><a href="#比对" class="headerlink" title="比对"></a>比对</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line"><span class="comment"># bwa-v0.7.17</span></span><br><span class="line"><span class="comment"># -------------------------------&gt; </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 索引文件：</span></span><br><span class="line">INDEX=/public/workspace/lincs/wes_cancer/data/gatk_hg38</span><br><span class="line"></span><br><span class="line">cat 0.sra/sra.infor/sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;start bwa for <span class="variable">$&#123;id&#125;</span>&quot;</span> `date`</span><br><span class="line">  fq1=./3.cleanfastq/<span class="variable">$&#123;id&#125;</span>_1.fq.gz</span><br><span class="line">  fq2=./3.cleanfastq/<span class="variable">$&#123;id&#125;</span>_2.fq.gz</span><br><span class="line">  bwa mem -M -t 6 -R <span class="string">&quot;@RG\tID:<span class="variable">$&#123;id&#125;</span>\tSM:<span class="variable">$&#123;id&#125;</span>\tLB:WXS\tPL:Illumina&quot;</span> <span class="variable">$&#123;INDEX&#125;</span> <span class="variable">$&#123;fq1&#125;</span> <span class="variable">$&#123;fq2&#125;</span> | samtools sort -@ 6 -m 1G  -o ./4.alignment/<span class="variable">$&#123;id&#125;</span>.bam -</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;end bwa for <span class="variable">$&#123;id&#125;</span>&quot;</span> `date`</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 <center><img src="/img/Figures/bamfile.png" alt="bamfile" style="zoom:90%;" /></center>
 
 <p>bwa比对后先产生sam文件，但是因为sam文件太大，占用空间，要转换成二进制的bam文件。因此，脚本中把比对的结果通过管道符1传给 samtools进行排序后直接生存bam文件(中划线“-”作为缓存占位符)，排序的依据是bam文件中reads比对到参考基因组的染色体和坐标。</p>
 <p>bam文件格式：</p>
 <center><img src="/img/Figures/bam_info.png" alt="bamfile" style="zoom:50%;" /></center>
 
-<h1 id="五、比对结果的质控"><a href="#五、比对结果的质控" class="headerlink" title="五、比对结果的质控"></a>五、比对结果的质控</h1><h2 id="5-1-samtools-stats-plot-bamstats"><a href="#5-1-samtools-stats-plot-bamstats" class="headerlink" title="5.1 samtools stats + plot-bamstats"></a>5.1 samtools stats + plot-bamstats</h2><p>利用samtools stats对bam文件进行统计</p>
+<h1 id="比对结果的质控"><a href="#比对结果的质控" class="headerlink" title="比对结果的质控"></a>比对结果的质控</h1><h2 id="samtools-stats-plot-bamstats"><a href="#samtools-stats-plot-bamstats" class="headerlink" title="samtools stats + plot-bamstats"></a>samtools stats + plot-bamstats</h2><p>利用samtools stats对bam文件进行统计</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line"><span class="comment"># samtools-v1.9</span></span><br><span class="line"><span class="comment"># -------------------------------&gt; </span></span><br><span class="line">cat 0.sra/sra.infor/sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  bam=./4.alignment/<span class="variable">$&#123;id&#125;</span>.bam</span><br><span class="line">  samtools stats -@ 6 --reference ~/public/workspace/lincs/wes_cancer/data/Homo_sapiens_assembly38.fasta <span class="variable">$&#123;bam&#125;</span> &gt; ./4.alignment/stats/<span class="variable">$&#123;id&#125;</span>.<span class="built_in">stat</span></span><br><span class="line"></span><br><span class="line">  plot-bamstats -p ./4.alignment/stats/<span class="variable">$&#123;id&#125;</span> ./4.alignment/stats/<span class="variable">$&#123;id&#125;</span>.<span class="built_in">stat</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 <p>可以查看bamfile比对的信息（以case1_germine为例）：</p>
 <center><img src="/img/Figures/g1-stat.png" alt="bam-info" style="zoom:60%;" /></center>
@@ -1131,9 +1131,16 @@
 <p>以case1_germline和case1_biorep_B为例：</p>
 <center><img src="/img/Figures/plot-succ.png" alt="show the plot" style="zoom:80%;" /></center>
 
-<h2 id="5-2-qualimap"><a href="#5-2-qualimap" class="headerlink" title="5.2 qualimap"></a>5.2 qualimap</h2><p><code>qualimap</code>可用来查看覆盖深度等信息，需要py=3.9，跑的时候占用很多内存，大概跑了30分钟</p>
+<h2 id="qualimap"><a href="#qualimap" class="headerlink" title="qualimap"></a>qualimap</h2><p><code>qualimap</code>可用来查看覆盖深度等信息，需要py=3.9，跑的时候占用很多内存，大概跑了30分钟</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cat 0.sra/sra.infor/sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  qualimap bamqc --java-mem-size=10G -gff /public/workspace/lincs/wes_cancer/data/hg38.exon.bed -nr 100000 -nw 500 -nt 8 -bam ./4.alignment/<span class="variable">$&#123;id&#125;</span>.bam -outdir ./4.alignment/qualimap/<span class="variable">$&#123;id&#125;</span> &amp;</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
-]]></content>
+<p>可得到HTML格式的报告，以case1_germline为例：</p>
+<center><img src="/img/Figures/qualimap-res.png" alt="qualimap-res" style="zoom:80%;" /></center>
+
+<p>下图展现了测序深度与基因组的覆盖信息，结果表明：有65%的位点测序深度达到50X</p>
+<table><tr>
+<td><img src="/img/Figures/coverage.png" border=0></td>
+<td><img src="/img/Figures/genome-fraction.png" border=0></td>
+</tr></table>]]></content>
       <categories>
         <category>WES</category>
       </categories>
