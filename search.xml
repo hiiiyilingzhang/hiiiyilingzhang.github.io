@@ -999,7 +999,14 @@
   }
 </style>
 
-<h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/public/workspace/lincs/wes_cancer/data</span><br></pre></td></tr></table></figure>
+<h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><h2 id="GATK"><a href="#GATK" class="headerlink" title="GATK"></a>GATK</h2><p>本次作业使用的GATK版本为4.2.0.0<br>数据库文件来源：<code>/public/workspace/lincs/wes_cancer/data</code></p>
+<p><a href="https://github.com/broadinstitute/gatk/releases">github-GATK</a><br><a href="https://gatk.broadinstitute.org/hc/en-us">官网</a></p>
+<p>由于GATK的更新，ftp链接于2020年6月1日关闭，所有数据库文件都迁移至谷歌云存储：<a href="https://console.cloud.google.com/storage/browser/genomics-public-data/resources/broad/hg38/v0;tab=objects?pageState=(%22StorageObjectListTable%22:(%22f%22:%22%255B%255D%22))&prefix=&forceOnObjectsSortingFiltering=false">Google Cloud-genomics public data</a><br>文件下载需要先conda/mamba安装gsutil</p>
+<center><img src="/img/Figures/googlecloud.png" alt="googlecloud" style="zoom:100%;" /></center>
+
+<blockquote>
+<p>阿里云和Broad Institute合作提供了GATK软件分析流程。由Broad Institute提供的GATK流程最佳实践用工作流定义语言（WDL）编写，通过批量计算集成的Cromwell工作流引擎解析执行。用户将为作业运行时实际消耗的计算和存储资源付费，不需要支付资源之外的附加费用。需要先开通阿里云的OSS并创建好Bucket，输入、输出文件都需要保存在OSS。<br>  <a href="https://help.aliyun.com/document_detail/60414.html?spm=a2c4g.11186623.6.607.63f83e36wO8PHK">阿里云-GATK支持</a><br>  <center><img src="/img/Figures/alibaba.png" alt="alibaba-GATK" style="zoom:100%;" /></center></p>
+</blockquote>
 <h1 id="数据下载"><a href="#数据下载" class="headerlink" title="数据下载"></a>数据下载</h1><h2 id="NCBI-prefetch"><a href="#NCBI-prefetch" class="headerlink" title="NCBI+prefetch"></a>NCBI+prefetch</h2><p>在NCBI页面查找数据后点击Run Selector，选择需要的数据，下载Metadata和Accession List两个文件</p>
  <center><img src="/img/Figures/SRA-run.png" alt="SRA-run" style="zoom:45%;" /></center>
 
@@ -1057,7 +1064,7 @@
 <p>常用参数:<br>split-spot: 将双端测序分为两份,但是都放在同一个文件中<br>split-files: 将双端测序分为两份,放在不同的文件,但是对于一方有而一方没有的reads直接丢弃<br>split-3 : 将双端测序分为两份,放在不同的文件,但是对于一方有而一方没有的reads会单独放在一个文件夹里<br>–gzip 输出文件以gz压缩<br>-A 输出文件名<br>-O 输出目录</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line"><span class="comment"># fastq-dump--sratoolkit-2.9.2</span></span><br><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line">cat 0.sra/sra.infor/sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span> </span><br><span class="line">time fastq-dump -A <span class="variable">$&#123;id&#125;</span> -O 1.rawfastq/ \</span><br><span class="line">--gzip --split-3 0.sra/<span class="variable">$&#123;id&#125;</span>.sra &gt; <span class="built_in">log</span>/sra2fq.log/<span class="variable">$&#123;id&#125;</span>.<span class="built_in">log</span> 2&gt;&amp;1 &amp;</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
-<h3 id="faterq-dump"><a href="#faterq-dump" class="headerlink" title="faterq-dump"></a>faterq-dump</h3><p>fastq-dump只能单个线程，速度特别的慢。2018年的6月份，sra-tools更新了一个新的sra解压工具，fasterq-dump,能利用临时文件和多线程加速从SRA文件提取FASTQ。</p>
+<h3 id="faterq-dump"><a href="#faterq-dump" class="headerlink" title="faterq-dump"></a>faterq-dump</h3><p><code>fastq-dump</code>只能单个线程，速度特别的慢。2018年的6月份，sra-tools更新了一个新的sra解压工具，<code>fasterq-dump</code>，能利用临时文件和多线程加速从SRA文件提取FASTQ。</p>
 <p><strong>注意：</strong><code>fasterq-dump</code>不提供–gzip的参数用于压缩文件，提取出来的fastq文件只是文本文件，记得压缩，减小存储压力。（原文：There is no –gzip|–bizp2 option, you have to compress your files explicitly after they have been written.）</p>
 <p>官方文档：<br><a href="https://github.com/ncbi/sra-tools/wiki/HowTo:-fasterq-dump">github: fasterq-dump</a></p>
 <p>教程：<br><a href="https://www.plob.org/article/14565.html">fasterq-dump使用介绍</a></p>
@@ -1067,11 +1074,11 @@
 <p><strong>Troubleshooting</strong><br>err: cmn_iter.c cmn_iter_open_db().VDBManagerOpenDBRead( ‘case1_germline.sra’ ) -&gt; RC(rcVFS,rcMgr,rcOpening,rcDirectory,rcNotFound)<br>2021-03-18T09:53:03 fasterq-dump.2.9.2 err: sorter.c run_producer_pool(): row_count == 0!<br>2021-03-18T09:53:03 fasterq-dump.2.9.2 err: sorter.c execute_lookup_production() -&gt; RC(rcVDB,rcNoTarg,rcConstructing,rcParam,rcInvalid)2021-03-18T09:53:03 fasterq-dump.2.9.2 err: fasterq-dump.c produce_lookup_files() -&gt;<br> RC(rcVDB,rcNoTarg,rcConstructing,rcParam,rcInvalid)#<br><strong>Replied by contributor:</strong> Perhaps it should strip the .sra from the leaf name before creating .fastq output<br></p>
 </blockquote>
 <hr>
-<h2 id="质控"><a href="#质控" class="headerlink" title="质控"></a>质控</h2><p>通过config文件进行批量操作</p>
+<h2 id="质控"><a href="#质控" class="headerlink" title="质控"></a>质控</h2><p>通过<code>config</code>文件进行批量操作</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line"><span class="comment"># FastQC-v0.11.8 </span></span><br><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line">cat 0.sra/sra.infor/sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  fastqc --outdir ./2.qc/raw.qc/ --threads 5 ./1.rawfastq/<span class="variable">$&#123;id&#125;</span>*.fastq.gz &gt;&gt; ./<span class="built_in">log</span>/qc.log/rawqc/<span class="variable">$&#123;id&#125;</span>_fastqc.log 2&gt;&amp;1 &amp; </span><br><span class="line"><span class="keyword">done</span> </span><br></pre></td></tr></table></figure>
 <center><img src="/img/Figures/fastqc.png" alt="fastqc" style="zoom:90%;" /></center>
 
-<p>利用multiqc软件对所有样本的结果进行整合，方便查看。</p>
+<p>利用<code>multiqc</code>软件对所有样本的结果进行整合，方便查看。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line"><span class="comment"># MultiQC-v1.9</span></span><br><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line">multiqc  ./2.qc/raw.qc/*zip  -o ./2.qc/raw.qc/multiqc</span><br></pre></td></tr></table></figure>
 <p>输出文件: ./Supplementary/raw_multiqc_report.html</p>
 <center><img src="/img/Figures/raw_status_check.png" alt="raw-status" style="zoom:90%;" /></center>
@@ -1079,7 +1086,7 @@
 <p>发现测序质量非常好，怀疑已经经过一定的处理</p>
 <h2 id="fastp"><a href="#fastp" class="headerlink" title="fastp"></a>fastp</h2><center><img src="/img/Figures/adaptor.png" alt="adapter" style="zoom:90%;" /></center>
 
-<p>fastqc和MultiQC给出的报告均显示未发现接头，这里用fastp的默认参数处理。教程中用的trim_galore之前在做ATAC-seq是使用过，跑的非常非常慢。</p>
+<p><code>fastqc</code>和<code>MultiQC</code>给出的报告均显示未发现接头，这里用<code>fastp</code>的默认参数处理。教程中用的<code>trim_galore</code>之前在做ATAC-seq是使用过，跑的非常非常慢。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line"><span class="comment"># fastp-v0.20.0</span></span><br><span class="line"><span class="comment"># -------------------------------&gt; </span></span><br><span class="line">cat 0.sra/sra.infor/sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  fastp -i ./1.rawfastq/<span class="variable">$&#123;id&#125;</span>_1.fastq.gz -o ./3.cleanfastq/<span class="variable">$&#123;id&#125;</span>_1.fastq.gz \</span><br><span class="line">        -I ./1.rawfastq/<span class="variable">$&#123;id&#125;</span>_2.fastq.gz -O ./3.cleanfastq/<span class="variable">$&#123;id&#125;</span>_2.fastq.gz \</span><br><span class="line">        --thread=6 \</span><br><span class="line">        &gt; <span class="built_in">log</span>/fastp.log/<span class="variable">$&#123;id&#125;</span>.fastp.log 2&gt;&amp;1 &amp;</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 <p>以case1_germline样本为例：</p>
 <center><img src="/img/Figures/g1_fastp.png" alt="adapter" style="zoom:80%;" /></center>
@@ -1088,20 +1095,20 @@
 <h1 id="比对"><a href="#比对" class="headerlink" title="比对"></a>比对</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line"><span class="comment"># bwa-v0.7.17</span></span><br><span class="line"><span class="comment"># -------------------------------&gt; </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 索引文件：</span></span><br><span class="line">INDEX=/public/workspace/lincs/wes_cancer/data/gatk_hg38</span><br><span class="line"></span><br><span class="line">cat 0.sra/sra.infor/sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;start bwa for <span class="variable">$&#123;id&#125;</span>&quot;</span> `date`</span><br><span class="line">  fq1=./3.cleanfastq/<span class="variable">$&#123;id&#125;</span>_1.fq.gz</span><br><span class="line">  fq2=./3.cleanfastq/<span class="variable">$&#123;id&#125;</span>_2.fq.gz</span><br><span class="line">  bwa mem -M -t 6 -R <span class="string">&quot;@RG\tID:<span class="variable">$&#123;id&#125;</span>\tSM:<span class="variable">$&#123;id&#125;</span>\tLB:WXS\tPL:Illumina&quot;</span> <span class="variable">$&#123;INDEX&#125;</span> <span class="variable">$&#123;fq1&#125;</span> <span class="variable">$&#123;fq2&#125;</span> | samtools sort -@ 6 -m 1G  -o ./4.alignment/<span class="variable">$&#123;id&#125;</span>.bam -</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;end bwa for <span class="variable">$&#123;id&#125;</span>&quot;</span> `date`</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 <center><img src="/img/Figures/bamfile.png" alt="bamfile" style="zoom:90%;" /></center>
 
-<p>bwa比对后先产生sam文件，但是因为sam文件太大，占用空间，要转换成二进制的bam文件。因此，脚本中把比对的结果通过管道符1传给 samtools进行排序后直接生存bam文件(中划线“-”作为缓存占位符)，排序的依据是bam文件中reads比对到参考基因组的染色体和坐标。</p>
+<p>bwa比对后先产生sam文件，但是因为sam文件太大，占用空间，要转换成二进制的bam文件。因此，脚本中把比对的结果通过管道符1传给 <code>samtools</code>进行排序后直接生存bam文件(中划线“-”作为缓存占位符)，排序的依据是bam文件中reads比对到参考基因组的染色体和坐标。</p>
 <p>bam文件格式：</p>
 <center><img src="/img/Figures/bam_info.png" alt="bamfile" style="zoom:50%;" /></center>
 
-<h1 id="比对结果的质控"><a href="#比对结果的质控" class="headerlink" title="比对结果的质控"></a>比对结果的质控</h1><h2 id="samtools-stats-plot-bamstats"><a href="#samtools-stats-plot-bamstats" class="headerlink" title="samtools stats + plot-bamstats"></a>samtools stats + plot-bamstats</h2><p>利用samtools stats对bam文件进行统计</p>
+<h1 id="比对结果的质控"><a href="#比对结果的质控" class="headerlink" title="比对结果的质控"></a>比对结果的质控</h1><h2 id="samtools-stats-plot-bamstats"><a href="#samtools-stats-plot-bamstats" class="headerlink" title="samtools stats + plot-bamstats"></a>samtools stats + plot-bamstats</h2><p>利用<code>samtools stats</code>对bam文件进行统计</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line"><span class="comment"># samtools-v1.9</span></span><br><span class="line"><span class="comment"># -------------------------------&gt; </span></span><br><span class="line">cat 0.sra/sra.infor/sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  bam=./4.alignment/<span class="variable">$&#123;id&#125;</span>.bam</span><br><span class="line">  samtools stats -@ 6 --reference ~/public/workspace/lincs/wes_cancer/data/Homo_sapiens_assembly38.fasta <span class="variable">$&#123;bam&#125;</span> &gt; ./4.alignment/stats/<span class="variable">$&#123;id&#125;</span>.<span class="built_in">stat</span></span><br><span class="line"></span><br><span class="line">  plot-bamstats -p ./4.alignment/stats/<span class="variable">$&#123;id&#125;</span> ./4.alignment/stats/<span class="variable">$&#123;id&#125;</span>.<span class="built_in">stat</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 <p>可以查看bamfile比对的信息（以case1_germine为例）：</p>
 <center><img src="/img/Figures/g1-stat.png" alt="bam-info" style="zoom:60%;" /></center>
 
 <hr>
-<p><strong>Troubleshooting</strong><br>在plot-bamstats时遇到了如下报错（用的samtools-v1.9，samtools-v1.7显示command not found）。因为plot-bamstats 需要调用<code>gnuplot</code>去画图，这里缺少了libjpeg.so.8这个库（是一款开源的jpeg解压库）。</p>
+<p><strong>Troubleshooting</strong><br>在<code>plot-bamstats</code>时遇到了如下报错（用的samtools-v1.9，samtools-v1.7显示command not found）。因为plot-bamstats需要调用<code>gnuplot</code>去画图，这里缺少了<code>libjpeg.so.8</code>这个库（是一款开源的jpeg解压库）。</p>
 <center><img src="/img/Figures/plot-error.png" alt="plot-error" style="zoom:90%;" /></center>
 
-<p>用conda安装libjpeg.so.8库：</p>
+<p>用conda安装<code>libjpeg.so.8</code>库：</p>
 <center><img src="/img/Figures/conda-libjpeg.png" alt="libjpeg" style="zoom:90%;" /></center>
 
 <p>然后报错了,用mamba install也一样是报错：<br><br><img src="/img/Figures/conda-install-error.png" alt="install-error" style="zoom:100%;" /></p>
@@ -1115,14 +1122,14 @@
 <p>又试了一下mamba install！！成功了！！</p>
 <center><img src="/img/Figures/mamba-success.png" alt="mamba" style="zoom:100%;" /></center>
 
-<p>但是！！libjpeg-turbo是libjpeg是的升级版，plot-bamstats不支持用libjpeg-turbo。</p>
-<p>再创建新环境，重新装了gnuplot之后新报错又来了！conda gnuplot自动装上了jpeg的解压库。所以上面libjpeg.so.8库缺失这个问题算是解决了！</p>
-<p>先调用gnuplot试一下（需要写全路径，相对路径会报错）：</p>
+<p>但是！！<code>libjpeg-turbo</code>是libjpeg是的升级版，<code>plot-bamstats</code>不支持用<code>libjpeg-turbo</code>。</p>
+<p>再创建新环境，重新装了<code>gnuplot</code>之后新报错又来了！conda gnuplot自动装上了jpeg的解压库。所以上面<code>libjpeg.so.8</code>库缺失这个问题算是解决了！</p>
+<p>先调用<code>gnuplot</code>试一下（需要写全路径，相对路径会报错）：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gnuplot ~/MyCourse/CancerGenomics/WES.proj/4.alignment/stats/plot/case1_germline-quals.gp</span><br></pre></td></tr></table></figure>
 <p>可以成功画图了！</p>
 <center><img src="/img/Figures/case1_germline-quals.png" style="zoom:75%;" /></center>
 
-<p>然后用plot-bamstats，虽然这里有报错，但图片都出来了</p>
+<p>然后用<code>plot-bamstats</code>，虽然这里有报错，但图片都出来了</p>
 <center><img src="/img/Figures/samtool1.9error.png" alt="error" style="zoom:80%;" /></center>
 
 
@@ -1333,8 +1340,14 @@
 <p>缓存目录为对应的目录。此时运行：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 利用缓存创建环境</span></span><br><span class="line">conda create -n offline36 anaconda pytorch tensorflow lightgbm catboost tqdm black pipreqs python=3.6 --use-index-cache --offline</span><br><span class="line"></span><br><span class="line"><span class="comment"># 利用缓存安装包</span></span><br><span class="line">conda install tensorflow-gpu=1.15 py-xgboost --use-index-cache --offline</span><br><span class="line">就可以只用 conda 缓存中的文件，⽆需联网，就能成功安装对应库到离线环境中了。</span><br></pre></td></tr></table></figure>
 <h1 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h1><p>安装软件前，先设置一个虚拟环境，不要直接在自己账户的当前环境内安装软件；</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建一个虚拟环境名为bwa</span></span><br><span class="line">conda create -n bwa</span><br><span class="line"><span class="comment"># 安装python 2版本</span></span><br><span class="line">conda install python=2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 以上两句话可以等同于一句命令：conda create -n rna python=2</span></span><br></pre></td></tr></table></figure>
-<p>查看虚拟环境</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建一个虚拟环境名为bwa</span></span><br><span class="line">conda create -n bwa</span><br><span class="line"><span class="comment"># 安装python 2版本</span></span><br><span class="line">conda install python=2</span><br><span class="line"><span class="comment"># 以上两句话可以等同于一句命令：conda create -n rna python=2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除环境</span></span><br><span class="line">conda remove -n rcnn --all</span><br></pre></td></tr></table></figure>
+<p>conda 其实没有重命名指令，实现重命名是通过 clone 完成的，分两步：</p>
+<ol>
+<li>先 clone 一份 new name 的环境</li>
+<li>删除 old name 的环境</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 比如，想把环境 rcnn 重命名成 tf</span></span><br><span class="line"><span class="comment"># 第1步</span></span><br><span class="line">conda create -n tf --<span class="built_in">clone</span> rcnn</span><br><span class="line"></span><br><span class="line"><span class="comment">#第2步</span></span><br><span class="line">conda remove -n rcnn --all</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda info -e</span><br><span class="line">conda info --envs</span><br><span class="line">conda env list    <span class="comment"># 都是来查看已经存在虚拟环境名的</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入虚拟环境</span></span><br><span class="line"><span class="built_in">source</span> activate bwa  <span class="comment">#激活虚拟环境名为bwa的环境</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 退出环境</span></span><br><span class="line">conda deactivate  <span class="comment">#: linux下conda退出虚拟环境命令</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 移除虚拟环境</span></span><br><span class="line">conda env remove --name bio-env       <span class="comment">#：删除虚拟环境及里面的内容</span></span><br></pre></td></tr></table></figure>
 <h1 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h1><h2 id="查找软件"><a href="#查找软件" class="headerlink" title="查找软件"></a>查找软件</h2><ol>
 <li>从 conda 网页内查找：<a href="http://bioconda.github.io/conda-recipe_index.html">http://bioconda.github.io/conda-recipe_index.html</a></li>
