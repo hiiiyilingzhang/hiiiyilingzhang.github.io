@@ -168,6 +168,116 @@
       </tags>
   </entry>
   <entry>
+    <title>Metagenomics Analysis</title>
+    <url>/2021/04/01/Metagenomics/</url>
+    <content><![CDATA[<ol>
+<li>通过single end示例数据了解qiime2分析过程。</li>
+<li>尝试利用pair end示例数据进行16S数据分析。</li>
+</ol>
+<hr>
+<h1 id="Qiime2"><a href="#Qiime2" class="headerlink" title="Qiime2"></a>Qiime2</h1><h2 id="introduction"><a href="#introduction" class="headerlink" title="introduction"></a>introduction</h2><p>QIIME 2是一款强大、可扩展和去中心化的微生物组分析平台，强调数据分析透明。QIIME 2可以使研究者从原始DNA序列开始分析，直接获取出版级的统计和图片结果。</p>
+<p>主要特点：</p>
+<ul>
+<li>整合分析流程、自动化追踪数据来源</li>
+<li>语义类型系统，自动识别输入文件类型</li>
+<li>插件系统可扩展微生物分析功能种类</li>
+<li>支持多种用户界面，如API、命令行、图形界面</li>
+</ul>
+<p>QIIME 2是对QIIME 1完全重新设计并重写的微生物组分析流程。QIIME 2保留了QIIME 1强大和广泛使用的优点，同时改进了其众多不足之处。</p>
+<p>QIIME 2当前支持从头到尾的完整微生物组分析流程。通常QIIME 2插件功能，不断有新功能可用。可以在可用插件列表中查找当前可用的插件。在未来可用插件页列出了正在开发的插件。</p>
+<h2 id="installation"><a href="#installation" class="headerlink" title="installation"></a>installation</h2><ul>
+<li><p>conda环境安装QIIME2（推荐）<br>Install QIIME 2 within a conda environment<br>mkdir -p 2020.11 &amp;&amp; cd 2020.11</p>
+</li>
+<li><p>下载软件安装列表，官方源不容易下载</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget -c https://data.qiime2.org/distro/core/qiime2-2020.11-py36-linux-conda.yml</span><br><span class="line"><span class="comment"># OR</span></span><br><span class="line">wget -c http://210.75.224.110/github/QIIME2ChineseManual/2020.11/qiime2-2020.11-py36-linux-conda.yml</span><br><span class="line">time conda env create -n qiime2-2020.11 --file qiime2-2020.11-py36-linux-conda.yml</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除软件列表</span></span><br><span class="line">rm qiime2-2020.11-py36-linux-conda.yml</span><br></pre></td></tr></table></figure></li>
+<li><p>服务器已安装，直接使用。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">qiime2 conda environment path:</span><br><span class="line">/public/workspace/zmy1/home/wujian/.conda/envs/qimme2-2020.11/</span><br><span class="line"></span><br><span class="line"><span class="comment"># ln至自己的文件夹下</span></span><br><span class="line"><span class="built_in">source</span> activate qimme2-2020.11</span><br></pre></td></tr></table></figure>
+<h2 id="Qiime2重要概念"><a href="#Qiime2重要概念" class="headerlink" title="Qiime2重要概念"></a>Qiime2重要概念</h2></li>
+</ul>
+<ol>
+<li><p>数据文件: QIIME 2对象/文件格式<br>由QIIME 2产生的数据类型，叫QIIME 2对象(artifacts)，通常包括数据和元数据/样本信息(metadata)。元数据描述数据，包括类型、格式和它如何产生。典型的扩展名为.qza。</p>
+</li>
+<li><p>数据文件：可视化<br>QIIME2生成的图表结果对象或文件类型，以.qzv为扩展名，末尾的v代表visual；它同qza文件类似，包括分析方法和结果，方便追溯图表是如何产生的；唯一与qza不同的，它是分析的终点，即结果的呈现，不会在流程中继续分析。可视化的结果包括统计结果表格、交互式图像、静态图片及其它组合的可视化呈现。这类文件可以使用QIIME2 qiime tools view命令查看。</p>
+<p>可通过网站：<a href="https://view.qiime2.org/">https://view.qiime2.org/</a><br>导入文件并显示结果图表，同时可查看数据分析过程；方便与不使用QIIME 2的合作者分享结果。</p>
+</li>
+<li><p>插件<br>QIIME2中的用户的某个特定功能即为插件，你可以安装并完成分析，比如拆分样品的q2-demux插件、Alpha-或beta-多样性分析的q2-diversity插件等。</p>
+</li>
+<li><p>方法和可视化软件<br>QIIME 2插件定义的用于进行分析的方法和可视化工具类型。</p>
+<p>方法是对QIIME2定义的输入对象进行操作的过程，包括命令和参数，并产生1个或多个标准格式的输出。这一结果可以后续分析或可视化，产生中间或末端的输出。例如rarefy方法，输入文件为q2-feature-table插件产生的特征表，输出文件为样本深度一致的特征表。它可以作为输入文件，用于alpha多样性分析中的q2-diversity方法。输入和输出均为qza文件；</p>
+<p>可视化工具定义了标准输入，包括QIIME 2对象和参数的组合，产生统计表格或可视化图形，方便用户解读，输入为qza格式，输出为qzv，文件不仅包括结果，还包括处理的分析命令和参数，方便重复和检查分析过程是否准确。可视化的结果文件qzv是分析的终点，不可以进一步分析。</p>
+</li>
+</ol>
+<h2 id="Qiime2使用"><a href="#Qiime2使用" class="headerlink" title="Qiime2使用"></a>Qiime2使用</h2><p><img src="/img/Metagenomics/qiime.png" alt="qiime"></p>
+<h1 id="16S分析流程"><a href="#16S分析流程" class="headerlink" title="16S分析流程"></a>16S分析流程</h1><blockquote>
+<p>数据位置<br>/public/workspace/zmy1/home/wujian/metagenomics/single_end/<br>分别将emp-single-end-sequences和sample-metadata.tsv软链至相应文件夹下。<br>/public/workspace/zmy1/home/wujian/metagenomics/single_end/emp-single-end-sequences/<br>/public/workspace/zmy1/home/wujian/metagenomics/single_end/sample-metadata.tsv</p>
+</blockquote>
+<h2 id="Metadata-元数据"><a href="#Metadata-元数据" class="headerlink" title="Metadata 元数据"></a>Metadata 元数据</h2><p>元数据提供了从数据中获得生物学发现的关键。在QIIME 2中，样本元数据可以包括更多技术细节，例如在多次测序批次中用于每个样本的DNA条形码，或者样本的描述，例如每个样本来自人类微生物组对应时间序列研究中的分组、时间点和身体部位。特征元数据通常是特征注释，例如分配给序列变量或OTU的物种注释。</p>
+<p>收集样本元数据通常是在开始QIIME 2分析之前要进行的第一步。由研究人员决定哪些信息是作为元数据收集和跟踪的。<br>尽可能多的收集元数据，因为您可能无法追溯收集某些类型的信息，以便后续分析中使用。<br><img src="/img/Metagenomics/Metadata.png" alt="Metadata"></p>
+<h2 id="数据格式"><a href="#数据格式" class="headerlink" title="数据格式"></a>数据格式</h2><p>EMPSingleEndSequences是包含多样本混合的序列文件，这意味着序列尚未分配给样本（因此包括sequences.fastq.gz和barcode.fastq.gz文件，其中barcode.fastq.gz包含与sequences.fastq.gz中的每个序列相关联的条形码）。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/public/workspace/zmy1/home/wujian/metagenomics/single_end/emp-single-end-sequences/</span><br></pre></td></tr></table></figure>
+<h2 id="导入数据"><a href="#导入数据" class="headerlink" title="导入数据"></a>导入数据</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time qiime tools import \</span><br><span class="line">  --<span class="built_in">type</span> EMPSingleEndSequences \</span><br><span class="line">  --input-path ./0.rawdata/emp-single-end-sequences \</span><br><span class="line">  --output-path ./0.rawdata/emp-single-end-sequences.qza</span><br></pre></td></tr></table></figure>
+<h2 id="拆分样品-Demultiplexing-sequences"><a href="#拆分样品-Demultiplexing-sequences" class="headerlink" title="拆分样品 Demultiplexing sequences"></a>拆分样品 Demultiplexing sequences</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time qiime demux emp-single \</span><br><span class="line">  --i-seqs ./0.rawdata/emp-single-end-sequences.qza \</span><br><span class="line">  --m-barcodes-file ./0.rawdata/sample-metadata.tsv \</span><br><span class="line">  --m-barcodes-column barcode-sequence \</span><br><span class="line">  --o-per-sample-sequences 1.demuxdata/demux.qza \</span><br><span class="line">  --o-error-correction-details 1.demuxdata/demux-details.qza &amp;</span><br></pre></td></tr></table></figure>
+<h2 id="结果统计"><a href="#结果统计" class="headerlink" title="结果统计"></a>结果统计</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time qiime demux summarize \</span><br><span class="line">  --i-data demux.qza \</span><br><span class="line">  --o-visualization demux.qzv &amp;</span><br></pre></td></tr></table></figure>
+<p>.qzv可以在 <a href="https://view.qiime2.org/">https://view.qiime2.org/</a> 上查看可视化结果</p>
+<h2 id="序列质控和生成特征表-Sequence-quality-control-and-feature-table-construction"><a href="#序列质控和生成特征表-Sequence-quality-control-and-feature-table-construction" class="headerlink" title="序列质控和生成特征表 Sequence quality control and feature table construction"></a>序列质控和生成特征表 Sequence quality control and feature table construction</h2><p>dada2 denoise-single方法需要两个用于质量过滤的参数：</p>
+<blockquote>
+<p>–p-trim-left m，它去除每个序列的前m个碱基(如引物、标签序列barcode)；<br>–p-trunc-len n，它在位置n截断每个序列。这允许用户去除序列的低质量区域、引物或标签序列等。</p>
+</blockquote>
+<p>确定要为这两个参数的值，查看由qiime demux summarize生成的demux.qzv文件中的交互质量图选项卡。</p>
+<blockquote>
+<p>– p-trim-left 截取左端低质量序列，我们看上图中箱线图，左端质量都很高，无低质量区，设置为0；<br>– p-trunc-len 序列截取长度，也是为了去除右端低质量序列，我们看到大于120以后，质量下降极大，甚至中位数都下降至20以下，需要全部去除，综合考虑决定设置为120。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time qiime dada2 denoise-single \</span><br><span class="line">  --i-demultiplexed-seqs 1.demuxdata/demux.qza \</span><br><span class="line">  --p-trim-left 0 \</span><br><span class="line">  --p-trunc-len 120 \</span><br><span class="line">  --o-representative-sequences ./2.QCandFeatureTable/rep-seqs-dada2.qza \</span><br><span class="line">  --o-table ./2.QCandFeatureTable/table-dada2.qza \</span><br><span class="line">  --o-denoising-stats ./2.QCandFeatureTable/stats-dada2.qza</span><br></pre></td></tr></table></figure>
+<p>对特征表统计进行进行可视化</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">qiime metadata tabulate \</span><br><span class="line">  --m-input-file stats-dada2.qza \</span><br><span class="line">  --o-visualization stats-dada2.qzv</span><br></pre></td></tr></table></figure>
+<h2 id="特征表和特征序列汇总-FeatureTable-and-FeatureData-summaries"><a href="#特征表和特征序列汇总-FeatureTable-and-FeatureData-summaries" class="headerlink" title="特征表和特征序列汇总 FeatureTable and FeatureData summaries"></a>特征表和特征序列汇总 FeatureTable and FeatureData summaries</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">qiime feature-table summarize \</span><br><span class="line">  --i-table ./2.QCandFeatureTable/table-dada2.qza \</span><br><span class="line">  --o-visualization ./2.QCandFeatureTable/table.qzv \</span><br><span class="line">  --m-sample-metadata-file  ./0.rawdata/sample-metadata.tsv</span><br><span class="line"></span><br><span class="line">qiime feature-table tabulate-seqs \</span><br><span class="line">  --i-data ./2.QCandFeatureTable/rep-seqs-dada2.qza \</span><br><span class="line">  --o-visualization ./2.QCandFeatureTable/rep-seqs.qzv</span><br></pre></td></tr></table></figure>
+<p>Output:</p>
+<ol>
+<li>table.qzv: 特征表统计。<br>Frequency per sample:<br>Frequency per feature: 一群数据里出现次数多的？<br>Feature Detail: 4b5eeb300368260019c1fbc7a3c718fc </li>
+<li>rep-seqs.qzv: 代表序列统计，可点击序列跳转NCBI blast查看相近序列的信息。</li>
+</ol>
+<h2 id="构建进化树用于多样性分析-Generate-a-tree-for-phylogenetic-diversity"><a href="#构建进化树用于多样性分析-Generate-a-tree-for-phylogenetic-diversity" class="headerlink" title="构建进化树用于多样性分析 Generate a tree for phylogenetic diversity"></a>构建进化树用于多样性分析 Generate a tree for phylogenetic diversity</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time qiime phylogeny align-to-tree-mafft-fasttree \</span><br><span class="line">  --i-sequences ./2.QCandFeatureTable/rep-seqs-dada2.qza \</span><br><span class="line">  --o-alignment ./3.generateTree/aligned-rep-seqs.qza \</span><br><span class="line">  --o-masked-alignment ./3.generateTree/masked-aligned-rep-seqs.qza \</span><br><span class="line">  --o-tree ./3.generateTree/unrooted-tree.qza \</span><br><span class="line">  --o-rooted-tree ./3.generateTree/rooted-tree.qza</span><br></pre></td></tr></table></figure>
+<p>Output:<br>aligned-rep-seqs.qza: 多序列比对结果。<br>masked-aligned-rep-seqs.qza: 过滤去除高变区后的多序列比对结果。<br>rooted-tree.qza: 有根树，用于多样性分析。<br>unrooted-tree.qza: 无根树。</p>
+<h2 id="Alpha和Beta多样性分析"><a href="#Alpha和Beta多样性分析" class="headerlink" title="Alpha和Beta多样性分析"></a>Alpha和Beta多样性分析</h2><p>QIIME 2的多样性分析使用q2-diversity插件，该插件支持计算α和β多样性指数、并应用相关的统计检验以及生成交互式可视化图表。我们将首先应用core-metrics-phylogenetic方法，该方法将FeatureTable抽平到用户指定的测序深度，然后计算几种常用的α和β多样性指数，并使用Emperor为每个β多样性指数生成主坐标分析（PCoA）图。</p>
+<ul>
+<li>α多样性</li>
+</ul>
+<p>-香农(Shannon’s)多样性指数（群落丰富度的定量度量，即包括丰富度richness和均匀度evenness两个层面）<br>-可观测的OTU(Observed OTUs，群落丰富度的定性度量，只包括丰富度）<br>-Faith’s系统发育多样性（包含特征之间的系统发育关系的群落丰富度的定性度量）<br>-均匀度Evenness（或 Pielou’s均匀度；群落均匀度的度量）</p>
+<ul>
+<li>β多样性</li>
+</ul>
+<p>-Jaccard距离（群落差异的定性度量，即只考虑种类，不考虑丰度）<br>-Bray-Curtis距离（群落差异的定量度量，较常用）<br>-非加权UniFrac距离（包含特征之间的系统发育关系的群落差异定性度量）<br>-加权UniFrac距离（包含特征之间的系统发育关系的群落差异定量度量）</p>
+<p>需要提供给这个脚本的一个重要参数是–p-sampling-depth，它是指定重采样（即稀疏/稀疏rarefaction）深度。因为大多数多样指数对不同样本的不同测序深度敏感，所以这个脚本将随机地将每个样本的测序量重新采样至该参数值。例如，提供–p-sampling-depth 500，则此步骤将对每个样本中的计数进行无放回抽样，从而使得结果表中的每个样本的总计数为500。如果任何样本的总计数小于该值，那么这些样本将从多样性分析中删除。选择这个值很棘手。建议通过查看上面创建的表table.qzv文件中呈现的信息并选择一个尽可能高的值（因此每个样本保留更多的序列）同时尽可能少地排除样本来进行选择。<br><strong>如是数据量都很大，选最小的即可。如果有个别数据量非常小，去除最小值再选最小值。</strong><br>一般采用HiSeq2500或NovaSeq6000的 PE250模式测序，数据量都非常大，通常可以采用3万或5万的标准抽平，仍可保留90%以上样本。过低或过高一般结果也会波动较大，不建议放在一起分析。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time qiime diversity core-metrics-phylogenetic \</span><br><span class="line">  --i-phylogeny ./3.generateTree/rooted-tree.qza \</span><br><span class="line">  --i-table ./2.QCandFeatureTable/table-dada2.qza \</span><br><span class="line">  --p-sampling-depth 1103 \</span><br><span class="line">  --m-metadata-file ./0.rawdata/sample-metadata.tsv \</span><br><span class="line">  --output-dir  ./4.CoreMetricsRes</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>13个数据文件:<br>core-metrics-results/faith_pd_vector.qza: Alpha多样性考虑进化的faith指数。<br>core-metrics-results/unweighted_unifrac_distance_matrix.qza: 无权重unifrac距离矩阵。<br>core-metrics-results/bray_curtis_pcoa_results.qza: 基于Bray-Curtis距离PCoA的结果。<br>core-metrics-results/shannon_vector.qza: Alpha多样性香农指数。<br>core-metrics-results/rarefied_table.qza: 等量重采样后的特征表。<br>core-metrics-results/weighted_unifrac_distance_matrix.qza: 有权重的unifrac距离矩阵。<br>core-metrics-results/jaccard_pcoa_results.qza: jaccard距离PCoA结果。<br>core-metrics-results/observed_otus_vector.qza: Alpha多样性observed otus指数。<br>core-metrics-results/weighted_unifrac_pcoa_results.qza: 基于有权重的unifrac距离的PCoA结果。<br>core-metrics-results/jaccard_distance_matrix.qza: jaccard距离矩阵。<br>core-metrics-results/evenness_vector.qza: Alpha多样性均匀度指数。<br>core-metrics-results/bray_curtis_distance_matrix.qza: Bray-Curtis距离矩阵。<br>core-metrics-results/unweighted_unifrac_pcoa_results.qza: 无权重的unifrac距离的PCoA结果</p>
+</blockquote>
+<blockquote>
+<p>4个可视化结果:<br>core-metrics-results/unweighted_unifrac_emperor.qzv：无权重的unifrac距离PCoA结果采用emperor可视化。<br>core-metrics-results/jaccard_emperor.qzv：jaccard距离PCoA结果采用emperor可视化。<br>core-metrics-results/bray_curtis_emperor.qzv： Bray-Curtis距离PCoA结果采用emperor可视化。<br>core-metrics-results/weighted_unifrac_emperor.qzv： 有权重的unifrac距离PCoA结果采用emperor可视化。</p>
+</blockquote>
+<h2 id="Alpha多样性组间显著性分析和可视化"><a href="#Alpha多样性组间显著性分析和可视化" class="headerlink" title="Alpha多样性组间显著性分析和可视化"></a>Alpha多样性组间显著性分析和可视化</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">qiime diversity alpha-group-significance \</span><br><span class="line">--i-alpha-diversity core-metrics-results/faith_pd_vector.qza \</span><br><span class="line">--m-metadata-file ./sample-metadata.tsv \</span><br><span class="line">--o-visualization core-metrics-results/faith-pd-group-significance.qzv</span><br><span class="line"></span><br><span class="line">qiime diversity alpha-group-significance \</span><br><span class="line">--i-alpha-diversity core-metrics-results/evenness_vector.qza \</span><br><span class="line">--m-metadata-file ./sample-metadata.tsv \</span><br><span class="line">--o-visualization core-metrics-results/evenness-group-significance.qzv</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#不同身体部位之间比较；</span></span><br><span class="line">time qiime diversity beta-group-significance \</span><br><span class="line">  --i-distance-matrix core-metrics-results/unweighted_unifrac_distance_matrix.qza \</span><br><span class="line">  --m-metadata-file sample-metadata.tsv \</span><br><span class="line">  --m-metadata-column body-site \</span><br><span class="line">  --o-visualization core-metrics-results/unweighted-unifrac-body-site-significance.qzv \</span><br><span class="line">  --p-pairwise</span><br><span class="line"></span><br><span class="line"><span class="comment">#不同subject之间比较；</span></span><br><span class="line">time qiime diversity beta-group-significance \</span><br><span class="line">  --i-distance-matrix core-metrics-results/unweighted_unifrac_distance_matrix.qza \</span><br><span class="line">  --m-metadata-file sample-metadata.tsv \</span><br><span class="line">  --m-metadata-column subject \</span><br><span class="line">  --o-visualization core-metrics-results/unweighted-unifrac-subject-group-significance.qzv \</span><br><span class="line">  --p-pairwise</span><br></pre></td></tr></table></figure>
+<h2 id="Alpha稀疏曲线-Alpha-rarefaction-plotting"><a href="#Alpha稀疏曲线-Alpha-rarefaction-plotting" class="headerlink" title="Alpha稀疏曲线 Alpha rarefaction plotting"></a>Alpha稀疏曲线 Alpha rarefaction plotting</h2><p>稀疏曲线：到什么时候饱和，捕获到采样中所有微生物的菌群</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time qiime diversity alpha-rarefaction \</span><br><span class="line">  --i-table table-dada2.qza \</span><br><span class="line">  --i-phylogeny rooted-tree.qza \</span><br><span class="line">  --p-max-depth 4000 \</span><br><span class="line">  --m-metadata-file sample-metadata.tsv \</span><br><span class="line">  --o-visualization alpha-rarefaction.qzv</span><br></pre></td></tr></table></figure>
+<p>Output：<br>alpha-rarefaction.qzv: 稀疏曲线。</p>
+<h2 id="物种组成分析-Taxonomic-analysis"><a href="#物种组成分析-Taxonomic-analysis" class="headerlink" title="物种组成分析 Taxonomic analysis"></a>物种组成分析 Taxonomic analysis</h2><p>物种分类器</p>
+<ul>
+<li><p>物种分类器根据你特定的样品制备和测序参数进行训练时表现最好，包括用于扩增的引物和测序序列的长度。因此，一般来说，你应该按照使用q2-feature-classifier的训练特征分类器的说明来训练自己的物种分类器。</p>
+</li>
+<li><p>这里使用的分类器是在Greengenes 13_8 99% OTU上训练的，其中序列被修剪到仅包括来自16S区域的250个碱基。利用这个分类器生成从序列到物种注释结果关联的可视化。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ln –s /public/workspace/zmy1/home/wujian/metagenomics/single_end/gg-13-8-99-515-806-nb-classifier.qza ./</span><br></pre></td></tr></table></figure>
+<h2 id="物种注释和可视化"><a href="#物种注释和可视化" class="headerlink" title="物种注释和可视化"></a>物种注释和可视化</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time qiime feature-classifier classify-sklearn \</span><br><span class="line">  --i-classifier gg-13-8-99-515-806-nb-classifier.qza \</span><br><span class="line">  --i-reads ./2.QCandFeatureTable/rep-seqs-dada2.qza \</span><br><span class="line">  --o-classification taxonomy.qza</span><br><span class="line"></span><br><span class="line">qiime metadata tabulate \</span><br><span class="line">  --m-input-file taxonomy.qza \</span><br><span class="line">  --o-visualization taxonomy.qzv</span><br></pre></td></tr></table></figure>
+<p>Output:<br>taxonomy.qza: 物种注释结果。<br>gg-13-8-99-515-806-nb-classifier.qza: 分类器的训练结果。</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#Barplot</span></span><br><span class="line">qiime taxa barplot \</span><br><span class="line">  --i-table table-dada2.qza \</span><br><span class="line">  --i-taxonomy taxonomy.qza \</span><br><span class="line">  --m-metadata-file sample-metadata.tsv \</span><br><span class="line">  --o-visualization taxa-bar-plots.qzv</span><br></pre></td></tr></table></figure>
+<p>Output:<br>taxa-bar-plots.qzv: 交互式物种组成barplot。</p>
+]]></content>
+      <categories>
+        <category>Metagenomics</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Paper-writing Tips</title>
     <url>/2021/03/17/Paper-writing-Tips/</url>
     <content><![CDATA[<h1 id="Word-amp-Phrase"><a href="#Word-amp-Phrase" class="headerlink" title="Word &amp; Phrase"></a>Word &amp; Phrase</h1><ol>
@@ -934,9 +1044,92 @@
 <li>对于文章的主题词进行解释</li>
 <li>尽可能描述直接、清楚，哪怕字数多些</li>
 </ul>
+<h2 id="时态"><a href="#时态" class="headerlink" title="时态"></a>时态</h2><p>时态由动作本身来决定</p>
+]]></content>
+      <categories>
+        <category>TOEFL-Writing</category>
+      </categories>
+      <tags>
+        <tag>TOEFL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>TOEFL-writing-05</title>
+    <url>/2021/04/06/TOEFL-writing-05/</url>
+    <content><![CDATA[<p><strong>九大话题</strong></p>
+<h1 id="教育类"><a href="#教育类" class="headerlink" title="教育类"></a>教育类</h1><h2 id="学生层面"><a href="#学生层面" class="headerlink" title="学生层面"></a>学生层面</h2><ol>
+<li>教室内：<ul>
+<li>academic learning(more knowledge, trigger interest)</li>
+</ul>
+</li>
+<li>教室外:<ul>
+<li>skils(interpersonal skills, time management skills);</li>
+<li>qualities(independent, persistent)</li>
+<li>professional development(locate careers, promote)</li>
+</ul>
+</li>
+</ol>
+<p><strong>例题</strong>：Schools should require young children (aged 5-11) to <strong>work together in a small group</strong> instead of working alone during the process of learning many actvitles.</p>
+<p>小组合作：</p>
+<ol>
+<li>academic learning<br>more knowledge, trigger interest</li>
+<li>personal development<br>interpersonal skills, time management skills</li>
+</ol>
 <hr>
-<p><strong>TPO 33</strong>
-  </p>
+<p><strong>核心表达</strong>：</p>
+<ol>
+<li><p>对学生学习好</p>
+<ul>
+<li><p>获得更多知识</p>
+<ul>
+<li>knowledge/expertise/proficiency</li>
+<li>academic learning</li>
+<li>boost/improve/inhance + academic/school performance</li>
+<li>finish/complete/accomplish + homework/assignments/tasks/projects</li>
+<li>apply knowledge into practice</li>
+<li>sb. can acquire/gain/obtain/attain + academic expertise/knowledge</li>
+<li>sb. can broden/extand/improve/increase + knowledge</li>
+<li>sth. can provide students with the access to a wide range of/considerable/comprehensive + knowledge</li>
+<li>sth. can enrich their knowledge///enlarge their knowledge base</li>
+</ul>
+</li>
+<li><p>学习兴趣高</p>
+<ul>
+<li>excite/generate/stimulate/trigger/motivate + students’ interest/passion/enthusiasm</li>
+<li>explore the unknown world </li>
+<li>participate in/engage themselves in/involve themselves in/be engaged in/be involved in</li>
+<li>allocate/distribute time to sth./doing</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>对学生技能好</p>
+<ul>
+<li><p>人际交往能力</p>
+<ul>
+<li>extracurricular/after-school activities</li>
+<li>hone/practice/develop + skills</li>
+<li>cultivate/foster/nurture/shape + one’s personalities/characteristics</li>
+<li>interpersonal/communicative/social + skills/tactics/strategies</li>
+<li>converse/interact/socialize with sb.</li>
+<li>people from assorted/diverse/various/a variety of backgrounds and cultures</li>
+</ul>
+</li>
+<li><p>时间管理技能</p>
+<ul>
+<li>label and arrange them in the order of urgency</li>
+<li>prioritize tasks in demand for/demanding/requiring + instant/immediate attention</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>对学生的品质好</p>
+<ul>
+<li></li>
+<li></li>
+</ul>
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>TOEFL-Writing</category>
@@ -993,12 +1186,95 @@
       </tags>
   </entry>
   <entry>
+    <title>conda/mamba Installation</title>
+    <url>/2021/04/04/conda-mamba-Installation/</url>
+    <content><![CDATA[<p>Conda 是⼀个开源的软件包管理系统和环境管理系统，用于安装多个版本的软件包及其依赖关系，并在它们之间轻松切换。Conda 主要是为 Python 程序创建的，适⽤于 Linux，OSX和 Windows，也可以打包和分发其他软件，如 R 和 Scala。</p>
+<h1 id="conda-配置镜像"><a href="#conda-配置镜像" class="headerlink" title="conda 配置镜像"></a>conda 配置镜像</h1><p>Conda 的默认配置属于开箱即用的类型，但如果我们想要更好⽤，还有⼀些设定需要注意。</p>
+<p>Conda 默认的包channel是Anaconda公司的默认频道。另外还存在⼀个开源频道：conda-forge。condaforge 的包往往⽐官⽅更新更快，也更全，通常我们会直接把频道加⼊到 conda 的默认设置⾥。对于其他自己维护的频道，⽐如 pytorch，如果需要，我们也可以自行添加。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生成condarc配置文件；</span></span><br><span class="line">conda config --add channels conda-forge</span><br><span class="line">conda config --append channels pytorch</span><br></pre></td></tr></table></figure>
+<p>另外，如果Conda在国内更新很慢，可以搜索anaconda清华源添加清华大学的国内镜像进行包的更新。</p>
+<p>显示目前设置的所有镜像源，在执行 conda config 命令的时候，会在当前用户目录下创建 .condarc 文件，可以查看更换源前后该文件内容的变化:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看channel</span></span><br><span class="line">conda config --show-sources</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除安装源</span></span><br><span class="line">conda config --remove channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 换回默认源</span></span><br><span class="line">conda config --remove-key channels</span><br></pre></td></tr></table></figure>
+<h2 id="清华大学开源软件镜像站"><a href="#清华大学开源软件镜像站" class="headerlink" title="清华大学开源软件镜像站"></a>清华大学开源软件镜像站</h2><p><a href="https://mirrors.sjtug.sjtu.edu.cn/">https://mirrors.sjtug.sjtu.edu.cn/</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">channels:</span><br><span class="line">  - defaults</span><br><span class="line">show_channel_urls: <span class="literal">true</span></span><br><span class="line">channel_alias: https://mirrors.tuna.tsinghua.edu.cn/anaconda</span><br><span class="line">default_channels:</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2</span><br><span class="line">custom_channels:</span><br><span class="line">  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br></pre></td></tr></table></figure>
+<h2 id="上海交通大学开源软件镜像站"><a href="#上海交通大学开源软件镜像站" class="headerlink" title="上海交通大学开源软件镜像站"></a>上海交通大学开源软件镜像站</h2><p><a href="https://mirrors.sjtug.sjtu.edu.cn/">https://mirrors.sjtug.sjtu.edu.cn/</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">channels:</span><br><span class="line">  - defaults</span><br><span class="line">show_channel_urls: <span class="literal">true</span></span><br><span class="line">channel_alias: https://anaconda.mirrors.sjtug.sjtu.edu.cn/</span><br><span class="line">default_channels:</span><br><span class="line">  - https://anaconda.mirrors.sjtug.sjtu.edu.cn/pkgs/main</span><br><span class="line">  - https://anaconda.mirrors.sjtug.sjtu.edu.cn/pkgs/free</span><br><span class="line">  - https://anaconda.mirrors.sjtug.sjtu.edu.cn/pkgs/mro</span><br><span class="line">  - https://anaconda.mirrors.sjtug.sjtu.edu.cn/pkgs/msys2</span><br><span class="line">  - https://anaconda.mirrors.sjtug.sjtu.edu.cn/pkgs/pro</span><br><span class="line">  - https://anaconda.mirrors.sjtug.sjtu.edu.cn/pkgs/r</span><br><span class="line">custom_channels:</span><br><span class="line">  conda-forge: https://anaconda.mirrors.sjtug.sjtu.edu.cn/conda-forge</span><br><span class="line">  soumith: https://anaconda.mirrors.sjtug.sjtu.edu.cn/cloud/soumith</span><br><span class="line">  bioconda: https://anaconda.mirrors.sjtug.sjtu.edu.cn/cloud/bioconda</span><br><span class="line">  menpo: https://anaconda.mirrors.sjtug.sjtu.edu.cn/cloud/menpo</span><br><span class="line">  viscid-hub: https://anaconda.mirrors.sjtug.sjtu.edu.cn/cloud/viscid-hub</span><br><span class="line">  atztogo: https://anaconda.mirrors.sjtug.sjtu.edu.cn/cloud/atztogo</span><br></pre></td></tr></table></figure>
+<h2 id="北京外国语大学开源软件镜像站"><a href="#北京外国语大学开源软件镜像站" class="headerlink" title="北京外国语大学开源软件镜像站"></a>北京外国语大学开源软件镜像站</h2><p><a href="https://mirrors.bfsu.edu.cn/">https://mirrors.bfsu.edu.cn/</a></p>
+<ul>
+<li>注：强烈推荐！！！2020-05-02 上线，清华大学开源软件镜像站的姐妹站，下载体验极佳，再也不用忍受清华源永远下不完的 pytorch 了。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">channels:</span><br><span class="line">  - defaults</span><br><span class="line">show_channel_urls: <span class="literal">true</span></span><br><span class="line">channel_alias: https://mirrors.bfsu.edu.cn/anaconda</span><br><span class="line">default_channels:</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/main</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/free</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/r</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/pro</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/msys2</span><br><span class="line">custom_channels:</span><br><span class="line">  conda-forge: https://mirrors.bfsu.edu.cn/anaconda/cloud</span><br><span class="line">  msys2: https://mirrors.bfsu.edu.cn/anaconda/cloud</span><br><span class="line">  bioconda: https://mirrors.bfsu.edu.cn/anaconda/cloud</span><br><span class="line">  menpo: https://mirrors.bfsu.edu.cn/anaconda/cloud</span><br><span class="line">  pytorch: https://mirrors.bfsu.edu.cn/anaconda/cloud</span><br><span class="line">  simpleitk: https://mirrors.bfsu.edu.cn/anaconda/cloud</span><br></pre></td></tr></table></figure>
+<ul>
+<li>我的配置：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">channels:</span><br><span class="line">  - https://mirrors.sjtug.sjtu.edu.cn/anaconda/pkgs/main/</span><br><span class="line">  - https://mirrors.sjtug.sjtu.edu.cn/anaconda/pkgs/free/</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/r</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/pro</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/msys2</span><br><span class="line">show_channel_urls: <span class="literal">true</span></span><br><span class="line">ssl_verify: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<h1 id="pip-换源"><a href="#pip-换源" class="headerlink" title="pip 换源"></a>pip 换源</h1><blockquote>
+<p>pip 国内的一些镜像:<br>阿里云 <a href="http://mirrors.aliyun.com/pypi/simple/">http://mirrors.aliyun.com/pypi/simple/</a><br>中国科技大学 <a href="https://pypi.mirrors.ustc.edu.cn/simple/">https://pypi.mirrors.ustc.edu.cn/simple/</a><br>豆瓣(douban) <a href="http://pypi.douban.com/simple/">http://pypi.douban.com/simple/</a><br>清华大学 <a href="https://pypi.tuna.tsinghua.edu.cn/simple/">https://pypi.tuna.tsinghua.edu.cn/simple/</a><br>中国科学技术大学 <a href="http://pypi.mirrors.ustc.edu.cn/simple/">http://pypi.mirrors.ustc.edu.cn/simple/</a></p>
+</blockquote>
+</li>
+</ul>
+<h1 id="mamba"><a href="#mamba" class="headerlink" title="mamba"></a>mamba</h1><p>mamba专为加速conda而生，其改写了conda下载资源的固有方式，以多线程的方式对网络资源进行并行下载，从而大幅提升Conda效率：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装mamba</span></span><br><span class="line">conda install mamba</span><br><span class="line">conda install mamba -c conda-forge</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看指定库当前环境下所有可用版本，以pandas为例</span></span><br><span class="line">mamba repoquery search pandas</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看指定库依赖哪些库，以bwa为例</span></span><br><span class="line">mamba repoquery depends bwa</span><br></pre></td></tr></table></figure>
+<h1 id="环境重建"><a href="#环境重建" class="headerlink" title="环境重建"></a>环境重建</h1><h2 id="环境迁移"><a href="#环境迁移" class="headerlink" title="环境迁移"></a>环境迁移</h2><p>如果我们想要把⼀个 conda 环境和对应版本的包迁移到别的机器上，那就首先需要导出环境：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda activate py37 <span class="comment"># 激活要导出的环境</span></span><br><span class="line">conda env <span class="built_in">export</span> &gt; environment.yml <span class="comment"># 导出环境配置，此种方法只能导出相同系统，如 windows机器的配置只能导出给windows使用，不能给linux使用</span></span><br><span class="line">pip freeze &gt; requirement.txt <span class="comment"># 也可以用pip导出，此种方法不限制机器</span></span><br></pre></td></tr></table></figure>
+<p>然后在新机器上重建环境：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda env create -f environment.yml <span class="comment"># 直接利用conda重建 # 或是先安装环境，再用pip重建</span></span><br><span class="line">conda create -n py37 python=3.7 -y</span><br><span class="line">pip install -r requirement.txt</span><br></pre></td></tr></table></figure>
+<h2 id="离线环境重建"><a href="#离线环境重建" class="headerlink" title="离线环境重建"></a>离线环境重建</h2><p>如果出于某些原因需要在离线的环境⼯作，Python 的环境配置会是⼀个很头痛的问题。但 conda 其实可以很⽅便的帮我们维护⼀整个相互兼容的环境。这种情况下，⾸先，我们需要找到 conda 的配置⽂件.condarc，通常它会位于：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="attr">macOS:</span> <span class="regexp">/Users/</span>Username</span><br><span class="line"><span class="attr">Linux:</span> ~/.condarc</span><br><span class="line"><span class="attr">Windows:</span> <span class="attr">C:</span>\Users\Username</span><br><span class="line">如果没有看⻅.condarc 配置文件，就运行一次 conda config。</span><br></pre></td></tr></table></figure>
+<p>然后，我们需要在.condarc 里修改 conda 缓存包的地址 pkgs_dirs，把这个地址变为我们想要存放下载的 python 包的地址，在离线的机器上我们也进⾏同样的操作来指定 conda 的缓存路径。把 conda 缓存下来的包导入到离线环境的缓存路径下，是建立⼀个完整的 python 环境的关键。</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="attr">pkgs_dirs:</span></span><br><span class="line">- <span class="attr">C:</span>\conda-pkgs-cache</span><br></pre></td></tr></table></figure>
+<p>在改好.condarc 配置文件后，我们就可以下载我们想要的包了，不过此时，需要带上⼀个关键的参数: –download-only</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 通过创建环境的方式下载所有想要的包</span></span><br><span class="line">conda create -n py36 anaconda pytorch tensorflow lightgbm catboost tqdm black pipreqs python=3.6 --download-only</span><br><span class="line"></span><br><span class="line"><span class="comment"># 直接下载并缓存对应的包</span></span><br><span class="line">conda install tensorflow-gpu=1.15 py-xgboost --download-only</span><br></pre></td></tr></table></figure>
+<p>在下载后，将之前设定的 conda 缓存⽬录上传到离线环境中，并在离线环境中也设定.condarc 中 conda</p>
+<p>缓存目录为对应的目录。此时运行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 利用缓存创建环境</span></span><br><span class="line">conda create -n offline36 anaconda pytorch tensorflow lightgbm catboost tqdm black pipreqs python=3.6 --use-index-cache --offline</span><br><span class="line"></span><br><span class="line"><span class="comment"># 利用缓存安装包</span></span><br><span class="line">conda install tensorflow-gpu=1.15 py-xgboost --use-index-cache --offline</span><br><span class="line">就可以只用 conda 缓存中的文件，⽆需联网，就能成功安装对应库到离线环境中了。</span><br></pre></td></tr></table></figure>
+<h1 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h1><p>安装软件前，先设置一个虚拟环境，不要直接在自己账户的当前环境内安装软件；</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建一个虚拟环境名为bwa</span></span><br><span class="line">conda create -n bwa</span><br><span class="line"><span class="comment"># 安装python 2版本</span></span><br><span class="line">conda install python=2</span><br><span class="line"><span class="comment"># 以上两句话可以等同于一句命令：conda create -n rna python=2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除环境</span></span><br><span class="line">conda remove -n rcnn --all</span><br></pre></td></tr></table></figure>
+<p>conda 其实没有重命名指令，实现重命名是通过 clone 完成的，分两步：</p>
+<ol>
+<li>先 clone 一份 new name 的环境</li>
+<li>删除 old name 的环境</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 比如，想把环境 rcnn 重命名成 tf</span></span><br><span class="line"><span class="comment"># 第1步</span></span><br><span class="line">conda create -n tf --<span class="built_in">clone</span> rcnn</span><br><span class="line"></span><br><span class="line"><span class="comment">#第2步</span></span><br><span class="line">conda remove -n rcnn --all</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda info -e</span><br><span class="line">conda info --envs</span><br><span class="line">conda env list    <span class="comment"># 都是来查看已经存在虚拟环境名的</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入虚拟环境</span></span><br><span class="line"><span class="built_in">source</span> activate bwa  <span class="comment">#激活虚拟环境名为bwa的环境</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 退出环境</span></span><br><span class="line">conda deactivate  <span class="comment">#: linux下conda退出虚拟环境命令</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 移除虚拟环境</span></span><br><span class="line">conda env remove --name bio-env       <span class="comment">#：删除虚拟环境及里面的内容</span></span><br></pre></td></tr></table></figure>
+<h1 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h1><h2 id="查找软件"><a href="#查找软件" class="headerlink" title="查找软件"></a>查找软件</h2><ol>
+<li>从 conda 网页内查找：<a href="http://bioconda.github.io/conda-recipe_index.html">http://bioconda.github.io/conda-recipe_index.html</a></li>
+<li>conda search PACKAGENAME：运行命令查找是否存在</li>
+</ol>
+<h2 id="安装软件-1"><a href="#安装软件-1" class="headerlink" title="安装软件"></a>安装软件</h2><ol>
+<li>先从 bioconda 镜像查看软件名具体是什么？一个字母都不能错</li>
+<li>conda/mamba install 软件名</li>
+<li>成功调取软件帮助文档==确定安装成功<br>这里有点类似 R 包的安装，装后需要 library()一下，才能确认安装成功</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装方法：</span></span><br><span class="line">conda install -y sra-tools trim-galore</span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定软件安装版本</span></span><br><span class="line"><span class="comment">## 即安装能模糊匹配到 numpy 版本为 1.11</span></span><br><span class="line">conda install numpy=1.11</span><br><span class="line"><span class="comment">## 即精确安装 numpy 为 1.11 的版本</span></span><br><span class="line">conda install numpy==1.11</span><br></pre></td></tr></table></figure>
+<h2 id="更新软件"><a href="#更新软件" class="headerlink" title="更新软件"></a>更新软件</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 更新 conda</span></span><br><span class="line">conda update conda</span><br><span class="line"><span class="comment"># 更新 bwa；前提是已经安装成功 bwa</span></span><br><span class="line">conda update bwa</span><br></pre></td></tr></table></figure>
+<h2 id="查看已安装软件"><a href="#查看已安装软件" class="headerlink" title="查看已安装软件"></a>查看已安装软件</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 在当前小环境下，列举所有安装软件</span></span><br><span class="line">conda list</span><br></pre></td></tr></table></figure>
+<h1 id="Troubleshooting"><a href="#Troubleshooting" class="headerlink" title="Troubleshooting"></a>Troubleshooting</h1><blockquote>
+<p>CondaHTTPError: HTTP 000 CONNECTION FAILED for url <a href="https://conda.anaconda.org/bioconda/linux-64/homer-4.9.1-pl5.22.0_5.tar.bz2">https://conda.anaconda.org/bioconda/linux-64/homer-4.9.1-pl5.22.0_5.tar.bz2</a>Elapsed:<br>An HTTP error occurred when trying to retrieve this URL.<br>HTTP errors are often intermittent, and a simple retry will get you on your way.</p>
+</blockquote>
+<ol>
+<li>检查网络是否已经链接,人为指定 channel 可以解决 bug<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda install -y -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda homer</span><br></pre></td></tr></table></figure></li>
+<li>conda 安装软件经常冲突<br>事实上不可能有十全十美的工具，conda 非常简易的管理了多个软件流程，那么必然也会有解决不了的事情，必然同一个流程的两个 python 软件基于不同版本的 python 包，就尴尬了。</li>
+</ol>
+<p>没什么好的办法，只能把冲突的工具安装到不同的子环境。</p>
+<ol start="3">
+<li>配置镜像出错<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda: <span class="built_in">command</span> not found</span><br><span class="line"><span class="comment"># 表明环境变量里找不到conda这个软件</span></span><br><span class="line"><span class="comment"># 出错原因：.bashrc里没有配置conda的PATH或者配置过但是没有source ~/.bashrc</span></span><br><span class="line"><span class="comment"># 检验方法：运行echo $PATH，查看是否含有conda安装路径</span></span><br><span class="line"></span><br><span class="line">Warning: <span class="string">&#x27;https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge&#x27;</span> already <span class="keyword">in</span> <span class="string">&#x27;channels&#x27;</span> list, moving to the top</span><br><span class="line"><span class="comment"># 表明之前已经运行过这句代码</span></span><br><span class="line"><span class="comment"># 复制镜像配置语句时复制错误，需要重新配置时，需要删除镜像配置文件</span></span><br><span class="line">rm ~/.condarc</span><br><span class="line"><span class="comment"># 然后重新配置</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      <categories>
+        <category>toolsLearning</category>
+      </categories>
+      <tags>
+        <tag>conda</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>WES Project</title>
     <url>/2021/03/30/WES-Project/</url>
     <content><![CDATA[<style>
   p{
     font-size:18px;
     line-height:1.7em;
+
   }
 </style>
 
@@ -1012,6 +1288,9 @@
 </blockquote>
 <center><img src="/img/Figures/gatk-pipeline.png" alt="gatk-pipeline" style="zoom:65%;" /></center>
 
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><center><img src="/img/Figures/recal-warning.png" alt="recal-warning" style="zoom:100%;" /></center>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># reference</span></span><br><span class="line">ascp  -i ~/.aspera/connect/etc/asperaweb_id_dsa.openssh \</span><br><span class="line">-l 100M -k 1 -Q -T \</span><br><span class="line">anonftp@ftp.ncbi.nlm.nih.gov:/snp/archive/b153/VCF/GCF_000001405.38.gz \</span><br><span class="line">./Reference/GATK/</span><br><span class="line"><span class="comment"># index</span></span><br><span class="line">ascp  -i ~/.aspera/connect/etc/asperaweb_id_dsa.openssh \</span><br><span class="line">-l 100M -k 1 -Q -T \</span><br><span class="line">anonftp@ftp.ncbi.nlm.nih.gov:/snp/archive/b153/VCF/GCF_000001405.38.gz.tbi \</span><br><span class="line">./Reference/dbsnp_153.hg38/</span><br></pre></td></tr></table></figure>
 <h1 id="数据下载"><a href="#数据下载" class="headerlink" title="数据下载"></a>数据下载</h1><h2 id="NCBI-prefetch"><a href="#NCBI-prefetch" class="headerlink" title="NCBI+prefetch"></a>NCBI+prefetch</h2><p>在NCBI页面查找数据后点击Run Selector，选择需要的数据，下载Metadata和Accession List两个文件</p>
  <center><img src="/img/Figures/SRA-run.png" alt="SRA-run" style="zoom:45%;" /></center>
 
@@ -1143,7 +1422,7 @@
 <center><img src="/img/Figures/plot-succ.png" alt="show the plot" style="zoom:80%;" /></center>
 
 <h2 id="qualimap"><a href="#qualimap" class="headerlink" title="qualimap"></a>qualimap</h2><p><code>qualimap</code>可用来查看覆盖深度等信息，需要py=3.9，跑的时候占用很多内存，大概跑了30分钟</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cat 0.sra/sra.infor/sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  qualimap bamqc --java-mem-size=10G -gff /public/workspace/lincs/wes_cancer/data/hg38.exon.bed -nr 100000 -nw 500 -nt 8 -bam ./4.alignment/<span class="variable">$&#123;id&#125;</span>.bam -outdir ./4.alignment/qualimap/<span class="variable">$&#123;id&#125;</span> &amp;</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line"><span class="comment"># qualimap-v2.2.2</span></span><br><span class="line"><span class="comment"># -------------------------------&gt; </span></span><br><span class="line">cat 0.sra/sra.infor/sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  qualimap bamqc --java-mem-size=10G -gff /public/workspace/lincs/wes_cancer/data/hg38.exon.bed -nr 100000 -nw 500 -nt 8 -bam ./4.alignment/<span class="variable">$&#123;id&#125;</span>.bam -outdir ./4.alignment/qualimap/<span class="variable">$&#123;id&#125;</span> &amp;</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 <p>可得到HTML格式的报告，以case1_germline为例：</p>
 <center><img src="/img/Figures/qualimap-res.png" alt="qualimap-res" style="zoom:80%;" /></center>
 
@@ -1154,10 +1433,49 @@
 </tr></table>
 
 <h1 id="GATK流程和找变异"><a href="#GATK流程和找变异" class="headerlink" title="GATK流程和找变异"></a>GATK流程和找变异</h1><h2 id="Mark-Duplicates-Picard"><a href="#Mark-Duplicates-Picard" class="headerlink" title="Mark Duplicates(Picard)"></a>Mark Duplicates(Picard)</h2><p><a href="https://gatk.broadinstitute.org/hc/en-us/articles/360057439771-MarkDuplicates-Picard-">Manual-Mark Duplicates(Picard)</a></p>
-<p>进入到<code>while read id;do... ;done</code>循环后，每read读取一行为一个id,也就是一个样本名，对于每一个样本,再赋值bam文件的具体路径，命名为<code>BAM</code>。<br>接下来就是一个if判断语句，判断是否已经存在生成的<code>./5. gatk/ok.$&#123;id&#125;_ marked.status</code>文件，如果存在,就不再执行，如果不存在就继续往下走。需要注意的是，如果在shell命令执行后，会有一个返回值<code>$?</code>，如果返回值为0，只上一步命令成功执行，否则执行失败。在这里，如果命令成功执行，我就创建一个空文件<code>ok.$&#123;id&#125;_ marked.status</code>。<br>这样写控制语句的原因，是为了避免重复提交代码。如果多个样本批量跑，跑到一半的时候任务挂了，比如服务器突然停电了，那后续再次提交命令的时候，已经完成的样本就不会被再次执行，我们要做的就是重新提交这个脚本而已。紧接着就是<code>echo start.. .date</code>这是为了记录时间，和后面的<code>echo end. . . date</code>相对应，这样我们可以知道跑完一个样本需要的时间，也可以在命令前加上一个<code>time</code>命令,也可以达到类似的效果。<br>中间部分就是主要的命令:<br><code>- Xmx20G -Djava. io. tmpdir=./</code>: 设置调用的内存大小为20G<br><code>-I $BAM</code>:指定输入文件<br><code>--REMOVE_DUPLICATES=true</code>: 删除掉重复序列，如果不加这个参数，就只是标记重复序列而不会删除。<br><code>-O $&#123;id&#125;_ marked.bam</code>: 输出文件<br><code>1&gt;$&#123;id&#125;_ log.mark 2&gt;&amp;1</code>: 输出重定向，这里的1和2是捕获正确和错误输出流，把内容都输出到<code>$&#123;id&#125;_1og.mark</code></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cat 0.sra/sra.infor/sample  | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  BAM=./4.alignment/<span class="variable">$&#123;id&#125;</span>.bam</span><br><span class="line">  <span class="keyword">if</span> [ ! -f ./5.gatk/ok.<span class="variable">$&#123;id&#125;</span>_marked.status ]</span><br><span class="line">  <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;start MarkDuplicates for <span class="variable">$&#123;id&#125;</span>&quot;</span> `date`</span><br><span class="line">    gatk --java-options <span class="string">&quot;-Xmx20G -Djava.io.tmpdir=./&quot;</span> MarkDuplicates \</span><br><span class="line">    -I <span class="variable">$&#123;BAM&#125;</span> \</span><br><span class="line">    --REMOVE_DUPLICATES <span class="literal">true</span> \</span><br><span class="line">    -O ./5.gatk/<span class="variable">$&#123;id&#125;</span>_marked.bam \</span><br><span class="line">    -M ./5.gatk/<span class="variable">$&#123;id&#125;</span>.metrics \</span><br><span class="line">    1&gt;./<span class="built_in">log</span>/redup.log/<span class="variable">$&#123;id&#125;</span>_log.mark 2&gt;&amp;1 </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> [ $? -eq 0 ]</span><br><span class="line">    <span class="keyword">then</span></span><br><span class="line">      touch ./5.gatk/ok.<span class="variable">$&#123;id&#125;</span>_marked.status</span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;end MarkDuplicates for <span class="variable">$&#123;id&#125;</span>&quot;</span> `date`</span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<p><code>- Xmx20G -Djava. io. tmpdir=./</code>: 设置调用的内存大小为20G<br><code>-I $BAM</code>:指定输入文件<br><code>--REMOVE_DUPLICATES=true</code>: 删除掉重复序列，如果不加这个参数，就只是标记重复序列而不会删除。<br><code>-O $&#123;id&#125;_ marked.bam</code>: 输出文件</p>
+<ul>
+<li>脚本思路：<ol>
+<li>进入到<code>while read id;do... ;done</code>循环后，每read读取一行为一个id,也就是一个样本名，对于每一个样本,再赋值bam文件的具体路径，命名为<code>BAM</code>；</li>
+<li>if判断语句，判断是否已经存在生成的<code>./5. gatk/ok.$&#123;id&#125;_ marked.status</code>文件，如果存在,就不再执行，如果不存在就继续往下走。需要注意的是，如果在shell命令执行后，会有一个返回值$?，如果返回值为0，只上一步命令成功执行，否则执行失败;</li>
+<li><code>echo start.. .date</code>这是为了记录时间，和后面的<code>echo end. . . date</code>相对应，这样我们可以知道跑完一个样本需要的时间;</li>
+<li>如果命令成功执行，就创建一个空文件<code>ok.$&#123;id&#125;_ marked.status</code>。</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line"><span class="comment"># GATK-v4.2.0.0</span></span><br><span class="line"><span class="comment"># -------------------------------&gt; </span></span><br><span class="line"></span><br><span class="line">cat 0.sra/sra.infor/sample  | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  BAM=./4.alignment/<span class="variable">$&#123;id&#125;</span>.bam</span><br><span class="line">  <span class="keyword">if</span> [ ! -f ./5.gatk/ok.<span class="variable">$&#123;id&#125;</span>_marked.status ]</span><br><span class="line">  <span class="keyword">then</span></span><br><span class="line">    </span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;start MarkDuplicates for <span class="variable">$&#123;id&#125;</span>&quot;</span> `date`</span><br><span class="line">    gatk --java-options <span class="string">&quot;-Xmx20G -Djava.io.tmpdir=./&quot;</span> MarkDuplicates \</span><br><span class="line">    -I <span class="variable">$&#123;BAM&#125;</span> \</span><br><span class="line">    --REMOVE_DUPLICATES <span class="literal">true</span> \</span><br><span class="line">    -O ./5.gatk/<span class="variable">$&#123;id&#125;</span>_marked.bam \</span><br><span class="line">    -M ./5.gatk/<span class="variable">$&#123;id&#125;</span>.metrics \</span><br><span class="line">    1&gt;./<span class="built_in">log</span>/redup.log/<span class="variable">$&#123;id&#125;</span>_log.mark 2&gt;&amp;1 </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> [ $? -eq 0 ]</span><br><span class="line">    <span class="keyword">then</span></span><br><span class="line">      touch ./5.gatk/ok.<span class="variable">$&#123;id&#125;</span>_marked.status</span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;end MarkDuplicates for <span class="variable">$&#123;id&#125;</span>&quot;</span> `date`</span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<p>比对好后50G的bam一共跑了三个半小时：</p>
+<center><img src="/img/Figures/redup-time.png" alt="redup-time" style="zoom:80%;" /></center>
+
 <p>最后是用samtools对生成的bam文件构建索引，这是后续步骤的要求。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">samtools index -@ 16 -m 4G -b ./5.gatk/<span class="variable">$&#123;id&#125;</span>_marked.bam ./5.gatk/<span class="variable">$&#123;id&#125;</span>_marked.bai</span><br></pre></td></tr></table></figure>]]></content>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line"><span class="comment"># samtools-v1.9</span></span><br><span class="line"><span class="comment"># -------------------------------&gt; </span></span><br><span class="line">cat 0.sra/sra.infor/sample  | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  samtools index -@ 16 -m 4G -b ./5.gatk/<span class="variable">$&#123;id&#125;</span>_marked.bam ./5.gatk/<span class="variable">$&#123;id&#125;</span>_marked.bai</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<center><img src="/img/Figures/redup-res.png" alt="redup-res" style="zoom:80%;" /></center>
+
+<p>查看redup的结果:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line"><span class="comment"># samtools-v1.9</span></span><br><span class="line"><span class="comment"># -------------------------------&gt; </span></span><br><span class="line"><span class="comment"># wc -l 查看行数</span></span><br><span class="line">samtools view ./4.alignment/case1_biorep_A_techrep.bam |wc -l</span><br><span class="line">samtools view ./5.gatk/case1_biorep_A_techrep_marked.bam |wc -l</span><br></pre></td></tr></table></figure>
+<center><img src="/img/Figures/redup-res-view.png" alt="redup-res-view" style="zoom:100%;" /></center>
+
+
+<h2 id="碱基质量重校正-BQSR"><a href="#碱基质量重校正-BQSR" class="headerlink" title="碱基质量重校正 BQSR"></a>碱基质量重校正 BQSR</h2><p>对于WGS或者WES的测序数据，最关心的问题是变异检测，而变异检测和碱基质量值密切相关。但碱基的质量值由测序仪和测序系统产生，机器带来的系统误差和噪声是不可避免的。因此，找变异之前，需要进行碱基质量重校正BQSR(Base Quality Score Recalibration)。用到了GATK的两个工具<code>BaseRecalibrator</code>和<code>ApplyBQSR</code>。这一步跑了一个多小时。</p>
+<p><a href="https://gatk.broadinstitute.org/hc/en-us/articles/360056969412-BaseRecalibrator">Manual-BaseRecalibrator</a></p>
+<blockquote>
+<p><strong>Input</strong><br>    The input read data whose base quality scores need to be assessed.<br>    A database of known polymorphic sites to skip over.<br> <strong>Output</strong><br>    A GATK Report file with many tables:<br>    1. The list of arguments<br>    2. The quantized qualities table<br>    3. The recalibration table by read group<br>    1. The recalibration table by quality score<br>    1. The recalibration table for all the optional covariates  <br><br>    这里计算出了所有需要进行重校正的reads和特征值，然后把这些信息输出为一份校准表文件(recal.table) 。<br>    – known-sites参数需要输入已知且可靠的变异位点。</p>
+</blockquote>
+<p><a href="https://gatk.broadinstitute.org/hc/en-us/articles/360056968652-ApplyBQSR">Manual-ApplyBQSR</a></p>
+<blockquote>
+<p><strong>Input</strong><br>    A BAM or CRAM file containing input read data<br>    The covariates table (= recalibration file) generated by BaseRecalibrator on the input BAM or CRAM file<br><strong>Output</strong><br>    A BAM or CRAM file containing the recalibrated read data  <br><br>    这一步利用第-步得到的校准表文件(recal.table)重新调整原来BAM文件中的碱基质量值，并使用这个新的质量值重新输出一份新的BAM文件。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">snp=~/Reference/dbsnp_146.hg38/dbsnp_146.hg38.vcf.gz</span><br><span class="line">indel=~/Reference/GATK/Mills_and_1000G_gold_standard.indels.hg38.vcf.gz</span><br><span class="line">ref=~/Reference/GATK/Homo_sapiens_assembly38.fasta</span><br><span class="line">cat ./0.sra/sra.infor/sample  | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  <span class="keyword">if</span> [ ! -f ./5.gatk/<span class="variable">$&#123;id&#125;</span>_bqsr.bam ]</span><br><span class="line">  <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;start BQSR for <span class="variable">$&#123;id&#125;</span>&quot;</span> `date`</span><br><span class="line">    gatk --java-options <span class="string">&quot;-Xmx60G -Djava.io.tmpdir=./&quot;</span>  BaseRecalibrator \</span><br><span class="line">    -R <span class="variable">$ref</span>  \</span><br><span class="line">    -I ./5.gatk/<span class="variable">$&#123;id&#125;</span>_marked.bam  \</span><br><span class="line">    --known-sites <span class="variable">$&#123;snp&#125;</span> \</span><br><span class="line">    --known-sites <span class="variable">$&#123;indel&#125;</span> \</span><br><span class="line">    -O ./5.gatk/recal.table/<span class="variable">$&#123;id&#125;</span>_recal.table \</span><br><span class="line">    1&gt;./5.gatk/recal.log/<span class="variable">$&#123;id&#125;</span>_log.recal 2&gt;&amp;1 </span><br><span class="line">    </span><br><span class="line">    gatk --java-options <span class="string">&quot;-Xmx60G -Djava.io.tmpdir=./&quot;</span>  ApplyBQSR \</span><br><span class="line">    -R <span class="variable">$ref</span>  \</span><br><span class="line">    -I ./5.gatk/<span class="variable">$&#123;id&#125;</span>_marked.bam  \</span><br><span class="line">    -bqsr ./5.gatk/recal.table/<span class="variable">$&#123;id&#125;</span>_recal.table \</span><br><span class="line">    -O ./5.gatk/bqsr.bam/<span class="variable">$&#123;id&#125;</span>_bqsr.bam \</span><br><span class="line">    1&gt;./5.gatk/applyBQSR.log/<span class="variable">$&#123;id&#125;</span>_log.ApplyBQSR  2&gt;&amp;1 </span><br><span class="line">    </span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;end BQSR for <span class="variable">$&#123;id&#125;</span>&quot;</span> `date`</span><br><span class="line">  <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>Troubleshooting</strong><br>A USER ERROR has occurred: Input files reference and features have incompatible contigs: No overlapping contigs found.<br>–known-sites的版本选择问题，dbsnp146不报错，dbsnp153报错，需要使用与input文件contig name一致的reference。官网的论坛里开发者回复：</p>
+<blockquote>
+<p>the exception you get arises from the fact that you are using decoy reference genome version while attempting to recalibrate on known-sites for nonDecoy reference genome. Note that it might use different contig names (N instead of chrN)</p>
+</blockquote>
+<hr>
+<center><img src="/img/Figures/bqsr-res.png" alt="bqsr-res" style="zoom:50%;" /></center>
+
+<h2 id="单样本找Germline-SNPs-INDELs"><a href="#单样本找Germline-SNPs-INDELs" class="headerlink" title="单样本找Germline SNPs/INDELs"></a>单样本找Germline SNPs/INDELs</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">GATK=~/wes_cancer/biosoft/gatk-4.1.4.1/gatk</span><br><span class="line">snp=~/wes_cancer/data/dbsnp_146.hg38.vcf.gz</span><br><span class="line">indel=~/wes_cancer/data/Mills_and_1000G_gold_standard.indels.hg38.vcf.gz</span><br><span class="line">ref=~/wes_cancer/data/Homo_sapiens_assembly38.fasta</span><br><span class="line">bed=~/wes_cancer/data/hg38.exon.bed</span><br><span class="line"></span><br><span class="line">cat config  | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;start HC for <span class="variable">$&#123;id&#125;</span>&quot;</span> `date`</span><br><span class="line">  <span class="variable">$GATK</span> --java-options <span class="string">&quot;-Xmx20G -Djava.io.tmpdir=./&quot;</span> HaplotypeCaller -ERC GVCF \</span><br><span class="line">  -R <span class="variable">$&#123;ref&#125;</span> \</span><br><span class="line">  -I ./5.gatk/<span class="variable">$&#123;id&#125;</span>_bqsr.bam \</span><br><span class="line">  --dbsnp <span class="variable">$&#123;snp&#125;</span> \</span><br><span class="line">  -L <span class="variable">$&#123;bed&#125;</span> \</span><br><span class="line">  -O ./5.gatk/<span class="variable">$&#123;id&#125;</span>_raw.vcf \</span><br><span class="line">  1&gt;./5.gatk/<span class="variable">$&#123;id&#125;</span>_log.HC 2&gt;&amp;1</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;end HC for <span class="variable">$&#123;id&#125;</span>&quot;</span> `date`</span><br><span class="line"></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> ./5.gatk/gvcf</span><br><span class="line"><span class="keyword">for</span> chr <span class="keyword">in</span> chr&#123;1..22&#125; chrX chrY chrM</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line"></span><br><span class="line">time <span class="variable">$GATK</span> --java-options <span class="string">&quot;-Xmx20G -Djava.io.tmpdir=./&quot;</span> GenomicsDBImport \</span><br><span class="line">-R <span class="variable">$&#123;ref&#125;</span> \</span><br><span class="line">$(ls ./*raw.vcf | awk <span class="string">&#x27;&#123;print &quot;-V &quot;$0&quot; &quot;&#125;&#x27;</span>) \</span><br><span class="line">-L <span class="variable">$&#123;chr&#125;</span> \</span><br><span class="line">--genomicsdb-workspace-path gvcfs_<span class="variable">$&#123;chr&#125;</span>.db</span><br><span class="line"></span><br><span class="line">time <span class="variable">$GATK</span> --java-options <span class="string">&quot;-Xmx20G -Djava.io.tmpdir=./&quot;</span> GenotypeGVCFs \</span><br><span class="line">-R <span class="variable">$&#123;ref&#125;</span> \</span><br><span class="line">-V gendb://gvcfs_<span class="variable">$&#123;chr&#125;</span>.db \</span><br><span class="line">-O gvcfs_<span class="variable">$&#123;chr&#125;</span>.vcf</span><br><span class="line"></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$GATK</span> --java-options <span class="string">&quot;-Xmx20G -Djava.io.tmpdir=./&quot;</span> GatherVcfs \</span><br><span class="line">$(<span class="keyword">for</span> i <span class="keyword">in</span> &#123;1..22&#125; X Y M;<span class="keyword">do</span> <span class="built_in">echo</span> <span class="string">&quot;-I gvcfs_chr<span class="variable">$&#123;i&#125;</span>.vcf&quot;</span> ;<span class="keyword">done</span>) \</span><br><span class="line">-O merge.vcf</span><br></pre></td></tr></table></figure>
+<h2 id="mutect找Somatic-Mutations"><a href="#mutect找Somatic-Mutations" class="headerlink" title="mutect找Somatic Mutations"></a>mutect找Somatic Mutations</h2>]]></content>
       <categories>
         <category>WES</category>
       </categories>
@@ -1196,198 +1514,6 @@
       </categories>
       <tags>
         <tag>eCLIP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Metagenomics Analysis</title>
-    <url>/2021/04/01/Metagenomics/</url>
-    <content><![CDATA[<ol>
-<li>通过single end示例数据了解qiime2分析过程。</li>
-<li>尝试利用pair end示例数据进行16S数据分析。</li>
-</ol>
-<hr>
-<h1 id="Qiime2"><a href="#Qiime2" class="headerlink" title="Qiime2"></a>Qiime2</h1><h2 id="introduction"><a href="#introduction" class="headerlink" title="introduction"></a>introduction</h2><p>QIIME 2是一款强大、可扩展和去中心化的微生物组分析平台，强调数据分析透明。QIIME 2可以使研究者从原始DNA序列开始分析，直接获取出版级的统计和图片结果。</p>
-<p>主要特点：</p>
-<ul>
-<li>整合分析流程、自动化追踪数据来源</li>
-<li>语义类型系统，自动识别输入文件类型</li>
-<li>插件系统可扩展微生物分析功能种类</li>
-<li>支持多种用户界面，如API、命令行、图形界面</li>
-</ul>
-<p>QIIME 2是对QIIME 1完全重新设计并重写的微生物组分析流程。QIIME 2保留了QIIME 1强大和广泛使用的优点，同时改进了其众多不足之处。</p>
-<p>QIIME 2当前支持从头到尾的完整微生物组分析流程。通常QIIME 2插件功能，不断有新功能可用。可以在可用插件列表中查找当前可用的插件。在未来可用插件页列出了正在开发的插件。</p>
-<h2 id="installation"><a href="#installation" class="headerlink" title="installation"></a>installation</h2><ul>
-<li><p>conda环境安装QIIME2（推荐）<br>Install QIIME 2 within a conda environment<br>mkdir -p 2020.11 &amp;&amp; cd 2020.11</p>
-</li>
-<li><p>下载软件安装列表，官方源不容易下载</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget -c https://data.qiime2.org/distro/core/qiime2-2020.11-py36-linux-conda.yml</span><br><span class="line"><span class="comment"># OR</span></span><br><span class="line">wget -c http://210.75.224.110/github/QIIME2ChineseManual/2020.11/qiime2-2020.11-py36-linux-conda.yml</span><br><span class="line">time conda env create -n qiime2-2020.11 --file qiime2-2020.11-py36-linux-conda.yml</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除软件列表</span></span><br><span class="line">rm qiime2-2020.11-py36-linux-conda.yml</span><br></pre></td></tr></table></figure></li>
-<li><p>服务器已安装，直接使用。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">qiime2 conda environment path:</span><br><span class="line">/public/workspace/zmy1/home/wujian/.conda/envs/qimme2-2020.11/</span><br><span class="line"></span><br><span class="line"><span class="comment"># ln至自己的文件夹下</span></span><br><span class="line"><span class="built_in">source</span> activate qimme2-2020.11</span><br></pre></td></tr></table></figure>
-<h2 id="Qiime2重要概念"><a href="#Qiime2重要概念" class="headerlink" title="Qiime2重要概念"></a>Qiime2重要概念</h2></li>
-</ul>
-<ol>
-<li><p>数据文件: QIIME 2对象/文件格式<br>由QIIME 2产生的数据类型，叫QIIME 2对象(artifacts)，通常包括数据和元数据/样本信息(metadata)。元数据描述数据，包括类型、格式和它如何产生。典型的扩展名为.qza。</p>
-</li>
-<li><p>数据文件：可视化<br>QIIME2生成的图表结果对象或文件类型，以.qzv为扩展名，末尾的v代表visual；它同qza文件类似，包括分析方法和结果，方便追溯图表是如何产生的；唯一与qza不同的，它是分析的终点，即结果的呈现，不会在流程中继续分析。可视化的结果包括统计结果表格、交互式图像、静态图片及其它组合的可视化呈现。这类文件可以使用QIIME2 qiime tools view命令查看。</p>
-<p>可通过网站：<a href="https://view.qiime2.org/">https://view.qiime2.org/</a><br>导入文件并显示结果图表，同时可查看数据分析过程；方便与不使用QIIME 2的合作者分享结果。</p>
-</li>
-<li><p>插件<br>QIIME2中的用户的某个特定功能即为插件，你可以安装并完成分析，比如拆分样品的q2-demux插件、Alpha-或beta-多样性分析的q2-diversity插件等。</p>
-</li>
-<li><p>方法和可视化软件<br>QIIME 2插件定义的用于进行分析的方法和可视化工具类型。</p>
-<p>方法是对QIIME2定义的输入对象进行操作的过程，包括命令和参数，并产生1个或多个标准格式的输出。这一结果可以后续分析或可视化，产生中间或末端的输出。例如rarefy方法，输入文件为q2-feature-table插件产生的特征表，输出文件为样本深度一致的特征表。它可以作为输入文件，用于alpha多样性分析中的q2-diversity方法。输入和输出均为qza文件；</p>
-<p>可视化工具定义了标准输入，包括QIIME 2对象和参数的组合，产生统计表格或可视化图形，方便用户解读，输入为qza格式，输出为qzv，文件不仅包括结果，还包括处理的分析命令和参数，方便重复和检查分析过程是否准确。可视化的结果文件qzv是分析的终点，不可以进一步分析。</p>
-</li>
-</ol>
-<h2 id="Qiime2使用"><a href="#Qiime2使用" class="headerlink" title="Qiime2使用"></a>Qiime2使用</h2><p><img src="/img/Metagenomics/qiime.png" alt="qiime"></p>
-<h1 id="16S分析流程"><a href="#16S分析流程" class="headerlink" title="16S分析流程"></a>16S分析流程</h1><blockquote>
-<p>数据位置<br>/public/workspace/zmy1/home/wujian/metagenomics/single_end/<br>分别将emp-single-end-sequences和sample-metadata.tsv软链至相应文件夹下。<br>/public/workspace/zmy1/home/wujian/metagenomics/single_end/emp-single-end-sequences/<br>/public/workspace/zmy1/home/wujian/metagenomics/single_end/sample-metadata.tsv</p>
-</blockquote>
-<h2 id="Metadata-元数据"><a href="#Metadata-元数据" class="headerlink" title="Metadata 元数据"></a>Metadata 元数据</h2><p>元数据提供了从数据中获得生物学发现的关键。在QIIME 2中，样本元数据可以包括更多技术细节，例如在多次测序批次中用于每个样本的DNA条形码，或者样本的描述，例如每个样本来自人类微生物组对应时间序列研究中的分组、时间点和身体部位。特征元数据通常是特征注释，例如分配给序列变量或OTU的物种注释。</p>
-<p>收集样本元数据通常是在开始QIIME 2分析之前要进行的第一步。由研究人员决定哪些信息是作为元数据收集和跟踪的。<br>尽可能多的收集元数据，因为您可能无法追溯收集某些类型的信息，以便后续分析中使用。<br><img src="/img/Metagenomics/Metadata.png" alt="Metadata"></p>
-<h2 id="数据格式"><a href="#数据格式" class="headerlink" title="数据格式"></a>数据格式</h2><p>EMPSingleEndSequences是包含多样本混合的序列文件，这意味着序列尚未分配给样本（因此包括sequences.fastq.gz和barcode.fastq.gz文件，其中barcode.fastq.gz包含与sequences.fastq.gz中的每个序列相关联的条形码）。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/public/workspace/zmy1/home/wujian/metagenomics/single_end/emp-single-end-sequences/</span><br></pre></td></tr></table></figure>
-<h2 id="导入数据"><a href="#导入数据" class="headerlink" title="导入数据"></a>导入数据</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time qiime tools import \</span><br><span class="line">  --<span class="built_in">type</span> EMPSingleEndSequences \</span><br><span class="line">  --input-path ./0.rawdata/emp-single-end-sequences \</span><br><span class="line">  --output-path ./0.rawdata/emp-single-end-sequences.qza</span><br></pre></td></tr></table></figure>
-<h2 id="拆分样品-Demultiplexing-sequences"><a href="#拆分样品-Demultiplexing-sequences" class="headerlink" title="拆分样品 Demultiplexing sequences"></a>拆分样品 Demultiplexing sequences</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time qiime demux emp-single \</span><br><span class="line">  --i-seqs ./0.rawdata/emp-single-end-sequences.qza \</span><br><span class="line">  --m-barcodes-file ./0.rawdata/sample-metadata.tsv \</span><br><span class="line">  --m-barcodes-column barcode-sequence \</span><br><span class="line">  --o-per-sample-sequences 1.demuxdata/demux.qza \</span><br><span class="line">  --o-error-correction-details 1.demuxdata/demux-details.qza &amp;</span><br></pre></td></tr></table></figure>
-<h2 id="结果统计"><a href="#结果统计" class="headerlink" title="结果统计"></a>结果统计</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time qiime demux summarize \</span><br><span class="line">  --i-data demux.qza \</span><br><span class="line">  --o-visualization demux.qzv &amp;</span><br></pre></td></tr></table></figure>
-<p>.qzv可以在 <a href="https://view.qiime2.org/">https://view.qiime2.org/</a> 上查看可视化结果</p>
-<h2 id="序列质控和生成特征表-Sequence-quality-control-and-feature-table-construction"><a href="#序列质控和生成特征表-Sequence-quality-control-and-feature-table-construction" class="headerlink" title="序列质控和生成特征表 Sequence quality control and feature table construction"></a>序列质控和生成特征表 Sequence quality control and feature table construction</h2><p>dada2 denoise-single方法需要两个用于质量过滤的参数：</p>
-<blockquote>
-<p>–p-trim-left m，它去除每个序列的前m个碱基(如引物、标签序列barcode)；<br>–p-trunc-len n，它在位置n截断每个序列。这允许用户去除序列的低质量区域、引物或标签序列等。</p>
-</blockquote>
-<p>确定要为这两个参数的值，查看由qiime demux summarize生成的demux.qzv文件中的交互质量图选项卡。</p>
-<blockquote>
-<p>– p-trim-left 截取左端低质量序列，我们看上图中箱线图，左端质量都很高，无低质量区，设置为0；<br>– p-trunc-len 序列截取长度，也是为了去除右端低质量序列，我们看到大于120以后，质量下降极大，甚至中位数都下降至20以下，需要全部去除，综合考虑决定设置为120。</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time qiime dada2 denoise-single \</span><br><span class="line">  --i-demultiplexed-seqs 1.demuxdata/demux.qza \</span><br><span class="line">  --p-trim-left 0 \</span><br><span class="line">  --p-trunc-len 120 \</span><br><span class="line">  --o-representative-sequences ./2.QCandFeatureTable/rep-seqs-dada2.qza \</span><br><span class="line">  --o-table ./2.QCandFeatureTable/table-dada2.qza \</span><br><span class="line">  --o-denoising-stats ./2.QCandFeatureTable/stats-dada2.qza</span><br></pre></td></tr></table></figure>
-<p>对特征表统计进行进行可视化</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">qiime metadata tabulate \</span><br><span class="line">  --m-input-file stats-dada2.qza \</span><br><span class="line">  --o-visualization stats-dada2.qzv</span><br></pre></td></tr></table></figure>
-<h2 id="特征表和特征序列汇总-FeatureTable-and-FeatureData-summaries"><a href="#特征表和特征序列汇总-FeatureTable-and-FeatureData-summaries" class="headerlink" title="特征表和特征序列汇总 FeatureTable and FeatureData summaries"></a>特征表和特征序列汇总 FeatureTable and FeatureData summaries</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">qiime feature-table summarize \</span><br><span class="line">  --i-table ./2.QCandFeatureTable/table-dada2.qza \</span><br><span class="line">  --o-visualization ./2.QCandFeatureTable/table.qzv \</span><br><span class="line">  --m-sample-metadata-file  ./0.rawdata/sample-metadata.tsv</span><br><span class="line"></span><br><span class="line">qiime feature-table tabulate-seqs \</span><br><span class="line">  --i-data ./2.QCandFeatureTable/rep-seqs-dada2.qza \</span><br><span class="line">  --o-visualization ./2.QCandFeatureTable/rep-seqs.qzv</span><br></pre></td></tr></table></figure>
-<p>Output:</p>
-<ol>
-<li>table.qzv: 特征表统计。<br>Frequency per sample:<br>Frequency per feature: 一群数据里出现次数多的？<br>Feature Detail: 4b5eeb300368260019c1fbc7a3c718fc </li>
-<li>rep-seqs.qzv: 代表序列统计，可点击序列跳转NCBI blast查看相近序列的信息。</li>
-</ol>
-<h2 id="构建进化树用于多样性分析-Generate-a-tree-for-phylogenetic-diversity"><a href="#构建进化树用于多样性分析-Generate-a-tree-for-phylogenetic-diversity" class="headerlink" title="构建进化树用于多样性分析 Generate a tree for phylogenetic diversity"></a>构建进化树用于多样性分析 Generate a tree for phylogenetic diversity</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time qiime phylogeny align-to-tree-mafft-fasttree \</span><br><span class="line">  --i-sequences ./2.QCandFeatureTable/rep-seqs-dada2.qza \</span><br><span class="line">  --o-alignment ./3.generateTree/aligned-rep-seqs.qza \</span><br><span class="line">  --o-masked-alignment ./3.generateTree/masked-aligned-rep-seqs.qza \</span><br><span class="line">  --o-tree ./3.generateTree/unrooted-tree.qza \</span><br><span class="line">  --o-rooted-tree ./3.generateTree/rooted-tree.qza</span><br></pre></td></tr></table></figure>
-<p>Output:<br>aligned-rep-seqs.qza: 多序列比对结果。<br>masked-aligned-rep-seqs.qza: 过滤去除高变区后的多序列比对结果。<br>rooted-tree.qza: 有根树，用于多样性分析。<br>unrooted-tree.qza: 无根树。</p>
-<h2 id="Alpha和Beta多样性分析"><a href="#Alpha和Beta多样性分析" class="headerlink" title="Alpha和Beta多样性分析"></a>Alpha和Beta多样性分析</h2><p>QIIME 2的多样性分析使用q2-diversity插件，该插件支持计算α和β多样性指数、并应用相关的统计检验以及生成交互式可视化图表。我们将首先应用core-metrics-phylogenetic方法，该方法将FeatureTable抽平到用户指定的测序深度，然后计算几种常用的α和β多样性指数，并使用Emperor为每个β多样性指数生成主坐标分析（PCoA）图。</p>
-<ul>
-<li>α多样性</li>
-</ul>
-<p>-香农(Shannon’s)多样性指数（群落丰富度的定量度量，即包括丰富度richness和均匀度evenness两个层面）<br>-可观测的OTU(Observed OTUs，群落丰富度的定性度量，只包括丰富度）<br>-Faith’s系统发育多样性（包含特征之间的系统发育关系的群落丰富度的定性度量）<br>-均匀度Evenness（或 Pielou’s均匀度；群落均匀度的度量）</p>
-<ul>
-<li>β多样性</li>
-</ul>
-<p>-Jaccard距离（群落差异的定性度量，即只考虑种类，不考虑丰度）<br>-Bray-Curtis距离（群落差异的定量度量，较常用）<br>-非加权UniFrac距离（包含特征之间的系统发育关系的群落差异定性度量）<br>-加权UniFrac距离（包含特征之间的系统发育关系的群落差异定量度量）</p>
-<p>需要提供给这个脚本的一个重要参数是–p-sampling-depth，它是指定重采样（即稀疏/稀疏rarefaction）深度。因为大多数多样指数对不同样本的不同测序深度敏感，所以这个脚本将随机地将每个样本的测序量重新采样至该参数值。例如，提供–p-sampling-depth 500，则此步骤将对每个样本中的计数进行无放回抽样，从而使得结果表中的每个样本的总计数为500。如果任何样本的总计数小于该值，那么这些样本将从多样性分析中删除。选择这个值很棘手。建议通过查看上面创建的表table.qzv文件中呈现的信息并选择一个尽可能高的值（因此每个样本保留更多的序列）同时尽可能少地排除样本来进行选择。<br><strong>如是数据量都很大，选最小的即可。如果有个别数据量非常小，去除最小值再选最小值。</strong><br>一般采用HiSeq2500或NovaSeq6000的 PE250模式测序，数据量都非常大，通常可以采用3万或5万的标准抽平，仍可保留90%以上样本。过低或过高一般结果也会波动较大，不建议放在一起分析。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time qiime diversity core-metrics-phylogenetic \</span><br><span class="line">  --i-phylogeny ./3.generateTree/rooted-tree.qza \</span><br><span class="line">  --i-table ./2.QCandFeatureTable/table-dada2.qza \</span><br><span class="line">  --p-sampling-depth 1103 \</span><br><span class="line">  --m-metadata-file ./0.rawdata/sample-metadata.tsv \</span><br><span class="line">  --output-dir  ./4.CoreMetricsRes</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>13个数据文件:<br>core-metrics-results/faith_pd_vector.qza: Alpha多样性考虑进化的faith指数。<br>core-metrics-results/unweighted_unifrac_distance_matrix.qza: 无权重unifrac距离矩阵。<br>core-metrics-results/bray_curtis_pcoa_results.qza: 基于Bray-Curtis距离PCoA的结果。<br>core-metrics-results/shannon_vector.qza: Alpha多样性香农指数。<br>core-metrics-results/rarefied_table.qza: 等量重采样后的特征表。<br>core-metrics-results/weighted_unifrac_distance_matrix.qza: 有权重的unifrac距离矩阵。<br>core-metrics-results/jaccard_pcoa_results.qza: jaccard距离PCoA结果。<br>core-metrics-results/observed_otus_vector.qza: Alpha多样性observed otus指数。<br>core-metrics-results/weighted_unifrac_pcoa_results.qza: 基于有权重的unifrac距离的PCoA结果。<br>core-metrics-results/jaccard_distance_matrix.qza: jaccard距离矩阵。<br>core-metrics-results/evenness_vector.qza: Alpha多样性均匀度指数。<br>core-metrics-results/bray_curtis_distance_matrix.qza: Bray-Curtis距离矩阵。<br>core-metrics-results/unweighted_unifrac_pcoa_results.qza: 无权重的unifrac距离的PCoA结果</p>
-</blockquote>
-<blockquote>
-<p>4个可视化结果:<br>core-metrics-results/unweighted_unifrac_emperor.qzv：无权重的unifrac距离PCoA结果采用emperor可视化。<br>core-metrics-results/jaccard_emperor.qzv：jaccard距离PCoA结果采用emperor可视化。<br>core-metrics-results/bray_curtis_emperor.qzv： Bray-Curtis距离PCoA结果采用emperor可视化。<br>core-metrics-results/weighted_unifrac_emperor.qzv： 有权重的unifrac距离PCoA结果采用emperor可视化。</p>
-</blockquote>
-<h2 id="Alpha多样性组间显著性分析和可视化"><a href="#Alpha多样性组间显著性分析和可视化" class="headerlink" title="Alpha多样性组间显著性分析和可视化"></a>Alpha多样性组间显著性分析和可视化</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">qiime diversity alpha-group-significance \</span><br><span class="line">--i-alpha-diversity core-metrics-results/faith_pd_vector.qza \</span><br><span class="line">--m-metadata-file ./sample-metadata.tsv \</span><br><span class="line">--o-visualization core-metrics-results/faith-pd-group-significance.qzv</span><br><span class="line"></span><br><span class="line">qiime diversity alpha-group-significance \</span><br><span class="line">--i-alpha-diversity core-metrics-results/evenness_vector.qza \</span><br><span class="line">--m-metadata-file ./sample-metadata.tsv \</span><br><span class="line">--o-visualization core-metrics-results/evenness-group-significance.qzv</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#不同身体部位之间比较；</span></span><br><span class="line">time qiime diversity beta-group-significance \</span><br><span class="line">  --i-distance-matrix core-metrics-results/unweighted_unifrac_distance_matrix.qza \</span><br><span class="line">  --m-metadata-file sample-metadata.tsv \</span><br><span class="line">  --m-metadata-column body-site \</span><br><span class="line">  --o-visualization core-metrics-results/unweighted-unifrac-body-site-significance.qzv \</span><br><span class="line">  --p-pairwise</span><br><span class="line"></span><br><span class="line"><span class="comment">#不同subject之间比较；</span></span><br><span class="line">time qiime diversity beta-group-significance \</span><br><span class="line">  --i-distance-matrix core-metrics-results/unweighted_unifrac_distance_matrix.qza \</span><br><span class="line">  --m-metadata-file sample-metadata.tsv \</span><br><span class="line">  --m-metadata-column subject \</span><br><span class="line">  --o-visualization core-metrics-results/unweighted-unifrac-subject-group-significance.qzv \</span><br><span class="line">  --p-pairwise</span><br></pre></td></tr></table></figure>
-<h2 id="Alpha稀疏曲线-Alpha-rarefaction-plotting"><a href="#Alpha稀疏曲线-Alpha-rarefaction-plotting" class="headerlink" title="Alpha稀疏曲线 Alpha rarefaction plotting"></a>Alpha稀疏曲线 Alpha rarefaction plotting</h2><p>稀疏曲线：到什么时候饱和，捕获到采样中所有微生物的菌群</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time qiime diversity alpha-rarefaction \</span><br><span class="line">  --i-table table-dada2.qza \</span><br><span class="line">  --i-phylogeny rooted-tree.qza \</span><br><span class="line">  --p-max-depth 4000 \</span><br><span class="line">  --m-metadata-file sample-metadata.tsv \</span><br><span class="line">  --o-visualization alpha-rarefaction.qzv</span><br></pre></td></tr></table></figure>
-<p>Output：<br>alpha-rarefaction.qzv: 稀疏曲线。</p>
-<h2 id="物种组成分析-Taxonomic-analysis"><a href="#物种组成分析-Taxonomic-analysis" class="headerlink" title="物种组成分析 Taxonomic analysis"></a>物种组成分析 Taxonomic analysis</h2><p>物种分类器</p>
-<ul>
-<li><p>物种分类器根据你特定的样品制备和测序参数进行训练时表现最好，包括用于扩增的引物和测序序列的长度。因此，一般来说，你应该按照使用q2-feature-classifier的训练特征分类器的说明来训练自己的物种分类器。</p>
-</li>
-<li><p>这里使用的分类器是在Greengenes 13_8 99% OTU上训练的，其中序列被修剪到仅包括来自16S区域的250个碱基。利用这个分类器生成从序列到物种注释结果关联的可视化。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ln –s /public/workspace/zmy1/home/wujian/metagenomics/single_end/gg-13-8-99-515-806-nb-classifier.qza ./</span><br></pre></td></tr></table></figure>
-<h2 id="物种注释和可视化"><a href="#物种注释和可视化" class="headerlink" title="物种注释和可视化"></a>物种注释和可视化</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time qiime feature-classifier classify-sklearn \</span><br><span class="line">  --i-classifier gg-13-8-99-515-806-nb-classifier.qza \</span><br><span class="line">  --i-reads ./2.QCandFeatureTable/rep-seqs-dada2.qza \</span><br><span class="line">  --o-classification taxonomy.qza</span><br><span class="line"></span><br><span class="line">qiime metadata tabulate \</span><br><span class="line">  --m-input-file taxonomy.qza \</span><br><span class="line">  --o-visualization taxonomy.qzv</span><br></pre></td></tr></table></figure>
-<p>Output:<br>taxonomy.qza: 物种注释结果。<br>gg-13-8-99-515-806-nb-classifier.qza: 分类器的训练结果。</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#Barplot</span></span><br><span class="line">qiime taxa barplot \</span><br><span class="line">  --i-table table-dada2.qza \</span><br><span class="line">  --i-taxonomy taxonomy.qza \</span><br><span class="line">  --m-metadata-file sample-metadata.tsv \</span><br><span class="line">  --o-visualization taxa-bar-plots.qzv</span><br></pre></td></tr></table></figure>
-<p>Output:<br>taxa-bar-plots.qzv: 交互式物种组成barplot。</p>
-]]></content>
-      <categories>
-        <category>Metagenomics</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>conda/mamba Installation</title>
-    <url>/2021/04/04/conda-mamba-Installation/</url>
-    <content><![CDATA[<p>Conda 是⼀个开源的软件包管理系统和环境管理系统，用于安装多个版本的软件包及其依赖关系，并在它们之间轻松切换。Conda 主要是为 Python 程序创建的，适⽤于 Linux，OSX和 Windows，也可以打包和分发其他软件，如 R 和 Scala。</p>
-<h1 id="conda-配置镜像"><a href="#conda-配置镜像" class="headerlink" title="conda 配置镜像"></a>conda 配置镜像</h1><p>Conda 的默认配置属于开箱即用的类型，但如果我们想要更好⽤，还有⼀些设定需要注意。</p>
-<p>Conda 默认的包channel是Anaconda公司的默认频道。另外还存在⼀个开源频道：conda-forge。condaforge 的包往往⽐官⽅更新更快，也更全，通常我们会直接把频道加⼊到 conda 的默认设置⾥。对于其他自己维护的频道，⽐如 pytorch，如果需要，我们也可以自行添加。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生成condarc配置文件；</span></span><br><span class="line">conda config --add channels conda-forge</span><br><span class="line">conda config --append channels pytorch</span><br></pre></td></tr></table></figure>
-<p>另外，如果Conda在国内更新很慢，可以搜索anaconda清华源添加清华大学的国内镜像进行包的更新。</p>
-<p>显示目前设置的所有镜像源，在执行 conda config 命令的时候，会在当前用户目录下创建 .condarc 文件，可以查看更换源前后该文件内容的变化:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看channel</span></span><br><span class="line">conda config --show-sources</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除安装源</span></span><br><span class="line">conda config --remove channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 换回默认源</span></span><br><span class="line">conda config --remove-key channels</span><br></pre></td></tr></table></figure>
-<h2 id="清华大学开源软件镜像站"><a href="#清华大学开源软件镜像站" class="headerlink" title="清华大学开源软件镜像站"></a>清华大学开源软件镜像站</h2><p><a href="https://mirrors.sjtug.sjtu.edu.cn/">https://mirrors.sjtug.sjtu.edu.cn/</a></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">channels:</span><br><span class="line">  - defaults</span><br><span class="line">show_channel_urls: <span class="literal">true</span></span><br><span class="line">channel_alias: https://mirrors.tuna.tsinghua.edu.cn/anaconda</span><br><span class="line">default_channels:</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2</span><br><span class="line">custom_channels:</span><br><span class="line">  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br></pre></td></tr></table></figure>
-<h2 id="上海交通大学开源软件镜像站"><a href="#上海交通大学开源软件镜像站" class="headerlink" title="上海交通大学开源软件镜像站"></a>上海交通大学开源软件镜像站</h2><p><a href="https://mirrors.sjtug.sjtu.edu.cn/">https://mirrors.sjtug.sjtu.edu.cn/</a></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">channels:</span><br><span class="line">  - defaults</span><br><span class="line">show_channel_urls: <span class="literal">true</span></span><br><span class="line">channel_alias: https://anaconda.mirrors.sjtug.sjtu.edu.cn/</span><br><span class="line">default_channels:</span><br><span class="line">  - https://anaconda.mirrors.sjtug.sjtu.edu.cn/pkgs/main</span><br><span class="line">  - https://anaconda.mirrors.sjtug.sjtu.edu.cn/pkgs/free</span><br><span class="line">  - https://anaconda.mirrors.sjtug.sjtu.edu.cn/pkgs/mro</span><br><span class="line">  - https://anaconda.mirrors.sjtug.sjtu.edu.cn/pkgs/msys2</span><br><span class="line">  - https://anaconda.mirrors.sjtug.sjtu.edu.cn/pkgs/pro</span><br><span class="line">  - https://anaconda.mirrors.sjtug.sjtu.edu.cn/pkgs/r</span><br><span class="line">custom_channels:</span><br><span class="line">  conda-forge: https://anaconda.mirrors.sjtug.sjtu.edu.cn/conda-forge</span><br><span class="line">  soumith: https://anaconda.mirrors.sjtug.sjtu.edu.cn/cloud/soumith</span><br><span class="line">  bioconda: https://anaconda.mirrors.sjtug.sjtu.edu.cn/cloud/bioconda</span><br><span class="line">  menpo: https://anaconda.mirrors.sjtug.sjtu.edu.cn/cloud/menpo</span><br><span class="line">  viscid-hub: https://anaconda.mirrors.sjtug.sjtu.edu.cn/cloud/viscid-hub</span><br><span class="line">  atztogo: https://anaconda.mirrors.sjtug.sjtu.edu.cn/cloud/atztogo</span><br></pre></td></tr></table></figure>
-<h2 id="北京外国语大学开源软件镜像站"><a href="#北京外国语大学开源软件镜像站" class="headerlink" title="北京外国语大学开源软件镜像站"></a>北京外国语大学开源软件镜像站</h2><p><a href="https://mirrors.bfsu.edu.cn/">https://mirrors.bfsu.edu.cn/</a></p>
-<ul>
-<li>注：强烈推荐！！！2020-05-02 上线，清华大学开源软件镜像站的姐妹站，下载体验极佳，再也不用忍受清华源永远下不完的 pytorch 了。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">channels:</span><br><span class="line">  - defaults</span><br><span class="line">show_channel_urls: <span class="literal">true</span></span><br><span class="line">channel_alias: https://mirrors.bfsu.edu.cn/anaconda</span><br><span class="line">default_channels:</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/main</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/free</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/r</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/pro</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/msys2</span><br><span class="line">custom_channels:</span><br><span class="line">  conda-forge: https://mirrors.bfsu.edu.cn/anaconda/cloud</span><br><span class="line">  msys2: https://mirrors.bfsu.edu.cn/anaconda/cloud</span><br><span class="line">  bioconda: https://mirrors.bfsu.edu.cn/anaconda/cloud</span><br><span class="line">  menpo: https://mirrors.bfsu.edu.cn/anaconda/cloud</span><br><span class="line">  pytorch: https://mirrors.bfsu.edu.cn/anaconda/cloud</span><br><span class="line">  simpleitk: https://mirrors.bfsu.edu.cn/anaconda/cloud</span><br></pre></td></tr></table></figure>
-<ul>
-<li>我的配置：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">channels:</span><br><span class="line">  - https://mirrors.sjtug.sjtu.edu.cn/anaconda/pkgs/main/</span><br><span class="line">  - https://mirrors.sjtug.sjtu.edu.cn/anaconda/pkgs/free/</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/r</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/pro</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/msys2</span><br><span class="line">show_channel_urls: <span class="literal">true</span></span><br><span class="line">ssl_verify: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-<h1 id="pip-换源"><a href="#pip-换源" class="headerlink" title="pip 换源"></a>pip 换源</h1><blockquote>
-<p>pip 国内的一些镜像:<br>阿里云 <a href="http://mirrors.aliyun.com/pypi/simple/">http://mirrors.aliyun.com/pypi/simple/</a><br>中国科技大学 <a href="https://pypi.mirrors.ustc.edu.cn/simple/">https://pypi.mirrors.ustc.edu.cn/simple/</a><br>豆瓣(douban) <a href="http://pypi.douban.com/simple/">http://pypi.douban.com/simple/</a><br>清华大学 <a href="https://pypi.tuna.tsinghua.edu.cn/simple/">https://pypi.tuna.tsinghua.edu.cn/simple/</a><br>中国科学技术大学 <a href="http://pypi.mirrors.ustc.edu.cn/simple/">http://pypi.mirrors.ustc.edu.cn/simple/</a></p>
-</blockquote>
-</li>
-</ul>
-<h1 id="mamba"><a href="#mamba" class="headerlink" title="mamba"></a>mamba</h1><p>mamba专为加速conda而生，其改写了conda下载资源的固有方式，以多线程的方式对网络资源进行并行下载，从而大幅提升Conda效率：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装mamba</span></span><br><span class="line">conda install mamba</span><br><span class="line">conda install mamba -c conda-forge</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看指定库当前环境下所有可用版本，以pandas为例</span></span><br><span class="line">mamba repoquery search pandas</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看指定库依赖哪些库，以bwa为例</span></span><br><span class="line">mamba repoquery depends bwa</span><br></pre></td></tr></table></figure>
-<h1 id="环境重建"><a href="#环境重建" class="headerlink" title="环境重建"></a>环境重建</h1><h2 id="环境迁移"><a href="#环境迁移" class="headerlink" title="环境迁移"></a>环境迁移</h2><p>如果我们想要把⼀个 conda 环境和对应版本的包迁移到别的机器上，那就首先需要导出环境：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda activate py37 <span class="comment"># 激活要导出的环境</span></span><br><span class="line">conda env <span class="built_in">export</span> &gt; environment.yml <span class="comment"># 导出环境配置，此种方法只能导出相同系统，如 windows机器的配置只能导出给windows使用，不能给linux使用</span></span><br><span class="line">pip freeze &gt; requirement.txt <span class="comment"># 也可以用pip导出，此种方法不限制机器</span></span><br></pre></td></tr></table></figure>
-<p>然后在新机器上重建环境：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda env create -f environment.yml <span class="comment"># 直接利用conda重建 # 或是先安装环境，再用pip重建</span></span><br><span class="line">conda create -n py37 python=3.7 -y</span><br><span class="line">pip install -r requirement.txt</span><br></pre></td></tr></table></figure>
-<h2 id="离线环境重建"><a href="#离线环境重建" class="headerlink" title="离线环境重建"></a>离线环境重建</h2><p>如果出于某些原因需要在离线的环境⼯作，Python 的环境配置会是⼀个很头痛的问题。但 conda 其实可以很⽅便的帮我们维护⼀整个相互兼容的环境。这种情况下，⾸先，我们需要找到 conda 的配置⽂件.condarc，通常它会位于：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="attr">macOS:</span> <span class="regexp">/Users/</span>Username</span><br><span class="line"><span class="attr">Linux:</span> ~/.condarc</span><br><span class="line"><span class="attr">Windows:</span> <span class="attr">C:</span>\Users\Username</span><br><span class="line">如果没有看⻅.condarc 配置文件，就运行一次 conda config。</span><br></pre></td></tr></table></figure>
-<p>然后，我们需要在.condarc 里修改 conda 缓存包的地址 pkgs_dirs，把这个地址变为我们想要存放下载的 python 包的地址，在离线的机器上我们也进⾏同样的操作来指定 conda 的缓存路径。把 conda 缓存下来的包导入到离线环境的缓存路径下，是建立⼀个完整的 python 环境的关键。</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="attr">pkgs_dirs:</span></span><br><span class="line">- <span class="attr">C:</span>\conda-pkgs-cache</span><br></pre></td></tr></table></figure>
-<p>在改好.condarc 配置文件后，我们就可以下载我们想要的包了，不过此时，需要带上⼀个关键的参数: –download-only</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 通过创建环境的方式下载所有想要的包</span></span><br><span class="line">conda create -n py36 anaconda pytorch tensorflow lightgbm catboost tqdm black pipreqs python=3.6 --download-only</span><br><span class="line"></span><br><span class="line"><span class="comment"># 直接下载并缓存对应的包</span></span><br><span class="line">conda install tensorflow-gpu=1.15 py-xgboost --download-only</span><br></pre></td></tr></table></figure>
-<p>在下载后，将之前设定的 conda 缓存⽬录上传到离线环境中，并在离线环境中也设定.condarc 中 conda</p>
-<p>缓存目录为对应的目录。此时运行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 利用缓存创建环境</span></span><br><span class="line">conda create -n offline36 anaconda pytorch tensorflow lightgbm catboost tqdm black pipreqs python=3.6 --use-index-cache --offline</span><br><span class="line"></span><br><span class="line"><span class="comment"># 利用缓存安装包</span></span><br><span class="line">conda install tensorflow-gpu=1.15 py-xgboost --use-index-cache --offline</span><br><span class="line">就可以只用 conda 缓存中的文件，⽆需联网，就能成功安装对应库到离线环境中了。</span><br></pre></td></tr></table></figure>
-<h1 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h1><p>安装软件前，先设置一个虚拟环境，不要直接在自己账户的当前环境内安装软件；</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建一个虚拟环境名为bwa</span></span><br><span class="line">conda create -n bwa</span><br><span class="line"><span class="comment"># 安装python 2版本</span></span><br><span class="line">conda install python=2</span><br><span class="line"><span class="comment"># 以上两句话可以等同于一句命令：conda create -n rna python=2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除环境</span></span><br><span class="line">conda remove -n rcnn --all</span><br></pre></td></tr></table></figure>
-<p>conda 其实没有重命名指令，实现重命名是通过 clone 完成的，分两步：</p>
-<ol>
-<li>先 clone 一份 new name 的环境</li>
-<li>删除 old name 的环境</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 比如，想把环境 rcnn 重命名成 tf</span></span><br><span class="line"><span class="comment"># 第1步</span></span><br><span class="line">conda create -n tf --<span class="built_in">clone</span> rcnn</span><br><span class="line"></span><br><span class="line"><span class="comment">#第2步</span></span><br><span class="line">conda remove -n rcnn --all</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda info -e</span><br><span class="line">conda info --envs</span><br><span class="line">conda env list    <span class="comment"># 都是来查看已经存在虚拟环境名的</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入虚拟环境</span></span><br><span class="line"><span class="built_in">source</span> activate bwa  <span class="comment">#激活虚拟环境名为bwa的环境</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 退出环境</span></span><br><span class="line">conda deactivate  <span class="comment">#: linux下conda退出虚拟环境命令</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 移除虚拟环境</span></span><br><span class="line">conda env remove --name bio-env       <span class="comment">#：删除虚拟环境及里面的内容</span></span><br></pre></td></tr></table></figure>
-<h1 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h1><h2 id="查找软件"><a href="#查找软件" class="headerlink" title="查找软件"></a>查找软件</h2><ol>
-<li>从 conda 网页内查找：<a href="http://bioconda.github.io/conda-recipe_index.html">http://bioconda.github.io/conda-recipe_index.html</a></li>
-<li>conda search PACKAGENAME：运行命令查找是否存在</li>
-</ol>
-<h2 id="安装软件-1"><a href="#安装软件-1" class="headerlink" title="安装软件"></a>安装软件</h2><ol>
-<li>先从 bioconda 镜像查看软件名具体是什么？一个字母都不能错</li>
-<li>conda/mamba install 软件名</li>
-<li>成功调取软件帮助文档==确定安装成功<br>这里有点类似 R 包的安装，装后需要 library()一下，才能确认安装成功</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装方法：</span></span><br><span class="line">conda install -y sra-tools trim-galore</span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定软件安装版本</span></span><br><span class="line"><span class="comment">## 即安装能模糊匹配到 numpy 版本为 1.11</span></span><br><span class="line">conda install numpy=1.11</span><br><span class="line"><span class="comment">## 即精确安装 numpy 为 1.11 的版本</span></span><br><span class="line">conda install numpy==1.11</span><br></pre></td></tr></table></figure>
-<h2 id="更新软件"><a href="#更新软件" class="headerlink" title="更新软件"></a>更新软件</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 更新 conda</span></span><br><span class="line">conda update conda</span><br><span class="line"><span class="comment"># 更新 bwa；前提是已经安装成功 bwa</span></span><br><span class="line">conda update bwa</span><br></pre></td></tr></table></figure>
-<h2 id="查看已安装软件"><a href="#查看已安装软件" class="headerlink" title="查看已安装软件"></a>查看已安装软件</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 在当前小环境下，列举所有安装软件</span></span><br><span class="line">conda list</span><br></pre></td></tr></table></figure>
-<h1 id="Troubleshooting"><a href="#Troubleshooting" class="headerlink" title="Troubleshooting"></a>Troubleshooting</h1><blockquote>
-<p>CondaHTTPError: HTTP 000 CONNECTION FAILED for url <a href="https://conda.anaconda.org/bioconda/linux-64/homer-4.9.1-pl5.22.0_5.tar.bz2">https://conda.anaconda.org/bioconda/linux-64/homer-4.9.1-pl5.22.0_5.tar.bz2</a>Elapsed:<br>An HTTP error occurred when trying to retrieve this URL.<br>HTTP errors are often intermittent, and a simple retry will get you on your way.</p>
-</blockquote>
-<ol>
-<li>检查网络是否已经链接,人为指定 channel 可以解决 bug<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda install -y -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda homer</span><br></pre></td></tr></table></figure></li>
-<li>conda 安装软件经常冲突<br>事实上不可能有十全十美的工具，conda 非常简易的管理了多个软件流程，那么必然也会有解决不了的事情，必然同一个流程的两个 python 软件基于不同版本的 python 包，就尴尬了。</li>
-</ol>
-<p>没什么好的办法，只能把冲突的工具安装到不同的子环境。</p>
-<ol start="3">
-<li>配置镜像出错<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda: <span class="built_in">command</span> not found</span><br><span class="line"><span class="comment"># 表明环境变量里找不到conda这个软件</span></span><br><span class="line"><span class="comment"># 出错原因：.bashrc里没有配置conda的PATH或者配置过但是没有source ~/.bashrc</span></span><br><span class="line"><span class="comment"># 检验方法：运行echo $PATH，查看是否含有conda安装路径</span></span><br><span class="line"></span><br><span class="line">Warning: <span class="string">&#x27;https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge&#x27;</span> already <span class="keyword">in</span> <span class="string">&#x27;channels&#x27;</span> list, moving to the top</span><br><span class="line"><span class="comment"># 表明之前已经运行过这句代码</span></span><br><span class="line"><span class="comment"># 复制镜像配置语句时复制错误，需要重新配置时，需要删除镜像配置文件</span></span><br><span class="line">rm ~/.condarc</span><br><span class="line"><span class="comment"># 然后重新配置</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
-      <categories>
-        <category>toolsLearning</category>
-      </categories>
-      <tags>
-        <tag>conda</tag>
       </tags>
   </entry>
 </search>
