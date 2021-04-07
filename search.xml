@@ -1323,7 +1323,7 @@
 <p>MD5码确认一致，下载的数据是完整无误的。</p>
 <h2 id="ENA-Arial2-奶牛快传"><a href="#ENA-Arial2-奶牛快传" class="headerlink" title="ENA+Arial2+奶牛快传"></a>ENA+Arial2+奶牛快传</h2><p><strong>Aria2</strong><br><strong>优点</strong>:速度快、体积小、资源占用少；支持 HTTP/FTP/BT/Magnet磁力链接等类型的文件下载，据说速度超级快;<br><br><strong>缺点</strong>: 配置麻烦，上手较难。</p>
 <p>教程：<br><a href="https://github.com/aria2/aria2/releases/tag/release-1.35.0">github-aria2</a><br><a href="https://cloud.tencent.com/developer/article/1142142">编译安装</a><br><a href="https://blog.readgroup.cn/m/?post=92">一键安装脚本（需要root权限）</a></p>
-<center><img src="/img/Figures/Aria2-wrong.png" alt="Aria-wrong" style="zoom:80%;" /></center>
+<center><img src="/img/Figures/Aria2-wrong.png" alt="Aria-wrong" style="zoom:60%;" /></center>
 
 <p>另外尝试下载win版Arial2，再利用奶牛快传传至服务器<br>教程：</p>
 <p>抛弃迅雷，Aria2 新手入门](<a href="https://zhuanlan.zhihu.com/p/37021947">https://zhuanlan.zhihu.com/p/37021947</a>)<br>用ftp地址，3G的数据下的超快。大概10分钟？感觉这边的速度是骗人的</p>
