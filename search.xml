@@ -1056,7 +1056,14 @@
   <entry>
     <title>TOEFL-writing-05</title>
     <url>/2021/04/06/TOEFL-writing-05/</url>
-    <content><![CDATA[<p><strong>九大话题</strong></p>
+    <content><![CDATA[<style>
+  p{
+    font-size:18px;
+    line-height:1.7em;
+
+  }
+</style>
+<p><strong>九大话题</strong></p>
 <h1 id="教育类"><a href="#教育类" class="headerlink" title="教育类"></a>教育类</h1><h2 id="学生层面"><a href="#学生层面" class="headerlink" title="学生层面"></a>学生层面</h2><ol>
 <li>教室内：<ul>
 <li>academic learning(more knowledge, trigger interest)</li>
@@ -1125,12 +1132,99 @@
 </li>
 <li><p>对学生的品质好</p>
 <ul>
-<li></li>
-<li></li>
+<li>独立性<ul>
+<li>themselevs/individually/by themselves/on their own</li>
+<li>indenpendence and autonomy/self-reliance/self-determination</li>
+<li>be independent and autonomous</li>
+</ul>
+</li>
+<li>坚持不懈<ul>
+<li>confront/be confronted with/in the confrontation of</li>
+<li>hardships/obstacles/adversities/enigmas/frustration/desperation</li>
+<li>persistence/perseverance/grit</li>
+<li>achieve success regardless of/disregarding + any setbacks</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>对学生就业好</p>
+<ul>
+<li>找工作<ul>
+<li>be competitive in</li>
+<li>win/gain/attain/obtain + competitiveness/competitive edges in </li>
+<li>locate/pursue/hunt for/search for career</li>
+</ul>
+</li>
+<li>工作晋升<ul>
+<li>get promotion/advancement</li>
+<li>promote/advance</li>
+<li>move up one’s career ladder</li>
+</ul>
+</li>
 </ul>
 </li>
 </ol>
-]]></content>
+<hr>
+<h2 id="教师层面"><a href="#教师层面" class="headerlink" title="教师层面"></a>教师层面</h2><ol>
+<li>benefit students</li>
+<li>benifit teachers<br>teaching methods<br>achievement/satisfaction/motivation</li>
+</ol>
+<p><strong>例题</strong>：Agree or disagree? All school teachers should be required to <strong>take courses every 5 years</strong> to update their knowledge. (13.12.01)</p>
+<hr>
+<p><strong>核心表达</strong></p>
+<ul>
+<li><p>教学方法多样</p>
+<ul>
+<li>diverse/assorted/a variety/numerous/excessive/substantial</li>
+<li>teaching/pedagogical/instructional + tactics/approaches/strategies/techniques 教学方法</li>
+<li>adopt/employ/follow +教学方法 </li>
+<li>involve/engage students in discussions</li>
+<li>increase/boost/enhance + students’ engagement/involvement</li>
+</ul>
+</li>
+<li><p>积极性、动力</p>
+<ul>
+<li>a sense of acievement/motivation/attainment/accomplishment</li>
+<li>motivate/stimulate/urge/spur/inspire sb. to do 督促某人做某事</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="学校层面"><a href="#学校层面" class="headerlink" title="学校层面"></a>学校层面</h2><ol>
+<li>benifit students （根据题目从对学生好中选两个小点）</li>
+<li>benifit school<br>enrollment/reputation<br>danation(from alumni;company)</li>
+</ol>
+<p><strong>例题</strong><br>Agree or disagree? Would you rather your school spend money on social events and facilities or on improving the cafeteria menus? (13.08. 17)</p>
+<p>投入社会活动</p>
+<ol>
+<li>benefit student<br>interpersonal skills<br>time management skills</li>
+<li>benifit schools<br>enrollment/reputation<br>donation</li>
+</ol>
+<hr>
+<p><strong>核心表达</strong></p>
+<ol>
+<li>对学校好<ul>
+<li>招生好<ul>
+<li>prestigious/renowned/well-known</li>
+<li>lead to/contribute to /result in + enrollment growth</li>
+<li>increase/enhance/boost + enrollment rate</li>
+<li>(applicants)regard/consider…as the most + essential/vital/decisive/dominant/prominent + element/ingredient/factor/component in their college search process</li>
+</ul>
+</li>
+<li>投资多<ul>
+<li>a quality/a well-round /decent/ first-class + education</li>
+<li>build/establish + alumni links</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h1 id="公司类"><a href="#公司类" class="headerlink" title="公司类"></a>公司类</h1><h2 id="员工层面"><a href="#员工层面" class="headerlink" title="员工层面"></a>员工层面</h2><ol>
+<li>benefits of high salaries<br>improve one’s professional life<br>improve one’s personal life(oneself+family members)</li>
+<li>benifit of 另一点<br>说该工作缺点的两个好处，最好和职业相关</li>
+</ol>
+<h2 id="老板层面"><a href="#老板层面" class="headerlink" title="老板层面"></a>老板层面</h2><h2 id="公司层面"><a href="#公司层面" class="headerlink" title="公司层面"></a>公司层面</h2>]]></content>
       <categories>
         <category>TOEFL-Writing</category>
       </categories>
@@ -1467,14 +1561,55 @@
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">snp=~/Reference/dbsnp_146.hg38/dbsnp_146.hg38.vcf.gz</span><br><span class="line">indel=~/Reference/GATK/Mills_and_1000G_gold_standard.indels.hg38.vcf.gz</span><br><span class="line">ref=~/Reference/GATK/Homo_sapiens_assembly38.fasta</span><br><span class="line">cat ./0.sra/sra.infor/sample  | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  <span class="keyword">if</span> [ ! -f ./5.gatk/<span class="variable">$&#123;id&#125;</span>_bqsr.bam ]</span><br><span class="line">  <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;start BQSR for <span class="variable">$&#123;id&#125;</span>&quot;</span> `date`</span><br><span class="line">    gatk --java-options <span class="string">&quot;-Xmx60G -Djava.io.tmpdir=./&quot;</span>  BaseRecalibrator \</span><br><span class="line">    -R <span class="variable">$ref</span>  \</span><br><span class="line">    -I ./5.gatk/<span class="variable">$&#123;id&#125;</span>_marked.bam  \</span><br><span class="line">    --known-sites <span class="variable">$&#123;snp&#125;</span> \</span><br><span class="line">    --known-sites <span class="variable">$&#123;indel&#125;</span> \</span><br><span class="line">    -O ./5.gatk/recal.table/<span class="variable">$&#123;id&#125;</span>_recal.table \</span><br><span class="line">    1&gt;./5.gatk/recal.log/<span class="variable">$&#123;id&#125;</span>_log.recal 2&gt;&amp;1 </span><br><span class="line">    </span><br><span class="line">    gatk --java-options <span class="string">&quot;-Xmx60G -Djava.io.tmpdir=./&quot;</span>  ApplyBQSR \</span><br><span class="line">    -R <span class="variable">$ref</span>  \</span><br><span class="line">    -I ./5.gatk/<span class="variable">$&#123;id&#125;</span>_marked.bam  \</span><br><span class="line">    -bqsr ./5.gatk/recal.table/<span class="variable">$&#123;id&#125;</span>_recal.table \</span><br><span class="line">    -O ./5.gatk/bqsr.bam/<span class="variable">$&#123;id&#125;</span>_bqsr.bam \</span><br><span class="line">    1&gt;./5.gatk/applyBQSR.log/<span class="variable">$&#123;id&#125;</span>_log.ApplyBQSR  2&gt;&amp;1 </span><br><span class="line">    </span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;end BQSR for <span class="variable">$&#123;id&#125;</span>&quot;</span> `date`</span><br><span class="line">  <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 <hr>
-<p><strong>Troubleshooting</strong><br>A USER ERROR has occurred: Input files reference and features have incompatible contigs: No overlapping contigs found.<br>–known-sites的版本选择问题，dbsnp146不报错，dbsnp153报错，需要使用与input文件contig name一致的reference。官网的论坛里开发者回复：</p>
-<blockquote>
-<p>the exception you get arises from the fact that you are using decoy reference genome version while attempting to recalibrate on known-sites for nonDecoy reference genome. Note that it might use different contig names (N instead of chrN)</p>
-</blockquote>
+<p><strong>Troubleshooting</strong><br>A USER ERROR has occurred: Input files reference and features have incompatible contigs: No overlapping contigs found.<br>–known-sites的版本选择问题，dbsnp146不报错，dbsnp153报错，需要使用与input文件contig name一致的reference。<br><strong>官网的论坛里开发者回复：</strong><br>the exception you get arises from the fact that you are using decoy reference genome version while attempting to recalibrate on known-sites for nonDecoy reference genome. Note that it might use different contig names (N instead of chrN)</p>
 <hr>
 <center><img src="/img/Figures/bqsr-res.png" alt="bqsr-res" style="zoom:50%;" /></center>
 
-<h2 id="单样本找Germline-SNPs-INDELs"><a href="#单样本找Germline-SNPs-INDELs" class="headerlink" title="单样本找Germline SNPs/INDELs"></a>单样本找Germline SNPs/INDELs</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">GATK=~/wes_cancer/biosoft/gatk-4.1.4.1/gatk</span><br><span class="line">snp=~/wes_cancer/data/dbsnp_146.hg38.vcf.gz</span><br><span class="line">indel=~/wes_cancer/data/Mills_and_1000G_gold_standard.indels.hg38.vcf.gz</span><br><span class="line">ref=~/wes_cancer/data/Homo_sapiens_assembly38.fasta</span><br><span class="line">bed=~/wes_cancer/data/hg38.exon.bed</span><br><span class="line"></span><br><span class="line">cat config  | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;start HC for <span class="variable">$&#123;id&#125;</span>&quot;</span> `date`</span><br><span class="line">  <span class="variable">$GATK</span> --java-options <span class="string">&quot;-Xmx20G -Djava.io.tmpdir=./&quot;</span> HaplotypeCaller -ERC GVCF \</span><br><span class="line">  -R <span class="variable">$&#123;ref&#125;</span> \</span><br><span class="line">  -I ./5.gatk/<span class="variable">$&#123;id&#125;</span>_bqsr.bam \</span><br><span class="line">  --dbsnp <span class="variable">$&#123;snp&#125;</span> \</span><br><span class="line">  -L <span class="variable">$&#123;bed&#125;</span> \</span><br><span class="line">  -O ./5.gatk/<span class="variable">$&#123;id&#125;</span>_raw.vcf \</span><br><span class="line">  1&gt;./5.gatk/<span class="variable">$&#123;id&#125;</span>_log.HC 2&gt;&amp;1</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;end HC for <span class="variable">$&#123;id&#125;</span>&quot;</span> `date`</span><br><span class="line"></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> ./5.gatk/gvcf</span><br><span class="line"><span class="keyword">for</span> chr <span class="keyword">in</span> chr&#123;1..22&#125; chrX chrY chrM</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line"></span><br><span class="line">time <span class="variable">$GATK</span> --java-options <span class="string">&quot;-Xmx20G -Djava.io.tmpdir=./&quot;</span> GenomicsDBImport \</span><br><span class="line">-R <span class="variable">$&#123;ref&#125;</span> \</span><br><span class="line">$(ls ./*raw.vcf | awk <span class="string">&#x27;&#123;print &quot;-V &quot;$0&quot; &quot;&#125;&#x27;</span>) \</span><br><span class="line">-L <span class="variable">$&#123;chr&#125;</span> \</span><br><span class="line">--genomicsdb-workspace-path gvcfs_<span class="variable">$&#123;chr&#125;</span>.db</span><br><span class="line"></span><br><span class="line">time <span class="variable">$GATK</span> --java-options <span class="string">&quot;-Xmx20G -Djava.io.tmpdir=./&quot;</span> GenotypeGVCFs \</span><br><span class="line">-R <span class="variable">$&#123;ref&#125;</span> \</span><br><span class="line">-V gendb://gvcfs_<span class="variable">$&#123;chr&#125;</span>.db \</span><br><span class="line">-O gvcfs_<span class="variable">$&#123;chr&#125;</span>.vcf</span><br><span class="line"></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$GATK</span> --java-options <span class="string">&quot;-Xmx20G -Djava.io.tmpdir=./&quot;</span> GatherVcfs \</span><br><span class="line">$(<span class="keyword">for</span> i <span class="keyword">in</span> &#123;1..22&#125; X Y M;<span class="keyword">do</span> <span class="built_in">echo</span> <span class="string">&quot;-I gvcfs_chr<span class="variable">$&#123;i&#125;</span>.vcf&quot;</span> ;<span class="keyword">done</span>) \</span><br><span class="line">-O merge.vcf</span><br></pre></td></tr></table></figure>
+<h2 id="单样本找Germline-SNPs-INDELs"><a href="#单样本找Germline-SNPs-INDELs" class="headerlink" title="单样本找Germline SNPs/INDELs"></a>单样本找Germline SNPs/INDELs</h2><center><img src="/img/Figures/mainstep-ssGermline.png" alt="mainstep" style="zoom:80%;" /></center>
+
+<p><a href="https://gatk.broadinstitute.org/hc/en-us/articles/360056969012-HaplotypeCaller">Manual-HaplotypeCaller</a></p>
+<blockquote>
+<p><strong>Input</strong><br> Input bam file(s) from which to make variant calls<br><strong>Output</strong><br> Either a VCF or GVCF file with raw, unfiltered SNP and indel calls. Regular VCFs must be filtered either by variant recalibration (Best Practice) or hard-filtering before use in downstream analyses. If using the GVCF workflow, the output is a GVCF file that must first be run through GenotypeGVCFs and then filtering before further analysis.</p>
+</blockquote>
+<p>原理：</p>
+<ol>
+<li>定义变异区间：首先寻找确定进行变异检测的区间</li>
+<li>数据组装：对区间内的数据及基因组进行组装(De Bruijnlike graph)并预估单倍型</li>
+<li>根据比对结果，确定单倍型的最大似然值：将reads回帖单倍型数据(PairHMM algorithm)，计算各个单倍型出现的最大似然值</li>
+<li>将单倍型比对结果转化为在特定位置位置处的分型左右滑动查看全部内容。</li>
+<li>模块分步分析说明</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">snp=~/Reference/dbsnp_146.hg38/dbsnp_146.hg38.vcf.gz</span><br><span class="line">indel=~/Reference/GATK/Mills_and_1000G_gold_standard.indels.hg38.vcf.gz</span><br><span class="line">ref=~/Reference/GATK/Homo_sapiens_assembly38.fasta</span><br><span class="line">bed=~/Reference/GATK/hg38_exon.bed</span><br><span class="line"></span><br><span class="line">cat ./0.sra/sra.infor/sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;start HC for <span class="variable">$&#123;id&#125;</span>&quot;</span> `date`</span><br><span class="line">  gatk --java-options <span class="string">&quot;-Xmx25g&quot;</span> HaplotypeCaller -ERC GVCF \</span><br><span class="line">  -R <span class="variable">$&#123;ref&#125;</span> \</span><br><span class="line">  -I ./5.gatk/bqsr.bam/<span class="variable">$&#123;id&#125;</span>_bqsr.bam \</span><br><span class="line">  --dbsnp <span class="variable">$&#123;snp&#125;</span> \</span><br><span class="line">  -L <span class="variable">$&#123;bed&#125;</span> \</span><br><span class="line">  -O ./5.gatk/gvcf/<span class="variable">$&#123;id&#125;</span>_raw.vcf \</span><br><span class="line">  1&gt;./<span class="built_in">log</span>/HaplotypeCaller.log<span class="variable">$&#123;id&#125;</span>_log.HC 2&gt;&amp;1</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;end HC for <span class="variable">$&#123;id&#125;</span>&quot;</span> `date`</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<p>共跑了五个小时：</p>
+<center><img src="/img/Figures/HC-time.png" alt="HC" style="zoom:60%;" /></center>
+
+<p>输出文件：</p>
+<center><img src="/img/Figures/vcf-file.png" alt="vcf-file" style="zoom:80%;" /></center>
+
+<p>vcf文件分为两个部分：</p>
+<ul>
+<li>以##开头的头文件信息：主要包括vcf文件版本、FORMAT、INFO、参考基因组以及执行程序等信息</li>
+<li>主体部分：<ol>
+<li>CHROM(chromosome):染色体</li>
+<li>POS  变异位点在参考基因组中的位置</li>
+<li>ID - identifier: variant的ID。比如在dbSNP中有该SNP的id，则会在此行给出；若没有，则用<code>.</code>表示其为一个novel variant。</li>
+<li>REF - reference base(s):参考碱基，染色体上面的碱基，必须是ATCGN中的一个，N表示不确定碱基</li>
+<li>ALT - alternate base(s):与参考序列比较发生突变的碱基</li>
+<li>QUAL - quality: Phred格式(Phred_scaled)的质量值，表示在该位点存在variant的可能性；该值越高，则<pre><code>  variant的可能性越大；计算方法：Phred值 = -10 * log (1-p) p为variant存在的概率; 通过计算公式
+  可以看出值为10的表示错误概率为0.1，该位点为variant的概率为90%。
+</code></pre>
+</li>
+<li>FILTER - _filter status: 使用上一个QUAL值来进行过滤的话，是不够的。GATK能使用其它的方法来进行过滤，过滤结果中通过则该值为<code>PASS</code>;若variant不可靠，则该项不为<code>PASS</code>或<code>.</code>。</li>
+<li>INFO - additional information:  这一行是variant的详细信息，具体如下：<br>#DP-read depth：样本在这个位置的reads覆盖度。是一些reads被过滤掉后的覆盖度。DP4:高质量测序碱基，位于REF或者ALT前后<br> #QD：通过深度来评估一个变异的可信度。Variant call confidence normalized by depth of sample reads supporting a variant<br> #MQ：表示覆盖序列质量的均方值RMS Mapping Quality<br> #FQ：phred值关于所有样本相似的可能性<br> #AC，AF 和 AN：AC(Allele Count) 表示该Allele的数目；AF(Allele Frequency) 表示Allele的频率； AN(Allele Number) 表示Allele的总数目。<br> 对于1个diploid sample而言：则基因型 0/1 表示sample为杂合子，Allele数为1(双倍体的sample在该位点只有1个等位基因发生了突变)，<br> Allele的频率为0.5(双倍体的sample在该位点只有50%的等位基因发生了突变)，总的Allele为2； 基因型 1/1 则表示sample为纯合的，Allele数为2，Allele的频率为1，总的Allele为2。<br> #MLEAC：Maximum likelihood expectation (MLE) for the allele counts (not necessarily the same as the AC), for each ALT allele, in the same order as listed<br> #MLEAF：Maximum likelihood expectation (MLE) for the allele frequency (not necessarily the same as the AF), for each ALT allele, in the same order as listed<br> #BaseQRankSum   比较支持变异的碱基和支持参考基因组的碱基的质量，负值表示支持变异的碱基质量值不及支持参考基因组的，<br>  正值则相反，支持变异的质量值好于参考基因组的。0表示两者无明显差异。<br> #FS  使用F检验来检验测序是否存在链偏好性。链偏好性可能会导致变异等位基因检测出现错误。输出值Phred-scaled p-value，值越大越可能出现链偏好性。<br> #InbreedingCoeff    使用似然法检验样本间的近交系数（又或者称为近亲关系）。值越高越可能是近亲繁殖。<br> #MQRankSum  比较支持变异的序列和支持参考基因组的序列的质量，负值表示支持变异的碱基质量值不及支持参考基因组的，只针对杂合。<br>  正值则相反，支持变异的质量值好于参考基因组的。0表示两者无明显差异。实际应用中一般过滤掉较小的负值。<br> #BaseCounts   所有样本在变异位点ATCG的数量<br> #ClippingRankSum  同前面两个类似，负值表示支持变异的read有更的的hard-clip碱基，正值表示支持参考基因组的的read有更多的hard-clip。0最好，无论是正值还是负值都表示可能可能存在人为偏差。<br> #ReadPosRankSum    检测变异位点是否有位置偏好性（是否存在于序列末端，此时往往容易出错）。最佳值为0，表示变异与其在序列上的位置无关。负值表示变异位点更容易在末端出现，正值表示参考基因组中的等位基因更容易在末端出现。<br> #ExcessHet   检测这些样本的相关性，与InbreedingCoeff相似，值越大越可能是错误。<br> #LikelihoodRankSum  评价支持变异和ref的序列与best hyplotype的匹配性，0为最佳值。负值表示支持变异的read匹配度不及支持ref的匹配度，正值则相反。值越大表示越可能是出现了错误。<br> #HaplotypeScore    分数越高越可能出现错误。Higher scores are indicative of regions with bad alignments, typically leading to artifactual SNP and indel calls.<br> #SOR：也是一个用来评估是否存在链偏向性的参数，相当于FS的升级版。The StrandOddsRatio annotation is one of several methods that aims to evaluate whether there is strand bias in the data. It is an updated form of the Fisher Strand Test that is better at taking into account large amounts of data in high coverage situations. It is used to determine if there is strand bias between forward and reverse strands for the reference or alternate allele. The reported value is ln-scaled.<br> #IS：插入缺失或部分插入缺失的reads允许的最大数量<br> #G3：ML 评估基因型出现的频率<br> #HWE：chi^2基于HWE的测试p值和G3<br> #CLR：在受到或者不受限制的情况下基因型出现可能性log值<br> #UGT：最可能不受限制的三种基因型结构<br> #CGT：最可能受限制三种基因型的结构<br> #PV4：四种P值得误差，分别是（strand、baseQ、mapQ、tail distance bias）<br> #INDEL：表示该位置的变异是插入缺失<br> #PC2：非参考等位基因的phred（变异的可能性）值在两个分组中大小不同<br> #PCHI2：后加权chi^2，根据p值来测试两组样本之间的联系<br> #QCHI2：Phred scaled PCHI2<br> #PR：置换产生的一个较小的PCHI2<br> #QBD：Quality by Depth，测序深度对质量的影响<br> #RPB：序列的误差位置（Read Position Bias）<br> #MDV：样本中高质量非参考序列的最大数目<br> #VDB：Variant Distance Bias，RNA序列中过滤人工拼接序列的变异误差范围</li>
+<li>FORMAT 和最后一列sample中的信息是对应的<br> #AD 和 DP：AD(Allele Depth)为sample中每一种allele的reads覆盖度,在diploid中则是用逗号分割的两个值，<br> 前者对应ref基因型，后者对应variant基因型； DP（Depth）为sample中该位点的覆盖度。<br> #GT：样品的基因型（genotype）。两个数字中间用’/‘分 开，这两个数字表示双倍体的sample的基因型。0 表示样品中有ref的allele；<br>  1表示样品中variant的allele； 2表示有第二个variant的allele。因此： 0/0 表示sample中该位点为纯合的，和ref一致； 0/1 表示sample中该位点为杂合的，有ref和variant两个基因型； 1/1 表示sample中该位点为纯合的，和variant一致。<br> #GQ：即第二可能的基因型的PL值，相对于最可能基因型的PL值（其PL=0）而言，大于99时，其信息量已不大，因此大于99的全部赋值99。当GQ值很小时，意味着第二可能基因型与最可能基因型差别不大。<br> #GL：三种基因型（RR RA AA）出现的可能性，R表示参考碱基，A表示变异碱基<br> #DV：高质量的非参考碱基<br> #SP：phred的p值误差线<br> #PL：指定的三种基因型的可能性(provieds the likelihoods of the given genotypes)。这三种指定的基因型为(0/0,0/1,1/1)，这三种基因型的概率总和为1。<br> 和之前不一致，该值越大，表明为该种基因型的可能性越小。 Phred值 = -10 * log (p) p为基因型存在的概率。</li>
+</ol>
+</li>
+</ul>
+<p><a href="https://gatk.broadinstitute.org/hc/en-us/articles/360057439331-GenomicsDBImport">Manual-GenomicsDBImport</a><br>The GATK4 Best Practice Workflow for SNP and Indel calling uses GenomicsDBImport to merge GVCFs from multiple samples. </p>
+<blockquote>
+<p><strong>Input</strong><br> One or more GVCFs produced by in HaplotypeCaller with the <code>-ERC GVCF</code> or <code>-ERC BP_RESOLUTION</code> settings, containing the samples to joint-genotype.<br><strong>Output</strong><br> A GenomicsDB workspace</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ./5.gatk/gvcf</span><br><span class="line"><span class="keyword">for</span> chr <span class="keyword">in</span> chr&#123;1..22&#125; chrX chrY chrM</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># A USER ERROR has occurred: Argument variant was missing: One of --variant or --sample-name-map must be specified</span></span><br><span class="line"><span class="comment"># A USER ERROR has occurred: GenomicsDB workspace drivingVariantFile:gendb:///home/data/vip8t02/MyCourse/CancerGenomics/WES.proj/5.gatk/gvcf/gvcfs_chr2.db does not exist</span></span><br><span class="line"></span><br><span class="line">time gatk --java-options <span class="string">&quot;-Xmx60G -Djava.io.tmpdir=./&quot;</span> GenomicsDBImport \</span><br><span class="line">-R <span class="variable">$&#123;ref&#125;</span> \</span><br><span class="line">$(ls ./5.gatk/gvcf/*_raw.vcf | awk <span class="string">&#x27;&#123;print &quot;-V &quot;$0&quot; &quot;&#125;&#x27;</span>) \</span><br><span class="line">-L <span class="variable">$&#123;chr&#125;</span> \</span><br><span class="line">--genomicsdb-workspace-path gvcfs_<span class="variable">$&#123;chr&#125;</span>.db</span><br><span class="line"></span><br><span class="line">time gatk --java-options <span class="string">&quot;-Xmx60G -Djava.io.tmpdir=./&quot;</span> GenotypeGVCFs \</span><br><span class="line">-R <span class="variable">$&#123;ref&#125;</span> \</span><br><span class="line">-V gendb://gvcfs_<span class="variable">$&#123;chr&#125;</span>.db \</span><br><span class="line">-O gvcfs_<span class="variable">$&#123;chr&#125;</span>.vcf</span><br><span class="line"></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line">gatk --java-options <span class="string">&quot;-Xmx60G -Djava.io.tmpdir=./&quot;</span> GatherVcfs \</span><br><span class="line">$(<span class="keyword">for</span> i <span class="keyword">in</span> &#123;1..22&#125; X Y M;<span class="keyword">do</span> <span class="built_in">echo</span> <span class="string">&quot;-I gvcfs_chr<span class="variable">$&#123;i&#125;</span>.vcf&quot;</span> ;<span class="keyword">done</span>) \</span><br><span class="line">-O merge.vcf</span><br></pre></td></tr></table></figure>
 <h2 id="mutect找Somatic-Mutations"><a href="#mutect找Somatic-Mutations" class="headerlink" title="mutect找Somatic Mutations"></a>mutect找Somatic Mutations</h2>]]></content>
       <categories>
         <category>WES</category>
@@ -1514,6 +1649,122 @@
       </categories>
       <tags>
         <tag>eCLIP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>scATAC-seq Analysis</title>
+    <url>/2021/04/08/scATAC-seq-Analysis/</url>
+    <content><![CDATA[<h1 id="ArchR-install"><a href="#ArchR-install" class="headerlink" title="ArchR install"></a>ArchR install</h1><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">conda create -n ArchR</span><br><span class="line">source activate ArchR</span><br><span class="line">conda install -<span class="built_in">c</span> conda-forge r-base <span class="comment">###R version 4.0.3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (!requireNamespace(<span class="string">&quot;devtools&quot;</span>, quietly = <span class="literal">TRUE</span>)) install.packages(<span class="string">&quot;devtools&quot;</span>)</span><br><span class="line"><span class="keyword">if</span> (!requireNamespace(<span class="string">&quot;BiocManager&quot;</span>, quietly = <span class="literal">TRUE</span>)) install.packages(<span class="string">&quot;BiocManager&quot;</span>)</span><br><span class="line">devtools::install_github(<span class="string">&quot;GreenleafLab/ArchR&quot;</span>, ref=<span class="string">&quot;master&quot;</span>, repos = BiocManager::repositories())</span><br><span class="line"></span><br><span class="line">library(ArchR)</span><br><span class="line">ArchR::installExtraPackages()</span><br><span class="line">addArchRGenome(<span class="string">&quot;hg19&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="2-ArchR的输入文件类型"><a href="#2-ArchR的输入文件类型" class="headerlink" title="2. ArchR的输入文件类型"></a>2. ArchR的输入文件类型</h1><p>ArchR主要以scATAC-seq原始数据经上游处理后的两种常见输出文件(BAM,fragment)作为输入。  </p>
+<ol>
+<li>Fragment文件记录着scATAC-seq的fragment以及对应的细胞ID，每一行都是一条记录，该文件需要是tabix(见注1)排序并建立索引保证能被高效读取。以10XGenomics的CellRanger软件为例，它的输出文件是fragments;    </li>
+<li>BAM文件则是二进制格式下的tabix排序文件，记录着scATAC-seq的fragment、原始数据、细胞条形码和其他信息。具体使用何种文件作为输入取决于你的上游处理流程。sci-ATAC-seq流程则输出BAM文件。  </li>
+</ol>
+<h2 id="2-1-创建Arrow文件"><a href="#2-1-创建Arrow文件" class="headerlink" title="2.1 创建Arrow文件"></a>2.1 创建Arrow文件</h2><p>对于每个样本，此步骤将：  </p>
+<ol>
+<li>从提供的输入文件中读取可访问的片段。  </li>
+<li>计算每个细胞的质量控制信息（即TSS富集得分和核小体信息，ArchR默认会过滤TSS富集得分低于4或唯一比对数小于1000（也就是保留TSS富集得分大于4且唯一比对数大于1000的细胞））。  </li>
+<li>根据质量控制参数过滤单元。  </li>
+<li>使用500 bp的条带创建全基因组的TileMatrix。  </li>
+<li>使用<code>geneAnnotation</code>调用时定义的自定义创建GeneScoreMatrix <code>addArchRGenome()</code>。  </li>
+</ol>
+<p>创建Arrow文件会在当前目录下生成一个”QualityControl”目录，这里面包括2个和样本相关的图。第一个图展示log10(unique nuclear fragments) vs TSS enrichment score, 虚线表示过滤阈值。第二图注释fragment大小分布图。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">library(ArchR)</span><br><span class="line">addArchRGenome(&quot;hg19&quot;) # hg38, mm9, mm10</span><br><span class="line">addArchRThreads(threads &#x3D; 5) ###You can modify this value;</span><br><span class="line"></span><br><span class="line">setwd(&quot;&#x2F;home&#x2F;data&#x2F;vip8t02&#x2F;MyCourse&#x2F;NGS-02&#x2F;scATACseq&#x2F;&quot;) ###Set up your own workspace;</span><br><span class="line"></span><br><span class="line">###输入文件</span><br><span class="line">inputFiles &lt;- getInputFiles(paths &#x3D; &quot;.&#x2F;Data&#x2F;&quot;)</span><br><span class="line"></span><br><span class="line">###生成arrowfiles</span><br><span class="line"># filterFrags is no longer a valid input. Please use minFrags! 参数名已更改，但也可以运行</span><br><span class="line"></span><br><span class="line">ArrowFiles &lt;- createArrowFiles(</span><br><span class="line">  inputFiles &#x3D; inputFiles,</span><br><span class="line">  sampleNames &#x3D; names(inputFiles),</span><br><span class="line">  filterTSS &#x3D; 4, #The minimum numeric transcription start site (TSS) enrichment score required for a cell to pass filtering for use in downstream analyses.</span><br><span class="line">  filterFrags &#x3D; 1000, #The minimum number of mapped ATAC-seq fragments required per cell to pass filtering for use in downstream analyses.</span><br><span class="line">  addTileMat &#x3D; TRUE,</span><br><span class="line">  addGeneScoreMat &#x3D; TRUE</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"># 确认一下它确实是一个Arrow file路径的向量</span><br><span class="line">ArrowFiles</span><br></pre></td></tr></table></figure>
+<ul>
+<li>细胞质控<br>scATAC-seq数据的严格质量控制（QC）对于消除低质量细胞的作用至关重要。在ArchR中，我们考虑数据的三个特征：  </li>
+</ul>
+<ol>
+<li>独特核片段的数量（即不映射到线粒体DNA）。  </li>
+<li>信噪比。低的信噪比通常归因于死亡或垂死的细胞，这些细胞具有脱色的DNA，可以在全基因组范围内进行随机转座。  </li>
+<li>片段大小分布。由于核小体的周期性，我们预计会看到碎片消失，这些碎片是包裹在核小体周围的DNA长度（大约147 bp）。  </li>
+</ol>
+<h1 id="3-使用ArchR推断Doublet"><a href="#3-使用ArchR推断Doublet" class="headerlink" title="3. 使用ArchR推断Doublet"></a>3. 使用ArchR推断Doublet</h1><p>单细胞数据分析中的一个重要问题就是”doublet”对分析的影响。”doublet”指的是单个液滴(droplet)捕获了一个条形码珠(barcode bead)和多个细胞核。这会导致原本来自于多个细胞的read结果被当成一个细胞，结果原来两个细胞被平均成一个细胞。  </p>
+<p>我们使用ArchR的<code>addDoubleScores()</code>函数来移除doublet。对于教程中使用的数据，每个样本大约需要2到5分钟时间进行处理，最后每个细胞的doublet得分会添加到Arrow文件中。 。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">doubScores &lt;- addDoubletScores(</span><br><span class="line">  input &#x3D; ArrowFiles,</span><br><span class="line">  k &#x3D; 10, #Refers to how many cells near a &quot;pseudo-doublet&quot; to count.The number of cells neighboring a simulated doublet to be considered as putative doublets.</span><br><span class="line">  knnMethod &#x3D; &quot;UMAP&quot;, #Refers to the embedding to use for nearest neighbor search with doublet projection.The name of the dimensionality reduction method to be used for k-nearest neighbors calculation. Possible values are &quot;UMAP&quot; or &quot;LSI&quot;.</span><br><span class="line">  LSIMethod &#x3D; 1 #The list of parameters to pass to the IterativeLSI() function. See IterativeLSI()</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>addDoubletScores在计算doublet得分的时候，还会在”QualityControl”中为每个样本生成三张图（一个样本一个PDF）  </p>
+<ol>
+<li>Doublet Enrichments: 假设doublet符合均匀分布，那么每个细胞附近的模拟doublet数目都差不多。如果一个细胞附近相对于其他细胞有更多的doublet, 就认为它富集了doublet  </li>
+<li>Doublet Score: 基于均匀分布假设，计算doublet富集显著性，以-log10(binomial adjusted p-value)进行展示。我们更推荐根据doublet enrichment鉴定doublet。  </li>
+<li>Doublet Density: 模拟的duoblet在二维空间的投影，我们可以直观的了解我们模拟的doublet的分布情况。</li>
+</ol>
+<h1 id="4-创建ArchRProject"><a href="#4-创建ArchRProject" class="headerlink" title="4. 创建ArchRProject"></a>4. 创建ArchRProject</h1><h2 id="4-1-创建一个ArchRProject"><a href="#4-1-创建一个ArchRProject" class="headerlink" title="4.1 创建一个ArchRProject"></a>4.1 创建一个ArchRProject</h2><p>ArchRProject对象允许我们将多个Arrow文件整理到单个项目之中。ArchRProject比较小能够直接存放在内存中。通过操作ArchRProject，我们能够快速读取Arrow文件里的数据，并将修改后的数据写回到Arrow文件里。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">projPBMC_1 &lt;- ArchRProject(</span><br><span class="line">  ArrowFiles &#x3D; ArrowFiles,</span><br><span class="line">  outputDirectory &#x3D; &quot;PBMC&quot;,</span><br><span class="line">  copyArrows &#x3D; TRUE #This is recommened so that if you modify the Arrow files you have an original copy for later usage.</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">projPBMC_1</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>outputDirectory: 输出目录<br>samples： 样本名<br>sampleColData: 记录每个样本的元信息<br>cellColData: 记录每个细胞的元信息，第二章计算的”DoubleEnrichment”,”DoubletScore”就存放在此处<br>numberOfCells: 项目总的合格细胞数，也就是不包括之前没有通过质控，或者被认为doublet的细胞<br>medianTSS/medianFrags: 所有细胞的TSS值和Fragments数的中位数  </p>
+</blockquote>
+<h2 id="4-2-操作ArchRProject对象"><a href="#4-2-操作ArchRProject对象" class="headerlink" title="4.2 操作ArchRProject对象"></a>4.2 操作ArchRProject对象</h2><h3 id="4-2-1-检查矩阵数据"><a href="#4-2-1-检查矩阵数据" class="headerlink" title="4.2.1 检查矩阵数据"></a>4.2.1 检查矩阵数据</h3><p>检查当前的ArchRProject中存放了哪些矩阵数据，这些数据可以在下游分析中使用。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">getAvailableMatrices(projPBMC_1)</span><br><span class="line"># &quot;GeneScoreMatrix&quot; &quot;TileMatrix&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="4-2-2-绘制质控信息和TSS富集得分的对比图"><a href="#4-2-2-绘制质控信息和TSS富集得分的对比图" class="headerlink" title="4.2.2 绘制质控信息和TSS富集得分的对比图"></a>4.2.2 绘制质控信息和TSS富集得分的对比图</h3><p>该图的主要作用是找到高质量的细胞。你可能会注意到一些细胞已经在我们之前创建Arrow文件时被设置的阈值filterTSS, filterFargs过滤掉了。然而，如果我们觉得之前的质控过滤对于这个样本不太合适，我们可以根据该图调整阈值，有必要的话还可以重新产生Arrow文件。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">## 先用getCellColData提取我们需要的两列，其中nFrages需要进行log10运算</span><br><span class="line">df &lt;- getCellColData(projPBMC_1, select &#x3D; c(&quot;log10(nFrags)&quot;, &quot;TSSEnrichment&quot;))</span><br><span class="line"></span><br><span class="line">## 基于TSS富集得分和唯一比对进行绘图，函数ggPoint是ArchR对ggplot2的点图相关函数的封装。</span><br><span class="line">pdf(&quot;TSS-vs-Frags.pdf&quot;)</span><br><span class="line">p &lt;- ggPoint(</span><br><span class="line">  x &#x3D; df[,1],</span><br><span class="line">  y &#x3D; df[,2],</span><br><span class="line">  colorDensity &#x3D; TRUE,</span><br><span class="line">  continuousSet &#x3D; &quot;sambaNight&quot;,</span><br><span class="line">  xlabel &#x3D; &quot;Log10 Unique Fragments&quot;,</span><br><span class="line">  ylabel &#x3D; &quot;TSS Enrichment&quot;,</span><br><span class="line">  xlim &#x3D; c(log10(500), quantile(df[,1], probs &#x3D; 0.99)),</span><br><span class="line">  ylim &#x3D; c(0, quantile(df[,2], probs &#x3D; 0.99))</span><br><span class="line">) + geom_hline(yintercept &#x3D; 4, lty &#x3D; &quot;dashed&quot;) + geom_vline(xintercept &#x3D; 3, lty &#x3D; &quot;dashed&quot;)</span><br><span class="line">p</span><br><span class="line"></span><br><span class="line">dev.off()</span><br></pre></td></tr></table></figure>
+<h3 id="4-2-3为ArchRProject中的样本统计绘图"><a href="#4-2-3为ArchRProject中的样本统计绘图" class="headerlink" title="4.2.3为ArchRProject中的样本统计绘图"></a>4.2.3为ArchRProject中的样本统计绘图</h3><p>如果一个项目中有多个不同的样本，我们很自然地就会想比较这些样本。ArchR提供了两种小提琴图(violin plot)和山脊图(ridge plot)用来展示不同组之间的信息。这两种类型的图可以用一个函数plotGroups进行绘制。</p>
+<p><strong>山脊图</strong><br>根据TSS富集得分为每个样本绘制</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pdf(&quot;ridge plot.pdf&quot;)</span><br><span class="line">p1 &lt;- plotGroups(</span><br><span class="line">  ArchRProj &#x3D; projPBMC_1,</span><br><span class="line">  groupBy &#x3D; &quot;Sample&quot;,</span><br><span class="line">  colorBy &#x3D; &quot;cellColData&quot;,</span><br><span class="line">  name &#x3D; &quot;TSSEnrichment&quot;,</span><br><span class="line">  plotAs &#x3D; &quot;ridges&quot;</span><br><span class="line">)</span><br><span class="line">p1</span><br><span class="line">dev.off()</span><br></pre></td></tr></table></figure>
+<p><strong>小提琴图</strong><br>根据TSS富集得分为每个样本绘制<br>ArchR绘制的小提琴图额外叠加了一层箱线图(a box-and-whiskers plot in the style of Tukey)，中间水平的三条线表示数据中的1/4分位数，中位数和3/4分位数。最下方是最小值，最上方是最大值（或者是1.5倍的IQR, interquartile range, 1/4分位数与3/4分位数的距离）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pdf(&quot;violin plot.pdf&quot;)</span><br><span class="line">p2 &lt;- plotGroups(</span><br><span class="line">  ArchRProj &#x3D; projPBMC_1,</span><br><span class="line">  groupBy &#x3D; &quot;Sample&quot;,</span><br><span class="line">  colorBy &#x3D; &quot;cellColData&quot;,</span><br><span class="line">  name &#x3D; &quot;TSSEnrichment&quot;,</span><br><span class="line">  plotAs &#x3D; &quot;violin&quot;,</span><br><span class="line">  alpha &#x3D; 0.4,</span><br><span class="line">  addBoxPlot &#x3D; TRUE</span><br><span class="line">)</span><br><span class="line">p2</span><br><span class="line">dev.off()</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-4-绘制样本的TSS富集谱和Fragment大小分布"><a href="#4-2-4-绘制样本的TSS富集谱和Fragment大小分布" class="headerlink" title="4.2.4 绘制样本的TSS富集谱和Fragment大小分布"></a>4.2.4 绘制样本的TSS富集谱和Fragment大小分布</h3><p>**Fragments大小分布: **<br>我们使用plotFragmentSizes函数为绘制所有样本的fragment大小分布。ATAC-seq数据中的fragment大小分布可能会因样本、细胞类型和批次不同，但这和数据质量并不是严格相关。比如说我们的数据在不同组之间就存在一些差别。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pdf(&quot;Fragment size.pdf&quot;)</span><br><span class="line">fs &lt;- plotFragmentSizes(ArchRProj &#x3D; projPBMC_1)</span><br><span class="line">fs</span><br><span class="line">dev.off()</span><br></pre></td></tr></table></figure>
+<p><strong>TSS富集谱:</strong><br>我们使用plotTSSEnrichment()函数绘制TSS富集谱。TSS富集谱需要在中心位置有一个明显的峰，在峰的右边还会有一个核小体引起的小隆起（约147 bp）。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pdf(&quot;TSS enrichment.pdf&quot;)</span><br><span class="line">TSSenrichment &lt;- plotTSSEnrichment(ArchRProj &#x3D; projPBMC_1)</span><br><span class="line">TSSenrichment</span><br><span class="line">dev.off()</span><br></pre></td></tr></table></figure>
+<h2 id="4-3-过滤doublets"><a href="#4-3-过滤doublets" class="headerlink" title="4.3 过滤doublets"></a>4.3 过滤doublets</h2><p>这个函数里的一个关键参数是filterRatio,由于不同样本的制备过程中的细胞上样量不同，那么不同样本的doublet也就不同，为了保证不同样本的过滤后结果保持一致，所以引入了filterRatio。该值越高，被认为是doublet而被过滤的细胞也就越多。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">projPBMC_2 &lt;- filterDoublets(projPBMC_1)</span><br><span class="line"></span><br><span class="line">projPBMC_2</span><br></pre></td></tr></table></figure>
+<h1 id="5-ArchR降维分析"><a href="#5-ArchR降维分析" class="headerlink" title="5. ArchR降维分析"></a>5. ArchR降维分析</h1><p>在scATAC-seq数据中，一个特定的位置存在三种状态，分为不开放，一条链开放，两条链都开放。但即便是在高质量的scATAC-seq数据中，大部分开放区域都没有被转座酶切割，因此大部分座位都是0。此外，如果我们发现一个细胞(A)的一处peak区域有三个Tn5 insertions，而另外一个细胞(B)对应区域只有一个Tn5 insertions，由于数据的稀疏性，我们也无法断定A就比B更开放。</p>
+<p>如果直接在稀疏矩阵上使用标准的降维分析，例如主成分分析(Principal Component Analysis, PCA)，然后使用前两个主成分进行绘图，你可能无法得到你想要的结果，这是由于数据的稀疏性会导致细胞间在0的位置有更高的相似性。为了解决这个问题，我们采用了<strong>分层</strong>的降维策略。</p>
+<h2 id="5-1-隐语义-Latent-Semantic-Indexing-迭代"><a href="#5-1-隐语义-Latent-Semantic-Indexing-迭代" class="headerlink" title="5.1 隐语义(Latent Semantic Indexing)迭代"></a>5.1 隐语义(Latent Semantic Indexing)迭代</h2><p>首先，我们会使用隐语义分析(Latent Semantic Indexing, LSI)进行降维。LSI方法最早用在自然语言分析中，根据字数来评估文档相似度。Cusanovich et al. (Science 2015)第一次在scATAC-sq数分析中引入了LSI。计算步骤如下:  </p>
+<ol>
+<li>对每个细胞计算根据深度标准化后的词频(Term frequency, TF)  </li>
+<li>根据逆文档频率(IDF, inverse document frequency)进行标准化，便于后续特征选择  </li>
+<li>最后对结果矩阵进行对数变换（也就是log(TF-IDF)）  </li>
+</ol>
+<p>后来提出了”迭代LSI法” (Satpathy, Granja et al. Nature Biotechnology 2019和 Granja, Klemm and McGinnis* et al. Nature Biotechnology 2019)。这个方法首先在最开放的分块中计算初始的LSI变换，识别未受到批次效应影响的低分辨率聚类。</p>
+<p><img src="%22/Figures/LSI/jpg%22" alt="LSI-workflow"><br>我们可以在PBMC中鉴定出几个主要大群(T细胞、B细胞和单核细胞)。接着，ArchR计算这些聚类在每个特征中的平均开放度。ArchR识别这些聚类中变化最大的peak，用作后续LSI的特征。在第二次迭代中，变化最大的peak就类似于scRAN-seq中高变异基因。用户可以决定进行多次轮的LSI迭代。我们发现这个方法能够降低观察到的批次效应，并能使用更加合理的特征矩阵进行降维。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">projPBMC_2 &lt;- addIterativeLSI(</span><br><span class="line">  ArchRProj &#x3D; projPBMC_2,</span><br><span class="line">  useMatrix &#x3D; &quot;TileMatrix&quot;, </span><br><span class="line">  name &#x3D; &quot;IterativeLSI&quot;, </span><br><span class="line">  iterations &#x3D; 2, </span><br><span class="line">  clusterParams &#x3D; list( </span><br><span class="line">    resolution &#x3D; c(0.2), </span><br><span class="line">    sampleCells &#x3D; 10000, </span><br><span class="line">    n.start &#x3D; 10</span><br><span class="line">  ), </span><br><span class="line">  varFeatures &#x3D; 25000, </span><br><span class="line">  dimsToUse &#x3D; 1:30</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-2-Harmony矫正批次效应"><a href="#5-2-Harmony矫正批次效应" class="headerlink" title="5.2 Harmony矫正批次效应"></a>5.2 Harmony矫正批次效应</h2><p>在某些情况下，迭代的LSI方法并不能矫正严重的批次效应。ArchR使用了最初为了scRNA-seq开发的Harmony进行批次效应矫正。 ArchR提供了专门的封装函数addHarmony()将降维后的对象直接传递给Harmony::HarmonyMatrix(), 额外参数可以通过…进行传递。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">projPBMC_2 &lt;- addHarmony(</span><br><span class="line">  ArchRProj &#x3D; projPBMC_2,</span><br><span class="line">  reducedDims &#x3D; &quot;IterativeLSI&quot;,</span><br><span class="line">  name &#x3D; &quot;Harmony&quot;,</span><br><span class="line">  groupBy &#x3D; &quot;Sample&quot;</span><br><span class="line">)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>这一步会在我们的projHeme2创建一个新的名为Harmony的reduceDims对象。</p>
+<h1 id="6-使用ArchR聚类"><a href="#6-使用ArchR聚类" class="headerlink" title="6. 使用ArchR聚类"></a>6. 使用ArchR聚类</h1><h2 id="6-1-使用Seurat的FindClusters-函数进行聚类"><a href="#6-1-使用Seurat的FindClusters-函数进行聚类" class="headerlink" title="6.1 使用Seurat的FindClusters()函数进行聚类"></a>6.1 使用Seurat的FindClusters()函数进行聚类</h2><p>我们发现Seurat实现的图聚类方法表现最好，所以在ArchR中，addClusters()函数本质是上将额外的参数通过…传递给Seurat::FindClusters()函数，从而得到聚类结果。在分析中，我们发现Seurat::FindClusters()是一个确定性的聚类算法，也就是相同的输入总是能得到完全相同的输出。  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">projPBMC_2 &lt;- addClusters(</span><br><span class="line">  input &#x3D; projPBMC_2,</span><br><span class="line">  reducedDims &#x3D; &quot;IterativeLSI&quot;,</span><br><span class="line">  method &#x3D; &quot;Seurat&quot;,</span><br><span class="line">  name &#x3D; &quot;Clusters&quot;,</span><br><span class="line">  resolution &#x3D; 0.8</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">### 使用$符号来获取聚类信息，输出每个细胞对应的cluster</span><br><span class="line">head(projPBMC_2$Clusters)</span><br><span class="line">###统计每个cluster的细胞数</span><br><span class="line">table(projPBMC_2$Clusters)</span><br></pre></td></tr></table></figure>
+<p>为了更好了解样本在cluster的分布，我们可以使用confusionMatrix()函数通过每个样本创建一个聚类混合矩阵(cluster confusion matrix)</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">###统计每个样本在不同的cluster的分布情况</span><br><span class="line">cM &lt;- confusionMatrix(paste0(projPBMC_2$Clusters), paste0(projPBMC_2$Sample))</span><br><span class="line">cM</span><br></pre></td></tr></table></figure>
+<p>利用热图进行展示</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">library(pheatmap)</span><br><span class="line">cM &lt;- cM &#x2F; Matrix::rowSums(cM)</span><br><span class="line">pdf(&quot;Cluster heatmap.pdf&quot;)</span><br><span class="line">heatmap1 &lt;- pheatmap::pheatmap(</span><br><span class="line">  mat &#x3D; as.matrix(cM), </span><br><span class="line">  color &#x3D; paletteContinuous(&quot;whiteBlue&quot;), </span><br><span class="line">  border_color &#x3D; &quot;black&quot;</span><br><span class="line">)</span><br><span class="line">heatmap1</span><br><span class="line">dev.off()</span><br></pre></td></tr></table></figure>
+<h2 id="6-2-使用UMAP聚类"><a href="#6-2-使用UMAP聚类" class="headerlink" title="6.2 使用UMAP聚类"></a>6.2 使用UMAP聚类</h2><p>UMAP和t-SNE的主要区别在于对细胞和聚类间的距离解释，t-SNE用于保留数据的局部结构，而UMAP则是保留局部结构的同时尽可能保留全局结构。从理论上来讲，UMAP中细胞聚类间的距离存在意义，而t-SNE则没有。也就是说，你不能说t-SNE中聚类A比聚类C更接近聚类B，而UMAP在设计的时候允许这种类型的比较。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">###Uniform Manifold Approximation and Projection (UMAP)</span><br><span class="line">projPBMC_2 &lt;- addUMAP(</span><br><span class="line">  ArchRProj &#x3D; projPBMC_2, </span><br><span class="line">  reducedDims &#x3D; &quot;IterativeLSI&quot;, </span><br><span class="line">  name &#x3D; &quot;UMAP&quot;, </span><br><span class="line">  nNeighbors &#x3D; 30, </span><br><span class="line">  minDist &#x3D; 0.5, </span><br><span class="line">  metric &#x3D; &quot;cosine&quot; ###A number that determines how distance is computed in the reducedDims to compute a UMAP. This argument is passed to metric in uwot::umap().</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>使用@操作符可以从ArchRProject中列出有哪些可用的embedding，如<code>projPBMC_2@embeddings</code>  </p>
+<p>我们使用plotEmbedding函数绘制UMAP图，设置embedding=”UMAP”。通过修改colorBy和name来告诉ArchR使用给定哪个元信息矩阵的列对细胞进行上色。  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">###绘制UMAP图</span><br><span class="line">###根据sample上色</span><br><span class="line">umap1 &lt;- plotEmbedding(ArchRProj &#x3D; projPBMC_2, colorBy &#x3D; &quot;cellColData&quot;, name &#x3D; &quot;Sample&quot;, embedding &#x3D; &quot;UMAP&quot;)</span><br><span class="line">umap1</span><br><span class="line"></span><br><span class="line">###根据Cluster上色</span><br><span class="line">umap2 &lt;- plotEmbedding(ArchRProj &#x3D; projPBMC_2, colorBy &#x3D; &quot;cellColData&quot;, name &#x3D; &quot;Clusters&quot;, embedding &#x3D; &quot;UMAP&quot;)</span><br><span class="line">umap2</span><br><span class="line"></span><br><span class="line">### 使用ggAlignPlots将这两个图共同展示，&quot;type&#x3D;h&quot;表示两个图是水平排列</span><br><span class="line">ggAlignPlots(umap1, umap2, type &#x3D; &quot;h&quot;)</span><br></pre></td></tr></table></figure>
+<h2 id="6-3-t-Stocastic-Neighbor-Embedding-t-SNE"><a href="#6-3-t-Stocastic-Neighbor-Embedding-t-SNE" class="headerlink" title="6.3 t-Stocastic Neighbor Embedding (t-SNE)"></a>6.3 t-Stocastic Neighbor Embedding (t-SNE)</h2><p>t-SNE图可以用addTSNE()函数运行得到</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">projPBMC_2 &lt;- addTSNE(</span><br><span class="line">    ArchRProj &#x3D; projPBMC_2, </span><br><span class="line">    reducedDims &#x3D; &quot;IterativeLSI&quot;, </span><br><span class="line">    name &#x3D; &quot;TSNE&quot;, </span><br><span class="line">    perplexity &#x3D; 30</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>和之前UMAP一样，我们同样使用plotEmbedding()绘制t-SNE图。这里不需要考虑嵌入的类型，可以继续使用之前的colorBy和name参数</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tsne1 &lt;- plotEmbedding(ArchRProj &#x3D; projPBMC_2, </span><br><span class="line">                       colorBy &#x3D; &quot;cellColData&quot;, </span><br><span class="line">                       name &#x3D; &quot;Sample&quot;, </span><br><span class="line">                       embedding &#x3D; &quot;TSNE&quot;)</span><br><span class="line"></span><br><span class="line">tsne2 &lt;- plotEmbedding(ArchRProj &#x3D; projPBMC_2, </span><br><span class="line">                       colorBy &#x3D; &quot;cellColData&quot;, </span><br><span class="line">                       name &#x3D; &quot;Clusters&quot;, </span><br><span class="line">                       embedding &#x3D; &quot;TSNE&quot;)</span><br><span class="line">ggAlignPlots(tsne1, tsne2, type &#x3D; &quot;h&quot;)</span><br></pre></td></tr></table></figure>
+<h2 id="6-4-Harmony后降维"><a href="#6-4-Harmony后降维" class="headerlink" title="6.4 Harmony后降维"></a>6.4 Harmony后降维</h2><p>之前我们通过addHarmony调用Harmony对数据进行批次校正，创建了一个名为”Harmony”的reducedDims对象。我们通过UMAP或t-SNE对结果进行嵌入可视化，对迭代LSI结果和Harmony校正结果进行比较，评估Harmony的作用。  </p>
+<p>保持和之前UMAP嵌入一样的参数，只修改reducedDims=”Harmony”</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">projPBMC_2 &lt;- addUMAP(</span><br><span class="line">  ArchRProj &#x3D; projPBMC_2, </span><br><span class="line">  reducedDims &#x3D; &quot;Harmony&quot;, </span><br><span class="line">  name &#x3D; &quot;UMAPHarmony&quot;, </span><br><span class="line">  nNeighbors &#x3D; 30, </span><br><span class="line">  minDist &#x3D; 0.5, </span><br><span class="line">  metric &#x3D; &quot;cosine&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">pdf(&quot;UMAP Harmony.pdf&quot;)</span><br><span class="line">ha3 &lt;- plotEmbedding(ArchRProj &#x3D; projPBMC_2, colorBy &#x3D; &quot;cellColData&quot;, name &#x3D; &quot;Sample&quot;, embedding &#x3D; &quot;UMAPHarmony&quot;)</span><br><span class="line">ha4 &lt;- plotEmbedding(ArchRProj &#x3D; projPBMC_2, colorBy &#x3D; &quot;cellColData&quot;, name &#x3D; &quot;Clusters&quot;, embedding &#x3D; &quot;UMAPHarmony&quot;)</span><br><span class="line">ggAlignPlots(ha3, ha4, type &#x3D; &quot;h&quot;)</span><br><span class="line">dev.off()</span><br></pre></td></tr></table></figure>
+<h1 id="7-ArchR的基因得分和标记基因"><a href="#7-ArchR的基因得分和标记基因" class="headerlink" title="7. ArchR的基因得分和标记基因"></a>7. ArchR的基因得分和标记基因</h1><p>为了实现细胞类型注释，我们会用到已知的细胞类型特异的标记基因。在scATAC-seq数据中，这些基因的表达量其实是根据染色质开放数据估计的基因得分(gene score)。所谓的基因得分，本质上就是用基因附近的调控元件去预测基因的表达量。ArchR的亮点在于，它允许用户提供复杂的自定义的距离加权开放性模型去计算这些基因得分。  </p>
+<h2 id="7-1-鉴定标记基因"><a href="#7-1-鉴定标记基因" class="headerlink" title="7.1 鉴定标记基因"></a>7.1 鉴定标记基因</h2><p>为了根据基因得分来鉴定标记基因，我们需要在调用<code>getMarkerFeatures()</code>时设置<code>useMatrix = &quot;GeneScoreMatrix&quot;</code>。此外，我们设置了<code>groupBy=&quot;Clusters&quot;</code>告诉ArchR使用cellColData的”Clusters”列对细胞分组，从而得到每个聚类特异的标记基因。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">devtools::install_github(&quot;immunogenomics&#x2F;presto&quot;)</span><br><span class="line"></span><br><span class="line">markersGS &lt;- getMarkerFeatures(</span><br><span class="line">  ArchRProj &#x3D; projPBMC_2, </span><br><span class="line">  useMatrix &#x3D; &quot;GeneScoreMatrix&quot;, </span><br><span class="line">  groupBy &#x3D; &quot;Clusters&quot;,</span><br><span class="line">  bias &#x3D; c(&quot;TSSEnrichment&quot;, &quot;log10(nFrags)&quot;),</span><br><span class="line">  testMethod &#x3D; &quot;wilcoxon&quot;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>该函数返回一个<code>SummarizedExperiment</code>对象，里面记录着每个标记特征的相关信息。这是ArchR的一个常见输出，是下游数据分析的关键输出格式。<code>SummarizedExperiment</code>对象和矩阵类似，行是感兴趣的特征（例如基因），列表示样本。一个SummarizedExperiment能够记录一个或多个assay矩阵。</p>
+<p>我们能够使用<code>getMarkers()</code>函数从<code>SummarizedExperiment</code>对象中提取出一个包含多个DataFrame对象的列表，每个DataFrame对象都对应着一个聚类，记录着该聚类里相关的标记特征。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">markerList &lt;- getMarkers(markersGS, cutOff &#x3D; &quot;FDR &lt;&#x3D; 0.01 &amp; Log2FC &gt;&#x3D; 1.25&quot;) ###cutoff值，可根据需要修改；</span><br><span class="line">markerList$C2</span><br></pre></td></tr></table></figure>
+<p>我们使用markerHeatmap()创建含有所有标记特征的可视化热图。通过labelMarkers()在热图中标记部分感兴趣的基因。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">markerGenes  &lt;- c(</span><br><span class="line">    &quot;CD34&quot;, #Early Progenitor</span><br><span class="line">    &quot;GATA1&quot;, #Erythroid</span><br><span class="line">    &quot;PAX5&quot;, &quot;MS4A1&quot;, &quot;EBF1&quot;, &quot;MME&quot;, #B-Cell Trajectory</span><br><span class="line">    &quot;CD14&quot;, &quot;CEBPB&quot;, &quot;MPO&quot;, #Monocytes</span><br><span class="line">    &quot;IRF8&quot;, </span><br><span class="line">    &quot;CD3D&quot;, &quot;CD8A&quot;, &quot;TBX21&quot;, &quot;IL7R&quot; #TCells</span><br><span class="line">  )</span><br><span class="line"></span><br><span class="line">heatmapGS &lt;- markerHeatmap(</span><br><span class="line">  seMarker &#x3D; markersGS, </span><br><span class="line">  cutOff &#x3D; &quot;FDR &lt;&#x3D; 0.01 &amp; Log2FC &gt;&#x3D; 1.25&quot;, </span><br><span class="line">  labelMarkers &#x3D; markerGenes,</span><br><span class="line">  transpose &#x3D; TRUE</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>我们需要用ComplexHeatmap::draw()才能绘制该热图，这是因为heatmapGS实际上是一个热图列表。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ComplexHeatmap::draw(heatmapGS, heatmap_legend_side &#x3D; &quot;bot&quot;, annotation_legend_side &#x3D; &quot;bot&quot;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-2-可视化标记基因"><a href="#7-2-可视化标记基因" class="headerlink" title="7.2 可视化标记基因"></a>7.2 可视化标记基因</h2><p>在之前章节中提到，我们可以在UMAP展示每个细胞的基因得分。这可以通过修改plotEmbedding()函数里的colorBy和name参数实现</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">markerGenes  &lt;- c(</span><br><span class="line">  &quot;CD34&quot;,  </span><br><span class="line">  &quot;GATA1&quot;, </span><br><span class="line">  &quot;PAX5&quot;, &quot;MS4A1&quot;, &quot;MME&quot;, </span><br><span class="line">  &quot;CD14&quot;, &quot;MPO&quot;, </span><br><span class="line">  &quot;CD3D&quot;, &quot;CD8A&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">p &lt;- plotEmbedding(</span><br><span class="line">  ArchRProj &#x3D; projPBMC_2, </span><br><span class="line">  colorBy &#x3D; &quot;GeneScoreMatrix&quot;, </span><br><span class="line">  name &#x3D; markerGenes, </span><br><span class="line">  embedding &#x3D; &quot;UMAP&quot;,</span><br><span class="line">  quantCut &#x3D; c(0.01, 0.95),</span><br><span class="line">  imputeWeights &#x3D; NULL</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">## 可替换，markerGenes中任意基因均可</span><br><span class="line">p$CD14</span><br><span class="line"></span><br><span class="line">## 绘制全部基因</span><br><span class="line">allgenes &lt;- lapply(p, function(x)&#123;</span><br><span class="line">  x + guides(color &#x3D; FALSE, fill &#x3D; FALSE) + </span><br><span class="line">    theme_ArchR(baseSize &#x3D; 6.5) +</span><br><span class="line">    theme(plot.margin &#x3D; unit(c(0, 0, 0, 0), &quot;cm&quot;)) +</span><br><span class="line">    theme(</span><br><span class="line">      axis.text.x&#x3D;element_blank(), </span><br><span class="line">      axis.ticks.x&#x3D;element_blank(), </span><br><span class="line">      axis.text.y&#x3D;element_blank(), </span><br><span class="line">      axis.ticks.y&#x3D;element_blank()</span><br><span class="line">    )</span><br><span class="line">&#125;)</span><br><span class="line">pdf(&quot;all genes.pdf&quot;)</span><br><span class="line">do.call(cowplot::plot_grid, c(list(ncol &#x3D; 3),allgenes))</span><br><span class="line">dev.off()</span><br></pre></td></tr></table></figure>
+<h2 id="7-3-使用MAGIC填充标记基因"><a href="#7-3-使用MAGIC填充标记基因" class="headerlink" title="7.3 使用MAGIC填充标记基因"></a>7.3 使用MAGIC填充标记基因</h2><p>使用MAGIC根据邻近细胞填充基因得分对信号进行平滑化处理。我们发现者能够极大程度地提高基因得分的可视化解读性。要执行此操作，我们需要先在我们的ArchRProject中加入填充权重。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">projPBMC_2 &lt;- addImputeWeights(projPBMC_2)</span><br><span class="line">## 这些填充权重会在之后绘制UMAP嵌入图里的基因得分时传入到plotEmbedding()</span><br><span class="line"></span><br><span class="line">markerGenes  &lt;- c(</span><br><span class="line">    &quot;CD34&quot;,  #Early Progenitor</span><br><span class="line">    &quot;GATA1&quot;, #Erythroid</span><br><span class="line">    &quot;PAX5&quot;, &quot;MS4A1&quot;, &quot;MME&quot;, #B-Cell Trajectory</span><br><span class="line">    &quot;CD14&quot;, &quot;MPO&quot;, #Monocytes</span><br><span class="line">    &quot;CD3D&quot;, &quot;CD8A&quot;#TCells</span><br><span class="line">  )</span><br><span class="line"></span><br><span class="line">wplot &lt;- plotEmbedding(</span><br><span class="line">    ArchRProj &#x3D; projPBMC_2, </span><br><span class="line">    colorBy &#x3D; &quot;GeneScoreMatrix&quot;, </span><br><span class="line">    name &#x3D; markerGenes, </span><br><span class="line">    embedding &#x3D; &quot;UMAP&quot;,</span><br><span class="line">    imputeWeights &#x3D; getImputeWeights(projPBMC_2)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">wplot$CD34</span><br><span class="line"></span><br><span class="line">## Rearrange for grid plotting</span><br><span class="line">wplotall &lt;- lapply(wplot, function(x)&#123;</span><br><span class="line">    x + guides(color &#x3D; FALSE, fill &#x3D; FALSE) + </span><br><span class="line">    theme_ArchR(baseSize &#x3D; 6.5) +</span><br><span class="line">    theme(plot.margin &#x3D; unit(c(0, 0, 0, 0), &quot;cm&quot;)) +</span><br><span class="line">    theme(</span><br><span class="line">        axis.text.x&#x3D;element_blank(), </span><br><span class="line">        axis.ticks.x&#x3D;element_blank(), </span><br><span class="line">        axis.text.y&#x3D;element_blank(), </span><br><span class="line">        axis.ticks.y&#x3D;element_blank()</span><br><span class="line">    )</span><br><span class="line">&#125;)</span><br><span class="line">do.call(cowplot::plot_grid, c(list(ncol &#x3D; 3),wplotall))</span><br></pre></td></tr></table></figure>
+<h2 id="7-4-使用ArchRBrowser绘制Track"><a href="#7-4-使用ArchRBrowser绘制Track" class="headerlink" title="7.4 使用ArchRBrowser绘制Track"></a>7.4 使用ArchRBrowser绘制Track</h2><p>除了在UMAP上绘制每个细胞的基因得分外，我们还可以在基因组浏览器上浏览这些标记基因的局部染色体开放状态。为了执行该操作，我们使用plotBrowserTrack()函数，它会构建一系列绘图对象，每个对象对应一个标记基因。函数会根据groupBy输入的组别信息在不同track上绘制每组的开放状态。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">markerGenes  &lt;- c(</span><br><span class="line">  &quot;CD34&quot;, </span><br><span class="line">  &quot;GATA1&quot;, </span><br><span class="line">  &quot;PAX5&quot;, &quot;MS4A1&quot;, </span><br><span class="line">  &quot;CD14&quot;, </span><br><span class="line">  &quot;CD3D&quot;, &quot;CD8A&quot;, &quot;TBX21&quot;, &quot;IL7R&quot; </span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">genetrack &lt;- plotBrowserTrack(</span><br><span class="line">  ArchRProj &#x3D; projPBMC_2, </span><br><span class="line">  groupBy &#x3D; &quot;Clusters&quot;, </span><br><span class="line">  geneSymbol &#x3D; markerGenes, </span><br><span class="line">  upstream &#x3D; 50000,</span><br><span class="line">  downstream &#x3D; 50000</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">grid::grid.newpage()</span><br><span class="line">pdf(&quot;CD14 track.pdf&quot;)</span><br><span class="line">grid::grid.draw(genetrack$CD14)</span><br><span class="line">dev.off()</span><br><span class="line"></span><br><span class="line">pdf(&quot;all gene tracks.pdf&quot;)</span><br><span class="line">genetrack</span><br><span class="line">dev.off()</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>single cell</category>
+      </categories>
+      <tags>
+        <tag>scATAC-seq</tag>
       </tags>
   </entry>
 </search>
