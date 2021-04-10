@@ -1756,8 +1756,8 @@
 </code></pre>
 </li>
 <li>FILTER - _filter status: 使用上一个QUAL值来进行过滤的话，是不够的。GATK能使用其它的方法来进行过滤，过滤结果中通过则该值为<code>PASS</code>;若variant不可靠，则该项不为<code>PASS</code>或<code>.</code>。</li>
-<li>INFO - additional information:  这一行是variant的详细信息，具体如下：<br>#DP-read depth：样本在这个位置的reads覆盖度。是一些reads被过滤掉后的覆盖度。DP4:高质量测序碱基，位于REF或者ALT前后<br> #QD：通过深度来评估一个变异的可信度。Variant call confidence normalized by depth of sample reads supporting a variant<br> #MQ：表示覆盖序列质量的均方值RMS Mapping Quality<br> #FQ：phred值关于所有样本相似的可能性<br> #AC，AF 和 AN：AC(Allele Count) 表示该Allele的数目；AF(Allele Frequency) 表示Allele的频率； AN(Allele Number) 表示Allele的总数目。<br> 对于1个diploid sample而言：则基因型 0/1 表示sample为杂合子，Allele数为1(双倍体的sample在该位点只有1个等位基因发生了突变)，<br> Allele的频率为0.5(双倍体的sample在该位点只有50%的等位基因发生了突变)，总的Allele为2； 基因型 1/1 则表示sample为纯合的，Allele数为2，Allele的频率为1，总的Allele为2。<br> #MLEAC：Maximum likelihood expectation (MLE) for the allele counts (not necessarily the same as the AC), for each ALT allele, in the same order as listed<br> #MLEAF：Maximum likelihood expectation (MLE) for the allele frequency (not necessarily the same as the AF), for each ALT allele, in the same order as listed<br> #BaseQRankSum   比较支持变异的碱基和支持参考基因组的碱基的质量，负值表示支持变异的碱基质量值不及支持参考基因组的，<br>  正值则相反，支持变异的质量值好于参考基因组的。0表示两者无明显差异。<br> #FS  使用F检验来检验测序是否存在链偏好性。链偏好性可能会导致变异等位基因检测出现错误。输出值Phred-scaled p-value，值越大越可能出现链偏好性。<br> #InbreedingCoeff    使用似然法检验样本间的近交系数（又或者称为近亲关系）。值越高越可能是近亲繁殖。<br> #MQRankSum  比较支持变异的序列和支持参考基因组的序列的质量，负值表示支持变异的碱基质量值不及支持参考基因组的，只针对杂合。<br>  正值则相反，支持变异的质量值好于参考基因组的。0表示两者无明显差异。实际应用中一般过滤掉较小的负值。<br> #BaseCounts   所有样本在变异位点ATCG的数量<br> #ClippingRankSum  同前面两个类似，负值表示支持变异的read有更的的hard-clip碱基，正值表示支持参考基因组的的read有更多的hard-clip。0最好，无论是正值还是负值都表示可能可能存在人为偏差。<br> #ReadPosRankSum    检测变异位点是否有位置偏好性（是否存在于序列末端，此时往往容易出错）。最佳值为0，表示变异与其在序列上的位置无关。负值表示变异位点更容易在末端出现，正值表示参考基因组中的等位基因更容易在末端出现。<br> #ExcessHet   检测这些样本的相关性，与InbreedingCoeff相似，值越大越可能是错误。<br> #LikelihoodRankSum  评价支持变异和ref的序列与best hyplotype的匹配性，0为最佳值。负值表示支持变异的read匹配度不及支持ref的匹配度，正值则相反。值越大表示越可能是出现了错误。<br> #HaplotypeScore    分数越高越可能出现错误。Higher scores are indicative of regions with bad alignments, typically leading to artifactual SNP and indel calls.<br> #SOR：也是一个用来评估是否存在链偏向性的参数，相当于FS的升级版。The StrandOddsRatio annotation is one of several methods that aims to evaluate whether there is strand bias in the data. It is an updated form of the Fisher Strand Test that is better at taking into account large amounts of data in high coverage situations. It is used to determine if there is strand bias between forward and reverse strands for the reference or alternate allele. The reported value is ln-scaled.<br> #IS：插入缺失或部分插入缺失的reads允许的最大数量<br> #G3：ML 评估基因型出现的频率<br> #HWE：chi^2基于HWE的测试p值和G3<br> #CLR：在受到或者不受限制的情况下基因型出现可能性log值<br> #UGT：最可能不受限制的三种基因型结构<br> #CGT：最可能受限制三种基因型的结构<br> #PV4：四种P值得误差，分别是（strand、baseQ、mapQ、tail distance bias）<br> #INDEL：表示该位置的变异是插入缺失<br> #PC2：非参考等位基因的phred（变异的可能性）值在两个分组中大小不同<br> #PCHI2：后加权chi^2，根据p值来测试两组样本之间的联系<br> #QCHI2：Phred scaled PCHI2<br> #PR：置换产生的一个较小的PCHI2<br> #QBD：Quality by Depth，测序深度对质量的影响<br> #RPB：序列的误差位置（Read Position Bias）<br> #MDV：样本中高质量非参考序列的最大数目<br> #VDB：Variant Distance Bias，RNA序列中过滤人工拼接序列的变异误差范围</li>
-<li>FORMAT 和最后一列sample中的信息是对应的<br> #AD 和 DP：AD(Allele Depth)为sample中每一种allele的reads覆盖度,在diploid中则是用逗号分割的两个值，<br> 前者对应ref基因型，后者对应variant基因型； DP（Depth）为sample中该位点的覆盖度。<br> #GT：样品的基因型（genotype）。两个数字中间用’/‘分 开，这两个数字表示双倍体的sample的基因型。0 表示样品中有ref的allele；<br>  1表示样品中variant的allele； 2表示有第二个variant的allele。因此： 0/0 表示sample中该位点为纯合的，和ref一致； 0/1 表示sample中该位点为杂合的，有ref和variant两个基因型； 1/1 表示sample中该位点为纯合的，和variant一致。<br> #GQ：即第二可能的基因型的PL值，相对于最可能基因型的PL值（其PL=0）而言，大于99时，其信息量已不大，因此大于99的全部赋值99。当GQ值很小时，意味着第二可能基因型与最可能基因型差别不大。<br> #GL：三种基因型（RR RA AA）出现的可能性，R表示参考碱基，A表示变异碱基<br> #DV：高质量的非参考碱基<br> #SP：phred的p值误差线<br> #PL：指定的三种基因型的可能性(provieds the likelihoods of the given genotypes)。这三种指定的基因型为(0/0,0/1,1/1)，这三种基因型的概率总和为1。<br> 和之前不一致，该值越大，表明为该种基因型的可能性越小。 Phred值 = -10 * log (p) p为基因型存在的概率。</li>
+<li>INFO - additional information: 这一行是variant的详细信息，具体如下：<br>#DP-read depth：样本在这个位置的reads覆盖度。是一些reads被过滤掉后的覆盖度。DP4:高质量测序碱基，位于REF或者ALT前后<br> #QD：通过深度来评估一个变异的可信度。Variant call confidence normalized by depth of sample reads supporting a variant<br> #MQ：表示覆盖序列质量的均方值RMS Mapping Quality<br> #FQ：phred值关于所有样本相似的可能性<br> #AC，AF 和 AN：AC(Allele Count) 表示该Allele的数目；AF(Allele Frequency) 表示Allele的频率； AN(Allele Number) 表示Allele的总数目。<br> 对于1个diploid sample而言：则基因型 0/1 表示sample为杂合子，Allele数为1(双倍体的sample在该位点只有1个等位基因发生了突变)，<br> Allele的频率为0.5(双倍体的sample在该位点只有50%的等位基因发生了突变)，总的Allele为2；<br> 基因型 1/1 则表示sample为纯合的，Allele数为2，Allele的频率为1，总的Allele为2。<br> #MLEAC：Maximum likelihood expectation (MLE) for the allele counts (not necessarily the same as the AC), for each ALT allele, in the same order as listed<br> #MLEAF：Maximum likelihood expectation (MLE) for the allele frequency (not necessarily the same as the AF), for each ALT allele, in the same order as listed<br> #BaseQRankSum   比较支持变异的碱基和支持参考基因组的碱基的质量。<br> 负值表示支持变异的碱基质量值不及支持参考基因组的，<br> 正值则相反，支持变异的质量值好于参考基因组的。<br> 0表示两者无明显差异。<br> #FS  使用F检验来检验测序是否存在链偏好性。链偏好性可能会导致变异等位基因检测出现错误。输出值Phred-scaled p-value，值越大越可能出现链偏好性。<br> #InbreedingCoeff    使用似然法检验样本间的近交系数（又或者称为近亲关系）。值越高越可能是近亲繁殖。<br> #MQRankSum  比较支持变异的序列和支持参考基因组的序列的质量。<br> 负值表示支持变异的碱基质量值不及支持参考基因组的，只针对杂合。<br> 正值则相反，支持变异的质量值好于参考基因组的。<br> 0表示两者无明显差异。实际应用中一般过滤掉较小的负值。<br> #BaseCounts   所有样本在变异位点ATCG的数量<br> #ClippingRankSum  同前面两个类似，负值表示支持变异的read有更的的hard-clip碱基，正值表示支持参考基因组的的read有更多的hard-clip。0最好，无论是正值还是负值都表示可能可能存在人为偏差。<br> #ReadPosRankSum    检测变异位点是否有位置偏好性（是否存在于序列末端，此时往往容易出错）。最佳值为0，表示变异与其在序列上的位置无关。负值表示变异位点更容易在末端出现，正值表示参考基因组中的等位基因更容易在末端出现。<br> #ExcessHet   检测这些样本的相关性，与InbreedingCoeff相似，值越大越可能是错误。<br> #LikelihoodRankSum  评价支持变异和ref的序列与best hyplotype的匹配性，0为最佳值。负值表示支持变异的read匹配度不及支持ref的匹配度，正值则相反。值越大表示越可能是出现了错误。<br> #HaplotypeScore    分数越高越可能出现错误。Higher scores are indicative of regions with bad alignments, typically leading to artifactual SNP and indel calls.<br> #SOR：也是一个用来评估是否存在链偏向性的参数，相当于FS的升级版。The StrandOddsRatio annotation is one of several methods that aims to evaluate whether there is strand bias in the data. It is an updated form of the Fisher Strand Test that is better at taking into account large amounts of data in high coverage situations. It is used to determine if there is strand bias between forward and reverse strands for the reference or alternate allele. The reported value is ln-scaled.<br> #IS：插入缺失或部分插入缺失的reads允许的最大数量<br> #G3：ML 评估基因型出现的频率<br> #HWE：chi^2基于HWE的测试p值和G3<br> #CLR：在受到或者不受限制的情况下基因型出现可能性log值<br> #UGT：最可能不受限制的三种基因型结构<br> #CGT：最可能受限制三种基因型的结构<br> #PV4：四种P值得误差，分别是（strand、baseQ、mapQ、tail distance bias）<br> #INDEL：表示该位置的变异是插入缺失<br> #PC2：非参考等位基因的phred（变异的可能性）值在两个分组中大小不同<br> #PCHI2：后加权chi^2，根据p值来测试两组样本之间的联系<br> #QCHI2：Phred scaled PCHI2<br> #PR：置换产生的一个较小的PCHI2<br> #QBD：Quality by Depth，测序深度对质量的影响<br> #RPB：序列的误差位置（Read Position Bias）<br> #MDV：样本中高质量非参考序列的最大数目<br> #VDB：Variant Distance Bias，RNA序列中过滤人工拼接序列的变异误差范围</li>
+<li>FORMAT 和最后一列sample中的信息是对应的<br> #AD和DP：AD(Allele Depth)为sample中每一种allele的reads覆盖度,在diploid中则是用逗号分割的两个值，前者对应ref基因型，后者对应variant基因型；<br> DP（Depth）为sample中该位点的覆盖度。<br> #GT：样品的基因型（genotype）。两个数字中间用<code>/</code>分开，这两个数字表示双倍体的sample的基因型。<br> 0 表示样品中有ref的allele; 1表示样品中variant的allele；2表示有第二个variant的allele。<br> 因此： 0/0 表示sample中该位点为纯合的，和ref一致； 0/1 表示sample中该位点为杂合的，有ref和variant两个基因型； 1/1 表示sample中该位点为纯合的，和variant一致。<br> #GQ：即第二可能的基因型的PL值，相对于最可能基因型的PL值（其PL=0）而言，大于99时，其信息量已不大，因此大于99的全部赋值99。当GQ值很小时，意味着第二可能基因型与最可能基因型差别不大。<br> #GL：三种基因型（RR RA AA）出现的可能性，R表示参考碱基，A表示变异碱基<br> #DV：高质量的非参考碱基<br> #SP：phred的p值误差线<br> #PL：指定的三种基因型的可能性(provieds the likelihoods of the given genotypes)。这三种指定的基因型为(0/0,0/1,1/1)，这三种基因型的概率总和为1。和之前不一致，该值越大，表明为该种基因型的可能性越小。 Phred值 = -10 * log (p) p为基因型存在的概率。</li>
 </ol>
 </li>
 </ul>
@@ -1770,5 +1770,45 @@
       <categories>
         <category>WES</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Git love RProject--push your project to Github/Gitee!</title>
+    <url>/2021/04/10/Git-love-RProject-push-your-project-to-Github-Gitee/</url>
+    <content><![CDATA[<style>
+  p{
+    font-size:18px;
+    line-height:1.7em;
+
+  }
+</style>
+
+<h1 id="R-project"><a href="#R-project" class="headerlink" title="R project"></a>R project</h1><ul>
+<li>为什么要用R project：乱七八糟随手新建脚本的习惯该改掉了!想找以前代码的时候真的想哭！！</li>
+<li>git：菜鸡终于发现了git的妙用了！把自己的项目整个推送到github/gitee上，然后但凡修改都能找到前后对比，改错了也能及时改回来</li>
+</ul>
+<h1 id="R-project的结构"><a href="#R-project的结构" class="headerlink" title="R project的结构"></a>R project的结构</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">└── my_project</span><br><span class="line">├── src # 这部分用来装R函数或者其他的可执行文件</span><br><span class="line">│ ├── bin # 可执行文件或者外程序包比如java包</span><br><span class="line">│ └── scripts # R函数脚本</span><br><span class="line">├── output # 输出数据 ignore</span><br><span class="line">├── data # 数据文件，你不会想把这个上传git的，进.gitignore</span><br><span class="line">│ ├── raw # 原始数据 ignore</span><br><span class="line">│ └── processed #中间文件 ignore</span><br><span class="line">├── reports # 报告，保存一些rmd生成的pdf/ppt，再也不用担心我的进展汇报啦</span><br><span class="line">├── README.md # 项目简介</span><br><span class="line">├── analysis.R # 调用函数的函数，需要的图表作为函数输出，结合rmarkdown舒服</span><br><span class="line">├── .gitignore # who is ignored .gitignore里添加文件夹必须加上/ ，比如data/</span><br><span class="line">├── all.rmd # rmarkdown，配合analysis.R，生成pdf报告挺不错的</span><br><span class="line">├── require.R # 把用到的包都require一遍，以防万一</span><br><span class="line">└── packrat # 里面主要存储安装包的信息(可选,这个文件夹通常挺大)。</span><br></pre></td></tr></table></figure>
+<h1 id="实现流程"><a href="#实现流程" class="headerlink" title="实现流程"></a>实现流程</h1><h2 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h2><center><img src="/img/scATAC/new.png" alt="new" style="zoom:100%;" /></center>
+这个太简单了，直接建就行，语言写R
+
+<h2 id="复制仓库地址，创建Rproject"><a href="#复制仓库地址，创建Rproject" class="headerlink" title="复制仓库地址，创建Rproject"></a>复制仓库地址，创建Rproject</h2><p>file -&gt; New Project -&gt; Version Control -&gt; Git (svn 没用过不知道) -&gt; Create Project</p>
+<center><img src="/img/scATAC/gitee-link.png" alt="HC" style="zoom:80%;" /></center>
+
+<center><img src="/img/scATAC/RStudio-clone-git-project.gif" alt="HC" style="zoom:60%;" /></center>
+
+<h2 id="RStudio设置"><a href="#RStudio设置" class="headerlink" title="RStudio设置"></a>RStudio设置</h2><p>Tools -&gt; Global Options -&gt; Git/SVN<br>设置git的路径+获取RSA keys<br>这样就创建了一个用于SSH连接的RSA秘钥</p>
+<center><img src="/img/scATAC/setting.png" alt="setting" style="zoom:100%;" /></center>
+
+<p>复制public keys</p>
+<h2 id="仓库中部署公钥"><a href="#仓库中部署公钥" class="headerlink" title="仓库中部署公钥"></a>仓库中部署公钥</h2><p>找到仓库设置中的SSH公钥，把刚刚复制的keys添加进来</p>
+<h2 id="配置git"><a href="#配置git" class="headerlink" title="配置git"></a>配置git</h2><p>在Terminal中：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&#x27;yourGitHubUsername&#x27;</span></span><br><span class="line">git config --global user.email <span class="string">&#x27;name@provider.com&#x27;</span></span><br></pre></td></tr></table></figure>
+<h2 id="first-commit"><a href="#first-commit" class="headerlink" title="first commit"></a>first commit</h2><p>选择要push的内容</p>
+<center><img src="/img/scATAC/commit.png" alt="setting" style="zoom:100%;" /></center>]]></content>
+      <categories>
+        <category>toolsLearning</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
   </entry>
 </search>
