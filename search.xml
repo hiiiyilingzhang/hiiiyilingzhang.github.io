@@ -1809,7 +1809,11 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">## mutect.sh</span></span><br><span class="line">ref=~/Reference/GATK/Homo_sapiens_assembly38.fasta</span><br><span class="line">bed=~/Reference/GATK/hg38_exon.bed</span><br><span class="line"></span><br><span class="line">cat 6.mutect/sample.infor/config2 | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  arr=(<span class="variable">$&#123;id&#125;</span>)</span><br><span class="line">  sample=<span class="variable">$&#123;arr[1]&#125;</span></span><br><span class="line">  T=./5.gatk/bqsr.bam/<span class="variable">$&#123;arr[1]&#125;</span>_bqsr.bam</span><br><span class="line">  N=./5.gatk/bqsr.bam/<span class="variable">$&#123;arr[0]&#125;</span>_bqsr.bam</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;start Mutect2 for <span class="variable">$&#123;id&#125;</span>&quot;</span> `date`</span><br><span class="line">  gatk  --java-options <span class="string">&quot;-Xmx36G -Djava.io.tmpdir=./&quot;</span>  Mutect2 -R <span class="variable">$&#123;ref&#125;</span> \</span><br><span class="line">  -I <span class="variable">$&#123;T&#125;</span> -tumor  $(basename <span class="string">&quot;<span class="variable">$T</span>&quot;</span> _bqsr.bam) \</span><br><span class="line">  -I <span class="variable">$&#123;N&#125;</span> -normal $(basename <span class="string">&quot;<span class="variable">$N</span>&quot;</span> _bqsr.bam) \</span><br><span class="line">  -L <span class="variable">$&#123;bed&#125;</span>  \</span><br><span class="line">  -O ./6.mutect/<span class="variable">$&#123;sample&#125;</span>_mutect2.vcf</span><br><span class="line"></span><br><span class="line">  gatk  FilterMutectCalls \</span><br><span class="line">  -R <span class="variable">$&#123;ref&#125;</span> \</span><br><span class="line">  -V ./6.mutect/<span class="variable">$&#123;sample&#125;</span>_mutect2.vcf \</span><br><span class="line">  -O ./6.mutect/<span class="variable">$&#123;sample&#125;</span>_somatic.vcf</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;end Mutect2 for <span class="variable">$&#123;id&#125;</span>&quot;</span> `date`</span><br><span class="line"></span><br><span class="line">  cat ./6.mutect/<span class="variable">$&#123;sample&#125;</span>_somatic.vcf | perl -alne <span class="string">&#x27;&#123;if(/^#/)&#123;print&#125;else&#123;next unless $F[6] eq &quot;PASS&quot;;next if $F[0] =~/_/;print &#125; &#125;&#x27;</span> &gt; ./6.mutect/<span class="variable">$&#123;sample&#125;</span>_filter.vcf</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 <p>以上代码跑了一个小时。代码解释:首先是<code>Mutect2</code>，主要是根据对正常-肿瘤样本进行位点比较寻找体细胞突变somatic<br>mutations。这里输入了两个配对的T-N样本<code>-I $&#123;T&#125; -tumor $(basename &quot;$T&quot;_ bqsr.bam)</code> 和<code>-I $&#123;N&#125; -normal $(basename &quot;$N&quot;_ bqsr. bam)</code>。<br>这样我们就拿到了每个tumor样本中的突变位点<code>$&#123;samp1e&#125;_ mutect2.vcf</code>。但是这还不够，还要通过<code>FilterMutectCalls</code>过滤，过滤后就是可信度较高的somatic突变位点会被打上<strong>PASS标签</strong>,就是<code>$&#123;samp1e&#125;_ somatic.vcf</code>。<br>最后我们再用一个简单的脚本把打上PASS标签的位点提取出来，得到了<code>$&#123;sample&#125;_ filter.vcf</code>: </p>
 <center><img src="/img/Figures/vcf-filter.png" alt="vcf-filter" style="zoom:70%;" /></center>
-]]></content>
+
+<h1 id="VEP注释"><a href="#VEP注释" class="headerlink" title="VEP注释"></a>VEP注释</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装vep</span></span><br><span class="line">mamba install -c bioconda ensembl-vep</span><br><span class="line"><span class="comment"># 下载vep的cache及ref</span></span><br><span class="line"><span class="comment"># VEP推荐下载缓冲文件进行注释，后面跑的时候会比较快</span></span><br><span class="line">vep_install -a cf -s homo_sapiens -y GRCh38 -c ~/Reference/vep/ --CONVERT</span><br></pre></td></tr></table></figure>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p><a href="https://asia.ensembl.org/info/docs/tools/vep/script/vep_options.html">Manual-VEP</a></p>
+<p>仅需要肿瘤的样本名：case1_biorep_A_techrep</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;start vep_annotation for case1_biorep_A_techrep &quot;</span> `date`</span><br><span class="line">vep --fork 6 --cache --cache_version 103 --format vcf --vcf --force_overwrite \</span><br><span class="line">--dir ~/Reference/vep/homo_sapiens/103_GRCh38/ \</span><br><span class="line">--input_file ./6.mutect/case1_biorep_A_techrep_filter.vcf \</span><br><span class="line">--output_file ./7.annotation/vep/case1_biorep_A_techrep_vep.vcf </span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;end vep_annotation for case1_biorep_A_techrep &quot;</span> `date`</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>WES</category>
       </categories>
@@ -1852,6 +1856,57 @@
       </categories>
       <tags>
         <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Phrase for Response Letter</title>
+    <url>/2021/04/12/Phrase-for-Response-Letter/</url>
+    <content><![CDATA[<ol>
+<li><p>According to the associate editor and reviewers’ comments, we have made extensive modifications to our manuscript and supplemented extra data to make our results convincing.</p>
+</li>
+<li><p>In this revised version, changes to our manuscript were all highlighted within the document by using red colored text.</p>
+</li>
+<li><p>Thank you for your nice comments on our article. According to your suggestions, we have supplemented several data here and corrected several mistakes in our previous draft. Based on your comments, we also attached a point-by-point letter to you and the other two reviewers. We have made extensive revisions to our previous draft. The detailed point-by-point responses are listed below.</p>
+</li>
+<li><p>Thanks for your help. We feel really sorry for our carelessness.</p>
+</li>
+<li><p>Thank you for your reminding. You and the other two reviewers’ comments are all of great importance to our article. All of these comments have contributed a lot to improve the quality of our article. After this revision, we have written a point-by-point response letter to you as you can see above. Meanwhile, we also wrote a point-by-point response letter to the other two nice reviewers to acknowledge their helps and denote where we made revisions.</p>
+</li>
+<li><p>We feel great thanks for your professional review work on our article. As you are concerned, there are several problems that need to be addressed. According to your nice suggestions, we have made extensive corrections to our previous draft. We have added necessary data to supplement our results and edited our article extensively. The detailed corrections are listed below.</p>
+</li>
+<li><p>We feel sorry that we did not provide enough information about XXXX.</p>
+</li>
+<li><p>it is really a giant mistake to the whole quality of our article. We feel sorry for our carelessness. We have corrected it and we also feel great thanks for your point out.</p>
+</li>
+<li><p>thanks for your suggestions. We feel sorry for our poor writings, however, we do invite a friend of us who is a native English speaker from USA help polish our article. Due to our friend’s help, the article was edited extensively. And we hope the revised manuscript could be acceptable for you.</p>
+</li>
+<li><p>thanks for your careful checks. We are sorry for our carelessness. Based on your comments, we have made the corrections to make the unit harmonized within the whole manuscript.</p>
+</li>
+<li><p>your suggestion really means a lot to us. Yes, it would be more understandable if we XXX.</p>
+</li>
+<li><p>According to your suggestion, we have corrected the “XXX” into “XXX”.</p>
+</li>
+<li><p>thanks for your correction. It was indeed a serious grammatical error. And we have corrected it according to your suggestion.</p>
+</li>
+<li><p>thanks for your suggestions. We feel sorry for the improper wording. We have used “XXXX” as you suggested.</p>
+</li>
+<li><p>According to the reviewer’s comments, we have revised the manuscript extensively. If there are any other modifications we could make, we would like very much to modify them and we really appreciate your help. “xxxx” is a journal of great popularity and prestige. We hope that our manuscript could be considered for publication in your journal. Thank you very much for your help.</p>
+</li>
+<li><p>The manuscript is revised submission (XXXXXXX) with new line and page numbers in the text, some grammar and spelling errors had also been corrected. Furthermore, the relevant regulations had been made in the original manuscript according to the comments of reviewers, and the major revised portions were marked in red bold. We also responded point by point to each reviewer comments as listed below, along with a clear indication of the location of the revision. Hope these will make it more acceptable for pub lication.</p>
+</li>
+<li><p>Thank you for your kind comments on our manuscript entitled“XX文章名”. We have carefully revised the manuscript according to the reviewer’s comments. Based on the suggestions, we have made an extensive modification on the revised manuscript. Detailed revision was shown as follows. The changes to our manuscript within the document were aslo highlighted by using red colored text.</p>
+</li>
+<li><p>We are very sorry for our negligence of…..<br>We are very sorry for our incorrect writing ……..<br>It is really true as Reviewer suggested tha…..<br>We have made correction according to the Reviewer’s comments.<br>We have re-written this part according to the Reviewer’s suggestion.<br>As Reviewer suggested that…..<br>Considering the Reviewer’s suggestion, we have …. .</p>
+</li>
+<li><p>Line 60-61, the statements ……. were corrected as ………<br>Line 107, …… was added<br>Line 129, …..was deleted</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Records</category>
+      </categories>
+      <tags>
+        <tag>Tips</tag>
       </tags>
   </entry>
 </search>
