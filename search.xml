@@ -1224,7 +1224,80 @@
 <li>benefits of high salaries<br>improve one’s professional life<br>improve one’s personal life(oneself+family members)</li>
 <li>benifit of 另一点<br>说该工作缺点的两个好处，最好和职业相关</li>
 </ol>
-<h2 id="老板层面"><a href="#老板层面" class="headerlink" title="老板层面"></a>老板层面</h2><h2 id="公司层面"><a href="#公司层面" class="headerlink" title="公司层面"></a>公司层面</h2>]]></content>
+<p><strong>例题1</strong><br>Which would you choose: a higher pay job with long hours or an average pay job with normal work hours? Explain your choice, using specific reasons and details. (16.07.09)</p>
+<p>选择高薪长时间的工作</p>
+<ol>
+<li>high salaries<br>improve one’s prefessional life: take courses, equipment<br>improve one’s personal life: relax</li>
+<li>long hour<br>more knowledge<br>a better relationship with colleagues</li>
+</ol>
+<p><strong>例题2</strong><br>Whether to finish a project <strong>at one time</strong> or to work at several projects at the same time. (15.03.28 )</p>
+<p>一次只做一件事</p>
+<ol>
+<li>efficient<br>reduce time<br>reduce errors</li>
+<li>relationship<br>with colleagues<br>with employers</li>
+</ol>
+<hr>
+<p>核心表达：</p>
+<ol>
+<li>工作相关<ul>
+<li>jobs: positions, careers,professions, vocations, occupations</li>
+<li>at work/in the workplace/ in the work field</li>
+<li>pursue/hunt for/search for + a career</li>
+<li>从事工作：embark on + a career</li>
+</ul>
+</li>
+<li>工作效率<ul>
+<li>increase/improve/boost/enhance + productivity/efficienty</li>
+<li>lower/undermine/impair/hamper + productivity</li>
+<li>eliminate personal + distractions/distractors/distracters/interruptions</li>
+<li>commit mistakes</li>
+<li>rectify/correct/revise + errors</li>
+<li>decrease the risks/chances/possibilities/likelihoods + of errors</li>
+</ul>
+</li>
+<li>人际关系<ul>
+<li>employees/subordinates下属/co-workers/colleagues/fellow workers</li>
+<li>render assistance to sb.</li>
+<li>promote/advance</li>
+<li>move up a career ladder</li>
+<li>sth + ensure/guarantee/secure + promotion/advancement</li>
+<li>sb + promotion/advancement</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="老板层面"><a href="#老板层面" class="headerlink" title="老板层面"></a>老板层面</h2><p>老板应该有什么样的品质</p>
+<ol>
+<li>efficient<br>reduce time<br>reduce errors</li>
+<li>relationship<br>with subordinates<br>with clients: reputation, image, satisfaction</li>
+</ol>
+<p><strong>例题</strong><br>Agree or disagree? An effective leader should try to <strong>make others feel that they are part of the decision making process</strong>. (13.01.12)<br>应该让参与</p>
+<hr>
+<p>老板相关：</p>
+<ul>
+<li>superiors/employers/leaders/executives/supervisors/monitors</li>
+<li>clients and customers</li>
+</ul>
+<hr>
+<h2 id="公司层面"><a href="#公司层面" class="headerlink" title="公司层面"></a>公司层面</h2><ol>
+<li>inner operation<br>efficiency<br>relationship</li>
+<li>external development<br>reputation: attract employees<br>investment from others</li>
+</ol>
+<p><strong>例题</strong><br>Some methods for already successful companies to develop</p>
+<ol>
+<li>produce new version of products</li>
+<li>introduce new line of producls </li>
+<li><strong>have a partner with other company</strong>. (15.05. l6A)</li>
+</ol>
+<hr>
+<p>公司相关</p>
+<ul>
+<li>firms/enterprises/corporations/organnizations/agencies/businesses</li>
+<li>the success/achievement/prosperity of a corporation</li>
+<li>generate/create/boost + profits/revenues</li>
+</ul>
+<hr>
+<h1 id="品质类"><a href="#品质类" class="headerlink" title="品质类"></a>品质类</h1>]]></content>
       <categories>
         <category>TOEFL-Writing</category>
       </categories>
@@ -1737,6 +1810,8 @@
 <li>将单倍型比对结果转化为在特定位置位置处的分型左右滑动查看全部内容。</li>
 <li>模块分步分析说明</li>
 </ol>
+<center><img src="/img/Figures/g-vcf.png" alt="vcf-file" style="zoom:80%;" /></center>
+
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">snp=~/Reference/dbsnp_146.hg38/dbsnp_146.hg38.vcf.gz</span><br><span class="line">indel=~/Reference/GATK/Mills_and_1000G_gold_standard.indels.hg38.vcf.gz</span><br><span class="line">ref=~/Reference/GATK/Homo_sapiens_assembly38.fasta</span><br><span class="line">bed=~/Reference/GATK/hg38_exon.bed</span><br><span class="line"></span><br><span class="line">cat ./0.sra/sra.infor/sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;start HC for <span class="variable">$&#123;id&#125;</span>&quot;</span> `date`</span><br><span class="line">  gatk --java-options <span class="string">&quot;-Xmx25g&quot;</span> HaplotypeCaller -ERC GVCF \</span><br><span class="line">  -R <span class="variable">$&#123;ref&#125;</span> \</span><br><span class="line">  -I ./5.gatk/bqsr.bam/<span class="variable">$&#123;id&#125;</span>_bqsr.bam \</span><br><span class="line">  --dbsnp <span class="variable">$&#123;snp&#125;</span> \</span><br><span class="line">  -L <span class="variable">$&#123;bed&#125;</span> \</span><br><span class="line">  -O ./5.gatk/gvcf/<span class="variable">$&#123;id&#125;</span>_raw.vcf \</span><br><span class="line">  1&gt;./<span class="built_in">log</span>/HaplotypeCaller.log<span class="variable">$&#123;id&#125;</span>_log.HC 2&gt;&amp;1</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;end HC for <span class="variable">$&#123;id&#125;</span>&quot;</span> `date`</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 <p>共跑了五个小时：</p>
 <center><img src="/img/Figures/HC-time.png" alt="HC" style="zoom:70%;" /></center>
@@ -1805,15 +1880,56 @@
 <li>mitochondrial mode where sensitive calling at high depths is desirable</li>
 </ol>
 <p>制作config文件，normal和tumor样本成对出现</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># config2</span></span><br><span class="line">case1_germline  case1_biorep_A_techrep</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">## mutect.sh</span></span><br><span class="line">ref=~/Reference/GATK/Homo_sapiens_assembly38.fasta</span><br><span class="line">bed=~/Reference/GATK/hg38_exon.bed</span><br><span class="line"></span><br><span class="line">cat 6.mutect/sample.infor/config2 | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  arr=(<span class="variable">$&#123;id&#125;</span>)</span><br><span class="line">  sample=<span class="variable">$&#123;arr[1]&#125;</span></span><br><span class="line">  T=./5.gatk/bqsr.bam/<span class="variable">$&#123;arr[1]&#125;</span>_bqsr.bam</span><br><span class="line">  N=./5.gatk/bqsr.bam/<span class="variable">$&#123;arr[0]&#125;</span>_bqsr.bam</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;start Mutect2 for <span class="variable">$&#123;id&#125;</span>&quot;</span> `date`</span><br><span class="line">  gatk  --java-options <span class="string">&quot;-Xmx36G -Djava.io.tmpdir=./&quot;</span>  Mutect2 -R <span class="variable">$&#123;ref&#125;</span> \</span><br><span class="line">  -I <span class="variable">$&#123;T&#125;</span> -tumor  $(basename <span class="string">&quot;<span class="variable">$T</span>&quot;</span> _bqsr.bam) \</span><br><span class="line">  -I <span class="variable">$&#123;N&#125;</span> -normal $(basename <span class="string">&quot;<span class="variable">$N</span>&quot;</span> _bqsr.bam) \</span><br><span class="line">  -L <span class="variable">$&#123;bed&#125;</span>  \</span><br><span class="line">  -O ./6.mutect/<span class="variable">$&#123;sample&#125;</span>_mutect2.vcf</span><br><span class="line"></span><br><span class="line">  gatk  FilterMutectCalls \</span><br><span class="line">  -R <span class="variable">$&#123;ref&#125;</span> \</span><br><span class="line">  -V ./6.mutect/<span class="variable">$&#123;sample&#125;</span>_mutect2.vcf \</span><br><span class="line">  -O ./6.mutect/<span class="variable">$&#123;sample&#125;</span>_somatic.vcf</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;end Mutect2 for <span class="variable">$&#123;id&#125;</span>&quot;</span> `date`</span><br><span class="line"></span><br><span class="line">  cat ./6.mutect/<span class="variable">$&#123;sample&#125;</span>_somatic.vcf | perl -alne <span class="string">&#x27;&#123;if(/^#/)&#123;print&#125;else&#123;next unless $F[6] eq &quot;PASS&quot;;next if $F[0] =~/_/;print &#125; &#125;&#x27;</span> &gt; ./6.mutect/<span class="variable">$&#123;sample&#125;</span>_filter.vcf</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
-<p>以上代码跑了一个小时。代码解释:首先是<code>Mutect2</code>，主要是根据对正常-肿瘤样本进行位点比较寻找体细胞突变somatic<br>mutations。这里输入了两个配对的T-N样本<code>-I $&#123;T&#125; -tumor $(basename &quot;$T&quot;_ bqsr.bam)</code> 和<code>-I $&#123;N&#125; -normal $(basename &quot;$N&quot;_ bqsr. bam)</code>。<br>这样我们就拿到了每个tumor样本中的突变位点<code>$&#123;samp1e&#125;_ mutect2.vcf</code>。但是这还不够，还要通过<code>FilterMutectCalls</code>过滤，过滤后就是可信度较高的somatic突变位点会被打上<strong>PASS标签</strong>,就是<code>$&#123;samp1e&#125;_ somatic.vcf</code>。<br>最后我们再用一个简单的脚本把打上PASS标签的位点提取出来，得到了<code>$&#123;sample&#125;_ filter.vcf</code>: </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># matched.sample</span></span><br><span class="line">case1_germline  case1_biorep_A_techrep</span><br><span class="line">case1_germline  case1_biorep_B</span><br><span class="line">case1_germline  case1_biorep_C</span><br><span class="line">case1_germline  case1_techrep</span><br><span class="line"></span><br><span class="line"><span class="comment">## mutect.sh</span></span><br><span class="line">ref=~/Reference/GATK/Homo_sapiens_assembly38.fasta</span><br><span class="line">bed=~/Reference/GATK/hg38_exon.bed</span><br><span class="line"></span><br><span class="line">cat 6.mutect/sample.infor/matched.sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  arr=(<span class="variable">$&#123;id&#125;</span>)</span><br><span class="line">  sample=<span class="variable">$&#123;arr[1]&#125;</span></span><br><span class="line">  T=./5.gatk/bqsr.bam/<span class="variable">$&#123;arr[1]&#125;</span>_bqsr.bam</span><br><span class="line">  N=./5.gatk/bqsr.bam/<span class="variable">$&#123;arr[0]&#125;</span>_bqsr.bam</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;start Mutect2 for <span class="variable">$&#123;id&#125;</span>&quot;</span> `date`</span><br><span class="line">  gatk  --java-options <span class="string">&quot;-Xmx36G -Djava.io.tmpdir=./&quot;</span>  Mutect2 -R <span class="variable">$&#123;ref&#125;</span> \</span><br><span class="line">  -I <span class="variable">$&#123;T&#125;</span> -tumor  $(basename <span class="string">&quot;<span class="variable">$T</span>&quot;</span> _bqsr.bam) \</span><br><span class="line">  -I <span class="variable">$&#123;N&#125;</span> -normal $(basename <span class="string">&quot;<span class="variable">$N</span>&quot;</span> _bqsr.bam) \</span><br><span class="line">  -L <span class="variable">$&#123;bed&#125;</span>  \</span><br><span class="line">  -O ./6.mutect/<span class="variable">$&#123;sample&#125;</span>_mutect2.vcf</span><br><span class="line"></span><br><span class="line">  gatk  FilterMutectCalls \</span><br><span class="line">  -R <span class="variable">$&#123;ref&#125;</span> \</span><br><span class="line">  -V ./6.mutect/<span class="variable">$&#123;sample&#125;</span>_mutect2.vcf \</span><br><span class="line">  -O ./6.mutect/<span class="variable">$&#123;sample&#125;</span>_somatic.vcf</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;end Mutect2 for <span class="variable">$&#123;id&#125;</span>&quot;</span> `date`</span><br><span class="line"></span><br><span class="line">  cat ./6.mutect/<span class="variable">$&#123;sample&#125;</span>_somatic.vcf | perl -alne <span class="string">&#x27;&#123;if(/^#/)&#123;print&#125;else&#123;next unless $F[6] eq &quot;PASS&quot;;next if $F[0] =~/_/;print &#125; &#125;&#x27;</span> &gt; ./6.mutect/<span class="variable">$&#123;sample&#125;</span>_filter.vcf</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<p>以上代码跑了四个小时。代码解释:首先是<code>Mutect2</code>，主要是根据对正常-肿瘤样本进行位点比较寻找体细胞突变somatic<br>mutations。这里输入了两个配对的T-N样本<code>-I $&#123;T&#125; -tumor $(basename &quot;$T&quot;_ bqsr.bam)</code> 和<code>-I $&#123;N&#125; -normal $(basename &quot;$N&quot;_ bqsr. bam)</code>。<br>这样我们就拿到了每个tumor样本中的突变位点<code>$&#123;samp1e&#125;_ mutect2.vcf</code>。但是这还不够，还要通过<code>FilterMutectCalls</code>过滤，过滤后就是可信度较高的somatic突变位点会被打上<strong>PASS标签</strong>,就是<code>$&#123;samp1e&#125;_ somatic.vcf</code>。<br>最后我们再用一个简单的脚本把打上PASS标签的位点提取出来，得到了<code>$&#123;sample&#125;_ filter.vcf</code>: </p>
 <center><img src="/img/Figures/vcf-filter.png" alt="vcf-filter" style="zoom:70%;" /></center>
 
 <h1 id="VEP注释"><a href="#VEP注释" class="headerlink" title="VEP注释"></a>VEP注释</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装vep</span></span><br><span class="line">mamba install -c bioconda ensembl-vep</span><br><span class="line"><span class="comment"># 下载vep的cache及ref</span></span><br><span class="line"><span class="comment"># VEP推荐下载缓冲文件进行注释，后面跑的时候会比较快</span></span><br><span class="line">vep_install -a cf -s homo_sapiens -y GRCh38 -c ~/Reference/vep/ --CONVERT</span><br></pre></td></tr></table></figure>
 <h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p><a href="https://asia.ensembl.org/info/docs/tools/vep/script/vep_options.html">Manual-VEP</a></p>
-<p>仅需要肿瘤的样本名：case1_biorep_A_techrep</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;start vep_annotation for case1_biorep_A_techrep &quot;</span> `date`</span><br><span class="line">vep --fork 6 --cache --cache_version 103 --format vcf --vcf --force_overwrite \</span><br><span class="line">--dir ~/Reference/vep/homo_sapiens/103_GRCh38/ \</span><br><span class="line">--input_file ./6.mutect/case1_biorep_A_techrep_filter.vcf \</span><br><span class="line">--output_file ./7.annotation/vep/case1_biorep_A_techrep_vep.vcf </span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;end vep_annotation for case1_biorep_A_techrep &quot;</span> `date`</span><br></pre></td></tr></table></figure>]]></content>
+<p>仅注释肿瘤样本（除了case1_germline）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cat 0.sra/sra.infor/config.tumor | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;start vep_annotation for <span class="variable">$&#123;id&#125;</span> &quot;</span> `date`</span><br><span class="line">vep --fork 6 --cache --cache_version 103 --offline --format vcf --vcf --force_overwrite \</span><br><span class="line">--fasta /home/data/vip8t02/Reference/vep//homo_sapiens/103_GRCh38/Homo_sapiens.GRCh38.dna.toplevel.fa.gz \</span><br><span class="line">--dir ~/Reference/vep \</span><br><span class="line">--input_file ./6.mutect/<span class="variable">$&#123;id&#125;</span>_filter.vcf \</span><br><span class="line">--output_file ./7.annotation/vep/<span class="variable">$&#123;id&#125;</span>_vep.vcf </span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;end vep_annotation for <span class="variable">$&#123;id&#125;</span> &quot;</span> `date`</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<p>可以得到HTML格式文件及新的vcf（在INFO列加了很多信息）</p>
+<center><img src="/img/Figures/annovep.png" alt="annotation" style="zoom:70%;" /></center>
+
+<h2 id="注释结果转maf"><a href="#注释结果转maf" class="headerlink" title="注释结果转maf"></a>注释结果转maf</h2><p>vep注释后需要将vcf文件转换成maf，用到的工具是vcf2maf<br><a href="https://github.com/mskcc/vcf2maf">Github-vcf2maf</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装</span></span><br><span class="line">mamba install -c bioconda vcf2maf</span><br><span class="line"></span><br><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line"><span class="comment"># vcf2maf-v1.6.17</span></span><br><span class="line"><span class="comment"># -------------------------------&gt; </span></span><br><span class="line">cat 0.sra/sra.infor/config.tumor | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  sample=./6.mutect/<span class="variable">$&#123;id&#125;</span>_filter.vcf</span><br><span class="line">  normal=case1_germline</span><br><span class="line">  vcf2maf.pl \</span><br><span class="line">  --input-vcf  <span class="variable">$&#123;sample&#125;</span>  \</span><br><span class="line">  --output-maf ./7.annotation/vep/<span class="variable">$&#123;id&#125;</span>_vep.maf \</span><br><span class="line">  --ref-fasta ~/Reference/GATK/Homo_sapiens_assembly38.fasta \</span><br><span class="line">  --tumor-id  <span class="variable">$&#123;id&#125;</span> \</span><br><span class="line">  --normal-id <span class="variable">$&#123;normal&#125;</span> \</span><br><span class="line">  --ncbi-build GRCh38 \</span><br><span class="line">  --vep-path /home/data/vip8t02/anaconda3/envs/vep-103.1/bin \</span><br><span class="line">  --vep-data ~/Reference/vep</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 检查转换后结果</span></span><br><span class="line">less ./7.annotation/vep/case1_biorep_A_techrep_vep.maf | cut -f 10 | sort | uniq -c</span><br><span class="line"></span><br><span class="line">less ./7.annotation/vep/case1_biorep_A_techrep_vep.maf | cut -f 10 | sort | uniq -c</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并maf</span></span><br><span class="line">cat ./7.annotation/vep/*maf | grep -v <span class="string">&#x27;^#&#x27;</span>| grep -v <span class="string">&#x27;^Hugo_Symbol&#x27;</span> &gt;./7.annotation/vep/tmp </span><br><span class="line">grep <span class="string">&#x27;Hugo_Symbol&#x27;</span> ./7.annotation/vep/case1_biorep_A_techrep_vep.maf &gt;./7.annotation/vep/header</span><br><span class="line">cat ./7.annotation/vep/header ./7.annotation/vep/tmp &gt;./7.annotation/vep/vep_merge.maf</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<center><img src="/img/Figures/maf-info.png" alt="maf-info" style="zoom:80%;" /></center>
+
+<h2 id="可视化注释结果"><a href="#可视化注释结果" class="headerlink" title="可视化注释结果"></a>可视化注释结果</h2><h3 id="读入数据"><a href="#读入数据" class="headerlink" title="读入数据"></a>读入数据</h3><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">library(maftools)</span><br><span class="line"></span><br><span class="line">rm(<span class="built_in">list</span> = ls())</span><br><span class="line">options(stringsAsFactors = <span class="built_in">F</span>)</span><br><span class="line">setwd(<span class="string">&quot;~/MyCourse/CancerGenomics/WES.proj/&quot;</span>)</span><br><span class="line"><span class="comment">## vep</span></span><br><span class="line">vep.laml = read.maf(maf = <span class="string">&#x27;./7.annotation/vep/case1_biorep_A_techrep_vep.maf&#x27;</span>)</span><br><span class="line"><span class="comment">## for vep.laml</span></span><br><span class="line">library(stringr)</span><br><span class="line">vep.laml@data$Protein_Change = paste0(<span class="string">&quot;p.&quot;</span>,</span><br><span class="line">                                      str_sub(vep.laml@data$Amino_acids,<span class="number">1</span>,<span class="number">1</span>),</span><br><span class="line">                                      vep.laml@data$Protein_position,</span><br><span class="line">                                      str_sub(vep.laml@data$Amino_acids,<span class="number">3</span>,<span class="number">3</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">## save Rdata</span></span><br><span class="line">save(vep.laml, file = <span class="string">&#x27;7.annotation/visualization//laml.Rdata&#x27;</span>)</span><br><span class="line"><span class="comment">## Summary</span></span><br><span class="line">laml=vep.laml</span><br><span class="line">unique(laml@data$Tumor_Sample_Barcode)</span><br><span class="line">getSampleSummary(laml)</span><br><span class="line">getGeneSummary(laml)</span><br><span class="line">getFields(laml)</span><br></pre></td></tr></table></figure>
+<h3 id="mafSummary"><a href="#mafSummary" class="headerlink" title="mafSummary"></a>mafSummary</h3><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># rm(list = ls())</span></span><br><span class="line"><span class="comment"># require(maftools)</span></span><br><span class="line"><span class="comment"># options(stringsAsFactors = F)</span></span><br><span class="line"><span class="comment"># laml &lt;- load(file = &#x27;laml.Rdata&#x27;)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## mafsummary</span></span><br><span class="line">png(<span class="string">&#x27;./7.annotation/visualization/plotmafSummary_vep.png&#x27;</span>,res = <span class="number">150</span>,width = <span class="number">1080</span>,height = <span class="number">1080</span>)</span><br><span class="line">plotmafSummary(maf = laml,</span><br><span class="line">                 rmOutlier = <span class="literal">TRUE</span>,</span><br><span class="line">                 showBarcodes = <span class="built_in">T</span>,</span><br><span class="line">                 textSize = <span class="number">0.4</span>,</span><br><span class="line">                 addStat = <span class="string">&#x27;median&#x27;</span>,</span><br><span class="line">                 dashboard = <span class="literal">TRUE</span>,</span><br><span class="line">                 titvRaw = <span class="literal">FALSE</span>)</span><br><span class="line">dev.off()</span><br></pre></td></tr></table></figure>
+<center><img src="/img/Figures/plot-mat-sum.png" alt="maf-info" style="zoom:60%;" /></center>
+
+<h3 id="oncoplot"><a href="#oncoplot" class="headerlink" title="oncoplot"></a>oncoplot</h3><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">png(<span class="string">&#x27;./7.annotation/visualization/oncoplot_top30.png&#x27;</span>,res = <span class="number">150</span>,width = <span class="number">1080</span>,height = <span class="number">1080</span>)</span><br><span class="line">oncoplot(maf = laml,</span><br><span class="line">           top = <span class="number">30</span>,</span><br><span class="line">           fontSize = <span class="number">0.5</span>,</span><br><span class="line">           sampleOrder = laml@clinical.data$Tumor_Sample_Barcode,</span><br><span class="line">           showTumorSampleBarcodes = <span class="built_in">T</span>)</span><br><span class="line">dev.off()</span><br></pre></td></tr></table></figure>
+<center><img src="/img/Figures/oncoplot.png" alt="oncoplot" style="zoom:60%;" /></center>
+
+<h3 id="lollopopPlot"><a href="#lollopopPlot" class="headerlink" title="lollopopPlot"></a>lollopopPlot</h3><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment">## lollipopPlot for CDH2</span></span><br><span class="line">gene=<span class="string">&#x27;CDH2&#x27;</span></span><br><span class="line"></span><br><span class="line">png(<span class="string">&quot;./7.annotation/visualization/CDH2_vep.png&quot;</span>,res = <span class="number">150</span>,width = <span class="number">1080</span>,height = <span class="number">1080</span>)</span><br><span class="line">maftools::lollipopPlot(maf = laml,</span><br><span class="line">                       gene = gene,</span><br><span class="line">                       AACol = <span class="string">&quot;RefSeq&quot;</span>,</span><br><span class="line">                       labelPos = <span class="string">&#x27;all&#x27;</span>)</span><br><span class="line">dev.off()</span><br></pre></td></tr></table></figure>
+<center><img src="/img/Figures/CDH2.png" alt="CDH2" style="zoom:60%;" /></center>
+
+<h1 id="拷贝数变异分析（GATK流程）"><a href="#拷贝数变异分析（GATK流程）" class="headerlink" title="拷贝数变异分析（GATK流程）"></a>拷贝数变异分析（GATK流程）</h1><p>拷贝数变异(copy number variations, CNVs)是属于基因组结构变异(structural variation, SV)，是指DNA片段长度在1Kb-3Mb的基因组结构变异。我们首先从GATK的CNV流程开始CNV的分析。</p>
+<h2 id="外显子坐标的interval文件"><a href="#外显子坐标的interval文件" class="headerlink" title="外显子坐标的interval文件"></a>外显子坐标的interval文件</h2><p>interval文件其实也是一个坐标文件，类似bed,只不过bed文件的坐标是从0开始记录，而interval文件的坐标是从1开始记录。使用基因组interval 文件可以定义软件分析的分辨率。如果是全基因组测序，interval 文件就用全基因组坐标的等间隔区间就好。对于外显子组的数据，我们使用捕获试剂盒的目标区域，理论上应该返回原文查找对应试剂盒，去搜索其捕获外显子的区域，一般是外显子侧翼上下游250bp以内。</p>
+<p>首先使用<code>BedToIntervalist</code>工具将bed转成interval格式(其实前面已经完成)，然后用<code>PreprocessIntervals</code>工具获取target区间，即外显子侧翼上下游250bp.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ref=~/Reference/GATK/Homo_sapiens_assembly38.fasta</span><br><span class="line">bed=~/Reference/GATK/hg38_exon.bed</span><br><span class="line">dict=~/Reference/GATK/Homo_sapiens_assembly38.dict</span><br><span class="line"></span><br><span class="line"><span class="comment">## bed to intervals_list</span></span><br><span class="line">gatk BedToIntervalList -I <span class="variable">$&#123;bed&#125;</span> -O ~/Reference/GATK/hg38.exon.interval_list -SD <span class="variable">$&#123;dict&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## Preprocess Intervals</span></span><br><span class="line">gatk  PreprocessIntervals \</span><br><span class="line">-L ~/Reference/GATK/hg38.exon.interval_list \</span><br><span class="line">--sequence-dictionary <span class="variable">$&#123;dict&#125;</span> \</span><br><span class="line">--reference <span class="variable">$&#123;ref&#125;</span>  \</span><br><span class="line">--padding 250 \</span><br><span class="line">--bin-length 0 \</span><br><span class="line">--interval-merging-rule OVERLAPPING_ONLY \</span><br><span class="line">--output ~/Reference/GATK/targets.preprocessed.interval_list</span><br></pre></td></tr></table></figure>
+<h2 id="获取样本的read-counts"><a href="#获取样本的read-counts" class="headerlink" title="获取样本的read counts"></a>获取样本的read counts</h2><p>这里分为两小步进行:</p>
+<ol>
+<li>首先是获取所有样本的read counts, 用到了工具是<code>CollectReadCounts</code>，其根据所提供的interval文件，对bam文件进行reads计数，可以简单理解为把bam文件转换成interval区间的reads数。最后会生成一个HDF5格式的文件，需要用第三方软件HDFView来查看，这里不做展示。这个文件记录了每个基因组interval文件的CONTIG, START， END和原始COUNT值，并制成表格。</li>
+<li>然后构建正常样本的<code>CNV panel of normals</code>，生成正常样本的<code>cnvponM. pon.hdf5</code> 文件。对于外显子组捕获测序数据，捕获过程会引入一定的的噪音。因此后面需要降噪，该文件就是用于后面第3步<code>DenoiseReadCounts</code>。</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">interval=~/Reference/GATK/targets.preprocessed.interval_list</span><br><span class="line">ref=~/Reference/GATK/Homo_sapiens_assembly38.fasta</span><br><span class="line"></span><br><span class="line">cat 0.sra/sra.infor/config.sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  i=./5.gatk/bqsr.bam/<span class="variable">$&#123;id&#125;</span>_bqsr.bam</span><br><span class="line">  <span class="built_in">echo</span> <span class="variable">$&#123;i&#125;</span></span><br><span class="line">  <span class="comment">## step1 : CollectReadCounts</span></span><br><span class="line">  time gatk  --java-options <span class="string">&quot;-Xmx48G -Djava.io.tmpdir=./&quot;</span> CollectReadCounts \</span><br><span class="line">  -I <span class="variable">$&#123;i&#125;</span> \</span><br><span class="line">  -L <span class="variable">$&#123;interval&#125;</span> \</span><br><span class="line">  -R <span class="variable">$&#123;ref&#125;</span> \</span><br><span class="line">  --format HDF5  \</span><br><span class="line">  --interval-merging-rule OVERLAPPING_ONLY \</span><br><span class="line">  --output ./8.cnv/counts/<span class="variable">$&#123;id&#125;</span>.clean_counts.hdf5</span><br><span class="line">  </span><br><span class="line">  <span class="comment">## step2 : Generate a CNV panel of normals:cnvponM.pon.hdf5</span></span><br><span class="line">  gatk  --java-options <span class="string">&quot;-Xmx48G -Djava.io.tmpdir=./&quot;</span> CreateReadCountPanelOfNormals \</span><br><span class="line">  --minimum-interval-median-percentile 5.0 \</span><br><span class="line">  --output ./8.cnv/cnvponM.pon.hdf5 \</span><br><span class="line">  --input ./8.cnv/counts/case1_germline.clean_counts.hdf5</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<h2 id="降噪-DenoiseReadCounts"><a href="#降噪-DenoiseReadCounts" class="headerlink" title="降噪 DenoiseReadCounts"></a>降噪 DenoiseReadCounts</h2><p>该步骤用到的工具是<code>DenoiseReadCounts</code>，主要是做了一个标准化和降噪，会生成两个文件<code>$&#123;id&#125;. clean. standardizedCR.tsv</code>和<code>$&#123;id&#125;.clean.denoisedCR.tsv</code>,该工具会根据PoN的counts中位数对输入文件<code>$&#123;id&#125;.clean_counts.hdf5</code> 进行标准化，包括log2转换。然后使用PoN的主成分进行标准化后的copy ratios降噪。实际上这里只需要对tumor样本进行降噪的，为了比较，可以把tumor和normal样本都分析了一遍，后面可以做个对比。</p>
+<p><a href="https://gatk.broadinstitute.org/hc/en-us/articles/360057440151-DenoiseReadCounts">Manual-DeoiseReadCounts</a></p>
+<p>The input counts are standardized by: </p>
+<ol>
+<li>transforming to fractional coverage,</li>
+<li>performing optional explicit GC-bias correction (if the panel contains GC-content annotated intervals),</li>
+<li>filtering intervals to those contained in the panel,</li>
+<li>dividing by interval medians contained in the panel, </li>
+<li>dividing by the sample median,</li>
+<li>transforming to log2 copy ratio. </li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cat 0.sra/sra.infor/config.sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  i=./8.cnv/counts/<span class="variable">$&#123;id&#125;</span>.clean_counts.hdf5</span><br><span class="line">  gatk --java-options <span class="string">&quot;-Xmx48g&quot;</span> DenoiseReadCounts \</span><br><span class="line">  -I <span class="variable">$&#123;i&#125;</span> \</span><br><span class="line">  --count-panel-of-normals ./8.cnv/cnvponM.pon.hdf5 \</span><br><span class="line">  --standardized-copy-ratios ./8.cnv/standardizedCR/<span class="variable">$&#123;id&#125;</span>.clean.standardizedCR.tsv \</span><br><span class="line">  --denoised-copy-ratios ./8.cnv/denoisedCR/<span class="variable">$&#123;id&#125;</span>.clean.denoisedCR.tsv</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<h2 id="可视化降噪后的copy-ratio"><a href="#可视化降噪后的copy-ratio" class="headerlink" title="可视化降噪后的copy ratio"></a>可视化降噪后的copy ratio</h2><p>使用<code>PlotDenoisedCopyRatios</code>可视化标准化和去噪的read counts。这些图可以直观地评估去噪的效果。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">dict=~/Reference/GATK/Homo_sapiens_assembly38.dict</span><br><span class="line"></span><br><span class="line">cat 0.sra/sra.infor/config.sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  gatk --java-options <span class="string">&quot;-Xmx48g&quot;</span> PlotDenoisedCopyRatios \</span><br><span class="line">  --standardized-copy-ratios 	./8.cnv/standardizedCR/<span class="variable">$&#123;id&#125;</span>.clean.standardizedCR.tsv \</span><br><span class="line">  --denoised-copy-ratios ./8.cnv/denoisedCR/<span class="variable">$&#123;id&#125;</span>.clean.denoisedCR.tsv \</span><br><span class="line">  --sequence-dictionary <span class="variable">$&#123;dict&#125;</span> \</span><br><span class="line">  --output ./8.cnv/cnv_plots \</span><br><span class="line">  --output-prefix <span class="variable">$&#123;id&#125;</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+]]></content>
       <categories>
         <category>WES</category>
       </categories>
@@ -1908,5 +2024,24 @@
       <tags>
         <tag>Tips</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Stat-03-Non-Negative Matrix Factorization</title>
+    <url>/2021/04/13/Stat-03-Non-Negative-Matrix-Factorization/</url>
+    <content><![CDATA[<p><strong>Non-negative matrix factorization</strong><br>非负矩阵分解(Non-negative matrix factorization, NMF)是在矩阵中所有元素均为非负数约束条件下的矩阵分解方法。</p>
+<ul>
+<li>基本思想：给定一个非负矩阵V，NMF能找到一个非负矩阵W和一个非负矩阵H，使得矩阵W和H的乘积近似等于矩阵V中的值</li>
+</ul>
+<center><img src="/img/Stat/NMF.png" alt="NMF" style="zoom:90%;" /></center>
+
+<ul>
+<li>W矩阵：基础图象矩阵（基矩阵，特征矩阵），相当于从原矩阵V中抽取出来的特征</li>
+<li>H矩阵：系数矩阵</li>
+<li>≈：目前暂时无法做到完全相等</li>
+<li>因为是约等于，存在损失函数E（V = WH+E，最优化E = min|V-WH|)</li>
+</ul>
+<p>实质是一个优化问题，通过一定的优化方法来求解特征矩阵W和系数矩阵H<br><strong>加权和</strong><br>原理上等效为线性方程组</p>
+<h1 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h1><h2 id="特征学习"><a href="#特征学习" class="headerlink" title="特征学习"></a>特征学习</h2><h2 id="聚类"><a href="#聚类" class="headerlink" title="聚类"></a>聚类</h2><p>比K-means算法更优之处为：NMF是一种软聚类（一个元素可被分为多种类型）</p>
+]]></content>
   </entry>
 </search>
