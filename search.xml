@@ -1297,7 +1297,95 @@
 <li>generate/create/boost + profits/revenues</li>
 </ul>
 <hr>
-<h1 id="品质类"><a href="#品质类" class="headerlink" title="品质类"></a>品质类</h1>]]></content>
+<h1 id="品质类"><a href="#品质类" class="headerlink" title="品质类"></a>品质类</h1><h2 id="品质成功"><a href="#品质成功" class="headerlink" title="品质成功"></a>品质成功</h2><ul>
+<li>efficiency<br> reduce time<br> reduce errors(concentrate/misunderstanding)</li>
+<li>assistance<br> from parents<br> from strangers</li>
+</ul>
+<p><strong>例题</strong><br>Agree or disagree? It is important to make sure that others know about your strengths and accomplishments: if you are not so, you will be never successful life. (13.01.13)</p>
+<p>让别人知道我们的成就更好<br>提高效率，更多的支持，给予资源</p>
+<hr>
+<ul>
+<li>contribute to + 好/lead to + 中性/result in + 中性</li>
+<li>triumph/satisfaction/prosperity/success/achievement</li>
+<li>accomplish/achieve/attain/fulfill/meet/reach + an objective/target/aim</li>
+<li>commit/dedicate/devote + oneself to</li>
+<li>pursue their dreams/ in the pursuit of their dream</li>
+<li>strive for /struggle for + a dream</li>
+<li>realize one’s dream/reach a dream</li>
+</ul>
+<hr>
+<h2 id="以貌取人"><a href="#以貌取人" class="headerlink" title="以貌取人"></a>以貌取人</h2><ol>
+<li>vary constantly VS personalities : not change<br>mood<br>seasons/fashion/ages/living places</li>
+<li>uniform<br>at the workplace<br>at school</li>
+</ol>
+<p><strong>例题</strong><br>Agree or disagree? The way a person <strong>dresses</strong> in is a good indication of his/her personality and character. (13.06. 15)(14. 12.14)(17.02.25)</p>
+<p>衣着不能反映人的品质<br>工作中的dress code，企业形象，但不能说都有一样的品质</p>
+<hr>
+<ul>
+<li>various/assorted/different/distinct/diverse/diversified</li>
+<li>according to / in agreement with / in consonance with / in line with</li>
+<li>change/alter/shift/vary</li>
+<li>leave a favorable/good/positive + impression on 产生好的印象</li>
+</ul>
+<hr>
+<h1 id="生活类"><a href="#生活类" class="headerlink" title="生活类"></a>生活类</h1><p>食物、住、行、动、买</p>
+<ol>
+<li>health<br>physical health<br>mental health</li>
+<li>relationship<br>new friends &amp; old friends<br>communicate<br>assistance</li>
+</ol>
+<p><strong>例题</strong><br>It is better to spend money on <strong>travelling</strong> than saving money. (15.06. 13)<br>花钱旅游好</p>
+<h2 id="健康"><a href="#健康" class="headerlink" title="健康"></a>健康</h2><hr>
+<ol>
+<li>身体健康</li>
+</ol>
+<ul>
+<li>ecxercise/work out/do physical activities/ be physically avtive</li>
+<li>keep a sedentary lifestyle/lead a sedentary lifestyle</li>
+<li>distract/prevent/exclude + sb. from a sedentary lifestyle</li>
+</ul>
+<ol start="2">
+<li>精神健康</li>
+</ol>
+<ul>
+<li>pressure/tension/stress</li>
+<li>undergo/experience/endue/suffer from</li>
+<li>cope with/deal with/handle/adress/tackle/combat + pressure/stress/tension</li>
+<li>adopt…as a + stress-relif/stress-shrinking/stress-reducing/stress-eliminating + strategy///adopt… as a stress reducer</li>
+<li>alter one’s stress level</li>
+<li>raise/lower one’s stress level</li>
+<li>distract sb/serve as a distrscter/provide a distraction + from</li>
+<li>daily/routine + worries/concerns/trivia</li>
+<li>happiness/delight/elation/enjoyment/joy/echilaration/well-being/bliss/contentment</li>
+</ul>
+<hr>
+<h2 id="relationship"><a href="#relationship" class="headerlink" title="relationship"></a>relationship</h2><hr>
+<ol>
+<li>new friends<ul>
+<li>build/establish + relationship/connection/cond</li>
+<li>a close/strong/inimate/harmonious + bond</li>
+<li>encounter/come across/get acquainted with</li>
+<li>expand/extend + one’s current social circle/network</li>
+<li>a wider/larger friend circle</li>
+</ul>
+</li>
+<li>old friend<ul>
+<li>maintain/strengthen + relationship/connection/bond</li>
+<li>老朋友 acquainted friends/acquaintances/companions</li>
+</ul>
+</li>
+</ol>
+<h2 id="买"><a href="#买" class="headerlink" title="买"></a>买</h2><ol>
+<li><p>students<br>computers<br>sport equipment</p>
+</li>
+<li><p>adults<br>mobile phones<br>automobile</p>
+</li>
+<li><p>professional life<br>computer<br>automobiles</p>
+</li>
+<li><p>personal life<br>mobile phones<br>sport eqiupment</p>
+</li>
+</ol>
+<p><strong>例题</strong><br>Agree or disagree? People often buy products not because they <strong>really need them</strong> but because other people have them. </p>
+<h1 id="政府类"><a href="#政府类" class="headerlink" title="政府类"></a>政府类</h1>]]></content>
       <categories>
         <category>TOEFL-Writing</category>
       </categories>
@@ -1428,7 +1516,7 @@
 </ol>
 ]]></content>
       <categories>
-        <category>toolsLearning</category>
+        <category>ToolsLearning</category>
       </categories>
       <tags>
         <tag>conda</tag>
@@ -1946,17 +2034,19 @@
 <center><img src="/img/Figures/case1_biorep_B.denoised.png" alt="case1_biorep_B.denoised" style="zoom:70%;" /></center>
 图片展示的是标准化和降噪后的copy ratios，底下还有中位数绝对偏差(median absolute deviation, MAD)，只不过一张图片把y轴设置为0到4。假如tumor样本的拷贝数没有发生变化，copy ratio应该稳定在1附近。如果发生了CNV事件，那应该就在1附近波动。
 
-<h2 id="计算常见的germline-mutation位点"><a href="#计算常见的germline-mutation位点" class="headerlink" title="计算常见的germline mutation位点"></a>计算常见的germline mutation位点</h2><p>这一步用到了<code>CollectAllelicCounts</code>工具，对输入的bam文件，根据指定的interval区间，进行germline mutation的检测(仅仅是SNPs位点，不包括INDELS )，并计算该位点覆盖的reads数，即该位点的测序深度。值得注意的是，该工具一个默认参数是MAPQ值大于20的reads才会被纳入计数，最后生成一个tsv文件。注意：这一步非常消耗CPU和内存！运行了3小时</p>
+<h2 id="计算常见的germline-mutation位点"><a href="#计算常见的germline-mutation位点" class="headerlink" title="计算常见的germline mutation位点"></a>计算常见的germline mutation位点</h2><p>这一步用到了<code>CollectAllelicCounts</code>工具，对输入的bam文件，根据指定的interval区间，进行germline mutation的检测(仅仅是SNPs位点，不包括INDELS )，并计算该位点覆盖的reads数，即该位点的<strong>测序深度</strong>。值得注意的是，该工具一个默认参数是MAPQ值大于20的reads才会被纳入计数，最后生成一个tsv文件。注意：这一步非常消耗CPU和内存！运行了3小时</p>
 <p><a href="https://gatk.broadinstitute.org/hc/en-us/articles/360056969912-CollectAllelicCounts">Manual-CollectAllelicCounts</a><br>Collects reference and alternate allele counts at specified sites. The <strong>alt count</strong> is defined as <em>the total count minus the ref count</em>, and the <strong>alt nucleotide</strong> is defined as <em>the non-ref base with the highest count, with ties broken by the order of the bases in AllelicCountCollector#BASES</em>. Only reads that pass the specified read filters and bases that exceed the specified minimum-base-quality will be counted.</p>
 <blockquote>
 <p><strong>Inputs</strong><br> SAM format read data<br> Reference FASTA file<br> Sites at which allelic counts will be collected<br> <strong>Output</strong><br> Allelic-counts file. This is a tab-separated values (TSV) file with a SAM-style header containing a read group sample name, a sequence dictionary, a row specifying the column headers contained in AllelicCountCollection.AllelicCountTableColumn, and the corresponding entry rows.</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">## script</span></span><br><span class="line">interval=~/Reference/GATK/targets.preprocessed.interval_list</span><br><span class="line">GENOME=~/Reference/GATK/Homo_sapiens_assembly38.fasta</span><br><span class="line"></span><br><span class="line">cat 0.sra/sra.infor/config.tumor | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  i=./5.gatk/<span class="variable">$&#123;id&#125;</span>_bqsr.bam</span><br><span class="line">  <span class="built_in">echo</span> <span class="variable">$&#123;i&#125;</span></span><br><span class="line">  gatk --java-options <span class="string">&quot;-Xmx60G -Djava.io.tmpdir=./&quot;</span>  CollectAllelicCounts \</span><br><span class="line">  -I <span class="variable">$&#123;i&#125;</span> \</span><br><span class="line">  -L <span class="variable">$&#123;interval&#125;</span> \</span><br><span class="line">  -R <span class="variable">$&#123;GENOME&#125;</span> \</span><br><span class="line">  -O ./8.cnv/allelicCounts/<span class="variable">$&#123;id&#125;</span>.allelicCounts.tsv</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">## script</span></span><br><span class="line">interval=~/Reference/GATK/targets.preprocessed.interval_list</span><br><span class="line">GENOME=~/Reference/GATK/Homo_sapiens_assembly38.fasta</span><br><span class="line"></span><br><span class="line">cat 0.sra/sra.infor/config.sample | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  i=./5.gatk/bqsr.bam/<span class="variable">$&#123;id&#125;</span>_bqsr.bam</span><br><span class="line">  <span class="built_in">echo</span> <span class="variable">$&#123;i&#125;</span></span><br><span class="line">  gatk --java-options <span class="string">&quot;-Xmx20G -Djava.io.tmpdir=./&quot;</span>  CollectAllelicCounts \</span><br><span class="line">  -I <span class="variable">$&#123;i&#125;</span> \</span><br><span class="line">  -L <span class="variable">$&#123;interval&#125;</span> \</span><br><span class="line">  -R <span class="variable">$&#123;GENOME&#125;</span> \</span><br><span class="line">  -O ./8.cnv/allelicCounts/<span class="variable">$&#123;id&#125;</span>.allelicCounts.tsv</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line">less ./8.cnv/allelicCounts/case1_biorep_A_techrep.allelicCounts.tsv | grep -v ^@ | awk <span class="string">&#x27;&#123;if($6 != &quot;N&quot;) print$0 &#125;&#x27;</span>| less</span><br><span class="line"></span><br><span class="line">less ./8.cnv/denoisedCR/case1_biorep_A_techrep.clean.denoisedCR.tsv | grep -v ^@| less</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <center><img src="/img/Figures/a-warning.png" alt="warning" style="zoom:100%;" /></center>
 
-<center><img src="/img/Figures/allele-res.png" alt="warning" style="zoom:100%;" /></center>
+<center><img src="/img/Figures/allele-res.png" alt="res" style="zoom:100%;" /></center>
 
-]]></content>
+<h2 id="ModelSegments"><a href="#ModelSegments" class="headerlink" title="ModelSegments"></a>ModelSegments</h2><p>利用前面拿到的<strong>标准化&amp;降噪后tsv文件</strong>和<strong>等位基因测序深度tsv文件</strong>进行call segment，需要注意的是输入文件要求tumor match normal。这一步用到的工具是<code>ModelSegments</code>，它根据降噪后的reads counts值对copy ratios进行分割，并根据第五步的CollectAllelicCounts等位基因计数对分割片段进行分类。<br>注意：这一步非常非常非常非常耗内存和CPU，不要设置<code>--java-options &quot;Xmx 60G&quot;</code>，会报内存不足，就随便他跑去吧</p>
+<p><a href="https://gatk.broadinstitute.org/hc/en-us/articles/360057439631-ModelSegments">Manual-ModelSegments</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cat 0.sra/sra.infor/config.tumor  | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  gatk --java-options <span class="string">&quot;-Xmx20g&quot;</span> ModelSegments \</span><br><span class="line">  --denoised-copy-ratios ./8.cnv/denoisedCR/<span class="variable">$&#123;id&#125;</span>.clean.denoisedCR.tsv \</span><br><span class="line">  --allelic-counts ./8.cnv/allelicCounts/<span class="variable">$&#123;id&#125;</span>.allelicCounts.tsv \</span><br><span class="line">  --normal-allelic-counts ./8.cnv/allelicCounts/case1_germline.allelicCounts.tsv \</span><br><span class="line">  --output ./8.cnv/segments \</span><br><span class="line">  --output-prefix <span class="variable">$&#123;id&#125;</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>WES</category>
       </categories>
@@ -1995,7 +2085,7 @@
 <h2 id="first-commit"><a href="#first-commit" class="headerlink" title="first commit"></a>first commit</h2><p>选择要push的内容</p>
 <center><img src="/img/scATAC/commit.png" alt="setting" style="zoom:100%;" /></center>]]></content>
       <categories>
-        <category>toolsLearning</category>
+        <category>ToolsLearning</category>
       </categories>
       <tags>
         <tag>Git</tag>
@@ -2070,5 +2160,65 @@
 <p>实质是一个优化问题，通过一定的优化方法来求解特征矩阵W和系数矩阵H<br><strong>加权和</strong><br>原理上等效为线性方程组</p>
 <h1 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h1><h2 id="特征学习"><a href="#特征学习" class="headerlink" title="特征学习"></a>特征学习</h2><h2 id="聚类"><a href="#聚类" class="headerlink" title="聚类"></a>聚类</h2><p>比K-means算法更优之处为：NMF是一种软聚类（一个元素可被分为多种类型）</p>
 ]]></content>
+      <categories>
+        <category>STAT</category>
+      </categories>
+      <tags>
+        <tag>Stat</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>all about UMI-tools</title>
+    <url>/2021/04/19/all-about-UMI-tools/</url>
+    <content><![CDATA[<h1 id="UMI-tools"><a href="#UMI-tools" class="headerlink" title="UMI-tools"></a>UMI-tools</h1><p><a href="https://www.jianshu.com/p/c6eac2e1f02a">https://www.jianshu.com/p/c6eac2e1f02a</a><br><a href="https://umi-tools.readthedocs.io/en/latest/">https://umi-tools.readthedocs.io/en/latest/</a><br><a href="https://github.com/CGATOxford/UMI-tools/blob/master/doc/QUICK_START.md">https://github.com/CGATOxford/UMI-tools/blob/master/doc/QUICK_START.md</a></p>
+<p>For example, in a standard iCLIP experiment, the barcode is made of 3 random bases, followed by a 4 base library barcode, followed by 2 more random bases. Thus the <code>--bc-pattern</code> would be “NNNXXXXNN”.</p>
+<center><img src="/img/scATAC/UMI.png" alt="UMI" style="zoom:70%;" /></center>
+The processed reads could then be passed to a demultiplexing tool to deal with the library part of the barcode.
+
+<ul>
+<li><p>Example UMI extraction:<br>UMI is bases 3-7, bases 1-2 and 7-8 are the sample barcode and need to be removed(取3-7是因为前几个base测序质量不好)</p>
+<p>@HISEQ:87:00000000 read1<br>AAGGTTGCTGATTGGATGGGCTAG</p>
+</li>
+</ul>
+<p> +<br> DA1AEBFGGCG01DFH00B1FF0B</p>
+<p> will become:</p>
+<p> @HISEQ:87:00000000_GGTT read1<br> TGATTGGATGGGCTAG</p>
+<ul>
+<li>1AFGGCG01DFH00B1</li>
+</ul>
+<p>UMItools的标记与eclipdemux不同，不可交叉混用</p>
+<ul>
+<li>UMItools是把UMI加在: @HISEQ:87:00000000_GGTT read1</li>
+<li>eclipdemux加在：@GGTT;HISEQ:87:00000000 read1</li>
+</ul>
+<h1 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#第一种</span></span><br><span class="line">conda/mamba install -c bioconda -c conda-forge umi_tools</span><br><span class="line"></span><br><span class="line"><span class="comment">#第二种</span></span><br><span class="line">pip install umi_tools</span><br><span class="line"></span><br><span class="line"><span class="comment">#第三种</span></span><br><span class="line">unzip 1.0.0.zip</span><br><span class="line"><span class="built_in">cd</span> UMI-tools-1.0.0</span><br><span class="line">python setup.py install --user</span><br></pre></td></tr></table></figure>
+<h1 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h1><p>extract UMI from raw reads -&gt; map reads -&gt; deduplicate reads based on UMIs</p>
+<h2 id="Extract-the-UMIs"><a href="#Extract-the-UMIs" class="headerlink" title="Extract the UMIs"></a>Extract the UMIs</h2><p>Currently there are 6 commands. The <code>extract</code> and <code>whitelist</code> commands are used to prepare a fastq containg UMIs +/- cell barcodes for alignment.</p>
+<h3 id="whitelist–提取cell-barcode白名单"><a href="#whitelist–提取cell-barcode白名单" class="headerlink" title="whitelist–提取cell barcode白名单"></a>whitelist–提取cell barcode白名单</h3><p>whitelist 命令会从原始数据种提取去可能的cell barcode。<br>通常情况下，10X的barcode长度为16nt，umi长度为12nt；Drop-seq的barcode长度为12nt，umi长度为8nt。<br> <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"> <span class="comment">#10X</span></span><br><span class="line">umi_tools whitelist --stdin hgmm_100_R1.fastq.gz \  </span><br><span class="line">                    --bc-pattern=CCCCCCCCCCCCCCCCNNNNNNNNNNNN \ </span><br><span class="line">                    --set-cell-number=100 \    </span><br><span class="line">                    --log2stderr &gt; whitelist.txt</span><br><span class="line"></span><br><span class="line"><span class="comment">#BD</span></span><br><span class="line">umi_tools whitelist --stdin <span class="variable">$&#123;fastq&#125;</span> \</span><br><span class="line">        --extract-method=regex \</span><br><span class="line">        --bc-pattern=<span class="string">&quot;(?P&lt;cell_1&gt;.&#123;9&#125;)(?P&lt;discard_1&gt;.&#123;12&#125;)(?P&lt;cell_2&gt;.&#123;9&#125;)(?P&lt;discard_2&gt;.&#123;13&#125;)(?P&lt;cell_3&gt;.&#123;9&#125;)(?P&lt;umi_1&gt;.&#123;8&#125;)(?&lt;plotT&gt;TTTTTTTT)&#123;s&lt;=2&#125;.*&quot;</span> \</span><br><span class="line">        --expect-cells=10000  --plot-prefix=true2 --log2stderr --subset-reads=100000000 \</span><br><span class="line">        --knee-method=density --allow-threshold-error &gt; whitelist.txt</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p><strong>常用参数解释</strong><br>–stdin：指定输入文件或者标准输入。<br>–plot-prefix：指定QC统计图的前缀，可用于判断细胞数阈值设置是否合理。<br>–bc-pattern：指定cell barcode和umi的位置，默认情况下，他们位于序列的5’端，否则可用–3prime参数改变。cell barcode用同等数量的字符”C”表示；umi用同等数量的字符”N”表示。<br>–set-cell-number：设置检测到的cell barcode数量，若事先知道数量可设定，否则省略软件会自动判断(结合QC图判读阈值是否合理，若不合理可人为设定阈值重新分析)。<br>–expect-cells=200：设置检测到的cell barcode数据上限，该值是根据捕获效率预估得到(一般10X捕获效率不低于10%)，结合QC图判断阈值是否合理，若不合理可人为设定阈值重新分析。<br>–stdout/-S：指定输出barcode结果到文件，log信息到还是标准输出。<br>–stdlog/-L：指定log信息到文件，barcode结果还是到标准输出。<br>–log2stderr：指定log信息到标准错误输出，barcode结果还是到标准输出。<br>-v 0：关闭log信息的输出。</p>
+</blockquote>
+<blockquote>
+<p><strong>结果文件解释</strong><br>whitelist生成的结果文件包含四列：<br>1、可接受的cell barcode；<br>2、与可接受的barcode距离相差1的barcode；<br>3、第一列barcode的umi数；<br>4、第2列barcode的umi数</p>
+</blockquote>
+<h3 id="extract–提取barcode和过滤reads"><a href="#extract–提取barcode和过滤reads" class="headerlink" title="extract–提取barcode和过滤reads"></a>extract–提取barcode和过滤reads</h3><p>extract命令会从fastq文件中提取包含可接受barcode的reads，默认情况下extract命令会忽略umi的reads质量情况而不做处理。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">umi_tools extract --bc-pattern=CCCCCCCCCCCCCCCCNNNNNNNNNN \</span><br><span class="line">                  --stdin hgmm_100_R1.fastq.gz \</span><br><span class="line">                  --stdout hgmm_100_R1_extracted.fastq.gz \</span><br><span class="line">                  --read2-in hgmm_100_R2.fastq.gz \</span><br><span class="line">                  --read2-out=hgmm_100_R2_extracted.fastq.gz \</span><br><span class="line">                  --filter-cell-barcode \</span><br><span class="line">                  --whitelist=whitelist.txt</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>常用参数解释：<br>–bc-pattern：指定cell barcode和umi的位置，同whilelist。<br>–stdin：指定输入文件或者标准输入，同whilelist。<br>–stdout：指定read1的输出文件。<br>–read2-in：指定read2的输入文件，即基因表达的原始reads文件。<br>–read2-out：指定read2的输出文件。<br>–read2-stdout：设置read2的输出到标准输出，同时不会生成提取后read1文件。<br>–filter-cell-barcode：指定只提取包含可接受barcoded的reads。<br>–error-correct-cell：指定提取包含与可接受barcode汉明距离相差1的barcode的reads。<br>–whitelist：barcode白名单文件。<br>–quality-filter-threshold=[FILTER]：设定通过阈值来过滤umi的read，低于阈值的umi会被丢弃。<br>–quality-filter-mask=[FILTER]：设置一个阈值来把umi reads中低于阈值的碱基替换为”N”。</p>
+</blockquote>
+<h2 id="Mapping"><a href="#Mapping" class="headerlink" title="Mapping"></a>Mapping</h2><p>使用STAR/bowtie来将reads比对到参考基因组。然后转成BAM，排序+index</p>
+<h2 id="Deduplication"><a href="#Deduplication" class="headerlink" title="Deduplication"></a>Deduplication</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">umi_tools dedup -I example.bam --output-stats=deduplicated -S deduplicated.bam</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>输出deduplicated_edit_distance.tsv：<br> <center><img src="/img/scATAC/dedup.png" alt="UMI" style="zoom:70%;" /></center><br> 前两列:单碱基平均编辑距离的分布</p>
+</blockquote>
+<h1 id="UMI-tools-in-single-cell"><a href="#UMI-tools-in-single-cell" class="headerlink" title="UMI-tools in single cell"></a>UMI-tools in single cell</h1><p><strong>Important update:</strong> We now recommend the use of <code>alevin</code> for droplet-based scRNA-Seq (e.g 10X, inDrop etc). <code>alevin</code> extends the directional method used in <code>UMI-tools</code> to correct UMI errors with droplet scRNA-Seq within a framework that also enables quantification using multi-mapped reads. <code>alevin</code> is an accurate, fast and convenient end-to-end tool to go from fastq -&gt; count matrix. </p>
+<h2 id="读取数据"><a href="#读取数据" class="headerlink" title="读取数据"></a>读取数据</h2><p>查看CB和UMI</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">zcat hgmm_100_R1.fastq.gz | head -n2</span><br><span class="line"></span><br><span class="line"><span class="comment"># @ST-K00126:308:HFLYFBBXX:1:1101:25834:1173 1:N:0:NACCACCA</span></span><br><span class="line"><span class="comment"># NGGGTCAGTCTAGTGTGGCGATTCAC</span></span><br><span class="line"><span class="comment"># +</span></span><br><span class="line"><span class="comment"># #AAFFJJJJJJJJJJJJJJJJJJJJJ</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># -------CB-------|---UMI---</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>ToolsLearning</category>
+      </categories>
+      <tags>
+        <tag>WES</tag>
+      </tags>
   </entry>
 </search>
