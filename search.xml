@@ -1,31 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>AI Learning</title>
-    <url>/2021/02/17/AI-Learning/</url>
-    <content><![CDATA[<h1 id="界面-版本-快捷键"><a href="#界面-版本-快捷键" class="headerlink" title="界面/版本/快捷键"></a>界面/版本/快捷键</h1><h2 id="版本挑选"><a href="#版本挑选" class="headerlink" title="版本挑选"></a>版本挑选</h2><h2 id="CS6-CC2018-CC2020"><a href="#CS6-CC2018-CC2020" class="headerlink" title="CS6/CC2018/CC2020"></a>CS6/CC2018/CC2020</h2><h2 id="AI输出格式"><a href="#AI输出格式" class="headerlink" title="AI输出格式"></a>AI输出格式</h2><p>.ai 工程文件<br>.eps 矢量图<br>.tif 位图<br>.pdf 最稳定</p>
-<hr>
-<h2 id="设置-快捷键"><a href="#设置-快捷键" class="headerlink" title="设置+快捷键"></a>设置+快捷键</h2><ol>
-<li>出血边：相当于margin，预留给打印等的装订，一般0.3px</li>
-<li><code>ALT+滚动滑轮/ctrl+加减键</code>：放大缩小 (CTRL+0：恢复到默认大小)</li>
-<li><code>空格键+鼠标左键</code>：抓手工具</li>
-<li><code>CTRL+R</code>:标尺</li>
-<li><code>CTRL+;</code>:参考线</li>
-<li><code>CTRL+&quot;</code>:网格</li>
-<li><code>CTRL+Y</code>：轮廓模式，可以看到轮廓边缘</li>
-<li><code>CTRL+ALT+Y</code>：像素模式  </li>
-</ol>
-<hr>
-<h1 id="选择工具组-描边-缩放工具"><a href="#选择工具组-描边-缩放工具" class="headerlink" title="选择工具组/描边/缩放工具"></a>选择工具组/描边/缩放工具</h1><h2 id="选择工具组"><a href="#选择工具组" class="headerlink" title="选择工具组"></a>选择工具组</h2><p><code>选择工具(V)</code>:选择、移动、缩放、旋转（按shift表示等比缩放）<br><code>直接选择(A)</code>:选择、移动、变形<br>显示/隐藏定界框：<code>ctrl+shift+B</code><br>显示/隐藏边缘：<code>ctrl+H</code><br>套索工具：自由选择需要的锚点</p>
-]]></content>
-      <categories>
-        <category>toolsLearning</category>
-      </categories>
-      <tags>
-        <tag>Adobe Illustrator</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CUT&amp;Tag Analysis</title>
     <url>/2021/03/25/CUT-Tag-Analysis/</url>
     <content><![CDATA[<ul>
@@ -168,114 +143,69 @@
       </tags>
   </entry>
   <entry>
-    <title>Metagenomics Analysis</title>
-    <url>/2021/04/01/Metagenomics/</url>
-    <content><![CDATA[<ol>
-<li>通过single end示例数据了解qiime2分析过程。</li>
-<li>尝试利用pair end示例数据进行16S数据分析。</li>
+    <title>AI Learning</title>
+    <url>/2021/02/17/AI-Learning/</url>
+    <content><![CDATA[<h1 id="界面-版本-快捷键"><a href="#界面-版本-快捷键" class="headerlink" title="界面/版本/快捷键"></a>界面/版本/快捷键</h1><h2 id="版本挑选"><a href="#版本挑选" class="headerlink" title="版本挑选"></a>版本挑选</h2><h2 id="CS6-CC2018-CC2020"><a href="#CS6-CC2018-CC2020" class="headerlink" title="CS6/CC2018/CC2020"></a>CS6/CC2018/CC2020</h2><h2 id="AI输出格式"><a href="#AI输出格式" class="headerlink" title="AI输出格式"></a>AI输出格式</h2><p>.ai 工程文件<br>.eps 矢量图<br>.tif 位图<br>.pdf 最稳定</p>
+<hr>
+<h2 id="设置-快捷键"><a href="#设置-快捷键" class="headerlink" title="设置+快捷键"></a>设置+快捷键</h2><ol>
+<li>出血边：相当于margin，预留给打印等的装订，一般0.3px</li>
+<li><code>ALT+滚动滑轮/ctrl+加减键</code>：放大缩小 (CTRL+0：恢复到默认大小)</li>
+<li><code>空格键+鼠标左键</code>：抓手工具</li>
+<li><code>CTRL+R</code>:标尺</li>
+<li><code>CTRL+;</code>:参考线</li>
+<li><code>CTRL+&quot;</code>:网格</li>
+<li><code>CTRL+Y</code>：轮廓模式，可以看到轮廓边缘</li>
+<li><code>CTRL+ALT+Y</code>：像素模式  </li>
 </ol>
 <hr>
-<h1 id="Qiime2"><a href="#Qiime2" class="headerlink" title="Qiime2"></a>Qiime2</h1><h2 id="introduction"><a href="#introduction" class="headerlink" title="introduction"></a>introduction</h2><p>QIIME 2是一款强大、可扩展和去中心化的微生物组分析平台，强调数据分析透明。QIIME 2可以使研究者从原始DNA序列开始分析，直接获取出版级的统计和图片结果。</p>
-<p>主要特点：</p>
-<ul>
-<li>整合分析流程、自动化追踪数据来源</li>
-<li>语义类型系统，自动识别输入文件类型</li>
-<li>插件系统可扩展微生物分析功能种类</li>
-<li>支持多种用户界面，如API、命令行、图形界面</li>
-</ul>
-<p>QIIME 2是对QIIME 1完全重新设计并重写的微生物组分析流程。QIIME 2保留了QIIME 1强大和广泛使用的优点，同时改进了其众多不足之处。</p>
-<p>QIIME 2当前支持从头到尾的完整微生物组分析流程。通常QIIME 2插件功能，不断有新功能可用。可以在可用插件列表中查找当前可用的插件。在未来可用插件页列出了正在开发的插件。</p>
-<h2 id="installation"><a href="#installation" class="headerlink" title="installation"></a>installation</h2><ul>
-<li><p>conda环境安装QIIME2（推荐）<br>Install QIIME 2 within a conda environment<br>mkdir -p 2020.11 &amp;&amp; cd 2020.11</p>
-</li>
-<li><p>下载软件安装列表，官方源不容易下载</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget -c https://data.qiime2.org/distro/core/qiime2-2020.11-py36-linux-conda.yml</span><br><span class="line"><span class="comment"># OR</span></span><br><span class="line">wget -c http://210.75.224.110/github/QIIME2ChineseManual/2020.11/qiime2-2020.11-py36-linux-conda.yml</span><br><span class="line">time conda env create -n qiime2-2020.11 --file qiime2-2020.11-py36-linux-conda.yml</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除软件列表</span></span><br><span class="line">rm qiime2-2020.11-py36-linux-conda.yml</span><br></pre></td></tr></table></figure></li>
-<li><p>服务器已安装，直接使用。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">qiime2 conda environment path:</span><br><span class="line">/public/workspace/zmy1/home/wujian/.conda/envs/qimme2-2020.11/</span><br><span class="line"></span><br><span class="line"><span class="comment"># ln至自己的文件夹下</span></span><br><span class="line"><span class="built_in">source</span> activate qimme2-2020.11</span><br></pre></td></tr></table></figure>
-<h2 id="Qiime2重要概念"><a href="#Qiime2重要概念" class="headerlink" title="Qiime2重要概念"></a>Qiime2重要概念</h2></li>
-</ul>
-<ol>
-<li><p>数据文件: QIIME 2对象/文件格式<br>由QIIME 2产生的数据类型，叫QIIME 2对象(artifacts)，通常包括数据和元数据/样本信息(metadata)。元数据描述数据，包括类型、格式和它如何产生。典型的扩展名为.qza。</p>
-</li>
-<li><p>数据文件：可视化<br>QIIME2生成的图表结果对象或文件类型，以.qzv为扩展名，末尾的v代表visual；它同qza文件类似，包括分析方法和结果，方便追溯图表是如何产生的；唯一与qza不同的，它是分析的终点，即结果的呈现，不会在流程中继续分析。可视化的结果包括统计结果表格、交互式图像、静态图片及其它组合的可视化呈现。这类文件可以使用QIIME2 qiime tools view命令查看。</p>
-<p>可通过网站：<a href="https://view.qiime2.org/">https://view.qiime2.org/</a><br>导入文件并显示结果图表，同时可查看数据分析过程；方便与不使用QIIME 2的合作者分享结果。</p>
-</li>
-<li><p>插件<br>QIIME2中的用户的某个特定功能即为插件，你可以安装并完成分析，比如拆分样品的q2-demux插件、Alpha-或beta-多样性分析的q2-diversity插件等。</p>
-</li>
-<li><p>方法和可视化软件<br>QIIME 2插件定义的用于进行分析的方法和可视化工具类型。</p>
-<p>方法是对QIIME2定义的输入对象进行操作的过程，包括命令和参数，并产生1个或多个标准格式的输出。这一结果可以后续分析或可视化，产生中间或末端的输出。例如rarefy方法，输入文件为q2-feature-table插件产生的特征表，输出文件为样本深度一致的特征表。它可以作为输入文件，用于alpha多样性分析中的q2-diversity方法。输入和输出均为qza文件；</p>
-<p>可视化工具定义了标准输入，包括QIIME 2对象和参数的组合，产生统计表格或可视化图形，方便用户解读，输入为qza格式，输出为qzv，文件不仅包括结果，还包括处理的分析命令和参数，方便重复和检查分析过程是否准确。可视化的结果文件qzv是分析的终点，不可以进一步分析。</p>
-</li>
-</ol>
-<h2 id="Qiime2使用"><a href="#Qiime2使用" class="headerlink" title="Qiime2使用"></a>Qiime2使用</h2><p><img src="/img/Metagenomics/qiime.png" alt="qiime"></p>
-<h1 id="16S分析流程"><a href="#16S分析流程" class="headerlink" title="16S分析流程"></a>16S分析流程</h1><blockquote>
-<p>数据位置<br>/public/workspace/zmy1/home/wujian/metagenomics/single_end/<br>分别将emp-single-end-sequences和sample-metadata.tsv软链至相应文件夹下。<br>/public/workspace/zmy1/home/wujian/metagenomics/single_end/emp-single-end-sequences/<br>/public/workspace/zmy1/home/wujian/metagenomics/single_end/sample-metadata.tsv</p>
-</blockquote>
-<h2 id="Metadata-元数据"><a href="#Metadata-元数据" class="headerlink" title="Metadata 元数据"></a>Metadata 元数据</h2><p>元数据提供了从数据中获得生物学发现的关键。在QIIME 2中，样本元数据可以包括更多技术细节，例如在多次测序批次中用于每个样本的DNA条形码，或者样本的描述，例如每个样本来自人类微生物组对应时间序列研究中的分组、时间点和身体部位。特征元数据通常是特征注释，例如分配给序列变量或OTU的物种注释。</p>
-<p>收集样本元数据通常是在开始QIIME 2分析之前要进行的第一步。由研究人员决定哪些信息是作为元数据收集和跟踪的。<br>尽可能多的收集元数据，因为您可能无法追溯收集某些类型的信息，以便后续分析中使用。<br><img src="/img/Metagenomics/Metadata.png" alt="Metadata"></p>
-<h2 id="数据格式"><a href="#数据格式" class="headerlink" title="数据格式"></a>数据格式</h2><p>EMPSingleEndSequences是包含多样本混合的序列文件，这意味着序列尚未分配给样本（因此包括sequences.fastq.gz和barcode.fastq.gz文件，其中barcode.fastq.gz包含与sequences.fastq.gz中的每个序列相关联的条形码）。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/public/workspace/zmy1/home/wujian/metagenomics/single_end/emp-single-end-sequences/</span><br></pre></td></tr></table></figure>
-<h2 id="导入数据"><a href="#导入数据" class="headerlink" title="导入数据"></a>导入数据</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time qiime tools import \</span><br><span class="line">  --<span class="built_in">type</span> EMPSingleEndSequences \</span><br><span class="line">  --input-path ./0.rawdata/emp-single-end-sequences \</span><br><span class="line">  --output-path ./0.rawdata/emp-single-end-sequences.qza</span><br></pre></td></tr></table></figure>
-<h2 id="拆分样品-Demultiplexing-sequences"><a href="#拆分样品-Demultiplexing-sequences" class="headerlink" title="拆分样品 Demultiplexing sequences"></a>拆分样品 Demultiplexing sequences</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time qiime demux emp-single \</span><br><span class="line">  --i-seqs ./0.rawdata/emp-single-end-sequences.qza \</span><br><span class="line">  --m-barcodes-file ./0.rawdata/sample-metadata.tsv \</span><br><span class="line">  --m-barcodes-column barcode-sequence \</span><br><span class="line">  --o-per-sample-sequences 1.demuxdata/demux.qza \</span><br><span class="line">  --o-error-correction-details 1.demuxdata/demux-details.qza &amp;</span><br></pre></td></tr></table></figure>
-<h2 id="结果统计"><a href="#结果统计" class="headerlink" title="结果统计"></a>结果统计</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time qiime demux summarize \</span><br><span class="line">  --i-data demux.qza \</span><br><span class="line">  --o-visualization demux.qzv &amp;</span><br></pre></td></tr></table></figure>
-<p>.qzv可以在 <a href="https://view.qiime2.org/">https://view.qiime2.org/</a> 上查看可视化结果</p>
-<h2 id="序列质控和生成特征表-Sequence-quality-control-and-feature-table-construction"><a href="#序列质控和生成特征表-Sequence-quality-control-and-feature-table-construction" class="headerlink" title="序列质控和生成特征表 Sequence quality control and feature table construction"></a>序列质控和生成特征表 Sequence quality control and feature table construction</h2><p>dada2 denoise-single方法需要两个用于质量过滤的参数：</p>
-<blockquote>
-<p>–p-trim-left m，它去除每个序列的前m个碱基(如引物、标签序列barcode)；<br>–p-trunc-len n，它在位置n截断每个序列。这允许用户去除序列的低质量区域、引物或标签序列等。</p>
-</blockquote>
-<p>确定要为这两个参数的值，查看由qiime demux summarize生成的demux.qzv文件中的交互质量图选项卡。</p>
-<blockquote>
-<p>– p-trim-left 截取左端低质量序列，我们看上图中箱线图，左端质量都很高，无低质量区，设置为0；<br>– p-trunc-len 序列截取长度，也是为了去除右端低质量序列，我们看到大于120以后，质量下降极大，甚至中位数都下降至20以下，需要全部去除，综合考虑决定设置为120。</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time qiime dada2 denoise-single \</span><br><span class="line">  --i-demultiplexed-seqs 1.demuxdata/demux.qza \</span><br><span class="line">  --p-trim-left 0 \</span><br><span class="line">  --p-trunc-len 120 \</span><br><span class="line">  --o-representative-sequences ./2.QCandFeatureTable/rep-seqs-dada2.qza \</span><br><span class="line">  --o-table ./2.QCandFeatureTable/table-dada2.qza \</span><br><span class="line">  --o-denoising-stats ./2.QCandFeatureTable/stats-dada2.qza</span><br></pre></td></tr></table></figure>
-<p>对特征表统计进行进行可视化</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">qiime metadata tabulate \</span><br><span class="line">  --m-input-file stats-dada2.qza \</span><br><span class="line">  --o-visualization stats-dada2.qzv</span><br></pre></td></tr></table></figure>
-<h2 id="特征表和特征序列汇总-FeatureTable-and-FeatureData-summaries"><a href="#特征表和特征序列汇总-FeatureTable-and-FeatureData-summaries" class="headerlink" title="特征表和特征序列汇总 FeatureTable and FeatureData summaries"></a>特征表和特征序列汇总 FeatureTable and FeatureData summaries</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">qiime feature-table summarize \</span><br><span class="line">  --i-table ./2.QCandFeatureTable/table-dada2.qza \</span><br><span class="line">  --o-visualization ./2.QCandFeatureTable/table.qzv \</span><br><span class="line">  --m-sample-metadata-file  ./0.rawdata/sample-metadata.tsv</span><br><span class="line"></span><br><span class="line">qiime feature-table tabulate-seqs \</span><br><span class="line">  --i-data ./2.QCandFeatureTable/rep-seqs-dada2.qza \</span><br><span class="line">  --o-visualization ./2.QCandFeatureTable/rep-seqs.qzv</span><br></pre></td></tr></table></figure>
-<p>Output:</p>
-<ol>
-<li>table.qzv: 特征表统计。<br>Frequency per sample:<br>Frequency per feature: 一群数据里出现次数多的？<br>Feature Detail: 4b5eeb300368260019c1fbc7a3c718fc </li>
-<li>rep-seqs.qzv: 代表序列统计，可点击序列跳转NCBI blast查看相近序列的信息。</li>
-</ol>
-<h2 id="构建进化树用于多样性分析-Generate-a-tree-for-phylogenetic-diversity"><a href="#构建进化树用于多样性分析-Generate-a-tree-for-phylogenetic-diversity" class="headerlink" title="构建进化树用于多样性分析 Generate a tree for phylogenetic diversity"></a>构建进化树用于多样性分析 Generate a tree for phylogenetic diversity</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time qiime phylogeny align-to-tree-mafft-fasttree \</span><br><span class="line">  --i-sequences ./2.QCandFeatureTable/rep-seqs-dada2.qza \</span><br><span class="line">  --o-alignment ./3.generateTree/aligned-rep-seqs.qza \</span><br><span class="line">  --o-masked-alignment ./3.generateTree/masked-aligned-rep-seqs.qza \</span><br><span class="line">  --o-tree ./3.generateTree/unrooted-tree.qza \</span><br><span class="line">  --o-rooted-tree ./3.generateTree/rooted-tree.qza</span><br></pre></td></tr></table></figure>
-<p>Output:<br>aligned-rep-seqs.qza: 多序列比对结果。<br>masked-aligned-rep-seqs.qza: 过滤去除高变区后的多序列比对结果。<br>rooted-tree.qza: 有根树，用于多样性分析。<br>unrooted-tree.qza: 无根树。</p>
-<h2 id="Alpha和Beta多样性分析"><a href="#Alpha和Beta多样性分析" class="headerlink" title="Alpha和Beta多样性分析"></a>Alpha和Beta多样性分析</h2><p>QIIME 2的多样性分析使用q2-diversity插件，该插件支持计算α和β多样性指数、并应用相关的统计检验以及生成交互式可视化图表。我们将首先应用core-metrics-phylogenetic方法，该方法将FeatureTable抽平到用户指定的测序深度，然后计算几种常用的α和β多样性指数，并使用Emperor为每个β多样性指数生成主坐标分析（PCoA）图。</p>
-<ul>
-<li>α多样性</li>
-</ul>
-<p>-香农(Shannon’s)多样性指数（群落丰富度的定量度量，即包括丰富度richness和均匀度evenness两个层面）<br>-可观测的OTU(Observed OTUs，群落丰富度的定性度量，只包括丰富度）<br>-Faith’s系统发育多样性（包含特征之间的系统发育关系的群落丰富度的定性度量）<br>-均匀度Evenness（或 Pielou’s均匀度；群落均匀度的度量）</p>
-<ul>
-<li>β多样性</li>
-</ul>
-<p>-Jaccard距离（群落差异的定性度量，即只考虑种类，不考虑丰度）<br>-Bray-Curtis距离（群落差异的定量度量，较常用）<br>-非加权UniFrac距离（包含特征之间的系统发育关系的群落差异定性度量）<br>-加权UniFrac距离（包含特征之间的系统发育关系的群落差异定量度量）</p>
-<p>需要提供给这个脚本的一个重要参数是–p-sampling-depth，它是指定重采样（即稀疏/稀疏rarefaction）深度。因为大多数多样指数对不同样本的不同测序深度敏感，所以这个脚本将随机地将每个样本的测序量重新采样至该参数值。例如，提供–p-sampling-depth 500，则此步骤将对每个样本中的计数进行无放回抽样，从而使得结果表中的每个样本的总计数为500。如果任何样本的总计数小于该值，那么这些样本将从多样性分析中删除。选择这个值很棘手。建议通过查看上面创建的表table.qzv文件中呈现的信息并选择一个尽可能高的值（因此每个样本保留更多的序列）同时尽可能少地排除样本来进行选择。<br><strong>如是数据量都很大，选最小的即可。如果有个别数据量非常小，去除最小值再选最小值。</strong><br>一般采用HiSeq2500或NovaSeq6000的 PE250模式测序，数据量都非常大，通常可以采用3万或5万的标准抽平，仍可保留90%以上样本。过低或过高一般结果也会波动较大，不建议放在一起分析。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time qiime diversity core-metrics-phylogenetic \</span><br><span class="line">  --i-phylogeny ./3.generateTree/rooted-tree.qza \</span><br><span class="line">  --i-table ./2.QCandFeatureTable/table-dada2.qza \</span><br><span class="line">  --p-sampling-depth 1103 \</span><br><span class="line">  --m-metadata-file ./0.rawdata/sample-metadata.tsv \</span><br><span class="line">  --output-dir  ./4.CoreMetricsRes</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>13个数据文件:<br>core-metrics-results/faith_pd_vector.qza: Alpha多样性考虑进化的faith指数。<br>core-metrics-results/unweighted_unifrac_distance_matrix.qza: 无权重unifrac距离矩阵。<br>core-metrics-results/bray_curtis_pcoa_results.qza: 基于Bray-Curtis距离PCoA的结果。<br>core-metrics-results/shannon_vector.qza: Alpha多样性香农指数。<br>core-metrics-results/rarefied_table.qza: 等量重采样后的特征表。<br>core-metrics-results/weighted_unifrac_distance_matrix.qza: 有权重的unifrac距离矩阵。<br>core-metrics-results/jaccard_pcoa_results.qza: jaccard距离PCoA结果。<br>core-metrics-results/observed_otus_vector.qza: Alpha多样性observed otus指数。<br>core-metrics-results/weighted_unifrac_pcoa_results.qza: 基于有权重的unifrac距离的PCoA结果。<br>core-metrics-results/jaccard_distance_matrix.qza: jaccard距离矩阵。<br>core-metrics-results/evenness_vector.qza: Alpha多样性均匀度指数。<br>core-metrics-results/bray_curtis_distance_matrix.qza: Bray-Curtis距离矩阵。<br>core-metrics-results/unweighted_unifrac_pcoa_results.qza: 无权重的unifrac距离的PCoA结果</p>
-</blockquote>
-<blockquote>
-<p>4个可视化结果:<br>core-metrics-results/unweighted_unifrac_emperor.qzv：无权重的unifrac距离PCoA结果采用emperor可视化。<br>core-metrics-results/jaccard_emperor.qzv：jaccard距离PCoA结果采用emperor可视化。<br>core-metrics-results/bray_curtis_emperor.qzv： Bray-Curtis距离PCoA结果采用emperor可视化。<br>core-metrics-results/weighted_unifrac_emperor.qzv： 有权重的unifrac距离PCoA结果采用emperor可视化。</p>
-</blockquote>
-<h2 id="Alpha多样性组间显著性分析和可视化"><a href="#Alpha多样性组间显著性分析和可视化" class="headerlink" title="Alpha多样性组间显著性分析和可视化"></a>Alpha多样性组间显著性分析和可视化</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">qiime diversity alpha-group-significance \</span><br><span class="line">--i-alpha-diversity core-metrics-results/faith_pd_vector.qza \</span><br><span class="line">--m-metadata-file ./sample-metadata.tsv \</span><br><span class="line">--o-visualization core-metrics-results/faith-pd-group-significance.qzv</span><br><span class="line"></span><br><span class="line">qiime diversity alpha-group-significance \</span><br><span class="line">--i-alpha-diversity core-metrics-results/evenness_vector.qza \</span><br><span class="line">--m-metadata-file ./sample-metadata.tsv \</span><br><span class="line">--o-visualization core-metrics-results/evenness-group-significance.qzv</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#不同身体部位之间比较；</span></span><br><span class="line">time qiime diversity beta-group-significance \</span><br><span class="line">  --i-distance-matrix core-metrics-results/unweighted_unifrac_distance_matrix.qza \</span><br><span class="line">  --m-metadata-file sample-metadata.tsv \</span><br><span class="line">  --m-metadata-column body-site \</span><br><span class="line">  --o-visualization core-metrics-results/unweighted-unifrac-body-site-significance.qzv \</span><br><span class="line">  --p-pairwise</span><br><span class="line"></span><br><span class="line"><span class="comment">#不同subject之间比较；</span></span><br><span class="line">time qiime diversity beta-group-significance \</span><br><span class="line">  --i-distance-matrix core-metrics-results/unweighted_unifrac_distance_matrix.qza \</span><br><span class="line">  --m-metadata-file sample-metadata.tsv \</span><br><span class="line">  --m-metadata-column subject \</span><br><span class="line">  --o-visualization core-metrics-results/unweighted-unifrac-subject-group-significance.qzv \</span><br><span class="line">  --p-pairwise</span><br></pre></td></tr></table></figure>
-<h2 id="Alpha稀疏曲线-Alpha-rarefaction-plotting"><a href="#Alpha稀疏曲线-Alpha-rarefaction-plotting" class="headerlink" title="Alpha稀疏曲线 Alpha rarefaction plotting"></a>Alpha稀疏曲线 Alpha rarefaction plotting</h2><p>稀疏曲线：到什么时候饱和，捕获到采样中所有微生物的菌群</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time qiime diversity alpha-rarefaction \</span><br><span class="line">  --i-table table-dada2.qza \</span><br><span class="line">  --i-phylogeny rooted-tree.qza \</span><br><span class="line">  --p-max-depth 4000 \</span><br><span class="line">  --m-metadata-file sample-metadata.tsv \</span><br><span class="line">  --o-visualization alpha-rarefaction.qzv</span><br></pre></td></tr></table></figure>
-<p>Output：<br>alpha-rarefaction.qzv: 稀疏曲线。</p>
-<h2 id="物种组成分析-Taxonomic-analysis"><a href="#物种组成分析-Taxonomic-analysis" class="headerlink" title="物种组成分析 Taxonomic analysis"></a>物种组成分析 Taxonomic analysis</h2><p>物种分类器</p>
-<ul>
-<li><p>物种分类器根据你特定的样品制备和测序参数进行训练时表现最好，包括用于扩增的引物和测序序列的长度。因此，一般来说，你应该按照使用q2-feature-classifier的训练特征分类器的说明来训练自己的物种分类器。</p>
-</li>
-<li><p>这里使用的分类器是在Greengenes 13_8 99% OTU上训练的，其中序列被修剪到仅包括来自16S区域的250个碱基。利用这个分类器生成从序列到物种注释结果关联的可视化。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ln –s /public/workspace/zmy1/home/wujian/metagenomics/single_end/gg-13-8-99-515-806-nb-classifier.qza ./</span><br></pre></td></tr></table></figure>
-<h2 id="物种注释和可视化"><a href="#物种注释和可视化" class="headerlink" title="物种注释和可视化"></a>物种注释和可视化</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time qiime feature-classifier classify-sklearn \</span><br><span class="line">  --i-classifier gg-13-8-99-515-806-nb-classifier.qza \</span><br><span class="line">  --i-reads ./2.QCandFeatureTable/rep-seqs-dada2.qza \</span><br><span class="line">  --o-classification taxonomy.qza</span><br><span class="line"></span><br><span class="line">qiime metadata tabulate \</span><br><span class="line">  --m-input-file taxonomy.qza \</span><br><span class="line">  --o-visualization taxonomy.qzv</span><br></pre></td></tr></table></figure>
-<p>Output:<br>taxonomy.qza: 物种注释结果。<br>gg-13-8-99-515-806-nb-classifier.qza: 分类器的训练结果。</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#Barplot</span></span><br><span class="line">qiime taxa barplot \</span><br><span class="line">  --i-table table-dada2.qza \</span><br><span class="line">  --i-taxonomy taxonomy.qza \</span><br><span class="line">  --m-metadata-file sample-metadata.tsv \</span><br><span class="line">  --o-visualization taxa-bar-plots.qzv</span><br></pre></td></tr></table></figure>
-<p>Output:<br>taxa-bar-plots.qzv: 交互式物种组成barplot。</p>
+<h1 id="选择工具组-描边-缩放工具"><a href="#选择工具组-描边-缩放工具" class="headerlink" title="选择工具组/描边/缩放工具"></a>选择工具组/描边/缩放工具</h1><h2 id="选择工具组"><a href="#选择工具组" class="headerlink" title="选择工具组"></a>选择工具组</h2><p><code>选择工具(V)</code>:选择、移动、缩放、旋转（按shift表示等比缩放）<br><code>直接选择(A)</code>:选择、移动、变形<br>显示/隐藏定界框：<code>ctrl+shift+B</code><br>显示/隐藏边缘：<code>ctrl+H</code><br>套索工具：自由选择需要的锚点</p>
 ]]></content>
       <categories>
-        <category>Metagenomics</category>
+        <category>toolsLearning</category>
       </categories>
+      <tags>
+        <tag>Adobe Illustrator</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git love RProject--push your project to Github/Gitee!</title>
+    <url>/2021/04/10/Git-love-RProject-push-your-project-to-Github-Gitee/</url>
+    <content><![CDATA[<style>
+  p{
+    font-size:18px;
+    line-height:1.7em;
+
+  }
+</style>
+
+<h1 id="R-project"><a href="#R-project" class="headerlink" title="R project"></a>R project</h1><ul>
+<li>为什么要用R project：乱七八糟随手新建脚本的习惯该改掉了!想找以前代码的时候真的想哭！！</li>
+<li>git：菜鸡终于发现了git的妙用了！把自己的项目整个推送到github/gitee上，然后但凡修改都能找到前后对比，改错了也能及时改回来</li>
+</ul>
+<h1 id="R-project的结构"><a href="#R-project的结构" class="headerlink" title="R project的结构"></a>R project的结构</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">└── my_project</span><br><span class="line">├── src # 这部分用来装R函数或者其他的可执行文件</span><br><span class="line">│ ├── bin # 可执行文件或者外程序包比如java包</span><br><span class="line">│ └── scripts # R函数脚本</span><br><span class="line">├── output # 输出数据 ignore</span><br><span class="line">├── data # 数据文件，你不会想把这个上传git的，进.gitignore</span><br><span class="line">│ ├── raw # 原始数据 ignore</span><br><span class="line">│ └── processed #中间文件 ignore</span><br><span class="line">├── reports # 报告，保存一些rmd生成的pdf/ppt，再也不用担心我的进展汇报啦</span><br><span class="line">├── README.md # 项目简介</span><br><span class="line">├── analysis.R # 调用函数的函数，需要的图表作为函数输出，结合rmarkdown舒服</span><br><span class="line">├── .gitignore # who is ignored .gitignore里添加文件夹必须加上/ ，比如data/</span><br><span class="line">├── all.rmd # rmarkdown，配合analysis.R，生成pdf报告挺不错的</span><br><span class="line">├── require.R # 把用到的包都require一遍，以防万一</span><br><span class="line">└── packrat # 里面主要存储安装包的信息(可选,这个文件夹通常挺大)。</span><br></pre></td></tr></table></figure>
+<h1 id="实现流程"><a href="#实现流程" class="headerlink" title="实现流程"></a>实现流程</h1><h2 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h2><center><img src="/img/scATAC/new.png" alt="new" style="zoom:100%;" /></center>
+这个太简单了，直接建就行，语言写R
+
+<h2 id="复制仓库地址，创建Rproject"><a href="#复制仓库地址，创建Rproject" class="headerlink" title="复制仓库地址，创建Rproject"></a>复制仓库地址，创建Rproject</h2><p>file -&gt; New Project -&gt; Version Control -&gt; Git (svn 没用过不知道) -&gt; Create Project</p>
+<center><img src="/img/scATAC/gitee-link.png" alt="HC" style="zoom:80%;" /></center>
+
+<center><img src="/img/scATAC/RStudio-clone-git-project.gif" alt="HC" style="zoom:60%;" /></center>
+
+<h2 id="RStudio设置"><a href="#RStudio设置" class="headerlink" title="RStudio设置"></a>RStudio设置</h2><p>Tools -&gt; Global Options -&gt; Git/SVN<br>设置git的路径+获取RSA keys<br>这样就创建了一个用于SSH连接的RSA秘钥</p>
+<center><img src="/img/scATAC/setting.png" alt="setting" style="zoom:100%;" /></center>
+
+<p>复制public keys</p>
+<h2 id="仓库中部署公钥"><a href="#仓库中部署公钥" class="headerlink" title="仓库中部署公钥"></a>仓库中部署公钥</h2><p>找到仓库设置中的SSH公钥，把刚刚复制的keys添加进来</p>
+<h2 id="配置git"><a href="#配置git" class="headerlink" title="配置git"></a>配置git</h2><p>在Terminal中：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&#x27;yourGitHubUsername&#x27;</span></span><br><span class="line">git config --global user.email <span class="string">&#x27;name@provider.com&#x27;</span></span><br></pre></td></tr></table></figure>
+<h2 id="first-commit"><a href="#first-commit" class="headerlink" title="first commit"></a>first commit</h2><p>选择要push的内容</p>
+<center><img src="/img/scATAC/commit.png" alt="setting" style="zoom:100%;" /></center>]]></content>
+      <categories>
+        <category>ToolsLearning</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
   </entry>
   <entry>
     <title>Paper-writing Tips</title>
@@ -390,6 +320,167 @@
       </tags>
   </entry>
   <entry>
+    <title>Metagenomics Analysis</title>
+    <url>/2021/04/01/Metagenomics/</url>
+    <content><![CDATA[<ol>
+<li>通过single end示例数据了解qiime2分析过程。</li>
+<li>尝试利用pair end示例数据进行16S数据分析。</li>
+</ol>
+<hr>
+<h1 id="Qiime2"><a href="#Qiime2" class="headerlink" title="Qiime2"></a>Qiime2</h1><h2 id="introduction"><a href="#introduction" class="headerlink" title="introduction"></a>introduction</h2><p>QIIME 2是一款强大、可扩展和去中心化的微生物组分析平台，强调数据分析透明。QIIME 2可以使研究者从原始DNA序列开始分析，直接获取出版级的统计和图片结果。</p>
+<p>主要特点：</p>
+<ul>
+<li>整合分析流程、自动化追踪数据来源</li>
+<li>语义类型系统，自动识别输入文件类型</li>
+<li>插件系统可扩展微生物分析功能种类</li>
+<li>支持多种用户界面，如API、命令行、图形界面</li>
+</ul>
+<p>QIIME 2是对QIIME 1完全重新设计并重写的微生物组分析流程。QIIME 2保留了QIIME 1强大和广泛使用的优点，同时改进了其众多不足之处。</p>
+<p>QIIME 2当前支持从头到尾的完整微生物组分析流程。通常QIIME 2插件功能，不断有新功能可用。可以在可用插件列表中查找当前可用的插件。在未来可用插件页列出了正在开发的插件。</p>
+<h2 id="installation"><a href="#installation" class="headerlink" title="installation"></a>installation</h2><ul>
+<li><p>conda环境安装QIIME2（推荐）<br>Install QIIME 2 within a conda environment<br>mkdir -p 2020.11 &amp;&amp; cd 2020.11</p>
+</li>
+<li><p>下载软件安装列表，官方源不容易下载</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget -c https://data.qiime2.org/distro/core/qiime2-2020.11-py36-linux-conda.yml</span><br><span class="line"><span class="comment"># OR</span></span><br><span class="line">wget -c http://210.75.224.110/github/QIIME2ChineseManual/2020.11/qiime2-2020.11-py36-linux-conda.yml</span><br><span class="line">time conda env create -n qiime2-2020.11 --file qiime2-2020.11-py36-linux-conda.yml</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除软件列表</span></span><br><span class="line">rm qiime2-2020.11-py36-linux-conda.yml</span><br></pre></td></tr></table></figure></li>
+<li><p>服务器已安装，直接使用。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">qiime2 conda environment path:</span><br><span class="line">/public/workspace/zmy1/home/wujian/.conda/envs/qimme2-2020.11/</span><br><span class="line"></span><br><span class="line"><span class="comment"># ln至自己的文件夹下</span></span><br><span class="line"><span class="built_in">source</span> activate qimme2-2020.11</span><br></pre></td></tr></table></figure>
+<h2 id="Qiime2重要概念"><a href="#Qiime2重要概念" class="headerlink" title="Qiime2重要概念"></a>Qiime2重要概念</h2></li>
+</ul>
+<ol>
+<li><p>数据文件: QIIME 2对象/文件格式<br>由QIIME 2产生的数据类型，叫QIIME 2对象(artifacts)，通常包括数据和元数据/样本信息(metadata)。元数据描述数据，包括类型、格式和它如何产生。典型的扩展名为.qza。</p>
+</li>
+<li><p>数据文件：可视化<br>QIIME2生成的图表结果对象或文件类型，以.qzv为扩展名，末尾的v代表visual；它同qza文件类似，包括分析方法和结果，方便追溯图表是如何产生的；唯一与qza不同的，它是分析的终点，即结果的呈现，不会在流程中继续分析。可视化的结果包括统计结果表格、交互式图像、静态图片及其它组合的可视化呈现。这类文件可以使用QIIME2 qiime tools view命令查看。</p>
+<p>可通过网站：<a href="https://view.qiime2.org/">https://view.qiime2.org/</a><br>导入文件并显示结果图表，同时可查看数据分析过程；方便与不使用QIIME 2的合作者分享结果。</p>
+</li>
+<li><p>插件<br>QIIME2中的用户的某个特定功能即为插件，你可以安装并完成分析，比如拆分样品的q2-demux插件、Alpha-或beta-多样性分析的q2-diversity插件等。</p>
+</li>
+<li><p>方法和可视化软件<br>QIIME 2插件定义的用于进行分析的方法和可视化工具类型。</p>
+<p>方法是对QIIME2定义的输入对象进行操作的过程，包括命令和参数，并产生1个或多个标准格式的输出。这一结果可以后续分析或可视化，产生中间或末端的输出。例如rarefy方法，输入文件为q2-feature-table插件产生的特征表，输出文件为样本深度一致的特征表。它可以作为输入文件，用于alpha多样性分析中的q2-diversity方法。输入和输出均为qza文件；</p>
+<p>可视化工具定义了标准输入，包括QIIME 2对象和参数的组合，产生统计表格或可视化图形，方便用户解读，输入为qza格式，输出为qzv，文件不仅包括结果，还包括处理的分析命令和参数，方便重复和检查分析过程是否准确。可视化的结果文件qzv是分析的终点，不可以进一步分析。</p>
+</li>
+</ol>
+<h2 id="Qiime2使用"><a href="#Qiime2使用" class="headerlink" title="Qiime2使用"></a>Qiime2使用</h2><p><img src="/img/Metagenomics/qiime.png" alt="qiime"></p>
+<h1 id="16S分析流程"><a href="#16S分析流程" class="headerlink" title="16S分析流程"></a>16S分析流程</h1><blockquote>
+<p>数据位置<br>/public/workspace/zmy1/home/wujian/metagenomics/single_end/<br>分别将emp-single-end-sequences和sample-metadata.tsv软链至相应文件夹下。<br>/public/workspace/zmy1/home/wujian/metagenomics/single_end/emp-single-end-sequences/<br>/public/workspace/zmy1/home/wujian/metagenomics/single_end/sample-metadata.tsv</p>
+</blockquote>
+<h2 id="Metadata-元数据"><a href="#Metadata-元数据" class="headerlink" title="Metadata 元数据"></a>Metadata 元数据</h2><p>元数据提供了从数据中获得生物学发现的关键。在QIIME 2中，样本元数据可以包括更多技术细节，例如在多次测序批次中用于每个样本的DNA条形码，或者样本的描述，例如每个样本来自人类微生物组对应时间序列研究中的分组、时间点和身体部位。特征元数据通常是特征注释，例如分配给序列变量或OTU的物种注释。</p>
+<p>收集样本元数据通常是在开始QIIME 2分析之前要进行的第一步。由研究人员决定哪些信息是作为元数据收集和跟踪的。<br>尽可能多的收集元数据，因为您可能无法追溯收集某些类型的信息，以便后续分析中使用。<br><img src="/img/Metagenomics/Metadata.png" alt="Metadata"></p>
+<h2 id="数据格式"><a href="#数据格式" class="headerlink" title="数据格式"></a>数据格式</h2><p>EMPSingleEndSequences是包含多样本混合的序列文件，这意味着序列尚未分配给样本（因此包括sequences.fastq.gz和barcode.fastq.gz文件，其中barcode.fastq.gz包含与sequences.fastq.gz中的每个序列相关联的条形码）。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/public/workspace/zmy1/home/wujian/metagenomics/single_end/emp-single-end-sequences/</span><br></pre></td></tr></table></figure>
+<h2 id="导入数据"><a href="#导入数据" class="headerlink" title="导入数据"></a>导入数据</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time qiime tools import \</span><br><span class="line">  --<span class="built_in">type</span> EMPSingleEndSequences \</span><br><span class="line">  --input-path ./0.rawdata/emp-single-end-sequences \</span><br><span class="line">  --output-path ./0.rawdata/emp-single-end-sequences.qza</span><br></pre></td></tr></table></figure>
+<h2 id="拆分样品-Demultiplexing-sequences"><a href="#拆分样品-Demultiplexing-sequences" class="headerlink" title="拆分样品 Demultiplexing sequences"></a>拆分样品 Demultiplexing sequences</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time qiime demux emp-single \</span><br><span class="line">  --i-seqs ./0.rawdata/emp-single-end-sequences.qza \</span><br><span class="line">  --m-barcodes-file ./0.rawdata/sample-metadata.tsv \</span><br><span class="line">  --m-barcodes-column barcode-sequence \</span><br><span class="line">  --o-per-sample-sequences 1.demuxdata/demux.qza \</span><br><span class="line">  --o-error-correction-details 1.demuxdata/demux-details.qza &amp;</span><br></pre></td></tr></table></figure>
+<h2 id="结果统计"><a href="#结果统计" class="headerlink" title="结果统计"></a>结果统计</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time qiime demux summarize \</span><br><span class="line">  --i-data demux.qza \</span><br><span class="line">  --o-visualization demux.qzv &amp;</span><br></pre></td></tr></table></figure>
+<p>.qzv可以在 <a href="https://view.qiime2.org/">https://view.qiime2.org/</a> 上查看可视化结果</p>
+<h2 id="序列质控和生成特征表-Sequence-quality-control-and-feature-table-construction"><a href="#序列质控和生成特征表-Sequence-quality-control-and-feature-table-construction" class="headerlink" title="序列质控和生成特征表 Sequence quality control and feature table construction"></a>序列质控和生成特征表 Sequence quality control and feature table construction</h2><p>dada2 denoise-single方法需要两个用于质量过滤的参数：</p>
+<blockquote>
+<p>–p-trim-left m，它去除每个序列的前m个碱基(如引物、标签序列barcode)；<br>–p-trunc-len n，它在位置n截断每个序列。这允许用户去除序列的低质量区域、引物或标签序列等。</p>
+</blockquote>
+<p>确定要为这两个参数的值，查看由qiime demux summarize生成的demux.qzv文件中的交互质量图选项卡。</p>
+<blockquote>
+<p>– p-trim-left 截取左端低质量序列，我们看上图中箱线图，左端质量都很高，无低质量区，设置为0；<br>– p-trunc-len 序列截取长度，也是为了去除右端低质量序列，我们看到大于120以后，质量下降极大，甚至中位数都下降至20以下，需要全部去除，综合考虑决定设置为120。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time qiime dada2 denoise-single \</span><br><span class="line">  --i-demultiplexed-seqs 1.demuxdata/demux.qza \</span><br><span class="line">  --p-trim-left 0 \</span><br><span class="line">  --p-trunc-len 120 \</span><br><span class="line">  --o-representative-sequences ./2.QCandFeatureTable/rep-seqs-dada2.qza \</span><br><span class="line">  --o-table ./2.QCandFeatureTable/table-dada2.qza \</span><br><span class="line">  --o-denoising-stats ./2.QCandFeatureTable/stats-dada2.qza</span><br></pre></td></tr></table></figure>
+<p>对特征表统计进行进行可视化</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">qiime metadata tabulate \</span><br><span class="line">  --m-input-file stats-dada2.qza \</span><br><span class="line">  --o-visualization stats-dada2.qzv</span><br></pre></td></tr></table></figure>
+<h2 id="特征表和特征序列汇总-FeatureTable-and-FeatureData-summaries"><a href="#特征表和特征序列汇总-FeatureTable-and-FeatureData-summaries" class="headerlink" title="特征表和特征序列汇总 FeatureTable and FeatureData summaries"></a>特征表和特征序列汇总 FeatureTable and FeatureData summaries</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">qiime feature-table summarize \</span><br><span class="line">  --i-table ./2.QCandFeatureTable/table-dada2.qza \</span><br><span class="line">  --o-visualization ./2.QCandFeatureTable/table.qzv \</span><br><span class="line">  --m-sample-metadata-file  ./0.rawdata/sample-metadata.tsv</span><br><span class="line"></span><br><span class="line">qiime feature-table tabulate-seqs \</span><br><span class="line">  --i-data ./2.QCandFeatureTable/rep-seqs-dada2.qza \</span><br><span class="line">  --o-visualization ./2.QCandFeatureTable/rep-seqs.qzv</span><br></pre></td></tr></table></figure>
+<p>Output:</p>
+<ol>
+<li>table.qzv: 特征表统计。<br>Frequency per sample:<br>Frequency per feature: 一群数据里出现次数多的？<br>Feature Detail: 4b5eeb300368260019c1fbc7a3c718fc </li>
+<li>rep-seqs.qzv: 代表序列统计，可点击序列跳转NCBI blast查看相近序列的信息。</li>
+</ol>
+<h2 id="构建进化树用于多样性分析-Generate-a-tree-for-phylogenetic-diversity"><a href="#构建进化树用于多样性分析-Generate-a-tree-for-phylogenetic-diversity" class="headerlink" title="构建进化树用于多样性分析 Generate a tree for phylogenetic diversity"></a>构建进化树用于多样性分析 Generate a tree for phylogenetic diversity</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time qiime phylogeny align-to-tree-mafft-fasttree \</span><br><span class="line">  --i-sequences ./2.QCandFeatureTable/rep-seqs-dada2.qza \</span><br><span class="line">  --o-alignment ./3.generateTree/aligned-rep-seqs.qza \</span><br><span class="line">  --o-masked-alignment ./3.generateTree/masked-aligned-rep-seqs.qza \</span><br><span class="line">  --o-tree ./3.generateTree/unrooted-tree.qza \</span><br><span class="line">  --o-rooted-tree ./3.generateTree/rooted-tree.qza</span><br></pre></td></tr></table></figure>
+<p>Output:<br>aligned-rep-seqs.qza: 多序列比对结果。<br>masked-aligned-rep-seqs.qza: 过滤去除高变区后的多序列比对结果。<br>rooted-tree.qza: 有根树，用于多样性分析。<br>unrooted-tree.qza: 无根树。</p>
+<h2 id="Alpha和Beta多样性分析"><a href="#Alpha和Beta多样性分析" class="headerlink" title="Alpha和Beta多样性分析"></a>Alpha和Beta多样性分析</h2><p>QIIME 2的多样性分析使用q2-diversity插件，该插件支持计算α和β多样性指数、并应用相关的统计检验以及生成交互式可视化图表。我们将首先应用core-metrics-phylogenetic方法，该方法将FeatureTable抽平到用户指定的测序深度，然后计算几种常用的α和β多样性指数，并使用Emperor为每个β多样性指数生成主坐标分析（PCoA）图。</p>
+<ul>
+<li>α多样性</li>
+</ul>
+<p>-香农(Shannon’s)多样性指数（群落丰富度的定量度量，即包括丰富度richness和均匀度evenness两个层面）<br>-可观测的OTU(Observed OTUs，群落丰富度的定性度量，只包括丰富度）<br>-Faith’s系统发育多样性（包含特征之间的系统发育关系的群落丰富度的定性度量）<br>-均匀度Evenness（或 Pielou’s均匀度；群落均匀度的度量）</p>
+<ul>
+<li>β多样性</li>
+</ul>
+<p>-Jaccard距离（群落差异的定性度量，即只考虑种类，不考虑丰度）<br>-Bray-Curtis距离（群落差异的定量度量，较常用）<br>-非加权UniFrac距离（包含特征之间的系统发育关系的群落差异定性度量）<br>-加权UniFrac距离（包含特征之间的系统发育关系的群落差异定量度量）</p>
+<p>需要提供给这个脚本的一个重要参数是–p-sampling-depth，它是指定重采样（即稀疏/稀疏rarefaction）深度。因为大多数多样指数对不同样本的不同测序深度敏感，所以这个脚本将随机地将每个样本的测序量重新采样至该参数值。例如，提供–p-sampling-depth 500，则此步骤将对每个样本中的计数进行无放回抽样，从而使得结果表中的每个样本的总计数为500。如果任何样本的总计数小于该值，那么这些样本将从多样性分析中删除。选择这个值很棘手。建议通过查看上面创建的表table.qzv文件中呈现的信息并选择一个尽可能高的值（因此每个样本保留更多的序列）同时尽可能少地排除样本来进行选择。<br><strong>如是数据量都很大，选最小的即可。如果有个别数据量非常小，去除最小值再选最小值。</strong><br>一般采用HiSeq2500或NovaSeq6000的 PE250模式测序，数据量都非常大，通常可以采用3万或5万的标准抽平，仍可保留90%以上样本。过低或过高一般结果也会波动较大，不建议放在一起分析。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time qiime diversity core-metrics-phylogenetic \</span><br><span class="line">  --i-phylogeny ./3.generateTree/rooted-tree.qza \</span><br><span class="line">  --i-table ./2.QCandFeatureTable/table-dada2.qza \</span><br><span class="line">  --p-sampling-depth 1103 \</span><br><span class="line">  --m-metadata-file ./0.rawdata/sample-metadata.tsv \</span><br><span class="line">  --output-dir  ./4.CoreMetricsRes</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>13个数据文件:<br>core-metrics-results/faith_pd_vector.qza: Alpha多样性考虑进化的faith指数。<br>core-metrics-results/unweighted_unifrac_distance_matrix.qza: 无权重unifrac距离矩阵。<br>core-metrics-results/bray_curtis_pcoa_results.qza: 基于Bray-Curtis距离PCoA的结果。<br>core-metrics-results/shannon_vector.qza: Alpha多样性香农指数。<br>core-metrics-results/rarefied_table.qza: 等量重采样后的特征表。<br>core-metrics-results/weighted_unifrac_distance_matrix.qza: 有权重的unifrac距离矩阵。<br>core-metrics-results/jaccard_pcoa_results.qza: jaccard距离PCoA结果。<br>core-metrics-results/observed_otus_vector.qza: Alpha多样性observed otus指数。<br>core-metrics-results/weighted_unifrac_pcoa_results.qza: 基于有权重的unifrac距离的PCoA结果。<br>core-metrics-results/jaccard_distance_matrix.qza: jaccard距离矩阵。<br>core-metrics-results/evenness_vector.qza: Alpha多样性均匀度指数。<br>core-metrics-results/bray_curtis_distance_matrix.qza: Bray-Curtis距离矩阵。<br>core-metrics-results/unweighted_unifrac_pcoa_results.qza: 无权重的unifrac距离的PCoA结果</p>
+</blockquote>
+<blockquote>
+<p>4个可视化结果:<br>core-metrics-results/unweighted_unifrac_emperor.qzv：无权重的unifrac距离PCoA结果采用emperor可视化。<br>core-metrics-results/jaccard_emperor.qzv：jaccard距离PCoA结果采用emperor可视化。<br>core-metrics-results/bray_curtis_emperor.qzv： Bray-Curtis距离PCoA结果采用emperor可视化。<br>core-metrics-results/weighted_unifrac_emperor.qzv： 有权重的unifrac距离PCoA结果采用emperor可视化。</p>
+</blockquote>
+<h2 id="Alpha多样性组间显著性分析和可视化"><a href="#Alpha多样性组间显著性分析和可视化" class="headerlink" title="Alpha多样性组间显著性分析和可视化"></a>Alpha多样性组间显著性分析和可视化</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">qiime diversity alpha-group-significance \</span><br><span class="line">--i-alpha-diversity core-metrics-results/faith_pd_vector.qza \</span><br><span class="line">--m-metadata-file ./sample-metadata.tsv \</span><br><span class="line">--o-visualization core-metrics-results/faith-pd-group-significance.qzv</span><br><span class="line"></span><br><span class="line">qiime diversity alpha-group-significance \</span><br><span class="line">--i-alpha-diversity core-metrics-results/evenness_vector.qza \</span><br><span class="line">--m-metadata-file ./sample-metadata.tsv \</span><br><span class="line">--o-visualization core-metrics-results/evenness-group-significance.qzv</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#不同身体部位之间比较；</span></span><br><span class="line">time qiime diversity beta-group-significance \</span><br><span class="line">  --i-distance-matrix core-metrics-results/unweighted_unifrac_distance_matrix.qza \</span><br><span class="line">  --m-metadata-file sample-metadata.tsv \</span><br><span class="line">  --m-metadata-column body-site \</span><br><span class="line">  --o-visualization core-metrics-results/unweighted-unifrac-body-site-significance.qzv \</span><br><span class="line">  --p-pairwise</span><br><span class="line"></span><br><span class="line"><span class="comment">#不同subject之间比较；</span></span><br><span class="line">time qiime diversity beta-group-significance \</span><br><span class="line">  --i-distance-matrix core-metrics-results/unweighted_unifrac_distance_matrix.qza \</span><br><span class="line">  --m-metadata-file sample-metadata.tsv \</span><br><span class="line">  --m-metadata-column subject \</span><br><span class="line">  --o-visualization core-metrics-results/unweighted-unifrac-subject-group-significance.qzv \</span><br><span class="line">  --p-pairwise</span><br></pre></td></tr></table></figure>
+<h2 id="Alpha稀疏曲线-Alpha-rarefaction-plotting"><a href="#Alpha稀疏曲线-Alpha-rarefaction-plotting" class="headerlink" title="Alpha稀疏曲线 Alpha rarefaction plotting"></a>Alpha稀疏曲线 Alpha rarefaction plotting</h2><p>稀疏曲线：到什么时候饱和，捕获到采样中所有微生物的菌群</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time qiime diversity alpha-rarefaction \</span><br><span class="line">  --i-table table-dada2.qza \</span><br><span class="line">  --i-phylogeny rooted-tree.qza \</span><br><span class="line">  --p-max-depth 4000 \</span><br><span class="line">  --m-metadata-file sample-metadata.tsv \</span><br><span class="line">  --o-visualization alpha-rarefaction.qzv</span><br></pre></td></tr></table></figure>
+<p>Output：<br>alpha-rarefaction.qzv: 稀疏曲线。</p>
+<h2 id="物种组成分析-Taxonomic-analysis"><a href="#物种组成分析-Taxonomic-analysis" class="headerlink" title="物种组成分析 Taxonomic analysis"></a>物种组成分析 Taxonomic analysis</h2><p>物种分类器</p>
+<ul>
+<li><p>物种分类器根据你特定的样品制备和测序参数进行训练时表现最好，包括用于扩增的引物和测序序列的长度。因此，一般来说，你应该按照使用q2-feature-classifier的训练特征分类器的说明来训练自己的物种分类器。</p>
+</li>
+<li><p>这里使用的分类器是在Greengenes 13_8 99% OTU上训练的，其中序列被修剪到仅包括来自16S区域的250个碱基。利用这个分类器生成从序列到物种注释结果关联的可视化。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ln –s /public/workspace/zmy1/home/wujian/metagenomics/single_end/gg-13-8-99-515-806-nb-classifier.qza ./</span><br></pre></td></tr></table></figure>
+<h2 id="物种注释和可视化"><a href="#物种注释和可视化" class="headerlink" title="物种注释和可视化"></a>物种注释和可视化</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time qiime feature-classifier classify-sklearn \</span><br><span class="line">  --i-classifier gg-13-8-99-515-806-nb-classifier.qza \</span><br><span class="line">  --i-reads ./2.QCandFeatureTable/rep-seqs-dada2.qza \</span><br><span class="line">  --o-classification taxonomy.qza</span><br><span class="line"></span><br><span class="line">qiime metadata tabulate \</span><br><span class="line">  --m-input-file taxonomy.qza \</span><br><span class="line">  --o-visualization taxonomy.qzv</span><br></pre></td></tr></table></figure>
+<p>Output:<br>taxonomy.qza: 物种注释结果。<br>gg-13-8-99-515-806-nb-classifier.qza: 分类器的训练结果。</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#Barplot</span></span><br><span class="line">qiime taxa barplot \</span><br><span class="line">  --i-table table-dada2.qza \</span><br><span class="line">  --i-taxonomy taxonomy.qza \</span><br><span class="line">  --m-metadata-file sample-metadata.tsv \</span><br><span class="line">  --o-visualization taxa-bar-plots.qzv</span><br></pre></td></tr></table></figure>
+<p>Output:<br>taxa-bar-plots.qzv: 交互式物种组成barplot。</p>
+]]></content>
+      <categories>
+        <category>Metagenomics</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Phrase for Response Letter</title>
+    <url>/2021/04/12/Phrase-for-Response-Letter/</url>
+    <content><![CDATA[<ol>
+<li><p>According to the associate editor and reviewers’ comments, we have made extensive modifications to our manuscript and supplemented extra data to make our results convincing.</p>
+</li>
+<li><p>In this revised version, changes to our manuscript were all highlighted within the document by using red colored text.</p>
+</li>
+<li><p>Thank you for your nice comments on our article. According to your suggestions, we have supplemented several data here and corrected several mistakes in our previous draft. Based on your comments, we also attached a point-by-point letter to you and the other two reviewers. We have made extensive revisions to our previous draft. The detailed point-by-point responses are listed below.</p>
+</li>
+<li><p>Thanks for your help. We feel really sorry for our carelessness.</p>
+</li>
+<li><p>Thank you for your reminding. You and the other two reviewers’ comments are all of great importance to our article. All of these comments have contributed a lot to improve the quality of our article. After this revision, we have written a point-by-point response letter to you as you can see above. Meanwhile, we also wrote a point-by-point response letter to the other two nice reviewers to acknowledge their helps and denote where we made revisions.</p>
+</li>
+<li><p>We feel great thanks for your professional review work on our article. As you are concerned, there are several problems that need to be addressed. According to your nice suggestions, we have made extensive corrections to our previous draft. We have added necessary data to supplement our results and edited our article extensively. The detailed corrections are listed below.</p>
+</li>
+<li><p>We feel sorry that we did not provide enough information about XXXX.</p>
+</li>
+<li><p>it is really a giant mistake to the whole quality of our article. We feel sorry for our carelessness. We have corrected it and we also feel great thanks for your point out.</p>
+</li>
+<li><p>thanks for your suggestions. We feel sorry for our poor writings, however, we do invite a friend of us who is a native English speaker from USA help polish our article. Due to our friend’s help, the article was edited extensively. And we hope the revised manuscript could be acceptable for you.</p>
+</li>
+<li><p>thanks for your careful checks. We are sorry for our carelessness. Based on your comments, we have made the corrections to make the unit harmonized within the whole manuscript.</p>
+</li>
+<li><p>your suggestion really means a lot to us. Yes, it would be more understandable if we XXX.</p>
+</li>
+<li><p>According to your suggestion, we have corrected the “XXX” into “XXX”.</p>
+</li>
+<li><p>thanks for your correction. It was indeed a serious grammatical error. And we have corrected it according to your suggestion.</p>
+</li>
+<li><p>thanks for your suggestions. We feel sorry for the improper wording. We have used “XXXX” as you suggested.</p>
+</li>
+<li><p>According to the reviewer’s comments, we have revised the manuscript extensively. If there are any other modifications we could make, we would like very much to modify them and we really appreciate your help. “xxxx” is a journal of great popularity and prestige. We hope that our manuscript could be considered for publication in your journal. Thank you very much for your help.</p>
+</li>
+<li><p>The manuscript is revised submission (XXXXXXX) with new line and page numbers in the text, some grammar and spelling errors had also been corrected. Furthermore, the relevant regulations had been made in the original manuscript according to the comments of reviewers, and the major revised portions were marked in red bold. We also responded point by point to each reviewer comments as listed below, along with a clear indication of the location of the revision. Hope these will make it more acceptable for pub lication.</p>
+</li>
+<li><p>Thank you for your kind comments on our manuscript entitled“XX文章名”. We have carefully revised the manuscript according to the reviewer’s comments. Based on the suggestions, we have made an extensive modification on the revised manuscript. Detailed revision was shown as follows. The changes to our manuscript within the document were aslo highlighted by using red colored text.</p>
+</li>
+<li><p>We are very sorry for our negligence of…..<br>We are very sorry for our incorrect writing ……..<br>It is really true as Reviewer suggested tha…..<br>We have made correction according to the Reviewer’s comments.<br>We have re-written this part according to the Reviewer’s suggestion.<br>As Reviewer suggested that…..<br>Considering the Reviewer’s suggestion, we have …. .</p>
+</li>
+<li><p>Line 60-61, the statements ……. were corrected as ………<br>Line 107, …… was added<br>Line 129, …..was deleted</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Records</category>
+      </categories>
+      <tags>
+        <tag>Tips</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>RNA-seq: GSEA &amp; ssGSEA</title>
     <url>/2021/03/08/RNA-seq-GSEA-ssGSEA/</url>
     <content><![CDATA[<h1 id="GSEA（Gene-Set-Enrichment-Analysis）"><a href="#GSEA（Gene-Set-Enrichment-Analysis）" class="headerlink" title="GSEA（Gene Set Enrichment Analysis）"></a><strong>GSEA（Gene Set Enrichment Analysis）</strong></h1><p>该方法发表于2005年的<a href="https://www.pnas.org/content/pnas/102/43/15545.full.pdf">Gene set enrichment analysis: a knowledge-based approach forinterpreting genome-wide expression profiles</a>，是一种基于基因集的富集分析方法。</p>
@@ -482,6 +573,31 @@
 </li>
 </ul>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment">#########################</span></span><br><span class="line"><span class="comment"># Data 2021-02-22</span></span><br><span class="line"><span class="comment"># Author zhangyl</span></span><br><span class="line"><span class="comment"># MDS</span></span><br><span class="line"><span class="comment">#########################</span></span><br><span class="line"></span><br><span class="line">rm(<span class="built_in">list</span> = ls())</span><br><span class="line"></span><br><span class="line"><span class="comment"># -----------------------------------&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span></span><br><span class="line"><span class="comment"># MDS</span></span><br><span class="line"><span class="comment"># -----------------------------------&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span></span><br><span class="line">load(<span class="string">&quot;./data/GTEx.RData&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># tissue的注释文件</span></span><br><span class="line">accession.df = read.csv(file=<span class="string">&quot;./data/GTEx_accession_table.csv&quot;</span>)</span><br><span class="line">annotation.df = read.csv(file=<span class="string">&quot;./data/GTEx_v7_Annotations_SampleAttributesDS.txt&quot;</span>,header = <span class="built_in">T</span>,sep = <span class="string">&quot;\t&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># make matrix </span></span><br><span class="line">GTEx.TPM.gene.mat.only_TPM = log2(GTEx.TPM.gene.mat[,<span class="built_in">c</span>(-<span class="number">1</span>,-<span class="number">2</span>)]+<span class="number">1</span>)</span><br><span class="line">rownames(GTEx.TPM.gene.mat.only_TPM) = <span class="built_in">as.character</span>(GTEx.TPM.gene.mat$Name)</span><br><span class="line"></span><br><span class="line"><span class="comment"># get tissue info </span></span><br><span class="line">tissue_info = <span class="built_in">as.character</span>(annotation.df$SMTS[match(accession_id_vec,annotation.df$SAMPID)])</span><br><span class="line"></span><br><span class="line"><span class="comment"># run MDS</span></span><br><span class="line">dist.mat = dist(t(GTEx.TPM.gene.mat.only_TPM), method = <span class="string">&quot;minkowski&quot;</span>, p=<span class="number">5</span>)</span><br><span class="line">dist.mat = <span class="built_in">sqrt</span>(<span class="number">2</span>*(<span class="number">1</span> - <span class="built_in">abs</span>(cor(GTEx.TPM.gene.mat.only_TPM,method = <span class="string">&quot;kendall&quot;</span>))))</span><br><span class="line"></span><br><span class="line">MDS_res = cmdscale(dist.mat,eig=<span class="literal">TRUE</span>, k=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">MDS_xy.df = data.frame(MDS_1 = MDS_res$points[,<span class="number">1</span>],</span><br><span class="line">                       MDS_2 = MDS_res$points[,<span class="number">2</span>],</span><br><span class="line">                       tissue = factor(tissue_info))</span><br><span class="line"></span><br><span class="line"><span class="comment"># plot with ggplot2</span></span><br><span class="line">library(ggplot2)</span><br><span class="line"></span><br><span class="line">ggplot(data = MDS_xy.df, aes(MDS_1,MDS_2,color=tissue)) + </span><br><span class="line">  geom_point()  + </span><br><span class="line">  geom_text(aes(label=tissue)) + </span><br><span class="line">  theme_bw()</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>STAT</category>
+      </categories>
+      <tags>
+        <tag>Stat</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Stat-03-Non-Negative Matrix Factorization</title>
+    <url>/2021/04/13/Stat-03-Non-Negative-Matrix-Factorization/</url>
+    <content><![CDATA[<p><strong>Non-negative matrix factorization</strong><br>非负矩阵分解(Non-negative matrix factorization, NMF)是在矩阵中所有元素均为非负数约束条件下的矩阵分解方法。</p>
+<ul>
+<li>基本思想：给定一个非负矩阵V，NMF能找到一个非负矩阵W和一个非负矩阵H，使得矩阵W和H的乘积近似等于矩阵V中的值</li>
+</ul>
+<center><img src="/img/Stat/NMF.png" alt="NMF" style="zoom:90%;" /></center>
+
+<ul>
+<li>W矩阵：基础图象矩阵（基矩阵，特征矩阵），相当于从原矩阵V中抽取出来的特征</li>
+<li>H矩阵：系数矩阵</li>
+<li>≈：目前暂时无法做到完全相等</li>
+<li>因为是约等于，存在损失函数E（V = WH+E，最优化E = min|V-WH|)</li>
+</ul>
+<p>实质是一个优化问题，通过一定的优化方法来求解特征矩阵W和系数矩阵H<br><strong>加权和</strong><br>原理上等效为线性方程组</p>
+<h1 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h1><h2 id="特征学习"><a href="#特征学习" class="headerlink" title="特征学习"></a>特征学习</h2><h2 id="聚类"><a href="#聚类" class="headerlink" title="聚类"></a>聚类</h2><p>比K-means算法更优之处为：NMF是一种软聚类（一个元素可被分为多种类型）</p>
+]]></content>
       <categories>
         <category>STAT</category>
       </categories>
@@ -646,6 +762,174 @@
       </tags>
   </entry>
   <entry>
+    <title>TOEFL-writing-02</title>
+    <url>/2021/02/20/TOEFL-writing-02/</url>
+    <content><![CDATA[<h1 id="笔记概述"><a href="#笔记概述" class="headerlink" title="笔记概述"></a>笔记概述</h1><ol>
+<li>专有名词<br> 固定说法，很难找到同义词的名词（eg. 电脑、台灯…）</li>
+<li>意思（逻辑）<br>转折逻辑: however, but, although<br>并列逻辑: and, also, moreover, in addition<br>总分逻辑: such as, for example, one of which<br>因果逻辑: because, so, thus, therefore<br>顺序逻辑: first, and then, when, after</li>
+</ol>
+<hr>
+<h1 id="阅读笔记"><a href="#阅读笔记" class="headerlink" title="阅读笔记"></a>阅读笔记</h1><p>topic sentence关键词：支持topic sentence的专有名词</p>
+<h2 id="开头段："><a href="#开头段：" class="headerlink" title="开头段："></a>开头段：</h2><p>主题词，（3个）xxx（reason,goal…）</p>
+<h2 id="中间段："><a href="#中间段：" class="headerlink" title="中间段："></a>中间段：</h2><p>如果有小标题，小标题就是TS<br>细节只记录支持TS的名词</p>
+<hr>
+<h1 id="听力笔记"><a href="#听力笔记" class="headerlink" title="听力笔记"></a>听力笔记</h1><p><strong>脑记意思</strong><br>（主）对比专名<br>（次）逻辑符号<br>竖着写，每行一个词</p>
+<h2 id="开头段"><a href="#开头段" class="headerlink" title="开头段"></a>开头段</h2><p>记录男女<br>关注主旨句</p>
+<h2 id="中间段"><a href="#中间段" class="headerlink" title="中间段"></a>中间段</h2><p>听，脑记意思，听听力是如何<strong>反驳阅读内容</strong><br>笔,仅记录<strong>反驳阅读的专有名词</strong>，即对比专名，和<strong>明显简单的逻辑</strong>，一定要筛选信息<br>适当<strong>缩写</strong>，不要试图把单词都能拼写完整</p>
+<hr>
+<h1 id="补笔记"><a href="#补笔记" class="headerlink" title="补笔记"></a>补笔记</h1><p>按照第三段、第一段、第二段的顺序串意思、单词记全</p>
+]]></content>
+      <categories>
+        <category>TOEFL-Writing</category>
+      </categories>
+      <tags>
+        <tag>TOEFL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>TOEFL-writing-01</title>
+    <url>/2021/02/18/TOEFL-writing-01/</url>
+    <content><![CDATA[<h1 id="全文结构"><a href="#全文结构" class="headerlink" title="全文结构"></a>全文结构</h1><p> 开头段&lt;60&gt;<br>     总论点1&lt;160&gt;（分论点1+分论点2）<br>     总论点2&lt;160&gt;（分论点1+分论点2）<br> 结尾段&lt;60&gt;</p>
+<blockquote>
+<p>例1：Some students enjoy taking distance learning courses on the computer or television. Other students would rather take all of their courses with a teacher in classroom. Which is these options do you think is better?</p>
+</blockquote>
+<p>破题：</p>
+<ol>
+<li>why：理由说（在线教育为什么好）</li>
+<li>切逻辑终点(good)：方面说（好在什么方面）</li>
+<li>切逻辑起点(distance learning)：方面说（有哪些种在线教育）</li>
+</ol>
+<p>观点：在线教育好</p>
+<ul>
+<li>对学生学习好<ul>
+<li>能获得很多的知识</li>
+<li>能激发学生学习兴趣</li>
+</ul>
+</li>
+<li>对学生个人发展好<ul>
+<li>培养人际交往能力</li>
+<li>培养坚持不懈</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="开头段"><a href="#开头段" class="headerlink" title="开头段"></a>开头段</h1><h2 id="现象引入"><a href="#现象引入" class="headerlink" title="现象引入"></a>现象引入</h2><p>N，同位语，has been valued and even triggers a heated discussion over…题目改写：</p>
+<ul>
+<li><p>N：</p>
+<ul>
+<li>话题词汇（在线教育）</li>
+<li>从题目中选择的中性词汇（教育、上课方式等）</li>
+</ul>
+</li>
+<li><p>同位语</p>
+<ul>
+<li>N为中性词：the fundation of a quality life</li>
+<li>N为褒义词：the objective everyone strives for</li>
+</ul>
+</li>
+<li><p>over(whether/what引导的)名词性从句</p>
+</li>
+</ul>
+<blockquote>
+<p>Education, the foundation of a quality life, <strong>has been valued and even triggers a heated discussion over</strong> whether students should take courses online or in classrooms. (现象引入)</p>
+</blockquote>
+<h2 id="对方观点"><a href="#对方观点" class="headerlink" title="对方观点"></a>对方观点</h2><p>主语， in some people’s view,…<br>仅需阐明现象，不用加理由</p>
+<blockquote>
+<p>Learning in traditional classrooms, <strong>in some people’s views</strong>, continues to be an effective way.</p>
+</blockquote>
+<h2 id="自己观点"><a href="#自己观点" class="headerlink" title="自己观点"></a>自己观点</h2><p>Contrary to these people’s opinions is my perspective that …, due to … (e.g. due to the contributions to果/ due to因/ including小)</p>
+<blockquote>
+<p><strong>Contrary to these people’s opinions is my perspective that</strong> online learning, which requires students to attend classes on computers or televisions, is superior, <strong>due to the contributions to</strong> their academic performance <strong>and</strong> personal development. (自己观点)</p>
+</blockquote>
+<hr>
+<h1 id="中间段"><a href="#中间段" class="headerlink" title="中间段"></a>中间段</h1><h2 id="总论点1"><a href="#总论点1" class="headerlink" title="总论点1"></a>总论点1</h2><p>看图说话：在线教育对学生学习好<br>加对比和分论点</p>
+<blockquote>
+<p><strong>What must be prioritized is that</strong> taking distance-learning courses, instead of having courses in traditional classrooms, is beneficial to students’ academic learning, by offering them more knowledge and triggering their enthusiasm in learning. (总论点)</p>
+</blockquote>
+<h3 id="分论点1"><a href="#分论点1" class="headerlink" title="分论点1"></a>分论点1</h3><p>短句</p>
+<blockquote>
+<p>**To begin with,**it is online education that provides students with the access to a large quantity of expertises. </p>
+</blockquote>
+<h3 id="解释1"><a href="#解释1" class="headerlink" title="解释1"></a>解释1</h3><p>长句<br>diatance learning ——&gt; knowledge<br>理由说：有search engine<br>方面说：学生能获得什么知识</p>
+<p>针对正面的论证写反面</p>
+<blockquote>
+<p><strong>To begin with,</strong> it is online education that provides students with the access to a large quantity of expertise. (分论点1) <strong>In detail,</strong> on the Internet, students can acquire a wide range of knowledge in history, art and science, enlarging their knowledge base; <strong>in contrast,</strong> such a large amount of knowledge cannot be obtained when they are instructed by only one teacher in concrete classrooms. (解释1+反面对比)</p>
+</blockquote>
+<h3 id="分论点2"><a href="#分论点2" class="headerlink" title="分论点2"></a>分论点2</h3><p>短句</p>
+<blockquote>
+<p><strong>Moreover,</strong> never can we ignore the significance of distance ducation to students’ interest in learning. (分论点2 ) </p>
+</blockquote>
+<h3 id="解释2"><a href="#解释2" class="headerlink" title="解释2"></a>解释2</h3><p>长句<br>diatance learning ——&gt; interests<br>对于学习哪些方面有兴趣</p>
+<blockquote>
+<p><strong>To explain it further,</strong> by receiving education on the Internet, students will find it more interesting to deal with mathematical problems, do research, and write proposals; <strong>on the other hand,</strong> will they be passionate about these tasks when teachers always lecture in brick-and-mortar classrooms? ( 解释2 )</p>
+</blockquote>
+<h2 id="总论点2"><a href="#总论点2" class="headerlink" title="总论点2"></a>总论点2</h2><p>personal deve.</p>
+<blockquote>
+<p><strong>What should be equally worth discussing is that</strong> receiving distance education, rather than having traditional face-to-face courses, can promote students’ personal development, by honing their interpersonal skills and cultivating their persistence. ( 总论点)</p>
+</blockquote>
+<h3 id="分论点1-1"><a href="#分论点1-1" class="headerlink" title="分论点1"></a>分论点1</h3><blockquote>
+<p><strong>To begin with,</strong> it is well-acknowledged taht educated on the Internet, students can practice their communication skills.</p>
+</blockquote>
+<h3 id="解释1-1"><a href="#解释1-1" class="headerlink" title="解释1"></a>解释1</h3><p>distance ——&gt; interpersonal<br>为什么能够培养社交能力</p>
+<blockquote>
+<p><strong>Specifically,</strong> only in online learning environments will students come across peop;e from diverse backgrounds, such as classmates, instructors and school administrators, with whom they can practice their tactics of socializing; <strong>on the contrary</strong>, under no circumstances will they interact with such a variety of people if they are educated in traditional classroom settings.</p>
+</blockquote>
+<h3 id="分论点2-1"><a href="#分论点2-1" class="headerlink" title="分论点2"></a>分论点2</h3><p>distance learning ——&gt; persistence<br>理由说：为什么会变的persistence</p>
+<blockquote>
+<p><strong>Additionally</strong>, when having a distance education program,students will become more determined. ( 分论点2 ) </p>
+</blockquote>
+<h3 id="解释2-1"><a href="#解释2-1" class="headerlink" title="解释2"></a>解释2</h3><p><strong>To be more specific</strong>, the more distance-learning courses they take on the Internet, the more distractions they will be exposed to, stimulating them to resist temptations and foster their persistence; however, it is impossible for them to encounter these lures in traditional classrooms.</p>
+<h1 id="结尾段"><a href="#结尾段" class="headerlink" title="结尾段"></a>结尾段</h1><blockquote>
+<p>Academic performance, <strong>the foundation of students’ future development</strong>, will be boosted when they receive online education. (总结总论点1) Personal development, <strong>essential contributors to students’ future success</strong>, will be<br>facilitated, if they are educated on the Internet. (总结总论<br>点2) <strong>To conclude, only by</strong> having distance education,<br><strong>instead of</strong> being taught in classrooms, <strong>can</strong> students reap numerous benefits. (总结全文)</p>
+</blockquote>
+<h1 id="模板总结"><a href="#模板总结" class="headerlink" title="模板总结"></a>模板总结</h1><h2 id="开头段-1"><a href="#开头段-1" class="headerlink" title="开头段"></a>开头段</h2><ol>
+<li>…, 同位语, has been valued and even triggers a heated discussion over …</li>
+<li>…, in some/many people’s view,…</li>
+<li>Contrary to these people’s opinions is my perspective that …, due to the contributions to … and …<h2 id="中间段-1"><a href="#中间段-1" class="headerlink" title="中间段"></a>中间段</h2></li>
+<li>What must be prioritized is that … /What is equally worth discussion is that…</li>
+<li>Initially/ Firstly /To begin with,</li>
+<li>To be more specific, /Specifically, / In detail, /To explain it further… + however, /in contrast, /on the contrary,/on the other hand,<h2 id="结尾段-1"><a href="#结尾段-1" class="headerlink" title="结尾段"></a>结尾段</h2></li>
+<li>第一个理由，同位语，will…</li>
+<li>第二个理由，同位语，will…</li>
+<li>In conclusion, only + 状语 + 半倒装</li>
+</ol>
+]]></content>
+      <categories>
+        <category>TOEFL-Writing</category>
+      </categories>
+      <tags>
+        <tag>TOEFL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>TOEFL-writing-04</title>
+    <url>/2021/03/09/TOEFL-writing-04/</url>
+    <content><![CDATA[<h1 id="对比总分结构"><a href="#对比总分结构" class="headerlink" title="对比总分结构"></a>对比总分结构</h1><p>总论点——阅读ts+听力ts——听力细节</p>
+<p>[Total 260字+]开头段（3句）——第一个理由段（2句）——第二个理由段（2句）——第三个理由段（3句）——结尾段（1句）</p>
+<h1 id="开头段"><a href="#开头段" class="headerlink" title="开头段"></a>开头段</h1><p><strong>主题(主语从句)</strong> is the focus of both the writer and the professor. In the writing, three <strong>三个TS的所属类别</strong>，including A, B and C, have been elaborated. The professor, however, claims that <strong>听力主旨</strong>.</p>
+<h1 id="第一个理由段"><a href="#第一个理由段" class="headerlink" title="第一个理由段"></a>第一个理由段</h1><p>As opposed to the writer’s idea that <strong>阅读的TS1</strong>, the professor states that <strong>听力的TS1</strong>. He/She advances the theory by saying that <strong>听力的细节</strong>.</p>
+<h1 id="第二个理由段"><a href="#第二个理由段" class="headerlink" title="第二个理由段"></a>第二个理由段</h1><p>The professor continues to discredit the writing’s assertion that <strong>阅读的TS2</strong>, by examining the fact that <strong>听力的TS2</strong>. In detail, he/she points out that <strong>听力的细节</strong>.</p>
+<h1 id="结尾段"><a href="#结尾段" class="headerlink" title="结尾段"></a>结尾段</h1><p>An apparent divide exists between the writer and the professor on <strong>主题（名词）</strong>.</p>
+<h1 id="行文原则"><a href="#行文原则" class="headerlink" title="行文原则"></a>行文原则</h1><h2 id="对比意识"><a href="#对比意识" class="headerlink" title="对比意识"></a>对比意识</h2><p><strong>仅写阅读和听力的对比</strong>内容</p>
+<ul>
+<li>阅读的某个细节是否需要写，取决于听力是否有针对这个点反驳</li>
+<li>听力的某个细节是否需要写,取决于是否反驳阅读(应该是听力时已经筛选好了)</li>
+</ul>
+<h2 id="读者意识"><a href="#读者意识" class="headerlink" title="读者意识"></a>读者意识</h2><p>让一个没有读过阅读没有听过听力的人,看文章就能看懂</p>
+<ul>
+<li>对于文章的主题词进行解释</li>
+<li>尽可能描述直接、清楚，哪怕字数多些</li>
+</ul>
+<h2 id="时态"><a href="#时态" class="headerlink" title="时态"></a>时态</h2><p>时态由动作本身来决定</p>
+]]></content>
+      <categories>
+        <category>TOEFL-Writing</category>
+      </categories>
+      <tags>
+        <tag>TOEFL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>TOEFL-writing-00</title>
     <url>/2021/02/19/TOEFL-writing-00/</url>
     <content><![CDATA[<h1 id="题型"><a href="#题型" class="headerlink" title="题型"></a>题型</h1><ol>
@@ -798,146 +1082,6 @@
       </tags>
   </entry>
   <entry>
-    <title>TOEFL-writing-01</title>
-    <url>/2021/02/18/TOEFL-writing-01/</url>
-    <content><![CDATA[<h1 id="全文结构"><a href="#全文结构" class="headerlink" title="全文结构"></a>全文结构</h1><p> 开头段&lt;60&gt;<br>     总论点1&lt;160&gt;（分论点1+分论点2）<br>     总论点2&lt;160&gt;（分论点1+分论点2）<br> 结尾段&lt;60&gt;</p>
-<blockquote>
-<p>例1：Some students enjoy taking distance learning courses on the computer or television. Other students would rather take all of their courses with a teacher in classroom. Which is these options do you think is better?</p>
-</blockquote>
-<p>破题：</p>
-<ol>
-<li>why：理由说（在线教育为什么好）</li>
-<li>切逻辑终点(good)：方面说（好在什么方面）</li>
-<li>切逻辑起点(distance learning)：方面说（有哪些种在线教育）</li>
-</ol>
-<p>观点：在线教育好</p>
-<ul>
-<li>对学生学习好<ul>
-<li>能获得很多的知识</li>
-<li>能激发学生学习兴趣</li>
-</ul>
-</li>
-<li>对学生个人发展好<ul>
-<li>培养人际交往能力</li>
-<li>培养坚持不懈</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="开头段"><a href="#开头段" class="headerlink" title="开头段"></a>开头段</h1><h2 id="现象引入"><a href="#现象引入" class="headerlink" title="现象引入"></a>现象引入</h2><p>N，同位语，has been valued and even triggers a heated discussion over…题目改写：</p>
-<ul>
-<li><p>N：</p>
-<ul>
-<li>话题词汇（在线教育）</li>
-<li>从题目中选择的中性词汇（教育、上课方式等）</li>
-</ul>
-</li>
-<li><p>同位语</p>
-<ul>
-<li>N为中性词：the fundation of a quality life</li>
-<li>N为褒义词：the objective everyone strives for</li>
-</ul>
-</li>
-<li><p>over(whether/what引导的)名词性从句</p>
-</li>
-</ul>
-<blockquote>
-<p>Education, the foundation of a quality life, <strong>has been valued and even triggers a heated discussion over</strong> whether students should take courses online or in classrooms. (现象引入)</p>
-</blockquote>
-<h2 id="对方观点"><a href="#对方观点" class="headerlink" title="对方观点"></a>对方观点</h2><p>主语， in some people’s view,…<br>仅需阐明现象，不用加理由</p>
-<blockquote>
-<p>Learning in traditional classrooms, <strong>in some people’s views</strong>, continues to be an effective way.</p>
-</blockquote>
-<h2 id="自己观点"><a href="#自己观点" class="headerlink" title="自己观点"></a>自己观点</h2><p>Contrary to these people’s opinions is my perspective that …, due to … (e.g. due to the contributions to果/ due to因/ including小)</p>
-<blockquote>
-<p><strong>Contrary to these people’s opinions is my perspective that</strong> online learning, which requires students to attend classes on computers or televisions, is superior, <strong>due to the contributions to</strong> their academic performance <strong>and</strong> personal development. (自己观点)</p>
-</blockquote>
-<hr>
-<h1 id="中间段"><a href="#中间段" class="headerlink" title="中间段"></a>中间段</h1><h2 id="总论点1"><a href="#总论点1" class="headerlink" title="总论点1"></a>总论点1</h2><p>看图说话：在线教育对学生学习好<br>加对比和分论点</p>
-<blockquote>
-<p><strong>What must be prioritized is that</strong> taking distance-learning courses, instead of having courses in traditional classrooms, is beneficial to students’ academic learning, by offering them more knowledge and triggering their enthusiasm in learning. (总论点)</p>
-</blockquote>
-<h3 id="分论点1"><a href="#分论点1" class="headerlink" title="分论点1"></a>分论点1</h3><p>短句</p>
-<blockquote>
-<p>**To begin with,**it is online education that provides students with the access to a large quantity of expertises. </p>
-</blockquote>
-<h3 id="解释1"><a href="#解释1" class="headerlink" title="解释1"></a>解释1</h3><p>长句<br>diatance learning ——&gt; knowledge<br>理由说：有search engine<br>方面说：学生能获得什么知识</p>
-<p>针对正面的论证写反面</p>
-<blockquote>
-<p><strong>To begin with,</strong> it is online education that provides students with the access to a large quantity of expertise. (分论点1) <strong>In detail,</strong> on the Internet, students can acquire a wide range of knowledge in history, art and science, enlarging their knowledge base; <strong>in contrast,</strong> such a large amount of knowledge cannot be obtained when they are instructed by only one teacher in concrete classrooms. (解释1+反面对比)</p>
-</blockquote>
-<h3 id="分论点2"><a href="#分论点2" class="headerlink" title="分论点2"></a>分论点2</h3><p>短句</p>
-<blockquote>
-<p><strong>Moreover,</strong> never can we ignore the significance of distance ducation to students’ interest in learning. (分论点2 ) </p>
-</blockquote>
-<h3 id="解释2"><a href="#解释2" class="headerlink" title="解释2"></a>解释2</h3><p>长句<br>diatance learning ——&gt; interests<br>对于学习哪些方面有兴趣</p>
-<blockquote>
-<p><strong>To explain it further,</strong> by receiving education on the Internet, students will find it more interesting to deal with mathematical problems, do research, and write proposals; <strong>on the other hand,</strong> will they be passionate about these tasks when teachers always lecture in brick-and-mortar classrooms? ( 解释2 )</p>
-</blockquote>
-<h2 id="总论点2"><a href="#总论点2" class="headerlink" title="总论点2"></a>总论点2</h2><p>personal deve.</p>
-<blockquote>
-<p><strong>What should be equally worth discussing is that</strong> receiving distance education, rather than having traditional face-to-face courses, can promote students’ personal development, by honing their interpersonal skills and cultivating their persistence. ( 总论点)</p>
-</blockquote>
-<h3 id="分论点1-1"><a href="#分论点1-1" class="headerlink" title="分论点1"></a>分论点1</h3><blockquote>
-<p><strong>To begin with,</strong> it is well-acknowledged taht educated on the Internet, students can practice their communication skills.</p>
-</blockquote>
-<h3 id="解释1-1"><a href="#解释1-1" class="headerlink" title="解释1"></a>解释1</h3><p>distance ——&gt; interpersonal<br>为什么能够培养社交能力</p>
-<blockquote>
-<p><strong>Specifically,</strong> only in online learning environments will students come across peop;e from diverse backgrounds, such as classmates, instructors and school administrators, with whom they can practice their tactics of socializing; <strong>on the contrary</strong>, under no circumstances will they interact with such a variety of people if they are educated in traditional classroom settings.</p>
-</blockquote>
-<h3 id="分论点2-1"><a href="#分论点2-1" class="headerlink" title="分论点2"></a>分论点2</h3><p>distance learning ——&gt; persistence<br>理由说：为什么会变的persistence</p>
-<blockquote>
-<p><strong>Additionally</strong>, when having a distance education program,students will become more determined. ( 分论点2 ) </p>
-</blockquote>
-<h3 id="解释2-1"><a href="#解释2-1" class="headerlink" title="解释2"></a>解释2</h3><p><strong>To be more specific</strong>, the more distance-learning courses they take on the Internet, the more distractions they will be exposed to, stimulating them to resist temptations and foster their persistence; however, it is impossible for them to encounter these lures in traditional classrooms.</p>
-<h1 id="结尾段"><a href="#结尾段" class="headerlink" title="结尾段"></a>结尾段</h1><blockquote>
-<p>Academic performance, <strong>the foundation of students’ future development</strong>, will be boosted when they receive online education. (总结总论点1) Personal development, <strong>essential contributors to students’ future success</strong>, will be<br>facilitated, if they are educated on the Internet. (总结总论<br>点2) <strong>To conclude, only by</strong> having distance education,<br><strong>instead of</strong> being taught in classrooms, <strong>can</strong> students reap numerous benefits. (总结全文)</p>
-</blockquote>
-<h1 id="模板总结"><a href="#模板总结" class="headerlink" title="模板总结"></a>模板总结</h1><h2 id="开头段-1"><a href="#开头段-1" class="headerlink" title="开头段"></a>开头段</h2><ol>
-<li>…, 同位语, has been valued and even triggers a heated discussion over …</li>
-<li>…, in some/many people’s view,…</li>
-<li>Contrary to these people’s opinions is my perspective that …, due to the contributions to … and …<h2 id="中间段-1"><a href="#中间段-1" class="headerlink" title="中间段"></a>中间段</h2></li>
-<li>What must be prioritized is that … /What is equally worth discussion is that…</li>
-<li>Initially/ Firstly /To begin with,</li>
-<li>To be more specific, /Specifically, / In detail, /To explain it further… + however, /in contrast, /on the contrary,/on the other hand,<h2 id="结尾段-1"><a href="#结尾段-1" class="headerlink" title="结尾段"></a>结尾段</h2></li>
-<li>第一个理由，同位语，will…</li>
-<li>第二个理由，同位语，will…</li>
-<li>In conclusion, only + 状语 + 半倒装</li>
-</ol>
-]]></content>
-      <categories>
-        <category>TOEFL-Writing</category>
-      </categories>
-      <tags>
-        <tag>TOEFL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>TOEFL-writing-02</title>
-    <url>/2021/02/20/TOEFL-writing-02/</url>
-    <content><![CDATA[<h1 id="笔记概述"><a href="#笔记概述" class="headerlink" title="笔记概述"></a>笔记概述</h1><ol>
-<li>专有名词<br> 固定说法，很难找到同义词的名词（eg. 电脑、台灯…）</li>
-<li>意思（逻辑）<br>转折逻辑: however, but, although<br>并列逻辑: and, also, moreover, in addition<br>总分逻辑: such as, for example, one of which<br>因果逻辑: because, so, thus, therefore<br>顺序逻辑: first, and then, when, after</li>
-</ol>
-<hr>
-<h1 id="阅读笔记"><a href="#阅读笔记" class="headerlink" title="阅读笔记"></a>阅读笔记</h1><p>topic sentence关键词：支持topic sentence的专有名词</p>
-<h2 id="开头段："><a href="#开头段：" class="headerlink" title="开头段："></a>开头段：</h2><p>主题词，（3个）xxx（reason,goal…）</p>
-<h2 id="中间段："><a href="#中间段：" class="headerlink" title="中间段："></a>中间段：</h2><p>如果有小标题，小标题就是TS<br>细节只记录支持TS的名词</p>
-<hr>
-<h1 id="听力笔记"><a href="#听力笔记" class="headerlink" title="听力笔记"></a>听力笔记</h1><p><strong>脑记意思</strong><br>（主）对比专名<br>（次）逻辑符号<br>竖着写，每行一个词</p>
-<h2 id="开头段"><a href="#开头段" class="headerlink" title="开头段"></a>开头段</h2><p>记录男女<br>关注主旨句</p>
-<h2 id="中间段"><a href="#中间段" class="headerlink" title="中间段"></a>中间段</h2><p>听，脑记意思，听听力是如何<strong>反驳阅读内容</strong><br>笔,仅记录<strong>反驳阅读的专有名词</strong>，即对比专名，和<strong>明显简单的逻辑</strong>，一定要筛选信息<br>适当<strong>缩写</strong>，不要试图把单词都能拼写完整</p>
-<hr>
-<h1 id="补笔记"><a href="#补笔记" class="headerlink" title="补笔记"></a>补笔记</h1><p>按照第三段、第一段、第二段的顺序串意思、单词记全</p>
-]]></content>
-      <categories>
-        <category>TOEFL-Writing</category>
-      </categories>
-      <tags>
-        <tag>TOEFL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>TOEFL-writing-03</title>
     <url>/2021/02/20/TOEFL-writing-03/</url>
     <content><![CDATA[<h1 id="并列连词"><a href="#并列连词" class="headerlink" title="并列连词"></a>并列连词</h1><p>前后语法一致</p>
@@ -1026,31 +1170,50 @@
       </tags>
   </entry>
   <entry>
-    <title>TOEFL-writing-04</title>
-    <url>/2021/03/09/TOEFL-writing-04/</url>
-    <content><![CDATA[<h1 id="对比总分结构"><a href="#对比总分结构" class="headerlink" title="对比总分结构"></a>对比总分结构</h1><p>总论点——阅读ts+听力ts——听力细节</p>
-<p>[Total 260字+]开头段（3句）——第一个理由段（2句）——第二个理由段（2句）——第三个理由段（3句）——结尾段（1句）</p>
-<h1 id="开头段"><a href="#开头段" class="headerlink" title="开头段"></a>开头段</h1><p><strong>主题(主语从句)</strong> is the focus of both the writer and the professor. In the writing, three <strong>三个TS的所属类别</strong>，including A, B and C, have been elaborated. The professor, however, claims that <strong>听力主旨</strong>.</p>
-<h1 id="第一个理由段"><a href="#第一个理由段" class="headerlink" title="第一个理由段"></a>第一个理由段</h1><p>As opposed to the writer’s idea that <strong>阅读的TS1</strong>, the professor states that <strong>听力的TS1</strong>. He/She advances the theory by saying that <strong>听力的细节</strong>.</p>
-<h1 id="第二个理由段"><a href="#第二个理由段" class="headerlink" title="第二个理由段"></a>第二个理由段</h1><p>The professor continues to discredit the writing’s assertion that <strong>阅读的TS2</strong>, by examining the fact that <strong>听力的TS2</strong>. In detail, he/she points out that <strong>听力的细节</strong>.</p>
-<h1 id="结尾段"><a href="#结尾段" class="headerlink" title="结尾段"></a>结尾段</h1><p>An apparent divide exists between the writer and the professor on <strong>主题（名词）</strong>.</p>
-<h1 id="行文原则"><a href="#行文原则" class="headerlink" title="行文原则"></a>行文原则</h1><h2 id="对比意识"><a href="#对比意识" class="headerlink" title="对比意识"></a>对比意识</h2><p><strong>仅写阅读和听力的对比</strong>内容</p>
-<ul>
-<li>阅读的某个细节是否需要写，取决于听力是否有针对这个点反驳</li>
-<li>听力的某个细节是否需要写,取决于是否反驳阅读(应该是听力时已经筛选好了)</li>
-</ul>
-<h2 id="读者意识"><a href="#读者意识" class="headerlink" title="读者意识"></a>读者意识</h2><p>让一个没有读过阅读没有听过听力的人,看文章就能看懂</p>
-<ul>
-<li>对于文章的主题词进行解释</li>
-<li>尽可能描述直接、清楚，哪怕字数多些</li>
-</ul>
-<h2 id="时态"><a href="#时态" class="headerlink" title="时态"></a>时态</h2><p>时态由动作本身来决定</p>
+    <title>Troubleshooting</title>
+    <url>/2021/02/04/Troubleshooting/</url>
+    <content><![CDATA[<h2 id="【R】"><a href="#【R】" class="headerlink" title="【R】"></a>【R】</h2><ol>
+<li><p>20200312<br>outlierKD(final_ns$CS.lymph.nodes..2004..,lymph)</p>
+<blockquote>
+<p>报错：$ operator is invalid for atomic vectors<br>解决：赋值给对象后在放入函数<br>lymph &lt;- final_ns$CS.lymph.nodes..2004..<br>outlierKD(final_ns,lymph)</p>
+</blockquote>
+</li>
+<li><p>20200504<br>最无语最神经病的报错！！<br>kk &lt;- paste(“Surv(final_dat$Survival.months, final_dat$status)”,insertVar,sep=”~”);<br>fit_insertVar &lt;- survfit(as.formula(kk),data = final_dat)</p>
+<blockquote>
+<p>报错：找不到对象kk<br>解决：两个&lt;&lt;表示将kk设在全局<br>kk &lt;&lt;- paste(“Surv(final_dat$Survival.months, final_dat$status)”,insertVar,sep=”~”);</p>
+</blockquote>
+</li>
+<li><p>201128<br>BiocManager::install(“hgu133a2.db”)</p>
+<blockquote>
+<p>Warning：installation of package ‘hgu133a2.db’ had non-zero exit status<br>解决：一般是依赖包的问题，先加载完所有的dependency就可以library了</p>
+</blockquote>
+</li>
+<li><p>201224<br>BiocManager::install(“DOSE”)</p>
+<blockquote>
+<p>Warning message:<br>In file.copy(savedcopy, lib, recursive = TRUE) :<br>拷贝C:\Users\Surface\Documents\R\win-library\4.0\00LOCK\vctrs\libs\x64\vctrs.dll到C:\Users\Surface\Documents\R\win-library\4.0\vctrs\libs\x64\vctrs.dll时出了问题：Permission denied<br>解决：依赖的包现在正在环境下使用，需要把它先<code>detach()</code>，再安装</p>
+</blockquote>
+</li>
+<li><p>210103<br>有的时候RStudio会突然卡住，只有右上角的最小化、关闭、窗口大小可以点，这个时候点一下那个窗口大小，再全屏一下就可以了，超级神奇</p>
+</li>
+<li><p>210201<br>BiocManager::install()</p>
+<blockquote>
+<p>Installation path not writeable, unable to update packages: boot, class,<br>codetools, foreign, KernSmooth, Matrix, nlme, nnet, spatial<br>解决：installed.packages()[, c(“Package”, “LibPath”)] 来查看所有的R包位置。<br>Sys.chmod(“file”,’777’) 设置装在哪里，其中file是你R包安装的位置</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="【Python】"><a href="#【Python】" class="headerlink" title="【Python】"></a>【Python】</h2><ol>
+<li>201128<blockquote>
+<p>报错：python SyntaxError: EOL while scanning string literal<br>错误原因：字符串以 \ 结尾 或者字符串缺少引号。</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="【Perl】"><a href="#【Perl】" class="headerlink" title="【Perl】"></a>【Perl】</h2><p>—To Be Continue—</p>
 ]]></content>
       <categories>
-        <category>TOEFL-Writing</category>
+        <category>Records</category>
       </categories>
       <tags>
-        <tag>TOEFL</tag>
+        <tag>Debug</tag>
       </tags>
   </entry>
   <entry>
@@ -1394,53 +1557,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Troubleshooting</title>
-    <url>/2021/02/04/Troubleshooting/</url>
-    <content><![CDATA[<h2 id="【R】"><a href="#【R】" class="headerlink" title="【R】"></a>【R】</h2><ol>
-<li><p>20200312<br>outlierKD(final_ns$CS.lymph.nodes..2004..,lymph)</p>
-<blockquote>
-<p>报错：$ operator is invalid for atomic vectors<br>解决：赋值给对象后在放入函数<br>lymph &lt;- final_ns$CS.lymph.nodes..2004..<br>outlierKD(final_ns,lymph)</p>
-</blockquote>
-</li>
-<li><p>20200504<br>最无语最神经病的报错！！<br>kk &lt;- paste(“Surv(final_dat$Survival.months, final_dat$status)”,insertVar,sep=”~”);<br>fit_insertVar &lt;- survfit(as.formula(kk),data = final_dat)</p>
-<blockquote>
-<p>报错：找不到对象kk<br>解决：两个&lt;&lt;表示将kk设在全局<br>kk &lt;&lt;- paste(“Surv(final_dat$Survival.months, final_dat$status)”,insertVar,sep=”~”);</p>
-</blockquote>
-</li>
-<li><p>201128<br>BiocManager::install(“hgu133a2.db”)</p>
-<blockquote>
-<p>Warning：installation of package ‘hgu133a2.db’ had non-zero exit status<br>解决：一般是依赖包的问题，先加载完所有的dependency就可以library了</p>
-</blockquote>
-</li>
-<li><p>201224<br>BiocManager::install(“DOSE”)</p>
-<blockquote>
-<p>Warning message:<br>In file.copy(savedcopy, lib, recursive = TRUE) :<br>拷贝C:\Users\Surface\Documents\R\win-library\4.0\00LOCK\vctrs\libs\x64\vctrs.dll到C:\Users\Surface\Documents\R\win-library\4.0\vctrs\libs\x64\vctrs.dll时出了问题：Permission denied<br>解决：依赖的包现在正在环境下使用，需要把它先<code>detach()</code>，再安装</p>
-</blockquote>
-</li>
-<li><p>210103<br>有的时候RStudio会突然卡住，只有右上角的最小化、关闭、窗口大小可以点，这个时候点一下那个窗口大小，再全屏一下就可以了，超级神奇</p>
-</li>
-<li><p>210201<br>BiocManager::install()</p>
-<blockquote>
-<p>Installation path not writeable, unable to update packages: boot, class,<br>codetools, foreign, KernSmooth, Matrix, nlme, nnet, spatial<br>解决：installed.packages()[, c(“Package”, “LibPath”)] 来查看所有的R包位置。<br>Sys.chmod(“file”,’777’) 设置装在哪里，其中file是你R包安装的位置</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="【Python】"><a href="#【Python】" class="headerlink" title="【Python】"></a>【Python】</h2><ol>
-<li>201128<blockquote>
-<p>报错：python SyntaxError: EOL while scanning string literal<br>错误原因：字符串以 \ 结尾 或者字符串缺少引号。</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="【Perl】"><a href="#【Perl】" class="headerlink" title="【Perl】"></a>【Perl】</h2><p>—To Be Continue—</p>
-]]></content>
-      <categories>
-        <category>Records</category>
-      </categories>
-      <tags>
-        <tag>Debug</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>conda/mamba Installation</title>
     <url>/2021/04/04/conda-mamba-Installation/</url>
     <content><![CDATA[<p>Conda 是⼀个开源的软件包管理系统和环境管理系统，用于安装多个版本的软件包及其依赖关系，并在它们之间轻松切换。Conda 主要是为 Python 程序创建的，适⽤于 Linux，OSX和 Windows，也可以打包和分发其他软件，如 R 和 Scala。</p>
@@ -1523,39 +1639,57 @@
       </tags>
   </entry>
   <entry>
-    <title>eCLIP Analysis</title>
-    <url>/2021/03/31/eCLIP-Analysis/</url>
-    <content><![CDATA[<ul>
-<li>文献：<a href="https://www.nature.com/articles/nmeth.3810">https://www.nature.com/articles/nmeth.3810</a></li>
-<li>方法：<a href="https://www.encodeproject.org/documents/739ca190-8d43-4a68-90ce-1a0ddfffc6fd/@@download/attachment/eCLIP_analysisSOP_v2.2.pdf">https://www.encodeproject.org/documents/739ca190-8d43-4a68-90ce-1a0ddfffc6fd/@@download/attachment/eCLIP_analysisSOP_v2.2.pdf</a></li>
-<li> 建库原理：<img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20210329085640993.png" alt="image-20210329085640993"></li>
-<li>软件都在/publis/shaojf/Course/NGS/Tools/eCLIP.tools</li>
-<li>X 表示cross-link的位置，在read2</li>
+    <title>all about UMI-tools</title>
+    <url>/2021/04/19/all-about-UMI-tools/</url>
+    <content><![CDATA[<h1 id="UMI-tools"><a href="#UMI-tools" class="headerlink" title="UMI-tools"></a>UMI-tools</h1><p><a href="https://www.jianshu.com/p/c6eac2e1f02a">https://www.jianshu.com/p/c6eac2e1f02a</a><br><a href="https://umi-tools.readthedocs.io/en/latest/">https://umi-tools.readthedocs.io/en/latest/</a><br><a href="https://github.com/CGATOxford/UMI-tools/blob/master/doc/QUICK_START.md">https://github.com/CGATOxford/UMI-tools/blob/master/doc/QUICK_START.md</a></p>
+<p>For example, in a standard iCLIP experiment, the barcode is made of 3 random bases, followed by a 4 base library barcode, followed by 2 more random bases. Thus the <code>--bc-pattern</code> would be “NNNXXXXNN”.</p>
+<center><img src="/img/scATAC/UMI.png" alt="UMI" style="zoom:70%;" /></center>
+The processed reads could then be passed to a demultiplexing tool to deal with the library part of the barcode.
+
+<ul>
+<li><p>Example UMI extraction:<br>UMI is bases 3-7, bases 1-2 and 7-8 are the sample barcode and need to be removed(取3-7是因为前几个base测序质量不好)</p>
+<p>@HISEQ:87:00000000 read1<br>AAGGTTGCTGATTGGATGGGCTAG</p>
+</li>
 </ul>
-<p>Read1包括barcode<br>Read 2 前几个碱基叫Random-mer（UMI），UMI碱基放在name里面<br>测序长度比读段长，要去接头</p>
-<h1 id="分析路线"><a href="#分析路线" class="headerlink" title="分析路线"></a>分析路线</h1><ol>
-<li>Fastqc查看质量及adapter</li>
-<li>Demultiplex分离in-line barcode及UMI处理+cutadapt</li>
-<li>STAR比对（adaptor一般出现在末端，STAR用local模式，有没有adaptor影响不大）</li>
-<li>基于UMI删除PCR重复（Barcode一样的放到一个fastq，算作Tech rep）</li>
-<li>合并技术重复（得到两个bio rep的文件）</li>
-<li>提取read2</li>
-<li>生成bigwig用于可视化</li>
-<li>用clipper、MACS2和pureclip进行peakcalling（MACS2跑出的效果很差；clipper效果较好；pureclip特别占内存，效果一般）</li>
-<li>基于input进行normalization（有些基因表达水平高，有些低，在外显子上读段多）</li>
-</ol>
-<h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><h2 id="fastqc"><a href="#fastqc" class="headerlink" title="fastqc"></a>fastqc</h2><p>可以指定查看哪一个adaptor，四个adaptor比例大概是20%，比较理想</p>
-<h2 id="STAR"><a href="#STAR" class="headerlink" title="STAR"></a>STAR</h2><p>–alignEndsType   default: Local<br>Local—standard local alignment with soft-clipping allowed<br>EndToEnd—force end-to-end read alignment, do not soft-clip<br>Extend5pOfRead1—fully extend only the 5p of the read1, all other ends: local alignment<br>Extend5pOfReads12—fully extend only the 5p of the both read1 and read2, all other ends:local alignment</p>
-<h2 id="Pureclip"><a href="#Pureclip" class="headerlink" title="Pureclip"></a>Pureclip</h2><p><a href="https://github.com/skrakau/PureCLIP">https://github.com/skrakau/PureCLIP</a><br><a href="https://pureclip.readthedocs.io/en/latest/GettingStarted/index.html">https://pureclip.readthedocs.io/en/latest/GettingStarted/index.html</a></p>
-<p>会得到crosslink sites和Binding regions</p>
-<h2 id="MACS2"><a href="#MACS2" class="headerlink" title="MACS2"></a>MACS2</h2><p>基于STAR比对的结果，-f BAMPE出来的fragment size=1982.3<br>为什么会这么大</p>
-<h2 id="UMI-Tools"><a href="#UMI-Tools" class="headerlink" title="UMI_Tools"></a>UMI_Tools</h2><p>umi_tools dedup</p>
-<h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># https://www.encodeproject.org/pipelines/ENCPL357ADL/</span></span><br><span class="line"><span class="comment"># setup the environment</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># cd /public/workspace/shaojf/NGS2021/shaolab2/tools/clipper</span></span><br><span class="line"><span class="comment"># conda env create -f environment3.yml</span></span><br><span class="line"><span class="comment"># conda activate clipper3</span></span><br><span class="line"><span class="comment"># pip install .</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># cd /public/workspace/shaojf/NGS2021/shaolab2/tools/merge_peaks-0.1.0</span></span><br><span class="line"><span class="comment"># conda create -n perl5</span></span><br><span class="line"><span class="comment"># conda activate perl5</span></span><br><span class="line"><span class="comment">###### conda install -c bioconda perl-statistics-basic perl-statistics-r perl-statistics-distributions</span></span><br><span class="line"><span class="comment"># conda install -c bioconda perl-statistics-basic=1.6611 perl-statistics-r=0.34 perl-statistics-distributions=1.02</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># conda create -n py2 python=2.7</span></span><br><span class="line"><span class="comment"># conda activate py2</span></span><br><span class="line"><span class="comment"># conda install cython scikit-learn future matplotlib bz2file</span></span><br><span class="line"><span class="comment"># conda install -c bioconda pysam</span></span><br><span class="line"><span class="comment"># cd /public/workspace/shaojf/NGS2021/shaolab2/tools/eclipdemux-master</span></span><br><span class="line"><span class="comment"># easy_install .</span></span><br><span class="line"><span class="comment"># cd ../gscripts/</span></span><br><span class="line"><span class="comment"># easy_install .</span></span><br><span class="line"><span class="comment"># cd ../makebigwigfiles-master/</span></span><br><span class="line"><span class="comment"># easy_install .</span></span><br><span class="line"><span class="comment">##### ln -s /public/workspace/shaojf/Course/NGS/Tools/eclip.tools/eclipdemux-master/eclipdemux_package/demux.py /public/workspace/shaojf/anaconda3/envs/py2/bin/eclipdemux</span></span><br><span class="line"><span class="comment"># cd /public/workspace/shaojf/anaconda3/envs/py2/bin</span></span><br><span class="line"><span class="comment"># ln -s demux_paired_end.py eclipdemux</span></span><br><span class="line"><span class="comment"># ln -s ../../clipper3/bin/clipper</span></span><br><span class="line"><span class="comment"># ln -s ../../perl5/bin/perl</span></span><br><span class="line"><span class="comment"># ln -s /public/workspace/shaojf/Course/NGS/Tools/eclip.tools/merge_peaks-0.1.0/bin/*.* .</span></span><br><span class="line"><span class="comment"># ln -s /public/workspace/shaojf/Course/NGS/Tools/eclip.tools/merge_peaks-0.1.0/bin/perl/*.* .</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># -----------------&gt;</span></span><br><span class="line"><span class="comment"># 以上为环境配置过程</span></span><br><span class="line"><span class="comment"># -----------------&gt;</span></span><br><span class="line"></span><br><span class="line">conda activate py2</span><br><span class="line"><span class="comment"># py2的bin下有clipper3的软连接，可以直接用clipper3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##### ln -s /public/workspace/shaojf/anaconda3/envs/clipper3 /public/workspace/stu18230130/anaconda3/envs/clipper3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果自行安装过conda的，请执行以下操作，将shaojf用户的conda环境链接到自己的conda环境；</span></span><br><span class="line"><span class="comment"># 如果没有安装过conda，则无需执行</span></span><br><span class="line">ln -s /public/workspace/shaojf/anaconda3/envs/py2 /public/workspace/`whoami`/anaconda3/envs/py2</span><br><span class="line">wkdir=/public/workspace/shaojf/NGS2021/shaolab2</span><br><span class="line">genomefa=/public/workspace/shaojf/Course/NGS/Reference/UCSC/hg38/hg38.fa</span><br><span class="line">stardir=/public/workspace/shaojf/Course/NGS/Reference/UCSC/hg38/UCSC.hg38.STAR.v2.7.1a</span><br><span class="line">chromsize=/public/workspace/shaojf/Course/NGS/Reference/UCSC/hg38.chrom.sizes</span><br><span class="line">ncores=</span><br><span class="line">conda activate py2</span><br><span class="line"><span class="comment"># python3会报错！！！</span></span><br><span class="line"></span><br><span class="line"><span class="comment">############## 准备数据 ##############</span></span><br><span class="line"><span class="comment"># 用UCSC hg38.fa是因为clipper自带的注释文件是含有chr字符串的</span></span><br><span class="line"><span class="comment"># 一开会的参考序列不全，缺chr7-9</span></span><br><span class="line"><span class="comment"># STAR --runMode genomeGenerate --runThreadN 16 --genomeDir UCSC.hg38.STAR.v2.7.1a --genomeFastaFiles hg38.fa</span></span><br><span class="line">mkdir -p <span class="variable">$HOME</span>/NGS2021/shaolab2/</span><br><span class="line"><span class="comment"># 将/public/workspace/shaojf/Course/NGS/DataSets/eCLIP下的相关数据ln -s到自己的工作路径</span></span><br><span class="line"></span><br><span class="line"><span class="comment">############## fastqc查看adapter ##############</span></span><br><span class="line"><span class="comment"># yeolabbarcodes.txt</span></span><br><span class="line"><span class="comment"># 可以问做实验的人要</span></span><br><span class="line"><span class="comment"># --adapters 检测一下有没有以下的barcode</span></span><br><span class="line">mkdir <span class="variable">$wkdir</span>/1.fastqc</span><br><span class="line">time fastqc -o <span class="variable">$wkdir</span>/1.fastqc -t <span class="variable">$ncores</span> \</span><br><span class="line">  --adapters <span class="variable">$wkdir</span>/configFiles/yeolabbarcodes.txt <span class="variable">$wkdir</span>/data/RBFOX2-204-*</span><br><span class="line"><span class="comment"># 查看哪些barcode被测到</span></span><br><span class="line"><span class="comment"># grep -A &lt;显示行数&gt;: 除了显示符合范本样式的那一列之外，并显示该行之后的内容。</span></span><br><span class="line"><span class="comment"># barcode从第一个碱基开始，用-A 2输出第一行</span></span><br><span class="line">unzip <span class="variable">$wkdir</span>/1.fastqc/RBFOX2-204-CLIP_S1_R1_fastqc.zip</span><br><span class="line">grep -A 2 <span class="string">&quot;Adapter Content&quot;</span> <span class="variable">$wkdir</span>/1.fastqc/RBFOX2-204-CLIP_S1_R1_fastqc/fastqc_data.txt | \</span><br><span class="line">awk <span class="string">&#x27;BEGIN&#123;for(i=2;i&lt;=13;i++)&#123;ids[i]=&quot;A&quot;&#125;&#125;&#123;for(i=2;i&lt;=13;i++)&#123;if($i&gt;10 &amp;&amp; NR&gt;2)&#123;print ids[i]&quot;\t&quot;$i&#125;else&#123;ids[i]=$i&#125;&#125;&#125;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化ids数组，如果数值大于10且行数&gt;2，根据数组下标打印ids</span></span><br><span class="line"><span class="comment"># awk-出现的比例大于10%的，打印出来</span></span><br><span class="line"><span class="comment"># A01     17.773141608744858</span></span><br><span class="line"><span class="comment"># B06     14.295544471332855</span></span><br><span class="line"><span class="comment"># C01     15.382434142104247</span></span><br><span class="line"><span class="comment"># D8f     17.92395807937699</span></span><br><span class="line"><span class="comment"># firefox $wkdir/1.fastqc/RBFOX2-204-*.html</span></span><br><span class="line"></span><br><span class="line"><span class="comment">############## adapter分离及切除 ##############</span></span><br><span class="line"><span class="comment"># 时间很长，可从课程目录建立软链接</span></span><br><span class="line">mkdir <span class="variable">$wkdir</span>/2.demultiplexed/</span><br><span class="line"><span class="comment"># prefix=RBFOX2-204-CLIP_S1</span></span><br><span class="line"><span class="comment"># cd $wkdir</span></span><br><span class="line"><span class="comment"># --dataset 不能用绝对路径。。。。因为程序只能调用相对路径（前面会自己加./）</span></span><br><span class="line">datapre=RBFOX2</span><br><span class="line"><span class="keyword">for</span> prefix <span class="keyword">in</span> RBFOX2-204-CLIP_S1 RBFOX2-204-INPUT_S2</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  name=`<span class="built_in">echo</span> <span class="variable">$prefix</span> | cut -f 1 -d <span class="string">&quot;_&quot;</span> | cut -f 3 -d <span class="string">&quot;-&quot;</span>`</span><br><span class="line">  eclipdemux --newname <span class="variable">$name</span> --dataset 2.demultiplexed/<span class="variable">$datapre</span> \</span><br><span class="line">    --expectedbarcodeida A01 --expectedbarcodeidb B06 \</span><br><span class="line">    --fastq_1 <span class="variable">$wkdir</span>/data/<span class="variable">$&#123;prefix&#125;</span>_R1.fastq.gz \</span><br><span class="line">    --fastq_2 <span class="variable">$wkdir</span>/data/<span class="variable">$&#123;prefix&#125;</span>_R2.fastq.gz \</span><br><span class="line">    --barcodesfile <span class="variable">$wkdir</span>/configFiles/yeolabbarcodes_20170101.fasta \</span><br><span class="line">    --length 5 --metrics <span class="variable">$wkdir</span>/2.demultiplexed/<span class="variable">$prefix</span>.metrics.txt &amp;</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 把UMI写到fastq名字行</span></span><br><span class="line">ll demultiplexed/*&#123;A01,B06,C01,D8f&#125;*</span><br><span class="line"><span class="comment"># samples:</span></span><br><span class="line"><span class="comment">#   -</span></span><br><span class="line"><span class="comment">#     - ip_read:</span></span><br><span class="line"><span class="comment">#       name: rep1_clip</span></span><br><span class="line"><span class="comment">#       barcodeids: [A01, B06]</span></span><br><span class="line">        </span><br><span class="line"><span class="comment">#     - input_read: （NIL开头的，检测不到任何barcode）</span></span><br><span class="line"><span class="comment">#       name: rep1_input</span></span><br><span class="line"><span class="comment">#       barcodeids: [NIL, NIL]</span></span><br><span class="line"><span class="comment">#   -</span></span><br><span class="line"><span class="comment">#     - ip_read:</span></span><br><span class="line"><span class="comment">#       name: rep2_clip</span></span><br><span class="line"><span class="comment">#       barcodeids: [C01, D8f]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#     - input_read:</span></span><br><span class="line"><span class="comment">#       name: rep2_input</span></span><br><span class="line"><span class="comment">#       barcodeids: [NIL, NIL]</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 以下省略，太慢了。所以在STAR步骤选local比对</span></span><br><span class="line"><span class="comment"># Cutadapt	round	1</span></span><br><span class="line"><span class="comment"># Takes output from demultiplexed files. Run to	trim off both 5’ and 3’	adapters on	both read</span></span><br><span class="line"><span class="comment"># mkdir clean</span></span><br><span class="line"><span class="comment"># for prefix in RBFOX2-204-CLIP_S1 RBFOX2-204-INPUT_S2</span></span><br><span class="line"><span class="comment"># do</span></span><br><span class="line"><span class="comment"># 	cutadapt -f fastq --match-read-wildcards --times 1 -e 0.1 -O 1 \</span></span><br><span class="line"><span class="comment"># 		--quality-cutoff 6 -m 18 -a NNNNNAGATCGGAAGAGCACACGTCTGAACTCCAGTCAC \</span></span><br><span class="line"><span class="comment"># 		-g CTTCCGATCTACAAGTT -g CTTCCGATCTTGGTCCT \</span></span><br><span class="line"><span class="comment"># 		-A AACTTGTAGATCGGA -A AGGACCAAGATCGGA -A ACTTGTAGATCGGAA \</span></span><br><span class="line"><span class="comment"># 		-A GGACCAAGATCGGAA -A CTTGTAGATCGGAAG -A GACCAAGATCGGAAG \</span></span><br><span class="line"><span class="comment"># 		-A TTGTAGATCGGAAGA -A ACCAAGATCGGAAGA -A TGTAGATCGGAAGAG \</span></span><br><span class="line"><span class="comment"># 		-A CCAAGATCGGAAGAG -A GTAGATCGGAAGAGC -A CAAGATCGGAAGAGC \</span></span><br><span class="line"><span class="comment"># 		-A TAGATCGGAAGAGCG -A AAGATCGGAAGAGCG -A AGATCGGAAGAGCGT \</span></span><br><span class="line"><span class="comment"># 		-A GATCGGAAGAGCGTC -A ATCGGAAGAGCGTCG -A TCGGAAGAGCGTCGT \</span></span><br><span class="line"><span class="comment"># 		-A CGGAAGAGCGTCGTG -A GGAAGAGCGTCGTGT \</span></span><br><span class="line"><span class="comment"># 		-o clean/$prefix.R1.adapterTrim.fastq.gz \</span></span><br><span class="line"><span class="comment"># 		-p clean/$prefix.R1.adapterTrim.fastq.gz \</span></span><br><span class="line"><span class="comment"># 		2.demultiplexed/$&#123;prefix&#125;_R1.fastq.gz 2.demultiplexed/$&#123;prefix&#125;_R2.fastq.gz \</span></span><br><span class="line"><span class="comment"># 		&gt; $prefix.adapterTrim.metrics &amp;</span></span><br><span class="line"><span class="comment"># done</span></span><br><span class="line"></span><br><span class="line"><span class="comment">############## STAR比对 ##############</span></span><br><span class="line"><span class="comment"># 时间较长，且占资源较多，可从课程目录建立软链接</span></span><br><span class="line"><span class="comment"># --alignEndsType Local</span></span><br><span class="line"></span><br><span class="line">mkdir -p <span class="variable">$wkdir</span>/3.starmapping</span><br><span class="line"><span class="keyword">for</span> fqpre <span class="keyword">in</span> RBFOX2.CLIP.&#123;A01,B06,C01,D8f&#125; RBFOX2.INPUT.NIL</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  lib=`<span class="built_in">echo</span> <span class="variable">$fqpre</span> | awk -F <span class="string">&quot;.&quot;</span> <span class="string">&#x27;&#123;print $NF&#125;&#x27;</span>`</span><br><span class="line">  STAR --runThreadN <span class="variable">$ncores</span> \</span><br><span class="line">    --runMode alignReads \</span><br><span class="line">    --genomeDir <span class="variable">$stardir</span> \</span><br><span class="line">    --readFilesIn <span class="variable">$wkdir</span>/2.demultiplexed/<span class="variable">$&#123;fqpre&#125;</span>.r1.fq.gz \</span><br><span class="line">      <span class="variable">$wkdir</span>/2.demultiplexed/<span class="variable">$&#123;fqpre&#125;</span>.r2.fq.gz \</span><br><span class="line">    --readFilesCommand zcat \</span><br><span class="line">    --outFileNamePrefix <span class="variable">$wkdir</span>/3.starmapping/<span class="variable">$&#123;fqpre&#125;</span>. \</span><br><span class="line">    --outSAMunmapped Within --outFilterMultimapNmax 1 \</span><br><span class="line">    --outFilterMultimapScoreRange 1 \</span><br><span class="line">    --outSAMtype BAM Unsorted \</span><br><span class="line">    --outSAMattributes All \</span><br><span class="line">    --outFilterScoreMin 10 \</span><br><span class="line">    --outSAMattrRGline ID:<span class="variable">$lib</span> --alignEndsType Local</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment">############## 根据UMI删除PCR重复 #############</span></span><br><span class="line">mkdir -p <span class="variable">$wkdir</span>/4.rmDupbam</span><br><span class="line"><span class="keyword">for</span> pre <span class="keyword">in</span> RBFOX2.CLIP.&#123;A01,B06,C01,D8f&#125; RBFOX2.INPUT.NIL</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  barcode_collapse_pe.py --bam <span class="variable">$wkdir</span>/3.starmapping/<span class="variable">$pre</span>.Aligned.out.bam \</span><br><span class="line">    --out_file <span class="variable">$wkdir</span>/4.rmDupbam/<span class="variable">$pre</span>.rmDup.bam \</span><br><span class="line">    --metrics_file <span class="variable">$wkdir</span>/4.rmDupbam/<span class="variable">$pre</span>.metrics &amp;</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="built_in">wait</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># UMItools的标记与eclipdemux不同，不可交叉混用</span></span><br><span class="line"><span class="comment"># UMItools是把UMI加在: @HISEQ:87:00000000_GGTT read1</span></span><br><span class="line"><span class="comment"># eclipdemux加在：@GGTT;HISEQ:87:00000000 read1</span></span><br><span class="line"><span class="comment"># https://github.com/CGATOxford/UMI-tools/blob/master/doc/QUICK_START.md</span></span><br><span class="line"><span class="comment"># 取3-7是因为前几个base测序质量不好</span></span><br><span class="line"><span class="comment"># UMI is bases 3-7, bases 1-2 and 7-8 are the sample barcode and need to be removed</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># @HISEQ:87:00000000 read1</span></span><br><span class="line"><span class="comment"># AAGGTTGCTGATTGGATGGGCTAG</span></span><br><span class="line"><span class="comment"># +</span></span><br><span class="line"><span class="comment"># DA1AEBFGGCG01DFH00B1FF0B</span></span><br><span class="line"><span class="comment"># will become:</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#  @HISEQ:87:00000000_GGTT read1</span></span><br><span class="line"><span class="comment">#  TGATTGGATGGGCTAG</span></span><br><span class="line"><span class="comment">#  + </span></span><br><span class="line"><span class="comment">#  1AFGGCG01DFH00B1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">############## 合并并排序 #############</span></span><br><span class="line">       <span class="comment"># $&#123;parameter#word&#125;</span></span><br><span class="line">       <span class="comment"># $&#123;parameter##word&#125;</span></span><br><span class="line">       <span class="comment">#        Remove  matching  prefix  pattern.  The word is expanded to produce a pattern just as in pathname expansion.  If the pattern matches the beginning of the value of parameter, then the result of</span></span><br><span class="line">       <span class="comment">#        the expansion is the expanded value of parameter with the shortest matching pattern (the ``#&#x27;&#x27; case) or the longest matching pattern (the ``##&#x27;&#x27; case) deleted.  If parameter is  @  or  *,  the</span></span><br><span class="line">       <span class="comment">#        pattern  removal  operation  is  applied  to each positional parameter in turn, and the expansion is the resultant list.  If parameter is an array variable subscripted with @ or *, the pattern</span></span><br><span class="line">       <span class="comment">#        removal operation is applied to each member of the array in turn, and the expansion is the resultant list.</span></span><br><span class="line"></span><br><span class="line">       <span class="comment"># $&#123;parameter%word&#125;</span></span><br><span class="line">       <span class="comment"># $&#123;parameter%%word&#125;</span></span><br><span class="line">       <span class="comment">#        Remove matching suffix pattern.  The word is expanded to produce a pattern just as in pathname expansion.  If the pattern matches a trailing portion of the expanded value  of  parameter,  then</span></span><br><span class="line">       <span class="comment">#        the result of the expansion is the expanded value of parameter with the shortest matching pattern (the ``%&#x27;&#x27; case) or the longest matching pattern (the ``%%&#x27;&#x27; case) deleted.  If parameter is @</span></span><br><span class="line">       <span class="comment">#        or *, the pattern removal operation is applied to each positional parameter in turn, and the expansion is the resultant list.  If parameter is an array variable subscripted with @  or  *,  the</span></span><br><span class="line">       <span class="comment">#        pattern removal operation is applied to each member of the array in turn, and the expansion is the resultant list.</span></span><br><span class="line"><span class="comment"># echo $&#123;pair%%:*&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 把A01到B06合并成rep1</span></span><br><span class="line">mkdir -p <span class="variable">$wkdir</span>/5.mergedbam</span><br><span class="line"><span class="keyword">for</span> pairs <span class="keyword">in</span> rep1:A01:B06 rep2:C01:D8f</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  pre=`<span class="built_in">echo</span> <span class="variable">$pairs</span> | cut -d <span class="string">&quot;:&quot;</span> -f 1`</span><br><span class="line">  barcode1=`<span class="built_in">echo</span> <span class="variable">$pairs</span> | cut -d <span class="string">&quot;:&quot;</span> -f 2`</span><br><span class="line">  barcode2=`<span class="built_in">echo</span> <span class="variable">$pairs</span> | cut -d <span class="string">&quot;:&quot;</span> -f 3`</span><br><span class="line">  samtools merge -n -@ <span class="variable">$ncores</span> <span class="variable">$wkdir</span>/5.mergedbam/RBFOX2.CLIP.<span class="variable">$pre</span>.bam \</span><br><span class="line">    <span class="variable">$wkdir</span>/4.rmDupbam/RBFOX2.CLIP.<span class="variable">$barcode1</span>.rmDup.bam \</span><br><span class="line">    <span class="variable">$wkdir</span>/4.rmDupbam/RBFOX2.CLIP.<span class="variable">$barcode2</span>.rmDup.bam &amp;</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="built_in">wait</span></span><br><span class="line"></span><br><span class="line"><span class="comment">############## 提取read2 #############</span></span><br><span class="line"><span class="comment"># samtools flags 128</span></span><br><span class="line"><span class="comment"># -f 128 把read2提取出来做peak calling</span></span><br><span class="line">mkdir -p <span class="variable">$wkdir</span>/6.read2bam</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="variable">$wkdir</span>/5.mergedbam/*.bam <span class="variable">$wkdir</span>/4.rmDupbam/RBFOX2.INPUT.NIL.rmDup.bam</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  filename=`basename <span class="variable">$i</span>`</span><br><span class="line">  samtools view -f 128 -@ <span class="variable">$ncores</span> \</span><br><span class="line">    -bo <span class="variable">$wkdir</span>/6.read2bam/<span class="variable">$filename</span> <span class="variable">$i</span> &amp;</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="built_in">wait</span></span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> <span class="variable">$wkdir</span>/6.read2bam/*.bam</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  filename=`basename <span class="variable">$file</span> | sed <span class="string">&#x27;s/.bam//&#x27;</span>`</span><br><span class="line">  samtools sort -@ <span class="variable">$ncores</span> -o <span class="variable">$wkdir</span>/6.read2bam/<span class="variable">$filename</span>.srt.bam <span class="variable">$file</span> &amp;</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="built_in">wait</span></span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> <span class="variable">$wkdir</span>/6.read2bam/*.srt.bam</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  samtools index <span class="variable">$file</span> &amp;</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="built_in">wait</span></span><br><span class="line"></span><br><span class="line"><span class="comment">############## 生成bigwig #############</span></span><br><span class="line"><span class="comment"># 与后续clipper没有先后关系，后台运行即可</span></span><br><span class="line"><span class="comment"># --direction r 需要标记链的方向（链特异性建库）</span></span><br><span class="line"><span class="comment"># samtools view -H $wkdir/5.mergedbam/RBFOX2.CLIP.rep1.bam | \</span></span><br><span class="line"><span class="comment"># 	awk &#x27;$1==&quot;@SQ&quot;&#123;print $2&quot;\t&quot;$3&#125;&#x27; | \</span></span><br><span class="line"><span class="comment"># 	sed &#x27;s?SN:??;s?LN:??&#x27; &gt; hg38.chrom.size</span></span><br><span class="line">mkdir -p <span class="variable">$wkdir</span>/7.bigwigfile</span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> <span class="variable">$wkdir</span>/6.read2bam/*.srt.bam</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  filename=`basename <span class="variable">$file</span> | sed <span class="string">&#x27;s/.srt.bam//&#x27;</span>`</span><br><span class="line">  makebigwigfiles --bam <span class="variable">$file</span> --genome <span class="variable">$chromsize</span> \</span><br><span class="line">    --bw_pos <span class="variable">$wkdir</span>/7.bigwigfile/<span class="variable">$filename</span>.r2.norm.pos.bw \</span><br><span class="line">    --bw_neg <span class="variable">$wkdir</span>/7.bigwigfile/<span class="variable">$filename</span>.r2.norm.neg.bw \</span><br><span class="line">    --direction r &amp;</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 也可以用deeptools的bamCoverage来生成bigwig</span></span><br><span class="line"><span class="comment"># for file in $wkdir/6.read2bam/*.bam</span></span><br><span class="line"><span class="comment"># do</span></span><br><span class="line"><span class="comment"># 	samtools index $file</span></span><br><span class="line"><span class="comment"># 	bamCoverage -b mergedbam/$prefix.r2.bam \</span></span><br><span class="line"><span class="comment"># 		-o bigwigfile/$prefix.r2.norm.pos.bw \</span></span><br><span class="line"><span class="comment"># 		-p 2 --binSize 10 --smoothLength 100 \</span></span><br><span class="line"><span class="comment"># 		--normalizeUsing CPM --filterRNAstrand forward &amp;</span></span><br><span class="line"><span class="comment"># 	bamCoverage -b mergedbam/$prefix.r2.bam \</span></span><br><span class="line"><span class="comment"># 		-o bigwigfile/$prefix.r2.norm.neg.bw \</span></span><br><span class="line"><span class="comment"># 		-p 2 --binSize 10 --smoothLength 100 \</span></span><br><span class="line"><span class="comment"># 		--normalizeUsing CPM --filterRNAstrand reverse &amp;</span></span><br><span class="line"><span class="comment"># done</span></span><br><span class="line"><span class="comment"># 如果想把负链为负数，则可以用bigwigtowig结合awk运算，再转回bigwig</span></span><br><span class="line"></span><br><span class="line"><span class="comment">############## clipper生成peak #############</span></span><br><span class="line"><span class="comment"># clipper依赖特定的scikit-learn，单独给它建立一个conda env，但可以用软链接链到py2环境</span></span><br><span class="line"><span class="comment"># 必须为sorted bam以及index过的</span></span><br><span class="line"><span class="comment"># hg38会报错，但GRCh38_v29则不会，无解</span></span><br><span class="line"><span class="comment"># clipper很慢，用nohup或screen防止中断</span></span><br><span class="line"><span class="comment"># -g ENSG00000166579 此处用一个基因作为示例，可以快速得到结果</span></span><br><span class="line">mkdir -p <span class="variable">$wkdir</span>/8.peakcalling/</span><br><span class="line"><span class="keyword">for</span> rep <span class="keyword">in</span> rep1 rep2</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  clipper -b <span class="variable">$wkdir</span>/6.read2bam/RBFOX2.CLIP.<span class="variable">$rep</span>.srt.bam \</span><br><span class="line">    -s GRCh38_v29 \</span><br><span class="line">    -o <span class="variable">$wkdir</span>/8.peakcalling/RBFOX2.<span class="variable">$rep</span>.peaks.bed \</span><br><span class="line">    --processors <span class="variable">$ncores</span> -g ENSG00000166579</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="comment"># -s 支持的物种名称</span></span><br><span class="line"><span class="comment"># ll /public/workspace/shaojf/anaconda3/envs/clipper3/lib/python3.7/site-packages/clipper/data/</span></span><br><span class="line"><span class="comment"># ll /public/workspace/shaojf/anaconda3/envs/clipper3/lib/python3.7/site-packages/clipper/data/regions</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># alternative peak calling with MACS2</span></span><br><span class="line"><span class="comment"># -f BAMPE 不能加，为什么呢（思考一下？）</span></span><br><span class="line"><span class="comment"># 以r2.bam为输入会报错，无法读入read，只能用初始的比对结果</span></span><br><span class="line">mkdir -p <span class="variable">$wkdir</span>/8.peakcalling/MACS2</span><br><span class="line"><span class="keyword">for</span> rep <span class="keyword">in</span> rep1 rep2</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  macs2 callpeak -g hs --keep-dup all \</span><br><span class="line">    -t <span class="variable">$wkdir</span>/5.mergedbam/RBFOX2.CLIP.<span class="variable">$rep</span>.bam \</span><br><span class="line">    -c <span class="variable">$wkdir</span>/4.rmDupbam/RBFOX2.INPUT.NIL.rmDup.bam \</span><br><span class="line">    -n <span class="variable">$wkdir</span>/8.peakcalling/MACS2/RBFOX2.<span class="variable">$rep</span>.macs2 &amp;</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment">############## pureclip生成peak #############</span></span><br><span class="line"><span class="comment"># pureclip [OPTIONS] &lt;-i BAM FILE&gt; &lt;-bai BAI FILE&gt; &lt;-g GENOME FILE&gt; &lt;-o OUTPUT BED FILE&gt;</span></span><br><span class="line"><span class="comment"># 超级占内存！！！</span></span><br><span class="line"><span class="comment"># 会死机！！！</span></span><br><span class="line"><span class="comment"># 运行之前top一下看看当前正在运行的命令</span></span><br><span class="line"><span class="comment"># 切勿在server上运行</span></span><br><span class="line"><span class="comment"># -iv, --inter STR</span></span><br><span class="line"><span class="comment">#           Genomic chromosomes to learn HMM parameters, e.g. &#x27;chr1;chr2;chr3&#x27;. Contigs have to be in the same order as</span></span><br><span class="line"><span class="comment">#           in BAM file. Useful to reduce runtime and memory consumption. Default: all contigs from reference file are</span></span><br><span class="line"><span class="comment">#           used (useful when applying to transcript-wise alignments or poor data).</span></span><br><span class="line">mkdir -p <span class="variable">$wkdir</span>/8.peakcalling/pureclip.peaks</span><br><span class="line"><span class="keyword">for</span> rep <span class="keyword">in</span> rep1 rep2</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  pureclip -i <span class="variable">$wkdir</span>/6.read2bam/RBFOX2.CLIP.<span class="variable">$rep</span>.srt.bam \</span><br><span class="line">    -bai <span class="variable">$wkdir</span>/6.read2bam/RBFOX2.CLIP.<span class="variable">$rep</span>.srt.bam.bai \</span><br><span class="line">    -ibam <span class="variable">$wkdir</span>/6.read2bam/RBFOX2.INPUT.NIL.rmDup.srt.bam \</span><br><span class="line">    -ibai <span class="variable">$wkdir</span>/6.read2bam/RBFOX2.INPUT.NIL.rmDup.srt.bam.bai \</span><br><span class="line">    -g <span class="variable">$genomefa</span> \</span><br><span class="line">    -o <span class="variable">$wkdir</span>/8.peakcalling/pureclip.peaks/RBFOX2.CLIP.<span class="variable">$rep</span>.called_crosslinksites.bed \</span><br><span class="line">    -or <span class="variable">$wkdir</span>/8.peakcalling/pureclip.peaks/RBFOX2.CLIP.<span class="variable">$rep</span>.called_bindingregions.bed \</span><br><span class="line">    -nt <span class="variable">$ncores</span> -iv <span class="string">&#x27;chr1;chr10;chr20&#x27;</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment">############## Input normalization #############</span></span><br><span class="line">mkdir -p <span class="variable">$wkdir</span>/9.normalization</span><br><span class="line"><span class="keyword">for</span> rep <span class="keyword">in</span> rep1 rep2</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  samtools view -cF 4 <span class="variable">$wkdir</span>/6.read2bam/RBFOX2.CLIP.<span class="variable">$rep</span>.srt.bam \</span><br><span class="line">    &gt; <span class="variable">$wkdir</span>/9.normalization/RBFOX2.CLIP.<span class="variable">$rep</span>.mapped_readnum.txt &amp;</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line">samtools view -cF 4 <span class="variable">$wkdir</span>/6.read2bam/RBFOX2.INPUT.NIL.rmDup.srt.bam \</span><br><span class="line">    &gt; <span class="variable">$wkdir</span>/9.normalization/RBFOX2.INPUT.NIL.mapped_readnum.txt &amp;</span><br><span class="line"><span class="built_in">wait</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> rep <span class="keyword">in</span> rep1 rep2</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  overlap_peakfi_with_bam.pl \</span><br><span class="line">    <span class="variable">$wkdir</span>/6.read2bam/RBFOX2.CLIP.<span class="variable">$rep</span>.srt.bam \</span><br><span class="line">    <span class="variable">$wkdir</span>/6.read2bam/RBFOX2.INPUT.NIL.rmDup.srt.bam \</span><br><span class="line">    <span class="variable">$wkdir</span>/8.peakcalling/RBFOX2.<span class="variable">$rep</span>.peaks.bed \</span><br><span class="line">    <span class="variable">$wkdir</span>/9.normalization/RBFOX2.CLIP.<span class="variable">$rep</span>.mapped_readnum.txt \</span><br><span class="line">  <span class="variable">$wkdir</span>/9.normalization/RBFOX2.INPUT.NIL.mapped_readnum.txt \</span><br><span class="line">    <span class="variable">$wkdir</span>/9.normalization/RBFOX2.<span class="variable">$rep</span>.peaks.normed.bed &amp;</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="built_in">wait</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># MEME-chip不大适合RNA peak的分析，但也只有这种方法</span></span><br></pre></td></tr></table></figure>]]></content>
+<p> +<br> DA1AEBFGGCG01DFH00B1FF0B</p>
+<p> will become:</p>
+<p> @HISEQ:87:00000000_GGTT read1<br> TGATTGGATGGGCTAG</p>
+<ul>
+<li>1AFGGCG01DFH00B1</li>
+</ul>
+<p>UMItools的标记与eclipdemux不同，不可交叉混用</p>
+<ul>
+<li>UMItools是把UMI加在: @HISEQ:87:00000000_GGTT read1</li>
+<li>eclipdemux加在：@GGTT;HISEQ:87:00000000 read1</li>
+</ul>
+<h1 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#第一种</span></span><br><span class="line">conda/mamba install -c bioconda -c conda-forge umi_tools</span><br><span class="line"></span><br><span class="line"><span class="comment">#第二种</span></span><br><span class="line">pip install umi_tools</span><br><span class="line"></span><br><span class="line"><span class="comment">#第三种</span></span><br><span class="line">unzip 1.0.0.zip</span><br><span class="line"><span class="built_in">cd</span> UMI-tools-1.0.0</span><br><span class="line">python setup.py install --user</span><br></pre></td></tr></table></figure>
+<h1 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h1><p>extract UMI from raw reads -&gt; map reads -&gt; deduplicate reads based on UMIs</p>
+<h2 id="Extract-the-UMIs"><a href="#Extract-the-UMIs" class="headerlink" title="Extract the UMIs"></a>Extract the UMIs</h2><p>Currently there are 6 commands. The <code>extract</code> and <code>whitelist</code> commands are used to prepare a fastq containg UMIs +/- cell barcodes for alignment.</p>
+<h3 id="whitelist–提取cell-barcode白名单"><a href="#whitelist–提取cell-barcode白名单" class="headerlink" title="whitelist–提取cell barcode白名单"></a>whitelist–提取cell barcode白名单</h3><p>whitelist 命令会从原始数据种提取去可能的cell barcode。<br>通常情况下，10X的barcode长度为16nt，umi长度为12nt；Drop-seq的barcode长度为12nt，umi长度为8nt。<br> <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"> <span class="comment">#10X</span></span><br><span class="line">umi_tools whitelist --stdin hgmm_100_R1.fastq.gz \  </span><br><span class="line">                    --bc-pattern=CCCCCCCCCCCCCCCCNNNNNNNNNNNN \ </span><br><span class="line">                    --set-cell-number=100 \    </span><br><span class="line">                    --log2stderr &gt; whitelist.txt</span><br><span class="line"></span><br><span class="line"><span class="comment">#BD</span></span><br><span class="line">umi_tools whitelist --stdin <span class="variable">$&#123;fastq&#125;</span> \</span><br><span class="line">        --extract-method=regex \</span><br><span class="line">        --bc-pattern=<span class="string">&quot;(?P&lt;cell_1&gt;.&#123;9&#125;)(?P&lt;discard_1&gt;.&#123;12&#125;)(?P&lt;cell_2&gt;.&#123;9&#125;)(?P&lt;discard_2&gt;.&#123;13&#125;)(?P&lt;cell_3&gt;.&#123;9&#125;)(?P&lt;umi_1&gt;.&#123;8&#125;)(?&lt;plotT&gt;TTTTTTTT)&#123;s&lt;=2&#125;.*&quot;</span> \</span><br><span class="line">        --expect-cells=10000  --plot-prefix=true2 --log2stderr --subset-reads=100000000 \</span><br><span class="line">        --knee-method=density --allow-threshold-error &gt; whitelist.txt</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p><strong>常用参数解释</strong><br>–stdin：指定输入文件或者标准输入。<br>–plot-prefix：指定QC统计图的前缀，可用于判断细胞数阈值设置是否合理。<br>–bc-pattern：指定cell barcode和umi的位置，默认情况下，他们位于序列的5’端，否则可用–3prime参数改变。cell barcode用同等数量的字符”C”表示；umi用同等数量的字符”N”表示。<br>–set-cell-number：设置检测到的cell barcode数量，若事先知道数量可设定，否则省略软件会自动判断(结合QC图判读阈值是否合理，若不合理可人为设定阈值重新分析)。<br>–expect-cells=200：设置检测到的cell barcode数据上限，该值是根据捕获效率预估得到(一般10X捕获效率不低于10%)，结合QC图判断阈值是否合理，若不合理可人为设定阈值重新分析。<br>–stdout/-S：指定输出barcode结果到文件，log信息到还是标准输出。<br>–stdlog/-L：指定log信息到文件，barcode结果还是到标准输出。<br>–log2stderr：指定log信息到标准错误输出，barcode结果还是到标准输出。<br>-v 0：关闭log信息的输出。</p>
+</blockquote>
+<blockquote>
+<p><strong>结果文件解释</strong><br>whitelist生成的结果文件包含四列：<br>1、可接受的cell barcode；<br>2、与可接受的barcode距离相差1的barcode；<br>3、第一列barcode的umi数；<br>4、第2列barcode的umi数</p>
+</blockquote>
+<h3 id="extract–提取barcode和过滤reads"><a href="#extract–提取barcode和过滤reads" class="headerlink" title="extract–提取barcode和过滤reads"></a>extract–提取barcode和过滤reads</h3><p>extract命令会从fastq文件中提取包含可接受barcode的reads，默认情况下extract命令会忽略umi的reads质量情况而不做处理。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">umi_tools extract --bc-pattern=CCCCCCCCCCCCCCCCNNNNNNNNNN \</span><br><span class="line">                  --stdin hgmm_100_R1.fastq.gz \</span><br><span class="line">                  --stdout hgmm_100_R1_extracted.fastq.gz \</span><br><span class="line">                  --read2-in hgmm_100_R2.fastq.gz \</span><br><span class="line">                  --read2-out=hgmm_100_R2_extracted.fastq.gz \</span><br><span class="line">                  --filter-cell-barcode \</span><br><span class="line">                  --whitelist=whitelist.txt</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>常用参数解释：<br>–bc-pattern：指定cell barcode和umi的位置，同whilelist。<br>–stdin：指定输入文件或者标准输入，同whilelist。<br>–stdout：指定read1的输出文件。<br>–read2-in：指定read2的输入文件，即基因表达的原始reads文件。<br>–read2-out：指定read2的输出文件。<br>–read2-stdout：设置read2的输出到标准输出，同时不会生成提取后read1文件。<br>–filter-cell-barcode：指定只提取包含可接受barcoded的reads。<br>–error-correct-cell：指定提取包含与可接受barcode汉明距离相差1的barcode的reads。<br>–whitelist：barcode白名单文件。<br>–quality-filter-threshold=[FILTER]：设定通过阈值来过滤umi的read，低于阈值的umi会被丢弃。<br>–quality-filter-mask=[FILTER]：设置一个阈值来把umi reads中低于阈值的碱基替换为”N”。</p>
+</blockquote>
+<h2 id="Mapping"><a href="#Mapping" class="headerlink" title="Mapping"></a>Mapping</h2><p>使用STAR/bowtie来将reads比对到参考基因组。然后转成BAM，排序+index</p>
+<h2 id="Deduplication"><a href="#Deduplication" class="headerlink" title="Deduplication"></a>Deduplication</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">umi_tools dedup -I example.bam --output-stats=deduplicated -S deduplicated.bam</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>输出deduplicated_edit_distance.tsv：<br> <center><img src="/img/scATAC/dedup.png" alt="UMI" style="zoom:70%;" /></center><br> 前两列:单碱基平均编辑距离的分布</p>
+</blockquote>
+<h1 id="UMI-tools-in-single-cell"><a href="#UMI-tools-in-single-cell" class="headerlink" title="UMI-tools in single cell"></a>UMI-tools in single cell</h1><p><strong>Important update:</strong> We now recommend the use of <code>alevin</code> for droplet-based scRNA-Seq (e.g 10X, inDrop etc). <code>alevin</code> extends the directional method used in <code>UMI-tools</code> to correct UMI errors with droplet scRNA-Seq within a framework that also enables quantification using multi-mapped reads. <code>alevin</code> is an accurate, fast and convenient end-to-end tool to go from fastq -&gt; count matrix. </p>
+<h2 id="读取数据"><a href="#读取数据" class="headerlink" title="读取数据"></a>读取数据</h2><p>查看CB和UMI</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">zcat hgmm_100_R1.fastq.gz | head -n2</span><br><span class="line"></span><br><span class="line"><span class="comment"># @ST-K00126:308:HFLYFBBXX:1:1101:25834:1173 1:N:0:NACCACCA</span></span><br><span class="line"><span class="comment"># NGGGTCAGTCTAGTGTGGCGATTCAC</span></span><br><span class="line"><span class="comment"># +</span></span><br><span class="line"><span class="comment"># #AAFFJJJJJJJJJJJJJJJJJJJJJ</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># -------CB-------|---UMI---</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>eCLIP</category>
+        <category>ToolsLearning</category>
       </categories>
       <tags>
-        <tag>eCLIP</tag>
+        <tag>WES</tag>
       </tags>
   </entry>
   <entry>
@@ -1676,6 +1810,42 @@
       </categories>
       <tags>
         <tag>scATAC-seq</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>eCLIP Analysis</title>
+    <url>/2021/03/31/eCLIP-Analysis/</url>
+    <content><![CDATA[<ul>
+<li>文献：<a href="https://www.nature.com/articles/nmeth.3810">https://www.nature.com/articles/nmeth.3810</a></li>
+<li>方法：<a href="https://www.encodeproject.org/documents/739ca190-8d43-4a68-90ce-1a0ddfffc6fd/@@download/attachment/eCLIP_analysisSOP_v2.2.pdf">https://www.encodeproject.org/documents/739ca190-8d43-4a68-90ce-1a0ddfffc6fd/@@download/attachment/eCLIP_analysisSOP_v2.2.pdf</a></li>
+<li> 建库原理：<img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20210329085640993.png" alt="image-20210329085640993"></li>
+<li>软件都在/publis/shaojf/Course/NGS/Tools/eCLIP.tools</li>
+<li>X 表示cross-link的位置，在read2</li>
+</ul>
+<p>Read1包括barcode<br>Read 2 前几个碱基叫Random-mer（UMI），UMI碱基放在name里面<br>测序长度比读段长，要去接头</p>
+<h1 id="分析路线"><a href="#分析路线" class="headerlink" title="分析路线"></a>分析路线</h1><ol>
+<li>Fastqc查看质量及adapter</li>
+<li>Demultiplex分离in-line barcode及UMI处理+cutadapt</li>
+<li>STAR比对（adaptor一般出现在末端，STAR用local模式，有没有adaptor影响不大）</li>
+<li>基于UMI删除PCR重复（Barcode一样的放到一个fastq，算作Tech rep）</li>
+<li>合并技术重复（得到两个bio rep的文件）</li>
+<li>提取read2</li>
+<li>生成bigwig用于可视化</li>
+<li>用clipper、MACS2和pureclip进行peakcalling（MACS2跑出的效果很差；clipper效果较好；pureclip特别占内存，效果一般）</li>
+<li>基于input进行normalization（有些基因表达水平高，有些低，在外显子上读段多）</li>
+</ol>
+<h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><h2 id="fastqc"><a href="#fastqc" class="headerlink" title="fastqc"></a>fastqc</h2><p>可以指定查看哪一个adaptor，四个adaptor比例大概是20%，比较理想</p>
+<h2 id="STAR"><a href="#STAR" class="headerlink" title="STAR"></a>STAR</h2><p>–alignEndsType   default: Local<br>Local—standard local alignment with soft-clipping allowed<br>EndToEnd—force end-to-end read alignment, do not soft-clip<br>Extend5pOfRead1—fully extend only the 5p of the read1, all other ends: local alignment<br>Extend5pOfReads12—fully extend only the 5p of the both read1 and read2, all other ends:local alignment</p>
+<h2 id="Pureclip"><a href="#Pureclip" class="headerlink" title="Pureclip"></a>Pureclip</h2><p><a href="https://github.com/skrakau/PureCLIP">https://github.com/skrakau/PureCLIP</a><br><a href="https://pureclip.readthedocs.io/en/latest/GettingStarted/index.html">https://pureclip.readthedocs.io/en/latest/GettingStarted/index.html</a></p>
+<p>会得到crosslink sites和Binding regions</p>
+<h2 id="MACS2"><a href="#MACS2" class="headerlink" title="MACS2"></a>MACS2</h2><p>基于STAR比对的结果，-f BAMPE出来的fragment size=1982.3<br>为什么会这么大</p>
+<h2 id="UMI-Tools"><a href="#UMI-Tools" class="headerlink" title="UMI_Tools"></a>UMI_Tools</h2><p>umi_tools dedup</p>
+<h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># https://www.encodeproject.org/pipelines/ENCPL357ADL/</span></span><br><span class="line"><span class="comment"># setup the environment</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># cd /public/workspace/shaojf/NGS2021/shaolab2/tools/clipper</span></span><br><span class="line"><span class="comment"># conda env create -f environment3.yml</span></span><br><span class="line"><span class="comment"># conda activate clipper3</span></span><br><span class="line"><span class="comment"># pip install .</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># cd /public/workspace/shaojf/NGS2021/shaolab2/tools/merge_peaks-0.1.0</span></span><br><span class="line"><span class="comment"># conda create -n perl5</span></span><br><span class="line"><span class="comment"># conda activate perl5</span></span><br><span class="line"><span class="comment">###### conda install -c bioconda perl-statistics-basic perl-statistics-r perl-statistics-distributions</span></span><br><span class="line"><span class="comment"># conda install -c bioconda perl-statistics-basic=1.6611 perl-statistics-r=0.34 perl-statistics-distributions=1.02</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># conda create -n py2 python=2.7</span></span><br><span class="line"><span class="comment"># conda activate py2</span></span><br><span class="line"><span class="comment"># conda install cython scikit-learn future matplotlib bz2file</span></span><br><span class="line"><span class="comment"># conda install -c bioconda pysam</span></span><br><span class="line"><span class="comment"># cd /public/workspace/shaojf/NGS2021/shaolab2/tools/eclipdemux-master</span></span><br><span class="line"><span class="comment"># easy_install .</span></span><br><span class="line"><span class="comment"># cd ../gscripts/</span></span><br><span class="line"><span class="comment"># easy_install .</span></span><br><span class="line"><span class="comment"># cd ../makebigwigfiles-master/</span></span><br><span class="line"><span class="comment"># easy_install .</span></span><br><span class="line"><span class="comment">##### ln -s /public/workspace/shaojf/Course/NGS/Tools/eclip.tools/eclipdemux-master/eclipdemux_package/demux.py /public/workspace/shaojf/anaconda3/envs/py2/bin/eclipdemux</span></span><br><span class="line"><span class="comment"># cd /public/workspace/shaojf/anaconda3/envs/py2/bin</span></span><br><span class="line"><span class="comment"># ln -s demux_paired_end.py eclipdemux</span></span><br><span class="line"><span class="comment"># ln -s ../../clipper3/bin/clipper</span></span><br><span class="line"><span class="comment"># ln -s ../../perl5/bin/perl</span></span><br><span class="line"><span class="comment"># ln -s /public/workspace/shaojf/Course/NGS/Tools/eclip.tools/merge_peaks-0.1.0/bin/*.* .</span></span><br><span class="line"><span class="comment"># ln -s /public/workspace/shaojf/Course/NGS/Tools/eclip.tools/merge_peaks-0.1.0/bin/perl/*.* .</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># -----------------&gt;</span></span><br><span class="line"><span class="comment"># 以上为环境配置过程</span></span><br><span class="line"><span class="comment"># -----------------&gt;</span></span><br><span class="line"></span><br><span class="line">conda activate py2</span><br><span class="line"><span class="comment"># py2的bin下有clipper3的软连接，可以直接用clipper3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##### ln -s /public/workspace/shaojf/anaconda3/envs/clipper3 /public/workspace/stu18230130/anaconda3/envs/clipper3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果自行安装过conda的，请执行以下操作，将shaojf用户的conda环境链接到自己的conda环境；</span></span><br><span class="line"><span class="comment"># 如果没有安装过conda，则无需执行</span></span><br><span class="line">ln -s /public/workspace/shaojf/anaconda3/envs/py2 /public/workspace/`whoami`/anaconda3/envs/py2</span><br><span class="line">wkdir=/public/workspace/shaojf/NGS2021/shaolab2</span><br><span class="line">genomefa=/public/workspace/shaojf/Course/NGS/Reference/UCSC/hg38/hg38.fa</span><br><span class="line">stardir=/public/workspace/shaojf/Course/NGS/Reference/UCSC/hg38/UCSC.hg38.STAR.v2.7.1a</span><br><span class="line">chromsize=/public/workspace/shaojf/Course/NGS/Reference/UCSC/hg38.chrom.sizes</span><br><span class="line">ncores=</span><br><span class="line">conda activate py2</span><br><span class="line"><span class="comment"># python3会报错！！！</span></span><br><span class="line"></span><br><span class="line"><span class="comment">############## 准备数据 ##############</span></span><br><span class="line"><span class="comment"># 用UCSC hg38.fa是因为clipper自带的注释文件是含有chr字符串的</span></span><br><span class="line"><span class="comment"># 一开会的参考序列不全，缺chr7-9</span></span><br><span class="line"><span class="comment"># STAR --runMode genomeGenerate --runThreadN 16 --genomeDir UCSC.hg38.STAR.v2.7.1a --genomeFastaFiles hg38.fa</span></span><br><span class="line">mkdir -p <span class="variable">$HOME</span>/NGS2021/shaolab2/</span><br><span class="line"><span class="comment"># 将/public/workspace/shaojf/Course/NGS/DataSets/eCLIP下的相关数据ln -s到自己的工作路径</span></span><br><span class="line"></span><br><span class="line"><span class="comment">############## fastqc查看adapter ##############</span></span><br><span class="line"><span class="comment"># yeolabbarcodes.txt</span></span><br><span class="line"><span class="comment"># 可以问做实验的人要</span></span><br><span class="line"><span class="comment"># --adapters 检测一下有没有以下的barcode</span></span><br><span class="line">mkdir <span class="variable">$wkdir</span>/1.fastqc</span><br><span class="line">time fastqc -o <span class="variable">$wkdir</span>/1.fastqc -t <span class="variable">$ncores</span> \</span><br><span class="line">  --adapters <span class="variable">$wkdir</span>/configFiles/yeolabbarcodes.txt <span class="variable">$wkdir</span>/data/RBFOX2-204-*</span><br><span class="line"><span class="comment"># 查看哪些barcode被测到</span></span><br><span class="line"><span class="comment"># grep -A &lt;显示行数&gt;: 除了显示符合范本样式的那一列之外，并显示该行之后的内容。</span></span><br><span class="line"><span class="comment"># barcode从第一个碱基开始，用-A 2输出第一行</span></span><br><span class="line">unzip <span class="variable">$wkdir</span>/1.fastqc/RBFOX2-204-CLIP_S1_R1_fastqc.zip</span><br><span class="line">grep -A 2 <span class="string">&quot;Adapter Content&quot;</span> <span class="variable">$wkdir</span>/1.fastqc/RBFOX2-204-CLIP_S1_R1_fastqc/fastqc_data.txt | \</span><br><span class="line">awk <span class="string">&#x27;BEGIN&#123;for(i=2;i&lt;=13;i++)&#123;ids[i]=&quot;A&quot;&#125;&#125;&#123;for(i=2;i&lt;=13;i++)&#123;if($i&gt;10 &amp;&amp; NR&gt;2)&#123;print ids[i]&quot;\t&quot;$i&#125;else&#123;ids[i]=$i&#125;&#125;&#125;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化ids数组，如果数值大于10且行数&gt;2，根据数组下标打印ids</span></span><br><span class="line"><span class="comment"># awk-出现的比例大于10%的，打印出来</span></span><br><span class="line"><span class="comment"># A01     17.773141608744858</span></span><br><span class="line"><span class="comment"># B06     14.295544471332855</span></span><br><span class="line"><span class="comment"># C01     15.382434142104247</span></span><br><span class="line"><span class="comment"># D8f     17.92395807937699</span></span><br><span class="line"><span class="comment"># firefox $wkdir/1.fastqc/RBFOX2-204-*.html</span></span><br><span class="line"></span><br><span class="line"><span class="comment">############## adapter分离及切除 ##############</span></span><br><span class="line"><span class="comment"># 时间很长，可从课程目录建立软链接</span></span><br><span class="line">mkdir <span class="variable">$wkdir</span>/2.demultiplexed/</span><br><span class="line"><span class="comment"># prefix=RBFOX2-204-CLIP_S1</span></span><br><span class="line"><span class="comment"># cd $wkdir</span></span><br><span class="line"><span class="comment"># --dataset 不能用绝对路径。。。。因为程序只能调用相对路径（前面会自己加./）</span></span><br><span class="line">datapre=RBFOX2</span><br><span class="line"><span class="keyword">for</span> prefix <span class="keyword">in</span> RBFOX2-204-CLIP_S1 RBFOX2-204-INPUT_S2</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  name=`<span class="built_in">echo</span> <span class="variable">$prefix</span> | cut -f 1 -d <span class="string">&quot;_&quot;</span> | cut -f 3 -d <span class="string">&quot;-&quot;</span>`</span><br><span class="line">  eclipdemux --newname <span class="variable">$name</span> --dataset 2.demultiplexed/<span class="variable">$datapre</span> \</span><br><span class="line">    --expectedbarcodeida A01 --expectedbarcodeidb B06 \</span><br><span class="line">    --fastq_1 <span class="variable">$wkdir</span>/data/<span class="variable">$&#123;prefix&#125;</span>_R1.fastq.gz \</span><br><span class="line">    --fastq_2 <span class="variable">$wkdir</span>/data/<span class="variable">$&#123;prefix&#125;</span>_R2.fastq.gz \</span><br><span class="line">    --barcodesfile <span class="variable">$wkdir</span>/configFiles/yeolabbarcodes_20170101.fasta \</span><br><span class="line">    --length 5 --metrics <span class="variable">$wkdir</span>/2.demultiplexed/<span class="variable">$prefix</span>.metrics.txt &amp;</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 把UMI写到fastq名字行</span></span><br><span class="line">ll demultiplexed/*&#123;A01,B06,C01,D8f&#125;*</span><br><span class="line"><span class="comment"># samples:</span></span><br><span class="line"><span class="comment">#   -</span></span><br><span class="line"><span class="comment">#     - ip_read:</span></span><br><span class="line"><span class="comment">#       name: rep1_clip</span></span><br><span class="line"><span class="comment">#       barcodeids: [A01, B06]</span></span><br><span class="line">        </span><br><span class="line"><span class="comment">#     - input_read: （NIL开头的，检测不到任何barcode）</span></span><br><span class="line"><span class="comment">#       name: rep1_input</span></span><br><span class="line"><span class="comment">#       barcodeids: [NIL, NIL]</span></span><br><span class="line"><span class="comment">#   -</span></span><br><span class="line"><span class="comment">#     - ip_read:</span></span><br><span class="line"><span class="comment">#       name: rep2_clip</span></span><br><span class="line"><span class="comment">#       barcodeids: [C01, D8f]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#     - input_read:</span></span><br><span class="line"><span class="comment">#       name: rep2_input</span></span><br><span class="line"><span class="comment">#       barcodeids: [NIL, NIL]</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 以下省略，太慢了。所以在STAR步骤选local比对</span></span><br><span class="line"><span class="comment"># Cutadapt	round	1</span></span><br><span class="line"><span class="comment"># Takes output from demultiplexed files. Run to	trim off both 5’ and 3’	adapters on	both read</span></span><br><span class="line"><span class="comment"># mkdir clean</span></span><br><span class="line"><span class="comment"># for prefix in RBFOX2-204-CLIP_S1 RBFOX2-204-INPUT_S2</span></span><br><span class="line"><span class="comment"># do</span></span><br><span class="line"><span class="comment"># 	cutadapt -f fastq --match-read-wildcards --times 1 -e 0.1 -O 1 \</span></span><br><span class="line"><span class="comment"># 		--quality-cutoff 6 -m 18 -a NNNNNAGATCGGAAGAGCACACGTCTGAACTCCAGTCAC \</span></span><br><span class="line"><span class="comment"># 		-g CTTCCGATCTACAAGTT -g CTTCCGATCTTGGTCCT \</span></span><br><span class="line"><span class="comment"># 		-A AACTTGTAGATCGGA -A AGGACCAAGATCGGA -A ACTTGTAGATCGGAA \</span></span><br><span class="line"><span class="comment"># 		-A GGACCAAGATCGGAA -A CTTGTAGATCGGAAG -A GACCAAGATCGGAAG \</span></span><br><span class="line"><span class="comment"># 		-A TTGTAGATCGGAAGA -A ACCAAGATCGGAAGA -A TGTAGATCGGAAGAG \</span></span><br><span class="line"><span class="comment"># 		-A CCAAGATCGGAAGAG -A GTAGATCGGAAGAGC -A CAAGATCGGAAGAGC \</span></span><br><span class="line"><span class="comment"># 		-A TAGATCGGAAGAGCG -A AAGATCGGAAGAGCG -A AGATCGGAAGAGCGT \</span></span><br><span class="line"><span class="comment"># 		-A GATCGGAAGAGCGTC -A ATCGGAAGAGCGTCG -A TCGGAAGAGCGTCGT \</span></span><br><span class="line"><span class="comment"># 		-A CGGAAGAGCGTCGTG -A GGAAGAGCGTCGTGT \</span></span><br><span class="line"><span class="comment"># 		-o clean/$prefix.R1.adapterTrim.fastq.gz \</span></span><br><span class="line"><span class="comment"># 		-p clean/$prefix.R1.adapterTrim.fastq.gz \</span></span><br><span class="line"><span class="comment"># 		2.demultiplexed/$&#123;prefix&#125;_R1.fastq.gz 2.demultiplexed/$&#123;prefix&#125;_R2.fastq.gz \</span></span><br><span class="line"><span class="comment"># 		&gt; $prefix.adapterTrim.metrics &amp;</span></span><br><span class="line"><span class="comment"># done</span></span><br><span class="line"></span><br><span class="line"><span class="comment">############## STAR比对 ##############</span></span><br><span class="line"><span class="comment"># 时间较长，且占资源较多，可从课程目录建立软链接</span></span><br><span class="line"><span class="comment"># --alignEndsType Local</span></span><br><span class="line"></span><br><span class="line">mkdir -p <span class="variable">$wkdir</span>/3.starmapping</span><br><span class="line"><span class="keyword">for</span> fqpre <span class="keyword">in</span> RBFOX2.CLIP.&#123;A01,B06,C01,D8f&#125; RBFOX2.INPUT.NIL</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  lib=`<span class="built_in">echo</span> <span class="variable">$fqpre</span> | awk -F <span class="string">&quot;.&quot;</span> <span class="string">&#x27;&#123;print $NF&#125;&#x27;</span>`</span><br><span class="line">  STAR --runThreadN <span class="variable">$ncores</span> \</span><br><span class="line">    --runMode alignReads \</span><br><span class="line">    --genomeDir <span class="variable">$stardir</span> \</span><br><span class="line">    --readFilesIn <span class="variable">$wkdir</span>/2.demultiplexed/<span class="variable">$&#123;fqpre&#125;</span>.r1.fq.gz \</span><br><span class="line">      <span class="variable">$wkdir</span>/2.demultiplexed/<span class="variable">$&#123;fqpre&#125;</span>.r2.fq.gz \</span><br><span class="line">    --readFilesCommand zcat \</span><br><span class="line">    --outFileNamePrefix <span class="variable">$wkdir</span>/3.starmapping/<span class="variable">$&#123;fqpre&#125;</span>. \</span><br><span class="line">    --outSAMunmapped Within --outFilterMultimapNmax 1 \</span><br><span class="line">    --outFilterMultimapScoreRange 1 \</span><br><span class="line">    --outSAMtype BAM Unsorted \</span><br><span class="line">    --outSAMattributes All \</span><br><span class="line">    --outFilterScoreMin 10 \</span><br><span class="line">    --outSAMattrRGline ID:<span class="variable">$lib</span> --alignEndsType Local</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment">############## 根据UMI删除PCR重复 #############</span></span><br><span class="line">mkdir -p <span class="variable">$wkdir</span>/4.rmDupbam</span><br><span class="line"><span class="keyword">for</span> pre <span class="keyword">in</span> RBFOX2.CLIP.&#123;A01,B06,C01,D8f&#125; RBFOX2.INPUT.NIL</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  barcode_collapse_pe.py --bam <span class="variable">$wkdir</span>/3.starmapping/<span class="variable">$pre</span>.Aligned.out.bam \</span><br><span class="line">    --out_file <span class="variable">$wkdir</span>/4.rmDupbam/<span class="variable">$pre</span>.rmDup.bam \</span><br><span class="line">    --metrics_file <span class="variable">$wkdir</span>/4.rmDupbam/<span class="variable">$pre</span>.metrics &amp;</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="built_in">wait</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># UMItools的标记与eclipdemux不同，不可交叉混用</span></span><br><span class="line"><span class="comment"># UMItools是把UMI加在: @HISEQ:87:00000000_GGTT read1</span></span><br><span class="line"><span class="comment"># eclipdemux加在：@GGTT;HISEQ:87:00000000 read1</span></span><br><span class="line"><span class="comment"># https://github.com/CGATOxford/UMI-tools/blob/master/doc/QUICK_START.md</span></span><br><span class="line"><span class="comment"># 取3-7是因为前几个base测序质量不好</span></span><br><span class="line"><span class="comment"># UMI is bases 3-7, bases 1-2 and 7-8 are the sample barcode and need to be removed</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># @HISEQ:87:00000000 read1</span></span><br><span class="line"><span class="comment"># AAGGTTGCTGATTGGATGGGCTAG</span></span><br><span class="line"><span class="comment"># +</span></span><br><span class="line"><span class="comment"># DA1AEBFGGCG01DFH00B1FF0B</span></span><br><span class="line"><span class="comment"># will become:</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#  @HISEQ:87:00000000_GGTT read1</span></span><br><span class="line"><span class="comment">#  TGATTGGATGGGCTAG</span></span><br><span class="line"><span class="comment">#  + </span></span><br><span class="line"><span class="comment">#  1AFGGCG01DFH00B1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">############## 合并并排序 #############</span></span><br><span class="line">       <span class="comment"># $&#123;parameter#word&#125;</span></span><br><span class="line">       <span class="comment"># $&#123;parameter##word&#125;</span></span><br><span class="line">       <span class="comment">#        Remove  matching  prefix  pattern.  The word is expanded to produce a pattern just as in pathname expansion.  If the pattern matches the beginning of the value of parameter, then the result of</span></span><br><span class="line">       <span class="comment">#        the expansion is the expanded value of parameter with the shortest matching pattern (the ``#&#x27;&#x27; case) or the longest matching pattern (the ``##&#x27;&#x27; case) deleted.  If parameter is  @  or  *,  the</span></span><br><span class="line">       <span class="comment">#        pattern  removal  operation  is  applied  to each positional parameter in turn, and the expansion is the resultant list.  If parameter is an array variable subscripted with @ or *, the pattern</span></span><br><span class="line">       <span class="comment">#        removal operation is applied to each member of the array in turn, and the expansion is the resultant list.</span></span><br><span class="line"></span><br><span class="line">       <span class="comment"># $&#123;parameter%word&#125;</span></span><br><span class="line">       <span class="comment"># $&#123;parameter%%word&#125;</span></span><br><span class="line">       <span class="comment">#        Remove matching suffix pattern.  The word is expanded to produce a pattern just as in pathname expansion.  If the pattern matches a trailing portion of the expanded value  of  parameter,  then</span></span><br><span class="line">       <span class="comment">#        the result of the expansion is the expanded value of parameter with the shortest matching pattern (the ``%&#x27;&#x27; case) or the longest matching pattern (the ``%%&#x27;&#x27; case) deleted.  If parameter is @</span></span><br><span class="line">       <span class="comment">#        or *, the pattern removal operation is applied to each positional parameter in turn, and the expansion is the resultant list.  If parameter is an array variable subscripted with @  or  *,  the</span></span><br><span class="line">       <span class="comment">#        pattern removal operation is applied to each member of the array in turn, and the expansion is the resultant list.</span></span><br><span class="line"><span class="comment"># echo $&#123;pair%%:*&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 把A01到B06合并成rep1</span></span><br><span class="line">mkdir -p <span class="variable">$wkdir</span>/5.mergedbam</span><br><span class="line"><span class="keyword">for</span> pairs <span class="keyword">in</span> rep1:A01:B06 rep2:C01:D8f</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  pre=`<span class="built_in">echo</span> <span class="variable">$pairs</span> | cut -d <span class="string">&quot;:&quot;</span> -f 1`</span><br><span class="line">  barcode1=`<span class="built_in">echo</span> <span class="variable">$pairs</span> | cut -d <span class="string">&quot;:&quot;</span> -f 2`</span><br><span class="line">  barcode2=`<span class="built_in">echo</span> <span class="variable">$pairs</span> | cut -d <span class="string">&quot;:&quot;</span> -f 3`</span><br><span class="line">  samtools merge -n -@ <span class="variable">$ncores</span> <span class="variable">$wkdir</span>/5.mergedbam/RBFOX2.CLIP.<span class="variable">$pre</span>.bam \</span><br><span class="line">    <span class="variable">$wkdir</span>/4.rmDupbam/RBFOX2.CLIP.<span class="variable">$barcode1</span>.rmDup.bam \</span><br><span class="line">    <span class="variable">$wkdir</span>/4.rmDupbam/RBFOX2.CLIP.<span class="variable">$barcode2</span>.rmDup.bam &amp;</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="built_in">wait</span></span><br><span class="line"></span><br><span class="line"><span class="comment">############## 提取read2 #############</span></span><br><span class="line"><span class="comment"># samtools flags 128</span></span><br><span class="line"><span class="comment"># -f 128 把read2提取出来做peak calling</span></span><br><span class="line">mkdir -p <span class="variable">$wkdir</span>/6.read2bam</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="variable">$wkdir</span>/5.mergedbam/*.bam <span class="variable">$wkdir</span>/4.rmDupbam/RBFOX2.INPUT.NIL.rmDup.bam</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  filename=`basename <span class="variable">$i</span>`</span><br><span class="line">  samtools view -f 128 -@ <span class="variable">$ncores</span> \</span><br><span class="line">    -bo <span class="variable">$wkdir</span>/6.read2bam/<span class="variable">$filename</span> <span class="variable">$i</span> &amp;</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="built_in">wait</span></span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> <span class="variable">$wkdir</span>/6.read2bam/*.bam</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  filename=`basename <span class="variable">$file</span> | sed <span class="string">&#x27;s/.bam//&#x27;</span>`</span><br><span class="line">  samtools sort -@ <span class="variable">$ncores</span> -o <span class="variable">$wkdir</span>/6.read2bam/<span class="variable">$filename</span>.srt.bam <span class="variable">$file</span> &amp;</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="built_in">wait</span></span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> <span class="variable">$wkdir</span>/6.read2bam/*.srt.bam</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  samtools index <span class="variable">$file</span> &amp;</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="built_in">wait</span></span><br><span class="line"></span><br><span class="line"><span class="comment">############## 生成bigwig #############</span></span><br><span class="line"><span class="comment"># 与后续clipper没有先后关系，后台运行即可</span></span><br><span class="line"><span class="comment"># --direction r 需要标记链的方向（链特异性建库）</span></span><br><span class="line"><span class="comment"># samtools view -H $wkdir/5.mergedbam/RBFOX2.CLIP.rep1.bam | \</span></span><br><span class="line"><span class="comment"># 	awk &#x27;$1==&quot;@SQ&quot;&#123;print $2&quot;\t&quot;$3&#125;&#x27; | \</span></span><br><span class="line"><span class="comment"># 	sed &#x27;s?SN:??;s?LN:??&#x27; &gt; hg38.chrom.size</span></span><br><span class="line">mkdir -p <span class="variable">$wkdir</span>/7.bigwigfile</span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> <span class="variable">$wkdir</span>/6.read2bam/*.srt.bam</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  filename=`basename <span class="variable">$file</span> | sed <span class="string">&#x27;s/.srt.bam//&#x27;</span>`</span><br><span class="line">  makebigwigfiles --bam <span class="variable">$file</span> --genome <span class="variable">$chromsize</span> \</span><br><span class="line">    --bw_pos <span class="variable">$wkdir</span>/7.bigwigfile/<span class="variable">$filename</span>.r2.norm.pos.bw \</span><br><span class="line">    --bw_neg <span class="variable">$wkdir</span>/7.bigwigfile/<span class="variable">$filename</span>.r2.norm.neg.bw \</span><br><span class="line">    --direction r &amp;</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 也可以用deeptools的bamCoverage来生成bigwig</span></span><br><span class="line"><span class="comment"># for file in $wkdir/6.read2bam/*.bam</span></span><br><span class="line"><span class="comment"># do</span></span><br><span class="line"><span class="comment"># 	samtools index $file</span></span><br><span class="line"><span class="comment"># 	bamCoverage -b mergedbam/$prefix.r2.bam \</span></span><br><span class="line"><span class="comment"># 		-o bigwigfile/$prefix.r2.norm.pos.bw \</span></span><br><span class="line"><span class="comment"># 		-p 2 --binSize 10 --smoothLength 100 \</span></span><br><span class="line"><span class="comment"># 		--normalizeUsing CPM --filterRNAstrand forward &amp;</span></span><br><span class="line"><span class="comment"># 	bamCoverage -b mergedbam/$prefix.r2.bam \</span></span><br><span class="line"><span class="comment"># 		-o bigwigfile/$prefix.r2.norm.neg.bw \</span></span><br><span class="line"><span class="comment"># 		-p 2 --binSize 10 --smoothLength 100 \</span></span><br><span class="line"><span class="comment"># 		--normalizeUsing CPM --filterRNAstrand reverse &amp;</span></span><br><span class="line"><span class="comment"># done</span></span><br><span class="line"><span class="comment"># 如果想把负链为负数，则可以用bigwigtowig结合awk运算，再转回bigwig</span></span><br><span class="line"></span><br><span class="line"><span class="comment">############## clipper生成peak #############</span></span><br><span class="line"><span class="comment"># clipper依赖特定的scikit-learn，单独给它建立一个conda env，但可以用软链接链到py2环境</span></span><br><span class="line"><span class="comment"># 必须为sorted bam以及index过的</span></span><br><span class="line"><span class="comment"># hg38会报错，但GRCh38_v29则不会，无解</span></span><br><span class="line"><span class="comment"># clipper很慢，用nohup或screen防止中断</span></span><br><span class="line"><span class="comment"># -g ENSG00000166579 此处用一个基因作为示例，可以快速得到结果</span></span><br><span class="line">mkdir -p <span class="variable">$wkdir</span>/8.peakcalling/</span><br><span class="line"><span class="keyword">for</span> rep <span class="keyword">in</span> rep1 rep2</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  clipper -b <span class="variable">$wkdir</span>/6.read2bam/RBFOX2.CLIP.<span class="variable">$rep</span>.srt.bam \</span><br><span class="line">    -s GRCh38_v29 \</span><br><span class="line">    -o <span class="variable">$wkdir</span>/8.peakcalling/RBFOX2.<span class="variable">$rep</span>.peaks.bed \</span><br><span class="line">    --processors <span class="variable">$ncores</span> -g ENSG00000166579</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="comment"># -s 支持的物种名称</span></span><br><span class="line"><span class="comment"># ll /public/workspace/shaojf/anaconda3/envs/clipper3/lib/python3.7/site-packages/clipper/data/</span></span><br><span class="line"><span class="comment"># ll /public/workspace/shaojf/anaconda3/envs/clipper3/lib/python3.7/site-packages/clipper/data/regions</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># alternative peak calling with MACS2</span></span><br><span class="line"><span class="comment"># -f BAMPE 不能加，为什么呢（思考一下？）</span></span><br><span class="line"><span class="comment"># 以r2.bam为输入会报错，无法读入read，只能用初始的比对结果</span></span><br><span class="line">mkdir -p <span class="variable">$wkdir</span>/8.peakcalling/MACS2</span><br><span class="line"><span class="keyword">for</span> rep <span class="keyword">in</span> rep1 rep2</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  macs2 callpeak -g hs --keep-dup all \</span><br><span class="line">    -t <span class="variable">$wkdir</span>/5.mergedbam/RBFOX2.CLIP.<span class="variable">$rep</span>.bam \</span><br><span class="line">    -c <span class="variable">$wkdir</span>/4.rmDupbam/RBFOX2.INPUT.NIL.rmDup.bam \</span><br><span class="line">    -n <span class="variable">$wkdir</span>/8.peakcalling/MACS2/RBFOX2.<span class="variable">$rep</span>.macs2 &amp;</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment">############## pureclip生成peak #############</span></span><br><span class="line"><span class="comment"># pureclip [OPTIONS] &lt;-i BAM FILE&gt; &lt;-bai BAI FILE&gt; &lt;-g GENOME FILE&gt; &lt;-o OUTPUT BED FILE&gt;</span></span><br><span class="line"><span class="comment"># 超级占内存！！！</span></span><br><span class="line"><span class="comment"># 会死机！！！</span></span><br><span class="line"><span class="comment"># 运行之前top一下看看当前正在运行的命令</span></span><br><span class="line"><span class="comment"># 切勿在server上运行</span></span><br><span class="line"><span class="comment"># -iv, --inter STR</span></span><br><span class="line"><span class="comment">#           Genomic chromosomes to learn HMM parameters, e.g. &#x27;chr1;chr2;chr3&#x27;. Contigs have to be in the same order as</span></span><br><span class="line"><span class="comment">#           in BAM file. Useful to reduce runtime and memory consumption. Default: all contigs from reference file are</span></span><br><span class="line"><span class="comment">#           used (useful when applying to transcript-wise alignments or poor data).</span></span><br><span class="line">mkdir -p <span class="variable">$wkdir</span>/8.peakcalling/pureclip.peaks</span><br><span class="line"><span class="keyword">for</span> rep <span class="keyword">in</span> rep1 rep2</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  pureclip -i <span class="variable">$wkdir</span>/6.read2bam/RBFOX2.CLIP.<span class="variable">$rep</span>.srt.bam \</span><br><span class="line">    -bai <span class="variable">$wkdir</span>/6.read2bam/RBFOX2.CLIP.<span class="variable">$rep</span>.srt.bam.bai \</span><br><span class="line">    -ibam <span class="variable">$wkdir</span>/6.read2bam/RBFOX2.INPUT.NIL.rmDup.srt.bam \</span><br><span class="line">    -ibai <span class="variable">$wkdir</span>/6.read2bam/RBFOX2.INPUT.NIL.rmDup.srt.bam.bai \</span><br><span class="line">    -g <span class="variable">$genomefa</span> \</span><br><span class="line">    -o <span class="variable">$wkdir</span>/8.peakcalling/pureclip.peaks/RBFOX2.CLIP.<span class="variable">$rep</span>.called_crosslinksites.bed \</span><br><span class="line">    -or <span class="variable">$wkdir</span>/8.peakcalling/pureclip.peaks/RBFOX2.CLIP.<span class="variable">$rep</span>.called_bindingregions.bed \</span><br><span class="line">    -nt <span class="variable">$ncores</span> -iv <span class="string">&#x27;chr1;chr10;chr20&#x27;</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment">############## Input normalization #############</span></span><br><span class="line">mkdir -p <span class="variable">$wkdir</span>/9.normalization</span><br><span class="line"><span class="keyword">for</span> rep <span class="keyword">in</span> rep1 rep2</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  samtools view -cF 4 <span class="variable">$wkdir</span>/6.read2bam/RBFOX2.CLIP.<span class="variable">$rep</span>.srt.bam \</span><br><span class="line">    &gt; <span class="variable">$wkdir</span>/9.normalization/RBFOX2.CLIP.<span class="variable">$rep</span>.mapped_readnum.txt &amp;</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line">samtools view -cF 4 <span class="variable">$wkdir</span>/6.read2bam/RBFOX2.INPUT.NIL.rmDup.srt.bam \</span><br><span class="line">    &gt; <span class="variable">$wkdir</span>/9.normalization/RBFOX2.INPUT.NIL.mapped_readnum.txt &amp;</span><br><span class="line"><span class="built_in">wait</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> rep <span class="keyword">in</span> rep1 rep2</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  overlap_peakfi_with_bam.pl \</span><br><span class="line">    <span class="variable">$wkdir</span>/6.read2bam/RBFOX2.CLIP.<span class="variable">$rep</span>.srt.bam \</span><br><span class="line">    <span class="variable">$wkdir</span>/6.read2bam/RBFOX2.INPUT.NIL.rmDup.srt.bam \</span><br><span class="line">    <span class="variable">$wkdir</span>/8.peakcalling/RBFOX2.<span class="variable">$rep</span>.peaks.bed \</span><br><span class="line">    <span class="variable">$wkdir</span>/9.normalization/RBFOX2.CLIP.<span class="variable">$rep</span>.mapped_readnum.txt \</span><br><span class="line">  <span class="variable">$wkdir</span>/9.normalization/RBFOX2.INPUT.NIL.mapped_readnum.txt \</span><br><span class="line">    <span class="variable">$wkdir</span>/9.normalization/RBFOX2.<span class="variable">$rep</span>.peaks.normed.bed &amp;</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="built_in">wait</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># MEME-chip不大适合RNA peak的分析，但也只有这种方法</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>eCLIP</category>
+      </categories>
+      <tags>
+        <tag>eCLIP</tag>
       </tags>
   </entry>
   <entry>
@@ -2046,179 +2216,25 @@
 
 <h2 id="ModelSegments"><a href="#ModelSegments" class="headerlink" title="ModelSegments"></a>ModelSegments</h2><p>利用前面拿到的<strong>标准化&amp;降噪后tsv文件</strong>和<strong>等位基因测序深度tsv文件</strong>进行call segment，需要注意的是输入文件要求tumor match normal。这一步用到的工具是<code>ModelSegments</code>，它根据降噪后的reads counts值对copy ratios进行分割，并根据第五步的CollectAllelicCounts等位基因计数对分割片段进行分类。<br>注意：这一步非常非常非常非常耗内存和CPU，不要设置<code>--java-options &quot;Xmx 60G&quot;</code>，会报内存不足，就随便他跑去吧</p>
 <p><a href="https://gatk.broadinstitute.org/hc/en-us/articles/360057439631-ModelSegments">Manual-ModelSegments</a></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cat 0.sra/sra.infor/config.tumor  | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  gatk --java-options <span class="string">&quot;-Xmx20g&quot;</span> ModelSegments \</span><br><span class="line">  --denoised-copy-ratios ./8.cnv/denoisedCR/<span class="variable">$&#123;id&#125;</span>.clean.denoisedCR.tsv \</span><br><span class="line">  --allelic-counts ./8.cnv/allelicCounts/<span class="variable">$&#123;id&#125;</span>.allelicCounts.tsv \</span><br><span class="line">  --normal-allelic-counts ./8.cnv/allelicCounts/case1_germline.allelicCounts.tsv \</span><br><span class="line">  --output ./8.cnv/segments \</span><br><span class="line">  --output-prefix <span class="variable">$&#123;id&#125;</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>]]></content>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cat 0.sra/sra.infor/config.tumor  | <span class="keyword">while</span> <span class="built_in">read</span> id</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  gatk --java-options <span class="string">&quot;-Xmx20g&quot;</span> ModelSegments \</span><br><span class="line">  --denoised-copy-ratios ./8.cnv/denoisedCR/<span class="variable">$&#123;id&#125;</span>.clean.denoisedCR.tsv \</span><br><span class="line">  --allelic-counts ./8.cnv/allelicCounts/<span class="variable">$&#123;id&#125;</span>.allelicCounts.tsv \</span><br><span class="line">  --normal-allelic-counts ./8.cnv/allelicCounts/case1_germline.allelicCounts.tsv \</span><br><span class="line">  --output ./8.cnv/segments \</span><br><span class="line">  --output-prefix <span class="variable">$&#123;id&#125;</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<h1 id="拷贝数变异分析（CNVkit）"><a href="#拷贝数变异分析（CNVkit）" class="headerlink" title="拷贝数变异分析（CNVkit）"></a>拷贝数变异分析（CNVkit）</h1><p><a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004873">CNVkit: Genome-Wide Copy Number Detection and Visualization from Targeted DNA Sequencing</a><br><a href="https://cnvkit.readthedocs.io/en/stable/index.html">Manual-CNVkit</a><br><a href="https://github.com/etal/cnvkit">Github-CNVkit</a><br><a href="https://www.jianshu.com/p/d5310b76f1f2">CNVkit教程</a></p>
+<p>batch是脚本内的一个整合了很多命令的方法，当然也可以使用cnvkit.py提供的access、coverrage、fix等方法一起来完成和batch同样功能的分析，但是作为懒人还是用了batch。而且CNVkit也太快了吧，这里还没写完就已经跑好了！</p>
+<blockquote>
+<p>重要参数：<br> Tumor.bam 和Normal.bam都是相应样本的bam文件<br> –targets 想要分析的区域信息<br> –annotate refFlat格式的基因注释信息，可以从UCSC上下载<br> –fasta 参考基因组<br> –access 需要跟bed文件，可用过cnvkit.py access mm10.fasta -s 10000 -o access-10kb.mm10.bed 生成<br> –output-reference 输出的reference.cnn可以作为下一批tumor数据分析的输入文件，reference.cnn和输入的normal.bam有关<br> –diagram –scatter 两个都是顺带绘图的参数<br> –drop-low-coverage to ignore bins with log2 normalized coverage values below -15.</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -------------------------------&gt;</span></span><br><span class="line"><span class="comment"># CNVkit-v0.9.8</span></span><br><span class="line"><span class="comment"># -------------------------------&gt; </span></span><br><span class="line"><span class="comment"># installation</span></span><br><span class="line">mamba install -c bioconda cnvkit</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用命令 batch 进行 CNV 分析</span></span><br><span class="line"><span class="comment"># From baits and tumor/normal BAMs</span></span><br><span class="line">GENOME=~/Reference/GATK/Homo_sapiens_assembly38.fasta</span><br><span class="line">bed=~/Reference/GATK/hg38_exon.bed</span><br><span class="line"></span><br><span class="line">/home/data/vip8t02/anaconda3/envs/CNVkit-0.9.8/bin/cnvkit.py batch ./5.gatk/bqsr.bam/*[ABC]*bqsr.bam   ./5.gatk/bqsr.bam/case1_techrep_bqsr.bam \</span><br><span class="line">--normal  ./5.gatk/bqsr.bam/case1_germline_bqsr.bam \</span><br><span class="line">--targets  <span class="variable">$&#123;bed&#125;</span> \</span><br><span class="line">--fasta <span class="variable">$GENOME</span>  \</span><br><span class="line">--drop-low-coverage --scatter --diagram --method amplicon -p 16 \</span><br><span class="line">--output-reference my_reference.cnn --output-dir ./8.cnv/cnvkit</span><br><span class="line"></span><br><span class="line"><span class="comment"># 划分segment</span></span><br><span class="line">/home/data/vip8t02/anaconda3/envs/CNVkit-0.9.8/bin/cnvkit.py <span class="built_in">export</span> seg *bqsr.cns -o gistic.segments</span><br><span class="line">sed <span class="string">&#x27;s/_bqsr//&#x27;</span> gistic.segments</span><br><span class="line"></span><br><span class="line">awk <span class="string">&#x27;&#123;print FILENAME&quot;\t&quot;$0&#125;&#x27;</span> *bqsr.cns  | grep -v chromosome |sed <span class="string">&#x27;s/_bqsr.cns//g&#x27;</span> |awk <span class="string">&#x27;&#123;print $1&quot;\t&quot;$2&quot;\t&quot;$3&quot;\t&quot;$4&quot;\t&quot;$8&quot;\t&quot;$6&#125;&#x27;</span> &gt;final.seg</span><br><span class="line"></span><br><span class="line"><span class="comment"># Visualization</span></span><br><span class="line">/home/data/vip8t02/anaconda3/envs/CNVkit-0.9.8/bin/cnvkit.py heatmap *.cns</span><br></pre></td></tr></table></figure>
+<p>diagram用于展示单个样本的CNV在染色体上的分布:</p>
+<center><img src="/img/Figures/cnvkit-case1.png" alt="res" style="zoom:55%;" /></center>
+
+<p>scatter展示单个样本染色体区域上log2 ratio值的分布:</p>
+<center><img src="/img/Figures/case1_biorep_A_techrep_bqsr-scatter.png" alt="scatter" style="zoom:65%;" /></center>
+
+<p>heatmap展示多个样本的CNV分布情况:</p>
+<center><img src="/img/Figures/heatmap.png" alt="heatmap" style="zoom:65%;" /></center>
+
+<h1 id="突变Somatic-Signature图谱"><a href="#突变Somatic-Signature图谱" class="headerlink" title="突变Somatic Signature图谱"></a>突变Somatic Signature图谱</h1>]]></content>
       <categories>
         <category>WES</category>
       </categories>
-  </entry>
-  <entry>
-    <title>Git love RProject--push your project to Github/Gitee!</title>
-    <url>/2021/04/10/Git-love-RProject-push-your-project-to-Github-Gitee/</url>
-    <content><![CDATA[<style>
-  p{
-    font-size:18px;
-    line-height:1.7em;
-
-  }
-</style>
-
-<h1 id="R-project"><a href="#R-project" class="headerlink" title="R project"></a>R project</h1><ul>
-<li>为什么要用R project：乱七八糟随手新建脚本的习惯该改掉了!想找以前代码的时候真的想哭！！</li>
-<li>git：菜鸡终于发现了git的妙用了！把自己的项目整个推送到github/gitee上，然后但凡修改都能找到前后对比，改错了也能及时改回来</li>
-</ul>
-<h1 id="R-project的结构"><a href="#R-project的结构" class="headerlink" title="R project的结构"></a>R project的结构</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">└── my_project</span><br><span class="line">├── src # 这部分用来装R函数或者其他的可执行文件</span><br><span class="line">│ ├── bin # 可执行文件或者外程序包比如java包</span><br><span class="line">│ └── scripts # R函数脚本</span><br><span class="line">├── output # 输出数据 ignore</span><br><span class="line">├── data # 数据文件，你不会想把这个上传git的，进.gitignore</span><br><span class="line">│ ├── raw # 原始数据 ignore</span><br><span class="line">│ └── processed #中间文件 ignore</span><br><span class="line">├── reports # 报告，保存一些rmd生成的pdf/ppt，再也不用担心我的进展汇报啦</span><br><span class="line">├── README.md # 项目简介</span><br><span class="line">├── analysis.R # 调用函数的函数，需要的图表作为函数输出，结合rmarkdown舒服</span><br><span class="line">├── .gitignore # who is ignored .gitignore里添加文件夹必须加上/ ，比如data/</span><br><span class="line">├── all.rmd # rmarkdown，配合analysis.R，生成pdf报告挺不错的</span><br><span class="line">├── require.R # 把用到的包都require一遍，以防万一</span><br><span class="line">└── packrat # 里面主要存储安装包的信息(可选,这个文件夹通常挺大)。</span><br></pre></td></tr></table></figure>
-<h1 id="实现流程"><a href="#实现流程" class="headerlink" title="实现流程"></a>实现流程</h1><h2 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h2><center><img src="/img/scATAC/new.png" alt="new" style="zoom:100%;" /></center>
-这个太简单了，直接建就行，语言写R
-
-<h2 id="复制仓库地址，创建Rproject"><a href="#复制仓库地址，创建Rproject" class="headerlink" title="复制仓库地址，创建Rproject"></a>复制仓库地址，创建Rproject</h2><p>file -&gt; New Project -&gt; Version Control -&gt; Git (svn 没用过不知道) -&gt; Create Project</p>
-<center><img src="/img/scATAC/gitee-link.png" alt="HC" style="zoom:80%;" /></center>
-
-<center><img src="/img/scATAC/RStudio-clone-git-project.gif" alt="HC" style="zoom:60%;" /></center>
-
-<h2 id="RStudio设置"><a href="#RStudio设置" class="headerlink" title="RStudio设置"></a>RStudio设置</h2><p>Tools -&gt; Global Options -&gt; Git/SVN<br>设置git的路径+获取RSA keys<br>这样就创建了一个用于SSH连接的RSA秘钥</p>
-<center><img src="/img/scATAC/setting.png" alt="setting" style="zoom:100%;" /></center>
-
-<p>复制public keys</p>
-<h2 id="仓库中部署公钥"><a href="#仓库中部署公钥" class="headerlink" title="仓库中部署公钥"></a>仓库中部署公钥</h2><p>找到仓库设置中的SSH公钥，把刚刚复制的keys添加进来</p>
-<h2 id="配置git"><a href="#配置git" class="headerlink" title="配置git"></a>配置git</h2><p>在Terminal中：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&#x27;yourGitHubUsername&#x27;</span></span><br><span class="line">git config --global user.email <span class="string">&#x27;name@provider.com&#x27;</span></span><br></pre></td></tr></table></figure>
-<h2 id="first-commit"><a href="#first-commit" class="headerlink" title="first commit"></a>first commit</h2><p>选择要push的内容</p>
-<center><img src="/img/scATAC/commit.png" alt="setting" style="zoom:100%;" /></center>]]></content>
-      <categories>
-        <category>ToolsLearning</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Phrase for Response Letter</title>
-    <url>/2021/04/12/Phrase-for-Response-Letter/</url>
-    <content><![CDATA[<ol>
-<li><p>According to the associate editor and reviewers’ comments, we have made extensive modifications to our manuscript and supplemented extra data to make our results convincing.</p>
-</li>
-<li><p>In this revised version, changes to our manuscript were all highlighted within the document by using red colored text.</p>
-</li>
-<li><p>Thank you for your nice comments on our article. According to your suggestions, we have supplemented several data here and corrected several mistakes in our previous draft. Based on your comments, we also attached a point-by-point letter to you and the other two reviewers. We have made extensive revisions to our previous draft. The detailed point-by-point responses are listed below.</p>
-</li>
-<li><p>Thanks for your help. We feel really sorry for our carelessness.</p>
-</li>
-<li><p>Thank you for your reminding. You and the other two reviewers’ comments are all of great importance to our article. All of these comments have contributed a lot to improve the quality of our article. After this revision, we have written a point-by-point response letter to you as you can see above. Meanwhile, we also wrote a point-by-point response letter to the other two nice reviewers to acknowledge their helps and denote where we made revisions.</p>
-</li>
-<li><p>We feel great thanks for your professional review work on our article. As you are concerned, there are several problems that need to be addressed. According to your nice suggestions, we have made extensive corrections to our previous draft. We have added necessary data to supplement our results and edited our article extensively. The detailed corrections are listed below.</p>
-</li>
-<li><p>We feel sorry that we did not provide enough information about XXXX.</p>
-</li>
-<li><p>it is really a giant mistake to the whole quality of our article. We feel sorry for our carelessness. We have corrected it and we also feel great thanks for your point out.</p>
-</li>
-<li><p>thanks for your suggestions. We feel sorry for our poor writings, however, we do invite a friend of us who is a native English speaker from USA help polish our article. Due to our friend’s help, the article was edited extensively. And we hope the revised manuscript could be acceptable for you.</p>
-</li>
-<li><p>thanks for your careful checks. We are sorry for our carelessness. Based on your comments, we have made the corrections to make the unit harmonized within the whole manuscript.</p>
-</li>
-<li><p>your suggestion really means a lot to us. Yes, it would be more understandable if we XXX.</p>
-</li>
-<li><p>According to your suggestion, we have corrected the “XXX” into “XXX”.</p>
-</li>
-<li><p>thanks for your correction. It was indeed a serious grammatical error. And we have corrected it according to your suggestion.</p>
-</li>
-<li><p>thanks for your suggestions. We feel sorry for the improper wording. We have used “XXXX” as you suggested.</p>
-</li>
-<li><p>According to the reviewer’s comments, we have revised the manuscript extensively. If there are any other modifications we could make, we would like very much to modify them and we really appreciate your help. “xxxx” is a journal of great popularity and prestige. We hope that our manuscript could be considered for publication in your journal. Thank you very much for your help.</p>
-</li>
-<li><p>The manuscript is revised submission (XXXXXXX) with new line and page numbers in the text, some grammar and spelling errors had also been corrected. Furthermore, the relevant regulations had been made in the original manuscript according to the comments of reviewers, and the major revised portions were marked in red bold. We also responded point by point to each reviewer comments as listed below, along with a clear indication of the location of the revision. Hope these will make it more acceptable for pub lication.</p>
-</li>
-<li><p>Thank you for your kind comments on our manuscript entitled“XX文章名”. We have carefully revised the manuscript according to the reviewer’s comments. Based on the suggestions, we have made an extensive modification on the revised manuscript. Detailed revision was shown as follows. The changes to our manuscript within the document were aslo highlighted by using red colored text.</p>
-</li>
-<li><p>We are very sorry for our negligence of…..<br>We are very sorry for our incorrect writing ……..<br>It is really true as Reviewer suggested tha…..<br>We have made correction according to the Reviewer’s comments.<br>We have re-written this part according to the Reviewer’s suggestion.<br>As Reviewer suggested that…..<br>Considering the Reviewer’s suggestion, we have …. .</p>
-</li>
-<li><p>Line 60-61, the statements ……. were corrected as ………<br>Line 107, …… was added<br>Line 129, …..was deleted</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Records</category>
-      </categories>
-      <tags>
-        <tag>Tips</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Stat-03-Non-Negative Matrix Factorization</title>
-    <url>/2021/04/13/Stat-03-Non-Negative-Matrix-Factorization/</url>
-    <content><![CDATA[<p><strong>Non-negative matrix factorization</strong><br>非负矩阵分解(Non-negative matrix factorization, NMF)是在矩阵中所有元素均为非负数约束条件下的矩阵分解方法。</p>
-<ul>
-<li>基本思想：给定一个非负矩阵V，NMF能找到一个非负矩阵W和一个非负矩阵H，使得矩阵W和H的乘积近似等于矩阵V中的值</li>
-</ul>
-<center><img src="/img/Stat/NMF.png" alt="NMF" style="zoom:90%;" /></center>
-
-<ul>
-<li>W矩阵：基础图象矩阵（基矩阵，特征矩阵），相当于从原矩阵V中抽取出来的特征</li>
-<li>H矩阵：系数矩阵</li>
-<li>≈：目前暂时无法做到完全相等</li>
-<li>因为是约等于，存在损失函数E（V = WH+E，最优化E = min|V-WH|)</li>
-</ul>
-<p>实质是一个优化问题，通过一定的优化方法来求解特征矩阵W和系数矩阵H<br><strong>加权和</strong><br>原理上等效为线性方程组</p>
-<h1 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h1><h2 id="特征学习"><a href="#特征学习" class="headerlink" title="特征学习"></a>特征学习</h2><h2 id="聚类"><a href="#聚类" class="headerlink" title="聚类"></a>聚类</h2><p>比K-means算法更优之处为：NMF是一种软聚类（一个元素可被分为多种类型）</p>
-]]></content>
-      <categories>
-        <category>STAT</category>
-      </categories>
-      <tags>
-        <tag>Stat</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>all about UMI-tools</title>
-    <url>/2021/04/19/all-about-UMI-tools/</url>
-    <content><![CDATA[<h1 id="UMI-tools"><a href="#UMI-tools" class="headerlink" title="UMI-tools"></a>UMI-tools</h1><p><a href="https://www.jianshu.com/p/c6eac2e1f02a">https://www.jianshu.com/p/c6eac2e1f02a</a><br><a href="https://umi-tools.readthedocs.io/en/latest/">https://umi-tools.readthedocs.io/en/latest/</a><br><a href="https://github.com/CGATOxford/UMI-tools/blob/master/doc/QUICK_START.md">https://github.com/CGATOxford/UMI-tools/blob/master/doc/QUICK_START.md</a></p>
-<p>For example, in a standard iCLIP experiment, the barcode is made of 3 random bases, followed by a 4 base library barcode, followed by 2 more random bases. Thus the <code>--bc-pattern</code> would be “NNNXXXXNN”.</p>
-<center><img src="/img/scATAC/UMI.png" alt="UMI" style="zoom:70%;" /></center>
-The processed reads could then be passed to a demultiplexing tool to deal with the library part of the barcode.
-
-<ul>
-<li><p>Example UMI extraction:<br>UMI is bases 3-7, bases 1-2 and 7-8 are the sample barcode and need to be removed(取3-7是因为前几个base测序质量不好)</p>
-<p>@HISEQ:87:00000000 read1<br>AAGGTTGCTGATTGGATGGGCTAG</p>
-</li>
-</ul>
-<p> +<br> DA1AEBFGGCG01DFH00B1FF0B</p>
-<p> will become:</p>
-<p> @HISEQ:87:00000000_GGTT read1<br> TGATTGGATGGGCTAG</p>
-<ul>
-<li>1AFGGCG01DFH00B1</li>
-</ul>
-<p>UMItools的标记与eclipdemux不同，不可交叉混用</p>
-<ul>
-<li>UMItools是把UMI加在: @HISEQ:87:00000000_GGTT read1</li>
-<li>eclipdemux加在：@GGTT;HISEQ:87:00000000 read1</li>
-</ul>
-<h1 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#第一种</span></span><br><span class="line">conda/mamba install -c bioconda -c conda-forge umi_tools</span><br><span class="line"></span><br><span class="line"><span class="comment">#第二种</span></span><br><span class="line">pip install umi_tools</span><br><span class="line"></span><br><span class="line"><span class="comment">#第三种</span></span><br><span class="line">unzip 1.0.0.zip</span><br><span class="line"><span class="built_in">cd</span> UMI-tools-1.0.0</span><br><span class="line">python setup.py install --user</span><br></pre></td></tr></table></figure>
-<h1 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h1><p>extract UMI from raw reads -&gt; map reads -&gt; deduplicate reads based on UMIs</p>
-<h2 id="Extract-the-UMIs"><a href="#Extract-the-UMIs" class="headerlink" title="Extract the UMIs"></a>Extract the UMIs</h2><p>Currently there are 6 commands. The <code>extract</code> and <code>whitelist</code> commands are used to prepare a fastq containg UMIs +/- cell barcodes for alignment.</p>
-<h3 id="whitelist–提取cell-barcode白名单"><a href="#whitelist–提取cell-barcode白名单" class="headerlink" title="whitelist–提取cell barcode白名单"></a>whitelist–提取cell barcode白名单</h3><p>whitelist 命令会从原始数据种提取去可能的cell barcode。<br>通常情况下，10X的barcode长度为16nt，umi长度为12nt；Drop-seq的barcode长度为12nt，umi长度为8nt。<br> <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"> <span class="comment">#10X</span></span><br><span class="line">umi_tools whitelist --stdin hgmm_100_R1.fastq.gz \  </span><br><span class="line">                    --bc-pattern=CCCCCCCCCCCCCCCCNNNNNNNNNNNN \ </span><br><span class="line">                    --set-cell-number=100 \    </span><br><span class="line">                    --log2stderr &gt; whitelist.txt</span><br><span class="line"></span><br><span class="line"><span class="comment">#BD</span></span><br><span class="line">umi_tools whitelist --stdin <span class="variable">$&#123;fastq&#125;</span> \</span><br><span class="line">        --extract-method=regex \</span><br><span class="line">        --bc-pattern=<span class="string">&quot;(?P&lt;cell_1&gt;.&#123;9&#125;)(?P&lt;discard_1&gt;.&#123;12&#125;)(?P&lt;cell_2&gt;.&#123;9&#125;)(?P&lt;discard_2&gt;.&#123;13&#125;)(?P&lt;cell_3&gt;.&#123;9&#125;)(?P&lt;umi_1&gt;.&#123;8&#125;)(?&lt;plotT&gt;TTTTTTTT)&#123;s&lt;=2&#125;.*&quot;</span> \</span><br><span class="line">        --expect-cells=10000  --plot-prefix=true2 --log2stderr --subset-reads=100000000 \</span><br><span class="line">        --knee-method=density --allow-threshold-error &gt; whitelist.txt</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p><strong>常用参数解释</strong><br>–stdin：指定输入文件或者标准输入。<br>–plot-prefix：指定QC统计图的前缀，可用于判断细胞数阈值设置是否合理。<br>–bc-pattern：指定cell barcode和umi的位置，默认情况下，他们位于序列的5’端，否则可用–3prime参数改变。cell barcode用同等数量的字符”C”表示；umi用同等数量的字符”N”表示。<br>–set-cell-number：设置检测到的cell barcode数量，若事先知道数量可设定，否则省略软件会自动判断(结合QC图判读阈值是否合理，若不合理可人为设定阈值重新分析)。<br>–expect-cells=200：设置检测到的cell barcode数据上限，该值是根据捕获效率预估得到(一般10X捕获效率不低于10%)，结合QC图判断阈值是否合理，若不合理可人为设定阈值重新分析。<br>–stdout/-S：指定输出barcode结果到文件，log信息到还是标准输出。<br>–stdlog/-L：指定log信息到文件，barcode结果还是到标准输出。<br>–log2stderr：指定log信息到标准错误输出，barcode结果还是到标准输出。<br>-v 0：关闭log信息的输出。</p>
-</blockquote>
-<blockquote>
-<p><strong>结果文件解释</strong><br>whitelist生成的结果文件包含四列：<br>1、可接受的cell barcode；<br>2、与可接受的barcode距离相差1的barcode；<br>3、第一列barcode的umi数；<br>4、第2列barcode的umi数</p>
-</blockquote>
-<h3 id="extract–提取barcode和过滤reads"><a href="#extract–提取barcode和过滤reads" class="headerlink" title="extract–提取barcode和过滤reads"></a>extract–提取barcode和过滤reads</h3><p>extract命令会从fastq文件中提取包含可接受barcode的reads，默认情况下extract命令会忽略umi的reads质量情况而不做处理。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">umi_tools extract --bc-pattern=CCCCCCCCCCCCCCCCNNNNNNNNNN \</span><br><span class="line">                  --stdin hgmm_100_R1.fastq.gz \</span><br><span class="line">                  --stdout hgmm_100_R1_extracted.fastq.gz \</span><br><span class="line">                  --read2-in hgmm_100_R2.fastq.gz \</span><br><span class="line">                  --read2-out=hgmm_100_R2_extracted.fastq.gz \</span><br><span class="line">                  --filter-cell-barcode \</span><br><span class="line">                  --whitelist=whitelist.txt</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>常用参数解释：<br>–bc-pattern：指定cell barcode和umi的位置，同whilelist。<br>–stdin：指定输入文件或者标准输入，同whilelist。<br>–stdout：指定read1的输出文件。<br>–read2-in：指定read2的输入文件，即基因表达的原始reads文件。<br>–read2-out：指定read2的输出文件。<br>–read2-stdout：设置read2的输出到标准输出，同时不会生成提取后read1文件。<br>–filter-cell-barcode：指定只提取包含可接受barcoded的reads。<br>–error-correct-cell：指定提取包含与可接受barcode汉明距离相差1的barcode的reads。<br>–whitelist：barcode白名单文件。<br>–quality-filter-threshold=[FILTER]：设定通过阈值来过滤umi的read，低于阈值的umi会被丢弃。<br>–quality-filter-mask=[FILTER]：设置一个阈值来把umi reads中低于阈值的碱基替换为”N”。</p>
-</blockquote>
-<h2 id="Mapping"><a href="#Mapping" class="headerlink" title="Mapping"></a>Mapping</h2><p>使用STAR/bowtie来将reads比对到参考基因组。然后转成BAM，排序+index</p>
-<h2 id="Deduplication"><a href="#Deduplication" class="headerlink" title="Deduplication"></a>Deduplication</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">umi_tools dedup -I example.bam --output-stats=deduplicated -S deduplicated.bam</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>输出deduplicated_edit_distance.tsv：<br> <center><img src="/img/scATAC/dedup.png" alt="UMI" style="zoom:70%;" /></center><br> 前两列:单碱基平均编辑距离的分布</p>
-</blockquote>
-<h1 id="UMI-tools-in-single-cell"><a href="#UMI-tools-in-single-cell" class="headerlink" title="UMI-tools in single cell"></a>UMI-tools in single cell</h1><p><strong>Important update:</strong> We now recommend the use of <code>alevin</code> for droplet-based scRNA-Seq (e.g 10X, inDrop etc). <code>alevin</code> extends the directional method used in <code>UMI-tools</code> to correct UMI errors with droplet scRNA-Seq within a framework that also enables quantification using multi-mapped reads. <code>alevin</code> is an accurate, fast and convenient end-to-end tool to go from fastq -&gt; count matrix. </p>
-<h2 id="读取数据"><a href="#读取数据" class="headerlink" title="读取数据"></a>读取数据</h2><p>查看CB和UMI</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">zcat hgmm_100_R1.fastq.gz | head -n2</span><br><span class="line"></span><br><span class="line"><span class="comment"># @ST-K00126:308:HFLYFBBXX:1:1101:25834:1173 1:N:0:NACCACCA</span></span><br><span class="line"><span class="comment"># NGGGTCAGTCTAGTGTGGCGATTCAC</span></span><br><span class="line"><span class="comment"># +</span></span><br><span class="line"><span class="comment"># #AAFFJJJJJJJJJJJJJJJJJJJJJ</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># -------CB-------|---UMI---</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>ToolsLearning</category>
-      </categories>
-      <tags>
-        <tag>WES</tag>
-      </tags>
   </entry>
 </search>
