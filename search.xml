@@ -2294,29 +2294,21 @@ The processed reads could then be passed to a demultiplexing tool to deal with t
 <hr>
 <p>注释结果：</p>
 <ol>
-<li>trunk_gene<center><img src="/img/Figures/trunk_kegg.png" alt="trunk_kegg" style="zoom:70%;" /></center>
+<li><p><strong>trunk_gene</strong></p>
+<center><img src="/img/Figures/trunk_kegg.png" alt="trunk_kegg" style="zoom:70%;" /></center>  
 
-
+<p> 结核？？？？<br> Tuberculosis (TB) is a potentially serious infectious disease that mainly affects your lungs. The bacteria that cause tuberculosis are spread from one person to another through tiny droplets released into the air via coughs and sneezes.</p>
+<p> 百日咳？？？？？？？<br> Pertussis, also known as whooping cough, is a highly contagious respiratory disease. It is caused by the bacterium Bordetella pertussis. Pertussis is known for uncontrollable, violent coughing which often makes it hard to breathe.</p>
+<p> <strong>NF-kB Signaling Pathway</strong><br> NF-κB蛋白通常会由p65和p50形成同源/异源二聚体，在胞质中因与抑制蛋白IkB结合形成了三聚体复合物而处于失活状态。当上游信号因子TNF结合到细胞膜表面受体后，受体构象改变并将信号传递给IKK激酶（IkB kinase），进而使IkB蛋白磷酸化并将其从三聚体中解离。随后NF-κB二聚体暴露出核定位序列（NLS），迅速从细胞质进入细胞核内，与核内DNA上的特异序列相结合，促进相关基因的转录，比如CyclinD1、c-Myc、MMP-9、VEGF等。NF-κB的持续性激活能够导致与细胞周期相关的蛋白活性异常，提高一些促进肿瘤生长的细胞因子水平，介导新血管生成。</p>
 </li>
-</ol>
-<pre><code>结核？？？？  
-Tuberculosis (TB) is a potentially serious infectious disease that mainly affects your lungs. The bacteria that cause tuberculosis are spread from one person to another through tiny droplets released into the air via coughs and sneezes.
-
-百日咳？？？？？？？
-Pertussis, also known as whooping cough, is a highly contagious respiratory disease. It is caused by the bacterium Bordetella pertussis. Pertussis is known for uncontrollable, violent coughing which often makes it hard to breathe.
-
-**NF-kB Signaling Pathway**
-NF-κB蛋白通常会由p65和p50形成同源/异源二聚体，在胞质中因与抑制蛋白IkB结合形成了三聚体复合物而处于失活状态。当上游信号因子TNF结合到细胞膜表面受体后，受体构象改变并将信号传递给IKK激酶（IkB kinase），进而使IkB蛋白磷酸化并将其从三聚体中解离。随后NF-κB二聚体暴露出核定位序列（NLS），迅速从细胞质进入细胞核内，与核内DNA上的特异序列相结合，促进相关基因的转录，比如CyclinD1、c-Myc、MMP-9、VEGF等。NF-κB的持续性激活能够导致与细胞周期相关的蛋白活性异常，提高一些促进肿瘤生长的细胞因子水平，介导新血管生成。
-</code></pre>
-<ol start="2">
-<li><p>branch_gene</p>
+<li><p><strong>branch_gene</strong></p>
 <center><img src="/img/Figures/branch_kegg.png" alt="branch_kegg" style="zoom:70%;" /></center>  
  
 
 <p> <strong>Notch signaling pathway</strong><br> Notch信号通路广泛参与了恶性肿瘤的发生发展。Notch信号传导通路发挥致癌作用，导致细胞在增殖，细胞周期抑制，分化，和凋亡的过程失调和失控，造成了细胞的转化及恶性化，最终导致了恶性肿瘤的发生。</p>
 <p> <strong>Adherens junctions（黏着链接）</strong><br> Adherens junctions (AJs) are evolutionarily conserved plasma-membrane structures that mediate cell–cell adhesions in multicellular organisms. They are organized by several types of adhesive integral membrane proteins, most notably cadherins and nectins that are clustered and stabilized by a number of cytoplasmic scaffolds.</p>
 </li>
-<li><p>private_gene</p>
+<li><p><strong>private_gene</strong></p>
 <center><img src="/img/Figures/private_kegg.png" alt="private_kegg" style="zoom:70%;" /></center>  
  
 
