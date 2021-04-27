@@ -2363,7 +2363,42 @@ The processed reads could then be passed to a demultiplexing tool to deal with t
   <entry>
     <title>scRNAseq-02 Annotation</title>
     <url>/2021/04/26/scRNAseq-02-Annotation/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h1 id="单细胞亚群鉴定基础"><a href="#单细胞亚群鉴定基础" class="headerlink" title="单细胞亚群鉴定基础"></a>单细胞亚群鉴定基础</h1><ul>
+<li>细胞异质性<br>不同的细胞具有不同的功能、不同的表达模式或者说不同的基因组表观。</li>
+<li>细胞的共性<br>每个细胞都有独特的表达模式，都有自己特有的基因，同一类型的细胞都有类似的表达模式。</li>
+<li>单细胞数据库<br>基于已有大量的表达数据库，可以根据基因特征来判断细胞类型，知道什么样的细胞对应什么样的基因表达。<h1 id="单细胞亚群鉴定方法"><a href="#单细胞亚群鉴定方法" class="headerlink" title="单细胞亚群鉴定方法"></a>单细胞亚群鉴定方法</h1>多种方法相互验证！！</li>
+</ul>
+<ol>
+<li>经典<br> 这是最原始的方法，也是最经典的方法，通过查看亚群特性性表达基因，根据marker基因数据库确定细胞亚群。</li>
+<li>相似性<br> 通过比较单细胞基因表达与纯特定的细胞类型的bulk RNA进行相关性分析，相关性越高，表明细胞类型越相似，比如SingleR/scMCA/scHCL属于此类。Seurat也可以做类似事情。</li>
+<li>半监督<br> 这是通过给定数据集进行训练，然后根据训练的模型预测新的单细胞数据的细胞类型，比如，cellassign/axibet都属于此类。</li>
+<li>差异基因<br> 这里主要通过差异基因对marker数据进行富集分析，根据富集程度判断细胞类型，比如clusterprofiler和SCSA属于此类。</li>
+</ol>
+<h2 id="scMCA–小鼠单细胞注释"><a href="#scMCA–小鼠单细胞注释" class="headerlink" title="scMCA–小鼠单细胞注释"></a>scMCA–小鼠单细胞注释</h2><p>scMCA是一种基于单细胞基因表达的鼠细胞类型定义工具。scMCA是简易的R软件包，且有在线版scMCAMouse Cell Atlas 。此外，还添加了一个用于对scMCA进行可视化的UI。</p>
+<p>分析流程：</p>
+<center><img src="/img/scRNA/scMCA.png" alt="warning" style="zoom:100%;" /></center>
+
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment">#This require devtools </span></span><br><span class="line">install.packages(<span class="string">&#x27;devtools&#x27;</span>) library(devtools) </span><br><span class="line">install_github(<span class="string">&quot;ggjlab/scMCA&quot;</span>) </span><br><span class="line"><span class="comment"># scMCA requires ggplot2/reshape2/plotly/shiny/shinythemes/shiny </span></span><br></pre></td></tr></table></figure>
+<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">library(scMCA)</span><br><span class="line"><span class="comment"># mca_lung is an example expression matrix from MCA project.</span></span><br><span class="line">data(mca_lung)</span><br><span class="line"><span class="built_in">dim</span>(mca_lung)</span><br><span class="line"><span class="comment"># scMCA has two parameters , single cell expression matrix(scdata) and </span></span><br><span class="line"><span class="comment"># the number of most similar cell types</span></span><br><span class="line">mca_result &lt;- scMCA(scdata = mca_lung, numbers_plot = <span class="number">3</span>)</span><br><span class="line"><span class="comment"># The return of scMCA() is a list which contains 4 parts.</span></span><br><span class="line"><span class="comment"># cors_matrix: Pearson correlation coefficient matrix of each cell and cell type.</span></span><br><span class="line"><span class="comment"># top_cors: equals to numbers_plot</span></span><br><span class="line"><span class="comment"># scMCA: the most relevant cell type for each query cell</span></span><br><span class="line"><span class="comment"># scMCA_probility: the top n relevant cell types for each query cel</span></span><br><span class="line"></span><br><span class="line">shiny交互式</span><br><span class="line"><span class="comment"># open shiny for visualize result for scMCA </span></span><br><span class="line">scMCA_vis(mca_result) </span><br></pre></td></tr></table></figure>
+<h2 id="scHCL-人单细胞注释包"><a href="#scHCL-人单细胞注释包" class="headerlink" title="scHCL-人单细胞注释包"></a>scHCL-人单细胞注释包</h2><p>基本流程和scMCA相似<br>参照<a href="https://github.com/ggjlab/scHCL/">https://github.com/ggjlab/scHCL/</a></p>
+<h2 id="SingleR"><a href="#SingleR" class="headerlink" title="SingleR"></a>SingleR</h2><p>SingleR是一个用于对单细胞RNA-seq测序（scRNA-seq）数据进行细胞类型自动注释的R包。同时，该程序包还提供了一个网页版的工具，可以在线对单细胞转录组数据进行细胞类型注释分析，可以通过以下网址进行访问: <a href="https://comphealth.ucsf.edu/app/singler">https://comphealth.ucsf.edu/app/singler</a></p>
+<p>它通过给定的具有已知类型标签的细胞样本作为参考数据集，对测试数据集中与参考集相似的细胞进行标记注释。</p>
+<p>对于每个测试细胞：</p>
+<ul>
+<li>首先计算每个细胞的表达谱与参考样品的表达谱之间的Spearman相关性。这是通过在所有标记对之间识别的marker基因的并集完成的。</li>
+<li>其次将每个标签的分数定义为相关分布的固定分位数（默认为0.8）。</li>
+<li>最后对所有的标签重复此操作，然后将得分最高的标签作为此细胞的注释。</li>
+</ul>
+<h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><p>使用devtools包进行安装，如果安装失败，可下载进行本地安装，需提前安装好报错的各种依赖包。</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用devtools包进行安装</span></span><br><span class="line"> devtools::install_github(<span class="string">&#x27;dviraran/SingleR&#x27;</span>) </span><br><span class="line"><span class="comment"># this might take long, though mostly because of the installation of Seurat. </span></span><br><span class="line"><span class="comment"># 下载本地安装 </span></span><br><span class="line"><span class="comment"># 安装依赖包 </span></span><br><span class="line">install.packages(<span class="built_in">c</span>(<span class="string">&quot;outliers&quot;</span>, <span class="string">&quot;pbmcapply&quot;</span>, <span class="string">&quot;doFuture&quot;</span>)) </span><br><span class="line">BiocManager::install(<span class="built_in">c</span>(<span class="string">&quot;GSVA&quot;</span>,<span class="string">&quot;singscore&quot;</span>)) <span class="comment"># </span></span><br><span class="line"><span class="comment"># 安装SingleR包 </span></span><br><span class="line">install.packages(“~/SingleR.tar.gz”, repos = <span class="literal">NULL</span>, type = “source”)</span><br><span class="line"><span class="comment">#采用BiocManager安装</span></span><br><span class="line">BiocManager::install(<span class="string">&quot;SingleR&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="Usage-1"><a href="#Usage-1" class="headerlink" title="Usage"></a>Usage</h3><h2 id="cellassign"><a href="#cellassign" class="headerlink" title="cellassign"></a>cellassign</h2><h2 id="scCancer"><a href="#scCancer" class="headerlink" title="scCancer"></a>scCancer</h2><ul>
+<li>一套易操作且高效的自动化肿瘤单细胞转录组分析工具——scCancer。</li>
+<li>该方法中采用了多层次严格的的质控标准以适用于癌症研究，且封装了基本的 scRNA-seq 分析内容，包含分群和差异表达分析。</li>
+<li>针对癌症的高度异质性和复杂微环境整合了一组适用于肿瘤数据的计算和分析方法，包括肿瘤微环境分析、恶性细胞评估、细胞周期评估、干细胞特征评估、基因集信息得分评估、表达程序识别、细胞间相互作用分析。</li>
+<li>也适用于多样本整合分析，可以有效消除批次效应提高数据分析结果可靠性。</li>
+<li>该工具可适用多种单细胞实验平台产生的数据，增强了其可用性</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">checkPkg &lt;- <span class="keyword">function</span>(pkg)&#123;</span><br><span class="line">    <span class="built_in">return</span>(requireNamespace(pkg, quietly = <span class="literal">TRUE</span>))</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(!checkPkg(<span class="string">&quot;BiocManager&quot;</span>)) install.packages(<span class="string">&quot;BiocManager&quot;</span>)</span><br><span class="line"><span class="keyword">if</span>(!checkPkg(<span class="string">&quot;devtools&quot;</span>)) install.packages(<span class="string">&quot;devtools&quot;</span>)</span><br><span class="line">library(devtools)</span><br><span class="line"><span class="keyword">if</span>(!checkPkg(<span class="string">&quot;harmony&quot;</span>)) install_github(<span class="string">&quot;immunogenomics/harmony&quot;</span>)</span><br><span class="line"><span class="keyword">if</span>(!checkPkg(<span class="string">&quot;RcppArmadillo&quot;</span>)) install.packages(<span class="string">&quot;RcppArmadillo&quot;</span>)</span><br><span class="line"><span class="keyword">if</span>(!checkPkg(<span class="string">&quot;RcppProgress&quot;</span>)) install.packages(<span class="string">&quot;RcppProgress&quot;</span>)</span><br><span class="line"><span class="keyword">if</span>(!checkPkg(<span class="string">&quot;NNLM&quot;</span>)) install_github(<span class="string">&quot;linxihui/NNLM&quot;</span>)</span><br><span class="line"><span class="keyword">if</span>(!checkPkg(<span class="string">&quot;liger&quot;</span>)) install_github(<span class="string">&quot;MacoskoLab/liger&quot;</span>)</span><br><span class="line">install_github(<span class="string">&quot;wguo-research/scCancer&quot;</span>)</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Single Cell</category>
       </categories>
@@ -2372,9 +2407,76 @@ The processed reads could then be passed to a demultiplexing tool to deal with t
       </tags>
   </entry>
   <entry>
-    <title>scRNA-seq-01 Read Data and Aggregation</title>
+    <title>scRNAseq-01 Read Data and Aggregation</title>
     <url>/2021/04/26/scRNAseq-01-Read-Data-and-Aggregation/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h1 id="拆库"><a href="#拆库" class="headerlink" title="拆库"></a>拆库</h1><h2 id="拆index（lane-–-gt-library）"><a href="#拆index（lane-–-gt-library）" class="headerlink" title="拆index（lane –&gt; library）"></a>拆index（lane –&gt; library）</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看序列与Index对应关系，通常为Index反向互补，因为在右端</span></span><br><span class="line">zcat lane1_1.fq.gz | head</span><br><span class="line">zcat lane1_2.fq.gz | head</span><br><span class="line"><span class="comment"># 按index列表文件并行筛选每个文库的双端文件</span></span><br><span class="line"><span class="comment"># zcat解压、grep -A 3检索并输出4行，去除grep的添加字符行，gzip压缩，写入文件</span></span><br><span class="line">mkdir -p lib</span><br><span class="line"><span class="keyword">for</span> index <span class="keyword">in</span> `cut -f 1 index.txt`; <span class="keyword">do</span>  <span class="built_in">echo</span> <span class="variable">$&#123;index&#125;</span></span><br><span class="line">zcat lane1_1.fq.gz|grep -A 3 <span class="string">&quot;#<span class="variable">$&#123;index&#125;</span>&quot;</span>|grep -v -P <span class="string">&#x27;^--$&#x27;</span> |gzip &gt; lib/<span class="variable">$&#123;index&#125;</span>_1.fq.gz &amp;</span><br><span class="line">zcat lane1_2.fq.gz|grep -A 3 <span class="string">&quot;#<span class="variable">$&#123;index&#125;</span>&quot;</span>|grep -v -P <span class="string">&#x27;^--$&#x27;</span> |gzip &gt; lib/<span class="variable">$&#123;index&#125;</span>_2.fq.gz &amp;</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="comment"># cut -f 1 index.txt 以制表符为单位，指定显示index.txt的第一列</span></span><br><span class="line"><span class="comment"># grep -A 3 &quot;#$&#123;index&#125;&quot; 保留.fq文件每次grep出的前3行（信息+序列+质量分数）</span></span><br><span class="line"><span class="comment"># grep -v -P &#x27;^--$&#x27; -v显示不包含匹配文本的所有行。^ 和 $ 分别指字符串的开始与结束。取出没有匹配到--的</span></span><br></pre></td></tr></table></figure>
+<h2 id="拆Barcode-（library-–-gt-sample）"><a href="#拆Barcode-（library-–-gt-sample）" class="headerlink" title="拆Barcode （library –&gt; sample）"></a>拆Barcode （library –&gt; sample）</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gunzip library1*.gz</span><br><span class="line"></span><br><span class="line"><span class="comment"># 按实验文库设计library.txt拆分样品</span></span><br><span class="line">mkdir -p samples</span><br><span class="line"><span class="keyword">for</span> index <span class="keyword">in</span> `tail -n+2 library1.txt|cut -f 2`; <span class="keyword">do</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="variable">$&#123;index&#125;</span></span><br><span class="line">  grep -A 2 -B 1 -P <span class="string">&quot;^<span class="variable">$&#123;index&#125;</span>&quot;</span> library1_1.fq|grep -v -P <span class="string">&#x27;^--$&#x27;</span> &gt; samples/<span class="variable">$&#123;index&#125;</span>_1.fq</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># tail -n+2 library1.txt|cut -f 2 从第2行至文件末尾，取出第二列（Fbarcode）</span></span><br><span class="line"><span class="comment"># grep -A 2 -B 1 -P &quot;^$&#123;index&#125;&quot;  除了匹配的那一行，显示后两行（-A 2）和前1行（-B 1）</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> index <span class="keyword">in</span> `tail -n+2 library1.txt|cut -f 3`; <span class="keyword">do</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="variable">$&#123;index&#125;</span></span><br><span class="line">  grep -A 2 -B 1 -P <span class="string">&quot;^<span class="variable">$&#123;index&#125;</span>&quot;</span> library1_2.fq|grep -v -P <span class="string">&#x27;^--$&#x27;</span> &gt; samples/<span class="variable">$&#123;index&#125;</span>_2.fq</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<h1 id="CellRanger"><a href="#CellRanger" class="headerlink" title="CellRanger"></a>CellRanger</h1><p>软件介绍：<a href="https://support.10xgenomics.com/single-cell-gene-expression/software/overview/welcome">https://support.10xgenomics.com/single-cell-gene-expression/software/overview/welcome</a><br>mkfastq参考代码：<a href="https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/mkfastq">https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/mkfastq</a></p>
+<h1 id="读取数据"><a href="#读取数据" class="headerlink" title="读取数据"></a>读取数据</h1><h2 id="Read10X"><a href="#Read10X" class="headerlink" title="Read10X()"></a>Read10X()</h2><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">library(Seurat)</span><br><span class="line">library(tidyverse) </span><br><span class="line">library(Matrix) </span><br><span class="line"></span><br><span class="line"><span class="comment">## Read10X </span></span><br><span class="line">seurat_data &lt;- Read10X(data.dir = <span class="string">&quot;./read10X&quot;</span>) </span><br><span class="line">seurat_obj &lt;- CreateSeuratObject(counts = seurat_data) </span><br><span class="line"><span class="comment"># write.table(seurat_obj@assays$RNA@counts, &quot;all.datatable.txt&quot;,sep=&quot;\t&quot;, quote=F, col.names=NA) </span></span><br></pre></td></tr></table></figure>
+<h2 id="Read10X-h5"><a href="#Read10X-h5" class="headerlink" title="Read10X_h5()"></a>Read10X_h5()</h2><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Read10X_h5 </span></span><br><span class="line">seurat_data &lt;- Read10X_h5(<span class="string">&quot;filtered_feature_bc_matrix.h5&quot;</span>)</span><br><span class="line"></span><br><span class="line">seurat_obj &lt;- CreateSeuratObject(counts = seurat_data) </span><br></pre></td></tr></table></figure>
+<h2 id="read-table"><a href="#read-table" class="headerlink" title="read.table()"></a>read.table()</h2><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">matrix_data &lt;- read.table(<span class="string">&quot;all.datatable.txt&quot;</span>, sep=<span class="string">&quot;\t&quot;</span>, header=<span class="built_in">T</span>, row.names=<span class="number">1</span>) </span><br><span class="line"><span class="comment"># dim(matrix_data) </span></span><br><span class="line"><span class="comment"># matrix_data[1:4,1:4] </span></span><br><span class="line">seurat_obj &lt;- CreateSeuratObject(counts = matrix_data) </span><br></pre></td></tr></table></figure>
+<h1 id="整合数据"><a href="#整合数据" class="headerlink" title="整合数据"></a>整合数据</h1><h2 id="Seurat-v3"><a href="#Seurat-v3" class="headerlink" title="Seurat v3"></a>Seurat v3</h2><p><strong>CCA+MNN (mutual nearest neighbor)</strong></p>
+<blockquote>
+<p>Seurat早期版本整合数据的核心算法是CCA，文章发表在2018年的nature biotechnology，作者是Seurat的开发者Andrew Butler。<br> 同年Haghverdi等人开发了MNN算法校正批次效应，文章也发表在了nature biotechnology。<br> 2019年Andrew等人将CCA与MNN算法结合起来，并参考SNN算法的理念设计了“锚点”评分体系，使Seurat整合数据更强大更稳健。它不仅可以校正实验的批次效应，还能跨平台整合数据，例如将10x单细胞数据、BD单细胞数据和SMART单细胞数据整合在一起；也能整合单细胞多组学数据，例如将单细胞ATAC、空间转录组与单细胞转录组数据整合在一起。</p>
+</blockquote>
+<p><strong>整合流程与原理</strong><br>These methods first identify cross-dataset pairs of cells that are in a matched biological state (‘anchors’), can be used both to correct for technical differences between datasets (i.e. batch effect correction), and to perform comparative scRNA-seq analysis of across experimental conditions.</p>
+<ol>
+<li>split the dataset into a list of two seurat objects (stim and CTRL)</li>
+<li>normalize and identify variable features for each dataset independently<br> Performing log-normalization<br> Calculate gene variances<br> Calculate feature variances of standardized and clipped values</li>
+<li>select features that are repeatedly variable across datasets for integration</li>
+<li>identify anchors using the <code>FindIntegrationAnchors()</code> function, which takes a list of Seurat objects as input:<br> Scale features for provided ohjects<br> Find all pariwise anchors<br> Merge objects<br> Find neighborhoods<br> Find anchors<br> Filter anchors<br>and use these anchors to integrate the two datasets together with <code>IntegrateData()</code>:<br> Extract anchors for merged samples<br> Find integration vectors<br> Find integration vectors weights<br> Integrate data</li>
+</ol>
+<h2 id="normalized-with-SCTransform"><a href="#normalized-with-SCTransform" class="headerlink" title="normalized with SCTransform"></a>normalized with SCTransform</h2><p>In <a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1874-1">Hafemeister and Satija, 2019</a>, we introduced an improved method for the normalization of scRNA-seq, based on regularized negative binomial regression.</p>
+<p><strong>Key info：</strong></p>
+<ul>
+<li>cellular sequencing depth is utilized as a covariate in a generalized linear model</li>
+<li>an unconstrained negative binomial model may overfit scRNA-seq data, and overcome this by pooling information across genes with similar abundances to obtain stable parameter estimates.</li>
+<li> We instead propose to construct a generalized linear model (GLM) for each gene with UMI counts as the response and sequencing depth as the explanatory variable. We explore potential error models for the GLM and find that the use of unconstrained NB or ZINB models leads to overfitting of scRNA-seq data and a significant dampening of biological variance. </li>
+<li>effectively normalized data values that are no longer influenced by technical characteristics, but preserve heterogeneity driven by distinct biological states. </li>
+</ul>
+<p><strong>Workflow:</strong></p>
+<ul>
+<li>Normalize datasets individually by <code>SCTransform()</code>, instead of <code>NormalizeData()</code> prior to integration</li>
+<li>As discussed further in our <a href="sctransform_vignette.html">SCTransform vignette</a>, we typically use 3,000 or more features for  analysis downstream of sctransform.</li>
+<li>Run the <code>PrepSCTIntegration()</code> function prior to identifying anchors</li>
+<li>When running <code>FindIntegrationAnchors()</code>, and <code>IntegrateData()</code>, set the <code>normalization.method</code> parameter to the value <code>SCT</code>.</li>
+<li>When running sctransform-based workflows, including integration, do not run the <code>ScaleData()</code> function </li>
+</ul>
+<h2 id="Seurat-v4"><a href="#Seurat-v4" class="headerlink" title="Seurat v4"></a>Seurat v4</h2><ul>
+<li>Independent preprocessing and dimensional reduction of each modality individually </li>
+<li>Learning cell-specific modality ‘weights’, and constructing a WNN graph that integrates the modalities </li>
+<li>Downstream analysis (i.e. visualization, clustering, etc.) of the WNN graph</li>
+<li>Our approach is based on an unsupervised strategy to learn cell-specific modality ‘weights’, which reflect the information content for each modality, and determine its relative importance in downstream analyses. </li>
+</ul>
+<p><strong>Workflow:</strong></p>
+<ol>
+<li><p>Perform pre-processing and dimensional reduction on both assays independently. Standard normalization/SCTransform</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">DefaultAssay(bm) &lt;- <span class="string">&#x27;RNA&#x27;</span></span><br><span class="line">bm &lt;- NormalizeData(bm) %&gt;% FindVariableFeatures() %&gt;% ScaleData() %&gt;% RunPCA()</span><br><span class="line"></span><br><span class="line">DefaultAssay(bm) &lt;- <span class="string">&#x27;ADT&#x27;</span></span><br><span class="line"><span class="comment"># we will use all ADT features for dimensional reduction</span></span><br><span class="line"><span class="comment"># we set a dimensional reduction name to avoid overwriting the </span></span><br><span class="line">VariableFeatures(bm) &lt;- rownames(bm[[<span class="string">&quot;ADT&quot;</span>]])</span><br><span class="line">bm &lt;- NormalizeData(bm, normalization.method = <span class="string">&#x27;CLR&#x27;</span>, margin = <span class="number">2</span>) %&gt;% </span><br><span class="line">  ScaleData() %&gt;% RunPCA(reduction.name = <span class="string">&#x27;apca&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+<li><p>For each cell, we calculate its closest neighbors in the dataset based on a weighted combination of RNA and protein similarities. </p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"> <span class="comment"># Identify multimodal neighbors. These will be stored in the neighbors slot, </span></span><br><span class="line"> <span class="comment"># and can be accessed using bm[[&#x27;weighted.nn&#x27;]]</span></span><br><span class="line"> <span class="comment"># The WNN graph can be accessed at bm[[&quot;wknn&quot;]], </span></span><br><span class="line"> <span class="comment"># and the SNN graph used for clustering at bm[[&quot;wsnn&quot;]]</span></span><br><span class="line"> <span class="comment"># Cell-specific modality weights can be accessed at bm$RNA.weight</span></span><br><span class="line"> bm &lt;- FindMultiModalNeighbors(</span><br><span class="line">  bm, reduction.list = <span class="built_in">list</span>(<span class="string">&quot;pca&quot;</span>, <span class="string">&quot;apca&quot;</span>), </span><br><span class="line">  dims.list = <span class="built_in">list</span>(<span class="number">1</span>:<span class="number">30</span>, <span class="number">1</span>:<span class="number">18</span>),      modality.weight.name = <span class="string">&quot;RNA.weight&quot;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h2 id="Harmony"><a href="#Harmony" class="headerlink" title="Harmony"></a>Harmony</h2><p>基本原理：我们用不同颜色表示不同数据集，用形状表示不同的细胞类型。<br>首先，Harmony应用主成分分析将转录组表达谱嵌入到低维空间中，然后应用迭代过程去除数据集特有的影响。</p>
+</li>
+<li><p>Harmony概率性地将细胞分配给cluster，从而使每个cluster内数据集的多样性最大化。 </p>
+</li>
+<li><p>Harmony计算每个cluster的所有数据集的全局中心，以及特定数据集的中心。 </p>
+</li>
+<li><p>在每个cluster中，Harmony基于中心为每个数据集计算校正因子。 </p>
+</li>
+<li><p>最后，Harmony使用基于C的特定于细胞的因子校正每个细胞。由于Harmony使用软聚类，因此可以通过多个因子的线性组合对其A中进行的软聚类分配进行线性校正，来修正每个单细胞。 重复步骤A到D，直到收敛为止。聚类分配和数据集之间的依赖性随着每一轮的减少而减小。</p>
+</li>
+</ol>
+<p><strong>Harmony</strong>算法与其他整合算法相比的优势：<br>（1）整合数据的同时对稀有细胞的敏感性依然很好；<br>（2）省内存；<br>（3）适合于更复杂的单细胞分析实验设计，可以比较来自不同供体，组织和技术平台的细胞。</p>
+<h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><center><img src="/img/scRNA/SingleCellExperiment.png" alt="warning" style="zoom:100%;" /></center>
+所述SingleCellExperiment（sce）对象是基于在Bioconductor的单细胞分析应用的基础。该sce对象是一个S4对象，与R中其他可用的方法相比，它本质上为数据的构造和访问提供了一种更为形式化的方法。
+
+<p>图中最核心的部分，是蓝色的data部分；另外还有绿色的基因注释信息feature metadata、橙色的细胞注释信息cell metadata。除了这三大件，还会包含一些下游分析结果，比如PCA、tSNE降维结果就会保存在紫色的Dimension Reductions</p>
+]]></content>
+      <categories>
+        <category>Single Cell</category>
+      </categories>
+      <tags>
+        <tag>scRNA-seq</tag>
+      </tags>
   </entry>
   <entry>
     <title>scATAC-seq Analysis</title>
