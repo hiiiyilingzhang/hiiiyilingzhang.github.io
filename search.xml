@@ -1731,22 +1731,20 @@ The processed reads could then be passed to a demultiplexing tool to deal with t
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=~/Reference/CellRanger.ATAC/cellranger-atac-1.2.0:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
 <p>To ensure that the cellranger-atac pipeline is installed correctly, use <code>cellranger-atac testrun</code>. This test can take up to 60 minutes on a sixteen-core workstation.</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cellranger-atac testrun --id=tiny</span><br></pre></td></tr></table></figure>
-<h1 id="数据下载-prefetch-aspera"><a href="#数据下载-prefetch-aspera" class="headerlink" title="数据下载(prefetch + aspera)"></a>数据下载(prefetch + aspera)</h1><ol>
-<li><p><strong>sratools安装</strong><br>注意sra-tools最新版本是2.10.9，​最新版本prefetch不再支持aspera下载，所以要安装之前的版本2.9.6</p>
-<center><img src="/img/Figures/aspera.png" alt="comments" style="zoom:80%;" /></center>
+<h1 id="数据下载-prefetch-aspera"><a href="#数据下载-prefetch-aspera" class="headerlink" title="数据下载(prefetch + aspera)"></a>数据下载(prefetch + aspera)</h1><h2 id="sratools安装"><a href="#sratools安装" class="headerlink" title="sratools安装"></a><strong>sratools安装</strong></h2><p>  注意sra-tools最新版本是2.10.9，​最新版本prefetch不再支持aspera下载，所以要安装之前的版本2.9.6<br>  <center><img src="/img/Figures/aspera.png" alt="comments" style="zoom:80%;" /></center></p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#  conda env remove --name sratools-2.10.9</span></span><br><span class="line">mamba install -c bioconda sra-tools=2.9.6</span><br></pre></td></tr></table></figure>
+<h2 id="Aspera配置"><a href="#Aspera配置" class="headerlink" title="Aspera配置"></a><strong>Aspera配置</strong></h2> <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget http://download.asperasoft.com/download/sw/connect/3.7.4/aspera-connect-3.7.4.147727-linux-64.tar.gz</span><br><span class="line"></span><br><span class="line">tar zxvf aspera-connect-3.7.4.147727-linux-64.tar.gz</span><br><span class="line">bash aspera-connect-3.7.4.147727-linux-64.sh</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;export PATH=~/.aspera/connect/bin:$PATH&#x27;</span> &gt;&gt; ~/.bashrc</span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
+<h2 id="prefetch-aspera下载"><a href="#prefetch-aspera下载" class="headerlink" title="prefetch+aspera下载"></a><strong>prefetch+aspera下载</strong></h2><center><img src="/img/scATAC/ena.png" alt="ena-info" style="zoom:60%;" /></center>
 
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#  conda env remove --name sratools-2.10.9</span></span><br><span class="line">mamba install -c bioconda sra-tools=2.9.6</span><br></pre></td></tr></table></figure></li>
-<li><p><strong>Aspera配置</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget http://download.asperasoft.com/download/sw/connect/3.7.4/aspera-connect-3.7.4.147727-linux-64.tar.gz</span><br><span class="line"></span><br><span class="line">tar zxvf aspera-connect-3.7.4.147727-linux-64.tar.gz</span><br><span class="line">bash aspera-connect-3.7.4.147727-linux-64.sh</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;export PATH=~/.aspera/connect/bin:$PATH&#x27;</span> &gt;&gt; ~/.bashrc</span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure></li>
-<li><p><strong>prefetch+aspera下载</strong></p>
-</li>
+<ol>
+<li>fastq.gz<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cat ./1.sra/sra.infor/runinfo.txt | <span class="keyword">while</span> <span class="built_in">read</span> id; \</span><br><span class="line"><span class="keyword">do</span> <span class="built_in">echo</span> <span class="variable">$id</span></span><br><span class="line">arr=(<span class="variable">$id</span>)</span><br><span class="line">link=<span class="variable">$&#123;arr[1]&#125;</span></span><br><span class="line">srr=<span class="variable">$&#123;arr[0]&#125;</span></span><br><span class="line">nohup time ascp -i ~/.aspera/connect/etc/asperaweb_id_dsa.openssh \</span><br><span class="line">    -l 300M -k 1 -Q -T -P 33001 \</span><br><span class="line">    era-fasp@<span class="variable">$&#123;link&#125;</span> \</span><br><span class="line">    ./2.rawfq-2/ &amp; </span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure></li>
+<li>.sra<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">prefetch -t ascp -a <span class="string">&quot;/home/data/vip8t02/.aspera/connect/bin/ascp|/home/data/vip8t02/.aspera/connect/etc/asperaweb_id_dsa.openssh&quot;</span> SRR10315835 &amp;</span><br><span class="line"></span><br><span class="line">cat ./1.sra/sra.infor/SRR_Acc_List.txt |<span class="keyword">while</span> <span class="built_in">read</span> i</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">time fastq-dump --gzip --split-files -A <span class="variable">$i</span> ./1.sra/<span class="variable">$&#123;i&#125;</span>.sra -O ./2.rawfq/ &amp;&amp; <span class="built_in">echo</span> <span class="string">&quot;** <span class="variable">$&#123;i&#125;</span>.sra to fastq done **&quot;</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<h2 id="Rename"><a href="#Rename" class="headerlink" title="Rename"></a><strong>Rename</strong></h2>为了让文件名符合Cell Ranger的输入格式，需对其进行重命名。<br><a href="https://kb.10xgenomics.com/hc/en-us/articles/115003802691-How-do-I-prepare-Sequence-Read-Archive-SRA-data-from-NCBI-for-Cell-Ranger-">10X Genimics-How do I prepare Sequence Read Archive (SRA) data from NCBI for Cell Ranger?</a></li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sed -i <span class="string">&#x27;1d&#x27;</span> runinfo.txt</span><br></pre></td></tr></table></figure>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cat ./1.sra/sra.infor/runinfo.txt | <span class="keyword">while</span> <span class="built_in">read</span> id; \</span><br><span class="line"><span class="keyword">do</span> <span class="built_in">echo</span> <span class="variable">$id</span></span><br><span class="line">arr=(<span class="variable">$id</span>)</span><br><span class="line">link=<span class="variable">$&#123;arr[1]&#125;</span></span><br><span class="line">srr=<span class="variable">$&#123;arr[0]&#125;</span></span><br><span class="line">nohup time ascp -i ~/.aspera/connect/etc/asperaweb_id_dsa.openssh \</span><br><span class="line">    -l 300M -k 1 -Q -T -P 33001 \</span><br><span class="line">    era-fasp@<span class="variable">$&#123;link&#125;</span> \</span><br><span class="line">    ./2.rawfq/ &amp; </span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li><strong>.sra解压</strong><br>为了让文件名符合Cell Ranger的输入格式，需对其进行重命名。<br><a href="https://kb.10xgenomics.com/hc/en-us/articles/115003802691-How-do-I-prepare-Sequence-Read-Archive-SRA-data-from-NCBI-for-Cell-Ranger-">10X Genimics-How do I prepare Sequence Read Archive (SRA) data from NCBI for Cell Ranger?</a></li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> ./2.rawfq</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line"> mv <span class="variable">$file</span> `<span class="built_in">echo</span> <span class="variable">$file</span>|sed sed -i <span class="string">&#x27;s/1111/&amp;BBB/&#x27;</span>`</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>]]></content>
+<center><img src="/img/scATAC/rename.png" alt="rename" style="zoom:70%;" /></center>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> ./*</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">mv <span class="variable">$file</span> `<span class="built_in">echo</span> <span class="variable">$file</span> | awk -F <span class="string">&#x27;_&#x27;</span> <span class="string">&#x27;/_1/ &#123; gsub(/_1/,&quot;_R1&quot;);print $0;next&#125; &#x27;</span>`</span><br><span class="line">mv <span class="variable">$file</span> `<span class="built_in">echo</span> <span class="variable">$file</span> | awk -F <span class="string">&#x27;_&#x27;</span> <span class="string">&#x27;/_2/ &#123; gsub(/_2/,&quot;_R2&quot;);print $0;next&#125; &#x27;</span>`</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line">ls *.gz |awk -F <span class="string">&quot;.&quot;</span> <span class="string">&#x27;&#123;print &quot;mv &quot;$0&quot; &quot;$1&quot;_001.&quot;$2&quot;.&quot;$3&quot;&quot;&#125;&#x27;</span>|bash</span><br><span class="line"></span><br><span class="line">ls SRR10315835*.gz |awk -F <span class="string">&quot;_&quot;</span> <span class="string">&#x27;&#123;print &quot;mv &quot;$0&quot; GBM4218_S1_L001_&quot;$4&quot;&quot;&#125;&#x27;</span>|bash</span><br><span class="line">ls SRR10315836*.gz |awk -F <span class="string">&quot;_&quot;</span> <span class="string">&#x27;&#123;print &quot;mv &quot;$0&quot; GBM4250_S2_L001_&quot;$4&quot;&quot;&#125;&#x27;</span>|bash</span><br><span class="line">ls SRR10315837*.gz |awk -F <span class="string">&quot;_&quot;</span> <span class="string">&#x27;&#123;print &quot;mv &quot;$0&quot; GBM4275_S3_L001_&quot;$4&quot;&quot;&#125;&#x27;</span>|bash</span><br><span class="line">ls SRR10315838*.gz |awk -F <span class="string">&quot;_&quot;</span> <span class="string">&#x27;&#123;print &quot;mv &quot;$0&quot; GBM4349_S4_L001_&quot;$4&quot;&quot;&#125;&#x27;</span>|bash</span><br></pre></td></tr></table></figure>
+<center><img src="/img/scATAC/rename-af.png" alt="rename-af" style="zoom:70%;" /></center>]]></content>
       <categories>
         <category>Single Cell</category>
       </categories>
@@ -2628,7 +2626,7 @@ The processed reads could then be passed to a demultiplexing tool to deal with t
     <title>Drawing Requirements for Scientific Research</title>
     <url>/2021/05/08/Drawing%20Requirements%20for%20Scientific%20Research/</url>
     <content><![CDATA[<h1 id="插图规范-Cell-Press-requirements"><a href="#插图规范-Cell-Press-requirements" class="headerlink" title="插图规范(Cell Press requirements)"></a>插图规范(Cell Press requirements)</h1><ol>
-<li><p>图<br> 1栏：85mm<br> 1.5栏：114mm<br> 2栏：174mm</p>
+<li><p>图<br> 1栏：85mm<br> 1.5栏：114mm<br> 2栏：174mm（参考线位置：0,18,192,210；上下15）<br> 2栏3块：0,18,76,134,192,210</p>
 </li>
 <li><p>线条<br> 0.3-1.5<strong>pt</strong><br> 画表/图：坐标，框1pt（缩放后线条粗细会变化）</p>
 </li>
@@ -2656,6 +2654,8 @@ The processed reads could then be passed to a demultiplexing tool to deal with t
 <li>遵循的原则：改动越少越好，保持原样</li>
 <li>拿到结果先拷贝副本</li>
 </ol>
+<h1 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h1><p>新建画布：A4 ，300dpi，RGB。常规操作；<br>有的图片打开后字呈阴影，是字体不对，全选（Ctrl +A）-&gt; 文字-&gt; 最近使用的字体-&gt; Times Newman；<br>有时需要对某些图片整体操作，可以使用编组功能：对象-&gt;编组；<br>不规则图形的绘制，可以借助于钢笔（钢笔工具），到达终点后，“Esc”键可以终止；大括号可以用钢笔画，事先多加辅助线<br>流程图中的箭头，可以使用直线/描边的方法，A.描边有粗细，B.“箭头”可以选择形状，C.“缩放”比例可以改变箭头形状；<br>圆角矩形填充色，“不透明度”可以改变颜色；<br>选择多个对象，按住“Shift”，这和word中“Ctrl”对应；<br>复制时可以用Ctrl +C -&gt; Ctrl +V ；也可以选择对象后，按住“Ctrl+Alt”后拖动。</p>
+<h1 id="箭头"><a href="#箭头" class="headerlink" title="箭头"></a>箭头</h1><p>直线——&gt;描边 8pt ——&gt; 箭头类型——&gt;缩放</p>
 ]]></content>
       <categories>
         <category>ToolsLearning</category>
@@ -2664,7 +2664,9 @@ The processed reads could then be passed to a demultiplexing tool to deal with t
   <entry>
     <title>TME &amp; Immune Analysis of CUL1&amp;Cullin1</title>
     <url>/2021/05/08/TME-Immune-Analysis-of-CUL1-Cullin1/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h1 id="Material-and-Method"><a href="#Material-and-Method" class="headerlink" title="Material and Method"></a>Material and Method</h1><h2 id="Raw-data"><a href="#Raw-data" class="headerlink" title="Raw data"></a>Raw data</h2><p>cases: stomach–TCGA–TCGA-STAD<br>files: transcriptome profiling–gene expression quantification–HTSeq FPKM</p>
+<p>Manifest+Cart+Metadata</p>
+<center><img src="/img/Stomach-proj/data.png" alt="data" style="zoom:70%;" /></center>]]></content>
   </entry>
   <entry>
     <title>scRNAseq-03 Doublet &amp; velocyto &amp; inferCNV</title>
@@ -2755,6 +2757,201 @@ hg38（GRCh38）_rmsk.gtf:<br><a href="https://genome.ucsc.edu/cgi-bin/hgTables?
 <p>这一步的一个关键参数是<code>ref_group_name</code>,用于设置参考组。假如你并不知道哪个组是正常，哪个组不正常，那么设置为<code>ref_group_name=NULL</code>,那么<code>inferCNV</code>会以全局平均值作为基线，这适用于有足够细胞存在差异的情况。此外，这里的<code>raw_count_matrix</code>是排除了低质量细胞的count矩阵。</p>
 <h3 id="提取信息"><a href="#提取信息" class="headerlink" title="提取信息"></a>提取信息</h3><p><code>inferCNV</code>会输出一个<code>map_metadata_from_infercnv.txt</code>文件用于记录每个细胞的元信息，所有信息都可以从该文件中进行提取。或者使用<code>infercnv::add_to_seurat</code>将信息直接增加到原来的seurat对象中。</p>
 <h3 id="绘图"><a href="#绘图" class="headerlink" title="绘图"></a>绘图</h3><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">plot_cnv(infercnv_obj, out_dir = <span class="string">&quot;./res/&quot;</span>, title = <span class="string">&quot;inferCNV&quot;</span>,</span><br><span class="line">         obs_title = <span class="string">&quot;Observations (Cells)&quot;</span>, ref_title = <span class="string">&quot;References (Cells)&quot;</span>,</span><br><span class="line">         cluster_by_groups = <span class="literal">TRUE</span>, cluster_references = <span class="literal">TRUE</span>,</span><br><span class="line">         k_obs_groups = <span class="number">3</span>, contig_cex = <span class="number">1</span>,</span><br><span class="line">         x.center = mean(infercnv_obj@expr.data), x.range = <span class="string">&quot;auto&quot;</span>,</span><br><span class="line">         hclust_method = <span class="string">&quot;ward.D&quot;</span>, color_safe_pal = <span class="literal">FALSE</span>,</span><br><span class="line">         output_filename = <span class="string">&quot;infercnv22&quot;</span>, output_format = <span class="string">&quot;pdf&quot;</span>, </span><br><span class="line">         dynamic_resize = <span class="number">0</span>, ref_contig = <span class="literal">NULL</span>, write_expr_matrix = <span class="literal">FALSE</span>,</span><br><span class="line">         useRaster = <span class="literal">TRUE</span>)</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Single Cell</category>
+      </categories>
+      <tags>
+        <tag>scRNA-seq</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Bioinformatics Platform Development</title>
+    <url>/2021/05/18/Bioinformatics-Platform-Development/</url>
+    <content><![CDATA[<h1 id="Class-1"><a href="#Class-1" class="headerlink" title="Class 1"></a>Class 1</h1><h2 id="超文本标记语言HTML"><a href="#超文本标记语言HTML" class="headerlink" title="超文本标记语言HTML"></a>超文本标记语言HTML</h2><ol>
+<li>Web发展史</li>
+</ol>
+<ul>
+<li><p>静态网页(Static Web Page)<br>在网站设计中，纯粹HTML格式的网页通常被称为“静态网页”，文件扩展名是.htm、.html</p>
+</li>
+<li><p>动态页面(Dynamic Page)<br>页面代码没有变，但是显示的内容却是可以随着时间、环境或者数据库操作的结果而发生改变</p>
+</li>
+<li><p>AOP: Aspect Oriented Programming<br>集成作法，先到block，判断权限，进入其中特定的页面</p>
+</li>
+<li><p>MVC: Model, View and Controller（e.g. PHP）</p>
+<center><img src="/img/Tools/mvc.png" alt="rename" style="zoom:50%;" /></center>
+View：视图，用户对view提出request（公司前台，用户与view接触，进行处理）
+Controller：接受信息，与数据库做交互，（产品经理）
+Model：处理信息（码农）
+</li>
+<li><p>N Server + N Database - Browser<br>负载均衡方案，不再是固定的访问某一个服务器<br>把不同处理能力的服务器连在一起，用一个性能稍微好一点的引擎做管理</p>
+<ul>
+<li>冷备份：硬盘拷一下，传过去，硬盘传的时候，服务器要关掉，再上传到另外一个服务器</li>
+<li>热备份：实时传输，锁操作，但容易出问题</li>
+<li>温备份：既可以满足相应需求，又安全</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>HTML实例</li>
+</ol>
+<ul>
+<li><code>&lt;html&gt;</code>元素定义了整个 HTML 文档</li>
+<li><code>&lt;head&gt;</code> 标签用于定义文档的头部，它是所有头部元素的容器。<code>&lt;head&gt;</code> 中的元素可以引用脚本、指示浏览器在哪里找到样式表、提供元信息等等。<br>  主要包括<code>&lt;base&gt;</code>,<code>&lt;link&gt;</code>, <code>&lt;meta&gt;</code>, <code>&lt;script&gt;</code>, <code>&lt;style&gt;</code>, 以及 <code>&lt;title&gt;</code> （定义文档的标题）</li>
+<li><code>&lt;body&gt;</code>元素定义了 HTML 文档的主体<br>  主要包括<code>&lt;p&gt;</code>, <code>&lt;table&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;h1&gt;</code>, <code>&lt;br&gt;</code>, <code>&lt;div&gt;</code>, <code>&lt;ul&gt;</code>和<code>&lt;canvas&gt;</code>, <code>&lt;code&gt;</code>, <code>&lt;video&gt;</code>等</li>
+<li><code>&lt;script&gt;</code>标签用于定义客户端脚本，比如 JavaScript（也可嵌入<code>&lt;body&gt;</code>中）</li>
+<li><code>&lt;style&gt;</code>标签用于为 HTML 文档定义样式信息，例如CSS等</li>
+</ul>
+<h1 id="Class2"><a href="#Class2" class="headerlink" title="Class2"></a>Class2</h1><h2 id="Shiny-Basic-Usage"><a href="#Shiny-Basic-Usage" class="headerlink" title="Shiny Basic Usage"></a>Shiny Basic Usage</h2><ul>
+<li><p>Pages</p>
+<ul>
+<li>fixedPage：具有container类属性的块</li>
+<li>fluidPage：产生container fluid</li>
+<li>navbarPage：产生顶部导航栏页面</li>
+</ul>
+</li>
+<li><p>Layouts</p>
+<ul>
+<li>fluidRow(), column()</li>
+<li>flowLayout()</li>
+<li>sidebar</li>
+</ul>
+</li>
+<li><p>Panel</p>
+<ul>
+<li>absolutePanel() </li>
+<li>conditionalPanel() 根据判断，出现某些情况时才会出现</li>
+<li>fixedPanel() </li>
+<li>navlistPanel() 导航栏</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>ToolsLearning</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>TCGA data mining</title>
+    <url>/2021/05/18/TCGA-data-mining/</url>
+    <content><![CDATA[<h1 id="Basic-info"><a href="#Basic-info" class="headerlink" title="Basic info"></a>Basic info</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>34种癌型，数据类型：</p>
+<ul>
+<li>Genome</li>
+<li>Transcriptome</li>
+<li>Proteome</li>
+<li>Epigenome</li>
+<li>Clinic</li>
+</ul>
+<h2 id="数据产生过程"><a href="#数据产生过程" class="headerlink" title="数据产生过程"></a>数据产生过程</h2><center><img src="/img/Figures/TCGA/dataproduce.png" alt="dataproduce" style="zoom:70%;" /></center>
+分析pipeline以及由GDACs产生的数据结果通过DCC保存到研究社区（community）中。
+
+<h2 id="Barcode"><a href="#Barcode" class="headerlink" title="Barcode"></a>Barcode</h2><center><img src="/img/Figures/TCGA/barcode.png" alt="barcode" style="zoom:60%;" /></center>
+<center><img src="/img/Figures/TCGA/barcode.png" alt="barcode" style="zoom:60%;" /></center>
+
+<h1 id="TCGA-data-processing"><a href="#TCGA-data-processing" class="headerlink" title="TCGA data processing"></a>TCGA data processing</h1><h2 id="Data-download"><a href="#Data-download" class="headerlink" title="Data download"></a>Data download</h2><ul>
+<li>网页下载（最靠谱）</li>
+<li>命令行下载（可能会断，一定要校验）</li>
+<li>R包下载（有问题，经过清洗）</li>
+</ul>
+<p>下载文件：</p>
+<ul>
+<li>Metadata（json文件，meta文件中含有样品号的TCGA barcode，而需要根据文件名转换成样本号）</li>
+<li>Manifest, Cart（命令行下载需要这两个文件）</li>
+</ul>
+<p>下载数据类型选择：</p>
+<ol>
+<li>htseq.counts是RNA-Seq原始reads文件，利用该数据通过不同的算法得到表达值（如果要DeSeq处理，下载这个）</li>
+<li>FPKM.txt.gz是存储每个样品所有测序基因的FPKM值（一般下这个）</li>
+<li>FPKM-UQ.txt.gz是存储每个样品所有测序基因的FPKM-UQ（upper quantile）值，即调整后FPKM值（用reads值3/4分位值替代原reads值）。</li>
+</ol>
+<h2 id="表达谱数据整合"><a href="#表达谱数据整合" class="headerlink" title="表达谱数据整合"></a>表达谱数据整合</h2><p>存在少量的多对一情况—&gt;变成矩阵<br>数据整理的结果:生成mRNAmatrix.txt文件<br><img src="C:\Users\lenovo\Desktop\matrix.png" alt="matrix"></p>
+<ul>
+<li>行名：Ensembl ID</li>
+<li>列名为：Barcode，样本号；</li>
+<li>第四部分：1-9为肿瘤，10以上为正常，判断正常及肿瘤的代码，常用的R函数 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line">group_list &lt;- ifelse(<span class="built_in">as.numeric</span>(str_sub(colnames(expr),<span class="number">14</span>,<span class="number">15</span>))&lt;<span class="number">10</span>,<span class="string">&quot;tumor&quot;</span>,<span class="string">&quot;normal&quot;</span>) </span><br></pre></td></tr></table></figure>
+处理时需要注意，需要切割，取前面的整数</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment">#解析meta文件，目的是为了拿到 样本名-barcode对应关系,</span></span><br><span class="line"><span class="comment">#注意json文件的位置</span></span><br><span class="line">metadata &lt;- jsonlite::fromJSON(<span class="string">&quot;data/1.rawdata/metadata.cart.2021-05-16.json&quot;</span>)</span><br><span class="line">library(dplyr)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 转换的信息是两列filename和associate dentities</span></span><br><span class="line"><span class="comment"># 样本名称在associated_entities,列表中里面包括了 entity_id, case_id, entity_submitter_id, entity_type这四个项目</span></span><br><span class="line">metadata_id &lt;- metadata %&gt;% dplyr::select(<span class="built_in">c</span>(file_name,associated_entities)) </span><br><span class="line"><span class="comment"># metadata$associatedentities[1][[1]]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 把filename和 associated_entities中的entity_submitter_id提取出来，做成数据框批量对应转换</span></span><br><span class="line"><span class="comment"># substr(s, first, last)</span></span><br><span class="line"><span class="comment"># nchar(metadata_id$file_name[i])-3 去掉.gz</span></span><br><span class="line">naid_df &lt;- data.frame()</span><br><span class="line"><span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:<span class="built_in">dim</span>(metadata_id)[<span class="number">1</span>])&#123;</span><br><span class="line">  naid_df[i,<span class="number">1</span>] &lt;- substr(metadata_id$file_name[i],<span class="number">1</span>,nchar(metadata_id$file_name[i])-<span class="number">3</span>)</span><br><span class="line">  naid_df[i,<span class="number">2</span>] &lt;- metadata_id$associated_entities[i][[<span class="number">1</span>]]$entity_submitter_id</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提取前12个</span></span><br><span class="line">library(stringi)</span><br><span class="line">library(stringr)</span><br><span class="line"><span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:<span class="built_in">dim</span>(naid_df)[<span class="number">1</span>])&#123;</span><br><span class="line">  naid_df$barcode[i]&lt;- str_sub(naid_df[i,<span class="number">2</span>],start=<span class="number">1</span>,end=<span class="number">12</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提取出文件夹中的txt.gz</span></span><br><span class="line"><span class="comment"># 这里面有个技巧，先读文件夹中的内容，再新建文件夹“files”,要不然会报错</span></span><br><span class="line">dir1 &lt;- dir(<span class="string">&quot;data/1.rawdata/files&quot;</span>)</span><br><span class="line">dir.create(<span class="string">&quot;data/1.rawdata/pureFile&quot;</span>) </span><br><span class="line"><span class="keyword">for</span> (dirname <span class="keyword">in</span> dir1)&#123;  </span><br><span class="line">  file &lt;- list.files(paste0(<span class="string">&quot;data/1.rawdata/files/&quot;</span>,dirname),pattern = <span class="string">&quot;*.FPKM.txt.gz&quot;</span>)  <span class="comment">#找到对应文件夹中的内容，pattern可以是正则表达式</span></span><br><span class="line">  file.copy(paste0(<span class="string">&quot;data/1.rawdata/files/&quot;</span>,dirname,<span class="string">&quot;/&quot;</span>,file),<span class="string">&quot;data/1.rawdata/pureFile/&quot;</span>)  <span class="comment">#复制内容到新的文件夹</span></span><br><span class="line">&#125;</span><br><span class="line">rm(dir1,dirname)</span><br><span class="line"></span><br><span class="line"><span class="comment">## gunzip</span></span><br><span class="line">files1&lt;-dir(<span class="string">&quot;data/1.rawdata/pureFile/&quot;</span>)</span><br><span class="line">library(R.utils)</span><br><span class="line"><span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:<span class="built_in">length</span>(files1))&#123;</span><br><span class="line">  gunzip(paste0(<span class="string">&quot;data/1.rawdata/pureFile/&quot;</span>,files1[i]),remove=<span class="literal">TRUE</span>)  <span class="comment">## 解压时原来的文件删掉</span></span><br><span class="line">&#125;</span><br><span class="line">rm(files1,file,i)</span><br><span class="line"></span><br><span class="line"><span class="comment">#合并</span></span><br><span class="line">library(data.table)</span><br><span class="line"></span><br><span class="line">nameList &lt;- list.files(<span class="string">&quot;data/1.rawdata/pureFile/&quot;</span>,pattern = <span class="string">&quot;*.FPKM.txt&quot;</span>) <span class="comment">## 注意pattern 参数，获取该目录下所有的结尾为FPKM.txt</span></span><br><span class="line">location &lt;- which(naid_df==nameList[<span class="number">1</span>],arr.ind = <span class="literal">TRUE</span>)  <span class="comment">## which函数有一个已知value返回坐标的功能</span></span><br><span class="line">TCGA_id &lt;- <span class="built_in">as.character</span>(naid_df[location[<span class="number">1</span>],<span class="number">2</span>]) <span class="comment">## 通过坐标，获取TCGA_id</span></span><br><span class="line"></span><br><span class="line">expr_df&lt;- fread(paste0(<span class="string">&quot;data/1.rawdata/pureFile/&quot;</span>,nameList[<span class="number">1</span>])) <span class="comment">## 读入第一个文件，保存为data.frame</span></span><br><span class="line"><span class="built_in">names</span>(expr_df) &lt;- <span class="built_in">c</span>(<span class="string">&quot;gene_id&quot;</span>,TCGA_id)  <span class="comment">## 给刚才数据库命名</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">2</span>:<span class="built_in">length</span>(nameList))&#123;</span><br><span class="line">  location &lt;- which(naid_df==nameList[i],arr.ind = <span class="literal">TRUE</span>)</span><br><span class="line">  TCGA_id &lt;- <span class="built_in">as.character</span>(naid_df[location[<span class="number">1</span>],<span class="number">2</span>])</span><br><span class="line">  dfnew &lt;- fread(paste0(<span class="string">&quot;data/1.rawdata/pureFile/&quot;</span>,nameList[i]))</span><br><span class="line">  <span class="built_in">names</span>(dfnew) &lt;- <span class="built_in">c</span>(<span class="string">&quot;gene_id&quot;</span>,TCGA_id)</span><br><span class="line">  expr_df &lt;- inner_join(expr_df,dfnew,by=<span class="string">&quot;gene_id&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">mRNAmatrix &lt;-expr_df</span><br><span class="line">save(mRNAmatrix,file = <span class="string">&quot;data/2.ExprData/mRNAmatrix.Rda&quot;</span>)</span><br><span class="line">write.table(mRNAmatrix,file = <span class="string">&quot;data/2.ExprData/mRNAmatrix.txt&quot;</span>,<span class="built_in">quote</span> = <span class="built_in">F</span>,row.names = <span class="built_in">F</span>,sep = <span class="string">&quot;\t&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="id转换"><a href="#id转换" class="headerlink" title="id转换"></a>id转换</h2><p>输入文件：mRNAmatrix.txt（前面产生）<br>                  GTF文件（下载）</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">library(dplyr)</span><br><span class="line">library(tidyr)</span><br><span class="line">library(rtracklayer)</span><br><span class="line"></span><br><span class="line"><span class="comment"># GTF的下载从官方网站，ftp://ftp.ensembl.org/pub/current_gtf/homo_sapiens，</span></span><br><span class="line"><span class="comment"># 现在已经是GRCh38（100）版本了，此版本中的ID号肯定和矩阵文件中的不一样，应为当初人家比对不是100版本</span></span><br><span class="line">gtf1 &lt;- rtracklayer::import(<span class="string">&#x27;data/Reference/Homo_sapiens.GRCh38.100.gtf&#x27;</span>)</span><br><span class="line">gtf_df &lt;- as.data.frame(gtf1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 选择两列，有2908224行</span></span><br><span class="line">gtf_df1&lt;-select(gtf_df,gene_id,gene_name)</span><br><span class="line"><span class="comment"># 去除重复行，有60683行，但里面还有多个ID对应一个基因的行</span></span><br><span class="line">gtf_df&lt;-distinct(gtf_df1,gene_id,gene_name)</span><br><span class="line"></span><br><span class="line">save(gtf_df,file=<span class="string">&quot;data/Reference/GTF_selected.Rdata&quot;</span>)</span><br><span class="line">rm(gtf_df1,gtf_df2,gtf_df,gtf1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进行注释替换</span></span><br><span class="line">mRNAmatrix&lt;-read.table(<span class="string">&quot;data/2.ExprData/mRNAmatrix.txt&quot;</span>,sep = <span class="string">&quot;\t&quot;</span>,stringsAsFactors = <span class="built_in">F</span>,header = <span class="built_in">T</span>)</span><br><span class="line">load(<span class="string">&quot;../../CancerGenomics/TCGA/tcga-classproj/data/Reference/GTF_selected.Rdata&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 表达矩阵中的ensemble号中含有小数点， 而GTF文件中没有,调整一下，先以“.”分列，在去掉小数点后的列</span></span><br><span class="line"><span class="comment"># 此行看下名字，不一定需要colnames(mRNAmatrix)&lt;-”gene_id” </span></span><br><span class="line">mRNAmatrix_nopoint &lt;- mRNAmatrix %&gt;% tidyr::separate(gene_id,into = <span class="built_in">c</span>(<span class="string">&quot;gene_id&quot;</span>,<span class="string">&quot;drop&quot;</span>),sep=<span class="string">&quot;\\.&quot;</span>) %&gt;% dplyr::select(-drop)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 采用左连接，左边的全部保留</span></span><br><span class="line">mRNA_symbol&lt;-left_join(x=mRNAmatrix_nopoint,y=gtf_df,by=<span class="string">&quot;gene_id&quot;</span>)</span><br><span class="line"><span class="comment"># 删除没能注释的行</span></span><br><span class="line">mRNA_symbol&lt;-na.omit(mRNA_symbol)</span><br><span class="line"><span class="comment"># 构建新的表达矩阵，第一列为gene symbol</span></span><br><span class="line">mRNA_symbol2&lt;-cbind(gene_name=mRNA_symbol$gene_name,mRNA_symbol[,-<span class="built_in">c</span>(<span class="number">1</span>,ncol(mRNA_symbol))])</span><br><span class="line"></span><br><span class="line">save(mRNA_symbol2,file=<span class="string">&quot;data/3.Symbol/mRNA_symbol.Rdata&quot;</span>)</span><br><span class="line">write.table(mRNA_symbol2,file = <span class="string">&quot;data/3.Symbol/symbol.txt&quot;</span>,<span class="built_in">quote</span> = <span class="built_in">F</span>,row.names = <span class="built_in">F</span>,sep = <span class="string">&quot;\t&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="TME-scoring"><a href="#TME-scoring" class="headerlink" title="TME scoring"></a>TME scoring</h2><p>肿瘤微环境是肿瘤细胞所处的细胞环境，其组成包括细胞外基质、可溶性分子和肿瘤基质细胞。肿瘤微环境一旦形成，众多免疫细胞，如T细胞、髓源抑制性细胞，巨噬细胞等，都被趋化至此，构成肿瘤的微环境。在肿瘤微环境中，免疫细胞和基质细胞是两种主要类型的非肿瘤组分，并且已被提出对于肿瘤的诊断和预后评估是有价值的。</p>
+<p><strong>ESTIMATE</strong> (Estimation of STromal and Immune cells in MAlignant Tumor tissues using Expression data) is a tool for predicting tumor purity, and the presence of infiltrating stromal/immune cells in tumor tissues using gene expression data. ESTIMATE algorithm is based on single sample Gene Set Enrichment Analysis and generates three scores:</p>
+<ul>
+<li>stromal score (that captures the presence of stroma in tumor tissue).</li>
+<li>immune score (that represents the infiltration of immune cells in tumor tissue).</li>
+<li>estimate score (that infers tumor purity).</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment">#library(utils)</span></span><br><span class="line"><span class="comment">#rforge &lt;- &quot;http://r-forge.r-project.org&quot;</span></span><br><span class="line"><span class="comment"># install.packages(&quot;estimate&quot;, repos=&quot;http://R-Forge.R-project.org&quot;)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#if (!requireNamespace(&quot;BiocManager&quot;, quietly = TRUE))</span></span><br><span class="line"><span class="comment">#    install.packages(&quot;BiocManager&quot;)</span></span><br><span class="line"><span class="comment">#BiocManager::install(&quot;limma&quot;, version = &quot;3.8&quot;)</span></span><br><span class="line"></span><br><span class="line">library(limma)</span><br><span class="line">library(estimate)</span><br><span class="line"></span><br><span class="line"><span class="comment">#读取文件</span></span><br><span class="line">rt &lt;- read.table(<span class="string">&quot;data/3.Symbol/symbol.txt&quot;</span>,sep=<span class="string">&quot;\t&quot;</span>,header=<span class="built_in">T</span>,check.names=<span class="built_in">F</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#如果一个基因占了多行，取均值</span></span><br><span class="line"><span class="comment">## 去除.1这种</span></span><br><span class="line">rt$gene_name_fixed &lt;- <span class="literal">NA</span></span><br><span class="line"><span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:nrow(rt)) &#123;</span><br><span class="line">  rt[i,<span class="string">&quot;gene_name_fixed&quot;</span>] &lt;- strsplit(<span class="built_in">as.character</span>(rt[i,<span class="string">&quot;gene_name&quot;</span>]),<span class="string">&quot;.&quot;</span>,fixed = <span class="built_in">T</span>)[[<span class="number">1</span>]][<span class="number">1</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">rt_fixed &lt;- aggregate(rt,by = <span class="built_in">list</span>(gene_name_fixed=rt$gene_name_fixed), FUN=mean, drop = <span class="literal">FALSE</span>)</span><br><span class="line">rownames(rt_fixed) &lt;- rt_fixed[,<span class="number">1</span>]</span><br><span class="line">rt_fixed &lt;- rt_fixed[,-<span class="built_in">c</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">410</span>)]</span><br><span class="line">rt_fixed &lt;- rt_fixed[rowMeans(rt_fixed)&gt;<span class="number">0</span>,]</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出整理后的矩阵文件</span></span><br><span class="line">write.table(rt_fixed,file=<span class="string">&quot;data/3.Symbol/uniq.symbol.txt&quot;</span>,sep=<span class="string">&quot;\t&quot;</span>,<span class="built_in">quote</span>=<span class="built_in">F</span>,col.names=<span class="built_in">F</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#运行estimate包</span></span><br><span class="line">filterCommonGenes(input.f=<span class="string">&quot;data/3.Symbol/uniq.symbol.txt&quot;</span>, </span><br><span class="line">                  output.f=<span class="string">&quot;data/4.ESTIMATE/commonGenes.gct&quot;</span>, </span><br><span class="line">                  id=<span class="string">&quot;GeneSymbol&quot;</span>)</span><br><span class="line"></span><br><span class="line">estimateScore(input.ds = <span class="string">&quot;data/4.ESTIMATE/commonGenes.gct&quot;</span>,</span><br><span class="line">              output.ds=<span class="string">&quot;data/4.ESTIMATE/estimateScore.gct&quot;</span>, </span><br><span class="line">              platform=<span class="string">&quot;illumina&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出每个样品的打分</span></span><br><span class="line">scores=read.table(<span class="string">&quot;data/4.ESTIMATE/estimateScore.gct&quot;</span>,skip = <span class="number">2</span>,header = <span class="built_in">T</span>)</span><br><span class="line">rownames(scores)=scores[,<span class="number">1</span>]</span><br><span class="line">scores=t(scores[,<span class="number">3</span>:ncol(scores)])</span><br><span class="line">rownames(scores)=gsub(<span class="string">&quot;\\.&quot;</span>,<span class="string">&quot;\\-&quot;</span>,rownames(scores))</span><br><span class="line">out=rbind(ID=colnames(scores),scores)</span><br><span class="line">write.table(out,file=<span class="string">&quot;data/4.ESTIMATE/scores.txt&quot;</span>,sep=<span class="string">&quot;\t&quot;</span>,<span class="built_in">quote</span>=<span class="built_in">F</span>,col.names=<span class="built_in">F</span>)</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Database</category>
+      </categories>
+      <tags>
+        <tag>TCGA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>scRNAseq-04 Cell-cell communication</title>
+    <url>/2021/05/18/scRNAseq-04-Cell-cell-communication/</url>
+    <content><![CDATA[<h1 id="单细胞通讯"><a href="#单细胞通讯" class="headerlink" title="单细胞通讯"></a>单细胞通讯</h1><h2 id="CellPhoneDB"><a href="#CellPhoneDB" class="headerlink" title="CellPhoneDB"></a>CellPhoneDB</h2><p><a href="https://github.com/Teichlab/cellphonedb">GitHub-CellPhoneDB</a><br><a href="https://www.jianshu.com/p/ca7a3ae7cad3">教程</a></p>
+<p>CellPhoneDB是一个可公开获取的受体、配体及其相互作用的存储库。<br>配体和受体都包含亚基结构，准确表征异质配合物。这是至关重要的，因为细胞与细胞之间的交流依赖于多亚基蛋白复合物，而这些复合物超越了大多数数据库和研究中使用的二元表述。<br>CellPhoneDB集成了与蜂窝通信有关的现有数据集和新的手动审查信息。<br>CellPhoneDB获取信息的数据库有: UniProt, Ensembl, PDB, the IMEx consortium, IUPHAR。CellPhoneDB可用于搜索特定的配体/受体，或查询您自己的单细胞转录组学数据。</p>
+<center><img src="/img/Figures/scRNA/cellphoneDB.png" alt="cellphoneDB" style="zoom:70%;" /></center>
+
+<h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><p>使用conda创建环境 ，注意python版本，python=&gt;3.6</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create -n cellphonedbpy36 python=3.6</span><br><span class="line">conda activate cellphonedbpy36</span><br><span class="line">pip install cellphonedb</span><br><span class="line"></span><br><span class="line"><span class="comment">#为了后续运行顺利，还需要安装以下包，要不然会报错</span></span><br><span class="line">conda install -c conda-forge r-ggplot2</span><br><span class="line"><span class="comment">#ggplot2包，安装的同时会安装R，就不会出现调用系统的R出问题</span></span><br><span class="line">conda install -c conda-forge r-pheatmap</span><br></pre></td></tr></table></figure>
+<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><blockquote>
+<p>cellphonedb<br>Usage: cellphonedb [OPTIONS] COMMAND [ARGS]…<br>Commands:<br>database:  自建数据库、下载数据库等模块<br>method：分析模块<br>plot：绘图模块<br>query：数据查询模块，查询基因有哪些相互作用</p>
+</blockquote>
+<center><img src="/img/Figures/scRNA/usage.png" alt="usage" style="zoom:80%;" /></center>
+
+<h3 id="Practice-1"><a href="#Practice-1" class="headerlink" title="Practice 1"></a>Practice 1</h3><p>CellPhoneDB的运行方法<br>（1）要使用示例数据，请下载meta/counts测试数据。即</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl https://raw.githubusercontent.com/Teichlab/cellphonedb/master/<span class="keyword">in</span>/example_data/test_counts.txt --output test_counts.txt </span><br><span class="line">curl https://raw.githubusercontent.com/Teichlab/cellphonedb/master/<span class="keyword">in</span>/example_data/test_meta.txt --output test_meta.txt </span><br></pre></td></tr></table></figure>
+<p>（2） 运行statistical method的例子<br>cellphonedb method statistical_analysis test_meta.txt test_counts.txt<br>（3） 没有使用statistical method的例子<br>cellphonedb method analysis test_meta.txt test_counts.txt </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cellphonedb method statistical_analysis test_meta.txt test_counts.txt --output-path out --count-data=gene_name</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>结果：<br>deconvoluted.txt  每个基因在所有亚群中的平均表达量<br>means.txt   每对受体配体的平均表达量结果<br>pvalues.txt  每对受体配体的p值，如果analysis进行分析的时候，没有此文件<br>significant_means.txt   每对受体配体的显著性结果的平均表达量值（p.value&lt;0.05）,否则没有表达量值<br>注意：一般的10*genomics单细胞转录组项目来说，需要添加参数 –count-data=gene_name，但是如果行名为ensemble名称的话，可以默认值即可</p>
+</blockquote>
+<h3 id="Practice-2"><a href="#Practice-2" class="headerlink" title="Practice 2"></a>Practice 2</h3><ol>
+<li>写文件，cellphonedb需要的两个文件：cellphoneDB写文件.R</li>
+<li>cellphonedb运行（也可以参照前面的代码）—-该过程要40分钟左右<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cellphonedb method statistical_analysis  cellphonedb_meta.txt  cellphonedb_count.txt --counts-data=gene_name  <span class="comment"># 如果是直接写出基因名的加这个参数，转化为基因ID的话不用加。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#cellphonedb 自己的绘图</span></span><br><span class="line">cellphonedb plot dot_plot </span><br><span class="line"><span class="comment">###上面运行完暂时转到下页PPT，看下技巧，运行完再回来</span></span><br><span class="line">cellphonedb plot heatmap_plot cellphonedb_meta.txt </span><br></pre></td></tr></table></figure></li>
+<li>用ggplot2对结果可视化作图：cellphonedb下游画图.R，用到count_network.txt文件，在out中<br>原始plot图片非常大，是所有细胞、所有受体对的 点状图，这是概览，不能直接放在文章中，需要改相关的参数重新跑才行，比如就看B细胞和某些特定细胞类型之间的相关关系，制作columns.txt<blockquote>
+<p>B|CD14+ Mono<br>B|CD8 T<br>B|DC</p>
+</blockquote>
+</li>
+</ol>
+<p>比如就看某些特定的受体对之间的关系，制作rows.txt</p>
+<blockquote>
+<p>CXCR3_CXCL9<br>DPP4_CXCL9<br>FCGR2A_CXCL9<br>PDCD1_CD274<br>ACVR_1B2A receptor_GDF11<br>ACVR_1B2B receptor_GDF11<br>CD8 receptor_LCK<br>CD94:NKG2A_HLA-E</p>
+</blockquote>
+<p>运行的命令 </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cellphonedb plot dot_plot --rows ./rows.txt --columns ./columns.txt</span><br></pre></td></tr></table></figure>
+<h2 id="iTALK"><a href="#iTALK" class="headerlink" title="iTALK"></a>iTALK</h2><p>特点：</p>
+<ul>
+<li>集成了多种差异分析和可视化方法；</li>
+<li>将配体-受体注释为4大类：细胞因子、生长因子、免疫检查点和其他；</li>
+<li>配体-受体分析的中间数据和最终结果都可以轻松导出。</li>
+</ul>
+<blockquote>
+<p>数据和代码在/public/workspace/lincs/lab7/singlecell/iTALK/</p>
+</blockquote>
+<h3 id="Installation-1"><a href="#Installation-1" class="headerlink" title="Installation"></a>Installation</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(!require(devtools)) install.packages(<span class="string">&quot;devtools&quot;</span>);</span><br><span class="line">devtools::install_github(<span class="string">&quot;Coolgenome/iTALK&quot;</span>, build_vignettes = TRUE)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="Nichenet"><a href="#Nichenet" class="headerlink" title="Nichenet"></a>Nichenet</h2><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>大多数细胞通讯的分析方法主要依据公共数据库的配体-受体配对关系，以及配体、受体在细胞亚群的表达情况来推断细胞之间发生了哪些通讯关系，但是配体-受体相互作用如何导致受体细胞内下游靶基因表达变化的分析则很少有方法涉及。NicheNet不同于大多数研究细胞间通讯的方法，它着眼于配体对下游基因调控作用。NicheNet可以预测哪些配体影响另一个细胞中的表达，哪些靶基因受到配体的影响以及哪些信号传导可能参与其中。NicheNet可以促进对感兴趣的细胞间通信过程的功能理解，其分析原理如下：</p>
+<center><img src="/img/Figures/scRNA/nichenet.png" alt="nichenet" style="zoom:80%;" /></center>
+
+<h3 id="分析流程"><a href="#分析流程" class="headerlink" title="分析流程"></a>分析流程</h3><ol>
+<li>确定配体细胞和受体细胞；</li>
+<li>确定可能收到配体调控的基因集，可以是case-control的差异基因集，也可以是细胞的signature或其他基因集；</li>
+<li>确定一组潜在的配体，它们要在配体细胞中相对高表达（如10%以上的细胞表达），且可以结合受体细胞中的受体（通过先验数据判断）；</li>
+<li>执行NicheNet配体活性分析，其活性主要通过配体与受体细胞中的差异基因集的相关性进行判断；</li>
+<li>推测高活性配体调控的靶基因，以及与配体配对的受体。</li>
+</ol>
+<blockquote>
+<p>编译很慢，需要一个上午<br>数据和代码在/public/workspace/lincs/lab7/singlecell/nichenet/</p>
+</blockquote>
+<h2 id="CellChat"><a href="#CellChat" class="headerlink" title="CellChat"></a>CellChat</h2><p><strong>全面的数据</strong>：大多数的细胞通讯分析方法通常只考虑配体/受体基因对，往往忽略了多亚基复合物受体和其他信号辅助因子。CellChat的作者人工挑选了2021个经过验证的细胞通讯关系，构建了新的细胞通讯参考数据库——CellChatDB。它不仅考虑了多亚基受体情况，还收录了其他重要的信号辅助因子：可溶性激动剂，拮抗剂，共刺激和共抑制膜结合受体。<br><strong>高深的算法</strong>：CellChat在分析过程中使用了多种分析方法，不仅有常见的秩和检验、置换检验、SNN、KNN、UMAP，还有非负矩阵分解、社会网络分析、质量作用定律等不常用的方法。能灵活运用这么多方法分析数据，足以说明作者具有深厚的算法功底。<br><strong>丰富的可视化结果</strong>：CellChat提供丰富且美观的可视化结果，有网络图、桑基图、热图、气泡图、散点图等多种图形。</p>
+<blockquote>
+<p>数据和代码在 /public/workspace/lincs/lab7/singlecell/cellchat/<br>数据就一个data_humanSkin_CellChat.rda，<br>代码有R和Html版本，来源于官网。</p>
+</blockquote>
+<p>wget <a href="https://www.rarlab.com/rar/rarlinux-6.0.1.tar.gz">https://www.rarlab.com/rar/rarlinux-6.0.1.tar.gz</a><br>tar zxvf rarlinux-6.0.1.tar.gz<br>cd rar<br>make &amp;&amp; make install</p>
+]]></content>
       <categories>
         <category>Single Cell</category>
       </categories>
