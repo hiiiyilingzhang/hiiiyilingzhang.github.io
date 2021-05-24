@@ -1,0 +1,251 @@
+<!DOCTYPE html><html lang="en | zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tumor immune infiltration analysis | Jocelyn's Blog</title><meta name="author" content="yilingzhang"><meta name="copyright" content="yilingzhang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Background Info肿瘤组织不是单纯的只包含肿瘤细胞，它是由各种不同类型的细胞组成的，其中就包含基质细胞，成纤维细胞，还有免疫细胞等，这些细胞就构成了肿瘤的微环境。 我们比较关注的是免疫细胞在这微环境中的作用。免疫细胞又包括很多种，如 B 细胞，T 细胞等。不同的免疫细胞在肿瘤发生过程中发挥不同的作用，而不同肿瘤的免疫细胞组成也各有特点。 因此在研究肿瘤发生，治疗等机制时，常常会对不同肿">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tumor immune infiltration analysis">
+<meta property="og:url" content="http://yilingzhang.gitee.io/2021/05/24/Tumor-immune-infiltration-analysis/index.html">
+<meta property="og:site_name" content="Jocelyn&#39;s Blog">
+<meta property="og:description" content="Background Info肿瘤组织不是单纯的只包含肿瘤细胞，它是由各种不同类型的细胞组成的，其中就包含基质细胞，成纤维细胞，还有免疫细胞等，这些细胞就构成了肿瘤的微环境。 我们比较关注的是免疫细胞在这微环境中的作用。免疫细胞又包括很多种，如 B 细胞，T 细胞等。不同的免疫细胞在肿瘤发生过程中发挥不同的作用，而不同肿瘤的免疫细胞组成也各有特点。 因此在研究肿瘤发生，治疗等机制时，常常会对不同肿">
+<meta property="og:locale">
+<meta property="og:image" content="http://yilingzhang.gitee.io/img/cover/Immue.png">
+<meta property="article:published_time" content="2021-05-24T10:51:35.000Z">
+<meta property="article:modified_time" content="2021-05-24T11:02:53.418Z">
+<meta property="article:author" content="yilingzhang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yilingzhang.gitee.io/img/cover/Immue.png"><link rel="shortcut icon" href="/img/love_32px.png"><link rel="canonical" href="http://yilingzhang.gitee.io/2021/05/24/Tumor-immune-infiltration-analysis/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-05-24 19:02:53'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 5.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/selfie.JPG" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">37</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">15</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">14</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" target="_blank" rel="noopener" href="https://music.apple.com/cn/playlist/fav/pl.u-yZyVEjrFYkEpKjk"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" target="_blank" rel="noopener" href="https://ohmyphotography.lofter.com/"><i class="fa-fw fas fa-video"></i><span> Gallery</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/cover/Immue.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Jocelyn's Blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" target="_blank" rel="noopener" href="https://music.apple.com/cn/playlist/fav/pl.u-yZyVEjrFYkEpKjk"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" target="_blank" rel="noopener" href="https://ohmyphotography.lofter.com/"><i class="fa-fw fas fa-video"></i><span> Gallery</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Tumor immune infiltration analysis</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-05-24T10:51:35.000Z" title="Created 2021-05-24 18:51:35">2021-05-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-05-24T11:02:53.418Z" title="Updated 2021-05-24 19:02:53">2021-05-24</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word count:</span><span class="word-count">2.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading time:</span><span>10min</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Background-Info"><a href="#Background-Info" class="headerlink" title="Background Info"></a>Background Info</h1><p>肿瘤组织不是单纯的只包含肿瘤细胞，它是由各种不同类型的细胞组成的，其中就包含基质细胞，成纤维细胞，还有免疫细胞等，这些细胞就构成了肿瘤的微环境。</p>
+<p>我们比较关注的是免疫细胞在这微环境中的作用。免疫细胞又包括很多种，如 B 细胞，T 细胞等。不同的免疫细胞在肿瘤发生过程中发挥不同的作用，而不同肿瘤的免疫细胞组成也各有特点。</p>
+<p>因此在研究肿瘤发生，治疗等机制时，常常会对不同肿瘤类型的免疫细胞进行定量研究。所谓的定量研究就是研究不同免疫细胞的比例。</p>
+<p>为了准确的评估肿瘤微环境中免疫细胞的构成，我们可以通过很多方法从 RNA 测序数据中量化肿瘤浸润的免疫细胞，比如 ssGSEA, Cibersoft, TIMER, EPIC 等.</p>
+<p>大致上，计算免疫浸润的方法分为3大类：</p>
+<ul>
+<li>基于细胞标志分子的方法，核心思路基于ssGSEA。</li>
+<li>完全解卷积的方法，纯数学建模拟合。</li>
+<li>部分解卷积的方法，上述两种思路的结合。</li>
+</ul>
+<h1 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h1><h2 id="解卷积"><a href="#解卷积" class="headerlink" title="解卷积"></a>解卷积</h2><p>去卷积的目的是从bulk-sample 中推测不同单一细胞类型的表达谱。它的原理是假设每种细胞类型在不同样品中具有相似的表达水平，可以将异质样品中给定基因的表达模型化为混合物中存在的每种细胞类型的表达值的加权和（=线性组合）。<br>有点绕口，以数学形式表示如下：</p>
+<blockquote>
+<p>T = 异质样品的表达值<br>C = 特定细胞的表达值<br>P = 不同细胞的混合比例<br>T = C·P</p>
+</blockquote>
+<center><img src="/img/Tools/immu1.png" alt="immu" style="zoom:80%;" /></center>
+
+<ol>
+<li>只有T是已知, C和P都是预测的（深灰色箭头所示）；</li>
+<li>T和C是已知的，P是预测的 （粉色虚线箭头和灰色热图所示）；<br> 这种情况是通过T和C以富集值（代替细胞比例）表示组织异质性的相对评估，如ESTIMATE和xCell等工具包。细胞比例值必须是0-100之间的正值，可以直接解释；富集值是无限的，有时是负值，使得它们更难解释。</li>
+<li>T和P是已知，C是预测的（虚线蓝色箭头所示）</li>
+</ol>
+<h3 id="数学模型："><a href="#数学模型：" class="headerlink" title="数学模型："></a>数学模型：</h3><ol>
+<li>最常用的一组方法称为普通最小二乘法（OLS），线性最小二乘法（LLS）或简单最小二乘法（LS），其目标是最小化平方和。</li>
+<li>第二组方法是线性核（n-SVR）支持向量回归方法，包括CIBERSORT 和 ImmuCC。</li>
+<li>第三组无监督降维，如主成分分析（PCA）。</li>
+<li>第四组完全无监督方法，包括无监督的非负矩阵分解（NMF或NNMF）和不同的贝叶斯方法。（完全解卷积）</li>
+</ol>
+<h3 id="选择特定细胞类型的标记基因的方法"><a href="#选择特定细胞类型的标记基因的方法" class="headerlink" title="选择特定细胞类型的标记基因的方法"></a>选择特定细胞类型的标记基因的方法</h3><p>标记基因选择一是基于这个基因的在特定细胞中的表达显著高于其他类型的细胞，另一个是根据差异基因，即在某个类型的细胞中表达，在其他细胞类型不表达。</p>
+<p><strong>鉴定标记基因的方法：</strong></p>
+<ul>
+<li>HECS （highly expressed, cell specific）基因数据库包含来自于芯片的84个人类细胞和96个小鼠细胞和组织。(available at <a target="_blank" rel="noopener" href="http://www.influenza-/">http://www.influenza-</a> [x.org/<del>jshoemaker/cten/f/HECS%20database.zip](<a target="_blank" rel="noopener" href="http://x.org/">http://x.org/</a></del>jshoemaker/cten/f/HECS database.zip) )</li>
+<li>The F- statistic (measure of their fit in the multiple linear regression model) (Wang et al., 2010),</li>
+<li>the Gini index (Zhang et al., 2017),</li>
+<li>the Jensen-Shan- non divergence (Cabili et al., 2011) ,</li>
+<li>the components from PCA, ICA or NMF analyses (Zinovyev et al., 2013)</li>
+<li>CellMapper (Nelms et al., 2016), Nanodissection 1.0 (Ju et al., 2013), - - UNDO (Wang et al., 2015)</li>
+<li>CAM (Wang et al., 2016). Assuming</li>
+</ul>
+<h3 id="影响去卷积效果的因素"><a href="#影响去卷积效果的因素" class="headerlink" title="影响去卷积效果的因素"></a>影响去卷积效果的因素</h3><p>基于监督去卷积的方法，依赖于参考集，样本间、样本内本身的异质性将会对结果产生影响，除此之外还有其他因素，例如：</p>
+<ul>
+<li>前处理和标准化</li>
+<li>对数与线性<br>  对芯片数据取对数后会破坏线性假设，进而影响去卷积效果；RNA-seq数据的去卷积也需要符合线性假设，TPM , RSEM 或者Kallisto 可以得到更精确的细胞比例。</li>
+<li>多重共线性：混合物中相关细胞类型的存在</li>
+<li>矩阵的条件数目</li>
+<li>细胞周期</li>
+</ul>
+<h3 id="低比例的细胞类型也可以被检测的方法"><a href="#低比例的细胞类型也可以被检测的方法" class="headerlink" title="低比例的细胞类型也可以被检测的方法"></a>低比例的细胞类型也可以被检测的方法</h3><p>PERT (Qiao et al., 2012) 和 DeconRNAseq (Gong and Szustakowski, 2013) 可以检测到的细胞比例最小可以至2% ，CIBERSORT (Newman et al., 2015) 可以至 0.5% 。</p>
+<h3 id="评估去卷积效果"><a href="#评估去卷积效果" class="headerlink" title="评估去卷积效果"></a>评估去卷积效果</h3><ul>
+<li>原位杂交（in-situ hybridization，ISH） (Kuhn et al., 2011, 2012) 或免疫组织染色 (IHC) (Ju et al., 2013)</li>
+<li>细胞分选 (Qiao et al., 2012);</li>
+<li>显微镜和FACS分析相结合 (Wang et al., 2016);</li>
+<li>相关性分析，即实验方法细胞计数的结果与计算方法预计结果相比 (Li et al., 2016; Şenbabaoğlu et al., 2016)，(Şenbabaoğlu et al., 2016).</li>
+</ul>
+<h3 id="传统线性模型的局限性"><a href="#传统线性模型的局限性" class="headerlink" title="传统线性模型的局限性"></a>传统线性模型的局限性</h3><ul>
+<li>混合物中应该存在的所有细胞类型的参考概况或每种细胞类型至少有一个标记；</li>
+<li>由于真实的组成是未知的，一些细胞类型可能被忽略；</li>
+<li>一些方法假设给定的异质性组织内的细胞类型是稳定组成的；</li>
+<li>大多数方法没有考虑到这样一个事实，即参考表达谱通常受微环境或发育影响的干扰，或者只是在不同的条件下或不同的技术或平台下获得；</li>
+</ul>
+<h3 id="去卷积的网页版工具"><a href="#去卷积的网页版工具" class="headerlink" title="去卷积的网页版工具"></a>去卷积的网页版工具</h3><ul>
+<li>CellPred (Wang et al., 2010):<br> 用Affymetrix microarray 数据对细胞比例进行估计<br> <a target="_blank" rel="noopener" href="http://webarraydb.org/webarray/index.html">http://webarraydb.org/webarray/index.html</a>.</li>
+<li>TIMER (Li et al., 2016):<br> 包含B cells, CD4+, CD8+ T cells, macrophages, neutrophils 和 dendritic cells 的细胞比例，数据来源于TCGA 32种癌症类型，11,509个样本。<br> <a target="_blank" rel="noopener" href="https://cistrome.shinyapps.io/timer/">https://cistrome.shinyapps.io/timer/</a><br> <a target="_blank" rel="noopener" href="https://github.com/hanfeisun/TIMER">https://github.com/hanfeisun/TIMER</a></li>
+<li>DSection (Erkkilä et al., 2010):<br> 使用微阵列数据估计特异性细胞类型表达谱，校正细胞类型比例和差异基因表达。<br> <a target="_blank" rel="noopener" href="http://infor-/">http://infor-</a> <a target="_blank" rel="noopener" href="http://matics.systemsbiology.net/DSection/">matics.systemsbiology.net/DSection/</a></li>
+<li>DCQ (Altboum et al., 2014) and CoD (Frishberg et al., 2015)<br> 这两个工具都来自Irit Gat-Viks 实验室，用芯片数据或者RNA-seq数据估计细胞比例。<br> <a target="_blank" rel="noopener" href="http://www.dcq.tau.ac.il/">http://www.dcq.tau.ac.il/</a><br> (de- tailed information: <a target="_blank" rel="noopener" href="http://dcq.tau.ac.il/application.html">http://dcq.tau.ac.il/application.html</a>) ；<br> <a target="_blank" rel="noopener" href="http://www.csgi.tau.ac.il/CoD/">http://www.csgi.tau.ac.il/CoD/</a><br> (detailed information: <a target="_blank" rel="noopener" href="http://www.csgi.tau.ac.il/CoD/application.html">http://www.csgi.tau.ac.il/CoD/application.html</a>)</li>
+<li>ESTIMATE (Yoshihara et al., 2013):<br> 快速获取基质和免疫细胞的相对组成，可用于microarray 和RNA-seq数据。<br> <a target="_blank" rel="noopener" href="http://bioinformatics.mdanderson.org/estimate/">http://bioinformatics.mdanderson.org/estimate/</a></li>
+<li>CIBERSORT (Newman et al., 2015):<br> 以22种白细胞亚型细胞的细胞比例作为参考，用于来自于异质性样本的芯片或者RNA-seq数据。<br> <a target="_blank" rel="noopener" href="https://cibersort.stanford.edu/runcibersort.php">https://cibersort.stanford.edu/runcibersort.php</a></li>
+</ul>
+<h3 id="其他数据类型的去卷积方法"><a href="#其他数据类型的去卷积方法" class="headerlink" title="其他数据类型的去卷积方法"></a>其他数据类型的去卷积方法</h3><p>根据甲基化数据进行去卷积的，目前的方法有：</p>
+<ul>
+<li>EpiDISH (Teschendorff et al., 2017)</li>
+<li>MeDeCom (Lutsik et al., 2017)</li>
+<li>eFORGE (Breeze et al., 2016)</li>
+<li>EDec (Onuchic et al., 2016)</li>
+</ul>
+<p>根据拷贝数变异：</p>
+<ul>
+<li>BACOM 2.0 (Fu et al., 2015)</li>
+<li>ABSOLUTE (Carter et al., 2012)</li>
+<li>CloneCNA (Yu et al., 2016)</li>
+<li>CPE (Aran et al., 2015)</li>
+</ul>
+<h1 id="Software"><a href="#Software" class="headerlink" title="Software"></a>Software</h1><h2 id="CIBERSORT"><a href="#CIBERSORT" class="headerlink" title="CIBERSORT"></a>CIBERSORT</h2><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/03a7440c0960">https://www.jianshu.com/p/03a7440c0960</a></p>
+<p>在R语言中运行Cibersort共需要三个文件，分别是</p>
+<ol>
+<li><strong>官方提供的22种细胞基因集“LM22.txt”</strong>；<br> 在Cibersort论文中（<a target="_blank" rel="noopener" href="https://www.nature.com/articles/nmeth.3337#MOESM207%EF%BC%89%E4%B8%8B%E8%BD%BD">https://www.nature.com/articles/nmeth.3337#MOESM207）下载</a></li>
+<li><strong>自己的表达矩阵</strong>；<br> 第一列是基因名，第一行是样品名，不能有重复基因名，第一列列名不能空白。矩阵中不能存在空白或NA值，不要对表达量取Log2。如果表达矩阵中基因不能完全覆盖LM22.txt中的基因，Cibersort同样可以正常运行，但不能少于LM22.txt中所需基因的一半。<blockquote>
+<p>Importantly, all expression data should be non-negative, devoid of missing values, and represented in non-log linear space.</p>
+<p>For Affymetrix microarrays, a custom chip definition file (CDF) is recommended (see Subheading 3.2.2) and should be normalized with MAS5 or RMA.</p>
+<p>Illumina Beadchip and single color Agilent arrays should be processed as described in the limma package.</p>
+<p>Standard RNA-Seq expression quantification metrics, such as frag- ments per kilobase per million (FPKM) and transcripts per kilobase million (TPM), are suitable for use with CIBERSORT. –《Profiling Tumor Infiltrating Immune Cells with CIBERSORT》</p>
+</blockquote>
+</li>
+<li><strong>Cibersort代码</strong>。</li>
+</ol>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可以从官网下载</span></span><br><span class="line">source(<span class="string">&#x27;Cibersort.R&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 其中 nperm 指定的是置换的次数，QN 分位数归一化,如果是芯片设置为 T，如果是测序就设置为 F，测序数据最好是TPM</span></span><br><span class="line">res_cibersort &lt;- CIBERSORT(<span class="string">&#x27;LM22.txt&#x27;</span>,<span class="string">&#x27;Data.txt&#x27;</span>, perm = <span class="number">10</span>, QN = <span class="built_in">F</span>)</span><br><span class="line"></span><br><span class="line">write.table(res_cibersort, file=<span class="string">&quot;res_cibersort.txt&quot;</span>, sep=<span class="string">&quot;\t&quot;</span>, col.names=<span class="built_in">T</span>, row.names=<span class="built_in">F</span>, <span class="built_in">quote</span>=<span class="built_in">F</span>)</span><br><span class="line">save(res_cibersort, file=<span class="string">&quot;res_cibersort.Rdata&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="MCP-counter"><a href="#MCP-counter" class="headerlink" title="MCP-counter"></a>MCP-counter</h2><p>MCP-counter(Microenvironment Cell Populations-counter)包由Becht团队于2016年开发，原文题目为：Estimating the population abundance of tissue-infiltrating immune and stromal cell populations using gene expression</p>
+<p>本包可以利用转录组数据量化异质组织中8个免疫细胞和2个基质细胞的绝对丰度。作者在后续的答疑中说明，转录组数据必须归一化。该包放在了github上，网址为：<a target="_blank" rel="noopener" href="https://github.com/ebecht/MCPcounter">https://github.com/ebecht/MCPcounter</a></p>
+<h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">install.packages(<span class="built_in">c</span>(<span class="string">&quot;devtools&quot;</span>,<span class="string">&quot;curl&quot;</span>)) <span class="comment">##Installs devtools and the MCPcounter dependancy &#x27;curl&#x27;</span></span><br><span class="line">library(devtools)</span><br><span class="line">install_github(<span class="string">&quot;ebecht/MCPcounter&quot;</span>,ref=<span class="string">&quot;master&quot;</span>, subdir=<span class="string">&quot;Source&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="Run-MCPcounter"><a href="#Run-MCPcounter" class="headerlink" title="Run MCPcounter"></a>Run MCPcounter</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">library(MCPcounter)</span><br><span class="line">library(pheatmap)</span><br><span class="line">genes &lt;- data.table::fread(<span class="string">&quot;data/6.MCPcounter/MCPcounter/genes.txt&quot;</span>,data.table = <span class="built_in">F</span>)</span><br><span class="line">probesets &lt;- data.table::fread(<span class="string">&quot;data/6.MCPcounter/MCPcounter/probesets.txt&quot;</span>,data.table = <span class="built_in">F</span>,header = <span class="built_in">F</span>)</span><br><span class="line">exprMat &lt;- read.table(<span class="string">&quot;data/6.MCPcounter/MCPcounter/exprMat.txt&quot;</span>, header=<span class="built_in">T</span>, sep=<span class="string">&quot;\t&quot;</span>, check.names=<span class="built_in">F</span>,row.names = <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">results&lt;- MCPcounter.estimate(exprMat,</span><br><span class="line">                              featuresType= <span class="string">&quot;HUGO_symbols&quot;</span>,</span><br><span class="line">                              probesets=probesets,</span><br><span class="line">                              genes=genes)</span><br><span class="line"></span><br><span class="line">heatmap(as.matrix(results),col=colorRampPalette(<span class="built_in">c</span>(<span class="string">&quot;blue&quot;</span>,<span class="string">&quot;white&quot;</span>,<span class="string">&quot;red&quot;</span>))(<span class="number">100</span>)) </span><br></pre></td></tr></table></figure>
+<h1 id="定量免疫浸润在单细胞研究中的应用"><a href="#定量免疫浸润在单细胞研究中的应用" class="headerlink" title="定量免疫浸润在单细胞研究中的应用"></a>定量免疫浸润在单细胞研究中的应用</h1><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/9af216ff6feb">https://www.jianshu.com/p/9af216ff6feb</a></p>
+<p>定量免疫浸润通过简单的基因表达矩阵数据，将免疫细胞类型含量计算出来。随着算法的发展，到后来也不仅是免疫细胞了，可以是很多细胞类型。</p>
+<p>在我们的bulk RNA的例子中，就是把平均值看作单个细胞表达值与某个函数（和检测方法有关）的卷积。获得样本bulk RNA 表达量的过程，就是一个卷积的过程，而反卷积，是卷积运算的逆运算。</p>
+<ul>
+<li>验证</li>
+</ul>
+<p>单细胞数据科学是一个超指数发展的行业，数据是爆发式的增长的，但是数据之间并不是孤立的，之前有着丰富的数据积累，其中TCGA，GEO是比较详细的。越来越多的文章，开始利用公用数据库来挖掘有用的信息来丰富自己的研究，甚至专门有个数据挖掘的方向。在这样的背景下，免疫浸润也是揭示异质性的，那么自然地，我们会联想到：拿我们的单细胞数据通过免疫浸润与公用数据联系起来，相互验证。</p>
+<ul>
+<li>细胞类型推断</li>
+</ul>
+<p>既然定量免疫浸润可以得到每个样本在不同细胞类型中的分值，我们可不可以根据这个分值来推断手里表达谱的细胞类型呢？在学理上应该是可以的，反卷积的算法也许有些不当，但是如果把求平均值的过程看作卷积，也不是不可以吧。基于GSVA 的方法本质就是自定义基因集做富集分析，所以完全是可以的，关键在与marker gene 的选择。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">yilingzhang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://yilingzhang.gitee.io/2021/05/24/Tumor-immune-infiltration-analysis/">http://yilingzhang.gitee.io/2021/05/24/Tumor-immune-infiltration-analysis/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/cover/Immue.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/05/24/scRNAseq-05-Monocle3-GO-KEGG-TCGASurv/"><img class="next-cover" src="/img/cover/scRNA.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">scRNAseq-05 Monocle3 &amp; GO/KEGG &amp; TCGASurv</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/selfie.JPG" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">yilingzhang</div><div class="author-info__description">Every Day is My Day</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">37</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">15</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">14</div></a></div></div><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:jocelynzhang1119@icloud.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://blog.csdn.net/weixin_43893431" target="_blank" title="CSDN"><i class="fas fa-paper-plane"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Background-Info"><span class="toc-number">1.</span> <span class="toc-text">Background Info</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Methods"><span class="toc-number">2.</span> <span class="toc-text">Methods</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%8D%B7%E7%A7%AF"><span class="toc-number">2.1.</span> <span class="toc-text">解卷积</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B%EF%BC%9A"><span class="toc-number">2.1.1.</span> <span class="toc-text">数学模型：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E7%89%B9%E5%AE%9A%E7%BB%86%E8%83%9E%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%A0%87%E8%AE%B0%E5%9F%BA%E5%9B%A0%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">2.1.2.</span> <span class="toc-text">选择特定细胞类型的标记基因的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%B1%E5%93%8D%E5%8E%BB%E5%8D%B7%E7%A7%AF%E6%95%88%E6%9E%9C%E7%9A%84%E5%9B%A0%E7%B4%A0"><span class="toc-number">2.1.3.</span> <span class="toc-text">影响去卷积效果的因素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%8E%E6%AF%94%E4%BE%8B%E7%9A%84%E7%BB%86%E8%83%9E%E7%B1%BB%E5%9E%8B%E4%B9%9F%E5%8F%AF%E4%BB%A5%E8%A2%AB%E6%A3%80%E6%B5%8B%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">2.1.4.</span> <span class="toc-text">低比例的细胞类型也可以被检测的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E5%8E%BB%E5%8D%B7%E7%A7%AF%E6%95%88%E6%9E%9C"><span class="toc-number">2.1.5.</span> <span class="toc-text">评估去卷积效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E7%BB%9F%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7"><span class="toc-number">2.1.6.</span> <span class="toc-text">传统线性模型的局限性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%BB%E5%8D%B7%E7%A7%AF%E7%9A%84%E7%BD%91%E9%A1%B5%E7%89%88%E5%B7%A5%E5%85%B7"><span class="toc-number">2.1.7.</span> <span class="toc-text">去卷积的网页版工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8E%BB%E5%8D%B7%E7%A7%AF%E6%96%B9%E6%B3%95"><span class="toc-number">2.1.8.</span> <span class="toc-text">其他数据类型的去卷积方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Software"><span class="toc-number">3.</span> <span class="toc-text">Software</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CIBERSORT"><span class="toc-number">3.1.</span> <span class="toc-text">CIBERSORT</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MCP-counter"><span class="toc-number">3.2.</span> <span class="toc-text">MCP-counter</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Installation"><span class="toc-number">3.2.1.</span> <span class="toc-text">Installation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-MCPcounter"><span class="toc-number">3.2.2.</span> <span class="toc-text">Run MCPcounter</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9A%E9%87%8F%E5%85%8D%E7%96%AB%E6%B5%B8%E6%B6%A6%E5%9C%A8%E5%8D%95%E7%BB%86%E8%83%9E%E7%A0%94%E7%A9%B6%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-number">4.</span> <span class="toc-text">定量免疫浸润在单细胞研究中的应用</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/05/24/Tumor-immune-infiltration-analysis/" title="Tumor immune infiltration analysis"><img src="/img/cover/Immue.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Tumor immune infiltration analysis"/></a><div class="content"><a class="title" href="/2021/05/24/Tumor-immune-infiltration-analysis/" title="Tumor immune infiltration analysis">Tumor immune infiltration analysis</a><time datetime="2021-05-24T10:51:35.000Z" title="Created 2021-05-24 18:51:35">2021-05-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/24/scRNAseq-05-Monocle3-GO-KEGG-TCGASurv/" title="scRNAseq-05 Monocle3 &amp; GO/KEGG &amp; TCGASurv"><img src="/img/cover/scRNA.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="scRNAseq-05 Monocle3 &amp; GO/KEGG &amp; TCGASurv"/></a><div class="content"><a class="title" href="/2021/05/24/scRNAseq-05-Monocle3-GO-KEGG-TCGASurv/" title="scRNAseq-05 Monocle3 &amp; GO/KEGG &amp; TCGASurv">scRNAseq-05 Monocle3 &amp; GO/KEGG &amp; TCGASurv</a><time datetime="2021-05-24T04:51:09.000Z" title="Created 2021-05-24 12:51:09">2021-05-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/18/TCGA-data-mining/" title="TCGA data mining"><img src="/img/cover/TCGA.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TCGA data mining"/></a><div class="content"><a class="title" href="/2021/05/18/TCGA-data-mining/" title="TCGA data mining">TCGA data mining</a><time datetime="2021-05-18T12:01:08.000Z" title="Created 2021-05-18 20:01:08">2021-05-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/18/scRNAseq-04-Cell-cell-communication/" title="scRNAseq-04 Cell-cell communication"><img src="/img/cover/scRNA.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="scRNAseq-04 Cell-cell communication"/></a><div class="content"><a class="title" href="/2021/05/18/scRNAseq-04-Cell-cell-communication/" title="scRNAseq-04 Cell-cell communication">scRNAseq-04 Cell-cell communication</a><time datetime="2021-05-18T11:59:21.000Z" title="Created 2021-05-18 19:59:21">2021-05-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/18/Bioinformatics-Platform-Development/" title="Bioinformatics Platform Development"><img src="/img/cover/shiny.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Bioinformatics Platform Development"/></a><div class="content"><a class="title" href="/2021/05/18/Bioinformatics-Platform-Development/" title="Bioinformatics Platform Development">Bioinformatics Platform Development</a><time datetime="2021-05-18T11:48:20.000Z" title="Created 2021-05-18 19:48:20">2021-05-18</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 By yilingzhang</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

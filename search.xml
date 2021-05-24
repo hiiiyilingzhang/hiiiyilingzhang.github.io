@@ -1738,7 +1738,7 @@ The processed reads could then be passed to a demultiplexing tool to deal with t
 
 <ol>
 <li>fastq.gz<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cat ./1.sra/sra.infor/runinfo.txt | <span class="keyword">while</span> <span class="built_in">read</span> id; \</span><br><span class="line"><span class="keyword">do</span> <span class="built_in">echo</span> <span class="variable">$id</span></span><br><span class="line">arr=(<span class="variable">$id</span>)</span><br><span class="line">link=<span class="variable">$&#123;arr[1]&#125;</span></span><br><span class="line">srr=<span class="variable">$&#123;arr[0]&#125;</span></span><br><span class="line">nohup time ascp -i ~/.aspera/connect/etc/asperaweb_id_dsa.openssh \</span><br><span class="line">    -l 300M -k 1 -Q -T -P 33001 \</span><br><span class="line">    era-fasp@<span class="variable">$&#123;link&#125;</span> \</span><br><span class="line">    ./2.rawfq-2/ &amp; </span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure></li>
-<li>.sra<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">prefetch -t ascp -a <span class="string">&quot;/home/data/vip8t02/.aspera/connect/bin/ascp|/home/data/vip8t02/.aspera/connect/etc/asperaweb_id_dsa.openssh&quot;</span> SRR10315835 &amp;</span><br><span class="line"></span><br><span class="line">cat ./1.sra/sra.infor/SRR_Acc_List.txt |<span class="keyword">while</span> <span class="built_in">read</span> i</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">time fastq-dump --gzip --split-files -A <span class="variable">$i</span> ./1.sra/<span class="variable">$&#123;i&#125;</span>.sra -O ./2.rawfq/ &amp;&amp; <span class="built_in">echo</span> <span class="string">&quot;** <span class="variable">$&#123;i&#125;</span>.sra to fastq done **&quot;</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<li>.sra<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">prefetch -t ascp -a <span class="string">&quot;/home/data/vip8t02/.aspera/connect/bin/ascp|/home/data/vip8t02/.aspera/connect/etc/asperaweb_id_dsa.openssh&quot;</span> SRR10315835 &amp;</span><br><span class="line"></span><br><span class="line">cat ./1.sra/sra.infor/SRR_Acc_List.txt |<span class="keyword">while</span> <span class="built_in">read</span> i</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">time fastq-dump --gzip --split-files ./1.sra/<span class="variable">$&#123;i&#125;</span>.sra -O ./2.rawfq/ &amp;&amp; <span class="built_in">echo</span> <span class="string">&quot;** <span class="variable">$&#123;i&#125;</span>.sra to fastq done **&quot;</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 <h2 id="Rename"><a href="#Rename" class="headerlink" title="Rename"></a><strong>Rename</strong></h2>为了让文件名符合Cell Ranger的输入格式，需对其进行重命名。<br><a href="https://kb.10xgenomics.com/hc/en-us/articles/115003802691-How-do-I-prepare-Sequence-Read-Archive-SRA-data-from-NCBI-for-Cell-Ranger-">10X Genimics-How do I prepare Sequence Read Archive (SRA) data from NCBI for Cell Ranger?</a></li>
 </ol>
 <center><img src="/img/scATAC/rename.png" alt="rename" style="zoom:70%;" /></center>
@@ -2655,7 +2655,12 @@ The processed reads could then be passed to a demultiplexing tool to deal with t
 <li>拿到结果先拷贝副本</li>
 </ol>
 <h1 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h1><p>新建画布：A4 ，300dpi，RGB。常规操作；<br>有的图片打开后字呈阴影，是字体不对，全选（Ctrl +A）-&gt; 文字-&gt; 最近使用的字体-&gt; Times Newman；<br>有时需要对某些图片整体操作，可以使用编组功能：对象-&gt;编组；<br>不规则图形的绘制，可以借助于钢笔（钢笔工具），到达终点后，“Esc”键可以终止；大括号可以用钢笔画，事先多加辅助线<br>流程图中的箭头，可以使用直线/描边的方法，A.描边有粗细，B.“箭头”可以选择形状，C.“缩放”比例可以改变箭头形状；<br>圆角矩形填充色，“不透明度”可以改变颜色；<br>选择多个对象，按住“Shift”，这和word中“Ctrl”对应；<br>复制时可以用Ctrl +C -&gt; Ctrl +V ；也可以选择对象后，按住“Ctrl+Alt”后拖动。</p>
-<h1 id="箭头"><a href="#箭头" class="headerlink" title="箭头"></a>箭头</h1><p>直线——&gt;描边 8pt ——&gt; 箭头类型——&gt;缩放</p>
+<ul>
+<li>箭头<br>直线——&gt;描边 8pt ——&gt; 箭头类型——&gt;缩放</li>
+</ul>
+<h1 id="组图"><a href="#组图" class="headerlink" title="组图"></a>组图</h1><p>immu st esti<br>stage t m n</p>
+<p>新建画布：A4 ，300dpi，RGB。常规操作；<br>参考线：A4 210mm ;2栏图174；左右边距（210-174）/2=18mm;左边距参考线在18mm；右边距参考线在174+18=192mm。<br><strong>2栏3块参考线</strong>：每个宽度174/3=58mm; 3条参考线分别在58+18=76mm，58+18+58=134mm，192mm。<br>选择多个对象，按住“Shift”，这和word中“Ctrl”对应；<br>单独的ABC部分可以先编组（对象–&gt;编组），调整大小后再取消编组（对象–&gt;取消编组）<br>调整所有的文字，选择–&gt;对象–&gt;所有文本对象。</p>
+<p>新建画布：A4 ，300dpi，RGB。常规操作；<br>参考线：A4 210mm ;2栏图174；左右边距（210-174）/2=18mm;左边距参考线在18mm；右边距参考线在174+18=192mm。<br><strong>2栏4块参考线</strong>：每个宽度174/4=43.5mm;6条参考线分别在18mm, 43.5+18=61.5mm，43.5+18+43.5=105mm， 43.5+18+43.5+43.5=148.5mm， 192mm。<br>pdf文件拖入窗口上缘<br>编组（对象–&gt;编组），缩放<br>Ctrl C 拷贝到目的AI文件中</p>
 ]]></content>
       <categories>
         <category>ToolsLearning</category>
@@ -2958,5 +2963,235 @@ Model：处理信息（码农）
       <tags>
         <tag>scRNA-seq</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>scRNAseq-05 Monocle3 &amp; GO/KEGG &amp; TCGASurv</title>
+    <url>/2021/05/24/scRNAseq-05-Monocle3-GO-KEGG-TCGASurv/</url>
+    <content><![CDATA[<p><strong>拟时分析</strong><br>拟时分析本质上是根据每个细胞的基因表达情况找出关键基因的表达模式来对细胞进行排序，反推出细胞发育轨迹。用于细胞分化的研究(胚胎发育，细胞重编程，癌细胞分化…)<br>细胞在外界刺激和细胞发育过程中，细胞的功能会发生变化。这些功能的变化是靠蛋白表达的调控即<strong>转录组信息</strong>的变化实现的(一些基因表达上调一些基因表达下调)。<br>细胞在发育过程中不是完全同步的，在一次取样的过程中可以取到不同发育状况的细胞。通过单细胞测序得到不同时期细胞的转录组信息，可以推断出这些细胞之前的先后顺序，从而反推出细胞发育轨迹。</p>
+<ul>
+<li>RNA Velovity</li>
+<li>增殖相关基因表达量（自行定义根节点）</li>
+</ul>
+<h1 id="Monocle3"><a href="#Monocle3" class="headerlink" title="Monocle3"></a>Monocle3</h1><ul>
+<li>从UMAP图识别发育轨迹，可以继承Seurat的质控、批次校正和降维分析结果，实现“一张图”展现细胞的聚类、鉴定和轨迹分析结果。</li>
+<li>自动对UMAP图分区（partition），可以选择多个起点，轨迹分析算法的逻辑更符合生物学现实。</li>
+<li>官网：<a href="https://cole-trapnell-lab.github.io/monocle3/">https://cole-trapnell-lab.github.io/monocle3/</a></li>
+</ul>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>数据导入→数据预处理→降维→聚类→(细胞类群之间的比较)→拟时分析</p>
+<h3 id="数据导入"><a href="#数据导入" class="headerlink" title="数据导入"></a>数据导入</h3><ul>
+<li>可导入Cellranger结果</li>
+<li>导入非Cellranger的结果，需要准备三个input文件：<br>  1.expression_matrix：<br>  2.cell metadata：细胞属性的数据框，每一行对应一个细胞，每一列对应不同的细胞属性<br>  3.gene_metadata：记录了基因属性的数据框,每一行对应一个基因，每一列对应不同的基因属性</li>
+<li>从Seurat结果中导入数据<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment">##1.读取seurat产生的RDS文件</span></span><br><span class="line">pbmc&lt;-read RDS(＂seurat_rds_for_test.rds＂)</span><br><span class="line"><span class="comment">##或者可以用seurat自带的pbmc_small进行测试</span></span><br><span class="line">library(Seurat)</span><br><span class="line">pbmc&lt;-pbmc_small</span><br><span class="line"><span class="comment">##2.拆分成3个文件</span></span><br><span class="line">Expression_data&lt;-as(as.matrix(pbmc@assays$RNA@counts),＂sparse Matrix＂)</span><br><span class="line">Cell_data-&gt;pbmc@meta.data</span><br><span class="line">Gene_data&lt;-data.frame(gene_short_name=row.names(data), row.names=row.names(data))</span><br><span class="line"><span class="comment">##3.生成monocle 3对象</span></span><br><span class="line">cds&lt;- new_cell_data_set(expression_matrix=Expression_data，</span><br><span class="line">            cell_metadata=Cell_data，</span><br><span class="line">            gene_metadata=Gene_data)</span><br></pre></td></tr></table></figure>
+<h3 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h3><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 后面的例子采用官网教程数据</span></span><br><span class="line">expression_matrix &lt;- readRDS(url(<span class="string">&quot;http://staff.washington.edu/hpliner/data/packer_embryo_expression.rds&quot;</span>))</span><br><span class="line">cell_metadata &lt;- readRDS(url(<span class="string">&quot;http://staff.washington.edu/hpliner/data/packer_embryo_colData.rds&quot;</span>))</span><br><span class="line">gene_annotation &lt;- readRDS(url(<span class="string">&quot;http://staff.washington.edu/hpliner/data/packer_embryo_rowData.rds&quot;</span>))</span><br><span class="line"></span><br><span class="line">cds &lt;- new_cell_data_set(expression_matrix,</span><br><span class="line">                         cell_metadata = cell_metadata,</span><br><span class="line">                         gene_metadata = gene_annotation)</span><br><span class="line">cds = preprocess_cds(cds, norm_method=＂<span class="built_in">log</span>“, method=＂PCA“, num_dim=<span class="number">100</span>)</span><br></pre></td></tr></table></figure></li>
+<li>标准化：默认对表达矩阵的raw reads进行log处理(减小数据的离散程度)</li>
+<li>预降维：方法有PCA， LSI。默认为PCA降维， 一般RNAseq采用PCA降维即可</li>
+<li>numdim：PCA维度，默认为50，可以根据细胞数进行调整</li>
+</ul>
+<h3 id="降维及可视化"><a href="#降维及可视化" class="headerlink" title="降维及可视化"></a>降维及可视化</h3><p>进行t-SNE/UMAP降维(如果细胞数较多，比如几万个细胞，推荐UMAP降维，减少运算时间)</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">cds&lt;-reduce_dimension(cds)</span><br><span class="line">plot_cells(cds, label_groups_by_cluster=<span class="literal">FALSE</span>)</span><br><span class="line"></span><br><span class="line">ciliated_genes &lt;- <span class="built_in">c</span>(<span class="string">&quot;che-1&quot;</span>,</span><br><span class="line">                    <span class="string">&quot;hlh-17&quot;</span>,</span><br><span class="line">                    <span class="string">&quot;nhr-6&quot;</span>,</span><br><span class="line">                    <span class="string">&quot;dmd-6&quot;</span>,</span><br><span class="line">                    <span class="string">&quot;ceh-36&quot;</span>,</span><br><span class="line">                    <span class="string">&quot;ham-1&quot;</span>)</span><br><span class="line"></span><br><span class="line">plot_cells(cds,</span><br><span class="line">           genes=ciliated_genes,</span><br><span class="line">           label_cell_groups=<span class="literal">FALSE</span>,</span><br><span class="line">           show_trajectory_graph=<span class="literal">FALSE</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="聚类分析"><a href="#聚类分析" class="headerlink" title="聚类分析"></a>聚类分析</h3><p>目的是为了找出那些细胞在一个发育轨迹</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">cds &lt;- cluster_cells(cds)</span><br><span class="line">plot_cells(cds, color_cells_by = <span class="string">&quot;partition&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="拟时分析"><a href="#拟时分析" class="headerlink" title="拟时分析"></a>拟时分析</h3><p>在上一步分群的基础上，找出每个群内的细胞发育轨迹(无监督，没有基于生物学背景知识)</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">cds &lt;- learn_graph(cds)</span><br><span class="line">plot_cells(cds,</span><br><span class="line">           color_cells_by = <span class="string">&quot;cell.type&quot;</span>,</span><br><span class="line">           label_groups_by_cluster=<span class="literal">FALSE</span>,</span><br><span class="line">           label_leaves=<span class="literal">FALSE</span>,</span><br><span class="line">           label_branch_points=<span class="literal">FALSE</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="确定轨迹的先后顺序"><a href="#确定轨迹的先后顺序" class="headerlink" title="确定轨迹的先后顺序"></a>确定轨迹的先后顺序</h3><p>根据颜色，时间越长越往后，时间=0，代表根</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">get_earliest_principal_node</span><br><span class="line">&lt;-<span class="keyword">function</span>(cds， time_bin=<span class="string">&quot;130-170&quot;</span>) &#123;</span><br><span class="line">cell_ids&lt;-which(col Data(cds) [, <span class="string">&quot;embryo.time.bin&quot;</span>] ==time_bin)</span><br><span class="line">closest_vertex&lt;-</span><br><span class="line">cds@principal_graph_aux[[<span class="string">&quot;UMAP&quot;</span>] ] $pr_graph_cell_proj_closest_vertex</span><br><span class="line">closest_vertex &lt;-as.matrix(closest_vertex[col <span class="built_in">names</span>(cds), ] )</span><br><span class="line">root_pr_nodes&lt;-</span><br><span class="line">igraph::V(principal_graph(cds) [[<span class="string">&quot;UMAP&quot;</span>] ] ) $name[<span class="built_in">as.numeric</span>(<span class="built_in">names</span></span><br><span class="line">(which.max(table(closest_vertex[cell_ids, ] ) ) ) ) ]</span><br><span class="line">root_pr_nodes</span><br><span class="line">&#125;</span><br><span class="line">cds&lt;-order_cells(cds， root_pr_nodes=get_earliest_principal_node(cds))</span><br></pre></td></tr></table></figure>
+<p>手动(每一个细胞轨迹均需要指定一个根节点)</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">cds &lt;- order_cells(cds)</span><br><span class="line"></span><br><span class="line">plot_cells(cds,</span><br><span class="line">           color_cells_by = <span class="string">&quot;pseudotime&quot;</span>,</span><br><span class="line">           label_cell_groups=<span class="literal">FALSE</span>,</span><br><span class="line">           label_leaves=<span class="literal">FALSE</span>,</span><br><span class="line">           label_branch_points=<span class="literal">FALSE</span>,</span><br><span class="line">           graph_label_size=<span class="number">1.5</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><ul>
+<li>数据：/public/workspace/lincs/lab7/singlecell/monocle3/下GSE139324文件夹，从头分析。还有很多RDS文件，可以拷贝过去，从中间步骤开始做，注意：count.rds和azimuth_pred.tsv需要同时拷贝过去</li>
+<li>代码： /public/workspace/lincs/lab7/singlecell/monocle3/下monocle3-new.R</li>
+<li>环境：在你们的conda环境中ln -s /public/workspace/lincs/.conda/envs/monocle3py37 。此例子包含前面harmony等多个包内容。</li>
+<li>azimuth_pred.tsv来源于Seurat官网的细胞注释，推出了在线细胞类型鉴定服务，可以准确鉴定pbmc细胞，<a href="http://azimuth.satijalab.org/app/azimuth">http://azimuth.satijalab.org/app/azimuth</a> ，上传count.rds，下载得到azimuth_pred.tsv</li>
+</ul>
+<h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment">#  install Bioconductor</span></span><br><span class="line"><span class="keyword">if</span> (!requireNamespace(<span class="string">&quot;BiocManager&quot;</span>, quietly = <span class="literal">TRUE</span>))</span><br><span class="line">install.packages(<span class="string">&quot;BiocManager&quot;</span>)</span><br><span class="line">BiocManager::install(version = <span class="string">&quot;3.10&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#  install a few Bioconductor dependencies that aren&#x27;t automatically installed:</span></span><br><span class="line">BiocManager::install(<span class="built_in">c</span>(<span class="string">&#x27;BiocGenerics&#x27;</span>, <span class="string">&#x27;DelayedArray&#x27;</span>, <span class="string">&#x27;DelayedMatrixStats&#x27;</span>,<span class="string">&#x27;limma&#x27;</span>, <span class="string">&#x27;S4Vectors&#x27;</span>, <span class="string">&#x27;SingleCellExperiment&#x27;</span>, <span class="string">&#x27;SummarizedExperiment&#x27;</span>, <span class="string">&#x27;batchelor&#x27;</span>, <span class="string">&#x27;Matrix.utils&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#  install monocle3 through the cole-trapnell-lab GitHub, execute:</span></span><br><span class="line">install.packages(<span class="string">&quot;devtools&quot;</span>)</span><br><span class="line">devtools::install_github(<span class="string">&#x27;cole-trapnell-lab/leidenbase&#x27;</span>)</span><br><span class="line">devtools::install_github(<span class="string">&#x27;cole-trapnell-lab/monocle3&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="Run-Monocle3"><a href="#Run-Monocle3" class="headerlink" title="Run Monocle3"></a>Run Monocle3</h3><p><a href="/RmdOutput/monocle3.html">Rmd Output of Monocle3</a></p>
+<h1 id="Monocle2"><a href="#Monocle2" class="headerlink" title="Monocle2"></a>Monocle2</h1><ul>
+<li><p>Monocle进行伪时间分析的核心技术是一种机器学习算法——反向图形嵌入 (Reversed Graph Embedding)。</p>
+</li>
+<li><p>它分析的前提需要一张展现细胞转录特征相似性关系的图，Monocle2使用DDTree降维图，Monocle3使用UMAP降维图。</p>
+</li>
+<li><p>Monocle的机器学习算法可以依据上述降维图形，学习描述细胞如何从一种状态过渡到另一种状态的轨迹。</p>
+</li>
+<li><p>Monocle假设轨迹是树状结构，一端是“根”，另一端是“叶”。一个细胞在生物过程的开始，从根开始沿着主干进行，直到它到达第一个分支。然后，该细胞必须选择一条路径，并沿着树移动越来越远，直到它到达一片叶子。一个细胞的假时间值是它返回根所需的距离。</p>
+</li>
+<li><p>降维方面monocle与seurat的过程大同小异，首先进行数据标准化，其次选择部分基因代表细胞转录特征 ，最后选用适当的算法降维。</p>
+</li>
+<li><p>完成数据导入和预处理后，就可以考虑选择哪些基因代表细胞的发育特征，Monocle官网教程提供了4个选择方法：</p>
+<blockquote>
+<p>选择发育差异表达基因<br>选择clusters差异表达基因<br>选择离散程度高的基因<br>自定义发育marker基因</p>
+</blockquote>
+</li>
+<li><p>前三种都是无监督分析方法，细胞发育轨迹生成完全不受人工干预；最后一种是半监督分析方法，可以使用先验知识辅助分析。第一种方法要求实验设计有不同的时间点，对起点和终点的样本做基因表达差异分析，挑选显著差异的基因进行后续分析。对于没有时序设计的实验样本，可以使用第2、3种方法挑选基因。第2种方法要先对细胞降维聚类，然后用clusters之间差异表达的基因开展后续分析。</p>
+</li>
+<li><p>Monocle有一套自己的降维聚类方法，与seurat的方法大同小异，很多教程直接使用seurat的差异分析结果。第3种方法使用离散程度高的基因开展分析，seurat有挑选高变基因的方法，monocle也有自己选择的算法。本案例数据不具备使用第1、4种方法的条件，因此这里只演示2、3种方法的使用。</p>
+</li>
+</ul>
+<h2 id="拟时相关基因聚类热图"><a href="#拟时相关基因聚类热图" class="headerlink" title="拟时相关基因聚类热图"></a>拟时相关基因聚类热图</h2><p>Monocle中differentialGeneTest()函数可以按条件进行差异分析，将相关参数设为<code>fullModelFormulaStr = “~sm.ns(Pseudotime)</code>时，可以找到与拟时相关的差异基因。我们可以按一定的条件筛选基因后进行差异分析，全部基因都输入会耗费比较长的时间。建议使用cluster差异基因或高变基因输入函数计算。分析结果主要依据qval区分差异的显著性，筛选之后可以用<code>plot_pseudotime_heatmap</code>函数绘制成热图。</p>
+<h2 id="BEAM分析"><a href="#BEAM分析" class="headerlink" title="BEAM分析"></a>BEAM分析</h2><p>单细胞轨迹中通常包括分支，它们的出现是因为细胞的表达模式不同。当细胞做出命运选择时，或者遗传、化学或环境扰动时，就会表现出不同的基因表达模式。BEAM(Branched expression analysis modeling)是一种统计方法，用于寻找以依赖于分支的方式调控的基因。</p>
+<h2 id="练习-1"><a href="#练习-1" class="headerlink" title="练习"></a>练习</h2><p>数据：/public/workspace/lincs/lab7/singlecell/monocle2/下scRNAsub.rds和diff_genes_wilcox.csv。 pseudotime文件夹不用拷贝，为输出结果结果。<br>代码： /public/workspace/lincs/lab7/singlecell/monocle2/下monocle2.R<br>环境：在你们的conda环境中ln -s /public/workspace/lincs/.conda/envs/monocle2。</p>
+<h1 id="GO-KEGG富集分析"><a href="#GO-KEGG富集分析" class="headerlink" title="GO/KEGG富集分析"></a>GO/KEGG富集分析</h1><p>数据在/public/workspace/lincs/lab7/singlecell/cluster/下，<br>环境在/public/workspace/lincs/.conda/envs/singlecellcluter/ 代码如下</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">rm(<span class="built_in">list</span>=ls())</span><br><span class="line">library(Seurat)</span><br><span class="line">library(tidyverse)</span><br><span class="line">library(patchwork)</span><br><span class="line">library(monocle)</span><br><span class="line">library(clusterProfiler)</span><br><span class="line">library(org.Hs.eg.db)</span><br><span class="line">setwd(<span class="string">&quot;&quot;</span>)</span><br><span class="line">dir.create(<span class="string">&quot;enrich&quot;</span>)</span><br><span class="line">scRNA &lt;- readRDS(<span class="string">&quot;scRNA.rds&quot;</span>)</span><br><span class="line">mycds &lt;- readRDS(<span class="string">&quot;mycds.rds&quot;</span>)</span><br><span class="line"><span class="comment">#比较cluster0和cluster1的差异表达基因</span></span><br><span class="line">dge.cluster &lt;- FindMarkers(scRNA,ident.1 = <span class="number">0</span>,ident.2 = <span class="number">1</span>)</span><br><span class="line">sig_dge.cluster &lt;- subset(dge.cluster, p_val_adj&lt;<span class="number">0.01</span>&amp;<span class="built_in">abs</span>(avg_log2FC)&gt;<span class="number">1</span>)</span><br><span class="line"><span class="comment">#比较B_cell和T_cells的差异表达基因</span></span><br><span class="line">dge.celltype &lt;- FindMarkers(scRNA, ident.1 = <span class="string">&#x27;B_cell&#x27;</span>, ident.2 = <span class="string">&#x27;T_cells&#x27;</span>, group.by = <span class="string">&#x27;celltype&#x27;</span>)</span><br><span class="line">sig_dge.celltype &lt;- subset(dge.celltype, p_val_adj&lt;<span class="number">0.01</span>&amp;<span class="built_in">abs</span>(avg_log2FC)&gt;<span class="number">1</span>)</span><br><span class="line"><span class="comment">#比较拟时State1和State3的差异表达基因</span></span><br><span class="line">p_data &lt;- subset(pData(mycds),select=<span class="string">&#x27;State&#x27;</span>)</span><br><span class="line">scRNAsub &lt;- subset(scRNA, cells=row.names(p_data))</span><br><span class="line">scRNAsub &lt;- AddMetaData(scRNAsub,p_data,col.name = <span class="string">&#x27;State&#x27;</span>)</span><br><span class="line"></span><br><span class="line">dge.State &lt;- FindMarkers(scRNAsub, ident.1 = <span class="number">1</span>, ident.2 = <span class="number">3</span>, group.by = <span class="string">&#x27;State&#x27;</span>)</span><br><span class="line">sig_dge.State &lt;- subset(dge.State, p_val_adj&lt;<span class="number">0.01</span>&amp;<span class="built_in">abs</span>(avg_log2FC)&gt;<span class="number">1</span>)</span><br><span class="line"><span class="comment">#差异基因GO富集分析</span></span><br><span class="line">ego_ALL &lt;- enrichGO(gene          = row.names(sig_dge.celltype),</span><br><span class="line">                   <span class="comment">#universe     = row.names(dge.celltype),</span></span><br><span class="line">                   OrgDb         = <span class="string">&#x27;org.Hs.eg.db&#x27;</span>,</span><br><span class="line">                   keyType       = <span class="string">&#x27;SYMBOL&#x27;</span>,</span><br><span class="line">                   ont           = <span class="string">&quot;ALL&quot;</span>,</span><br><span class="line">                   pAdjustMethod = <span class="string">&quot;BH&quot;</span>,</span><br><span class="line">                   pvalueCutoff  = <span class="number">0.01</span>,</span><br><span class="line">                   qvalueCutoff  = <span class="number">0.05</span>)</span><br><span class="line">ego_all &lt;- data.frame(ego_ALL)</span><br><span class="line">write.csv(ego_all,<span class="string">&#x27;enrich/enrichGO.csv&#x27;</span>)           </span><br><span class="line">ego_CC &lt;- enrichGO(gene          = row.names(sig_dge.celltype),</span><br><span class="line">                   <span class="comment">#universe     = row.names(dge.celltype),</span></span><br><span class="line">                   OrgDb         = <span class="string">&#x27;org.Hs.eg.db&#x27;</span>,</span><br><span class="line">                   keyType       = <span class="string">&#x27;SYMBOL&#x27;</span>,</span><br><span class="line">                   ont           = <span class="string">&quot;CC&quot;</span>,</span><br><span class="line">                   pAdjustMethod = <span class="string">&quot;BH&quot;</span>,</span><br><span class="line">                   pvalueCutoff  = <span class="number">0.01</span>,</span><br><span class="line">                   qvalueCutoff  = <span class="number">0.05</span>)</span><br><span class="line">ego_MF &lt;- enrichGO(gene          = row.names(sig_dge.celltype),</span><br><span class="line">                   <span class="comment">#universe     = row.names(dge.celltype),</span></span><br><span class="line">                   OrgDb         = <span class="string">&#x27;org.Hs.eg.db&#x27;</span>,</span><br><span class="line">                   keyType       = <span class="string">&#x27;SYMBOL&#x27;</span>,</span><br><span class="line">                   ont           = <span class="string">&quot;MF&quot;</span>,</span><br><span class="line">                   pAdjustMethod = <span class="string">&quot;BH&quot;</span>,</span><br><span class="line">                   pvalueCutoff  = <span class="number">0.01</span>,</span><br><span class="line">                   qvalueCutoff  = <span class="number">0.05</span>)</span><br><span class="line"></span><br><span class="line">ego_BP &lt;- enrichGO(gene          = row.names(sig_dge.celltype),</span><br><span class="line">                   <span class="comment">#universe     = row.names(dge.celltype),</span></span><br><span class="line">                   OrgDb         = <span class="string">&#x27;org.Hs.eg.db&#x27;</span>,</span><br><span class="line">                   keyType       = <span class="string">&#x27;SYMBOL&#x27;</span>,</span><br><span class="line">                   ont           = <span class="string">&quot;BP&quot;</span>,</span><br><span class="line">                   pAdjustMethod = <span class="string">&quot;BH&quot;</span>,</span><br><span class="line">                   pvalueCutoff  = <span class="number">0.01</span>,</span><br><span class="line">                   qvalueCutoff  = <span class="number">0.05</span>) </span><br><span class="line">ego_CC@result$Description &lt;- substring(ego_CC@result$Description,<span class="number">1</span>,<span class="number">70</span>)</span><br><span class="line">ego_MF@result$Description &lt;- substring(ego_MF@result$Description,<span class="number">1</span>,<span class="number">70</span>)</span><br><span class="line">ego_BP@result$Description &lt;- substring(ego_BP@result$Description,<span class="number">1</span>,<span class="number">70</span>)</span><br><span class="line">p_BP &lt;- barplot(ego_BP,showCategory = <span class="number">10</span>) + ggtitle(<span class="string">&quot;barplot for Biological process&quot;</span>)</span><br><span class="line">p_CC &lt;- barplot(ego_CC,showCategory = <span class="number">10</span>) + ggtitle(<span class="string">&quot;barplot for Cellular component&quot;</span>)</span><br><span class="line">p_MF &lt;- barplot(ego_MF,showCategory = <span class="number">10</span>) + ggtitle(<span class="string">&quot;barplot for Molecular function&quot;</span>)</span><br><span class="line">plotc &lt;- p_BP/p_CC/p_MF</span><br><span class="line">ggsave(<span class="string">&#x27;enrich/enrichGO.png&#x27;</span>, plotc, width = <span class="number">12</span>,height = <span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">genelist &lt;- bitr(row.names(sig_dge.celltype), fromType=<span class="string">&quot;SYMBOL&quot;</span>,</span><br><span class="line">                           toType=<span class="string">&quot;ENTREZID&quot;</span>, OrgDb=<span class="string">&#x27;org.Hs.eg.db&#x27;</span>)</span><br><span class="line">genelist &lt;- pull(genelist,ENTREZID)               </span><br><span class="line">ekegg &lt;- enrichKEGG(gene = genelist, organism = <span class="string">&#x27;hsa&#x27;</span>)</span><br><span class="line">p1 &lt;- barplot(ekegg, showCategory=<span class="number">20</span>)</span><br><span class="line">p2 &lt;- dotplot(ekegg, showCategory=<span class="number">20</span>)</span><br><span class="line">plotc = p1/p2</span><br><span class="line">ggsave(<span class="string">&quot;enrich/enrichKEGG.png&quot;</span>, plot = plotc, width = <span class="number">12</span>, height = <span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="GSEA-GSVA分析"><a href="#GSEA-GSVA分析" class="headerlink" title="GSEA/GSVA分析"></a>GSEA/GSVA分析</h1><h2 id="基因集的概念"><a href="#基因集的概念" class="headerlink" title="基因集的概念"></a>基因集的概念</h2><p>GSEA全称Gene Set Enrichment Analysis，GSVA全称Gene Set Variation Analysis，它们都是基于基因集开展的分析，因此我们先要了解基因集的定义。基因集顾名思义就是一些基因的集合，任何一些基因放在一起都可以叫做基因集，但是我们用来分析的基因集要求有一定的生物学意义。最常见的基因集数据库如GO与KEGG，它们一个按照基因本体论将基因分门别类，一个按照代谢通路将相关基因集合在一起。除此之外我们还可以按转录因子调控网络、共表达网络、定义生物状态的marker基因列表等把基因集合成有一定生物学意义的基因集。</p>
+<h2 id="MSigDB基因集数据库"><a href="#MSigDB基因集数据库" class="headerlink" title="MSigDB基因集数据库"></a>MSigDB基因集数据库</h2><p>GSEA是由Broad研究所开发的一种富集方法，他们在提出该方法的同时还提供了一个基因集数据库——MSigdb。它从位置，功能，代谢途径，靶标结合等多种角度出发，构建出了许多的基因集合，Broad研究所将他们构建的基因集合保存在MSigDB，官网地址如下：<a href="http://software.broadinstitute.org/gsea/msigdb/index.jsp">http://software.broadinstitute.org/gsea/msigdb/index.jsp</a></p>
+<h2 id="GSVA"><a href="#GSVA" class="headerlink" title="GSVA"></a>GSVA</h2><ul>
+<li>GSEA虽然是一种强大的富集分析工具，但是它的应用场景通常局限于Case/Control的实验设计。对于表型（分组）复杂的大样本量研究，例如TCGA和单细胞图谱这样的项目，分析起来就非常困难。</li>
+<li>目的：对单细胞亚群进行功能注释后，如何求每群细胞某条pathway的gene set score</li>
+<li>GSVA不需要预先进行样本之间的差异分析，它依据表达矩阵就可以计算每个样本中特定基因集的变异分数。</li>
+<li>简单的说，输入以基因为行的表达矩阵和基因集数据库给GSVA，它就输出以基因集名称为行的变异分数矩阵，如下图所示：</li>
+</ul>
+<center><img src="/img/Figures/scRNA/GSVA.png" alt="GSVA" style="zoom:70%;" /></center>
+
+<h3 id="GSEA练习"><a href="#GSEA练习" class="headerlink" title="GSEA练习"></a>GSEA练习</h3><p>数据和代码在/public/workspace/lincs/lab7/singlecell/GSEAGSVA/下，代码为GSEA.R<br>环境: ln -s /public/workspace/lincs/.conda/envs/gseagsva</p>
+<ol>
+<li>提取HNC01TIL和Tonsil2的T细胞做富集分析</li>
+<li>写入表达数据gct文件</li>
+<li>分组cls文件</li>
+<li>运行GSEA #gs.db参数对应的是基因集数据文件，这里只对kegg收录的基因集做了分析<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">GSEA::GSEA(<span class="string">&quot;GSEA/input/expr.gct&quot;</span>, <span class="string">&quot;GSEA/input/group.cls&quot;</span>,gs.db=“./c2.cp.kegg.v7.1.symbols.gmt<span class="string">&quot;, output.directory=&quot;</span>GSEA/output/<span class="string">&quot;)</span></span><br></pre></td></tr></table></figure>
+<h3 id="GSVA练习"><a href="#GSVA练习" class="headerlink" title="GSVA练习"></a>GSVA练习</h3>数据和代码在/public/workspace/lincs/lab7/singlecell/GSEAGSVA/下，代码为GSVA.R<br>环境在/public/workspace/lincs/.conda/envs/gseagsva</li>
+</ol>
+<p>在pbmc这个seurat object 的assays中存储了三种基因表达数据，保存在PBMC_pc10_res0.6.rds里</p>
+<ol>
+<li>pbmc@assays$RNA@counts : raw count</li>
+<li>pbmc@assays$RNA@data : Normalized data</li>
+<li>pbmc@assays$RNA@scale.data: scaled之后的data做GSVA分析时，使用normalized data.</li>
+</ol>
+<ul>
+<li>步骤一：GSVA 分析和差异表达分析<br>选择感兴趣的两个细胞亚群（cluster），用GSVA算出pathway的表达量；</li>
+<li>步骤二：根据已经得到的分组信息，挑选出需要的通路，画图</li>
+</ul>
+<p>需要注意的代码：</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">genesets &lt;- getGmt(<span class="string">&quot;h.all.v7.0.symbols.gmt&quot;</span>)</span><br><span class="line"><span class="comment">#找到感兴趣的细胞组别，两者间进行比较这里以cluster6和cluster8为例</span></span><br><span class="line">subcluster = <span class="built_in">c</span>(<span class="number">6</span>, <span class="number">8</span>)</span><br><span class="line">sub &lt;- subset(pbmc, idents = subcluster)</span><br><span class="line">df.data &lt;- GetAssayData(object = sub, slot = <span class="string">&quot;data&quot;</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>结果：两个cluster之间的差别</li>
+</ul>
+<h1 id="联合TCGA生存分析"><a href="#联合TCGA生存分析" class="headerlink" title="联合TCGA生存分析"></a>联合TCGA生存分析</h1><ul>
+<li>通过scRNA分析得到新的marker基因，gene signatures，以及解释研究结论的基因集和代谢通路，一般都会用公共数据库的bulk RNA数据验证一下。</li>
+<li>常见的验证方式是：单细胞分析筛选的多个基因用TCGA/GEO数据做生存分析验证。</li>
+</ul>
+<p>数据和代码在/public/workspace/lincs/lab7/singlecell/tcgasurv/下，代码为tcgasurv.R, 数据为Data文件夹<br>环境在/public/workspace/lincs/.conda/envs/tcgasurv</p>
+<p>注意的代码：</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">TFHset = <span class="built_in">list</span>(<span class="built_in">c</span>(<span class="string">&#x27;PDCD1&#x27;</span>, <span class="string">&#x27;CXCL13&#x27;</span>, <span class="string">&#x27;TIGIT&#x27;</span>, <span class="string">&#x27;TOX&#x27;</span>, <span class="string">&#x27;MAF&#x27;</span>, <span class="string">&#x27;CXCR5&#x27;</span>, <span class="string">&#x27;CD40LG&#x27;</span>, <span class="string">&#x27;IL6ST&#x27;</span>))</span><br><span class="line"><span class="built_in">names</span>(TFHset) &lt;- <span class="string">&#x27;TFHset&#x27;</span></span><br><span class="line">ES &lt;- gsva(TCGAexpr, TFHset)</span><br></pre></td></tr></table></figure>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">library(survival)</span><br><span class="line">library(survminer)</span><br><span class="line">library(tidyverse)</span><br><span class="line">library(GSVA)</span><br><span class="line"><span class="comment">#设置合适的路径，含有Data</span></span><br><span class="line">setwd()</span><br><span class="line">dir.create(<span class="string">&quot;Survival&quot;</span>)</span><br><span class="line"><span class="comment">#不要着急，读入有点慢</span></span><br><span class="line">TCGAexpr &lt;- read.delim(<span class="string">&quot;Data/TCGA-HNSC.htseq_fpkm.tsv&quot;</span>, check.names=<span class="built_in">F</span>)</span><br><span class="line">id.annota &lt;- read.delim(<span class="string">&quot;Data/gencode.v22.annotation.gene.probeMap&quot;</span>, check.names=<span class="built_in">F</span>)</span><br><span class="line">id.annota &lt;- id.annota[, <span class="number">1</span>:<span class="number">2</span>]</span><br><span class="line">TCGAexpr &lt;- merge(id.annota, TCGAexpr, by.x=<span class="string">&quot;id&quot;</span>, by.y=<span class="string">&quot;Ensembl_ID&quot;</span>)</span><br><span class="line">TCGAexpr &lt;- aggregate(TCGAexpr[,-<span class="built_in">c</span>(<span class="number">1</span>,<span class="number">2</span>)], <span class="built_in">list</span>(TCGAexpr$gene), FUN=<span class="built_in">sum</span>)</span><br><span class="line">TCGAexpr &lt;- column_to_rownames(TCGAexpr,<span class="string">&quot;Group.1&quot;</span>)</span><br><span class="line"><span class="comment">#过滤表达量过低的基因，减少分析数据量</span></span><br><span class="line">TCGAexpr &lt;- TCGAexpr[rowSums(TCGAexpr)&gt;<span class="number">10</span>, ] %&gt;% as.matrix()</span><br><span class="line">TCGAclin &lt;- read.delim(<span class="string">&quot;Data/TCGA-HNSC.survival.tsv&quot;</span>, check.names = <span class="built_in">F</span>)</span><br><span class="line">TCGAclin &lt;- TCGAclin[<span class="built_in">as.character</span>(TCGAclin$sample) %in% colnames(TCGAexpr),]</span><br><span class="line">TCGAclin &lt;- TCGAclin[,-<span class="number">3</span>]</span><br><span class="line"><span class="comment">#GSVA分析</span></span><br><span class="line"><span class="comment">#原文富集分析用的200个基因找不到具体名称，这用了作者特异强调的8个上调基因代替</span></span><br><span class="line">TFHset = <span class="built_in">list</span>(<span class="built_in">c</span>(<span class="string">&#x27;PDCD1&#x27;</span>, <span class="string">&#x27;CXCL13&#x27;</span>, <span class="string">&#x27;TIGIT&#x27;</span>, <span class="string">&#x27;TOX&#x27;</span>, <span class="string">&#x27;MAF&#x27;</span>, <span class="string">&#x27;CXCR5&#x27;</span>, <span class="string">&#x27;CD40LG&#x27;</span>, <span class="string">&#x27;IL6ST&#x27;</span>))</span><br><span class="line"><span class="built_in">names</span>(TFHset) &lt;- <span class="string">&#x27;TFHset&#x27;</span></span><br><span class="line">ES &lt;- gsva(TCGAexpr, TFHset)</span><br><span class="line"></span><br><span class="line"><span class="comment">#生存曲线</span></span><br><span class="line">ES &lt;- data.frame(t(ES), check.names=<span class="built_in">F</span>)</span><br><span class="line">TCGAclin &lt;- merge(TCGAclin, ES, by.x=<span class="string">&quot;sample&quot;</span>, by.y=<span class="number">0</span>)</span><br><span class="line">TCGAclin$TFH.set = ifelse(TCGAclin$TFHset&gt;median(TCGAclin$TFHset),<span class="string">&#x27;high&#x27;</span>,<span class="string">&#x27;low&#x27;</span>)</span><br><span class="line">png(<span class="string">&#x27;Survival/survival.png&#x27;</span>, <span class="number">800</span>, <span class="number">600</span>)</span><br><span class="line">ggsurvplot(survfit(Surv(OS.time, OS)~TFH.set, data=TCGAclin), conf.int=<span class="built_in">F</span>, pval=<span class="literal">TRUE</span>)</span><br><span class="line">dev.off()</span><br><span class="line">write.csv(TCGAclin, <span class="string">&#x27;Survival/TCGAclin.csv&#x27;</span>, row.names = <span class="built_in">F</span>)</span><br><span class="line"><span class="comment">#Cox回归分析</span></span><br><span class="line"><span class="comment">#上述Kaplan-Meier方法只能针对分类变量做单因素生存分析，因此我将GSVA分析的结果转换成了只有high和low的二分类变量。如果不想转换可以用Cox比例风险回归模型分析：</span></span><br><span class="line">res.cox &lt;- coxph(Surv(OS.time, OS)~TFHset, data=TCGAclin)</span><br><span class="line">res.cox</span><br><span class="line"><span class="comment">#Cox结果解读：</span></span><br><span class="line"><span class="comment">#z值：Wald统计值，它对应于每个回归系数与其标准误差的比率（z = coef / se（coef））。</span></span><br><span class="line"><span class="comment">#coef：回归系数，正数表示危险（死亡风险）较高，负数代表危险较低。</span></span><br><span class="line"><span class="comment">#exp(coef)：在此代表危险比(HR，hazard ratio)。</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Single Cell</category>
+      </categories>
+      <tags>
+        <tag>scRNA-seq</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Tumor immune infiltration analysis</title>
+    <url>/2021/05/24/Tumor-immune-infiltration-analysis/</url>
+    <content><![CDATA[<h1 id="Background-Info"><a href="#Background-Info" class="headerlink" title="Background Info"></a>Background Info</h1><p>肿瘤组织不是单纯的只包含肿瘤细胞，它是由各种不同类型的细胞组成的，其中就包含基质细胞，成纤维细胞，还有免疫细胞等，这些细胞就构成了肿瘤的微环境。</p>
+<p>我们比较关注的是免疫细胞在这微环境中的作用。免疫细胞又包括很多种，如 B 细胞，T 细胞等。不同的免疫细胞在肿瘤发生过程中发挥不同的作用，而不同肿瘤的免疫细胞组成也各有特点。</p>
+<p>因此在研究肿瘤发生，治疗等机制时，常常会对不同肿瘤类型的免疫细胞进行定量研究。所谓的定量研究就是研究不同免疫细胞的比例。</p>
+<p>为了准确的评估肿瘤微环境中免疫细胞的构成，我们可以通过很多方法从 RNA 测序数据中量化肿瘤浸润的免疫细胞，比如 ssGSEA, Cibersoft, TIMER, EPIC 等.</p>
+<p>大致上，计算免疫浸润的方法分为3大类：</p>
+<ul>
+<li>基于细胞标志分子的方法，核心思路基于ssGSEA。</li>
+<li>完全解卷积的方法，纯数学建模拟合。</li>
+<li>部分解卷积的方法，上述两种思路的结合。</li>
+</ul>
+<h1 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h1><h2 id="解卷积"><a href="#解卷积" class="headerlink" title="解卷积"></a>解卷积</h2><p>去卷积的目的是从bulk-sample 中推测不同单一细胞类型的表达谱。它的原理是假设每种细胞类型在不同样品中具有相似的表达水平，可以将异质样品中给定基因的表达模型化为混合物中存在的每种细胞类型的表达值的加权和（=线性组合）。<br>有点绕口，以数学形式表示如下：</p>
+<blockquote>
+<p>T = 异质样品的表达值<br>C = 特定细胞的表达值<br>P = 不同细胞的混合比例<br>T = C·P</p>
+</blockquote>
+<center><img src="/img/Tools/immu1.png" alt="immu" style="zoom:80%;" /></center>
+
+<ol>
+<li>只有T是已知, C和P都是预测的（深灰色箭头所示）；</li>
+<li>T和C是已知的，P是预测的 （粉色虚线箭头和灰色热图所示）；<br> 这种情况是通过T和C以富集值（代替细胞比例）表示组织异质性的相对评估，如ESTIMATE和xCell等工具包。细胞比例值必须是0-100之间的正值，可以直接解释；富集值是无限的，有时是负值，使得它们更难解释。</li>
+<li>T和P是已知，C是预测的（虚线蓝色箭头所示）</li>
+</ol>
+<h3 id="数学模型："><a href="#数学模型：" class="headerlink" title="数学模型："></a>数学模型：</h3><ol>
+<li>最常用的一组方法称为普通最小二乘法（OLS），线性最小二乘法（LLS）或简单最小二乘法（LS），其目标是最小化平方和。</li>
+<li>第二组方法是线性核（n-SVR）支持向量回归方法，包括CIBERSORT 和 ImmuCC。</li>
+<li>第三组无监督降维，如主成分分析（PCA）。</li>
+<li>第四组完全无监督方法，包括无监督的非负矩阵分解（NMF或NNMF）和不同的贝叶斯方法。（完全解卷积）</li>
+</ol>
+<h3 id="选择特定细胞类型的标记基因的方法"><a href="#选择特定细胞类型的标记基因的方法" class="headerlink" title="选择特定细胞类型的标记基因的方法"></a>选择特定细胞类型的标记基因的方法</h3><p>标记基因选择一是基于这个基因的在特定细胞中的表达显著高于其他类型的细胞，另一个是根据差异基因，即在某个类型的细胞中表达，在其他细胞类型不表达。</p>
+<p><strong>鉴定标记基因的方法：</strong></p>
+<ul>
+<li>HECS （highly expressed, cell specific）基因数据库包含来自于芯片的84个人类细胞和96个小鼠细胞和组织。(available at <a href="http://www.influenza-/">http://www.influenza-</a> [x.org/<del>jshoemaker/cten/f/HECS%20database.zip](<a href="http://x.org/">http://x.org/</a></del>jshoemaker/cten/f/HECS database.zip) )</li>
+<li>The F- statistic (measure of their fit in the multiple linear regression model) (Wang et al., 2010),</li>
+<li>the Gini index (Zhang et al., 2017),</li>
+<li>the Jensen-Shan- non divergence (Cabili et al., 2011) ,</li>
+<li>the components from PCA, ICA or NMF analyses (Zinovyev et al., 2013)</li>
+<li>CellMapper (Nelms et al., 2016), Nanodissection 1.0 (Ju et al., 2013), - - UNDO (Wang et al., 2015)</li>
+<li>CAM (Wang et al., 2016). Assuming</li>
+</ul>
+<h3 id="影响去卷积效果的因素"><a href="#影响去卷积效果的因素" class="headerlink" title="影响去卷积效果的因素"></a>影响去卷积效果的因素</h3><p>基于监督去卷积的方法，依赖于参考集，样本间、样本内本身的异质性将会对结果产生影响，除此之外还有其他因素，例如：</p>
+<ul>
+<li>前处理和标准化</li>
+<li>对数与线性<br>  对芯片数据取对数后会破坏线性假设，进而影响去卷积效果；RNA-seq数据的去卷积也需要符合线性假设，TPM , RSEM 或者Kallisto 可以得到更精确的细胞比例。</li>
+<li>多重共线性：混合物中相关细胞类型的存在</li>
+<li>矩阵的条件数目</li>
+<li>细胞周期</li>
+</ul>
+<h3 id="低比例的细胞类型也可以被检测的方法"><a href="#低比例的细胞类型也可以被检测的方法" class="headerlink" title="低比例的细胞类型也可以被检测的方法"></a>低比例的细胞类型也可以被检测的方法</h3><p>PERT (Qiao et al., 2012) 和 DeconRNAseq (Gong and Szustakowski, 2013) 可以检测到的细胞比例最小可以至2% ，CIBERSORT (Newman et al., 2015) 可以至 0.5% 。</p>
+<h3 id="评估去卷积效果"><a href="#评估去卷积效果" class="headerlink" title="评估去卷积效果"></a>评估去卷积效果</h3><ul>
+<li>原位杂交（in-situ hybridization，ISH） (Kuhn et al., 2011, 2012) 或免疫组织染色 (IHC) (Ju et al., 2013)</li>
+<li>细胞分选 (Qiao et al., 2012);</li>
+<li>显微镜和FACS分析相结合 (Wang et al., 2016);</li>
+<li>相关性分析，即实验方法细胞计数的结果与计算方法预计结果相比 (Li et al., 2016; Şenbabaoğlu et al., 2016)，(Şenbabaoğlu et al., 2016).</li>
+</ul>
+<h3 id="传统线性模型的局限性"><a href="#传统线性模型的局限性" class="headerlink" title="传统线性模型的局限性"></a>传统线性模型的局限性</h3><ul>
+<li>混合物中应该存在的所有细胞类型的参考概况或每种细胞类型至少有一个标记；</li>
+<li>由于真实的组成是未知的，一些细胞类型可能被忽略；</li>
+<li>一些方法假设给定的异质性组织内的细胞类型是稳定组成的；</li>
+<li>大多数方法没有考虑到这样一个事实，即参考表达谱通常受微环境或发育影响的干扰，或者只是在不同的条件下或不同的技术或平台下获得；</li>
+</ul>
+<h3 id="去卷积的网页版工具"><a href="#去卷积的网页版工具" class="headerlink" title="去卷积的网页版工具"></a>去卷积的网页版工具</h3><ul>
+<li>CellPred (Wang et al., 2010):<br> 用Affymetrix microarray 数据对细胞比例进行估计<br> <a href="http://webarraydb.org/webarray/index.html">http://webarraydb.org/webarray/index.html</a>.</li>
+<li>TIMER (Li et al., 2016):<br> 包含B cells, CD4+, CD8+ T cells, macrophages, neutrophils 和 dendritic cells 的细胞比例，数据来源于TCGA 32种癌症类型，11,509个样本。<br> <a href="https://cistrome.shinyapps.io/timer/">https://cistrome.shinyapps.io/timer/</a><br> <a href="https://github.com/hanfeisun/TIMER">https://github.com/hanfeisun/TIMER</a></li>
+<li>DSection (Erkkilä et al., 2010):<br> 使用微阵列数据估计特异性细胞类型表达谱，校正细胞类型比例和差异基因表达。<br> <a href="http://infor-/">http://infor-</a> <a href="http://matics.systemsbiology.net/DSection/">matics.systemsbiology.net/DSection/</a></li>
+<li>DCQ (Altboum et al., 2014) and CoD (Frishberg et al., 2015)<br> 这两个工具都来自Irit Gat-Viks 实验室，用芯片数据或者RNA-seq数据估计细胞比例。<br> <a href="http://www.dcq.tau.ac.il/">http://www.dcq.tau.ac.il/</a><br> (de- tailed information: <a href="http://dcq.tau.ac.il/application.html">http://dcq.tau.ac.il/application.html</a>) ；<br> <a href="http://www.csgi.tau.ac.il/CoD/">http://www.csgi.tau.ac.il/CoD/</a><br> (detailed information: <a href="http://www.csgi.tau.ac.il/CoD/application.html">http://www.csgi.tau.ac.il/CoD/application.html</a>)</li>
+<li>ESTIMATE (Yoshihara et al., 2013):<br> 快速获取基质和免疫细胞的相对组成，可用于microarray 和RNA-seq数据。<br> <a href="http://bioinformatics.mdanderson.org/estimate/">http://bioinformatics.mdanderson.org/estimate/</a></li>
+<li>CIBERSORT (Newman et al., 2015):<br> 以22种白细胞亚型细胞的细胞比例作为参考，用于来自于异质性样本的芯片或者RNA-seq数据。<br> <a href="https://cibersort.stanford.edu/runcibersort.php">https://cibersort.stanford.edu/runcibersort.php</a></li>
+</ul>
+<h3 id="其他数据类型的去卷积方法"><a href="#其他数据类型的去卷积方法" class="headerlink" title="其他数据类型的去卷积方法"></a>其他数据类型的去卷积方法</h3><p>根据甲基化数据进行去卷积的，目前的方法有：</p>
+<ul>
+<li>EpiDISH (Teschendorff et al., 2017)</li>
+<li>MeDeCom (Lutsik et al., 2017)</li>
+<li>eFORGE (Breeze et al., 2016)</li>
+<li>EDec (Onuchic et al., 2016)</li>
+</ul>
+<p>根据拷贝数变异：</p>
+<ul>
+<li>BACOM 2.0 (Fu et al., 2015)</li>
+<li>ABSOLUTE (Carter et al., 2012)</li>
+<li>CloneCNA (Yu et al., 2016)</li>
+<li>CPE (Aran et al., 2015)</li>
+</ul>
+<h1 id="Software"><a href="#Software" class="headerlink" title="Software"></a>Software</h1><h2 id="CIBERSORT"><a href="#CIBERSORT" class="headerlink" title="CIBERSORT"></a>CIBERSORT</h2><p><a href="https://www.jianshu.com/p/03a7440c0960">https://www.jianshu.com/p/03a7440c0960</a></p>
+<p>在R语言中运行Cibersort共需要三个文件，分别是</p>
+<ol>
+<li><strong>官方提供的22种细胞基因集“LM22.txt”</strong>；<br> 在Cibersort论文中（<a href="https://www.nature.com/articles/nmeth.3337#MOESM207%EF%BC%89%E4%B8%8B%E8%BD%BD">https://www.nature.com/articles/nmeth.3337#MOESM207）下载</a></li>
+<li><strong>自己的表达矩阵</strong>；<br> 第一列是基因名，第一行是样品名，不能有重复基因名，第一列列名不能空白。矩阵中不能存在空白或NA值，不要对表达量取Log2。如果表达矩阵中基因不能完全覆盖LM22.txt中的基因，Cibersort同样可以正常运行，但不能少于LM22.txt中所需基因的一半。<blockquote>
+<p>Importantly, all expression data should be non-negative, devoid of missing values, and represented in non-log linear space.</p>
+<p>For Affymetrix microarrays, a custom chip definition file (CDF) is recommended (see Subheading 3.2.2) and should be normalized with MAS5 or RMA.</p>
+<p>Illumina Beadchip and single color Agilent arrays should be processed as described in the limma package.</p>
+<p>Standard RNA-Seq expression quantification metrics, such as frag- ments per kilobase per million (FPKM) and transcripts per kilobase million (TPM), are suitable for use with CIBERSORT. –《Profiling Tumor Infiltrating Immune Cells with CIBERSORT》</p>
+</blockquote>
+</li>
+<li><strong>Cibersort代码</strong>。</li>
+</ol>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 可以从官网下载</span></span><br><span class="line">source(<span class="string">&#x27;Cibersort.R&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 其中 nperm 指定的是置换的次数，QN 分位数归一化,如果是芯片设置为 T，如果是测序就设置为 F，测序数据最好是TPM</span></span><br><span class="line">res_cibersort &lt;- CIBERSORT(<span class="string">&#x27;LM22.txt&#x27;</span>,<span class="string">&#x27;Data.txt&#x27;</span>, perm = <span class="number">10</span>, QN = <span class="built_in">F</span>)</span><br><span class="line"></span><br><span class="line">write.table(res_cibersort, file=<span class="string">&quot;res_cibersort.txt&quot;</span>, sep=<span class="string">&quot;\t&quot;</span>, col.names=<span class="built_in">T</span>, row.names=<span class="built_in">F</span>, <span class="built_in">quote</span>=<span class="built_in">F</span>)</span><br><span class="line">save(res_cibersort, file=<span class="string">&quot;res_cibersort.Rdata&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="MCP-counter"><a href="#MCP-counter" class="headerlink" title="MCP-counter"></a>MCP-counter</h2><p>MCP-counter(Microenvironment Cell Populations-counter)包由Becht团队于2016年开发，原文题目为：Estimating the population abundance of tissue-infiltrating immune and stromal cell populations using gene expression</p>
+<p>本包可以利用转录组数据量化异质组织中8个免疫细胞和2个基质细胞的绝对丰度。作者在后续的答疑中说明，转录组数据必须归一化。该包放在了github上，网址为：<a href="https://github.com/ebecht/MCPcounter">https://github.com/ebecht/MCPcounter</a></p>
+<h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">install.packages(<span class="built_in">c</span>(<span class="string">&quot;devtools&quot;</span>,<span class="string">&quot;curl&quot;</span>)) <span class="comment">##Installs devtools and the MCPcounter dependancy &#x27;curl&#x27;</span></span><br><span class="line">library(devtools)</span><br><span class="line">install_github(<span class="string">&quot;ebecht/MCPcounter&quot;</span>,ref=<span class="string">&quot;master&quot;</span>, subdir=<span class="string">&quot;Source&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="Run-MCPcounter"><a href="#Run-MCPcounter" class="headerlink" title="Run MCPcounter"></a>Run MCPcounter</h3><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">library(MCPcounter)</span><br><span class="line">library(pheatmap)</span><br><span class="line">genes &lt;- data.table::fread(<span class="string">&quot;data/6.MCPcounter/MCPcounter/genes.txt&quot;</span>,data.table = <span class="built_in">F</span>)</span><br><span class="line">probesets &lt;- data.table::fread(<span class="string">&quot;data/6.MCPcounter/MCPcounter/probesets.txt&quot;</span>,data.table = <span class="built_in">F</span>,header = <span class="built_in">F</span>)</span><br><span class="line">exprMat &lt;- read.table(<span class="string">&quot;data/6.MCPcounter/MCPcounter/exprMat.txt&quot;</span>, header=<span class="built_in">T</span>, sep=<span class="string">&quot;\t&quot;</span>, check.names=<span class="built_in">F</span>,row.names = <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">results&lt;- MCPcounter.estimate(exprMat,</span><br><span class="line">                              featuresType= <span class="string">&quot;HUGO_symbols&quot;</span>,</span><br><span class="line">                              probesets=probesets,</span><br><span class="line">                              genes=genes)</span><br><span class="line"></span><br><span class="line">heatmap(as.matrix(results),col=colorRampPalette(<span class="built_in">c</span>(<span class="string">&quot;blue&quot;</span>,<span class="string">&quot;white&quot;</span>,<span class="string">&quot;red&quot;</span>))(<span class="number">100</span>)) </span><br></pre></td></tr></table></figure>
+<h1 id="定量免疫浸润在单细胞研究中的应用"><a href="#定量免疫浸润在单细胞研究中的应用" class="headerlink" title="定量免疫浸润在单细胞研究中的应用"></a>定量免疫浸润在单细胞研究中的应用</h1><p><a href="https://www.jianshu.com/p/9af216ff6feb">https://www.jianshu.com/p/9af216ff6feb</a></p>
+<p>定量免疫浸润通过简单的基因表达矩阵数据，将免疫细胞类型含量计算出来。随着算法的发展，到后来也不仅是免疫细胞了，可以是很多细胞类型。</p>
+<p>在我们的bulk RNA的例子中，就是把平均值看作单个细胞表达值与某个函数（和检测方法有关）的卷积。获得样本bulk RNA 表达量的过程，就是一个卷积的过程，而反卷积，是卷积运算的逆运算。</p>
+<ul>
+<li>验证</li>
+</ul>
+<p>单细胞数据科学是一个超指数发展的行业，数据是爆发式的增长的，但是数据之间并不是孤立的，之前有着丰富的数据积累，其中TCGA，GEO是比较详细的。越来越多的文章，开始利用公用数据库来挖掘有用的信息来丰富自己的研究，甚至专门有个数据挖掘的方向。在这样的背景下，免疫浸润也是揭示异质性的，那么自然地，我们会联想到：拿我们的单细胞数据通过免疫浸润与公用数据联系起来，相互验证。</p>
+<ul>
+<li>细胞类型推断</li>
+</ul>
+<p>既然定量免疫浸润可以得到每个样本在不同细胞类型中的分值，我们可不可以根据这个分值来推断手里表达谱的细胞类型呢？在学理上应该是可以的，反卷积的算法也许有些不当，但是如果把求平均值的过程看作卷积，也不是不可以吧。基于GSVA 的方法本质就是自定义基因集做富集分析，所以完全是可以的，关键在与marker gene 的选择。</p>
+]]></content>
   </entry>
 </search>
