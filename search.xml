@@ -2658,9 +2658,7 @@ The processed reads could then be passed to a demultiplexing tool to deal with t
 <ul>
 <li>箭头<br>直线——&gt;描边 8pt ——&gt; 箭头类型——&gt;缩放</li>
 </ul>
-<h1 id="组图"><a href="#组图" class="headerlink" title="组图"></a>组图</h1><p>immu st esti<br>stage t m n</p>
-<p>新建画布：A4 ，300dpi，RGB。常规操作；<br>参考线：A4 210mm ;2栏图174；左右边距（210-174）/2=18mm;左边距参考线在18mm；右边距参考线在174+18=192mm。<br><strong>2栏3块参考线</strong>：每个宽度174/3=58mm; 3条参考线分别在58+18=76mm，58+18+58=134mm，192mm。<br>选择多个对象，按住“Shift”，这和word中“Ctrl”对应；<br>单独的ABC部分可以先编组（对象–&gt;编组），调整大小后再取消编组（对象–&gt;取消编组）<br>调整所有的文字，选择–&gt;对象–&gt;所有文本对象。</p>
-<p>新建画布：A4 ，300dpi，RGB。常规操作；<br>参考线：A4 210mm ;2栏图174；左右边距（210-174）/2=18mm;左边距参考线在18mm；右边距参考线在174+18=192mm。<br><strong>2栏4块参考线</strong>：每个宽度174/4=43.5mm;6条参考线分别在18mm, 43.5+18=61.5mm，43.5+18+43.5=105mm， 43.5+18+43.5+43.5=148.5mm， 192mm。<br>pdf文件拖入窗口上缘<br>编组（对象–&gt;编组），缩放<br>Ctrl C 拷贝到目的AI文件中</p>
+<h1 id="组图参考线"><a href="#组图参考线" class="headerlink" title="组图参考线"></a>组图参考线</h1><p>新建画布：A4 ，300dpi，RGB。<br>参考线：A4 210mm ;2栏图174；左右边距（210-174）/2=18mm;左边距参考线在18mm；右边距参考线在174+18=192mm。<br><strong>2栏3块参考线</strong>：每个宽度174/3=58mm; 3条参考线分别在58+18=76mm，58+18+58=134mm，192mm。<br><strong>2栏4块参考线</strong>：每个宽度174/4=43.5mm;6条参考线分别在18mm, 43.5+18=61.5mm，43.5+18+43.5=105mm， 43.5+18+43.5+43.5=148.5mm， 192mm。</p>
 ]]></content>
       <categories>
         <category>ToolsLearning</category>
@@ -2829,6 +2827,12 @@ Model：处理信息（码农）
 <li>navlistPanel() 导航栏</li>
 </ul>
 </li>
+</ul>
+<h1 id="Class-3"><a href="#Class-3" class="headerlink" title="Class 3"></a>Class 3</h1><h2 id="Shiny-UI"><a href="#Shiny-UI" class="headerlink" title="Shiny UI"></a>Shiny UI</h2><ul>
+<li>conditionalPanel<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">sidebarPanel(</span><br><span class="line">  selectInput(inputId = <span class="string">&quot;id1&quot;</span>,label = <span class="string">&quot;RBPs&quot;</span>,choices = <span class="built_in">c</span>(<span class="string">&quot;RRM&quot;</span>,<span class="string">&quot;dsRBMs&quot;</span>)),</span><br><span class="line">  conditionalPanel(</span><br><span class="line">    condition = <span class="string">&quot;input.id1 == &#x27;RRM&#x27;&quot;</span>,</span><br><span class="line">    selectInput(inputId = <span class="string">&quot;id2&quot;</span>, label = <span class="string">&quot;shown items&quot;</span>,choices = <span class="built_in">c</span>(<span class="string">&quot;milk tea&quot;</span>,<span class="string">&quot;coffee&quot;</span>)),</span><br><span class="line">    selectInput(inputId = <span class="string">&quot;id2&quot;</span>, label = <span class="string">&quot;shown items&quot;</span>,choices = <span class="built_in">c</span>(<span class="string">&quot;milk tea&quot;</span>,<span class="string">&quot;coffee&quot;</span>))</span><br><span class="line">  )</span><br></pre></td></tr></table></figure></li>
+<li>absolutePanel<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">absolutePanel(<span class="string">&quot;别晃了我吐了&quot;</span>,top = <span class="number">100</span>, left = <span class="number">100</span>, fixed = <span class="built_in">T</span>, draggable = <span class="built_in">T</span>, width = <span class="number">550</span>, height = <span class="number">600</span>, style = <span class="string">&quot;bgcolor:LightCoral&quot;</span>)</span><br></pre></td></tr></table></figure></li>
+<li>actionButton<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ui.R</span></span><br><span class="line">actionButton(inputId = <span class="string">&quot;button&quot;</span>, label = <span class="string">&quot;An action button&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># server.R</span></span><br><span class="line">input$button</span><br><span class="line">dat = isolate(rnorm(input$sliderinput1))</span><br></pre></td></tr></table></figure>
+<h2 id="Shiny-server"><a href="#Shiny-server" class="headerlink" title="Shiny server"></a>Shiny server</h2>input：和前端的交互，将前端的数据传进来<br>output：处理结果返回给前端</li>
 </ul>
 ]]></content>
       <categories>
