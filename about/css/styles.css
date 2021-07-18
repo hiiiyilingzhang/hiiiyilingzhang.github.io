@@ -1,15 +1,4 @@
 @charset "UTF-8";
-/*!
-* Start Bootstrap - Resume v6.0.3 (https://startbootstrap.com/theme/resume)
-* Copyright 2013-2021 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-resume/blob/master/LICENSE)
-*/
-/*!
- * Bootstrap v4.6.0 (https://getbootstrap.com/)
- * Copyright 2011-2021 The Bootstrap Authors
- * Copyright 2011-2021 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -10125,7 +10114,18 @@ section.resume-section {
   padding-bottom: 5rem;
   max-width: 75rem;
 }
-section.resume-section .resume-section-content {
+
+section.resume-section-ac {
+  display: block;
+  align-items: center;
+  padding-left: 3rem;
+  padding-right: 1rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  max-width: 75rem;
+}
+
+section.resume-section .resume-section-content .resume-section-ac{
   width: 100%;
 }
 
@@ -10141,4 +10141,14 @@ section.resume-section .resume-section-content {
     padding-top: 5rem;
     padding-bottom: 5rem;
   }
+}
+
+.thumbnail{
+  border-radius: 40px;
+}
+
+.thumbnail:hover{
+  box-shadow:3px 3px 3px 3px #ddd !important;
+  transform: translateY(-3%);
+  transition: 1s ease-in-out;
 }

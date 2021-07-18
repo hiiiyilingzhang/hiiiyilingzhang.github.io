@@ -2641,6 +2641,16 @@ The processed reads could then be passed to a demultiplexing tool to deal with t
 <li><p>颜色模式<br> RGB（JBC不支持CMYK）四色原则</p>
 </li>
 </ol>
+<h1 id="插图规范-Cell-Press-requirements-1"><a href="#插图规范-Cell-Press-requirements-1" class="headerlink" title="插图规范(Cell Press requirements)"></a>插图规范(Cell Press requirements)</h1><h1 id="插图规范-Frontiers-requirements"><a href="#插图规范-Frontiers-requirements" class="headerlink" title="插图规范(Frontiers requirements)"></a>插图规范(Frontiers requirements)</h1><ul>
+<li>Figure requirement</li>
+</ul>
+<ol>
+<li>For figures with more than one panel, panels should be clearly indicated using labels (A), (B), (C), (D)</li>
+<li>In order to be able to upload more than one figure at a time, save the figures (labeled in order of appearance in the manuscript) in a zip file and upload them as ‘Supplementary Material Presentation.</li>
+<li>Figures should be prepared with the PDF layout in mind. Individual figures should not be longer than one page and with a width that corresponds to 1 column (85 mm) or 2 columns (180 mm).</li>
+<li>resolution of 300 dpi</li>
+<li>The smallest visible text should be no less than 8 points in height when viewed at actual size.Any lines in the graphic should be no smaller than 2 points wide.</li>
+</ol>
 <h1 id="Western-Blot图片要求"><a href="#Western-Blot图片要求" class="headerlink" title="Western Blot图片要求"></a>Western Blot图片要求</h1><ol>
 <li>强烈反对在不同凝胶/印迹上进行样品间的定量比较，如不可避免，必须说明且凝胶/印迹平行处理</li>
 <li>在凝胶中不相邻的重新排列的泳道必须以划定泳道之间边界的方式明确指出。重新布置泳道要在图例中说明</li>
@@ -3197,5 +3207,39 @@ Model：处理信息（码农）
 </ul>
 <p>既然定量免疫浸润可以得到每个样本在不同细胞类型中的分值，我们可不可以根据这个分值来推断手里表达谱的细胞类型呢？在学理上应该是可以的，反卷积的算法也许有些不当，但是如果把求平均值的过程看作卷积，也不是不可以吧。基于GSVA 的方法本质就是自定义基因集做富集分析，所以完全是可以的，关键在与marker gene 的选择。</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Get Start With Bioinfo Pipeline</title>
+    <url>/2021/07/18/Get-Start-With-Bioinfo-Pipeline/</url>
+    <content><![CDATA[<h1 id="基于Shell开发基于count数据的表达分析流程"><a href="#基于Shell开发基于count数据的表达分析流程" class="headerlink" title="基于Shell开发基于count数据的表达分析流程"></a>基于Shell开发基于count数据的表达分析流程</h1><p><strong>Count分析步骤（基于R语言）</strong></p>
+<ul>
+<li>设置基础变量</li>
+<li>利用DESeq2包识别差异表达基因</li>
+<li>绘制火山图</li>
+<li>保存差异表达结果</li>
+</ul>
+<p><strong>R脚本运行命令</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rexec analysis.R</span><br><span class="line">./analysis.R.exec <span class="string">&quot;countdir=&#x27;XXX&#x27;; …&quot;</span></span><br></pre></td></tr></table></figure>
+<p><strong>定义需要的变量</strong></p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">countDir=<span class="string">&quot;~/HT_result&quot;</span></span><br><span class="line">infopath=<span class="string">&quot;~/HT_result/sampleinfo.csv&quot;</span></span><br><span class="line">filter=<span class="number">10</span></span><br></pre></td></tr></table></figure>
+<p><strong>基于Shell开发步骤</strong></p>
+<ol>
+<li>参数定义</li>
+<li>参数获取</li>
+<li>执行任务</li>
+</ol>
+<p><strong>Shell脚本运行命令</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chmod 755 pipeline.sh</span><br><span class="line">./pipeline.sh -d XXXX …</span><br></pre></td></tr></table></figure>
+<p><strong>任务提交命令</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bsub mission.sh</span><br><span class="line">bstat </span><br></pre></td></tr></table></figure>
+<p><strong>Demo</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">! /bin/sh</span></span><br><span class="line"></span><br><span class="line">usage()</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">cat &lt;&lt;EOF &gt;&amp;2</span><br><span class="line"></span><br><span class="line">Usage: ./MyPipeline.sh -1 fq -2 fq -t 6 -r ref -g gtf -o output ...</span><br><span class="line"></span><br><span class="line">=====================================================</span><br><span class="line"></span><br><span class="line">Copyright: 2021 (C) YilingZhang</span><br><span class="line">Version: 06.15alpha</span><br><span class="line"></span><br><span class="line">OPTION:</span><br><span class="line">        -h      help</span><br><span class="line">        -1      the path of 1st fastq file</span><br><span class="line">        -2      the path of 2nd fastq file</span><br><span class="line">        -t      the number of threads for running</span><br><span class="line">        -r      the path of genome reference</span><br><span class="line">        -g      the path of GTF file</span><br><span class="line">        -o      the path of output direction</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if test $# -eq 0</span><br><span class="line">then</span><br><span class="line">        usage</span><br><span class="line">        exit 1</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> Listen, parameter setting...</span></span><br><span class="line">while getopts &quot;h1:2:r:g:o:&quot; OPTION # : means variates needed behind -1,-2,-r</span><br><span class="line">do</span><br><span class="line"></span><br><span class="line">        case $OPTION in</span><br><span class="line">                h)</span><br><span class="line">                        usage</span><br><span class="line">                        exit 2</span><br><span class="line">                        ;;</span><br><span class="line">                1)</span><br><span class="line">                        fq1=$OPTARG</span><br><span class="line">                        ;;</span><br><span class="line">                2)</span><br><span class="line">                        fq2=$OPTARG</span><br><span class="line">                        ;;</span><br><span class="line">                t)</span><br><span class="line">                        thread=$OPTARG</span><br><span class="line">                        ;;</span><br><span class="line">                r)</span><br><span class="line">                        ref=$OPTARG</span><br><span class="line">                        ;;</span><br><span class="line">                g)</span><br><span class="line">                        gtf=$OPTSRG</span><br><span class="line">                        ;;</span><br><span class="line">                o)</span><br><span class="line">                        output=$OPTARG</span><br><span class="line">                        ;;</span><br><span class="line">                ?)</span><br><span class="line">                        usage</span><br><span class="line">                        exit 1</span><br><span class="line">                        ;;</span><br><span class="line">        esac</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> procedure, here</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> loading tools</span></span><br><span class="line">bytlib load FastQC-0.11.8</span><br><span class="line">bytlib load STAR-2.6.1b</span><br><span class="line">bytlib load samtools-1.9</span><br><span class="line">bytlib load HTSeq</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> loading workspace</span></span><br><span class="line">bytlib load jdk1.7.0_80</span><br><span class="line">bytlib load R-3.6.0</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> -----------</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="keyword">if</span> tools are <span class="keyword">in</span> different conda environment, conda activate/deactivate?</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> add &amp;, 2&gt;1 /<span class="built_in">log</span> ?</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> dry run avail ?</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -----------</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 1. Quality Control</span></span><br><span class="line">fastqc -t $thread -o $output $fq1 $fq2</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 2. STAR</span></span><br><span class="line">mkdir -p $output/log</span><br><span class="line"></span><br><span class="line">STAR \</span><br><span class="line">runMode alignReads \</span><br><span class="line">--genomeDir  $ref \</span><br><span class="line">--runThreadN $thread \</span><br><span class="line">--readFilesIn $fq1 $fq2 \</span><br><span class="line">--readFilesCommand zcat \</span><br><span class="line">--outFileNamePrefix $output/demo_STAR \</span><br><span class="line">--outSAMtype BAM SortedByCoordinate \</span><br><span class="line">--outSAMstrandField intronMotif \</span><br><span class="line">--outSAMattributes All \</span><br><span class="line">--outFilterIntronMotifs RemoveNoncanonical &gt; $output/log/demo_STAR.log 2&gt;&amp;1</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 3. Quantification</span></span><br><span class="line">samtools -bS -F 4 $output/demo_Aligned.out.sam &gt; $output/demo.bam</span><br><span class="line">samtools sort -n -o $output/demo.sort.bam $output/demo.bam</span><br><span class="line"></span><br><span class="line">htseq-count -f bam -r pos \</span><br><span class="line">--max-reads-in-buffer 1000000 \</span><br><span class="line">--stranded no \</span><br><span class="line">--minaqual 10 \</span><br><span class="line">--type exon --idattr gene_id \</span><br><span class="line">--mode union --nonunique none --secondary-alignments ignore --supplementary-alignments ignore \</span><br><span class="line">--counts_output $output/demo_count.tsv \</span><br><span class="line">--nprocesses 1 \</span><br><span class="line"><span class="meta">$</span><span class="bash">output/demo.sort.bam <span class="variable">$gtf</span> &gt; <span class="variable">$output</span>/<span class="built_in">log</span>/demo.HTSeq.log  2&gt;&amp;1</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>ToolsLearning</category>
+      </categories>
+      <tags>
+        <tag>Pipeline</tag>
+      </tags>
   </entry>
 </search>
