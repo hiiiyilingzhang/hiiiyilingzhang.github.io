@@ -2645,13 +2645,6 @@ The processed reads could then be passed to a demultiplexing tool to deal with t
       </categories>
   </entry>
   <entry>
-    <title>TME &amp; Immune Analysis of CUL1&amp;Cullin1</title>
-    <url>/2021/05/08/TME-Immune-Analysis-of-CUL1-Cullin1/</url>
-    <content><![CDATA[<h1 id="Material-and-Method"><a href="#Material-and-Method" class="headerlink" title="Material and Method"></a>Material and Method</h1><h2 id="Raw-data"><a href="#Raw-data" class="headerlink" title="Raw data"></a>Raw data</h2><p>cases: stomach–TCGA–TCGA-STAD<br>files: transcriptome profiling–gene expression quantification–HTSeq FPKM</p>
-<p>Manifest+Cart+Metadata</p>
-<center><img src="/img/Stomach-proj/data.png" alt="data" style="zoom:70%;" /></center>]]></content>
-  </entry>
-  <entry>
     <title>scRNAseq-03 Doublet &amp; velocyto &amp; inferCNV</title>
     <url>/2021/05/10/scRNAseq-03-Doublet-velocyto-inferCNV/</url>
     <content><![CDATA[<h1 id="DoubletFinder"><a href="#DoubletFinder" class="headerlink" title="DoubletFinder"></a>DoubletFinder</h1><h2 id="Doublets及其形成的原因"><a href="#Doublets及其形成的原因" class="headerlink" title="Doublets及其形成的原因"></a>Doublets及其形成的原因</h2><p>单细胞测序期望每个barcode标签下只有一个真实的细胞，但是实际数据中会有两个或多个细胞共用一个barcode的情况，业内称之为doublets或multiplets（后面统称为doublets）。Doublets形成的原因主要是高通量单细胞测序一般使用液滴微流控（droplet microfluidic）或纳米孔（nanowell）技术，细胞被液滴或纳米孔捕获的概率遵循泊松分布规律，doublets填充液滴的概率会随着输入细胞浓度升高而增加。此外，使用磁珠分选细胞，操作不当也会增加doublets形成的概率。</p>
