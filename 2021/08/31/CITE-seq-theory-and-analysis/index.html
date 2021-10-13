@@ -1,0 +1,199 @@
+<!DOCTYPE html><html lang="en | zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CITE-seq: theory and analysis | Jocelyn's Blog</title><meta name="keywords" content="CITE-seq"><meta name="author" content="yilingzhang"><meta name="copyright" content="yilingzhang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="CITE-seq paper Commu from New York Genome Center    2017-Nat. Methods-Simultaneous epitope and transcriptome measurement in single cellsCITE-seq    CITE-seq原理由mRNA测序和对带标签的抗体测序组成，抗体结合到细胞表面相应的蛋白上，且抗体上带有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CITE-seq: theory and analysis">
+<meta property="og:url" content="https://hiiiyilingzhang.github.io/2021/08/31/CITE-seq-theory-and-analysis/index.html">
+<meta property="og:site_name" content="Jocelyn&#39;s Blog">
+<meta property="og:description" content="CITE-seq paper Commu from New York Genome Center    2017-Nat. Methods-Simultaneous epitope and transcriptome measurement in single cellsCITE-seq    CITE-seq原理由mRNA测序和对带标签的抗体测序组成，抗体结合到细胞表面相应的蛋白上，且抗体上带有">
+<meta property="og:locale">
+<meta property="og:image" content="https://hiiiyilingzhang.github.io/img/cover/CITE.png">
+<meta property="article:published_time" content="2021-08-31T13:09:19.000Z">
+<meta property="article:modified_time" content="2021-09-03T02:49:34.314Z">
+<meta property="article:author" content="yilingzhang">
+<meta property="article:tag" content="CITE-seq">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hiiiyilingzhang.github.io/img/cover/CITE.png"><link rel="shortcut icon" href="/img/love_32px.png"><link rel="canonical" href="https://hiiiyilingzhang.github.io/2021/08/31/CITE-seq-theory-and-analysis/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-09-03 10:49:34'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 5.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/selfie.JPG" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">39</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">17</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">14</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" target="_blank" rel="noopener" href="https://music.apple.com/cn/playlist/fav/pl.u-yZyVEjrFYkEpKjk"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" target="_blank" rel="noopener" href="https://ohmyphotography.lofter.com/"><i class="fa-fw fas fa-video"></i><span> Gallery</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/cover/CITE.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Jocelyn's Blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" target="_blank" rel="noopener" href="https://music.apple.com/cn/playlist/fav/pl.u-yZyVEjrFYkEpKjk"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" target="_blank" rel="noopener" href="https://ohmyphotography.lofter.com/"><i class="fa-fw fas fa-video"></i><span> Gallery</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">CITE-seq: theory and analysis</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-08-31T13:09:19.000Z" title="Created 2021-08-31 21:09:19">2021-08-31</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-09-03T02:49:34.314Z" title="Updated 2021-09-03 10:49:34">2021-09-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Single-Cell/">Single Cell</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word count:</span><span class="word-count">434</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading time:</span><span>1min</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="CITE-seq-paper"><a href="#CITE-seq-paper" class="headerlink" title="CITE-seq paper"></a>CITE-seq paper</h1><center><img src="/img/CITE/paper.png" alt="paper" style="zoom:70%;" /></center>
+Commu from New York Genome Center  
+
+<p><a target="_blank" rel="noopener" href="https://www.nature.com/articles/nmeth.4380">2017-Nat. Methods-Simultaneous epitope and transcriptome measurement in single cells</a><br><a target="_blank" rel="noopener" href="https://cite-seq.com/">CITE-seq</a></p>
+<center><img src="/img/CITE/workflow.png" alt="paper" style="zoom:70%;" /></center>
+
+<hr>
+<h1 id="CITE-seq原理"><a href="#CITE-seq原理" class="headerlink" title="CITE-seq原理"></a>CITE-seq原理</h1><p>由mRNA测序和对带标签的抗体测序组成，抗体结合到细胞表面相应的蛋白上，且抗体上带有特殊的DNA标签</p>
+<center><img src="/img/CITE/label.png" alt="paper" style="zoom:70%;" /></center>
+
+<h2 id="带有标签DNA的抗体"><a href="#带有标签DNA的抗体" class="headerlink" title="带有标签DNA的抗体"></a>带有标签DNA的抗体</h2><center><img src="/img/CITE/label2.png" alt="paper" style="zoom:70%;" /></center>
+
+<ol>
+<li>需要针对目标蛋白</li>
+<li>PCR HANDLE: 配合beads另一端的PCR结合区，扩增目标序列</li>
+<li>ANTIBODY BARCODE：每一抗体独自的序列，可追溯到蛋白，推测蛋白数量</li>
+<li>Ploy(A):结合beads上的poly(T)</li>
+</ol>
+<h2 id="抗体与细胞悬浮液孵育"><a href="#抗体与细胞悬浮液孵育" class="headerlink" title="抗体与细胞悬浮液孵育"></a>抗体与细胞悬浮液孵育</h2><center><img src="/img/CITE/label3.png" alt="paper" style="zoom:70%;" /></center>
+
+<h2 id="抗体上的标签DNA和细胞中的mRNA一起建库"><a href="#抗体上的标签DNA和细胞中的mRNA一起建库" class="headerlink" title="抗体上的标签DNA和细胞中的mRNA一起建库"></a>抗体上的标签DNA和细胞中的mRNA一起建库</h2><center><img src="/img/CITE/library.png" alt="paper" style="zoom:70%;" /></center>
+<center><img src="/img/CITE/library2.png" alt="paper" style="zoom:70%;" /></center>
+
+<hr>
+<h1 id="方法验证"><a href="#方法验证" class="headerlink" title="方法验证"></a>方法验证</h1><h2 id="ADT-Antibody-derived-tags"><a href="#ADT-Antibody-derived-tags" class="headerlink" title="ADT(Antibody-derived tags)"></a>ADT(Antibody-derived tags)</h2><center><img src="/img/CITE/ADT.png" alt="paper" style="zoom:70%;" /></center>
+
+<ul>
+<li>近似值，抗体与抗原的亲和力不同，结合速度有差异</li>
+<li>RNA和ADT在数量上有较大的一致性</li>
+</ul>
+<h2 id="Flow-cytometer-Golden-Standard"><a href="#Flow-cytometer-Golden-Standard" class="headerlink" title="Flow cytometer(Golden Standard)"></a>Flow cytometer(Golden Standard)</h2><center><img src="/img/CITE/ADT2.png" alt="paper" style="zoom:70%;" /></center>
+
+<ul>
+<li>检测被荧光抗体染色的单个细胞的荧光种类和荧光强度</li>
+<li>Col2：利用CD4和CD8蛋白做区分，流式——CD4占70%，CD8占22%，ADT——CD4占68%，CD8占24%</li>
+<li>判断结果基本相近</li>
+</ul>
+<h2 id="CD8-as-marker"><a href="#CD8-as-marker" class="headerlink" title="CD8 as marker"></a>CD8 as marker</h2><center><img src="/img/CITE/ADT3.png" alt="paper" style="zoom:70%;" /></center>
+
+<ul>
+<li>CD8在各个细胞中表达的范围广，根据表达高低分四档</li>
+<li>e和f形状高度相似</li>
+</ul>
+<h2 id="mRNA-amp-ADT"><a href="#mRNA-amp-ADT" class="headerlink" title="mRNA &amp; ADT"></a>mRNA &amp; ADT</h2><center><img src="/img/CITE/ADT4.png" alt="paper" style="zoom:70%;" /></center>
+
+<ul>
+<li>13个抗体做了panel</li>
+<li>feature plot对应</li>
+<li><strong>Attention</strong>: CD11c有不一致的情况</li>
+<li>不同基因的mRNA与ADT并不对应</li>
+</ul>
+<hr>
+<h1 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h1><ol>
+<li>mRNA+蛋白。CITE-seq同时提供了mRNA和细胞表面蛋白的信息,信息量比传统的RNA单细胞测序更丰富</li>
+<li>可验证。CITE-seq和ADT数据通过和金标准流式细胞仪得出的数据的比对,得到了有效的验证</li>
+<li>蛋白种类多。CITE-seq一次可以检测多达100个的蛋白,比流式细胞仪一次能够检测的蛋白种类更多</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">yilingzhang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://hiiiyilingzhang.github.io/2021/08/31/CITE-seq-theory-and-analysis/">https://hiiiyilingzhang.github.io/2021/08/31/CITE-seq-theory-and-analysis/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/CITE-seq/">CITE-seq</a></div><div class="post_share"><div class="social-share" data-image="/img/cover/CITE.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/09/06/All-I-Learn-About-Circulating-Cell-free-DNA-cfDNA/"><img class="prev-cover" src="/img/cover/cfDNA.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">All I Learn About Circulating Cell-free DNA(cfDNA)</div></div></a></div><div class="next-post pull-right"><a href="/2021/07/23/scRNA-seq-Project-LIHC-microenvironment/"><img class="next-cover" src="/img/cover/scRNA.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">scRNA-seq Project -- LIHC microenvironment</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/selfie.JPG" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">yilingzhang</div><div class="author-info__description">Every Day is My Day</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">39</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">17</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">14</div></a></div></div><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:jocelynzhang1119@icloud.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://blog.csdn.net/weixin_43893431" target="_blank" title="CSDN"><i class="fas fa-paper-plane"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CITE-seq-paper"><span class="toc-number">1.</span> <span class="toc-text">CITE-seq paper</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CITE-seq%E5%8E%9F%E7%90%86"><span class="toc-number">2.</span> <span class="toc-text">CITE-seq原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%A6%E6%9C%89%E6%A0%87%E7%AD%BEDNA%E7%9A%84%E6%8A%97%E4%BD%93"><span class="toc-number">2.1.</span> <span class="toc-text">带有标签DNA的抗体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%97%E4%BD%93%E4%B8%8E%E7%BB%86%E8%83%9E%E6%82%AC%E6%B5%AE%E6%B6%B2%E5%AD%B5%E8%82%B2"><span class="toc-number">2.2.</span> <span class="toc-text">抗体与细胞悬浮液孵育</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%97%E4%BD%93%E4%B8%8A%E7%9A%84%E6%A0%87%E7%AD%BEDNA%E5%92%8C%E7%BB%86%E8%83%9E%E4%B8%AD%E7%9A%84mRNA%E4%B8%80%E8%B5%B7%E5%BB%BA%E5%BA%93"><span class="toc-number">2.3.</span> <span class="toc-text">抗体上的标签DNA和细胞中的mRNA一起建库</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E9%AA%8C%E8%AF%81"><span class="toc-number">3.</span> <span class="toc-text">方法验证</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ADT-Antibody-derived-tags"><span class="toc-number">3.1.</span> <span class="toc-text">ADT(Antibody-derived tags)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Flow-cytometer-Golden-Standard"><span class="toc-number">3.2.</span> <span class="toc-text">Flow cytometer(Golden Standard)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CD8-as-marker"><span class="toc-number">3.3.</span> <span class="toc-text">CD8 as marker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mRNA-amp-ADT"><span class="toc-number">3.4.</span> <span class="toc-text">mRNA &amp; ADT</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BC%98%E7%82%B9"><span class="toc-number">4.</span> <span class="toc-text">优点</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/09/06/All-I-Learn-About-Circulating-Cell-free-DNA-cfDNA/" title="All I Learn About Circulating Cell-free DNA(cfDNA)"><img src="/img/cover/cfDNA.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="All I Learn About Circulating Cell-free DNA(cfDNA)"/></a><div class="content"><a class="title" href="/2021/09/06/All-I-Learn-About-Circulating-Cell-free-DNA-cfDNA/" title="All I Learn About Circulating Cell-free DNA(cfDNA)">All I Learn About Circulating Cell-free DNA(cfDNA)</a><time datetime="2021-09-06T08:31:28.000Z" title="Created 2021-09-06 16:31:28">2021-09-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/31/CITE-seq-theory-and-analysis/" title="CITE-seq: theory and analysis"><img src="/img/cover/CITE.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CITE-seq: theory and analysis"/></a><div class="content"><a class="title" href="/2021/08/31/CITE-seq-theory-and-analysis/" title="CITE-seq: theory and analysis">CITE-seq: theory and analysis</a><time datetime="2021-08-31T13:09:19.000Z" title="Created 2021-08-31 21:09:19">2021-08-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/07/23/scRNA-seq-Project-LIHC-microenvironment/" title="scRNA-seq Project -- LIHC microenvironment"><img src="/img/cover/scRNA.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="scRNA-seq Project -- LIHC microenvironment"/></a><div class="content"><a class="title" href="/2021/07/23/scRNA-seq-Project-LIHC-microenvironment/" title="scRNA-seq Project -- LIHC microenvironment">scRNA-seq Project -- LIHC microenvironment</a><time datetime="2021-07-23T14:09:24.000Z" title="Created 2021-07-23 22:09:24">2021-07-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/07/18/Get-Start-With-Bioinfo-Pipeline/" title="Get Start With Bioinfo Pipeline"><img src="/img/cover/pipeline.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Get Start With Bioinfo Pipeline"/></a><div class="content"><a class="title" href="/2021/07/18/Get-Start-With-Bioinfo-Pipeline/" title="Get Start With Bioinfo Pipeline">Get Start With Bioinfo Pipeline</a><time datetime="2021-07-18T11:59:13.000Z" title="Created 2021-07-18 19:59:13">2021-07-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/24/Tumor-immune-infiltration-analysis/" title="Tumor immune infiltration analysis"><img src="/img/cover/Immue.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Tumor immune infiltration analysis"/></a><div class="content"><a class="title" href="/2021/05/24/Tumor-immune-infiltration-analysis/" title="Tumor immune infiltration analysis">Tumor immune infiltration analysis</a><time datetime="2021-05-24T10:51:35.000Z" title="Created 2021-05-24 18:51:35">2021-05-24</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 By yilingzhang</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

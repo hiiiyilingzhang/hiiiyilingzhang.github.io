@@ -3217,4 +3217,77 @@ Model：处理信息（码农）
         <tag>scRNA-seq</tag>
       </tags>
   </entry>
+  <entry>
+    <title>All I Learn About Circulating Cell-free DNA(cfDNA)</title>
+    <url>/2021/09/06/All-I-Learn-About-Circulating-Cell-free-DNA-cfDNA/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>CITE-seq: theory and analysis</title>
+    <url>/2021/08/31/CITE-seq-theory-and-analysis/</url>
+    <content><![CDATA[<h1 id="CITE-seq-paper"><a href="#CITE-seq-paper" class="headerlink" title="CITE-seq paper"></a>CITE-seq paper</h1><center><img src="/img/CITE/paper.png" alt="paper" style="zoom:70%;" /></center>
+Commu from New York Genome Center  
+
+<p><a href="https://www.nature.com/articles/nmeth.4380">2017-Nat. Methods-Simultaneous epitope and transcriptome measurement in single cells</a><br><a href="https://cite-seq.com/">CITE-seq</a></p>
+<center><img src="/img/CITE/workflow.png" alt="paper" style="zoom:70%;" /></center>
+
+<hr>
+<h1 id="CITE-seq原理"><a href="#CITE-seq原理" class="headerlink" title="CITE-seq原理"></a>CITE-seq原理</h1><p>由mRNA测序和对带标签的抗体测序组成，抗体结合到细胞表面相应的蛋白上，且抗体上带有特殊的DNA标签</p>
+<center><img src="/img/CITE/label.png" alt="paper" style="zoom:70%;" /></center>
+
+<h2 id="带有标签DNA的抗体"><a href="#带有标签DNA的抗体" class="headerlink" title="带有标签DNA的抗体"></a>带有标签DNA的抗体</h2><center><img src="/img/CITE/label2.png" alt="paper" style="zoom:70%;" /></center>
+
+<ol>
+<li>需要针对目标蛋白</li>
+<li>PCR HANDLE: 配合beads另一端的PCR结合区，扩增目标序列</li>
+<li>ANTIBODY BARCODE：每一抗体独自的序列，可追溯到蛋白，推测蛋白数量</li>
+<li>Ploy(A):结合beads上的poly(T)</li>
+</ol>
+<h2 id="抗体与细胞悬浮液孵育"><a href="#抗体与细胞悬浮液孵育" class="headerlink" title="抗体与细胞悬浮液孵育"></a>抗体与细胞悬浮液孵育</h2><center><img src="/img/CITE/label3.png" alt="paper" style="zoom:70%;" /></center>
+
+<h2 id="抗体上的标签DNA和细胞中的mRNA一起建库"><a href="#抗体上的标签DNA和细胞中的mRNA一起建库" class="headerlink" title="抗体上的标签DNA和细胞中的mRNA一起建库"></a>抗体上的标签DNA和细胞中的mRNA一起建库</h2><center><img src="/img/CITE/library.png" alt="paper" style="zoom:70%;" /></center>
+<center><img src="/img/CITE/library2.png" alt="paper" style="zoom:70%;" /></center>
+
+<hr>
+<h1 id="方法验证"><a href="#方法验证" class="headerlink" title="方法验证"></a>方法验证</h1><h2 id="ADT-Antibody-derived-tags"><a href="#ADT-Antibody-derived-tags" class="headerlink" title="ADT(Antibody-derived tags)"></a>ADT(Antibody-derived tags)</h2><center><img src="/img/CITE/ADT.png" alt="paper" style="zoom:70%;" /></center>
+
+<ul>
+<li>近似值，抗体与抗原的亲和力不同，结合速度有差异</li>
+<li>RNA和ADT在数量上有较大的一致性</li>
+</ul>
+<h2 id="Flow-cytometer-Golden-Standard"><a href="#Flow-cytometer-Golden-Standard" class="headerlink" title="Flow cytometer(Golden Standard)"></a>Flow cytometer(Golden Standard)</h2><center><img src="/img/CITE/ADT2.png" alt="paper" style="zoom:70%;" /></center>
+
+<ul>
+<li>检测被荧光抗体染色的单个细胞的荧光种类和荧光强度</li>
+<li>Col2：利用CD4和CD8蛋白做区分，流式——CD4占70%，CD8占22%，ADT——CD4占68%，CD8占24%</li>
+<li>判断结果基本相近</li>
+</ul>
+<h2 id="CD8-as-marker"><a href="#CD8-as-marker" class="headerlink" title="CD8 as marker"></a>CD8 as marker</h2><center><img src="/img/CITE/ADT3.png" alt="paper" style="zoom:70%;" /></center>
+
+<ul>
+<li>CD8在各个细胞中表达的范围广，根据表达高低分四档</li>
+<li>e和f形状高度相似</li>
+</ul>
+<h2 id="mRNA-amp-ADT"><a href="#mRNA-amp-ADT" class="headerlink" title="mRNA &amp; ADT"></a>mRNA &amp; ADT</h2><center><img src="/img/CITE/ADT4.png" alt="paper" style="zoom:70%;" /></center>
+
+<ul>
+<li>13个抗体做了panel</li>
+<li>feature plot对应</li>
+<li><strong>Attention</strong>: CD11c有不一致的情况</li>
+<li>不同基因的mRNA与ADT并不对应</li>
+</ul>
+<hr>
+<h1 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h1><ol>
+<li>mRNA+蛋白。CITE-seq同时提供了mRNA和细胞表面蛋白的信息,信息量比传统的RNA单细胞测序更丰富</li>
+<li>可验证。CITE-seq和ADT数据通过和金标准流式细胞仪得出的数据的比对,得到了有效的验证</li>
+<li>蛋白种类多。CITE-seq一次可以检测多达100个的蛋白,比流式细胞仪一次能够检测的蛋白种类更多</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Single Cell</category>
+      </categories>
+      <tags>
+        <tag>CITE-seq</tag>
+      </tags>
+  </entry>
 </search>
